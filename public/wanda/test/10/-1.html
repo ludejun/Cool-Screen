@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>02</title>
+<script type="text/javascript" src="../../jquery/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/mt.js"></script>
+<script type="text/javascript" src="../../js/ani.js"></script>
+<script type="text/javascript" src="../../js/gd.js"></script>
+<style type="text/css">
+
+body{
+	background-color: #333;
+}
+canvas{
+	position: absolute;
+	left: 280px;
+	top: 160px;
+	/*width: 900px;*/
+	/*height: 1400px;*/
+	/*background-color: rgba(0,0,0,0.1);*/
+}
+
+.full{
+	position: absolute;
+	left: 0px;
+	/*right: 0px;*/
+	top: 0px;
+	/*bottom: 0px;*/
+	width: 1920px;
+	height: 1080px;
+	background-image: url(image/bg2.jpg);
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+#data{
+	width: 430px;
+	height: 448px;
+	background: transparent url(image/data.png) left top no-repeat;
+	position: absolute;
+	left: 1420px;
+	top: 200px;
+}
+
+.full > .button-bar{
+	position: absolute;
+	left: 70px;
+	top: 160px;
+	width: 185px;
+	overflow: hidden;
+	color: #fff;
+	min-height: 150px;
+	background: rgba(0,0,0,0) url(image/left-bar-bg.png) left bottom no-repeat;
+	list-style: none;
+	margin: 0px;
+	padding: 10px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.full > .button-bar > li{
+	height: 130px;
+	line-height: 130px;
+	margin-top: 3px;
+	background: rgba(17,50,124,0.8);
+	border: 1px solid #0373e2;
+	cursor: pointer;
+}
+
+.full > .button-bar > li.active{
+	border: 5px solid #ffae00;
+	background-color: #9d7930;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+#data > .title{
+	color: #fff;
+	font-size: 24px;
+	line-height: 90px;
+	text-indent: 1em;
+}
+
+</style>
+</head>
+<body>
+<div class="full">
+	<canvas width="1100" height="800"></canvas>
+	<div id="data">
+		<div class="title">111</div>
+	</div>
+	<menu class="button-bar">
+		<li name="元旦" id="T01" class="active">元旦</li>
+		<li name="春节" id="T02">春节</li>
+		<li name="清明" id="T03">清明</li>
+		<li name="五一" id="T04">五一</li>
+		<li name="端午" id="T05">端午</li>
+	</menu>
+</div>
+
+
+<script type="text/javascript">
+
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+
+// ctx.translate(canvas.width * 0.5, canvas.height * 0.5);
+
+var ZOOM = 1 / 30;
+
+// ctx.fillStyle = '#fff';
+// ctx.arc(0, 0, 100, 0, Math.PI * 2);
+// ctx.fill();
+
+function drawLines(ctx, weight, p0, p1, t, color, aOffset){
+
+
+	var a = 3;
+	var A = 30;
+
+	ctx.lineCap = 'round';
+
+	// GD.CirclePathA(ctx, A, p0, p1, 1, 'rgba(255,255,255,0.3)', weight + 10);
+	GD.CirclePathA(ctx, A, p0, p1, t, color, weight);
+
+	var cur = GD.CirclePointA(p0, p1, A, t);
+
+	var size = Math.pow(weight, 0.3) * 16;
+	ctx.beginPath();
+	ctx.arc(cur.x, cur.y, size / 4, 0, Math.PI * 2);
+	ctx.fillStyle = color;
+	ctx.fill();
+	
+}
+
+function drawOne(ctx, p){
+
+	var DUR = 10000;
+	var SIZE = 3;
+	var TAIL = 10;
+	var SPLIT = 0.5
+	// var COLOR = 'rgba(100,200,255,0.5)';
+	var COLOR = 'rgba(100,200,255,';
+
+	var sign = [1, -1];
+	var c = 0;
+	var tail = [];
+
+	var ani = Ani.add(function(dur){
+
+		var t = dur / DUR / SPLIT;
+		var aOffset = Math.PI * 0.5;
+		if(t > 1){
+			t = 2 - t;
+			aOffset = Math.PI * -0.5;
+		}
+		var op = 0.5;
+		var color = COLOR + op + ')';
+
+		drawLines(ctx, p[2], p[0], p[1], t, p[3], aOffset);
+
+		// var cur = GD.CirclePointA(p[0], p[1], 30, t);
+
+		// GD.CirclePathA(ctx, 30, p[0], p[1], 1, color, 2);
+
+
+		
+
+
+	}, DUR, function(){
+		// c = (c + 1) % 2;
+		ani.restart();
+	})
+}
+var bgFresh = Ani.addBase(function(){
+	ctx.clearRect(-ctx.canvas.width, -ctx.canvas.height, ctx.canvas.width * 3, ctx.canvas.height * 3);
+	return -1;
+});
+
+
+function loadData(id){
+
+
+	$('li.active').removeClass('active');
+
+	el = $('li[name="' + id + '"]');
+	el.addClass('active');
+
+	$('#data > .title').html(el.html());
+
+	var data = DATA[id];
+
+	var result = [];
+	for(var key in data){
+		var origin = { x: COORD[key][0], y: COORD[key][1] };
+		for(var p in data[key]){
+			var unit = [origin, { x: COORD[p][0], y: COORD[p][1] }, data[key][p], COORD[key][2]];
+			result.push(unit);
+		}
+	}
+
+
+	MT.EACH(result, function(r){
+		drawOne(ctx, r);
+	})
+
+}
+
+// loadData('T01');
+
+// $('.full > .button-bar > li').on('click', function(){
+// 	$('.full > .button-bar > li').removeClass('active');
+// 	var name = this.innerHTML;
+// 	// var id = this.id;
+// 	Ani.clear(function(){
+// 		loadData(name);
+// 	});
+// });
+
+GD.fullFitDom('.full');
+
+// $(document).on('click', function(e){
+// 	var offset = $('canvas').offset();
+// 	var x = (e.clientX - offset.left) / GD.FIT_SCALE;
+// 	var y = (e.clientY - offset.top) / GD.FIT_SCALE;
+
+// 	var p = { x: x, y: y };
+
+// 	GD.drawPoint(ctx, p, '#fff');
+
+// 	console.log([x, y]);
+// });
+
+
+
+var COORD = {
+	"BEIJING": [766.5442240974542, 317.5959892464003, 'rgba(255,0,0,0.6)'],
+	"SHANGHAI": [891.5525713428632, 514.7245368256991, 'rgba(255,255,0,0.6)'],
+	"GUANGZHOU": [752.1201840306762, 660.5676086120096, 'rgba(0,170,255,0.6)'],
+	"SHENZHEN": [745.7094995565526, 665.3756219676023, 'rgba(255,100,0,0.6)'],
+	"KUNMING": [655.9599169188231, 657.3622663749479, 'rgba(100,200,0,0.6)'],
+	"LASA": [354.65774663501674, 532.3539191295389, 'rgba(100,200,355,0.6)'],
+	"CHANGCUN": [901.1685980540485, 247.07846003104135, 'rgba(0,50,150,0.6)'],
+	"HUHEHAOTE": [678.3973125782555, 311.1853047722767, 'rgba(0,200,255,0.6)']
+};
+var DATA = {
+	"元旦": {
+		"BEIJING": {
+			"SHANGHAI": 19,
+			"GUANGZHOU": 12,
+			"SHENZHEN": 9,
+			"KUNMING": 2,
+			"LASA": 1,
+			"CHANGCUN": 3,
+			"HUHEHAOTE": 5,
+		},
+		"SHANGHAI": {
+			"BEIJING": 20,
+			"GUANGZHOU": 18,
+			"SHENZHEN": 22,
+			"KUNMING": 6,
+			"LASA": 5,
+			"CHANGCUN": 13,
+			"HUHEHAOTE": 4,
+		},
+		"GUANGZHOU": {
+			"BEIJING": 10,
+			"GUANGZHOU": 18,
+			"SHENZHEN": 22,
+			"KUNMING": 16,
+			"CHANGCUN": 3,
+		}
+	},
+	"春节": {
+		"BEIJING": {
+			"SHANGHAI": 24,
+			"GUANGZHOU": 18,
+			"SHENZHEN": 20,
+			"KUNMING": 16,
+			"LASA": 5,
+			"CHANGCUN": 33,
+			"HUHEHAOTE": 12,
+		},
+		"SHANGHAI": {
+			"BEIJING": 30,
+			"GUANGZHOU": 28,
+			"SHENZHEN": 25,
+			"KUNMING": 13,
+			"CHANGCUN": 23,
+			"HUHEHAOTE": 7,
+		},
+		"GUANGZHOU": {
+			"BEIJING": 20,
+			"SHANGHAI": 18,
+			"SHENZHEN": 32,
+			"KUNMING": 16,
+			"CHANGCUN": 3,
+		}
+	},
+	"清明": {
+		"BEIJING": {
+			"SHANGHAI": 4,
+			"GUANGZHOU": 3,
+			"SHENZHEN": 2,
+			"KUNMING": 6,
+			"CHANGCUN": 7,
+			"HUHEHAOTE": 4,
+		},
+		"SHANGHAI": {
+			"BEIJING": 3,
+			"GUANGZHOU": 8,
+			"SHENZHEN": 5,
+			"KUNMING": 3,
+			"CHANGCUN": 2,
+		},
+		"GUANGZHOU": {
+			"BEIJING": 2,
+			"SHANGHAI": 5,
+			"SHENZHEN": 8,
+			"KUNMING": 6,
+		}
+	},
+	"五一": {
+		"BEIJING": {
+			"SHANGHAI": 19,
+			"GUANGZHOU": 12,
+			"SHENZHEN": 9,
+			"KUNMING": 2,
+			"LASA": 1,
+			"CHANGCUN": 3,
+			"HUHEHAOTE": 5,
+		},
+		"SHANGHAI": {
+			"BEIJING": 20,
+			"GUANGZHOU": 18,
+			"SHENZHEN": 22,
+			"KUNMING": 6,
+			"LASA": 5,
+			"CHANGCUN": 13,
+			"HUHEHAOTE": 4,
+		},
+		"GUANGZHOU": {
+			"BEIJING": 10,
+			"GUANGZHOU": 18,
+			"SHENZHEN": 22,
+			"KUNMING": 16,
+			"CHANGCUN": 3,
+		}
+	},
+	"端午": {
+		"BEIJING": {
+			"SHANGHAI": 4,
+			"GUANGZHOU": 3,
+			"SHENZHEN": 2,
+			"KUNMING": 6,
+			"CHANGCUN": 7,
+			"HUHEHAOTE": 4,
+		},
+		"SHANGHAI": {
+			"BEIJING": 3,
+			"GUANGZHOU": 8,
+			"SHENZHEN": 5,
+			"KUNMING": 3,
+			"CHANGCUN": 2,
+		},
+		"GUANGZHOU": {
+			"BEIJING": 2,
+			"SHANGHAI": 5,
+			"SHENZHEN": 8,
+			"KUNMING": 6,
+		}
+	},
+};
+
+
+loadData('元旦');
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,508 @@
+@(title: String)
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>@title</title>
+	<script type="text/javascript" src=@routes.Assets.at("js/jquery.min.js")></script>
+	<script type="text/javascript" src=@routes.Assets.at("js/geo.js")></script>
+	<script type="text/javascript" src=@routes.Assets.at("js/gd.js")></script>
+	<script type="text/javascript" src=@routes.Assets.at("js/ani.js")></script>
+	<script type="text/javascript" src=@routes.Assets.at("js/map-painter.js")></script>
+        <link rel="stylesheet" href=@routes.Assets.at("css/cn_map.css")>
+        <link rel="stylesheet" href=@routes.Assets.at("css/main.css")>
+</head>
+<body>
+
+<div class="full">
+        <div class="header">
+                <div class="title">@title</div>
+	        <div class="logo">万达集团</div>
+        </div>
+
+	<div id="china-map"></div>
+	<div id="canvas-container">
+		<canvas id="cvs1" width="1200" height="1200"></canvas>
+		<canvas id="cvs2" width="1200" height="1200"></canvas>
+		<canvas id="cvs3" width="1200" height="1200"></canvas>
+	</div>
+	<menu class="button-bar">
+		<li data="plaza_top" class="active">广场</li>
+		<li data="city_top">城市</li>
+		<li data="province_top">省份</li>
+		<li data="region_top">区域</li>
+	</menu>
+	<div class="panel p1">
+		<div class="title">Top 5排行榜(/5分钟)</div>
+		<ul class="content">
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+		</ul>
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+var CITY = 'bj';
+var MN = 'plaza_top';
+var CITYNAME = '';
+var MAP = '/assets/json/china.json';
+var DATA = '/assets/json/td/holiday_coordinate_bj_m1.json';
+var DATA_ANI = [];
+
+var GLOBAL = {
+	"BASE_URL": '/assets/json/td/holiday_coordinate_',
+	"cities": {
+         	"bj": { lng: 116.3, lat: 39.9, name: "北京" },
+		"gz": { lng: 113.3, lat: 23.1, name: "广州" },
+		"sh": { lng: 121.4, lat: 31.2, name: "上海" },
+                "cd": { lng: 103.9, lat: 30.8, name: "成都" },
+               "langfang": { lng: 116.6778339005, lat: 39.5366777894, name: "" },
+               "cangzhou": { lng: 116.8329375167, lat: 38.3037279637, name: "" },
+               "jingmen": { lng: 112.1936153004, lat: 31.0376819947, name: "" },
+               "fushun": { lng: 123.9514529085, lat: 41.8775671778, name: "" },
+               "wuzhou": { lng: 111.2739976258, lat: 23.4796973001, name: "" },
+               "deyang": { lng: 104.3952146534, lat: 31.1289468432, name: "" },
+               "fuzhou1": { lng: 116.3530835814, lat: 27.9509941142, name: "" },
+               "zhaoqing": { lng: 112.4600060973, lat: 23.0495002021, name: "" },
+               "zhuanghe": { lng: 122.9609271859, lat: 39.6791471701, name: "" },
+               "yancheng": { lng: 120.1566574177, lat: 33.3509739619, name: "" },
+               "zaozhuang": { lng: 117.3160766756, lat: 34.8114371499, name: "" },
+               "xingtai": { lng: 114.4984914252, lat: 37.070078515, name: "" },
+               "ningbo": { lng: 121.5461101381, lat: 29.8764058277, name: "宁波" },
+               "panjin": { lng: 122.0652538276, lat: 41.1179505609, name: "" },
+               "shuozhou": { lng: 112.4249624174, lat: 39.3303927776, name: "" },
+               "huangshan": { lng: 118.3334189924, lat: 29.7176671895, name: "" },
+               "jixi": { lng: 130.9620545953, lat: 45.2931205606, name: "" },
+               "maanshan": { lng: 118.5008909626, lat: 31.6726382295, name: "" },
+               "anyang": { lng: 114.3869908146, lat: 36.0975852693, name: "" },
+               "maoming": { lng: 110.9207281073, lat: 21.6660585391, name: "" },
+               "jiaxing": { lng: 120.7511794145, lat: 30.7472793022, name: "" },
+               "huaian": { lng: 119.0104971085, lat: 33.6115679198, name: "" },
+               "nanjing": { lng: 118.7912686424, lat: 32.0604447958, name: "南京" },
+               "dongguan": { lng: 113.7466103637, lat: 23.0233804965, name: "东莞" },
+               "kaifeng": { lng: 114.3014663122, lat: 34.7981648276, name: "" },
+               "fuyang": { lng: 115.8095544105, lat: 32.8916120084, name: "阜阳" },
+               "fuzhou": { lng: 119.2916801622, lat: 26.0772956987, name: "福州" },
+               "yiwu": { lng: 120.069940139, lat: 29.3080645446, name: "" },
+               "tianjin": { lng: 117.193103841, lat: 39.0839696952, name: "" },
+               "zhongshan": { lng: 113.3871180108, lat: 22.5186182576, name: "" },
+               "yiyang": { lng: 112.3494496733, lat: 28.5570671521, name: "" },
+               "ningde": { lng: 119.5435930736, lat: 26.6691149972, name: "" },
+               "lanzhou": { lng: 103.831760499, lat: 36.0616639885, name: "" },
+               "jiangmen": { lng: 113.0761477965, lat: 22.5813872443, name: "" },
+               "yixing": { lng: 119.8186138959, lat: 31.3424820804, name: "" },
+               "jingzhou": { lng: 112.2349552605, lat: 30.337407333, name: "" },
+               "taizhou1": { lng: 119.9208036381, lat: 32.4576684761, name: "" },
+               "leshan": { lng: 103.7631610059, lat: 29.5550037112, name: "" },
+               "huhehaote": { lng: 111.7450352118, lat: 40.8401224107, name: "" },
+               "neijiang": { lng: 105.0552099712, lat: 29.5827124769, name: "" },
+               "jining": { lng: 116.5819409023, lat: 35.4150439391, name: "" },
+               "taian": { lng: 117.0823246166, lat: 36.1997308611, name: "" },
+               "guilin": { lng: 110.2854219038, lat: 25.2764868785, name: "桂林" },
+               "dalian": { lng: 121.6098132809, lat: 38.9129122467, name: "大连" },
+               "zhuhai": { lng: 113.571630851, lat: 22.2737283728, name: "" },
+               "zibo": { lng: 118.0487315123, lat: 36.8125585025, name: "" },
+               "hulunbeier": { lng: 119.7584775805, lat: 49.2096894451, name: "" },
+               "foshan": { lng: 113.1164384334, lat: 23.0243300777, name: "佛山" },
+               "xuancheng": { lng: 118.75355527, lat: 30.9428772884, name: "" },
+               "zhangzhou": { lng: 117.6424770471, lat: 24.5164240788, name: "" },
+               "chifeng": { lng: 118.8828176526, lat: 42.2565278432, name: "" },
+               "baotou": { lng: 109.8344744372, lat: 40.6567337291, name: "" },
+               "yichun": { lng: 114.4108033828, lat: 27.8175199305, name: "" },
+               "yongzhou": { lng: 111.606990452, lat: 26.4239588747, name: "" },
+               "liaoyang": { lng: 123.2316203776, lat: 41.266023, name: "" },
+               "qingyuan": { lng: 113.0506832813, lat: 23.6844685976, name: "" },
+               "luoyang": { lng: 112.4473260504, lat: 34.619169698, name: "" },
+               "mudanjiang": { lng: 129.6253322369, lat: 44.5508119608, name: "" },
+               "dazhou": { lng: 107.4632236703, lat: 31.210776931, name: "" },
+               "changzhou": { lng: 119.9689029619, lat: 31.8127450319, name: "常州" },
+               "xuzhou": { lng: 117.2800142205, lat: 34.2056855551, name: "徐州" },
+               "huangshi": { lng: 115.033532615, lat: 30.2018352395, name: "" },
+               "yueyang": { lng: 113.1232529813, lat: 29.3597101855, name: "" },
+               "taicang": { lng: 121.1251170665, lat: 31.4609227136, name: "" },
+               "baoshan": { lng: 99.1608885995, lat: 25.1148851564, name: "" },
+               "zhoushan": { lng: 122.2036121266, lat: 29.9877279699, name: "" },
+               "puning": { lng: 116.1610010109, lat: 23.2998304247, name: "" },
+               "anshan": { lng: 122.9891118242, lat: 41.1058577173, name: "" },
+               "shangrao": { lng: 117.9385935288, lat: 28.4580143448, name: "" },
+               "hefei": { lng: 117.2235334392, lat: 31.8225193827, name: "合肥" },
+               "jinjiang": { lng: 118.5474968601, lat: 24.7843857852, name: "" },
+               "huludao": { lng: 120.8317901848, lat: 40.709538702, name: "" },
+               "longyan": { lng: 117.0123717328, lat: 25.0777798257, name: "" },
+               "putian": { lng: 119.0029822608, lat: 25.4568545782, name: "" },
+               "ankang": { lng: 109.0244647624, lat: 32.6868638889, name: "" },
+               "dongying": { lng: 118.6690032763, lat: 37.4329715731, name: "" },
+               "changchun": { lng: 125.3170568527, lat: 43.8136066729, name: "长春" },
+               "yangzhou": { lng: 119.4071875549, lat: 32.3954852259, name: "" },
+               "anqing": { lng: 117.0580923086, lat: 30.5452118749, name: "" },
+               "xiangyang": { lng: 112.1164473347, lat: 32.0109937292, name: "" },
+               "haerbin": { lng: 126.529734686, lat: 45.8001578452, name: "哈尔滨" },
+               "jiamusi": { lng: 130.3127847403, lat: 46.7979913124, name: "" },
+               "ziyang": { lng: 104.6255694686, lat: 30.1315028807, name: "" },
+               "xiangxitujiazumiaozuzizhizhou": { lng: 109.7341895654, lat: 28.3151014659, name: "" },
+               "wuxi": { lng: 120.3077721161, lat: 31.4928483558, name: "无锡" },
+               "daqing": { lng: 125.0960219591, lat: 46.5854510332, name: "" },
+               "mianyang": { lng: 104.6769622416, lat: 31.4698186109, name: "" },
+               "shenzhen": { lng: 114.0544373601, lat: 22.5455537937, name: "" },
+               "haikou": { lng: 110.195578022, lat: 20.0463929412, name: "" },
+               "taiyuan": { lng: 112.5443790641, lat: 37.8700274671, name: "" },
+               "nanning": { lng: 108.3628356575, lat: 22.8194039942, name: "南宁" },
+               "yinchuan": { lng: 106.2280615534, lat: 38.4860050644, name: "银川" },
+               "dezhou": { lng: 116.3533997885, lat: 37.4345146242, name: "" },
+               "shiyan": { lng: 110.7926817959, lat: 32.6313014137, name: "" },
+               "zunyi": { lng: 106.92341799, lat: 27.7289651118, name: "" },
+               "tangshan": { lng: 118.1743221624, lat: 39.6290848309, name: "" },
+               "hebi": { lng: 114.2915302162, lat: 35.7470722505, name: "" },
+               "tongliao": { lng: 122.2391350837, lat: 43.6500832814, name: "" },
+               "suzhou1": { lng: 116.9585444984, lat: 33.6476821219, name: "苏州" },
+               "wuhan": { lng: 114.2998018195, lat: 30.5951668577, name: "武汉" },
+               "qingdao": { lng: 120.3778358118, lat: 36.0659879754, name: "青岛" },
+               "shaoyang": { lng: 111.462097958, lat: 27.2421381467, name: "" },
+               "hengyang": { lng: 112.5666955281, lat: 26.8968530319, name: "" },
+               "meishan": { lng: 103.846398194, lat: 30.0784763193, name: "" },
+               "suzhou": { lng: 120.5790059003, lat: 31.3005001173, name: "" },
+               "jiujiang": { lng: 115.9963827984, lat: 29.7079546407, name: "九江" },
+               "chongqing": { lng: 106.5470108308, lat: 29.567527745, name: "重庆" },
+               "zhuozhou": { lng: 115.9684076877, lat: 39.4842404237, name: "" },
+               "weinan": { lng: 109.5050255525, lat: 34.5012344256, name: "" },
+               "kunshan": { lng: 120.9774717064, lat: 31.3868146267, name: "" },
+               "yichang": { lng: 111.2807696288, lat: 30.6942871496, name: "" },
+               "wenzhou": { lng: 120.6953424539, lat: 27.9981231016, name: "温州" },
+               "quanzhou": { lng: 118.6713291593, lat: 24.8768083854, name: "" },
+               "jinan": { lng: 116.9891230772, lat: 36.6650501501, name: "" },
+               "wuhai": { lng: 106.7906862745, lat: 39.6528880613, name: "" },
+               "beihai": { lng: 109.1157642712, lat: 21.483558868, name: "" },
+               "huaihua": { lng: 109.9969207621, lat: 27.5729966095, name: "" },
+               "huizhou": { lng: 114.4118174806, lat: 23.1132284052, name: "" },
+               "liuzhou": { lng: 109.4109033457, lat: 24.3281259833, name: "柳州" },
+               "sanmenxia": { lng: 111.1943271407, lat: 34.7734897116, name: "" },
+               "yingkou": { lng: 122.2297228795, lat: 40.6652560934, name: "" },
+               "chenzhou": { lng: 113.0093547237, lat: 25.773590379, name: "" },
+               "wuhu": { lng: 118.4277422313, lat: 31.3542875173, name: "" },
+               "shenyang": { lng: 123.4262318695, lat: 41.8031430937, name: "沈阳" },
+               "dali": { lng: 100.2286519506, lat: 25.5946244744, name: "" },
+               "fuqing": { lng: 119.3792021488, lat: 25.7229638305, name: "" },
+               "jiangyou": { lng: 104.7218184409, lat: 31.7591425257, name: "" },
+               "zhuji": { lng: 120.2318614857, lat: 29.7161190705, name: "" },
+               "shijiazhuang": { lng: 114.5082932984, lat: 38.0421494681, name: "" },
+               "haozhou": { lng: 115.7737894178, lat: 33.8459562397, name: "" },
+               "baoding": { lng: 115.4582444667, lat: 38.873076118, name: "" },
+               "luan": { lng: 116.5181542455, lat: 31.7369484595, name: "" },
+               "zhanjiang": { lng: 110.3544550187, lat: 21.2736281758, name: "" },
+               "jiangyin": { lng: 120.28077614, lat: 31.9219989113, name: "" },
+               "weifang": { lng: 119.1558681161, lat: 36.7064274553, name: "" },
+               "zhengzhou": { lng: 113.6188780688, lat: 34.7484216297, name: "郑州" },
+               "hangzhou": { lng: 120.1504383337, lat: 30.2764554112, name: "" },
+               "guangyuan": { lng: 105.839853405, lat: 32.4378776745, name: "" },
+               "nantong": { lng: 120.8894937439, lat: 31.9817491593, name: "" },
+               "zhenjiang": { lng: 119.4195399076, lat: 32.1914676383, name: "" },
+               "huzhou": { lng: 120.0831617141, lat: 30.8951485113, name: "" },
+               "suining": { lng: 105.5893212565, lat: 30.5356418916, name: "" },
+               "shaoxing": { lng: 120.5761278967, lat: 30.0329000816, name: "绍兴" },
+               "tongling": { lng: 117.8069817928, lat: 30.9470854063, name: "" },
+               "zhuzhou": { lng: 113.1281296916, lat: 27.8307677605, name: "" },
+               "taizhou": { lng: 121.4161387076, lat: 28.6589925244, name: "" },
+               "siping": { lng: 124.3441110886, lat: 43.1639911214, name: "" },
+               "xiamen": { lng: 118.0844769942, lat: 24.4822103305, name: "厦门" },
+               "bengbu": { lng: 117.3834340596, lat: 32.9172955999, name: "" },
+               "xian": { lng: 108.9351962803, lat: 34.3427473471, name: "西安" },
+               "fenghua": { lng: 121.4023239083, lat: 29.6573627142, name: "" },
+               "fengcheng": { lng: 124.0601325188, lat: 40.4511483238, name: "" },
+               "qiqihaer": { lng: 123.9113983984, lat: 47.3522916734, name: "" },
+               "suihua": { lng: 126.9629541289, lat: 46.6506362443, name: "" },
+               "nanchang": { lng: 115.8530137077, lat: 28.6853146488, name: "南昌" },
+               "lianyungang": { lng: 119.2174148635, lat: 34.5977035299, name: "" },
+               "jinhua": { lng: 119.6428921308, lat: 29.0810834354, name: "" },
+               "yantai": { lng: 121.4427858653, lat: 37.4625213218, name: "烟台" },
+               "changsha": { lng: 112.9333762442, lat: 28.2313854791, name: "" },
+               "dandong": { lng: 124.3502446825, lat: 39.9982513294, name: "" },
+               "changde": { lng: 111.6929240795, lat: 29.0346532332, name: "" },
+               "kunming": { lng: 102.8317964747, lat: 24.8827282045, name: "" }
+	},
+	"maps": {
+		"china": "/assets/json/china.json",
+		"world": "../../json/world.json"
+	}
+};
+
+
+function drawPoint(ctx, p, arg){
+	// ctx.beginPath();
+	// ctx.moveTo(p.x, p.y);
+	// ctx.lineTo(p.x + 1, p.y);
+	// ctx.fillStyle = "#ffffff";
+	// ctx.lineWidth = 10;
+	// ctx.lineCap = 'round';
+	// ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(p.x, p.y, arg.radio, 0, Math.PI * 2);
+	ctx.fillStyle = arg.color;
+	ctx.fill();
+	// ctx.rect(100, 100, 200, 200);
+	// ctx.fillStyle = '#fff';
+	// ctx.fill();
+	// GD.drawPoint(ctx, p, '#fff', 10);
+	// GD.drawPoint(ctx, p, arg.color, arg.radio * 2)
+
+}
+function drawLines(ctx, path, arg, t){
+	t = typeof(t) == 'number' ? t : 1;
+	var i = 0;
+	ctx.beginPath();
+	ctx.moveTo(path[0].x, path[0].y);
+	for(var i = 1; i < path.length; i++){
+		ctx.lineTo(path[i].x, path[i].y);
+	}
+	ctx.lineWidth = arg.radio;
+	ctx.strokeStyle = arg.color;
+	ctx.stroke();
+}
+
+
+var painter = new MapPainter('#cvs1');
+var painter2 = new MapPainter('#cvs2');
+var painter3 = new MapPainter('#cvs3');
+
+var bgFresh = Ani.addBase(function(){
+	painter2.clear();
+	painter3.clear();
+	return -1;
+});
+
+var bgAni = false;
+
+var M_INDEX = 0;
+var MS = ['plaza_top', 'city_top', 'province_top', 'region_top'];
+var CITIES = ['bj', 'sh', 'gz', 'cd', 'langfang','cangzhou','jingmen','fushun','wuzhou','deyang','fuzhou1','zhaoqing','zhuanghe','yancheng','zaozhuang','xingtai','ningbo','panjin','shuozhou','huangshan','jixi','maanshan','anyang','maoming','jiaxing','huaian','nanjing','dongguan','kaifeng','fuyang','fuzhou','yiwu','tianjin','zhongshan','yiyang','ningde','lanzhou','jiangmen','yixing','jingzhou','taizhou1','leshan','huhehaote','neijiang','jining','taian','guilin','dalian','zhuhai','zibo','hulunbeier','foshan','xuancheng','zhangzhou','chifeng','baotou','yichun','yongzhou','liaoyang','qingyuan','luoyang','mudanjiang','dazhou','changzhou','xuzhou','huangshi','yueyang','taicang','baoshan','zhoushan','puning','anshan','shangrao','hefei','jinjiang','huludao','longyan','putian','ankang','dongying','changchun','yangzhou','anqing','xiangyang','haerbin','jiamusi','ziyang','xiangxitujiazumiaozuzizhizhou','wuxi','daqing','mianyang','shenzhen','haikou','taiyuan','nanning','yinchuan','dezhou','shiyan','zunyi','tangshan','hebi','tongliao','suzhou1','wuhan','qingdao','shaoyang','hengyang','meishan','suzhou','jiujiang','chongqing','zhuozhou','weinan','kunshan','yichang','wenzhou','quanzhou','jinan','wuhai','beihai','huaihua','huizhou','liuzhou','sanmenxia','yingkou','chenzhou','wuhu','shenyang','dali','fuqing','jiangyou','zhuji','shijiazhuang','haozhou','baoding','luan','zhanjiang','jiangyin','weifang','zhengzhou','hangzhou','guangyuan','nantong','zhenjiang','huzhou','suining','shaoxing','tongling','zhuzhou','taizhou','siping','xiamen','bengbu','xian','fenghua','fengcheng','qiqihaer','suihua','nanchang','lianyungang','jinhua','yantai','changsha','dandong','changde','kunming'];
+var CITY_INDEX = 0;
+
+function DrawAll(){
+
+	bgAni && bgAni.remove();
+
+	painter.clear();
+	painter.fitCanvas(10, 10, 10, 10);
+
+	$.getJSON(MAP, function(data){
+	
+		var f = data.features.filter(function(a, i){
+			return a.geometry;
+		});
+		painter.draw(f);
+		painter.clear();
+
+                //地图打点
+		var origin = painter.GetLonlatCoord(GLOBAL.cities[CITY]);
+		bgAni = Ani.add(function(dur, DUR){
+			var t = dur / DUR;
+			for(var p in GLOBAL.cities){
+				var P = painter.GetLonlatCoord(GLOBAL.cities[p]);
+				// tt debug painter3.drawPoint(P, 'rgba(255,130,0,1)', 10);	
+				// tt debug painter3.drawPoint(P, 'rgba(255,255,255,1)', 6);
+				// tt debug painter3.drawPoint(P, 'rgba(255,130,0,1)', 8);
+                                painter3.drawPoint(P, 'rgba(255,0,0,1)', 4);
+			        painter3.drawPoint(P, 'rgba(255,0,0,' + (1-t) + ')', 4 + Math.pow(t, 0.8) * 8);
+				//todo 地图字体大小调整
+				painter3.drawText(GLOBAL.cities[p].name, {
+					x: P.x + 13,
+					y: P.y + 4
+				}, '#fff', '16px MicrosoftYaHei');
+			}
+			// tt debug painter3.drawPoint(origin, 'rgba(255,0,0,1)', 10);
+			// tt debug painter3.drawPoint(origin, 'rgba(255,0,0,' + (1-t) + ')', 10 + Math.pow(t, 0.8) * 10);
+		        //tt debug painter3.drawPoint(origin, 'rgba(255,0,0,' + (1-t) + ')', 10 + Math.pow(t, 0.5) * 10);
+			//tt debug painter3.drawPoint(origin, 'rgba(255,80,0,' + (1-t) + ')', 10 + t * 20);
+			return -1;
+		}, 2000);
+
+		DrawData(origin);
+		
+	});
+}
+
+function DrawData(origin){
+
+	GD.util.E(DATA_ANI, function(ani){
+		ani.remove();
+	});
+	DATA_ANI = [];
+	$.getJSON(DATA, function(data){
+		var s = data.coordinates;
+		// s = s.filter(function(a){
+		// 	return a.distance < 5000;
+		// });
+		// s.sort(function(a, b){ return a.distance - b.distance; })
+		var arg = {
+			color: 'rgba(255,100,0,0.3)',
+			radio: 2
+		}, lineArg = {
+			color: 'rgba(255,255,255,0.3)',
+			radio: 1
+		}, pArg = {
+			color: 'rgba(255,255,255,0.1)',
+			radio: 2
+		}, bubbleArg = {
+			color: 'rgba(255,255,0,0.1)',
+			radio: 2
+		};
+		var D = 0;
+		var POINTS = [];
+		GD.util.E(s, function(S, i){
+			S.lng = parseFloat(S.lng);
+			S.lat = parseFloat(S.lat);
+			var p = painter.GetLonlatCoord(S);
+			p.distance = GD.distance(p, origin);
+			p.S = S;
+			POINTS.push(p);
+			// painter.DrawLonlat(S, drawPoint, arg);
+		});
+		POINTS.sort(function(a, b){
+			return a.distance - b.distance;
+		});
+		POINTS = POINTS.filter(function(a){
+			return a.y > 300;
+		});
+
+		// POINTS = POINTS.slice(0, 3000);
+		console.log(POINTS.length);
+		// console.log(POINTS)
+		// POINTS = POINTS.slice(0, 10)
+         
+                POINTS = POINTS.slice(-2,-1) //tt debug
+                var pLen = POINTS.length;
+		GD.util.E(POINTS, function(p, i){
+			var d = p.distance * 10;
+			var a = Ani.add(function(dur, DUR){
+				if(p.S){
+					//tt debug painter.DrawLonlat(p.S, drawPoint, arg);
+					p.S = false;
+				}
+				var t = dur / DUR;
+				var t2 = t * 2;
+				if(t2 > 1) t2 = 1 - t2;
+				var color = 'rgba(255,255,255,' + (Math.sin(t * Math.PI) * .3) + ')';
+				var color2 = 'rgba(255,255,255,' + (Math.sin(t * Math.PI) * 0.1) + ')';
+				//tt debug GD.CirclePathA(painter2.ctx, 30, origin, p, t2, color2, 1);
+				// GD.drawLine(painter2.ctx, origin, p, t2, color2, 1)
+				// tt debug GD.drawPoint(painter2.ctx, p, color, 2);
+				// return -1
+			}, 6000, function(){
+				if(i == POINTS.length - 1){
+					//if(CITY_INDEX < CITIES.length - 1){
+					//	CITY_INDEX += 1;
+					//	CITY = CITIES[CITY_INDEX];
+					//	Init(CITY, MN);
+					//	DrawAll();
+					// } else {
+						CITY_INDEX = 0;
+						CITY = CITIES[CITY_INDEX];
+						$('.button-bar li[data="'+MS[M_INDEX]+'"]').removeClass('active');
+						M_INDEX = (M_INDEX + 1) % MS.length;
+						$('.button-bar li[data="'+MS[M_INDEX]+'"]').addClass('active');
+						$('.p1 .title').html($('.button-bar li[data="'+MS[M_INDEX]+'"]').html());
+
+						Init(CITY, MS[M_INDEX]);
+						DrawAll();
+					//}
+					
+					// GD.util.E(DATA_ANI, function(ani){
+					// 	ani.restart();
+					// });
+				}
+			}, 1, 1);    //i*3, 1  =>   5, 1   tt debug
+			DATA_ANI.push(a);
+		}, pLen-1);
+	});
+}
+
+function Init(city, m){
+
+	CITY = city;
+	MN = m;
+   
+
+	console.log(MN)
+
+
+	var c = $('.menu dl[city="'+CITY+'"] > dt');
+
+	CITYNAME = $('.menu dl[city="'+CITY+'"] > dt').html();
+	DATA = GLOBAL.BASE_URL + 'bj' + '_' + 'm1' + '.json';
+
+	$('.menu dl[city="'+CITY+'"]').addClass('active');
+	$('.menu dl[city="'+CITY+'"] > dd[data="'+MN+'"]').addClass('active');
+	// $('.p1 .title').html($('.menu dl[city="'+CITY+'"] > dd[data="'+MN+'"]').html());
+	$.get('/query/topN_data',{id: MN}, function(data){
+		var sum = 0;
+                data = eval("("+data+")")
+		data.forEach(function(a){sum+=a.ratio})
+		data.sort(function(a, b){return b.ratio-a.ratio});
+		console.log(data)
+		//填充排行数据
+		$('.p1 li').each(function(i){
+			var li = $(this);
+			li.children('em').html(data[i].name);
+			li.children('div').children('h6').css({
+				width: Math.round(data[i].ratio/sum * 100) + '%'
+				, 'background-color': i < 3 ? '#ffae00' : '#2e77f1'
+			});
+		});
+	})
+
+	var city5 = COORD.slice(0, 5).sort(function(a, b){
+		return 0.5 - Math.random();
+	});
+
+	var data = [Math.random() * 0.4, Math.random() * 0.3, Math.random() * 0.2, Math.random() * 0.1];
+	var sum = 0;
+	data.forEach(function(a){ sum += a ;});
+	data.push(1 - sum);
+	data.sort(function(a, b){return b - a});
+
+
+	
+}
+
+
+var COORD = [
+	[839.7432024169184, 334.380664652568, "北京"],
+	[980.8912386706949, 545.1359516616315, "上海"],
+	[841.6767371601209, 740.4229607250755, "广州"],
+	[866.8126888217522, 357.58308157099697, "天津"],
+	[688.9274924471299, 591.5407854984894, "重庆"],
+	[634.7885196374622, 579.9395770392749, "成都"],
+	[814.6072507552869, 460.0604229607251, "郑州"],
+	[849.4108761329305, 361.4501510574018, "廊坊"],
+	[857.1450151057402, 748.1570996978852, "深圳"],
+	[955.7552870090634, 560.6042296072508, "杭州"],
+	[948.0211480362537, 533.5347432024168, "常州"],
+	[919.0181268882175, 525.8006042296072, "南京"],
+	[841.6767371601209, 750.0906344410876, "佛山"],
+	[839.7432024169184, 564.4712990936556, "武汉"]
+];
+
+// $('.button-bar li').click(function(e){
+// 	console.log(arguments);
+// 	$('.button-bar li').removeClass('active');
+// 	$('.p1 .title').html($(this).html());
+// 	var m = $(this).addClass('active').attr('data');
+// 	Init(CITY = CITIES[CITY_INDEX], m);
+// 	DrawAll();
+// });
+Init(CITY, MN);
+DrawAll();
+
+GD.fullFitDom('.full');
+
+
+</script>
+
+</body>
+</html>

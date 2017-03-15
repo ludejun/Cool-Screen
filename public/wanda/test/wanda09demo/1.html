@@ -1,0 +1,93 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>北京职住来源通勤图</title>
+
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/clock.css" />
+</head>
+<body>
+
+    <div id="map" class="map"></div>
+    <div class="aside">
+        <div class="aside_title">北京职住来源</div>
+        <div id="aside_list" class="aside_list">
+            <!--
+            <a class="current" href="javascript:void(0);" key=""><span>全市</span></a>
+            -->
+        </div>
+    </div>
+
+    <div class="loading">
+        加载中......
+    </div>
+    <div class="clockArea">
+    <div class="fill">
+      <div class="reference"></div>
+      <div class="clock" id="utility-clock">
+        <div class="centre">
+          <div class="dynamic"></div>
+          <div class="expand round circle-1"></div>
+          <div class="anchor hour">
+            <div class="element thin-hand"></div>
+            <div class="element fat-hand"></div>
+          </div>
+          <div class="anchor minute">
+            <div class="element thin-hand"></div>
+            <div class="element fat-hand minute-hand"></div>
+          </div>
+          <div class="anchor second">
+            <div class="element second-hand"></div>
+          </div>
+          <div class="expand round circle-2"></div>
+          <div class="expand round circle-3"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="tip" style="display:none;"></div>
+    <div id="dh-title"></div>
+    <div id="wanda-logo"></div>
+
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript">
+    function isMobile() {
+      var isMobile = {
+        Android: function() {
+          return navigator.userAgent.match(/Android/i) ? true : false;
+        },
+        BlackBerry: function() {
+          return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+        },
+        iOS: function() {
+          return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+        },
+        Windows: function() {
+          return navigator.userAgent.match(/IEMobile/i) ? true : false;
+        },
+        any: function() {
+          return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+        }
+      };
+      if (isMobile.any()) {
+        return true;
+      }
+      return false;
+    }
+    window.isMobile = isMobile;
+
+    </script>
+    <script type="text/javascript" src="js/MapMask.js"></script>
+    <script type="text/javascript" src="js/TrafficLayer.js"></script>
+    <script type="text/javascript" src="js/clock.js"></script>
+    <script type="text/javascript" src="js/main.js?v=1"></script>
+    
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>墨卡托算法测试</title>
+<script type="text/javascript" src="../jquery/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../js/geo.js"></script>
+<script type="text/javascript" src="../js/map-painter.js"></script>
+<script type="text/javascript" src="../js/ani.js"></script>
+<script type="text/javascript" src="../js/gd.js"></script>
+<style type="text/css">
+body{
+	background-color: #000;
+}
+canvas{
+	/*background-color: rgba(0,0,0,0.5);*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+#cvs1{
+	opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<canvas id="cvs1" width="1200" height="900"></canvas>
+<canvas id="cvs2" width="1200" height="900"></canvas>
+
+<script type="text/javascript">
+
+var cities = {
+	"BEIJING": { lng: 116.3, lat: 39.9 }
+};
+
+function drawPoint(ctx, p, arg){
+	ctx.beginPath();
+	ctx.arc(p.x, p.y, arg.radio, 0, Math.PI * 2);
+	ctx.fillStyle = arg.color;
+	ctx.fill();
+}
+function drawLines(ctx, path, arg, t){
+	t = typeof(t) == 'number' ? t : 1;
+	var i = 0;
+	ctx.beginPath();
+	ctx.moveTo(path[0].x, path[0].y);
+	for(var i = 1; i < path.length; i++){
+		ctx.lineTo(path[i].x, path[i].y);
+	}
+	ctx.lineWidth = arg.radio;
+	ctx.strokeStyle = arg.color;
+	ctx.stroke();
+}
+
+$.getJSON('china.json', function(data){
+	var painter = new MapPainter('#cvs1').fitCanvas(100, 100, 100, 100);
+	var painter2 = new MapPainter('#cvs2');
+	// painter2.ctx.globalCompositeOperation = "destination-in";
+
+	painter.draw(data.features);
+
+	var ctx = painter.canvas.getContext('2d');
+	var origin = painter.GetLonlatCoord(cities['BEIJING']);
+
+	$.getJSON('../holiday_coordinate_bj_m1.json', function(data){
+		painter.DrawLonlat(cities.BEIJING, drawPoint, {
+			color: '#fa0',
+			radio: 5
+		});
+		var s = data.coordinates;
+		var arg = {
+			color: 'rgba(255,255,0,0.3)',
+			radio: 3
+		}, lineArg = {
+			color: 'rgba(255,255,0,0.03)',
+			radio: 1
+		};
+		for(var i = 0; i < s.length; i++){
+			s[i].lng = parseFloat(s[i].lng);
+			s[i].lat = parseFloat(s[i].lat);
+			(function(I){
+				setTimeout(function(){
+					Ani.add(function(dur){
+						GD.drawLine(painter2.ctx, origin, painter.GetLonlatCoord(s[I]), dur / DUR, 'rgba(255,255,0,0.1)', 1);
+						return -1;
+					}, DUR);
+				}, 5 * I);
+			})(i)
+			painter.DrawLonlat(s[i], drawPoint, arg);
+		}
+
+		// var imgData = painter.ctx.getImageData(0, 0, painter.canvas.width, painter.canvas.height);
+		// Ani.add(function(dur){
+
+		// 	painter2.ctx.putImageData(imgData, 0, 0);
+
+		// 	var r = painter2.canvas.width * dur / DUR;
+		// 	painter2.ctx.beginPath();
+		// 	painter2.ctx.arc(origin.x, origin.y, r, 0, Math.PI * 2);
+		// 	painter2.ctx.lineWidth = 100;
+		// 	painter2.ctx.fillStyle = '#fff';
+		// 	painter2.ctx.fill();
+		// 	return -1;
+		// }, DUR);
+	});
+
+
+	var bgFresh = Ani.addBase(function(){
+		painter2.ctx.clearRect(0, 0, painter2.canvas.width, painter2.canvas.height);
+		return -1;
+	});
+
+	var DUR = 2000;
+	
+});
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

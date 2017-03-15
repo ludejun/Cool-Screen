@@ -1,0 +1,123 @@
+.bg {
+    background-image: url(../img/bg.jpg);
+}
+.legend {
+    overflow: hidden;
+    margin-bottom: 117px;
+}
+.legend-item {
+    overflow: hidden;
+    padding: 10px;
+    float: left;
+}
+.legend-item .legend-bar{
+    display: block;
+    width: 16px;
+    height: 112px;
+    float: left;
+    margin-right: 40px;
+}
+.legend-item h2 {
+    font-family: FZLanTingHei-R-GBK;
+    font-size: 3.6rem;
+    color: #fff;
+    margin: 4px;
+    font-weight: normal;
+}
+.legend-item p {
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 6rem;
+    color: #fff;
+    margin: 10px 0 0 0;
+}
+.legend-item .legend-bar-orange {
+    border: 4px solid #ffae00;
+    background: rgba(255, 174, 0, 0.7);
+    box-shadow: 0 0 10px #ffae00;
+}
+.legend-item .legend-bar-new {
+    border: 4px solid #45e630;
+    background: rgba(69, 230, 48, 0.7);
+}
+.legend-item .legend-bar-old {
+    border: 4px solid #0084ff;
+    background: rgba(0, 132, 255, 0.7);
+}
+.area-container {
+    position: relative;
+}
+.light-bar-h {
+    display: block;
+    width: 92px;
+    height: 2px;
+    background: url(../img/light-bar-h.png);
+    position: absolute;
+    top: 0;
+}
+.light-bar-v {
+    display: block;
+    width: 2px;
+    height: 92px;
+    background: url(../img/light-bar-v.png);
+    position: absolute;
+}
+.spline-bottom {
+    display: block;
+    height: 4px;
+    width: 0;
+    background: #45e630;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 35;
+    transition: width 0.5s;
+}
+.spline-bottom > span {
+    /*display: block;*/
+    height: 100%;
+    width: 138px;
+    position: absolute;
+    right: -138px;
+    background: url(../img/green-gradient.png);
+}
+.spline-left-new {
+    display: block;
+    width: 4px;
+    height: 0;
+    background: #45e630;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 35;
+    transition: height 0.5s;
+}
+.spline-left-old {
+    display: block;
+    width: 4px;
+    height: 0;
+    background: #0084ff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 34;
+    transition: height 0.5s;
+}
+.mark {
+    display: block;
+    height: 100%;
+    width: 10%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 4px solid #ffae00;
+    background: rgba(255, 174, 0, 0.5);
+    box-shadow: 0 0 50px #ffae00;
+    z-index: 40;
+    position: absolute;
+    left: 40%;
+}
+.decrator {
+    display: none;
+    transition: display 1s;
+}

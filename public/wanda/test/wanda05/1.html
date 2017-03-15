@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>02</title>
+<script type="text/javascript" src="../../jquery/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/mt.js"></script>
+<script type="text/javascript" src="../../js/ani.js"></script>
+<script type="text/javascript" src="../../js/gd.js"></script>
+<!-- <script type="text/javascript" src="../../js/geo.js"></script> -->
+
+<style type="text/css">
+
+body{
+	/*overflow: hidden;*/
+}
+canvas{
+	position: absolute;
+	left: 535px;
+	top: 120px;
+	background-color: rgba(0,0,0,0.5);
+}
+.full{
+	position: absolute;
+	left: 0px;
+	/*right: 0px;*/
+	top: 0px;
+	/*bottom: 0px;*/
+	width: 1920px;
+	height: 1080px;
+	background-image: url(image/bg2.jpg);
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+#data{
+	width: 380px;
+	height: 764px;
+	background: transparent url(image/data.png) left top no-repeat;
+	position: absolute;
+	left: 80px;
+	top: 180px;
+}
+</style>
+</head>
+<body>
+
+<div class="full">
+	<canvas width="1200" height="900"></canvas>
+	<div id="data"></div>
+</div>
+
+
+<script type="text/javascript">
+
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+
+// ctx.translate(canvas.width * 0.5, canvas.height * 0.5);
+
+var ZOOM = 1 / 28;
+
+// ctx.fillStyle = '#fff';
+// ctx.arc(0, 0, 100, 0, Math.PI * 2);
+// ctx.fill();
+// GD.translateCenterCanvas(ctx);
+
+
+function drawOne(ctx, p, res){
+
+	var DUR = 10000;
+	var SIZE = 3;
+	var TAIL = 10;
+	var SPLIT = 0.5
+	// var COLOR = 'rgba(100,200,255,0.5)';
+	var COLOR = 'rgba(100,200,255,';
+
+	var sign = [1, -1];
+	var c = 0;
+	var tail = [];
+
+	var ani = Ani.add(function(dur){
+
+		var t = dur / DUR / SPLIT;
+		var aOffset = Math.PI * 0.5;
+		if(t > 1){
+			t = 2 - t;
+			aOffset = Math.PI * -0.5;
+		}
+		// t = Math.max(0.0001, Math.min(1, t));
+		
+		// var t = Math.pow(dur / DUR, 0.7);
+		var op = 0.5;
+		// if(t >= 1 && sign[c] < 0){
+		// 	op = op * Math.pow(1 - (dur - DUR * SPLIT) / (DUR * (1 - SPLIT)), 4);
+		// 	op = Math.max(0, op);
+		// }
+
+		// t = t * sign[c];
+
+		var color = COLOR + op + ')';
+
+
+		var cur = GD.circlePoint(p[0], p[1], t);
+		tail.unshift(cur);
+		while(tail.length > TAIL){
+			tail.pop();
+		}
+
+		
+
+		// var tang1 = { x: 10 * Math.cos(cur.tangent) + cur.x, y: 10 * Math.sin(cur.tangent) + cur.y };
+		// var tang2 = { x: 10 * Math.cos(cur.tangent + Math.PI) + cur.x, y: 10 * Math.sin(cur.tangent + Math.PI) + cur.y };
+
+		// GD.drawLine(ctx, [tang2, tang1], '#fff', 2.2);
+		GD.circlePath(ctx, p[0], p[1], 1, color, 1);
+		MT.EACH(tail, function(pc, i, arr){
+			ctx.beginPath();
+			ctx.arc(pc.x, pc.y, SIZE * ((arr.length - i) / arr.length), 0, Math.PI * 2);
+			ctx.closePath();
+
+			GD.fill(ctx, color);
+		});
+
+		ctx.save();
+		ctx.translate(cur.x, cur.y);
+		ctx.rotate(cur.tangent + aOffset);
+
+		ctx.drawImage(res.plane
+			, 0, 0, res.plane.width, res.plane.height
+			, -7, -7, 14, 14
+			);
+
+		ctx.restore();
+
+
+	}, DUR, function(){
+		// c = (c + 1) % 2;
+		ani.restart();
+	})
+}
+
+// var bgFresh = Ani.addBase(function(){
+// 	ctx.clearRect(-ctx.canvas.width, -ctx.canvas.height, ctx.canvas.width * 3, ctx.canvas.height * 3);
+// 	return -1;
+// });
+
+$.loadImage = function(src, fn){
+	return $('<img>').one('load', function(e){
+		typeof(fn) == 'function' && fn(this);
+	}).attr('src', src);
+};
+
+$.loadImages = function(arr, fn){
+
+	if(arr instanceof Array){
+		var c = arr.length, r = [];
+		for(var i = 0; i < arr.length; i++){
+			$.loadImage(arr[i], function(img){
+				r.push(img);
+				if(--c <= 0){
+					typeof(fn) == 'function' && fn(r);
+				}
+			});
+		}
+	} else if (arr instanceof Object){
+		var keys = Object.keys(arr), c = keys.length, r = {};
+		for(var i = 0; i < keys.length; i++){
+			(function(key){
+				$.loadImage(arr[key], function(img){
+					r[key] = img;
+					if(--c <= 0){
+						typeof(fn) == 'function' && fn(r);
+					}
+				});
+			})(keys[i]);
+		}
+	}
+};
+
+function eachData(data, fn){
+	MT.EACH(data, function(v){
+		fn(v[0]);
+		fn(v[1]);
+	});
+};
+
+var COORD = {
+	"BEIJING": [825.3666540158112, 325.2428964252979],
+	"SHANGHAI": [953.8359482412924, 552.2639780018332],
+	"GUANGZHOU": [830.6462140524748, 737.0485792850595],
+	"SHENZHEN": [756.7323735391842, 761.6865261228231],
+	"KUNMING": [561.3886521826306, 687.7726856095326],
+	"LASA": [357.2456640983043, 552.2639780018332],
+	"CHANGCUN": [1003.1118419168195, 240.7699358386801],
+	"HUHEHAOTE": [710.9761865547663, 319.9633363886343]
+};
+
+var DATA = {
+	"BEIJING": {
+		"SHANGHAI": 24,
+		"GUANGZHOU": 18,
+		"SHENZHEN": 12,
+		"KUNMING": 6,
+		"LASA": 5,
+		"CHANGCUN": 3,
+		"HUHEHAOTE": 1,
+	},
+};
+
+// $.loadImages({
+	// 	'plane': 'image/plane.png'
+	// }, function(res){
+
+	// 	$.get('data/zgc.txt', function(txt){
+	// 	// $.get('data/test-json.txt', function(txt){
+	// 		var D = JSON.parse(txt);
+
+	// 		var data = {};
+	// 		MT.EACH(D, function(d){
+	// 			if(!(d.tdid in data)){
+	// 				data[d.tdid] = [];
+	// 			}
+	// 			data[d.tdid].push({
+	// 				x: d.x, y: d.y
+	// 			});
+	// 		});
+
+	// 		var keys = Object.keys(data);
+	// 		var count = keys.length;
+
+	// 		var ks = keys.filter(function(a){
+	// 			// console.log(data[a])
+	// 			return data[a].length > 1 && GD.distance(data[a][0], data[a][1]) >= 3000;
+	// 		});
+	// 		var len = ks.length;
+
+
+	// 		var DATA = ks.map(function(a){
+	// 			return data[a];
+	// 		});
+
+
+
+	// 		var area = GD.dataRect(DATA, eachData);
+
+	// 		// console.log(DATA)
+
+	// 		// eachData(DATA, function(p){
+	// 		// 	p.x = p.x - area.center;
+	// 		// 	p.y = p.y - area.middle;
+	// 		// });
+
+	// 		// var data = JSON.parse(txt);
+	// 		// data = data.map(function(a){
+	// 		// 	return geo(a[0], a[1]);
+	// 		// });
+
+	// 		// var DATA = [];
+	// 		// data.forEach(function(a, i){
+	// 		// 	DATA.push([data[0], a]);
+	// 		// });
+	// 		// DATA.shift();
+
+	// 		MT.EACH(DATA, function(p, i){
+	// 			console.log(p)
+	// 			p = GD.zoom(p, ZOOM);
+	// 			drawOne(ctx, p, res);
+	// 			return i >= 6;
+
+	// 		});
+	// 	});
+	// });
+
+GD.fullFitDom('.full');
+
+$(document).on('click', function(e){
+	var offset = $('canvas').offset();
+	var x = (e.clientX - offset.left) / GD.FIT_SCALE;
+	var y = (e.clientY - offset.top) / GD.FIT_SCALE;
+
+	var p = { x: x, y: y };
+
+	GD.drawPoint(ctx, p, '#fff');
+
+	console.log([x, y]);
+});
+
+// var A1 = Math.PI / 180;
+
+// function geo(lat, lon){
+// 	return {
+// 		x: 6371 * Math.cos(lat * A1) * Math.cos(lon * A1),
+// 		y: 6371 * Math.cos(lat * A1) * Math.sin(lon * A1)
+// 	}
+// }
+
+// $.get('data/test-json.txt', function(txt){
+// 	var data = JSON.parse(txt);
+// 	data = data.map(function(a){
+// 		return geo(a[0], a[1]);
+// 	});
+
+// 	data.forEach(function(a, i){
+// 		data[i] = [data[0], a];
+// 	});
+// 	data.shift();
+
+// })
+
+</script>
+
+
+</body>
+</html>

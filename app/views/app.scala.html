@@ -1,0 +1,132 @@
+@(title: String)
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@{title}</title>
+    <link rel="stylesheet" href=@routes.Assets.at("css/main.css")>
+    <link rel="stylesheet" href=@routes.Assets.at("css/app.css")>
+</head>
+<body class="bg">
+<div class="container">
+    <div class="header">
+        <div class="title">@{title}</div>
+        <div class="logo">万达大数据</div>
+    </div>
+
+    <div class="list-container">
+        <div class="app-list">
+            <div class="app-header">
+                <h2>金融</h2>
+                <img src=@routes.Assets.at("img/app_image/jinrong.png") alt=" ">
+            </div>
+            <div class="app-body" id="app-jinrong">
+
+            </div>
+        </div>
+        <div class="app-list">
+            <div class="app-header">
+                <h2>母婴</h2>
+                <img src=@routes.Assets.at("img/app_image/muying.png") alt=" ">
+            </div>
+            <div class="app-body" id="app-muying">
+
+            </div>
+        </div>
+        <div class="app-list">
+            <div class="app-header">
+                <h2>旅行</h2>
+                <img src=@routes.Assets.at("img/app_image/lvxing.png") alt=" ">
+            </div>
+            <div class="app-body" id="app-lvxing">
+
+            </div>
+        </div>
+        <div class="app-list">
+            <div class="app-header">
+                <h2>社交</h2>
+                <img src=@routes.Assets.at("img/app_image/shejiao.png") alt=" ">
+            </div>
+            <div class="app-body" id="app-shejiao">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="scan-bar"></div>
+
+</div>
+
+<script src=@routes.Assets.at("js/jquery.min.js")></script>
+<script src=@routes.Assets.at("js/highcharts.js")></script>
+<script>
+    function zoom() {
+        var width = $(window).width();
+        var height = $(window).height();
+        if (height > width) {
+            $('html').css({zoom: width / 1080});
+            $('html').height(1080);
+            $('html').css({top: '-1080px'});
+        } else {
+            $('html').css({zoom: width / 1920});
+        }
+    }
+
+    $(function(){
+        zoom();
+        window.onresize = function() {
+            zoom();
+        };
+
+        loadData();
+        setInterval(function(){
+            loadData();
+        }, 1000 * 60 * 10);
+
+        function loadData() {
+            $.get('/assets/json/td/app_top.json', function(data){
+                drawApp(data);
+            });
+        }
+
+        function drawApp(data){
+            for (var i = 0; i < data.length; i++) {
+                var top = data[i].top;
+                data[i].max = 0;
+                for (var j = 0; j < top.length; j++) {
+                    if (top[j].install_num > data[i].max) {
+                        data[i].max = top[j].install_num;
+                    }
+                }
+            }
+            for (var i = 0; i < data.length; i++) {
+                var top = data[i].top;
+                var id = '';
+                if (data[i].type == '金融') {
+                    id = '#app-jinrong';
+                } else if (data[i].type == '母婴') {
+                    id = '#app-muying';
+                } else if (data[i].type == '旅行') {
+                    id = '#app-lvxing';
+                } else {
+                    id = '#app-shejiao';
+                }
+
+                var html = '<ul>';
+                for (var j = 0; j < top.length; j++) {
+                    var bar = '';
+                    if (j < 3) {
+                        bar = 'bar-' + (j+1)
+                    }
+                    html += '<li><img src=@routes.Assets.at("img/td/icon/")'+top[j].icon+'><p>'+top[j].name+
+                            '<span class="bar '+bar+'" style="width:'+top[j].install_num / data[i].max * 0.9 * 100+'%;"></span></p></li>'
+                }
+                html += '</ul>';
+                $(id).html(html);
+            }
+        }
+    });
+</script>
+</body>
+</html>

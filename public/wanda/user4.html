@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>大数据现场实时统计</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/user4.css">
+</head>
+<body class="bg">
+<div class="container">
+    <div class="header">
+        <div class="title title-lg">大数据现场实时统计</div>
+        <div class="logo">万达商业年会</div>
+    </div>
+    <h1 class="title" style="margin-left: 15px;">您想了解现场人群的消费和收入水平吗？</h1>
+
+    <img src="./img/user4-title.png" alt=" " style="position: absolute;left: 502px; top: 301px;">
+    <img src="./img/fudao-2.png" alt=" " class="fudao-1">
+    <img src="./img/fudao-2.png" alt=" " class="fudao-2">
+
+    <div id="pie-1" class="pie"></div>
+    <div id="pie-2" class="pie"></div>
+    <div id="pie-3" class="pie"></div>
+    <div id="pie-4" class="pie"></div>
+    <div id="pie-5" class="pie"></div>
+    <div id="pie-6" class="pie"></div>
+
+    <div>
+        <div class="user"></div>
+    </div>
+
+    <div class="scan-bar"></div>
+</div>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/highcharts.js"></script>
+<script src="./js/main.js"></script>
+
+<script>
+    function zoom() {
+        var width = $(window).width();
+        var height = $(window).height();
+        if (height > width) {
+            $('html').css({zoom: width / 1080});
+            $('html').height(1080);
+            $('html').css({top: '-1080px'});
+        } else {
+            $('html').css({zoom: width / 1920});
+        }
+    }
+    $(function(){
+        zoom();
+        window.onresize = function() {
+            zoom();
+        };
+
+        loadSpend();
+        loadIncome();
+        setInterval(function(){
+            loadSpend();
+            loadIncome();
+        }, 1000 * 60 * 10);
+
+        function loadSpend() {
+            $.get('./json/td/spend_'+getId()+'.json', function(data){
+                for (var i = 0; i < data.length; i++) {
+                    pie('#pie-' + (i+1), data[i].ratio, data[i].spend);
+                }
+            }, 'json');
+        }
+
+        function loadIncome() {
+            $.get('./json/td/income_'+getId()+'.json', function(data){
+                for (var i = 0; i < data.length; i++) {
+                    pie('#pie-' + (i+4), data[i].ratio, data[i].income);
+                }
+            }, 'json');
+        }
+
+        function pie(id, percent, title) {
+            $(id).highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    height: 324,
+                    width: 324,
+                    backgroundColor: 'transparent',
+                    spacing: [0, 0, 0, 0]
+                },
+                title: {
+                    text: ''
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                subtitle: {
+                    useHTML: true,
+                    text: '<span class="pie-bg"><span class="percent">'+percent+'<small> %</small></span><br><span class="title">'+title+'</span></span>'
+
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    colors: ['#ffc50e', 'rgba(255, 255, 255, 0)'],
+                    size: '77%',
+                    innerSize: '90%',
+                    data: [
+                        ['use',   percent],
+                        ['other', 100 - percent]
+                    ]
+                }]
+            });
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>02</title>
+<script type="text/javascript" src="../../jquery/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../../js/mt.js"></script>
+<script type="text/javascript" src="../../js/ani.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<style type="text/css">
+
+body{
+	background-color: #333;
+}
+canvas{
+	background-color: #000;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<canvas width="1200" height="600"></canvas>
+
+<script type="text/javascript">
+
+
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+
+var points = [
+	{ x: 100, y: 200 },
+	{ x: 200, y: 350 },
+	{ x: 350, y: 80 },
+	{ x: 450, y: 140 },
+	{ x: 550, y: 100 },
+	{ x: 690, y: 200 }
+];
+
+function getCenterPoint(p0, p1){
+	return {
+		x: p0.x + (p1.x - p0.x) * .5,
+		y: p0.y + (p1.y - p0.y) * .5
+	}
+}
+
+function getCenterPoints(points){
+	var ps = [];
+	for(var i = 1; i < points.length; i++){
+		ps.push(getCenterPoint(points[i - 1], points[i]));
+	}
+	ps.push(getCenterPoint(points[points.length - 1], points[0]));
+	return ps;
+}
+
+function getCvPoint(points){
+	var cps = getCenterPoints(points);
+	var cs = [];
+	for(var i = 1; i < points.length; i++){
+		var cp = getCenterPoint(cps[i - 1], cps[i]);
+		var x = points[i].x - cp.x;
+		var y = points[i].y - cp.y;
+		cs.push([
+			{ x: cps[i - 1].x + x, y: cps[i - 1].y + y },
+			{ x: cps[i].x + x, y: cps[i].y + y }
+		]);
+	}
+	var cp = getCenterPoint(cps[cps.length - 1], cps[0]);
+	var x = points[0].x - cp.x;
+	var y = points[0].y - cp.y;
+	cs.push([
+		{ x: cps[cps.length - 1].x + x, y: cps[cps.length - 1].y + y },
+		{ x: cps[0].x + x, y: cps[0].y + y }
+	]);
+
+	var cvs = [
+		[points[0], points[0], cs[0][0], points[1]]
+		// [points[0], cs[cs.length - 1][1], cs[0][0], points[1]]
+	];
+	for(var i = 1; i < points.length - 1; i++){
+		cvs.push([points[i], cs[i - 1][1], cs[i][0], points[i + 1]])
+	}
+	cvs[cvs.length - 1][2] = points[points.length - 1];
+
+	MT.EACH(cvs, function(cv){
+		ctx.beginPath();
+		ctx.moveTo(cv[0].x, cv[0].y);
+		ctx.bezierCurveTo(cv[1].x, cv[1].y, cv[2].x, cv[2].y, cv[3].x, cv[3].y);
+		ctx.strokeStyle = '#ff0';
+		ctx.stroke();
+	});
+
+	return cvs;
+}
+
+
+function drawLines(ctx, arr){
+	ctx.beginPath();
+	ctx.moveTo(arr[0].x, arr[0].y);
+	for(var i = 1; i < arr.length; i++){
+		ctx.lineTo(arr[i].x, arr[i].y);
+	}
+	// ctx.closePath();
+	ctx.lineWidth = 2;
+	ctx.strokeStyle = '#fff';
+	ctx.stroke();
+}
+
+drawLines(ctx, points);
+// drawLines(ctx, getCenterPoints(points));
+getCvPoint(points);
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+// drawLines(ctx, points = getCvPoint(points));
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+@(title: String)
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>@{title}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Blue Moon - Responsive Admin Dashboard" />
+    <meta name="keywords" content="Notifications, Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap, bootstrap.gallery" />
+    <meta name="author" content="Bootstrap Gallery" />
+    <link rel="shortcut icon" href=@routes.Assets.at("high_cust/img/favicon.ico")>
+    
+    <link href=@routes.Assets.at("high_cust/css/bootstrap.min.css") rel="stylesheet">
+    <link href=@routes.Assets.at("high_cust/css/new.css") rel="stylesheet"> 
+    <link href=@routes.Assets.at("high_cust/css/charts-graphs.css") rel="stylesheet">
+    <link href=@routes.Assets.at("high_cust/fonts/font-awesome.min.css") rel="stylesheet">
+
+    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src=@routes.Assets.at("high_cust/js/html5shiv.js")></script>
+      <script src=@routes.Assets.at("high_cust/js/respond.min.js")></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Main Container start -->
+        <div class="dashboard-wrapper">
+        <div class="wd_header">
+          <div class="title title-lg">@{title}</div>
+          <div class="logo">万达大数据</div>
+        </div>
+        <!-- Dashboard Wrapper Start -->
+          
+          <!-- Left Sidebar Start -->
+          <!--div class="left-sidebar"-->
+          <div style="text-align:center;margin-left:6%;margin-right:6%;margin-top:5%">
+
+            <!-- Row Start -->
+            <!--div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Vertical Chart
+                    </div>
+                    <span class="tools">
+                      <i class="fa fa-cogs"></i>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <div id="flot-placeholder" class="chart-height"></div>
+                  </div>
+                </div>
+              </div>
+            </div-->
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row" style="margin:0 auto">
+              <div class="col-lg-6 col-md-6">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      工作日客户价值比例时分图
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="stacked-vertical-chart" class="chart-height"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      周末客户价值比例时分图
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="stacked-vertical-chart_weekend" class="chart-height"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-4 col-md-4">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      优选客户手机品牌偏好
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="rectangular-pie" class="chart-height"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      WiFi客群爱好
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="scatter-chart" class="chart-height"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      优选客户支付宝使用时分图
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="line-chart" class="chart-height"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+          </div>
+          <!-- Right Sidebar End -->
+        </div>
+        <!-- Dashboard Wrapper End -->
+
+        <!--footer>
+          <p>© BlueMoon 2013-14</p>
+        </footer-->
+
+      <!--/div-->
+    <!--/div-->
+    <!-- Main Container end -->
+
+    <script src=@routes.Assets.at("high_cust/js/jquery.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/bootstrap.min.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/jquery.scrollUp.js")></script>
+  
+    
+    <!-- Sparkline JS -->
+    <script src=@routes.Assets.at("high_cust/js/sparkline.js")></script>
+    
+    <!-- Tiny Scrollbar JS -->
+    <script src=@routes.Assets.at("high_cust/js/tiny-scrollbar.js")></script>
+    
+    <!-- Flot Charts -->
+    <script src=@routes.Assets.at("high_cust/js/flot/jquery.flot.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/jquery.flot.orderBar.min.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/jquery.flot.pie.min.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/jquery.flot.stack.min.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/jquery.flot.tooltip.min.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/jquery.flot.resize.min.js")></script>
+
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/line.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/area.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/stacked-area.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/vertical.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/horizontal.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/stacked-vertical.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/stacked-vertical_weekend.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/stacked-horizontal.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/rectangular-pie.js")></script>
+    <!--script src=@routes.Assets.at("high_cust/js/flot/custom/realtime.js")></script-->
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/pie.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/donut.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/flot/custom/scatter.js")></script>
+
+    <!-- Custom JS -->
+    <!--script src="js/menu.js"></script>
+    
+    <script type="text/javascript">
+      //ScrollUp
+      $(function () {
+        $.scrollUp({
+          scrollName: 'scrollUp', // Element ID
+          topDistance: '300', // Distance from top before showing element (px)
+          topSpeed: 300, // Speed back to top (ms)
+          animation: 'fade', // Fade, slide, none
+          animationInSpeed: 400, // Animation in speed (ms)
+          animationOutSpeed: 400, // Animation out speed (ms)
+          scrollText: 'Top', // Text for element
+          activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+        });
+      });
+
+      //Tooltip
+      $('a').tooltip('hide');
+      $('i').tooltip('hide');
+
+      //Tiny Scrollbar
+      $('#scrollbar').tinyscrollbar();
+      
+      $('#scrollbar-two').tinyscrollbar();
+
+    </script-->
+
+  </body>
+</html>

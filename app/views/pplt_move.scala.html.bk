@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>广场客群动态</title>
+        <!--script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script-->
+        <style>
+            .container {
+                background-image: linear-gradient(42deg, #9140EE 0%, #47197C 60%, #3C2989 100%);
+                left: 0px;
+                top:  8px;
+                width: 1920px;
+                height: 1080px;
+                opacity: 1;
+                overflow:hidden;
+                zoom:1;
+                position:absolute;
+            }
+            .header {
+                left: 0px;
+                top:  0px;
+                height: 120px;
+                width: 1920px;
+                opacity: 1;
+                position:absolute;
+                background-image: linear-gradient(-1deg, invalid gradient);
+            }
+
+            .header  .txt {
+                left: 1716px;
+                top: 38px;
+                width: auto;
+                height: 45px;
+                margin-right: 24px;
+                margin-top: 24px;
+                margin-bottom: 37px;
+                background-image: linear-gradient(-1deg, invalid gradient);
+            }
+            .header  .logo {
+                left: 71px;
+                top: 33;
+                width: auto;
+                height: 50px;
+                margin: 0;
+                margin-left: 71px;
+                margin-top: 33px;
+                line-height: 50px;
+                background: url(../img/wddata.png) no-repeat;
+            }
+            .left {
+                left: 26px;
+                top:  149px;
+                height: 902px;
+                width: 1185px;
+                opacity: 1;
+                position:absolute;
+            }
+            .right_blk1 {
+                left: 1232px;
+                top: 148px;
+                height: 439px;
+                width: 664px;
+                opacity: 1;
+                background-image: linear-gradient(41deg, #632570 0%, #47197C 60%, #221657 100%);
+                box-shadow: 0 8px 16px 0 #4E1C7A;
+                border-radius: 8px;
+                position:absolute;
+            }
+            .right_blk1 .hd {
+                background: #280540;
+                left: 1232px;
+                top: 148px;
+                width: 664px;
+                height: 80px;
+            }
+
+            .right_blk1 .txt {
+                left: 1259px;
+                top: 167px;
+                width:664px;
+                height: 42px;
+                vertical-align:middle;
+                font-family: PingFangSC-Regular;
+                font-size: 30px;
+                color: #FFFFFF;
+                margin: 0;
+                line-height: 80px;
+            }
+
+            .right_blk1 .pLoc {
+                left: 1253px;
+                top: 263px;
+                width: 375px;
+                height: 28px;
+                margin-left: 21px;
+                font-family: PingFangSC-Regular;
+                font-size: 20px;
+                color: #FFFFFF;
+            }
+
+            .right_blk1 .pTgt {
+                left: 1253px;
+                top: 295px;
+                width: 375px;
+                height: 28px;
+                margin-left: 21px;
+                font-family: PingFangSC-Regular;
+                font-size: 20px;
+                color: #FFFFFF;
+            }
+
+            .right_blk1 .pTraffic {
+                left: 1253px;
+                top: 328px;
+                width: 375px;
+                height: 28px;
+                margin-left: 21px;
+                font-family: PingFangSC-Regular;
+                font-size: 20px;
+                color: #FFFFFF;
+            }
+
+            .right_blk1  .transpBtmCtr {
+                left: 1232px;
+                top:  400px;
+                width: 100%;
+                height: 169px;
+                opacity: 0;
+            }
+            
+            .right_blk1  .transpBtmCtr  .subChart {
+                top:  400px;
+                margin-left: 21px;
+                width: 199px;
+                height: 169px;
+                float: left;
+                opacity: 90%;
+            }
+            .right_blk2 {
+                top: 611px;
+                left: 1232px;
+                height: 439px;
+                width: 664px;
+                opacity: 1;
+                background-image: linear-gradient(41deg, #632570 0%, #47197C 60%, #221657 100%);
+                box-shadow: 0 8px 16px 0 #4E1C7A;
+                border-radius: 8px;
+                position:absolute;
+            }
+
+            .right_blk2 .hd {
+                left: 1266px;
+                top: 640px;
+                width: auto;
+                height: 33px;
+                font-family: PingFangSC-Regular;
+                font-size: 24px;
+                color: #FFFFFF;
+                margin: 0;
+                margin-left: 34px;
+                margin-top:  29px;
+                line-height: 33px;
+            }
+
+            .right_blk2 .num {
+                left: 1266px;
+                top: 685px;
+                width: auto;
+                height: 72px;
+                font-family: ArialMT;
+                font-size: 64px;
+                color: #FFFFFF;
+                margin: 0;
+                margin-left: 34px;
+                margin-top:  12px;
+                line-height: 74px;
+            }
+
+            .right_blk2  .subChart {
+                left: 1251px;
+                top:  790px;
+                width: 627px;
+                height: 238px;
+                opacity: 0;
+                opacity: 0.9;
+                background: rgba(255,255,255,0.20);
+                border: 1px solid #AFAFAF;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header"><p class="txt">万达广场五角场店－－大数据分析</p></div>
+            <div id="map" class="left"><p>left_map</p></div>
+            <div class="right_blk1">
+                <div class="hd"><p class="txt">万达广场五角场店</p></div>
+                <p class="pLoc">地理位置：上海市杨浦区</p>
+                <p class="pTgt">项目定位：餐饮、零售为主</p>
+                <p class="pTraffic">交通路线：花木2路，地铁10号线，889路</p>
+                <div class="transpBtmCtr">
+                    <div id="chart1" class="subChart"></div>
+                    <div id="chart2" class="subChart"></div>
+                    <div id="chart3" class="subChart"></div>
+                </div>
+            </div>
+            <div class="right_blk2">
+                <p class="hd">辐射人群总数</p>
+                <p class="num">2819267</p>
+                <div id="chart5" class="chart5"></div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/jquery.min.js")></script>
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/api.js")></script>
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/MapMask.js")></script>
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/TrafficLayer.js")></script>
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/clock.js")></script>
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/main.js?v=1")></script>
+</html>

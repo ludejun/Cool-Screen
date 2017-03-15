@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>大数据现场实时统计</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/user.css">
+</head>
+<body class="bg">
+<div class="container">
+    <div class="header">
+        <div class="title title-lg">大数据现场实时统计</div>
+        <div class="logo">万达商业年会</div>
+    </div>
+    <h1 class="title" style="margin-left: 15px;">万商人和北京本地人有啥区别？</h1>
+
+    <img src="./img/left-line.png" alt=" " style="position: absolute;left: 495px; top: 473px;">
+    <img src="./img/right-line.png" alt=" " style="position: absolute;right: 487px; top: 371px;">
+
+    <div class="fudao" id="fudao-yihun">
+        <div class="fudao-legend">
+            <h2>已婚比例</h2>
+            <div class="fudao-container">
+
+            </div>
+        </div>
+        <div id="pie-yihun"></div>
+    </div>
+    <div class="fudao" id="fudao-nianling">
+        <div class="fudao-legend">
+            <h2>年龄分布</h2>
+            <div class="fudao-container">
+
+            </div>
+        </div>
+        <div id="pie-nianling"></div>
+    </div>
+    <div class="fudao flipx" id="fudao-gouwu">
+        <div class="fudao-legend flipx">
+            <h2>已购车比例</h2>
+            <div class="fudao-container">
+
+            </div>
+        </div>
+        <div id="pie-gouwu"></div>
+    </div>
+    <div class="fudao flipx" id="fudao-yuying">
+        <div class="fudao-legend flipx">
+            <h2>已育儿比例</h2>
+            <div class="fudao-container">
+
+            </div>
+        </div>
+        <div id="pie-yuying"></div>
+    </div>
+    <div class="fudao flipx" id="fudao-nannv">
+        <div class="fudao-legend flipx">
+            <h2>男女比例</h2>
+            <div class="fudao-container">
+
+            </div>
+        </div>
+        <div id="pie-nannv"></div>
+    </div>
+
+    <div>
+        <div class="legend">
+            现场人群
+            <span class="block" style="background:#ffc50e;margin: 0 18px;"></span>
+            vs
+            <span class="block" style="background: #28a3f9;margin: 0 18px;"></span>
+            北京人群
+        </div>
+        <div class="user"></div>
+    </div>
+
+    <div class="scan-bar"></div>
+</div>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/highcharts.js"></script>
+<script src="./js/main.js"></script>
+<script>
+    function zoom() {
+        var width = $(window).width();
+        var height = $(window).height();
+        if (height > width) {
+            $('html').css({zoom: width / 1080});
+            $('html').height(1080);
+            $('html').css({top: '-1080px'});
+        } else {
+            $('html').css({zoom: width / 1920});
+        }
+    }
+    $(function(){
+        zoom();
+        window.onresize = function() {
+            zoom();
+        };
+
+        loadNianling();
+        loadStat();
+        setInterval(function(){
+            loadNianling();
+            loadStat();
+        }, 1000 * 60 * 10);
+
+        function loadStat() {
+            $.get('./json/td/custom_stat_'+getId()+'.json', function(data){
+                $.get('./json/td/custom_stat_bj.json', function(dataBj){
+                    pie('#pie-yihun', data['marriage'], dataBj['marriage']);
+                    var html = '<div class="legend-body legend-1">' +
+                                '<span class="title">现场</span>' +
+                                '<span class="bar"><span style="width:'+data['marriage']+'%"></span></span>' +
+                                '<span class="percent">'+data['marriage']+'%</span>' +
+                            '</div>' +
+                            '<div class="legend-body legend-2">' +
+                                '<span class="title">北京</span>' +
+                                '<span class="bar"><span style="width:'+dataBj['marriage']+'%"></span></span>' +
+                                '<span class="percent">'+dataBj['marriage']+'%</span>' +
+                            '</div>';
+                    $('#fudao-yihun .fudao-container').html(html);
+
+                    pie('#pie-nannv', 0, 0);
+                    var total = data['male'] + data['female'];
+                    var totalBj = dataBj['male'] + dataBj['female'];
+                    data['male'] = (data['male'] / total * 100).toFixed(2);
+                    data['female'] = (data['female'] / total * 100).toFixed(2);
+                    dataBj['male'] = (dataBj['male'] / totalBj * 100).toFixed(2);
+                    dataBj['female'] = (dataBj['female'] / totalBj * 100).toFixed(2);
+                    html = '<div class="legend-body legend-1">' +
+                                '<span class="title">男性</span>' +
+                                '<span class="bar"><span style="width:'+data['male']+'%"></span></span>' +
+                                '<span class="percent">'+data['male']+'%</span>' +
+                            '</div>' +
+                            '<div class="legend-body legend-2">' +
+                                '<span class="title"></span>' +
+                                '<span class="bar"><span style="width:'+dataBj['male']+'%"></span></span>' +
+                                '<span class="percent">'+dataBj['male']+'%</span>' +
+                            '</div>' +
+                            '<div class="legend-body legend-1">' +
+                                '<span class="title">女性</span>' +
+                                '<span class="bar"><span style="width:'+data['female']+'%"></span></span>' +
+                                '<span class="percent">'+data['female']+'%</span>' +
+                            '</div>' +
+                            '<div class="legend-body legend-2">' +
+                                '<span class="title"></span>' +
+                                '<span class="bar"><span style="width:'+dataBj['female']+'%"></span></span>' +
+                                '<span class="percent">'+dataBj['female']+'%</span>' +
+                            '</div>';
+                    $('#fudao-nannv .fudao-container').html(html);
+
+                    pie('#pie-yuying', data['baby'], dataBj['baby']);
+                    html = '<div class="legend-body legend-1">' +
+                                '<span class="title">现场</span>' +
+                                '<span class="bar"><span style="width:'+data['baby']+'%"></span></span>' +
+                                '<span class="percent">'+data['baby']+'%</span>' +
+                            '</div>' +
+                            '<div class="legend-body legend-2">' +
+                                '<span class="title">北京</span>' +
+                                '<span class="bar"><span style="width:'+dataBj['baby']+'%"></span></span>' +
+                                '<span class="percent">'+dataBj['baby']+'%</span>' +
+                            '</div>';
+                    $('#fudao-yuying .fudao-container').html(html);
+
+                    pie('#pie-gouwu', data['car'], dataBj['car']);
+                    html = '<div class="legend-body legend-1">' +
+                                '<span class="title">现场</span>' +
+                                '<span class="bar"><span style="width:'+data['car']+'%"></span></span>' +
+                                '<span class="percent">'+data['car']+'%</span>' +
+                            '</div>' +
+                            '<div class="legend-body legend-2">' +
+                                '<span class="title">北京</span>' +
+                                '<span class="bar"><span style="width:'+dataBj['car']+'%"></span></span>' +
+                                '<span class="percent">'+dataBj['car']+'%</span>' +
+                            '</div>';
+                    $('#fudao-gouwu .fudao-container').html(html);
+
+                }, 'json');
+            }, 'json');
+        }
+
+        function loadNianling() {
+            $.get('./json/td/custom_age_'+getId()+'.json', function(data){
+                pie('#pie-nianling', 0, 0);
+                $.get('./json/td/custom_age_bj.json', function(dataBj){
+                    var html = '';
+                    for (var i = 0; i < data.length; i++) {
+                        html += '<div class="legend-body legend-1">' +
+                                '<span class="title">'+data[i].age+'</span>' +
+                                '<span class="bar"><span style="width:'+data[i].ratio+'%"></span></span>' +
+                                '<span class="percent">'+data[i].ratio+'%</span>' +
+                                '</div>' +
+                                '<div class="legend-body legend-2">' +
+                                '<span class="title"></span>' +
+                                '<span class="bar"><span style="width:'+dataBj[i].ratio+'%"></span></span>' +
+                                '<span class="percent">'+dataBj[i].ratio+'%</span>' +
+                                '</div>';
+                    }
+                    $('#fudao-nianling .fudao-container').html(html);
+                }, 'json');
+            }, 'json');
+        }
+
+        function pie(id, percent, percentInner) {
+            $(id).highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    height: 232,
+                    width: 232,
+                    backgroundColor: 'transparent',
+                    spacing: [0, 0, 0, 0]
+                },
+                title: {
+                    text: ''
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                subtitle: {
+                    useHTML: true,
+                    text: '<span class="pie-bg"></span>'
+
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    colors: ['#ffc50e', 'rgba(255, 255, 255, 0)'],
+                    size: '87%',
+                    innerSize: '90%',
+                    data: [
+                        ['use',   percent],
+                        ['other', 100 - percent]
+                    ]
+                }, {
+                    type: 'pie',
+                    colors: ['#28a3f9', 'rgba(255, 255, 255, 0)'],
+                    size: '63%',
+                    innerSize: '88%',
+                    data: [
+                        ['use',   percentInner],
+                        ['other', 100 - percentInner]
+                    ]
+                }]
+            });
+        }
+    });
+</script>
+</body>
+</html>

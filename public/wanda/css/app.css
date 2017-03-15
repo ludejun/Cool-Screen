@@ -1,0 +1,85 @@
+html {
+    font-size: 80.5%;
+}
+.header {
+    margin-bottom: 100px;
+}
+.bg {
+    background-image: url(../img/bg.jpg);
+}
+.app-list {
+    position: relative;
+    width: 366px;
+    height: 745px;
+    background: url(../img/app-container.png);
+    float: left;
+    margin-right: 85px;
+}
+.app-list:first-child {
+    margin-left: 15px;
+}
+.app-list:last-child {
+    margin-right: 0;
+}
+.app-list .app-header {
+    position: relative;
+    height: 57px;
+}
+.app-header > h2 {
+    font-family: FZLanTingHeiS-R-GB;
+    font-size: 2.6rem;
+    font-weight: normal;
+    color: #fff;
+    margin: 15px 0 0 35px;
+    float: left;
+}
+.app-header > img {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+.app-body ul {
+    list-style: none;
+    margin: 0;
+    padding-top: 17px;
+    padding-left: 70px;
+}
+.app-body ul > li {
+    overflow: hidden;
+    height: 46px;
+    padding: 31px 0 30px 0;
+}
+.app-body ul > li > img {
+    float: left;
+    margin-right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
+}
+.app-body ul > li > p {
+    font-family: FZLanTingHeiS-R-GB;
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 5px 0 0 0;
+    overflow: hidden;
+    position: relative;
+    padding-right: 24px;
+}
+.app-body ul > li .bar {
+    display: block;
+    overflow: hidden;
+    margin-top: 8px;
+    height: 4px;
+    background: #0084ff;
+    border-radius: 2px;
+    width: 100%;
+}
+.app-body ul > li .bar.bar-1 {
+    background: #ee6b14;
+}
+.app-body ul > li .bar.bar-2 {
+    background: #f6b407;
+}
+.app-body ul > li .bar.bar-3 {
+    background: #16b48a;
+}

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>05</title>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/mt.js"></script>
+<script type="text/javascript" src="../../js/ani.js"></script>
+<!--<script type="text/javascript" src="http://map-painter.mkjs.net/js/ani.js"></script> -->
+<!--<script type="text/javascript" src="http://map-painter.mkjs.net/js/gd.js"></script> -->
+<script type="text/javascript" src="../../js/gd.js"></script>
+
+<script type="text/javascript" src="../../js/geo.js"></script>
+<script type="text/javascript" src="../../js/map-painter.js"></script>
+
+<!--<script type="text/javascript" src="http://map-painter.mkjs.net/jquery/jquery-2.0.0.min.js"></script>-->
+<!--<script type="text/javascript" src="http://map-painter.mkjs.net/js/geo.js"></script>-->
+<!--<script type="text/javascript" src="http://map-painter.mkjs.net/js/gd.js"></script>-->
+<!--<script type="text/javascript" src="http://map-painter.mkjs.net/js/ani.js"></script>-->
+<!--<script type="text/javascript" src="http://map-painter.mkjs.net/js/map-painter.js"></script>-->
+<style type="text/css">
+html {
+	overflow: hidden;
+}
+body{
+	overflow: hidden;
+	font-family: "Microsoft YaHei"
+}
+canvas{
+	position: absolute;
+	left: 0;
+	top: 0;
+	/*background-color: rgba(0,0,0,0.5);*/
+}
+.full{
+	position: absolute;
+	left: 0px;
+	/*right: 0px;*/
+	top: 0px;
+	/*bottom: 0px;*/
+	width: 100%;
+	height: 100%;
+	background-image: url(image/bg-lg.jpg);
+	background-size: 100% 100%;
+	overflow: hidden;
+	perspective-origin: 1000px 200px;
+	perspective: 800;
+}
+
+.map-container {
+	position: absolute;
+	left: 542px;
+	top: 362px;
+	zoom: 0.9;
+}
+#cvs2{
+	/*opacity: 0.5;*/
+	top: 0;
+	left: 0;
+	/*transform: rotateX(-10deg) rotateZ(-0deg);*/
+}
+
+#data{
+	width: 380px;
+	height: 764px;
+	background: transparent url(image/data.png) left top no-repeat;
+	position: absolute;
+	left: 80px;
+	top: 180px;
+}
+#china-map{
+	width: 1245px;
+	height: 886px;
+	background: transparent url(image/china-map-m.png) left top no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	left: 8px;
+	top: 9px;
+}
+
+.panel li h6, .panel li div, .panel ul, .panel li, .panel li em{
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	list-style: none;
+	display: block;
+	font-style: normal;
+}
+
+.panel li div{
+	height: 8px;
+	border-radius: 3px;
+	width: 185px;
+	float: left;
+	background-color: #1b3984;
+	margin-top: 12px;
+}
+.panel li h6{
+	background-color: #ffae00;
+	height: 8px;
+	width: 0%;
+	border-radius: 3px;
+}
+.panel li em{
+	float: left;
+	width: 103px;
+	height: 40px;
+}
+
+.panel > ul{
+	padding: 35px 25px;
+}
+
+.panel > ul > li{
+	height: 49px;
+}
+
+.panel{
+	width: 380px;
+	height: 361px;
+	background-color: transparent;
+	background-image: url(image/panel.png);
+	background-size: 100% 100%;
+	position: absolute;
+	left: 80px;
+	top: 330px;
+	color: #fff;
+	font-size: 30px;
+}
+
+.panel > .title{
+	height: 60px;
+	line-height: 65px;
+	padding-left: 26px;
+	margin-top: 7px;
+}
+.panel.p2{
+	top: 733px;
+}
+.panel.p2 li em{
+	width: 160px;
+}
+
+.panel.p2 li div{
+	width: 125px;
+}
+
+.logo {
+	height: 77px;
+	width: 297px;
+	background: url(../../img/logo3.png) no-repeat;
+	color: transparent;
+	text-indent: 86px;
+	float: right;
+	margin: 65px 70px 0 0;
+}
+
+</style>
+</head>
+<body>
+
+<div class="full">
+	<div class="logo">万达商业年会</div>
+
+	<div style="text-align: center; padding: 50px 0 0 0;width: 800px;overflow: hidden;">
+		<img src="../../img/header.png" alt="" style="float: left;margin-left: 80px;margin-top: 10px;">
+	</div>
+
+	<div class="map-container">
+		<div id="china-map"></div>
+		<canvas id="cvs1" width="1200" height="900"></canvas>
+		<canvas id="cvs2" width="1200" height="900"></canvas>
+	</div>
+	<!-- <div id="data"></div> -->
+
+	<div class="panel p1">
+		<div class="title">TOP5 来源城市</div>
+		<ul class="content">
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+		</ul>
+	</div>
+
+	<div class="panel p2">
+		<div class="title">TOP5 来源地区</div>
+		<ul class="content">
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+			<li><em></em><div><h6></h6></div></li>
+		</ul>
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+	function zoom() {
+		var width = $(window).width();
+		var height = $(window).height();
+		if (height > width) {
+			$('html').css({zoom: width / 1344});
+			$('html').height(1344);
+			$('html').css({top: '-1344px'});
+		} else {
+			$('html').css({zoom: width / 1680});
+		}
+	}
+
+	$(function(){
+		zoom();
+		window.onresize = function() {
+			zoom();
+		};
+	});
+var canvas = document.querySelector('#cvs1');
+var ctx = canvas.getContext('2d');
+
+var painter = new MapPainter('#cvs2').fitCanvas(10, 10, 10, 10);
+var map = "../../json/china.json";
+
+function drawLines(ctx, A, p0, p1, t, color, aOffset, res, weight){
+
+	var delay = 0.02;
+	var a = 3;
+
+	weight = Math.pow(weight, 0.8);
+
+		ctx.lineCap = 'round';
+		GD.CirclePathA(ctx, A, p0, p1, t, color, weight);
+
+		if(t >= 0){
+			var cur = GD.CirclePointA(p0, p1, A, t);
+
+			ctx.save();
+			ctx.translate(cur.x, cur.y);
+			ctx.rotate(cur.tangent + aOffset);
+
+			var size = weight;
+
+			ctx.drawImage(res.plane
+				, 0, 0, res.plane.width, res.plane.height
+				, size * -.5, size * -.5, size, size
+				);
+			ctx.restore();
+		}
+}
+
+function drawOne(ctx, p, res, I){
+
+	var DUR = 5000;
+	var SIZE = 3;
+	var TAIL = 10;
+	var SPLIT = 0.5
+	// var COLOR = 'rgba(100,200,255,0.5)';
+	var COLOR = 'rgba(100,250,255,';
+
+	var sign = [1, -1];
+	var c = 0;
+	var tail = [];
+
+	var weight = p[2];
+	weight = Math.pow(weight, 0.25);
+	for(var i = 0; i < 1; i++){
+
+		(function(i){
+			var ani = Ani.add(function(dur, DUR){
+
+				var t = dur / DUR / SPLIT;
+				var aOffset = Math.PI * 0.5;
+				if(t > 1){
+					t = 1 - t;
+					aOffset = Math.PI * -0.5;
+				}
+				var op = 0.3;
+				var color = COLOR + op + ')';
+
+				drawLines(ctx, 20 + i * 10, p[0], p[1], t, color, aOffset, res, p[2]);
+
+				return -1;
+
+			}, DUR, 0, i * 100 + I * 50, 1000);
+		})(i);
+	}
+}
+
+var bgFresh = Ani.addBase(function(){
+	ctx.clearRect(-ctx.canvas.width, -ctx.canvas.height, ctx.canvas.width * 3, ctx.canvas.height * 3);
+	return -1;
+});
+
+$.loadImage = function(src, fn){
+	return $('<img>').one('load', function(e){
+		typeof(fn) == 'function' && fn(this);
+	}).attr('src', src);
+};
+
+$.loadImages = function(arr, fn){
+
+	if(arr instanceof Array){
+		var c = arr.length, r = [];
+		for(var i = 0; i < arr.length; i++){
+			$.loadImage(arr[i], function(img){
+				r.push(img);
+				if(--c <= 0){
+					typeof(fn) == 'function' && fn(r);
+				}
+			});
+		}
+	} else if (arr instanceof Object){
+		var keys = Object.keys(arr), c = keys.length, r = {};
+		for(var i = 0; i < keys.length; i++){
+			(function(key){
+				$.loadImage(arr[key], function(img){
+					r[key] = img;
+					if(--c <= 0){
+						typeof(fn) == 'function' && fn(r);
+					}
+				});
+			})(keys[i]);
+		}
+	}
+};
+
+function eachData(data, fn){
+	MT.EACH(data, function(v){
+		fn(v[0]);
+		fn(v[1]);
+	});
+};
+
+var COORD = {
+	"BEIJING": [839.7432024169184, 334.380664652568, "北京"],
+	"SHANGHAI": [980.8912386706949, 545.1359516616315, "上海"],
+	"GUANGZHOU": [841.6767371601209, 740.4229607250755, "广州"],
+	"TIANJIN": [866.8126888217522, 357.58308157099697, "天津"],
+	"CHONGQING": [688.9274924471299, 591.5407854984894, "重庆"],
+	"CHENGDU": [634.7885196374622, 579.9395770392749, "成都"],
+	"ZHENGZHOU": [814.6072507552869, 460.0604229607251, "郑州"],
+	"LANGFANG": [849.4108761329305, 361.4501510574018, "廊坊"],
+	"SHENZHEN": [857.1450151057402, 748.1570996978852, "深圳"],
+	"HANGZHOU": [955.7552870090634, 560.6042296072508, "杭州"],
+	"CHANGZHOU": [948.0211480362537, 533.5347432024168, "常州"],
+	"NANJING": [919.0181268882175, 525.8006042296072, "南京"],
+	"FOSHAN": [841.6767371601209, 750.0906344410876, "佛山"],
+	"WUHAN": [839.7432024169184, 564.4712990936556, "武汉"]
+
+};
+
+var DELAY = 1000 * 60;
+var index = 0;
+var datas = [
+	'../../json/td/custom_from_1.json'
+];
+function Load(){
+	$.getJSON('../../json/china-cities.json', function(data){
+		var cityCoords = {};
+		var allCities = [];
+		data.forEach(function(a){
+			cityCoords[a.name] = { lng: a.lng, lat: a.lat };
+			allCities.push({ lng: a.lng, lat: a.lat, name: a.name });
+			a.children && a.children.forEach(function(a){
+				allCities.push({ lng: a.lng, lat: a.lat, name: a.name });
+			});
+		});
+		// console.log(cityCoords);
+		$.getJSON(map, function(data){
+			var f = data.features.filter(function(a, i){
+				return a.geometry;
+			});
+			painter.draw(f);
+			painter.clear();
+			GD.util.e(cityCoords, function(lonLat, name){
+				painter.DrawLonlat(lonLat, function(ctx, p){
+					ctx.beginPath();
+					ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+					ctx.fillStyle = '#fff';
+					ctx.fill();
+				});
+			});
+
+			load2(cityCoords, allCities, cityCoords, painter);
+		});
+	});
+}
+function load2(positionData, allCities, cityCoords, painter){
+
+	$.loadImages({
+		'plane': 'image/plane.png'
+	}, function(res){
+		var url = datas[index];
+		index = (index + 1) % datas.length;
+		$.getJSON('../../json/td/custom_from_1.json', function(data){
+			data.city_arr.sort(function(a, b){
+				return b.num - a.num;
+			});
+
+			data.area_arr.sort(function(a, b){
+				return b.num - a.num;
+			});
+
+			var cities = {}, areas = {}
+				, city_rank, area_rank
+				, citySum = 0, areaSum = 0
+				, coord = {}
+				;
+
+			for(var p in COORD){
+				coord[COORD[p][2]] = COORD[p].slice(0, 2);
+			}
+
+			data.city_arr.forEach(function(a){
+				citySum += a.num;
+				// a.city = a.city.substr(0, a.city.length - 1)
+				cities[a.city] = a.num;
+			});
+			data.area_arr.forEach(function(a){
+				areaSum += a.num;
+				areas[a.area] = a.num;
+			});
+
+			city_rank = data.city_arr.slice(0, 5);
+			area_rank = data.area_arr.slice(0, 5);
+
+			// console.log(cities);
+
+
+			var customCities = {};
+			for(var p in cities){
+				var lonLat = allCities.find(function(a){
+					return p.indexOf(a.name) > -1;
+				});
+				customCities[p] = painter.GetLonlatCoord(lonLat);
+				customCities[p].value = cities[p];
+			};
+
+			console.log(customCities)
+
+			GD.util.e(customCities, function(p, name){
+				painter.drawPoint(p, '#ff0', Math.pow(p.value, 0.3) * 2);
+				// painter.ctx.arc(p.x, p.y, Math.pow(p.value, 0.7), 0, Math.PI * 2);
+				// painter.ctx.fillStyle = '#f60';
+				//todo 地图字体大小调整
+				painter.ctx.font = '16px Arial';
+				// painter.ctx.fill();
+				painter.ctx.fillStyle = '#fff';
+				painter.ctx.fillText(name, p.x + 20, p.y + 5);
+			});
+
+			var BJ = customCities['北京市'];
+			var D = [];
+			// for(var p1 in customCities){
+				for(var p2 in customCities){
+					if('北京市' === p2) continue;
+					D.push([customCities[p2], BJ, cities[p2]]);
+					// D.push([customCities[p1], painter.GetLonlatCoord(cityCoords[p2]), cities[p1]]);
+				}
+			// }
+			MT.EACH(D, function(p, i){
+				drawOne(ctx, p, res, i);
+			});
+
+
+			//填充排行数据
+			$('.p1 li').each(function(i){
+				var li = $(this);
+				li.children('em').html(city_rank[i].city);
+				li.children('div').children('h6').css({
+					width: Math.round(city_rank[i].num / citySum * 100) + '%'
+					, 'background-color': i < 3 ? '#ffae00' : '#2e77f1'
+				});
+			});
+			$('.p2 li').each(function(i){
+				var li = $(this);
+				li.children('em').html(area_rank[i].area);
+				li.children('div').children('h6').css({
+					width: Math.round(area_rank[i].num / areaSum * 100) + '%'
+					, 'background-color': i < 3 ? '#ffae00' : '#2e77f1'
+				});
+			});
+
+			setTimeout(function(){
+				Ani.clear(function(){
+					load2(cityCoords, allCities, cityCoords, painter);
+				});
+			}, DELAY);
+		});
+	});
+}
+
+GD.fullFitDom('.full');
+
+Load();
+
+
+// 画点工具
+// $(document).on('click', function(e){
+// 	var offset = $('canvas').offset();
+// 	var x = (e.clientX - offset.left) / GD.FIT_SCALE;
+// 	var y = (e.clientY - offset.top) / GD.FIT_SCALE;
+
+// 	var p = { x: x, y: y };
+
+// 	GD.drawPoint(ctx, p, '#fff');
+
+// 	console.log([x, y]);
+// });
+
+
+
+</script>
+
+
+</body>
+</html>

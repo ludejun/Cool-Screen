@@ -1,0 +1,91 @@
+.bg{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	background: #000 url(../img/plaza_brand_img/bg-brand.jpg) left top no-repeat;
+	background-size: covor;
+}
+
+#logos{
+	width: 90%;
+	height: 70%;
+
+	/* 调整宽度后，margin-left 应为总宽度的 -49.444％ */
+	/*margin-left: -494px;*/
+	/*margin-top: -160px;*/
+
+
+	/*position: absolute;*/
+	/*left: 50%;*/
+	/*top: 50%;*/
+
+	margin: 0 auto;
+	margin-top: 13%;
+
+	overflow: hidden;
+
+}
+
+#logos > .cell{
+	width: 16.66%;
+	height: 25%;
+	float: left;
+	background: transparent url(../img/plaza_brand_img/cell-bg.png) center top no-repeat;
+	background-size: 93.33% 90%;
+	overflow: hidden;
+	opacity: 0.2;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+}
+
+#logos > .cell > div{
+	width: 93.33%;
+	height: 90%;
+	background: transparent url(../img/plaza_brand_img/logos2.png) center top no-repeat;
+	background-size: 635.7143% 433.3333%;
+	margin: 0 auto;
+}
+
+#logos > .cell.active{
+	opacity: 1;
+	/*background-image: url(../img/plaza_brand_img/cell-bg-active.png);*/
+}
+
+#logos > .cell.active > div{
+	background-image: url(../img/plaza_brand_img/logos.png);
+}
+
+.header {
+    overflow: hidden;
+    margin-bottom: 20px;
+    position:absolute;
+    top: 30px
+}
+.header .title {
+    font-family: FZLanTingHeiS-H-GB;
+    width: 100%;
+    background: url(../img/title-bg.png);
+    font-size: 44px;
+    text-align: center;
+    color: #fff;
+    float: left;
+}
+.header .title.title-lg {
+    width: 30%;
+    background: url(../img/title-bg-lg.png);
+}
+.header .logo {
+    font-family: FZLanTingHeiS-R-GB;
+    width: 50%;
+
+    background: url(../img/wddata.png) no-repeat;
+    color: transparent;
+    font-size: 18px;
+    float: right;
+}
+
+</style>
+

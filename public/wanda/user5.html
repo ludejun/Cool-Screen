@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>大数据现场实时统计</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/user5.css">
+</head>
+<body class="bg">
+<div class="container">
+    <div class="header">
+        <div class="title title-lg">大数据现场实时统计</div>
+        <div class="logo">万达商业年会</div>
+    </div>
+    <h1 class="title" style="margin-left: 15px;">您想了解现场人群的最爱吗？</h1>
+
+    <img src="./img/user5-bg.png" alt=" " style="position: absolute;left: 227px;top: 198px;">
+
+    <div id="pie-1" class="pie"></div>
+    <div id="pie-2" class="pie"></div>
+    <div id="pie-3" class="pie2 pie-orange">
+        <div></div>
+        <ul>
+            <li>麦当劳</li>
+            <li>呷哺呷哺</li>
+            <li>星巴克</li>
+        </ul>
+    </div>
+    <div id="pie-4" class="pie2 pie-orange">
+        <div></div>
+        <ul>
+            <li>苹果</li>
+            <li>三星</li>
+            <li>百丽</li>
+        </ul>
+    </div>
+    <div id="pie-5" class="pie2 pie-orange">
+        <div></div>
+        <ul>
+            <li>华润万家</li>
+            <li>稻香村</li>
+            <li>全时便利店</li>
+        </ul>
+    </div>
+    <div id="pie-6" class="pie2 pie-blue">
+        <div></div>
+        <ul>
+            <li>万达电影城</li>
+            <li>星巴克</li>
+            <li>APPLE专卖店</li>
+        </ul>
+    </div>
+    <div id="pie-7" class="pie2 pie-blue">
+        <div></div>
+        <ul>
+            <li>7天连锁</li>
+            <li>汉庭</li>
+            <li>如家</li>
+        </ul>
+    </div>
+    <div id="pie-8" class="pie2 pie-blue">
+        <div></div>
+        <ul>
+            <li>工商银行</li>
+            <li>中信银行</li>
+            <li>民生银行</li>
+        </ul>
+    </div>
+
+    <div>
+        <div class="user"></div>
+    </div>
+
+</div>
+<div class="scan-bar"></div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/highcharts.js"></script>
+<script src="./js/main.js"></script>
+
+<script>
+    function zoom() {
+        var width = $(window).width();
+        var height = $(window).height();
+        if (height > width) {
+            $('html').css({zoom: width / 1080});
+            $('html').height(1080);
+            $('html').css({top: '-1080px'});
+        } else {
+            $('html').css({zoom: width / 1920});
+        }
+    }
+    $(function(){
+        zoom();
+        window.onresize = function() {
+            zoom();
+        };
+
+        loadSpend();
+        setInterval(function(){
+            loadSpend();
+        }, 1000 * 60 * 10);
+
+        function loadSpend() {
+            $.get('./json/td/user5_'+getId()+'.json', function(data){
+                var female = data.female;
+                var male = data.male;
+                pie('#pie-1', female.ratio, '女性', '#ffc50e');
+                pie('#pie-2', male.ratio, '男性', '#00c0ff');
+                for (var i = 0; i < female.age.length; i++) {
+                    pie2('#pie-'+(i+3)+' > div', female.age[i].ratio, '#ffc50e');
+                    var html = '<li>' + female.age[i].list.join('</li><li>') + '</li>';
+                    $('#pie-'+(i+3)+' > ul').html(html);
+                }
+                for (var i = 0; i < male.age.length; i++) {
+                    pie2('#pie-'+(i+6)+' > div', male.age[i].ratio, '#00c0ff');
+                    var html = '<li>' + male.age[i].list.join('</li><li>') + '</li>';
+                    $('#pie-'+(i+6)+' > ul').html(html);
+                }
+
+            }, 'json');
+        }
+
+        function pie(id, percent, title, color) {
+            $(id).highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    height: 324,
+                    width: 324,
+                    backgroundColor: 'transparent',
+                    spacing: [0, 0, 0, 0]
+                },
+                title: {
+                    text: ''
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                subtitle: {
+                    useHTML: true,
+                    text: '<span class="pie-bg"><span class="percent">'+percent+' %</span><br><span style="color:'+color+'" class="title">'+title+'</span></span>'
+
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    colors: [color, 'rgba(255, 255, 255, 0)'],
+                    size: '77%',
+                    innerSize: '90%',
+                    data: [
+                        ['use',   percent],
+                        ['other', 100 - percent]
+                    ]
+                }]
+            });
+        }
+
+        function pie2(id, percent, color) {
+            $(id).highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    height: 176,
+                    width: 176,
+                    backgroundColor: 'transparent',
+                    spacing: [0, 0, 0, 0]
+                },
+                title: {
+                    text: ''
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                subtitle: {
+                    useHTML: true,
+                    text: '<span class="pie-bg2"><span style="color:'+color+'" class="percent">'+percent+'<small>%</small></span></span>'
+
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    colors: [color, 'rgba(255, 255, 255, 0)'],
+                    size: '87%',
+                    innerSize: '95%',
+                    data: [
+                        ['use',   percent],
+                        ['other', 100 - percent]
+                    ]
+                }]
+            });
+        }
+    });
+</script>
+</body>
+</html>

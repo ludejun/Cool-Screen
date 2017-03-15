@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>广场热力图分析</title>
+        <link href=@routes.Assets.at("css/wd_heatmap.css") rel="stylesheet">
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div class="header">
+               <p class="txt">万达广场五角场店－－大数据分析</p>
+               <div class="logo"></div>              
+            </div>
+            <div id="map" class="left"><p>left_map</p></div>
+            <div class="right">
+                <div id="right_blk1" class="right_blk1">
+                     <div id="right_blk1_ctn" style="width:627px;height:420px;margin:0">
+                     </div>
+                </div>
+                <div id="right_blk2" class="right_blk2">
+                     <div id="right_blk2_ctn" style="width:627px;height:408px;margin:0">
+                     </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="@routes.Assets.at("js/jquery.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("echarts3_src/echarts.js")" type="text/javascript"></script>
+    <script src=@routes.Assets.at("wd_heatmap/js/right_blk1.js")></script>
+    <script src=@routes.Assets.at("wd_heatmap/js/right_blk2.js")></script>
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/api.js")></script>
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/MapMask.js")></script>
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/TrafficLayer.js")></script>
+    <!--script type="text/javascript" src=@routes.Assets.at("cust_source/js/clock.js")></script-->
+    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/main.js?v=1")></script>
+    <!--script src=@routes.Assets.at("high_cust/js/jquery.js")></script-->
+    <script src=@routes.Assets.at("high_cust/js/bootstrap.min.js")></script>
+    <script src=@routes.Assets.at("high_cust/js/jquery.scrollUp.js")></script>
+    
+</html>

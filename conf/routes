@@ -1,0 +1,27 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+GET     /preference                 controllers.Application.preference
+GET     /cn_map                     controllers.Application.cn_map
+GET     /app_topN                   controllers.Application.app_topN
+GET     /user_salary                controllers.Application.user_salary
+GET     /plaza_customer             controllers.Application.plaza_customer
+GET     /plaza_brand                controllers.Application.plaza_brand
+GET     /high_cust                  controllers.Application.high_cust
+GET     /cust_source                controllers.Application.cust_source
+GET     /wd_heatmap                 controllers.Application.wd_heatmap
+GET     /wd_3km                     controllers.Application.wd_3km
+GET     /echarts1                   controllers.Application.echarts1
+GET     /echarts2                   controllers.Application.echarts2
+GET     /echarts_map                controllers.Application.echarts_map
+GET     /bd_heatmap                 controllers.Application.bd_heatmap
+GET     /pplt_move                  controllers.Application.pplt_move
+GET     /query/appDyn               controllers.Application.appDynamics
+GET     /query/topN_data            controllers.Application.topN_data(id: String)
+GET     /query/cust_data            controllers.Application.cust_data(id: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public/wanda", file)
