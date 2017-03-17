@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<services>
+	<service>
+		<className>cn.wanda.idc.coolscreen.model.service.RegionTopInfo
+		</className>
+		<serviceId>1</serviceId>
+	</service>
+</services>

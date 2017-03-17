@@ -1,0 +1,18 @@
+#!/bin/sh
+
+SERVICE_HOME=~/coolscreen-services/coolscreen-model-service
+SERVICE_PID=$SERVICE_HOME/.coolscreen-model-service.pid
+
+if [ ! -e $SERVICE_PID ]; then
+	echo "ERROR: $SERVICE_PID does not exists. Can not stop coolscreen-model-service!"
+	echo "ERROR: the program returns with error!"
+	exit 1
+fi
+
+for i in `cat $SERVICE_PID`
+do 
+ps awx -o "%p %p" | grep -w $i | awk '{ print $1 }' | xargs kill -9
+done
+
+echo "stop all program at : `date` "
+rm -rf $SERVICE_PID

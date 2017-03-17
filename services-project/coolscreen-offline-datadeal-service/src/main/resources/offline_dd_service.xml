@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tasks>
+	<task>
+		<id>HWPAgeInfo</id>
+		<className>cn.wanda.idc.coolscreen.datadeal.HWPAgeInfo</className>
+		<properties>
+			<spark.master>yarn-client</spark.master>
+			<spark.executor.memory>8G</spark.executor.memory>
+			<spark.driver.cores>2</spark.driver.cores>
+			<spark.driver.memory>4G</spark.driver.memory>
+			<spark.executor.cores>2</spark.executor.cores>
+			<spark.submit.deployMode>client</spark.submit.deployMode>
+			<spark.executor.instances>4</spark.executor.instances>
+		</properties>
+		<dependents>
+			<dependent></dependent>
+		</dependents>
+	</task>
+	<task>
+		<id>HWPSexInfo</id>
+		<className>cn.wanda.idc.coolscreen.datadeal.HWPSexInfo</className>
+		<properties>
+			<spark.master>yarn-client</spark.master>
+			<spark.executor.memory>8G</spark.executor.memory>
+			<spark.driver.cores>2</spark.driver.cores>
+			<spark.driver.memory>4G</spark.driver.memory>
+			<spark.executor.cores>2</spark.executor.cores>
+			<spark.submit.deployMode>client</spark.submit.deployMode>
+			<spark.executor.instances>4</spark.executor.instances>
+		</properties>
+	</task>
+	<task>
+		<id>UseAAppGuestsHour</id>
+		<className>cn.wanda.idc.coolscreen.datadeal.UseAAppGuestsHour
+		</className>
+		<properties>
+			<spark.master>yarn-client</spark.master>
+			<spark.executor.memory>8G</spark.executor.memory>
+			<spark.driver.cores>2</spark.driver.cores>
+			<spark.driver.memory>4G</spark.driver.memory>
+			<spark.executor.cores>2</spark.executor.cores>
+			<spark.submit.deployMode>client</spark.submit.deployMode>
+			<spark.executor.instances>4</spark.executor.instances>
+		</properties>
+	</task>
+</tasks>

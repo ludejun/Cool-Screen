@@ -1,0 +1,5 @@
+database_ip=10.214.96.193
+database_port=3306
+database_name=cool_screen
+user=root
+passwd=password
