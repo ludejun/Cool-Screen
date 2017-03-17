@@ -14,6 +14,7 @@ GET     /high_cust                  controllers.Application.high_cust
 GET     /cust_source                controllers.Application.cust_source
 GET     /wd_heatmap                 controllers.Application.wd_heatmap
 GET     /wd_3km                     controllers.Application.wd_3km
+#GET     /brand_wall                 controllers.Application.brand_wall
 GET     /echarts1                   controllers.Application.echarts1
 GET     /echarts2                   controllers.Application.echarts2
 GET     /echarts_map                controllers.Application.echarts_map

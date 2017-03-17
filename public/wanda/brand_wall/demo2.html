@@ -1,0 +1,140 @@
+<!DOCTYPE >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>品牌展示</title>
+<style type="text/css">
+        .brand-logo {
+            animation: twinkle 24s linear infinite alternate;
+        }
+
+        .brand-logo:nth-child(6n+0) {
+            animation-delay: 8s;
+        }
+
+        .brand-logo:nth-child(6n-1) {
+            animation-delay: -8s;
+        }
+
+        .brand-logo:nth-child(6n-2) {
+            animation-delay: 15s;
+        }
+
+        .brand-logo:nth-child(6n-3) {
+            animation-delay: 22s;
+        }
+
+        .brand-logo:nth-child(6n-4) {
+            animation-delay: -14s;
+        }
+
+        .brand-logo:nth-child(6n-5) {
+            animation-delay: -22s;
+        }
+
+    @keyframes twinkle {
+            0% {transform: scale(1,1);filter: blur(0px);opacity: 1;}
+            30% {transform: scale(1,1);filter: blur(0px);opacity: 1;}
+            /*30% {transform: scale(.65,.65);filter: blur(3px); opacity: 1;}*/
+            50% {transform: scale(.3,.3); filter: blur(10px); opacity: 0}
+            /*70% {transform: scale(.65,.65);filter: blur(3px); opacity: 1;}*/
+            70% {transform: scale(1,1);filter: blur(0px);opacity: 1;}
+            100% {transform: scale(1,1);filter: blur(0px);opacity: 1;}
+        }
+</style>
+</head>
+
+<body>
+<script type="text/javascript">
+//网页加载完成
+window.onload=function(){
+    //更改网页背景色
+    document.body.bgColor="#371756";
+    //定时器:2秒出现一个笑脸
+}
+
+//定义一个页面展示的品牌数，将决定品牌的大小
+var BRAND_SHOW_NUM = 36;
+var MAX_ROW = 4;
+//展示品牌显示区域的高和宽  这里使用页面的高度
+var viewportHeight = window.innerHeight;
+var viewportWidth = window.innerWidth;
+//定义品牌间隔，是一个范围
+var marginArray = [1,80];
+//计算图片直径
+var imgWidth = parseInt((Math.sqrt((viewportHeight*viewportWidth)/BRAND_SHOW_NUM))-marginArray[1]);
+
+var coordArray = [];
+for (var i = 1;i <= BRAND_SHOW_NUM; i++) {
+    /*
+    * 定义变径为r r = imgWidth/2
+    * 如果是第一列 前一个坐标取半径负值 为了满足公示 xCoord = prevX + 2r + 随机数；
+    * 第一列是xCoord = r+随机数
+    */
+    var coord = {};
+    // var prevX = coordArray[i-MAX_ROW-1].x;
+    // var prexY = coordArray[i-2].y
+    //(i - MAX_ROW) < 1 代表第一列
+    var xCoord = (i - MAX_ROW) < 1 ? getRandom(marginArray[0],marginArray[1]) :(coordArray[i-MAX_ROW-1].x + imgWidth + getRandom(marginArray[0],marginArray[1]));
+    //((i -1)%4 ) == 0 代表第一行
+    var yCoord = ((i -1)% MAX_ROW) == 0 ? getRandom(marginArray[0],marginArray[1]) : (coordArray[i-2].y + imgWidth + getRandom(marginArray[0],marginArray[1]));
+
+    coord.x = xCoord;
+    coord.y = yCoord;
+    coordArray.push(coord);
+
+    //创建img节点
+        var imgObj=document.createElement("img");
+        //添加节点属性
+        imgObj.setAttribute("src","images/"+ i +".png");
+        imgObj.setAttribute("title","brand");
+        // imgObj.setAttribute("id",(6*(i-1)+k));
+        
+        // //添加width属性。getRandom()随机数函数
+        imgObj.setAttribute("width",imgWidth);
+    
+        imgObj.setAttribute("style","position:absolute;left:"+ xCoord +"px;top:"+ yCoord +"px");
+        addClass(imgObj, 'brand-logo');
+        //添加onclick事件属性,点击图片消失
+        imgObj.setAttribute("onclick","removeImg(this)");
+        
+        document.body.appendChild(imgObj);
+    
+}
+
+//函数：求函数随机数
+function getRandom(min,max){
+    var random=Math.random()*(max-min)+min;
+    random=Math.floor(random);
+    return random;
+}
+//函数：删除节点
+function removeImg(i){
+        for (var k = 1; k<=6; k++) {
+            var obj = document.getElementById(6*(i-1)+k);
+            if(obj){
+                document.body.removeChild(obj);
+            }
+        }   
+}
+//函数  添加class
+function addClass(obj, cls){
+  var obj_class = obj.className,//获取 class 内容.
+  blank = (obj_class != '') ? ' ' : '';//判断获取到的 class 是否为空, 如果不为空在前面加个'空格'.
+  added = obj_class + blank + cls;//组合原来的 class 和需要添加的 class.
+  obj.className = added;//替换原来的 class.
+}
+</script>
+
+</body>
+</head>
+</html>
+
+
+
+
+
+
+
+
+

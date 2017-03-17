@@ -153,4 +153,12 @@ object Application extends Controller {
       case Accepts.Html() => Ok(views.html.wd_3km())
     }
   }
+
+/*
+  def brand_wall = Action { implicit request =>
+    render{ 
+      case Accepts.Html() => Ok(views.html.brand_wall())
+    }
+  }
+*/
 }
