@@ -20,7 +20,7 @@ function star(){
 		//创建img节点
 		var imgObj=document.createElement("img");
 		//添加节点属性
-		imgObj.setAttribute("src","../images/"+(6*(i-1)+k)+".png");
+		imgObj.setAttribute("src","assets/brand_wall/images/"+(6*(i-1)+k)+".png");
 		imgObj.setAttribute("title","brand");
 		imgObj.setAttribute("id",(6*(i-1)+k));
 		
@@ -28,7 +28,7 @@ function star(){
 		imgObj.setAttribute("width",100);
 		//创建style属性（行内样式)
 		var x=getRandom(0,window.innerWidth-100);
-		var y=getRandom(0,window.innerHeight-100);
+		var y=getRandom(120,window.innerHeight-100);
 		imgObj.setAttribute("style","position:absolute;left:"+x+"px;top:"+y+"px");
 		addClass(imgObj, 'brand-logo');
 		//添加onclick事件属性,点击图片消失

@@ -4,6 +4,7 @@
     <head>
         <title>万达商圈分析</title>
         <link href=@routes.Assets.at("css/wd_3km.css") rel="stylesheet">
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=bAKZxvhoHXrMbUwKnuHlPCzQGf29mIAf"></script>
     </head>
     <body>
         <div id="container" class="container">
@@ -22,12 +23,12 @@
                 <div id="right_blk2" class="right_blk2">
                      <div class="subChart1">
                          <div class="ctn"><p class="name">居民区</p></div>
-                         <div class="ctn1"><p class="value">57</p></div>
+                         <div class="ctn1"><p class="value">392</p></div>
                          <img src=@routes.Assets.at("wd_3km/image/people.png") class="img1"></img>
                      </div>
                      <div class="subChart2">
                          <div class="ctn"><p class="name">写字楼</p></div>
-                         <div class="ctn1"><p class="value">26</p></div>
+                         <div class="ctn1"><p class="value">125</p></div>
                          <img src=@routes.Assets.at("wd_3km/image/building.png") class="img2"></img>
                      </div>
                      <div class="subChart3">
@@ -37,7 +38,7 @@
                      </div>
                      <div class="subChart4">
                          <div class="ctn"><p class="name">商业广场</p></div>
-                         <div class="ctn1"><p class="value">3</p></div>
+                         <div class="ctn1"><p class="value">28</p></div>
                          <img src=@routes.Assets.at("wd_3km/image/plaza.png") class="img4"></img>
                      </div>
                 </div>
@@ -47,13 +48,5 @@
     <script src="@routes.Assets.at("js/jquery.min.js")" type="text/javascript"></script>
     <script src="@routes.Assets.at("echarts3_src/echarts.js")" type="text/javascript"></script>
     <script src=@routes.Assets.at("wd_3km/js/right.js")></script>
-    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/api.js")></script>
-    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/MapMask.js")></script>
-    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/TrafficLayer.js")></script>
-    <!--script type="text/javascript" src=@routes.Assets.at("cust_source/js/clock.js")></script-->
-    <script type="text/javascript" src=@routes.Assets.at("cust_source/js/main.js?v=1")></script>
-    <!--script src=@routes.Assets.at("high_cust/js/jquery.js")></script-->
-    <script src=@routes.Assets.at("high_cust/js/bootstrap.min.js")></script>
-    <script src=@routes.Assets.at("high_cust/js/jquery.scrollUp.js")></script>
-    
+    <script src=@routes.Assets.at("wd_3km/js/myMap.js")></script>
 </html>

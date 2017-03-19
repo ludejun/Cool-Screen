@@ -9,6 +9,9 @@
     zoom:1;
     position:absolute;
 }
+
+.anchorBL{display:none}
+
 .header {
     left: 0px;
     top:  0px;

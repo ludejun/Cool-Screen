@@ -11,30 +11,14 @@ workPlaces = {
 	wujiaochang: {
 		name: "五角场万达",
 		//轨迹颜色
-		strokeStyle: "rgba(255,58,53,0.9)",
+		//strokeStyle: "rgba(255,58,53,0.9)",
+		strokeStyle: "rgba(0,240,243,0.9)",
+		//strokeStyle: "rgba(190,190,14,1)",
 		//轨迹粗细
 		lineWidth: 0.1,
 		center: new BMap.Point(121.520425, 31.307076),
-		bounds: new BMap.Bounds(new BMap.Point(121.520425, 31.207076), new BMap.Point(121.517809, 31.279307)),
+		bounds: new BMap.Bounds(new BMap.Point(121.520425, 31.307076), new BMap.Point(121.517809, 31.279307)),
 		toWork: "早晨6点，当第一缕阳光照进眼眶时，新世纪程序猿、产品狗，设计狮等背上电脑，啃着煎饼，棒子果子陆续从石景山，房山，草房等巢穴来到中关村动物园，开始了一天的梦想之旅。",
-		toHome: "夜幕降临，各个山头的大王们在开完一天的会议后返回各自的山头，这样的梦想之路每天都在继续着，它们坚信总有一天动物能改变世界！"
-	},
-	songjiang: {
-		name: "松江万达",
-		strokeStyle: "rgba(190,190,14,1)",
-		lineWidth: .1,
-		center: new BMap.Point(121.249946, 31.063701),
-		bounds: new BMap.Bounds(new BMap.Point(121.249946, 31.063701), new BMap.Point(121.262193, 31.088366)),
-		toWork: "早晨7点，当第二缕阳光照进眼眶时，大都的高富帅、白富美们开着牧羊人，喝着星巴克，揣着艾派德缓缓的从望京，五道口，东直门等爱巢来到造富工厂国贸，开始了一天的时尚之旅。",
-		toHome: "夜幕降临，这些富有时代精神的年轻人们陆续来到大都散落在各个角落（酒吧，西餐厅，夜店，快捷酒店）续写着他们的激情，而这样的时尚之路每天都在充实着大都青春与活力！"
-	},
-	zhoupu: {
-		name: "周浦万达",
-		strokeStyle: "rgba(0,240,243,0.9)",
-		lineWidth: .1,
-		center: new BMap.Point(121.575975, 31.121234),
-		bounds: new BMap.Bounds(new BMap.Point(121.575975, 31.121234), new BMap.Point(121.589711, 31.096638)),
-		toWork: "早晨6点，当第一缕阳光照进眼眶时，新世纪程序猿、产品狗，设计狮等背上电脑，啃着煎饼，棒子果子陆续从石景山，房山，草房等巢穴来到望京动物园，开始了一天的梦想之旅。",
 		toHome: "夜幕降临，各个山头的大王们在开完一天的会议后返回各自的山头，这样的梦想之路每天都在继续着，它们坚信总有一天动物能改变世界！"
 	}
 },
@@ -298,7 +282,7 @@ var currentKey = 'wujiaochang';
 var animateText = new AnimateText(workPlaces.wujiaochang.center, "");
 map.addOverlay(animateText),
 trafficLayer.show([currentKey]);
-$('#aside_list a[key="'+currentKey+'"]').addClass("current");
+//$('#aside_list a[key="'+currentKey+'"]').addClass("current");
 // $('#aside_list a[key="wujiaochang"]').addClass("current");
 
 // 中间跳跃的地标名称
@@ -308,6 +292,7 @@ setTimeout(function() {
 	// animateMarker.fadeOut()
 },2e3);
 
+/*
 $('.left-bar > li').click(function(e){
 	clearTimeout(keyHandle);
 	keyHandle = setTimeout(autoRun, keyDelay);
@@ -324,6 +309,7 @@ $('.left-bar > li').click(function(e){
 	}, 2e3), map.centerAndZoom(t.center, 12)) : (trafficLayer.show(allKeys), map.centerAndZoom(new BMap.Point(116.404, 39.915), 12))
 
 })
+*/
 
 // $("#aside_list").delegate("a", "click", function() {
 
@@ -353,12 +339,12 @@ function autoRun(){
 	currentKey = allKeys[keyIndex];
 	t = workPlaces[currentKey];
 
-	$(".left-bar > li").removeClass("current");
-	$('.left-bar > li[key="'+currentKey+'"]').addClass("current");
+	//$(".left-bar > li").removeClass("current");
+	//$('.left-bar > li[key="'+currentKey+'"]').addClass("current");
 
 	(trafficLayer.show([currentKey]), animateMarker.show(), animateMarker.setPointAndText(t.center, t.name), setTimeout(function() {
 		// animateMarker.fadeOut()
-	}, 2e3), map.centerAndZoom(t.center, 12));
+	}, 2e3), map.centerAndZoom(t.center, 14));
 }
 keyHandle = setTimeout(autoRun, keyDelay);
 

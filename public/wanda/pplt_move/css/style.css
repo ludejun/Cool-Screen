@@ -1,0 +1,331 @@
+@media screen and (max-width: 768px){
+    .aside{
+        left:5px;
+        top:50px;
+    }
+
+    .aside_list{
+        display:none;
+        padding-bottom:0px;
+    }
+
+    #map{
+        /* top:45px; */
+    }
+
+    #dh-title{
+        width: 180px;
+        height: 35px;
+        left: 5px;
+        top: 5px;
+    }
+    #wanda-logo{
+        right: 5px;
+        top: 5px;
+        height: 35px;
+        width: 150px;
+    }
+
+/*    .clockArea{
+        display:none;
+        width:50px;
+        height:50px;
+        top: 50px;
+        right:5px;
+    }
+*/
+    .animateMarker,
+    .animateText{
+        box-shadow:none;
+    }
+    .animateText{
+        width:130px;
+        margin-left:-150px;
+    }
+    #loading{
+        font-weight:bold;
+        font-family: "微软雅黑";
+        font-size:16px;
+        height:60px;
+        line-height:60px;
+        border-radius: 10px;
+        width:100px;
+        padding:0px 5px 0 60px;
+        margin-left:-70px;
+        margin-top:-30px;
+    }
+    #left-bar{
+        left: 5px;
+        top: 50px;
+        margin: 0px;
+        padding: 0px;
+        background-image: none;
+        background-color: rgba(0,0,255,0.3);
+        width: 70px;
+        height: 154px;
+        overflow: hidden;
+    }
+    #left-bar > li{
+        width: 70px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+    }
+
+    #clockArea{
+        transform: scale(0.4,0.4) translateX(210px) translateY(-375px);
+    }
+}
+
+.dh-title{
+    width: 390px;
+    height: 79px;
+    left: 70px;
+    top: 50px;
+    position: absolute;
+    background-image: url(../image/title.png);
+    background-size: 100% 100%;
+}
+
+.wanda-logo{
+    width: 285px;
+    height: 65px;
+    right: 50px;
+    top: 40px;
+    position: absolute;
+    background-image: url(../image/wanda-logo.png);
+    background-size: 100% 100%;
+}
+.left-bar{
+    width: 185px;
+    height: 416px;
+    position: fixed;
+    z-index: 1000;
+    left: 60px;
+    top: 150px;
+    background: transparent url(../image/left-bg.png) left top no-repeat;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    color: #fff;
+    text-align: center;
+    padding-top: 9px;
+    padding-left: 11px;
+    background-size: 185px 416px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.clockArea{
+    background:rgba(0,0,0,0.8);
+    position:absolute;
+    border-radius:10px;
+    width:130px;
+    height:130px;
+    right:50px;
+    top:160px;
+    overflow: hidden;
+}
+
+
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    background:#081734;
+    overflow:hidden;
+    font-family: "微软雅黑", MicrosoftYaHei, Arial;
+}
+
+.map{
+    background:#081734;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.loading{
+    position:absolute;
+    left:50%;
+    top:50%;
+    font-weight:bold;
+    font-family: "微软雅黑";
+    font-size:30px;
+    background:url(loading.gif) rgb(26, 26, 26) no-repeat left center;
+    height:120px;
+    line-height:120px;
+    border-radius: 5px;
+    color:#fff;
+    width:200px;
+    padding:0px 10px 0 120px;
+    margin-left:-140px;
+    margin-top:-60px;
+}
+
+.loading img{
+    position:relative;
+}
+
+.tip{
+    position:absolute;
+    left:50%;
+    top:50%;
+    border-radius: 5px;
+    padding:10px;
+    background:rgba(0,0,0,0.5);
+    color:#fff;
+    width:200px;
+    text-align:center;
+    margin-left:-100px;
+    margin-top:-10px;
+}
+
+.BMap_cpyCtrl{
+    display:none;
+}
+
+.aside{
+    position:absolute;
+    left:70px;
+    top:180px;
+    color:#fff;
+    border:2px solid #0157b4;
+    background:#02050a;
+    width:130px;
+}
+
+.aside_list{
+    padding-bottom:10px;
+}
+
+.aside_title{
+    padding-top:11px;
+    padding-bottom:11px;
+    height:18px;
+    line-height:18px;
+    /*padding-left:30px;*/
+    /*background:url(dot.png) #0157b4 no-repeat 10px center;*/
+    background-color: #0157b4;
+    text-align: center;
+    font-size:18px;
+    font-weight:bold;
+}
+
+#aside_list a{
+    font-weight:bold;
+    display:block;
+    height:30px;
+    line-height:30px;
+    text-decoration:none;
+    border-bottom:1px solid #1c1e23;
+    font-size:16px;
+    font-family:'微软雅黑';
+    padding-left:40px;
+    color:#fff;
+    position:relative;
+}
+
+#aside_list a.current{
+    background:#363636;
+}
+
+#aside_list a b{
+    content: "";
+    position:absolute;
+    left:25px;
+    top:12px;
+    background:red;
+    width:8px;
+    height:8px;
+    border-radius:8px;
+}
+
+.animateMarker{
+    position:absolute;
+    z-index:999;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    background:rgba(0,0,0,0.8);
+    box-shadow: 0px 0px 10px 1px yellow;
+    color:#fff;
+    border-radius:5px;
+    text-align:center;
+    font-family:'微软雅黑';
+    font-weight:bold;
+    -webkit-animation-name:'wobble';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+    -webkit-animation-duration: 0.5s;/*动画持续时间*/
+    -webkit-animation-timing-function: ease-in-out; /*动画频率，和transition-timing-function是一样的*/
+    -webkit-animation-delay: 0s;/*动画延迟时间*/
+    -webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+    -webkit-animation-direction: alternate;/*定义动画方式*/
+}
+
+.animateMarker:after{
+    content: "";
+    width:0; 
+    height:0; 
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-top:10px solid rgba(0,0,0,0.8);
+    position:absolute;
+    left:50%;
+    margin-left:-10px;
+    bottom:-10px;
+}
+
+.animateText{
+    position:absolute;
+    font-size: 12px;
+    z-index:999;
+    line-height:18px;
+    padding:5px;
+    background:rgba(0,0,0,0.5);
+    width:200px;
+    margin-left:-250px;
+    margin-top:-50px;
+    box-shadow: 0px 0px 10px 1px yellow;
+    color:#fff;
+    border-radius:5px;
+    font-family:'微软雅黑';
+}
+
+
+@-webkit-keyframes 'wobble' {
+ 0% {
+    margin-top: 5px;
+ }
+ 100% {
+    margin-top: -15px;
+ }
+}
+
+
+
+.anchorBL{
+    transform:translateX(10px) translateY(-10px);
+}
+
+
+.left-bar > li{
+    position: relative;
+    width: 165px;
+    height: 130px;
+    line-height: 130px;
+    font-size: 32px;
+    margin-bottom: 2px;
+    background-size: 165px 135px;
+    cursor: pointer;
+}
+.left-bar li:nth-child(3){
+    height: 132px;
+    margin-top: 2px;
+    background-size: 165px 132px;
+}
+.left-bar > li.current, .left-bar > li:hover{
+    background-image: url(../image/left-hover.png);
+    background-size: 100% 100%;
+    font-weight: bold;
+}

@@ -86,7 +86,7 @@ option = {
             }
         }
     ],
-    color:['#21D3A7', '#E24966','#FFEE34','#4990E2']
+    color:['#FFEE33', '#4A90E2','#E24A66','#21D3A7']
 };
 var myChart = echarts.init(document.getElementById('echart_right'));
 myChart.setOption(option);
