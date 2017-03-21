@@ -41,6 +41,7 @@ option = {
             type:'pie',
             radius : '55%',
             center: ['50%', '50%'],
+            color:['#FFEE33', '#4A90E2','#E24A66','#21D3A7'],
             data:[
                 {value:335, name:'居民区'},
                 {value:310, name:'写字楼'},
@@ -48,14 +49,14 @@ option = {
                 {value:235, name:'商业广场'}
             ].sort(function (a, b) { return a.value - b.value}),
             roseType: 'angle',
-                       label: {
-                normal: {
-                   formatter: "{b} : {c} ({d}%)"
-                }
-            },
+            //label: {
+            //    normal: {
+            //       formatter: "{b} : {c} ({d}%)"
+            //    }
+            //},
             label: {
                 normal: {
-                    formatter: '{b}: {d}',
+                    formatter: '{b}: {d}%',
                     textStyle: {
                         fontFamily: 'PingFangSC-Regular',
                         fontSize: 20,

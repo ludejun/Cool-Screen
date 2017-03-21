@@ -1,5 +1,6 @@
 //data
-var data = [220, 182, 191, 234, 190, 330, 310, 50, 200];
+//var data = [220, 182, 191, 234, 190, 330, 310, 50, 200];
+var data = [87539, 43730, 44093, 44482, 47165, 53881, 89255];
 var markLineData = [];
 for (var i = 1; i < data.length; i++) {
     markLineData.push([{
@@ -15,7 +16,7 @@ for (var i = 1; i < data.length; i++) {
 //option
 option = {
     title: {
-        text: '客流量折线图',
+        text: '周客流量折线图',
         textStyle: {
             fontSize: 14,
             color: '#FFFFFF'
@@ -43,7 +44,7 @@ option = {
         fontSize: 8
     },
     grid: {
-        x: 46,
+        x: 50,
         y: 68,
         x2: 15,
         y2: 35

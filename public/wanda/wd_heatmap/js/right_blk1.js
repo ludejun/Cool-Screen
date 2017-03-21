@@ -4,15 +4,16 @@ height = 300
 width = 500
 bar_category_gap = '28%'
 colors = ['#1790CF', '#1BB2D8', '#99D2DD', '#88B0BB', '#1C7099'];
-data = [80, 60];
-categories = ['出租', '零售'];
+//2016:391273   2017:331365
+data = [391273, 331365];
+categories = ['2016', '2017'];
 axisColor = '#B1B1B1';
 labelColor = '#FFFFFF'
 
 option1 = {
     title: {
         show: true,
-        text: '广场客流量分析',
+        text: '广场客流量分析(同比)',
         link: '',
         textStyle: {
             color: '#FFFFFF',
@@ -29,7 +30,7 @@ option1 = {
         // containLabel: true,
         // height:height,
         top: 102,
-        left: 44.5
+        left: 52
     },
     legend: {
         // bottom: '10',
@@ -69,7 +70,7 @@ option1 = {
             show: false
         },
         axisLabel: {
-            formatter: '{value}%',
+            formatter: '{value}',
             textStyle: {
                 color: labelColor,
             }

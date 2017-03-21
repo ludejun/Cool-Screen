@@ -4,8 +4,9 @@ height = 300
 width = 500
 bar_category_gap = '28%'
 colors = ['#1790CF', '#1BB2D8', '#99D2DD', '#88B0BB', '#1C7099'];
-data = [80, 60];
-categories = ['出租', '零售'];
+data = [0.48, 0.13,0.16,0.11,0.06,0.22];
+// {"服装":0.4766696969100068,"次主力店":0.12828724947411604,"生活精品":0.1558055122526157,"儿童业态":0.1091785354299635,"主力店":0.05934550287664849,"餐饮美食":0.21852029343730264
+categories = ['服装', '次主力店','生活精品','儿童业态','主力店','餐饮美食'];
 axisColor = '#B1B1B1';
 labelColor = '#FFFFFF'
 
@@ -32,9 +33,10 @@ option1 = {
         left: 40
     },
     legend: {
-        // bottom: '10',
-        // data: ['价格相关差评/该品牌总评论数'],
-        // icon: 'square'
+         show: true,
+         bottom: '10',
+         data: ['服装', '次主力店','生活精品','儿童业态','主力店','餐饮美食'],
+         icon: 'square'
     },
     tooltip: {
         trigger: 'axis',
@@ -58,7 +60,7 @@ option1 = {
         },
     }],
     yAxis: [{
-        name: '百分比',
+        //name: '百分比',
         nameLocation: 'middle',
         nameGap: 35,
         nameTextStyle: {
@@ -91,6 +93,7 @@ option1 = {
                             // build a color map as your need.
                             var colorList = [
                               '#00CCFF','#FF66FF',
+                              '#1BB2D8', '#99D2DD', '#88B0BB', '#1C7099'
                             ];
                             return colorList[params.dataIndex]
                         },
