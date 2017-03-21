@@ -16,13 +16,16 @@ function star(){
 		}
 		var num = i-5<=0 ? i+5 : i-5;
 		removeImg(num);
-	for (var k = 1; k<=6; k++) {
+	for (var k = 1; k<=8; k++) {
+                if(i==10 && k>4) {
+                   break; 
+                }
 		//创建img节点
 		var imgObj=document.createElement("img");
 		//添加节点属性
-		imgObj.setAttribute("src","assets/brand_wall/images/"+(6*(i-1)+k)+".png");
+		imgObj.setAttribute("src","assets/brand_wall/images/"+(8*(i-1)+k)+".png");
 		imgObj.setAttribute("title","brand");
-		imgObj.setAttribute("id",(6*(i-1)+k));
+		imgObj.setAttribute("id",(8*(i-1)+k));
 		
 		// //添加width属性。getRandom()随机数函数
 		imgObj.setAttribute("width",100);
@@ -48,8 +51,11 @@ function getRandom(min,max){
 }
 //函数：删除节点
 function removeImg(i){
-		for (var k = 1; k<=6; k++) {
-			var obj = document.getElementById(6*(i-1)+k);
+		for (var k = 1; k<=8; k++) {
+                        if(i==10 && k>4) {
+                                break; 
+                        }
+			var obj = document.getElementById(8*(i-1)+k);
 			if(obj){
 				document.body.removeChild(obj);
 			}
