@@ -2,13 +2,13 @@ var i = 0;
 //网页加载完成
 window.onload=function(){
 	//更改网页背景色
-	document.body.bgColor="#371756";
+	document.body.bgColor='#0D1F51';
 	//定时器:2秒出现一个笑脸
 	window.setInterval("star()",2000);
 }
 //动画主函数
 function star(){
-		
+
 		if (i>=10){
 			i = 1
 		}else {
@@ -18,7 +18,7 @@ function star(){
 		removeImg(num);
 	for (var k = 1; k<=8; k++) {
                 if(i==10 && k>4) {
-                   break; 
+                   break;
                 }
 		//创建img节点
 		var imgObj=document.createElement("img");
@@ -26,7 +26,7 @@ function star(){
 		imgObj.setAttribute("src","assets/brand_wall/images/"+(8*(i-1)+k)+".png");
 		imgObj.setAttribute("title","brand");
 		imgObj.setAttribute("id",(8*(i-1)+k));
-		
+
 		// //添加width属性。getRandom()随机数函数
 		imgObj.setAttribute("width",100);
 		//创建style属性（行内样式)
@@ -36,12 +36,12 @@ function star(){
 		addClass(imgObj, 'brand-logo');
 		//添加onclick事件属性,点击图片消失
 		imgObj.setAttribute("onclick","removeImg(this)");
-		
+
 		document.body.appendChild(imgObj);
 	}
 
-	
-     
+
+
 }
 //函数：求函数随机数
 function getRandom(min,max){
@@ -53,13 +53,13 @@ function getRandom(min,max){
 function removeImg(i){
 		for (var k = 1; k<=8; k++) {
                         if(i==10 && k>4) {
-                                break; 
+                                break;
                         }
 			var obj = document.getElementById(8*(i-1)+k);
 			if(obj){
 				document.body.removeChild(obj);
 			}
-		}	
+		}
 }
 //函数  添加class
 function addClass(obj, cls){
@@ -68,4 +68,3 @@ function addClass(obj, cls){
   added = obj_class + blank + cls;//组合原来的 class 和需要添加的 class.
   obj.className = added;//替换原来的 class.
 }
-

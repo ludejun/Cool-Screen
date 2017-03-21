@@ -2,11 +2,11 @@ deemph_color = 'rgb(165,165,165)'
 emph_color = 'rgb(79,129,189)'
 height = 300
 width = 500
-bar_category_gap = '28%'
+bar_category_gap = '18%'
 colors = ['#1790CF', '#1BB2D8', '#99D2DD', '#88B0BB', '#1C7099'];
 //2016:391273   2017:331365
-data = [391273, 331365];
-categories = ['2016', '2017'];
+data = [391273, 331365, 324523, 400123, 34953, 21940, 60432];
+categories = ['2016', '2017', '1994', '2020', '2021', '2031', '2099'];
 axisColor = '#B1B1B1';
 labelColor = '#FFFFFF'
 
@@ -60,7 +60,7 @@ option1 = {
     }],
     yAxis: [{
         name: '人数',
-        nameLocation: 'middle',
+        nameLocation: 'end',
         nameGap: 35,
         nameTextStyle: {
             color: labelColor,

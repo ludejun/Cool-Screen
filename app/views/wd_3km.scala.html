@@ -3,23 +3,29 @@
 <html>
     <head>
         <title>万达商圈分析</title>
+        <link href=@routes.Assets.at("brand_wall/css/brand_wall_blueStyle.css") rel="stylesheet">
         <link href=@routes.Assets.at("wd_3km/css/wd_3km_blueStyle.css") rel="stylesheet">
-        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=bAKZxvhoHXrMbUwKnuHlPCzQGf29mIAf"></script>
     </head>
     <body>
         <div id="container" class="container">
-            <div class="header">
-               <p class="txt">万达广场五角场店－－大数据分析</p>
-               <div class="logo"></div>              
-            </div>
-            <div id="map" class="left"><p>left_map</p></div>
+          <div class="header">
+
+            <p class="txt">
+              <img class="title-l" src=@routes.Assets.at("img/common/title-left.png") alt="">
+              <span>万达广场五角场店——大数据分析</span>
+              <img class="title-r" src=@routes.Assets.at("img/common/title-left.png") alt="">
+            </p>
+
+            <div class="logo"></div>
+          </div>
+            <div id="map" class="left"><p></p></div>
             <div id="right"  class="right">
                 <div class="header">
                     <div class="ctn">
-                        <p class="txt">广场3km内分布</p>
+                        广场3km内分布
                     </div>
                 </div>
-                <div id="echart_right" style="width:640px;height:460px;left:17px;top:6px;bottom:2px;position:absolute;"></div>
+                <div id="echart_right" style="width:640px;height:460px;left:17px;top: 17px;bottom:2px;position:absolute;"></div>
                 <div id="right_blk2" class="right_blk2">
                      <div class="subChart1">
                          <div class="ctn"><p class="name">居民区</p></div>
@@ -45,6 +51,7 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=bAKZxvhoHXrMbUwKnuHlPCzQGf29mIAf"></script>
     <script src="@routes.Assets.at("js/jquery.min.js")" type="text/javascript"></script>
     <script src="@routes.Assets.at("echarts3_src/echarts.js")" type="text/javascript"></script>
     <script src=@routes.Assets.at("wd_3km/js/right.js")></script>
