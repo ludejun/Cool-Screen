@@ -160,7 +160,8 @@ TrafficLayer.prototype.drawLines = function(t, i, a, e, s) {
 		n.beginPath();
 		var r = this.mercatorProjection.lngLatToPoint(this.map.getCenter()),
 		// c = new BMap.Pixel(r.x - n.canvas.width / 2 * h, r.y + n.canvas.height / 2 * h);
-		c = new BMap.Pixel(r.x - window.innerWidth / 2 * h, r.y + window.innerHeight / 2 * h);
+		//c = new BMap.Pixel(r.x - window.innerWidth / 2 * h, r.y + window.innerHeight / 2 * h);
+		c = new BMap.Pixel(r.x - 1185 / 2 * h, r.y + 902 / 2 * h);
 		n.save(),
 		n.strokeStyle = i && i.strokeStyle || "rgba(255,255,0,0.9)",
 		n.lineWidth = i && i.lineWidth || .1,
@@ -263,7 +264,8 @@ TrafficLayer.prototype._drawAnimatePath = function(t) {
 		i.fillStyle = "rgba(255,255,255,0.9)",
 		a.fillStyle = "rgba(255,255,255,0.9)";
 		for (var e = this.map.getZoom(), s = Math.pow(2, 18 - e), n = this.mercatorProjection.lngLatToPoint(this.map.getCenter())
-			, o = new BMap.Pixel(n.x - window.innerWidth / 2 * s, n.y + window.innerHeight / 2 * s)
+			, o = new BMap.Pixel(n.x - 1185 / 2 * s, n.y + 902 / 2 * s)
+			// , o = new BMap.Pixel(n.x - window.innerWidth / 2 * s, n.y + window.innerHeight / 2 * s)
 			// , o = new BMap.Pixel(n.x - i.canvas.width / 2 * s, n.y + i.canvas.height / 2 * s)
 			, h = this._data[t], r = h.length, c = 0; r > c; c++) if (void 0 !== h[c][1][2]) {
 			var l = h[c][1][h[c][2]];
