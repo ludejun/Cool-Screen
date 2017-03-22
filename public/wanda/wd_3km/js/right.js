@@ -44,9 +44,9 @@ option = {
             color:['#FFEE33', '#4A90E2','#E24A66','#21D3A7'],
             data:[
                 {value:335, name:'居民区'},
-                {value:310, name:'写字楼'},
-                {value:274, name:'学校'},
-                {value:235, name:'商业广场'}
+                {value:501, name:'写字楼'},
+                {value:367, name:'学校'},
+                {value:233, name:'商业广场'}
             ].sort(function (a, b) { return a.value - b.value}),
             roseType: 'angle',
             //label: {
