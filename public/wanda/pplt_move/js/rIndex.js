@@ -32,12 +32,12 @@ option1 = {
         bottom: 25,
         left: 40
     },
-    legend: {
-         show: true,
-         bottom: '10',
-         data: ['服装', '次主力店','生活精品','儿童业态','主力店','餐饮美食'],
-         icon: 'square'
-    },
+    // legend: {
+    //     show: true,
+    //     bottom: '10',
+    //     data: ['服装', '次主力店','生活精品','儿童业态','主力店','餐饮美食'],
+    //     icon: 'square'
+    // },
     tooltip: {
         trigger: 'axis',
         axisPointer: {

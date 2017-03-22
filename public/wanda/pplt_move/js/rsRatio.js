@@ -32,12 +32,12 @@ option1 = {
         bottom: 25,
         left: 40
     },
-    legend: {
-         show: true,
-         bottom: '10',
-         data: ['服装', '次主力店','生活精品','儿童业态','主力店','餐饮美食'],
-         icon: 'square'
-    },
+    //legend: {
+    //     show: true,
+    //     bottom: '10',
+    //     data: ['服装', '次主力店','生活精品','儿童业态','主力店','餐饮美食'],
+    //     icon: 'square'
+    //},
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -46,7 +46,7 @@ option1 = {
     },
     xAxis: [{
         type: 'category',
-        data: categories,
+        data: ['服装', '次主力店','生活精品','儿童业态','主力店','餐饮美食'],
         axisLine: {
             lineStyle: {
                 color: axisColor,
@@ -71,7 +71,7 @@ option1 = {
             show: false
         },
         axisLabel: {
-            formatter: '{value}%',
+            formatter: '{value}',
             textStyle: {
                 color: labelColor,
             }
@@ -86,7 +86,7 @@ option1 = {
         name: '比值',
         type: 'bar',
         barCategoryGap: bar_category_gap,
-        data: data,
+        data: [0.48, 0.13,0.16,0.11,0.06,0.22],
         itemStyle: {
             normal: {
                 color: function(params) {

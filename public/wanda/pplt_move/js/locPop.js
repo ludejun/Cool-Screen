@@ -11,9 +11,9 @@ option = {
         trigger: "axis",
         show:false
     },
-    legend: {
-        data: ["2011年"]
-    },
+    //legend: {
+    //    data: ["2011年"]
+    //},
     calculable: true,
     xAxis: [{
         type: "value",
