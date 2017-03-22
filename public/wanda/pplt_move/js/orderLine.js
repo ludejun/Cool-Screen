@@ -1,5 +1,5 @@
 //data
-var data = [180, 200, 330, 380, 430, 510];
+var data = [1.427, 1.000, 3.830, 1.866, 2.748, 1.494];
 var markLineData = [];
 for (var i = 1; i < data.length; i++) {
     markLineData.push([{
@@ -15,7 +15,7 @@ for (var i = 1; i < data.length; i++) {
 //option
 option = {
     title: {
-        text: '消费客单价',
+        text: '坪效比',
         textStyle: {
             fontSize: 14,
             color: '#FFFFFF'
@@ -25,19 +25,45 @@ option = {
     tooltip: {
         trigger: 'axis'
     },
-    xAxis: {
-        data: ['2011', '2012', '2013', '2014', '2015', '2016'],
+    xAxis: [{
+        type: 'category',
+        data: ['服装', '次主力店','生活精品','儿童业态','主力店','餐饮美食'],
+        axisLine: {
+            lineStyle: {
+                color: axisColor,
+                width: 2,
+            },
+        },
+        axisLabel: {
+            textStyle: {
+                color: labelColor,
+            }
+        },
+    }],
+    yAxis: [{
+        //name: '百分比',
+        nameLocation: 'middle',
+        nameGap: 35,
         nameTextStyle: {
-            color: '#FFFFFF',
-            fontSize: 6
-        }
-    },
-    yAxis: {
-        nameTextStyle: {
-            color: '#FFFFFF',
-            fontSize: 6
-        }
-    },
+            color: labelColor,
+        },
+        type: 'value',
+        splitLine: {
+            show: false
+        },
+        axisLabel: {
+            formatter: '{value}',
+            textStyle: {
+                color: labelColor,
+            }
+        },
+        axisLine: {
+            lineStyle: {
+                color: axisColor,
+            },
+        },
+    }, ],
+
     textStyle: {
         color: '#FFFFFF',
         fontSize: 8
@@ -49,37 +75,21 @@ option = {
         y2: 25
     },
     series: [{
-        type: 'line',
+        type: 'bar',
         data: data,
-        markPoint: {
-            data: [{
-                type: 'max',
-                name: '最大值'
-            }, {
-                type: 'min',
-                name: '最小值'
-            }]
-        },
-        markLine: {
-            smooth: true,
-            effect: {
-                show: true
-            },
-            distance: 10,
-            label: {
-                normal: {
-                    position: 'middle'
-                }
-            },
-            symbol: ['none', 'none'],
-            data: markLineData
-        },
-        itemStyle : {  
-            normal : {  
-                lineStyle:{  
-                    color:'#FFFF00'  
-                }  
-            }  
+        type: 'bar',
+        barCategoryGap: bar_category_gap,
+        itemStyle: {
+            normal: {
+                color: function(params) {
+                            // build a color map as your need.
+                            var colorList = [
+                              '#00CCFF','#FF66FF',
+                              '#1BB2D8', '#99D2DD', '#88B0BB', '#1C7099'
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+            }
         }
     }],
 };
