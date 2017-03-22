@@ -1,18 +1,23 @@
 <!DOCTYPE >
 <html>
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>全球招商平台品牌展示</title>
     <link href=@routes.Assets.at("brand_wall/css/brand_wall_blueStyle.css") rel="stylesheet">
-    <script type="text/javascript" src=@routes.Assets.at("brand_wall/js/brand_dyn.js")></script>
-</head>
+  </head>
 
-<body>
-<div  class="container">
-    <div class="header">
-        <p class="txt">万达广场五角场店－－大数据分析</p>
+  <body>
+    <div  class="container">
+      <div class="header">
+
+        <p class="txt">
+          <img class="title-l" src=@routes.Assets.at("img/common/title-left.png") alt="">
+          <span>万达广场五角场店——大数据分析</span>
+          <img class="title-r" src=@routes.Assets.at("img/common/title-left.png") alt="">
+        </p>
+
         <div class="logo"></div>
-    </div>
+      </div>
 <!--script type="text/javascript">
 
 var i = 0;
@@ -25,7 +30,7 @@ window.onload=function(){
 }
 //动画主函数
 function star(){
-		
+
 		if (i>=10){
 			i = 1
 		}else {
@@ -40,7 +45,7 @@ function star(){
 		imgObj.setAttribute("src","assets/brand_wall/images/"+(6*(i-1)+k)+".png");
 		imgObj.setAttribute("title","brand");
 		imgObj.setAttribute("id",(6*(i-1)+k));
-		
+
 		// //添加width属性。getRandom()随机数函数
 		imgObj.setAttribute("width",100);
 		//创建style属性（行内样式)
@@ -50,12 +55,12 @@ function star(){
 		addClass(imgObj, 'brand-logo');
 		//添加onclick事件属性,点击图片消失
 		imgObj.setAttribute("onclick","removeImg(this)");
-		
+
 		document.body.appendChild(imgObj);
 	}
 
-	
-     
+
+
 }
 //函数：求函数随机数
 function getRandom(min,max){
@@ -70,7 +75,7 @@ function removeImg(i){
 			if(obj){
 				document.body.removeChild(obj);
 			}
-		}	
+		}
 }
 //函数  添加class
 function addClass(obj, cls){
@@ -80,16 +85,7 @@ function addClass(obj, cls){
   obj.className = added;//替换原来的 class.
 }
 </script-->
-</div>
-</body>
-</head>
+    </div>
+    <script type="text/javascript" src=@routes.Assets.at("brand_wall/js/brand_dyn.js")></script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-

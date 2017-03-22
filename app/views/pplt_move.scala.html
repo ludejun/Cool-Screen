@@ -3,15 +3,22 @@
 <html>
     <head>
         <title>广场客群动态</title>
+        <link href=@routes.Assets.at("brand_wall/css/brand_wall_blueStyle.css") rel="stylesheet">
         <link href=@routes.Assets.at("pplt_move/css/pplt_move_blueStyle.css") rel="stylesheet">
     </head>
     <body>
         <div id="container" class="container">
             <div class="header">
-               <p class="txt">万达广场五角场店－－大数据分析</p>
-               <div class="logo"></div>              
+
+              <p class="txt">
+                <img class="title-l" src=@routes.Assets.at("img/common/title-left.png") alt="">
+                <span>万达广场五角场店——大数据分析</span>
+                <img class="title-r" src=@routes.Assets.at("img/common/title-left.png") alt="">
+              </p>
+
+              <div class="logo"></div>
             </div>
-            <div id="map" class="left"><p>left_map</p></div>
+            <div id="map" class="left"><p></p></div>
             <div class="right">
                 <div id="right_blk1" class="right_blk1">
                     <div class="hd"><p class="txt">万达广场五角场店</p></div>
@@ -20,15 +27,15 @@
                     <p class="pTraffic">交通路线：地铁10号线，55/66等32条公交线路</p>
                     <div id="transpBtmCtn" class="transpBtmCtn">
                         <div id="chart1" class="subChart">
-                            <div id="chart1_ctn" style="height:169px;width:199px;margin:0">
+                            <div id="chart1_ctn" style="height:165px;width:195px;margin:0">
                             </div>
                         </div>
                         <div id="chart2" class="subChart">
-                            <div id="chart2_ctn" style="height:169px;width:199px;margin:0">
+                            <div id="chart2_ctn" style="height:165px;width:195px;margin:0">
                             </div>
                         </div>
                         <div id="chart3" class="subChart">
-                            <div id="chart3_ctn" style="height:169px;width:199px;margin:0">
+                            <div id="chart3_ctn" style="height:165px;width:195px;margin:0">
                             </div>
                         </div>
                     </div>
@@ -85,5 +92,5 @@
     <!--script src=@routes.Assets.at("high_cust/js/jquery.js")></script-->
     <script src=@routes.Assets.at("high_cust/js/bootstrap.min.js")></script>
     <script src=@routes.Assets.at("high_cust/js/jquery.scrollUp.js")></script>
-    
+
 </html>

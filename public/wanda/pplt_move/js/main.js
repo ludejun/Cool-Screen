@@ -9,7 +9,7 @@ function AnimateText(e, t) {
 var animateCount = 300,
 workPlaces = {
 	wujiaochang: {
-		name: "五角场万达",
+		name: "",
 		//轨迹颜色
 		//strokeStyle: "rgba(255,58,53,0.9)",
 		strokeStyle: "rgba(0,240,243,0.9)",
@@ -368,7 +368,7 @@ window.addEventListener('resize', function(e){
 // 	desc: WXdec,
 // 	fakeid: "",
 // 	callback: function() {}
-// }; 
+// };
 !function() {
 	var e = function() {
 	// 	WeixinJSBridge.on("menu:share:appmessage",

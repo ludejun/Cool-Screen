@@ -1,4 +1,4 @@
-.container {
+/*.container {
     left: 0px;
     top:  0px;
     width: 1920px;
@@ -45,55 +45,56 @@
     line-height: 110px;
     background: url(../image/wddata.png) no-repeat;
     float: right;
-}
+}*/
 
-.left {
+/*.left {
     left: 26px;
     top:  149px;
     height: 902px;
     width: 1185px;
     opacity: 1;
     position:absolute;
-}
+}*/
 
 .right {
-    width: 664px;
-    height: 895px;
-    left: 1236px;
-    right: 20px;
-    top: 151px;
-    bottom: 34px;
-    opacity: 1;
-    border-radius: 8px;
-    position:absolute;
-    background-image: linear-gradient(-135deg, #1F3A8A 0%, #1F3A89 0%, #21418D 100%, #14678C 100%);
-    box-shadow: 0 8px 16px 0 
+  width: 665px;
+  height: 910px;
+  /* left: 1236px; */
+  right: 25px;
+  top: 145px;
+  /* bottom: 34px; */
+  /* opacity: 1; */
+  border-radius: 8px;
+  position: absolute;
+  background-image: linear-gradient(-135deg, #1F3A8A 0%, #1F3A89 0%, #21418D 100%, #14678C 100%);
+  box-shadow: 0 8px 16px 0 #11347E;
 }
 
 .right_blk1 {
-    left: 1254px;
-    top: 173px;
-    height: 420px;
-    width: 627px;
-    margin-left: 18px;
-    margin-top: 24px;
-    border: 1px solid #AFAFAF;
-    background:url(../wd_heatmap/image/bg_right.png) no-repeat;
-    opacity: 0.9;
-    background: rgba(255,255,255,0.20);
-    border: 1px solid #AFAFAF;
+  /* left: 1254px; */
+  /* top: 173px; */
+  /* height: 420px; */
+  width: 627px;
+  /* margin-left: 19px; */
+  /* margin-top: 24px; */
+  margin: 25px 19px 0 19px;
+  border: 1px solid #AFAFAF;
+  background: url(../wd_heatmap/image/bg_right.png) no-repeat;
+  opacity: 0.9;
+  background: rgba(255,255,255,0.20);
+  border: 1px solid #AFAFAF;
 }
 
 .right_blk2 {
-    top: 617px;
-    left: 1255px;
-    height: 408px;
-    width: 627px;
-    margin-top: 24px;
-    margin-left: 18px;
-    background:url(../wd_heatmap/image/bg_right.png) no-repeat;
-    opacity: 0.9;
-    background: rgba(255,255,255,0.20);
-    border: 1px solid #AFAFAF;
+  /* top: 617px; */
+  /* left: 1255px; */
+  height: 408px;
+  width: 627px;
+  /* margin-top: 24px; */
+  /* margin-left: 18px; */
+  margin: 25px 19px;
+  background: url(../wd_heatmap/image/bg_right.png) no-repeat;
+  opacity: 0.9;
+  background: rgba(255,255,255,0.20);
+  border: 1px solid #AFAFAF;
 }
-
