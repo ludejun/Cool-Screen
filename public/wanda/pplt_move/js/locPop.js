@@ -1,6 +1,6 @@
 option = {
     title: {
-        text: "地理位置所在",
+        text: "广场周边居民分布Top 5(3KM内)",
         left: 12,
         top: 20,
         textStyle: {
