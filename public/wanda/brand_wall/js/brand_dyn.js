@@ -30,8 +30,10 @@ function star(){
 		// //添加width属性。getRandom()随机数函数
 		imgObj.setAttribute("width",100);
 		//创建style属性（行内样式)
-		var x=getRandom(0,window.innerWidth-100);
-		var y=getRandom(120,window.innerHeight-100);
+		var x=getRandom(0, 1820);
+		var y=getRandom(120,980);
+		//var x=getRandom(0,window.innerWidth-100);
+		//var y=getRandom(120,window.innerHeight-100);
 		imgObj.setAttribute("style","position:absolute;left:"+x+"px;top:"+y+"px");
 		addClass(imgObj, 'brand-logo');
 		//添加onclick事件属性,点击图片消失
