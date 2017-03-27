@@ -1,6 +1,6 @@
 //data
-//var data = [220, 182, 191, 234, 190, 330, 310, 50, 200];
-var data = [87539, 43730, 44093, 44482, 47165, 53881, 89255];
+//var data = [162154, 167020, 173753, 181778, 111875, 175981, 177402];
+var data = [1, 1.030, 1.072, 1.121, 0.690, 1.085, 1.094];
 var markLineData = [];
 for (var i = 1; i < data.length; i++) {
     markLineData.push([{
@@ -27,7 +27,7 @@ option = {
         trigger: 'axis'
     },
     xAxis: {
-        data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         nameTextStyle: {
             color: '#FFFFFF',
             fontSize: 6
