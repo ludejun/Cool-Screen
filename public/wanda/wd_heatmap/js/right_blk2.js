@@ -27,7 +27,7 @@ option = {
         trigger: 'axis'
     },
     xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri(除夕)', 'Sat', 'Sun'],
         nameTextStyle: {
             color: '#FFFFFF',
             fontSize: 6
