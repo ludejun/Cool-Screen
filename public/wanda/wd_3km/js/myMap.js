@@ -93,7 +93,7 @@ var rsColors=["#FF3AC9", "#FFEE33", "#11BAFF", "#21D3A7"]
 //for(i=0;i<queries.length;i++) {
     var ls = new BMap.LocalSearch(map,   
                   { renderOptions:{map: map, autoViewport: false}});      
-    ls.searchNearby(queries, point, 650);
+    ls.searchNearby(queries, point, 3000);
     ls.setSearchCompleteCallback(function(rs) {
         if(ls.getStatus() == BMAP_STATUS_SUCCESS) {
             for(i=0;i<rs.length;i++) {

@@ -26,14 +26,14 @@ option = {
         bottom: 10
     },
 
-    visualMap: {
-        show: false,
-        min: 80,
-        max: 600,
-        inRange: {
-            colorLightness: [0, 1]
-        }
-    },
+  //  visualMap: {
+  //      show: false,
+  //      min: 80,
+  //      max: 600,
+  //      inRange: {
+  //          colorLightness: [0, 1]
+  //      }
+  //  },
     
     series : [
         {
@@ -43,12 +43,12 @@ option = {
             center: ['50%', '50%'],
             color:['#FFEE33', '#4A90E2','#E24A66','#21D3A7'],
             data:[
-                {value:335, name:'居民区'},
-                {value:501, name:'写字楼'},
-                {value:367, name:'学校'},
-                {value:233, name:'商业广场'}
+                {value:399, name:'居民区'},
+                {value:132, name:'写字楼'},
+                {value:38, name:'学校'},
+                {value:49, name:'商业广场'}
             ].sort(function (a, b) { return a.value - b.value}),
-            roseType: 'angle',
+            //roseType: 'angle',
             //label: {
             //    normal: {
             //       formatter: "{b} : {c} ({d}%)"
@@ -74,12 +74,12 @@ option = {
                     length2: 20
                 }
             },
-            itemStyle: {
-                normal: {
-                    shadowBlur: 200,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            },
+//            itemStyle: {
+//                normal: {
+//                    shadowBlur: 200,
+//                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+//                }
+//            },
             animationType: 'scale',
             animationEasing: 'elasticOut',
             animationDelay: function (idx) {

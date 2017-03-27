@@ -5,7 +5,7 @@ width = 500
 bar_category_gap = '18%'
 colors = ['#1790CF', '#1BB2D8', '#99D2DD', '#88B0BB', '#1C7099'];
 //2016:391273   2017:331365
-data = [391273, 331365];
+data = [1004734, 1121936];
 categories = ['2016', '2017'];
 axisColor = '#B1B1B1';
 labelColor = '#FFFFFF'
