@@ -16,7 +16,7 @@ for (var i = 1; i < data.length; i++) {
 //option
 option = {
     title: {
-        text: '周客流量折线图',
+        text: '2017春节前后客流量趋势图',
         textStyle: {
             fontSize: 14,
             color: '#FFFFFF'
@@ -73,7 +73,7 @@ option = {
                 }
             },
             symbol: ['none', 'none'],
-            data: markLineData
+            //data: markLineData
         },
         itemStyle : {  
             normal : {  

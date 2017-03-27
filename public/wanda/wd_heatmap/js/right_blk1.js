@@ -6,7 +6,7 @@ bar_category_gap = '18%'
 colors = ['#1790CF', '#1BB2D8', '#99D2DD', '#88B0BB', '#1C7099'];
 //2016:391273   2017:331365
 //data = [1004734, 1121936];
-data = [1, 1.117];
+data = [1, 1.040];
 categories = ['2016', '2017'];
 axisColor = '#B1B1B1';
 labelColor = '#FFFFFF'
@@ -14,7 +14,7 @@ labelColor = '#FFFFFF'
 option1 = {
     title: {
         show: true,
-        text: '广场周客流量分析(同比)',
+        text: '广场月客流量同比(1月份)',
         link: '',
         textStyle: {
             color: '#FFFFFF',
