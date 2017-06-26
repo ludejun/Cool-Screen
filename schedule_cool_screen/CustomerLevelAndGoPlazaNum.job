@@ -1,3 +1,0 @@
-type=command
-dependencies=CustomerValueLevel_10
-command=ssh ${host} sh ${path}/CustomerLevelAndGoPlazaNum.sh

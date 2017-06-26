@@ -1,3 +1,0 @@
-type=command
-dependencies=Start
-command=ssh ${host} sh ${path}/PlazaRegionInfo.sh

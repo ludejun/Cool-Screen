@@ -1,3 +1,0 @@
-type=command
-dependencies=CustomerLevelAndGoPlazaNum
-command=ssh ${host} sh ${path}/HWPSexInfo.sh

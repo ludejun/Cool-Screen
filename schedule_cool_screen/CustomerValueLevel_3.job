@@ -1,3 +1,0 @@
-type=command
-dependencies=UseAAppGuestsHour
-command=ssh ${host} sh "${path}/CustomerValueLevel_3.sh"

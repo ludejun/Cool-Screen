@@ -1,3 +1,0 @@
-type=command
-dependencies=HWPAgeInfo
-command=ssh ${host} sh ${path}/HWPLoginPlazaNumsInfo.sh

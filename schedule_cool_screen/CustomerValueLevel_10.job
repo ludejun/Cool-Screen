@@ -1,3 +1,0 @@
-type=command
-dependencies=CustomerValueLevel_3
-command=ssh ${host} sh ${path}/CustomerValueLevel_10.sh

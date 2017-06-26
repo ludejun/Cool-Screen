@@ -1,3 +1,0 @@
-type=command
-dependencies=UseAAppGuestsHour,PeopleInPlaza,HWPSexInfo,HWPLoginPlazaNumsInfo,HWPAgeInfo,DeviceBrandAndAppCategory,CustomerLevelAndUsingAppTime
-command=echo "Task finish!"

@@ -1,3 +1,0 @@
-type=command
-dependencies=PeopleInPlaza
-command=ssh ${host} sh ${path}/UseAAppGuestsHour.sh
