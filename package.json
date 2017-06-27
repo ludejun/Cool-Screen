@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=DEV node app",
-    "dev": "node ./webpack/dev",
+    "dev": "node ./webpack/dev.js",
     "build": "webpack --config  ./webpack/prod.js",
     "eslint": "eslint src"
   },

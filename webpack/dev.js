@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const pxtorem = require('postcss-pxtorem');
 const WebpackDevServer = require('webpack-dev-server');
 
 const env = {
@@ -91,10 +92,10 @@ const config = {
   // The list of plugins for PostCSS
   // https://github.com/postcss/postcss
   postcss: [
-    // pxtorem({
-    //   rootValue: 100,
-    //   propWhiteList: []
-    // }),
+    pxtorem({
+      rootValue: 192,
+      propWhiteList: []
+    }),
     autoprefixer()
   ]
 };
