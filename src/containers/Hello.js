@@ -9,7 +9,6 @@ export default class Hello extends Component {
         <p>Test - REM</p>
         <div className="test-background">测试CSS图片</div>
       </div>
-
     );
   }
 }
