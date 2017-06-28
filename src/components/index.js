@@ -1,2 +1,1 @@
-export {default as AnimeParticule} from './AnimeParticule';
-export {default as AnimeBubble} from './AnimeBubble';
+export { default as AnimeParticule } from './AnimeParticule';
