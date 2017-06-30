@@ -1,0 +1,110 @@
+.page-title-div {
+  text-align: center;
+  margin-bottom: 45px;
+  .page-title {
+    color: #108EE9;
+    font-size: 36px;
+    line-height: 2;
+    display: inline-block;
+    border: 2px solid rgba(16,142,233,.5);
+    border-left: none;
+    border-right: none;
+    position: relative;
+    &::after {
+      content: " "; // necessary
+      display: inline-block;
+      border: none;
+      border-top: 6px solid rgba(16,142,233,.5);
+      width: 80%;
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+.district-brand-tag {
+  align-items: center;
+  .type-title {
+    font-size: 24px;
+    display: inline-block;
+    &::before {
+      content: "\e600"; //<
+      font-family: "iconfont" !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: inline-block;
+    }
+    &::after {
+      content: "\e600"; //<
+      font-family: "iconfont" !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: rotate(180deg) translateY(2px);
+      display: inline-block;
+    }
+    &.type-title-brand {
+      color: #E99610;
+      margin: 30px 0 0 30px;
+    }
+    &.type-title-tag {
+      margin: 30px 0 0 30px;
+      color: #09CDC6;
+    }
+  }
+  .brand-div {
+    transform: rotate(-30deg);
+    margin: 80px 60px 60px 80px;
+    .brand-line:last-child {
+      margin-left: 238px;
+    }
+    .brand-block {
+      position: relative;
+      display: inline-block;
+      margin: -10px;
+      .brand-title {
+        color: #0BBFFF;
+        position: absolute;
+        top: 0;
+        text-align: center;
+        transform: skewX(-30deg) translateX(10%);
+        width: 100%;
+      }
+      .brand-cube {
+        width: 238px;
+        height: 196px;
+        transform: rotate(30deg);
+      }
+      &.highlight {
+        .brand-title {
+          color: #90FFFC;
+        }
+        .brand-cube {
+          background-image: url("/img/brand-green.png");
+        }
+      }
+    }
+  }
+  .tag-div {
+    flex: 1;
+    background-color: rgba(16,142,233,.7);
+    margin: 0 50px;
+    position: relative;
+    &::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-right: 25px solid rgba(16,142,233,.7);
+      border-left: 25px solid transparent;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+      position: absolute;
+      left: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .tag-gragh {
+      height: 630px !important;
+    }
+  }
+}
