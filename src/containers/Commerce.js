@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import {WDPillar, WDImageBar} from '../components';
+import './commerce.less';
 export default class Commerce extends Component {
   render() {
     const data = ['20, 348, 729','3, 148, 385'];
@@ -11,6 +12,20 @@ export default class Commerce extends Component {
     {name:'上海1市',val:'7283万元', percentage:'78%'},{name:'南昌市',val:'6283万元', percentage:'70%'}
     ,{name:'上海4市',val:'5283万元', percentage:'60%'},
     {name:'上海2市',val:'4283万元', percentage:'50%'},{name:'上海3市',val:'3283万元', percentage:'40%'}];
+    const genderList = [
+      {
+        itemImage: '../assets/icon_male.png',
+        percent: 0.4 * 100,
+        color: '#4C9DFF',
+        minWidth: 11,
+      },
+      {
+        itemImage: '../assets/icon_female.png',
+        percent: 0.7 * 100,
+        color: '#EA6C6B',
+        minWidth: 11,
+      },
+    ];
     return (
       <div>
         <h1>实体商业</h1>
@@ -40,38 +55,27 @@ export default class Commerce extends Component {
             </div>
         </div>
         <div style={{display:"flex"}}>
-          <div style={{flexGrow:1}}>
+          <div style={{flex:1}}>
+            <div style={{display: 'flex', justifyContent: 'center', marginTop:60}}>
+              <WDPillar />
+            </div>
             <div>
-              <span style={{fontSize:112}}>{'\u007D'}</span>
-              <div style={{display:'inline-block'}}>
-                <span style={{width:10,height:24,color:'#4C9DFF'}}></span>
-                <span style={{width:10,height:24,color:'#4C9DFF'}}></span>
-                <span style={{width:10,height:24,color:'#4C9DFF'}}></span>
-                <span style={{width:10,height:24,color:'#4C9DFF'}}></span>
-                <span style={{width:10,height:24,color:'#4C9DFF'}}></span>
-                <span style={{width:10,height:24,color:'#4C9DFF'}}></span>
-                <span style={{width:10,height:24,color:'#4C9DFF'}}></span>
-                <span style={{width:10,height:24,color:'#4C9DFF'}}></span>
-                <span style={{width:10,height:24,color:'#4C9DFF'}}></span>
-                <span style={{width:10,height:24,color:'#EA6C6B'}}></span>
-                <span style={{width:10,height:24,color:'#EA6C6B'}}></span>
-              </div>
+              <span style={{fontSize:112}}>{'\u007B'}</span>
+              <WDImageBar dataList={genderList} />
               <span style={{fontSize:112}}>{'\u007D'}</span>
               <span style={{fontSize:54,color: '#108EE9'}}>{data[0]}</span>
               <span style={{fontSize:30,color: '#108EE9'}}>人</span>
             </div>
           </div>
-          <div style={{flexGrow:1}}>
-            {/* {list.map((item, i) =>
+          <div style={{flex:1}}>
+            {list.map((item, i) =>
               <div className="money-container" key={i}>
                 <div className="money-city">
                   {`${('0' + (i + 1)).substr(-2)} ${item['name']}` || ''}
                 </div>
                 <div className="money-center">
                   <div className="money-color-container">
-                    <div
-                      className="money-color"
-                      style={{ width: `${item['percentage']}` }}/>
+                    <div className="money-color" style={{ width: `${item['percentage']}` }}>
                     </div>
                   </div>
                 </div>
@@ -79,7 +83,7 @@ export default class Commerce extends Component {
                   {item['val']}
                 </div>
               </div>
-            )} */}
+            )}
           </div>
         </div>
       </div>

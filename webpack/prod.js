@@ -46,10 +46,10 @@ const config = {
   },
 
   postcss: [
-    // pxtorem({
-    //   rootValue: 100,
-    //   propWhiteList: []
-    // }),
+    pxtorem({
+      rootValue: 192,
+      propWhiteList: []
+    }),
     autoprefixer()],
 
   plugins: [
