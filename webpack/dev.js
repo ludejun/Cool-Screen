@@ -96,6 +96,9 @@ const config = {
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, {
   inline: true,
-  hot: true
+  hot: true,
+  headers: {
+    'Access-Control-Allow-Origin': '*'
+  },
 });
 server.listen(env.hot_server_port);
