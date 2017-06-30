@@ -31,6 +31,9 @@ export default class WDImageBar extends Component {
                     width: `calc(${v.percent}% - ${v.percent * 0.65}px)`,
                   }}
                 />
+                <span style={{ ...styles.percent, color: v.color }}>
+                  {`${v.show ? v.percent.toFixed(0)}% :''`}
+                </span>
               </div>) ||
             null
           );
