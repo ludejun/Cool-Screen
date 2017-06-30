@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { WDMapBasic } from '../components';
-import { comdify } from '../utils';
-import weibo from '../assets/map/weibo.json'; // 'http://echarts.baidu.com/data/asset/data/weibo.json';
+import { WDMapBasic } from '../../components';
+import HomeCorner from './HomeCorner';
+import { comdify } from '../../utils';
+import weibo from '../../assets/map/weibo.json'; // 'http://echarts.baidu.com/data/asset/data/weibo.json';
 import './HomeInternet.less';
 
 export default class HomeInternet extends Component {
@@ -95,6 +96,8 @@ export default class HomeInternet extends Component {
   render() {
     return (
       <div className="home-internet">
+        <img src="/img/wanda-logo.png" className="header-logo" />
+        <HomeCorner className="home-corner" />
         <div className="home-info-banner flex-row">
           <div className="flex1">
             <p className="banner-title">互联网</p>
@@ -124,6 +127,7 @@ export default class HomeInternet extends Component {
             <p className="map-title">数字商业互联</p>
           </div>
         </div>
+        <HomeCorner className="home-corner right-bottom" />
       </div>
     );
   }
