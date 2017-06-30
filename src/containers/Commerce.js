@@ -28,34 +28,32 @@ export default class Commerce extends Component {
     ];
     return (
       <div >
-        <div style={{padding:20,background: 'linear-gradient(0deg, rgba(5,13,50,0.18) 0%, #030A24 93%, #0A0A0A 100%)'}}>
-          <h1 style={{color: '#E99610',margin:'20px 0'}}>实体商业</h1>
-          <div style={{marginLeft:20, display:'flex'}}>
-              <div style={{flexGrow:3}}>
+        <div className="head-container">
+          <h1 className="head-title">实体商业</h1>
+          <div style={{display:'flex'}}>
+              <div style={{flex:3}}>
                 <p>
-                  <span style={{width:22,height:22,borderRadius:'100%',background:'#fff'}}></span>
-                  <span style={{fontSize: 25,color: '#FFFFFF'}}>
+                  <span className="head-sub-title">
                     <i className="iconfont icon-plaza-arrow line-icon" />
                     年平均进入商圈人数</span>
                 </p>
                 <p>
-                  <span style={{fontSize: 68,color: '#6EC3FF'}}>{data[0]}</span>
-                  <span style={{fontSize: 25,color: '#6EC3FF'}}>人</span>
+                  <span className="head-num">{data[0]}</span>
+                  <span className="head-num-unit">人</span>
                 </p>
               </div>
-              <div style={{flexGrow:3}}>
+              <div style={{flex:3}}>
                 <p>
-                  <span style={{width:22,height:22,borderRadius:'100%',background:'#fff'}}></span>
-                  <span style={{fontSize: 25,color: '#FFFFFF'}}>
+                  <span className="head-sub-title">
                     <i className="iconfont icon-plaza-arrow line-icon" />
                     年平均进入商圈人数</span>
                 </p>
                 <p>
-                  <span style={{fontSize: 68,color: '#6EC3FF'}}>{data[1]}</span>
-                  <span style={{fontSize: 25,color: '#6EC3FF'}}>辆</span>
+                  <span className="head-num">{data[1]}</span>
+                  <span className="head-num-unit">辆</span>
                 </p>
               </div>
-              <div style={{flexGrow:1}}>
+              <div style={{flex:1}}>
                 <span style={{width:234,height:234,borderRadius:'100%',background:'#fff'}}></span>
               </div>
           </div>
