@@ -17,7 +17,6 @@ class WDMapBasic extends Component {
       },
       geo: {
         map: 'china',
-        // roam: true, // 开启缩放
         label: {
           emphasis: {
             show: false
@@ -25,11 +24,11 @@ class WDMapBasic extends Component {
         },
         itemStyle: {
           normal: {
-            areaColor: '#F3F3F3',
-            borderColor: '#C0B796'
+            areaColor: '#323c48',
+            borderColor: '#111'
           },
           emphasis: {
-            areaColor: 'rgba(243,243,243,.5)'
+            areaColor: '#2a333d'
           }
         }
       }
