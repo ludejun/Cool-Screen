@@ -9,6 +9,7 @@ ReactDOM.render(
       <Route path="hello" component={Routes.Hello} />
       <Route path="district-plaza" component={Routes.DistrictPlaza} />
       <Route path="district-brand-tag" component={Routes.DistrictBrandTag} />
+      <Route path="commerce" component={Routes.Commerce} />
     </Route>
   </Router>,
   document.getElementById('main')

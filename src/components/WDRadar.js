@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import REcharts from 'echarts-for-react';
+import Echarts from 'echarts-for-react';
 
 export default class WDRadar extends Component {
   constructor(props) {
@@ -82,6 +82,6 @@ export default class WDRadar extends Component {
   }
 
   render() {
-    return <REcharts {...this.props} option={this.assembleBrand()} />;
+    return <Echarts {...this.props} option={this.assembleBrand()} />;
   }
 }
