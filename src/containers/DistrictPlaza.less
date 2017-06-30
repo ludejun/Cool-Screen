@@ -1,1 +1,78 @@
-.DistrictPlaza {}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.district-plaza {
+  // padding: 0 130px;
+  width: 1638px;
+  margin: auto;
+  height: 100%;
+  align-items: center;
+  // background-image: url("/img/plaza-bg.png");
+  // background-size: contain;
+  color: #fff;
+  .plaza-info {
+    // width: 100%;
+    width: 607px;
+    height: 726px;
+    background-image: url("/img/plaza-info.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 66px 75px 20px;
+    .plaza-title {
+      margin: auto;
+      font-size: 36px;
+      background-image: url("/img/plaza-title.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      text-align: center;
+      width: 320px;
+      line-height: 82px;
+      margin-bottom: 45px;
+    }
+    .info-line {
+      font-size: 30px;
+      font-weight: 200;
+      .line-icon {
+        font-size: 26px;
+        margin-right: 15px;
+      }
+    }
+    .hr {
+      border: none;
+      border-top: solid 1px #108EE9;
+      margin: 40px 45px;
+    }
+    .score-radar {
+      height: 213px !important;
+      flex: 1;
+      vertical-align: middle;
+    }
+    .score-div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-size: 12px;
+      width: 160px;
+      .score-num {
+        font-size: 48px;
+        margin: 10px 0;
+      }
+      .score-rate {}
+    }
+  }
+  .plaza-line {
+    margin-top: -10%;
+    width: 207px;
+    height: 332px;
+  }
+  .plaza-image {
+    width: 824px;
+    vertical-align: middle;
+  }
+  .ant-rate-star-full .ant-rate-star-second,
+  .ant-rate-star-half .ant-rate-star-first {
+    color: #09CDC6;
+  }
+}

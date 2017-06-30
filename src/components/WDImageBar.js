@@ -18,7 +18,7 @@ export default class WDImageBar extends Component {
     let { dataList } = this.props;
     // let maxPercent = dataList.map((v)=>{return v.percent}).reduce((x,y)=>{return Math.max(x,y)})
     return (
-      <div>
+      <div style={{  display: 'inline-block',width:180}}>
         {dataList.map((v, i) => {
           return (
             (v &&
@@ -31,9 +31,6 @@ export default class WDImageBar extends Component {
                     width: `calc(${v.percent}% - ${v.percent * 0.65}px)`,
                   }}
                 />
-                <span style={{ ...styles.percent, color: v.color }}>
-                  {`${v.percent.toFixed(0)}%`}
-                </span>
               </div>) ||
             null
           );

@@ -35,3 +35,5 @@ dist/js
 
 
 .DS_Store
+
+public/fonts/*demo*

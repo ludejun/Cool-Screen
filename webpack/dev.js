@@ -39,21 +39,14 @@ const config = {
   },
 
   entry: [
-    `webpack-dev-server/client?http://${
-      env.hot_server_host
-      }:${
-      env.hot_server_port}`,
+    `webpack-dev-server/client?http://${env.hot_server_host}:${env.hot_server_port}`,
     'webpack/hot/dev-server',
     './src/client.js'
   ],
   output: {
     path: path.join(__dirname, '/public/build/js'),
     filename: '[name].js',
-    publicPath: `http://${
-      env.hot_server_host
-      }:${
-      env.hot_server_port
-      }/`
+    publicPath: `http://${env.hot_server_host}:${env.hot_server_port}/`
   },
 
   // devtool: "eval",
