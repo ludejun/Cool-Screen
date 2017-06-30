@@ -32,8 +32,8 @@ export default class HomeInternet extends Component {
           <div className="banner-main">
             <p className="banner-title">互联网</p>
             <div className="flex-row">
-              {this.banner.map(v =>
-                <div className="flex1">
+              {this.banner.map((v, i) =>
+                <div className="flex1" key={i}>
                   <p className="line-title">
                     <i className={`iconfont ${v.icon} line-icon`} />{v.title}
                   </p>

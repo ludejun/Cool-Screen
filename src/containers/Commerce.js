@@ -56,8 +56,8 @@ export default class Commerce extends Component {
           <div className="banner-main">
             <p className="banner-title banner-yellow">实体商业</p>
             <div className="flex-row">
-              {this.banner.map(v =>
-                <div className="flex1">
+              {this.banner.map((v, i) =>
+                <div className="flex1" key={i}>
                   <p className="line-title">
                     <i className={`iconfont ${v.icon} line-icon`} />{v.title}
                   </p>
