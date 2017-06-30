@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="83px" height="37px" viewBox="0 0 83 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M9,2 L85,2 L85,32 L78.5,39 L2,39 L2,9.5 L9,2 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="标签" transform="translate(-2.000000, -2.000000)">
+            <g id="Group-2">
+                <g id="Combined-Shape">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#979797" stroke-width="1" d="M9.21727615,2.5 L84.5,2.5 L84.5,31.8036549 L78.2819652,38.5 L2.5,38.5 L2.5,9.69708159 L9.21727615,2.5 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
