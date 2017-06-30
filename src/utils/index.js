@@ -29,18 +29,21 @@ export function addItem(arr, item) {
 }
 
 export function formatUrl(path) {
-  return `${(configs.secureHttps ? 'https://' : 'http://')}${configs.host}:${configs.port}${configs.apiRoot}${(path[0] !== '/' ? `/${path}` : path)}`;
+  return `${configs.secureHttps
+    ? 'https://'
+    : 'http://'}${configs.host}:${configs.port}${configs.apiRoot}${path[0] !== '/'
+    ? `/${path}`
+    : path}`;
 }
 
 export function getQueryString(params) {
   let result = '';
   for (const key in params) {
-    if ({}.hasOwnProperty.call(params, key)
-      && (params[key] || params[key] === 0)) {
+    if ({}.hasOwnProperty.call(params, key) && (params[key] || params[key] === 0)) {
       result += `&${key}=${params[key]}`;
     }
   }
-  return result.length && result.substr(1) || '';
+  return (result.length && result.substr(1)) || '';
 }
 
 export const getUserToken = () => {
@@ -55,7 +58,11 @@ export const getUserInfo = () => {
 
 export const setUserToken = (auth, tel, name, useid) => {
   if (auth) {
-    Storage.set(configs.authToken, {token: auth, username: name || '', telephone: tel || '', userId: useid || ''}, 60 * 24);
+    Storage.set(
+      configs.authToken,
+      { token: auth, username: name || '', telephone: tel || '', userId: useid || '' },
+      60 * 24
+    );
   } else {
     Storage.remove(configs.authToken);
   }
@@ -141,4 +148,26 @@ export function changeMomentToDTString(dateMoment) {
 
 export function formatDTString(dateString) {
   return dateString && moment(dateString).format(timeStampFormat);
+}
+
+// 给定一个范围，按比例计算圆圈大小。
+export function getProperSize(now, min, max, minTarget, maxTarget) {
+  if (!now) {
+    return 0;
+  }
+  if (minTarget <= maxTarget && min <= now <= max) {
+    return (now - min) * (maxTarget - minTarget) / (max - min) + minTarget;
+  }
+  return now || 0;
+}
+
+// 千分位
+export function comdify(n) {
+  if (!n) return '';
+  n = n.toString();
+  const re = /\d{1,3}(?=(\d{3})+$)/g;
+  const n1 = n.replace(/^(\d+)((\.\d+)?)$/, (s, s1, s2) => {
+    return s1.replace(re, '$&,') + s2;
+  });
+  return n1;
 }

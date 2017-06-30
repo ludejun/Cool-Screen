@@ -45,7 +45,7 @@ export default class DistrictPlaza extends Component {
             <div className="score-div">
               <p>项目评级</p>
               <p className="score-num">91</p>
-              <Rate disabled value={4.5} allowHalf className="score-rate" />
+              <Rate disabled value={4.5} allowHalf />
             </div>
           </div>
         </div>

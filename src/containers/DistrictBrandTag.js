@@ -59,7 +59,7 @@ export default class DistrictBrandTag extends Component {
           </span>
         </div>
         <div className="flex-row district-brand-tag">
-          <div className="">
+          <div>
             <span className="type-title type-title-brand">品牌</span>
             <div className="brand-div">
               {[[1, 2, 3], [4, 5, 6, 7], [8, 9, 10]].map((line, i) =>
