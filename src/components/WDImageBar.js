@@ -32,7 +32,7 @@ export default class WDImageBar extends Component {
                   }}
                 />
                 <span style={{ ...styles.percent, color: v.color }}>
-                  {`${v.show ? v.percent.toFixed(0)}% :''`}
+                  {`${v.show ? v.percent.toFixed(0)+'%' : ''} `}
                 </span>
               </div>) ||
             null
