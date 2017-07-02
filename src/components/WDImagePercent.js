@@ -79,7 +79,7 @@ const styles = {
     fontWeight: 200
   },
   name: {
-    color: '#999',
+    color: '#fff',
     fontSize: 12,
     lineHeight: 1.5,
     textAlign: 'center',

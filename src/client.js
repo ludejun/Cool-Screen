@@ -11,9 +11,9 @@ ReactDOM.render(
         <Route path="hello" component={Routes.Hello} />
         <Route path="district-plaza" component={Routes.DistrictPlaza} />
         <Route path="district-brand-tag" component={Routes.DistrictBrandTag} />
-        <Route path="analysis" component={Routes.BusinessAnalysis} />
-      </Route>
 
+      </Route>
+      <Route path="analysis" component={Routes.BusinessAnalysis} />
       <Route path="home-internet" component={Routes.HomeInternet} />
       <Route path="commerce" component={Routes.Commerce} />
 
