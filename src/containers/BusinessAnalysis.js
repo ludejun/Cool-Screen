@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {WDPillar, WDImageBar, WDImagePercent} from '../components';
+import HeaderTitle from './Layout/HeaderTitle';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
 import { Radio } from 'antd';
@@ -248,6 +249,7 @@ export default class BusinessAnalysis extends Component {
   render() {
     return (
       <div style={{display:'flex',justifyContent: 'center',alignItems:'center',height: '100%' }}>
+        <HeaderTitle title="BNNNN"/>
         <div style={{flex:1}}>
           <p>广场楼层分布实例图：</p>
           <Radio.Group
