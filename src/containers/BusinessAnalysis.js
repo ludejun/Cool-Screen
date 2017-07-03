@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {WDPillar, WDImageBar, WDImagePercent} from '../components';
 import Echarts from 'echarts-for-react';
+import echarts from 'echarts';
+import { Radio } from 'antd';
 import './businessAnalysis.less';
 ///////data area
 const consume = [120, 40, 10];
@@ -75,6 +77,12 @@ const consumeOption = {
         show: false,
         formatter: "{a} <br/>{b} : {c} ({d}%)"
     },
+    grid: {
+        left: 50,
+        top: 10,
+        right: 10,
+        bottom: 50
+    },
     legend: {
 
         orient:'vertical',
@@ -111,7 +119,6 @@ const consumeOption = {
             radius : [40, 50],
             itemStyle : dataStyle,
             hoverAnimation: false,
-
             data:[
                 {
                     value:consume[1],
@@ -147,98 +154,124 @@ const consumeOption = {
 
     ]
 };
+const rawData = [{
+    name: '18岁以下',
+    val: 0.8,
+}, {
+    name: '18~24岁',
+    val: 0.3,
+}, {
+    name: '25~34岁',
+    val: 0.9,
+}, {
+    name: '35~44岁',
+    val: 0.3,
+}, {
+    name: '45岁以上',
+    val: 0.2,
+}];
+const option = {
+  xAxis: {
+    data: rawData.map(function(item) {
+        return item.name;
+    }),
+    axisTick: {
+        show: false
+    },
+    axisLine: {
+        show: false
+    },
+    axisLabel: {
+        textStyle: {
+            color: '#999'
+        }
+    }
+  },
+  grid: {
+      left: 50,
+      top: 10,
+      right: 10,
+      bottom: 50
+  },
+  yAxis: {
+    type: 'value',
+    splitLine: {
+        show: true
+    },
+    axisLine: {
+        show: false
+    },
+    axisLabel: {
+      show: true,
+      textStyle: {color: '#999', fontSize: 12},
+    },
+  },
+  series: [{
+      itemStyle: {
+			normal: {
+			    color:new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+          { offset: 0, color: '#6D83F1' },
+          { offset: 1, color: '#06F0FB' },
+        ])
 
-//http://gallery.echartsjs.com/editor.html?c=xHJEWRrrbZ
-// const option = {
-//     title:{
-//         text:'驯鹿与其他交通方式速度对比'
-//     },
-//     xAxis: {
-//         data: rawData.map(function(item) {
-//             return item.name;
-//         }),
-//         axisTick: {
-//             show: false
-//         },
-//         axisLine: {
-//             show: false
-//         },
-//         axisLabel: {
-//             textStyle: {
-//                 color: '#e54035'
-//             }
-//         }
-//     },
-//     grid: {
-//         left: 10,
-//         top: 10,
-//         right: 10,
-//         bottom: 50
-//     },
-//     yAxis: {
-//         splitLine: {
-//             show: false
-//         },
-//         axisTick: {
-//             show: false
-//         },
-//         axisLine: {
-//             show: false
-//         },
-//         axisLabel: {
-//             show: false
-//         }
-//     },
-//     color: ['#e54035'],
-//     series: [{
-//         itemStyle: {
-// 				normal: {
-// 				    color:new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-//             { offset: 0, color: '#6D83F1' },
-//             { offset: 1, color: '#06F0FB' },
-//           ])
-//
-//     }},
-//         name: 'hill',
-//         type: 'pictorialBar',
-//         symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
-//         data: rawData.map(function(item) {
-//             return item.velocity;
-//         })
-//     }, {
-//         name: 'glyph',
-//         type: 'pictorialBar',
-//         barGap: '-100%',
-//         barCategoryGap: '30%',
-//         symbolPosition: 'end',
-//         symbolSize: [25, 25],
-//         symbolOffset: [0, -35],
-//         data: rawData.map(function(item) {
-//             return {
-//                 value: item.velocity,
-//                 symbol: symbols[item.symbol]
-//             };
-//         })
-//     }]
-// };
+  }},
+      name: 'hill',
+      type: 'pictorialBar',
+      symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
+      data: rawData.map(function(item) {
+          return item.val;
+      })
+  }]
+};
+const radioList = ['Test1', 'Test2', 'Test3'];
 export default class BusinessAnalysis extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      tab:0
+    };
+  }
+  componentDidMount() {
+    clearInterval(timer);
+    const timer = setInterval(()=>{
+      if(this.state.tab<2){
+        this.setState({
+          tab: this.state.tab + 1
+        });
+      }else{
+        this.setState({
+          tab: 0
+        });
+      }
+    },6000);
+  }
   render() {
     return (
       <div style={{display:'flex'}}>
         <div style={{flex:1}}>
           <p>广场楼层分布实例图：</p>
+          <Radio.Group
+            className="overview-month-group"
+            value={this.state.tab}
+          >
+            {radioList.map((v,i) =>(
+              <Radio.Button key={i} value={i} className="overview-month">{v}</Radio.Button>
+            ))}
+          </Radio.Group>
+          <img src="/img/building.png" style={{width:800}}/>
         </div>
         <div style={{flex:1}}>
           <div style={{display:'flex'}}>
             <div style={{flex:1}}>
               <div>
-                {/* <p style={{display:'inline-block', width:10}}>消费等级占比</p> */}
-                <Echarts className="echarts-body" style={{width:370, height:270}} option={consumeOption} />
+                <p style={{display: 'inline-block', width:15, verticalAlign: 'top'}}>消费等级占比</p>
+                <div style={{width:370, height:270, display: 'inline-block', verticalAlign: 'top'}}>
+                  <Echarts className="echarts-body" style={{width:370, height:270}} option={consumeOption} />
+                </div>
               </div>
-              <div style={{display:'flex'}}>
-                {/* <p>年龄分布</p> */}
-                <Echarts className="echarts-body" style={{width:370, height:270}} option={consumeOption} />
+              <div className="clearBoth" style={{marginTop:25}}>
+                <p style={{display: 'inline-block', width:15}}>年龄分布</p>
+                <Echarts className="echarts-body" style={{width:370, height:270, display: 'inline-block', verticalAlign: 'middle'}} option={option} />
               </div>
             </div>
             <div style={{flex:1}}>
