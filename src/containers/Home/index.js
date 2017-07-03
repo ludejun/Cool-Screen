@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import
 import './home.less';
 
 export default class Home extends Component {
