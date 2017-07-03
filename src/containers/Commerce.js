@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { WDPillar, WDImageBar } from '../components';
+import HomeCorner from './Home/HomeCorner';
 import { comdify } from '../utils';
 import './commerce.less';
 
@@ -22,7 +23,6 @@ export default class Commerce extends Component {
     ];
   }
   render() {
-    const data = ['20, 348, 729', '3, 148, 385'];
     const consume = ['31%', '43%', '26%'];
     const list = [
       { name: '上海市', val: '10283万元', percentage: '99%' },
@@ -51,9 +51,10 @@ export default class Commerce extends Component {
       }
     ];
     return (
-      <div>
+      <div className="home-internet home-commerce">
+        <HomeCorner className="home-corner left-top" />
         <div className="home-info-banner flex-row">
-          <div className="banner-main">
+          <div className="flex1">
             <p className="banner-title banner-yellow">实体商业</p>
             <div className="flex-row">
               {this.banner.map((v, i) =>
@@ -70,6 +71,7 @@ export default class Commerce extends Component {
           </div>
           <img className="banner-img" src="/img/home-real.png" />
         </div>
+
         <div style={{ display: 'flex' }}>
           <div style={{ flex: 1 }}>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: 60 }}>
@@ -79,7 +81,7 @@ export default class Commerce extends Component {
               <span style={{ fontSize: 112 }}>{'\u007B'}</span>
               <WDImageBar dataList={genderList} />
               <span style={{ fontSize: 112 }}>{'\u007D'}</span>
-              <span style={{ fontSize: 54, color: '#108EE9' }}>{data[0]}</span>
+              <span style={{ fontSize: 54, color: '#108EE9' }}>{comdify(1234567)}</span>
               <span style={{ fontSize: 30, color: '#108EE9' }}>人</span>
             </div>
           </div>
@@ -112,6 +114,8 @@ export default class Commerce extends Component {
             )}
           </div>
         </div>
+
+        <HomeCorner className="home-corner left-bottom" />
       </div>
     );
   }
