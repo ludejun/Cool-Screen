@@ -247,7 +247,7 @@ export default class BusinessAnalysis extends Component {
   }
   render() {
     return (
-      <div style={{display:'flex'}}>
+      <div style={{display:'flex',justifyContent: 'center',alignItems:'center',height: '100%' }}>
         <div style={{flex:1}}>
           <p>广场楼层分布实例图：</p>
           <Radio.Group
