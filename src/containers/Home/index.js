@@ -11,6 +11,7 @@ export default class Home extends Component {
       backgroundColor: 'transparent',
       globe: {
         baseTexture: '/img/echarts/data-1491890179041-Hkj-elqpe.jpg',
+        heightTexture: '/img/echarts/data-1491889019097-rJQYikcpl.jpg',
         displacementScale: 0.1,
         shading: 'lambert',
 
@@ -52,9 +53,18 @@ export default class Home extends Component {
         ], [
           [120, 66, 1], [-80, 30, 1]
         ],]
+      }, {
+        type: 'scatter3D',
+        coordinateSystem: 'globe',
+        symbol: 'pin',
+        label: {
+          show: true,
+          position: 'top',
+          formatter: 'Wanda',
+        },
+        data: [[120, 66, 0]],
       }]
     })
-
   }
 
   render() {
@@ -63,7 +73,7 @@ export default class Home extends Component {
         <img src="/img/home-title.png" className="home-title" />
         <div className="home-slogan-container">
           <div className="home-slogan-container-sub">
-            <p>万 达 大 数 据 助 力 商 业 模 式 创 新</p>
+            <p>万 达 大 数 据 中 心 助 力 商 业 模 式 创 新</p>
           </div>
         </div>
         <div className="home-earth-container">
