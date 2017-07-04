@@ -3,6 +3,7 @@ import {WDPillar, WDImageBar, WDImagePercent} from '../components';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
 import { Radio } from 'antd';
+import anime from 'animejs';
 import './businessAnalysis.less';
 ///////data area
 const consume = [120, 40, 10];
@@ -41,7 +42,6 @@ const genderList = [
     itemImage: 'img/icon_male.png',
     percent: 0.9 * 100,
     color: '#4C9DFF',
-    minWidth: 11,
     show: true,
   },
   {
@@ -78,17 +78,17 @@ const consumeOption = {
         formatter: "{a} <br/>{b} : {c} ({d}%)"
     },
     grid: {
-        left: 50,
+        left: 10,
         top: 10,
         right: 10,
         bottom: 50
     },
     legend: {
-
-        orient:'vertical',
-        top: 'bottom',
-        right:'20px',
-        data:['低端消费','中端消费','高端消费']
+      show:false,
+      orient:'vertical',
+      top: 'bottom',
+      // right:'20px',
+      data:['低端消费','中端消费','高端消费']
     },
     series : [
         {
@@ -98,18 +98,16 @@ const consumeOption = {
             radius : [70,80],
             itemStyle : dataStyle,
             hoverAnimation: false,
-
             data:[
-                {
-                    value:consume[0],
-                    name:'低端消费'
-                },
-                {
-                    value:80,
-                    name:'invisible',
-                    itemStyle : placeHolderStyle
-                }
-
+              {
+                value:consume[0],
+                name:'低端消费'
+              },
+              {
+                value:80,
+                name:'invisible',
+                itemStyle : placeHolderStyle
+              }
             ]
         },
          {
@@ -120,15 +118,15 @@ const consumeOption = {
             itemStyle : dataStyle,
             hoverAnimation: false,
             data:[
-                {
-                    value:consume[1],
-                    name:'中端消费'
-                },
-                {
-                    value:40,
-                    name:'invisible',
-                    itemStyle : placeHolderStyle
-                }
+              {
+                value:consume[1],
+                name:'中端消费'
+              },
+              {
+                value:40,
+                name:'invisible',
+                itemStyle : placeHolderStyle
+              }
             ]
         },
         {
@@ -138,7 +136,6 @@ const consumeOption = {
             hoverAnimation: false,
             radius : [20, 30],
             itemStyle : dataStyle,
-
             data:[
                 {
                     value:consume[2],
@@ -224,6 +221,7 @@ const option = {
   }]
 };
 const radioList = ['Test1', 'Test2', 'Test3'];
+
 export default class BusinessAnalysis extends Component {
   constructor(props) {
     super(props);
@@ -244,11 +242,21 @@ export default class BusinessAnalysis extends Component {
         });
       }
     },6000);
+
+    // anime({
+    //   targets: '.Rectangle-19',
+    //   translateX: -90,
+    //   easing: 'easeInOutQuad',
+    //   direction: 'alternate',
+    //   duration: 400,
+    //   loop: true
+    // });
   }
+
   render() {
     return (
-      <div style={{display:'flex',justifyContent: 'center',alignItems:'center',height: '100%' }}>
-        <div style={{flex:1}}>
+      <div className="analysis-container">
+        <div className="left-container">
           <p>广场楼层分布实例图：</p>
           <Radio.Group
             className="overview-month-group"
@@ -258,39 +266,48 @@ export default class BusinessAnalysis extends Component {
               <Radio.Button key={i} value={i} className="overview-month">{v}</Radio.Button>
             ))}
           </Radio.Group>
-          <img src="/img/building.png" style={{width:800}}/>
+          <img src="/img/building.png" className="left-img"/>
         </div>
-        <div style={{flex:1}}>
-          <div style={{display:'flex'}}>
-            <div style={{flex:1}}>
+        <div style={{flex:1}} className="right-container">
+          {/* <div className="right-container"> */}
+          {/* <img src="/img/analysis-border.png" className="right-container-bg" /> */}
+            {/* <svg style={{position:'absolute', width:"820px", height:"687px"}} viewBox="0 0 820 687" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <defs></defs>
+              <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                <rect className="Rectangle-19" fillOpacity="0.600883152" fill="#108EE9" opacity="0.498471467" x="315" y="8" width="230" height="12"></rect>
+              </g>
+            </svg> */}
+            <div className="right-sub-container">
               <div>
-                <p style={{display: 'inline-block', width:15, verticalAlign: 'top'}}>消费等级占比</p>
-                <div style={{width:370, height:270, display: 'inline-block', verticalAlign: 'top'}}>
-                  <Echarts className="echarts-body" style={{width:370, height:270}} option={consumeOption} />
+                <p className="consume-title">消费等级占比</p>
+                <div className="consume-container">
+                  <Echarts className="consume-chart" option={consumeOption} />
                 </div>
               </div>
-              <div className="clearBoth" style={{marginTop:25}}>
-                <p style={{display: 'inline-block', width:15}}>年龄分布</p>
-                <Echarts className="echarts-body" style={{width:370, height:270, display: 'inline-block', verticalAlign: 'middle'}} option={option} />
+              <div className="age-container">
+                <p className="age-title">年龄分布</p>
+                <Echarts className="age-chart"  option={option} />
               </div>
             </div>
-            <div style={{flex:1}}>
+            <div className="right-sub-container">
               <div>
                 <p className="right-sub-title">车辆情况对比</p>
                 <WDImagePercent dataList={carList} />
              </div>
-             <div style={{marginTop:90,marginBottom:90}}>
+             <div className="gender-compare">
                 <p className="right-sub-title">性别对比</p>
-                <WDImageBar dataList={genderList} />
+                <div className="image-bar">
+                  <WDImageBar dataList={genderList} />
+                </div>
               </div>
               <div>
                 <p className="right-sub-title">已婚对比</p>
                 <WDImagePercent dataList={marriage} />
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
-    );
+    )
   }
 }
