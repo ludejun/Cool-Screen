@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1498806553260'); /* IE9*/
-  src: url('iconfont.eot?t=1498806553260#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1498806553260') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1498806553260') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1498806553260#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1499004895277'); /* IE9*/
+  src: url('iconfont.eot?t=1499004895277#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1499004895277') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1499004895277') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1499004895277#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -16,6 +16,14 @@
 }
 
 .icon-left-arrow:before { content: "\e600"; }
+
+.icon-client-hearts:before { content: "\e6a9"; }
+
+.icon-client-married:before { content: "\e631"; }
+
+.icon-walk:before { content: "\e621"; }
+
+.icon-car:before { content: "\e61b"; }
 
 .icon-home-car:before { content: "\e625"; }
 

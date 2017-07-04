@@ -7,8 +7,10 @@ export { default as HeaderTitle } from './Layout/HeaderTitle';
 // 商圈分析
 export { default as DistrictPlaza } from './DistrictPlaza';
 export { default as DistrictBrandTag } from './DistrictBrandTag';
+export { default as BusinessAnalysis } from './BusinessAnalysis';
 
 // 超大屏-互联网
+export {default as Home } from './Home';
 export { default as HomeInternet } from './Home/HomeInternet';
 
 export { default as Commerce } from './Commerce';

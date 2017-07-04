@@ -7,6 +7,7 @@ export { default as WDRadar } from './WDRadar';
 export { default as WDForceGragh } from './WDForceGragh';
 export { default as WDPillar } from './WDPillar';
 export { default as WDImageBar } from './WDImageBar';
+export { default as WDImagePercent } from './WDImagePercent';
 
 // maps
 export { default as WDMapBasic } from './WDMapBasic';
