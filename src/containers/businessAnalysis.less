@@ -85,8 +85,11 @@
           box-shadow: none !important;
         }
       }
-    }
 
+      .ant-radio-button-wrapper:not(:first-child)::before {
+        width: 0 !important;
+      }
+    }
   }
 
   .right-container{
@@ -95,13 +98,16 @@
     height:687px;
     width: 820px;
     margin-right:94px;
-
+    position: relative;
     .right-container-bg{
-      height:687px;
-      width: 820px;
+      height:100%;
+      width: 100%;
       position: absolute;
     }
 
+    .right-sub-container-first{
+      margin-left:10px;
+    }
     .right-sub-container{
       flex:1;
       margin-top:80px;
@@ -154,7 +160,7 @@
       margin:30px 0;
     }
     .image-bar{
-      margin-left:20px;
+      margin-left:8px;
     }
   }
 }

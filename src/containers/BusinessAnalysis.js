@@ -179,10 +179,11 @@ const option = {
     axisLine: {
         show: false
     },
+
     axisLabel: {
-        textStyle: {
-            color: '#999'
-        }
+      interval: 0,
+      rotate: -45,
+      textStyle: {color: '#999999', fontSize: 12}
     }
   },
   grid: {
@@ -230,51 +231,51 @@ export default class BusinessAnalysis extends Component {
       tab:0
     };
   }
-  // componentDidMount() {
-  //   // clearInterval(timer);
-  //   // const timer = setInterval(()=>{
-  //   //   if(this.state.tab<2){
-  //   //     this.setState({
-  //   //       tab: this.state.tab + 1
-  //   //     });
-  //   //   }else{
-  //   //     this.setState({
-  //   //       tab: 0
-  //   //     });
-  //   //   }
-  //   // },6000);
-  //
-  //   // anime({
-  //   //   targets: '.Rectangle-19',
-  //   //   translateX: -90,
-  //   //   easing: 'easeInOutQuad',
-  //   //   direction: 'alternate',
-  //   //   duration: 400,
-  //   //   loop: true
-  //   // });
-  //
-  //   for(let i=0;i<4;i++){
-  //     anime({
-  //       targets: `.tag`,
-  //       // translateY: 50,
-  //       opacity:1,
-  //       easing: 'easeInOutQuad',
-  //       duration: 1600,
-  //       delay: 2000,
-  //       // loop: true
-  //     });
-  //     anime({
-  //       targets: `.tag-tail-${i}`,
-  //       opacity:1,
-  //       translateY: 50,
-  //       easing: 'easeInOutQuad',
-  //       direction: 'reverse',
-  //       duration: 800,
-  //       delay: 1100,
-  //     });
-  //   }
-  //
-  // }
+  componentDidMount() {
+    clearInterval(timer);
+    const timer = setInterval(()=>{
+      if(this.state.tab<2){
+        this.setState({
+          tab: this.state.tab + 1
+        });
+      }else{
+        this.setState({
+          tab: 0
+        });
+      }
+    },6000);
+
+    anime({
+      targets: '.Rectangle-19',
+      translateX: -40,
+      easing: 'easeInOutQuad',
+      direction: 'alternate',
+      duration: 400,
+      loop: true
+    });
+
+    for(let i=0;i<4;i++){
+      anime({
+        targets: `.tag`,
+        // translateY: 50,
+        opacity:1,
+        easing: 'easeInOutQuad',
+        duration: 1600,
+        delay: 2000,
+        // loop: true
+      });
+      anime({
+        targets: `.tag-tail-${i}`,
+        opacity:1,
+        translateY: 50,
+        easing: 'easeInOutQuad',
+        direction: 'reverse',
+        duration: 800,
+        delay: 1100,
+      });
+    }
+
+  }
 
   render() {
     return (
@@ -309,15 +310,14 @@ export default class BusinessAnalysis extends Component {
           <img src="/img/building.png" className="left-img"/>
         </div>
         <div className="right-container">
-          {/* <div className="right-container"> */}
           <img src="/img/analysis-border.png" className="right-container-bg" />
-            {/* <svg style={{position:'absolute', width:"820px", height:"687px"}} viewBox="0 0 820 687" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <svg style={{position:'absolute', width:"820px", height:"687px"}} viewBox="0 0 820 687" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <defs></defs>
               <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                <rect className="Rectangle-19" fillOpacity="0.600883152" fill="#108EE9" opacity="0.498471467" x="315" y="8" width="230" height="12"></rect>
+                <rect className="Rectangle-19" fillOpacity="0.600883152" fill="#108EE9" opacity="0.498471467" x="205" y="8" width="180" height="12"></rect>
               </g>
-            </svg> */}
-            <div className="right-sub-container">
+            </svg>
+            <div className="right-sub-container right-sub-container-first">
               <div>
                 <p className="consume-title">消费等级占比</p>
                 <div className="consume-container">
@@ -345,7 +345,6 @@ export default class BusinessAnalysis extends Component {
                 <WDImagePercent dataList={marriage} />
               </div>
             </div>
-          {/* </div> */}
         </div>
       </div>
     )
