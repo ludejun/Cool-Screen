@@ -1,6 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import REcharts from 'echarts-for-react';
 
+/* <WDForceGragh
+  config={{
+    nodes: this.createNodes(),
+    categories: [{ name: 'circle' }, { name: 'square' }]
+  }}
+  className="tag-gragh"
+/>*/
+
 export default class WDForceGragh extends Component {
   constructor(props) {
     super(props);

@@ -10,6 +10,7 @@ export { default as DistrictBrandTag } from './DistrictBrandTag';
 export { default as BusinessAnalysis } from './BusinessAnalysis';
 
 // 超大屏-互联网
+export {default as Home } from './Home';
 export { default as HomeInternet } from './Home/HomeInternet';
 
 export { default as Commerce } from './Commerce';

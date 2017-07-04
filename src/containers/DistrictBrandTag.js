@@ -1,88 +1,143 @@
 import React, { Component } from 'react';
-import { WDForceGragh } from '../components';
+import anime from 'animejs';
+// import { WDForceGragh, AnimeBrandTag } from '../components';
+import { getBaseFontSize } from '../utils';
 import './DistrictBrandTag.less';
 
 export default class DistrictBrandTag extends Component {
-  createNodes(count) {
-    const names = ['万达影城', '文职', '<44岁', '医药 ', '本科以上', '啦啦啦', '嘤嘤嘤'];
-    const labelShow = {
-      label: {
-        normal: {
-          show: true
-        }
-      }
+  constructor(props) {
+    super(props);
+    this.data = {
+      0: { id: 0, name: '必胜客', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
+      1: { id: 1, name: '屈臣氏', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
+      2: { id: 2, name: '汉拿山', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
+      3: { id: 3, name: 'ZARA', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
+      4: { id: 4, name: '避风塘', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
+      5: { id: 5, name: '万达影城', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
+      6: { id: 6, name: '汤姆熊', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
+      7: { id: 7, name: '宝大祥', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
+      8: { id: 8, name: '一茶一座', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
+      9: { id: 9, name: '海澜之家', tag: [1, 2, 3, 4, 5, 6, 7, 8] }
     };
-    const center = {
-      // fixed: true,
-      category: 0,
-      symbol: 'circle',
-      value: 100,
-      itemStyle: {
-        normal: {
-          color: '#09CDC6'
-        }
-      }
-      // label: {
-      //   show: true,
-      //   normal: {
-      //     formatter: '{b}',
-      //     textStyle: {
-      //       color: '#fff',
-      //       fontSize: 18
-      //     }
-      //   }
-      // }
-      // x: 100,
-      // y: 100
+    this.brandList = [[0, 1, 2], [3, 4, 5, 6], [7, 8, 9]];
+    this.highlightInterval = null;
+
+    this.state = {
+      highlightBrand: 0
     };
-    const nodes = names.map((v, i) => {
-      const n = {
-        id: i,
-        value: Math.random() * 50,
-        name: v,
-        category: 1,
-        symbol:
-          'path://M9.21727615,2.5 L84.5,2.5 L84.5,31.8036549 L78.2819652,38.5 L2.5,38.5 L2.5,9.69708159 L9.21727615,2.5 Z',
-        ...labelShow
-      };
-      return i == 0 ? { ...n, ...center } : n;
+  }
+
+  generateRandomNumber(n) {
+    return (Math.random() * n * 2 - n) / 192 * getBaseFontSize();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.highlightInterval);
+  }
+
+  componentDidMount() {
+    console.log(111, this.data);
+    clearInterval(this.highlightInterval);
+    this.highlightInterval = setInterval(() => {
+      this.setState({
+        highlightBrand: (this.state.highlightBrand + 1) % Object.keys(this.data).length
+      });
+      anime({
+        targets: '.tag-div',
+        direction: 'reverse',
+        duration: 800,
+        translateX: '-50%',
+        scaleX: 0
+      });
+    }, 10000);
+
+    Object.keys(this.data).forEach((v) => {
+      const tagAnime = anime({
+        targets: `#RoundSquare${v}`,
+        translateX: this.generateRandomNumber(15),
+        translateY: this.generateRandomNumber(15),
+        scale: this.generateRandomNumber(0.3) + 1,
+        direction: 'alternate',
+        easing: 'linear',
+        duration: 3000,
+        loop: true,
+        delay: Math.random() * 2000
+      });
+      const lineAnime = anime({
+        targets: `#JoinLine${v}`,
+        opacity: 1 - Math.random() * 0.7,
+        direction: 'alternate',
+        easing: 'linear',
+        duration: 3000,
+        loop: true,
+        delay: Math.random() * 2000
+      });
     });
-    return nodes;
   }
 
   render() {
+    const { highlightBrand } = this.state;
     return (
-      <div>
+      <div className="district-brand-tag">
         <div className="page-title-div">
           <span className="page-title">
             数字商业：品牌与标签相关性
           </span>
         </div>
-        <div className="flex-row district-brand-tag">
+        <div className="flex-row">
           <div>
             <span className="type-title type-title-brand">品牌</span>
-            <div className="brand-div">
-              {[[1, 2, 3], [4, 5, 6, 7], [8, 9, 10]].map((line, i) =>
-                <div className="brand-line" key={i}>
-                  {line.map((v, j) =>
-                    <div className="brand-block" key={j}>
-                      <span className="brand-title type-title-tag">必胜客{v}</span>
-                      <img className="brand-cube" src="/img/brand-blue.png" />
-                    </div>
-                  )}
+            <div className="brand-anime-container">
+              <div className="brand-div">
+                {this.brandList.map((line, i) =>
+                  <div className="brand-line" key={i}>
+                    {line.map((v, j) =>
+                      <div className="brand-block" key={j}>
+                        <span className="brand-title type-title-tag">
+                          {this.data[v].name || ''}
+                        </span>
+                        <img
+                          className="brand-cube"
+                          src={
+                            highlightBrand === v ? '/img/brand-green.png' : '/img/brand-blue.png'
+                          }
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+              {this.data[highlightBrand].tag.map(v =>
+                <div className={`brand-hanabi brand-hanabi-${v}`} key={v}>
+                  <div className="span-hanabi" />
                 </div>
               )}
             </div>
           </div>
-          <div className="tag-div">
+          <div className="tag-div flex1 flex-col">
             <span className="type-title type-title-tag">标签</span>
-            <WDForceGragh
-              config={{
-                nodes: this.createNodes(),
-                categories: [{ name: 'circle' }, { name: 'square' }]
-              }}
-              className="tag-gragh"
-            />
+            <div className="flex1 tag-gragh">
+              {this.data[highlightBrand].tag.map((v, i) =>
+                <div className={`join-line join-line-${i + 1}`} id={`JoinLine${i + 1}`} key={i} />
+              )}
+
+              {this.data[highlightBrand].tag.map((v, i) =>
+                <div
+                  className={`round-square round-square-${i + 1}`}
+                  id={`RoundSquare${i + 1}`}
+                  key={i}
+                >
+                  <img className="round-square-img" src="/img/tag-node.png" />
+                  <div className="round-square-content">{`主力店${v}`}</div>
+                </div>
+              )}
+
+              <div className="center-round-out">
+                <img className="center-circle" src="/img/home-circle.png" />
+                <div className="center-round">{this.data[highlightBrand].name}</div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

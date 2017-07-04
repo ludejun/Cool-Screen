@@ -171,3 +171,8 @@ export function comdify(n) {
   });
   return n1;
 }
+
+// 拿根字体大小 base字体大小
+export function getBaseFontSize() {
+  return parseFloat(getComputedStyle(document.documentElement).fontSize);
+}

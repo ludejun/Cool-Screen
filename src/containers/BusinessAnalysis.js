@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {WDPillar, WDImageBar, WDImagePercent} from '../components';
+import HeaderTitle from './Layout/HeaderTitle';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
 import { Radio } from 'antd';
@@ -229,33 +230,56 @@ export default class BusinessAnalysis extends Component {
       tab:0
     };
   }
-  componentDidMount() {
-    clearInterval(timer);
-    const timer = setInterval(()=>{
-      if(this.state.tab<2){
-        this.setState({
-          tab: this.state.tab + 1
-        });
-      }else{
-        this.setState({
-          tab: 0
-        });
-      }
-    },6000);
-
-    // anime({
-    //   targets: '.Rectangle-19',
-    //   translateX: -90,
-    //   easing: 'easeInOutQuad',
-    //   direction: 'alternate',
-    //   duration: 400,
-    //   loop: true
-    // });
-  }
+  // componentDidMount() {
+  //   // clearInterval(timer);
+  //   // const timer = setInterval(()=>{
+  //   //   if(this.state.tab<2){
+  //   //     this.setState({
+  //   //       tab: this.state.tab + 1
+  //   //     });
+  //   //   }else{
+  //   //     this.setState({
+  //   //       tab: 0
+  //   //     });
+  //   //   }
+  //   // },6000);
+  //
+  //   // anime({
+  //   //   targets: '.Rectangle-19',
+  //   //   translateX: -90,
+  //   //   easing: 'easeInOutQuad',
+  //   //   direction: 'alternate',
+  //   //   duration: 400,
+  //   //   loop: true
+  //   // });
+  //
+  //   for(let i=0;i<4;i++){
+  //     anime({
+  //       targets: `.tag`,
+  //       // translateY: 50,
+  //       opacity:1,
+  //       easing: 'easeInOutQuad',
+  //       duration: 1600,
+  //       delay: 2000,
+  //       // loop: true
+  //     });
+  //     anime({
+  //       targets: `.tag-tail-${i}`,
+  //       opacity:1,
+  //       translateY: 50,
+  //       easing: 'easeInOutQuad',
+  //       direction: 'reverse',
+  //       duration: 800,
+  //       delay: 1100,
+  //     });
+  //   }
+  //
+  // }
 
   render() {
     return (
       <div className="analysis-container">
+        <HeaderTitle title="万达大数据-商圈分析"/>
         <div className="left-container">
           <p>广场楼层分布实例图：</p>
           <Radio.Group
@@ -266,11 +290,27 @@ export default class BusinessAnalysis extends Component {
               <Radio.Button key={i} value={i} className="overview-month">{v}</Radio.Button>
             ))}
           </Radio.Group>
+          <div className="tag tag-0">
+            <p className="tag-title">Test0</p>
+            <p className="tag-tail tag-tail-0"></p>
+          </div>
+          <div className="tag tag-1">
+            <p className="tag-title">Test1</p>
+            <p className="tag-tail tag-tail-1"></p>
+          </div>
+          <div className="tag tag-2">
+            <p className="tag-title">Test2</p>
+            <p className="tag-tail tag-tail-2"></p>
+          </div>
+          <div className="tag tag-3">
+            <p className="tag-title">Test3</p>
+            <p className="tag-tail tag-tail-3"></p>
+          </div>
           <img src="/img/building.png" className="left-img"/>
         </div>
-        <div style={{flex:1}} className="right-container">
+        <div className="right-container">
           {/* <div className="right-container"> */}
-          {/* <img src="/img/analysis-border.png" className="right-container-bg" /> */}
+          <img src="/img/analysis-border.png" className="right-container-bg" />
             {/* <svg style={{position:'absolute', width:"820px", height:"687px"}} viewBox="0 0 820 687" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <defs></defs>
               <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
