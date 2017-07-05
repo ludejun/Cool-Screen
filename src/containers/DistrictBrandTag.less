@@ -41,8 +41,13 @@
   }
 }
 .district-brand-tag {
-  margin: 140px 0 73px;
-  align-items: center;
+  // margin: 140px 0 73px;
+  // align-items: center;
+  justify-content: center;
+  height: 100%;
+  .flex-row {
+    align-items: center;
+  }
   .type-title {
     font-size: 24px;
     display: inline-block;
@@ -94,6 +99,10 @@
           width: 238px;
           height: 196px;
           transform: rotate(30deg);
+          display: inline-block;
+          transition: all ease 0.5s;
+          background-image: url("/img/brand-blue.png");
+          background-size: contain;
         }
         &.highlight {
           .brand-title {
@@ -190,8 +199,6 @@
     margin: 0 50px;
     position: relative;
     height: 696px;
-    // display: flex;
-    // flex-direction: column;
     &::before {
       content: "";
       width: 0;
