@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './HomeCorner.less';
 
 export default class HomeCorner extends Component {
   render() {
