@@ -22,42 +22,103 @@ export default class HomeCorner extends Component {
         >
           <polyline
             id="Line"
+            className="corner-outline"
             stroke="#108EE9"
             strokeLinecap="1"
             strokeLinecap="square"
             points="0 52.5 196 52.5 244.5 12 809 12 845.5 52.5 1183 52.5 1218 90"
           />
           <circle
-            id="Oval-7"
+            id="Oval-1"
+            className="corner-circle corner-circle-1"
             stroke="#108EE9"
             strokeLinecap="1"
-            cx="195.319281"
-            cy="51.3192815"
+            cx="195"
+            cy="51"
             r="17"
           />
-          <circle id="Oval-7" fill="#108EE9" fillRule="evenodd" cx="195" cy="51" r="5.68071852" />
-          <circle id="Oval-7" stroke="#108EE9" strokeLinecap="1" cx="1215" cy="86" r="8.84035926" />
-          <circle id="Oval-7" fill="#108EE9" fillRule="evenodd" cx="1215" cy="86" r="5.68071852" />
-          <circle id="Oval-7" fill="#108EE9" fillRule="evenodd" cx="895" cy="52" r="5.68071852" />
-          <circle id="Oval-7" fill="#108EE9" fillRule="evenodd" cx="925" cy="52" r="5.68071852" />
-          <circle id="Oval-7" fill="#108EE9" fillRule="evenodd" cx="955" cy="52" r="5.68071852" />
-          <circle id="Oval-7" fill="#108EE9" fillRule="evenodd" cx="985" cy="52" r="5.68071852" />
+          <circle
+            id="Oval-2"
+            className="corner-circle corner-circle-1"
+            fill="#108EE9"
+            fillRule="evenodd"
+            cx="195"
+            cy="51"
+            r="5.68071852"
+          />
+          <circle
+            id="Oval-3"
+            className="corner-circle corner-circle-3"
+            stroke="#108EE9"
+            strokeLinecap="1"
+            cx="1215"
+            cy="86"
+            r="8.84035926"
+          />
+          <circle
+            id="Oval-4"
+            className="corner-circle corner-circle-3"
+            fill="#108EE9"
+            fillRule="evenodd"
+            cx="1215"
+            cy="86"
+            r="5.68071852"
+          />
+          <circle
+            id="Oval-5"
+            className="corner-circle corner-circle-5"
+            fill="#108EE9"
+            fillRule="evenodd"
+            cx="895"
+            cy="52"
+            r="5.68071852"
+          />
+          <circle
+            id="Oval-6"
+            className="corner-circle corner-circle-6"
+            fill="#108EE9"
+            fillRule="evenodd"
+            cx="925"
+            cy="52"
+            r="5.68071852"
+          />
+          <circle
+            id="Oval-7"
+            className="corner-circle corner-circle-7"
+            fill="#108EE9"
+            fillRule="evenodd"
+            cx="955"
+            cy="52"
+            r="5.68071852"
+          />
+          <circle
+            id="Oval-8"
+            className="corner-circle corner-circle-8"
+            fill="#108EE9"
+            fillRule="evenodd"
+            cx="985"
+            cy="52"
+            r="5.68071852"
+          />
           <path
             d="M246.5,35.5 L611.636961,35.5"
-            id="Line"
+            id="Line1"
+            className="corner-outline corner-twoline"
             stroke="#108EE9"
             strokeLinecap="1"
             strokeLinecap="square"
           />
           <path
             d="M225.5,45.5 L590.636961,45.5"
-            id="Line"
+            id="Line2"
+            className="corner-outline corner-twoline"
             stroke="#108EE9"
             strokeLinecap="1"
             strokeLinecap="square"
           />
           <rect
-            id="Rectangle-Copy-2"
+            id="Rectangle-2"
+            className="corner-rectangle corner-rectangle-2"
             fill="#108EE9"
             fillRule="evenodd"
             opacity="0.595391757"
@@ -67,7 +128,8 @@ export default class HomeCorner extends Component {
             height="4"
           />
           <rect
-            id="Rectangle-Copy"
+            id="Rectangle-1"
+            className="corner-rectangle corner-rectangle-1"
             fill="#108EE9"
             fillRule="evenodd"
             opacity="0.595391757"

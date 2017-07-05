@@ -1,0 +1,209 @@
+.home-corner {
+  width: 1920px !important;
+  height: 153px !important;
+  position: absolute;
+  &.left-top,
+  &.right-top {
+    top: 145px;
+  }
+  &.left-bottom {
+    transform: rotateX(180deg);
+  }
+  &.left-bottom,
+  &.right-bottom {
+    bottom: 70px;
+  }
+  &.right-top {
+    transform: rotateY(180deg);
+  }
+  &.right-bottom {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+  .corner-outline {
+    stroke-dasharray: 0, 200%;
+    stroke-dashoffset: 0;
+    animation: cornerLineMove 5s ease-out infinite;
+    animation-direction: alternate;
+  }
+  .corner-twoline {
+    animation-delay: 0.2s;
+  }
+  @keyframes cornerLineMove {
+    5% {
+      stroke-dasharray: 0, 200%;
+    }
+    60% {
+      stroke-dasharray: 200%, 0;
+    }
+    100% {
+      stroke-dasharray: 200%, 0;
+    }
+  }
+  .corner-circle {
+    animation: 5s ease-out infinite;
+    transform-origin: center;
+    animation-direction: alternate;
+    transform: scale(0);
+    &-1 {
+      // .corner-circle-show(1, 2%, 30%)
+      animation-name: cornerCircleShow1;
+      @keyframes cornerCircleShow1 {
+        5% {
+          transform: scale(0);
+        }
+        9% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+    &-3 {
+      animation-name: cornerCircleShow3;
+      @keyframes cornerCircleShow3 {
+        0% {
+          transform: scale(0);
+        }
+        41% {
+          transform: scale(0);
+        }
+        45% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+    &-5 {
+      animation-name: cornerCircleShow5;
+      @keyframes cornerCircleShow5 {
+        0% {
+          transform: scale(0);
+        }
+        33% {
+          transform: scale(0);
+        }
+        35% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+    &-6 {
+      animation-name: cornerCircleShow6;
+      @keyframes cornerCircleShow6 {
+        0% {
+          transform: scale(0);
+        }
+        35% {
+          transform: scale(0);
+        }
+        37% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+    &-7 {
+      animation-name: cornerCircleShow7;
+      @keyframes cornerCircleShow7 {
+        0% {
+          transform: scale(0);
+        }
+        37% {
+          transform: scale(0);
+        }
+        39% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+    &-8 {
+      animation-name: cornerCircleShow8;
+      @keyframes cornerCircleShow8 {
+        0% {
+          transform: scale(0);
+        }
+        39% {
+          transform: scale(0);
+        }
+        41% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  .corner-rectangle {
+    animation: 5s ease-out infinite;
+    animation-direction: alternate;
+    transform: scale(0);
+    transform-origin: left;
+    &-1 {
+      animation-name: cornerRectangleShow1;
+      @keyframes cornerRectangleShow1 {
+        0% {
+          transform: scale(0);
+        }
+        25% {
+          transform: scale(1);
+        }
+        35% {
+          transform: scaleY(0);
+        }
+        45% {
+          transform: scaleY(1);
+        }
+        55% {
+          transform: scaleY(0);
+        }
+        65% {
+          transform: scaleY(1);
+        }
+        100% {
+          transform: scaleY(1);
+        }
+      }
+    }
+    &-2 {
+      animation-name: cornerRectangleShow2;
+      @keyframes cornerRectangleShow2 {
+        0% {
+          transform: scale(0);
+        }
+        45% {
+          transform: scale(0);
+        }
+        55% {
+          transform: scale(1);
+        }
+        65% {
+          transform: scaleY(0);
+        }
+        75% {
+          transform: scaleY(1);
+        }
+        85% {
+          transform: scaleY(0);
+        }
+        95% {
+          transform: scaleY(1);
+        }
+        100% {
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+}
