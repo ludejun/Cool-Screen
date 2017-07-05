@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import anime from 'animejs';
 // import { WDForceGragh, AnimeBrandTag } from '../components';
+import HeaderTitle from './Layout/HeaderTitle';
 import { getBaseFontSize } from '../utils';
 import './DistrictBrandTag.less';
 
@@ -36,7 +37,6 @@ export default class DistrictBrandTag extends Component {
   }
 
   componentDidMount() {
-    console.log(111, this.data);
     clearInterval(this.highlightInterval);
     this.highlightInterval = setInterval(() => {
       this.setState({
@@ -45,7 +45,8 @@ export default class DistrictBrandTag extends Component {
       anime({
         targets: '.tag-div',
         direction: 'reverse',
-        duration: 800,
+        easing: 'easeInOutQuart',
+        duration: 500,
         translateX: '-50%',
         scaleX: 0
       });
@@ -78,7 +79,8 @@ export default class DistrictBrandTag extends Component {
   render() {
     const { highlightBrand } = this.state;
     return (
-      <div className="district-brand-tag">
+      <div className="district-brand-tag flex-col">
+        <HeaderTitle title="万达大数据-商圈分析" />
         <div className="page-title-div">
           <span className="page-title">
             数字商业：品牌与标签相关性
@@ -92,16 +94,14 @@ export default class DistrictBrandTag extends Component {
                 {this.brandList.map((line, i) =>
                   <div className="brand-line" key={i}>
                     {line.map((v, j) =>
-                      <div className="brand-block" key={j}>
+                      <div
+                        className={`brand-block ${highlightBrand === v ? 'highlight' : ''}`}
+                        key={j}
+                      >
                         <span className="brand-title type-title-tag">
                           {this.data[v].name || ''}
                         </span>
-                        <img
-                          className="brand-cube"
-                          src={
-                            highlightBrand === v ? '/img/brand-green.png' : '/img/brand-blue.png'
-                          }
-                        />
+                        <span className="brand-cube" />
                       </div>
                     )}
                   </div>

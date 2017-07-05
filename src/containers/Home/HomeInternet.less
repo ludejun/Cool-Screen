@@ -4,7 +4,7 @@
 .home-info-banner {
   align-items: center;
   padding: 48px 32px 53px 71px;
-  margin: 44px;
+  margin: 0 44px 44px;
   background: linear-gradient(to bottom, rgba(6, 240, 251, .07), rgba(109, 131, 241, .07));
   .banner-title {
     color: #80ECFE;
@@ -35,21 +35,39 @@
 .home-corner {
   width: 1920px !important;
   height: 153px !important;
-  &.right-bottom {
+  position: absolute;
+  &.left-top,
+  &.right-top {
+    top: 145px;
+  }
+  &.left-bottom {
     transform: rotateX(180deg);
+  }
+  &.left-bottom,
+  &.right-bottom {
     bottom: 70px;
-    position: absolute;
+  }
+  &.right-top {
+    transform: rotateY(180deg);
+  }
+  &.right-bottom {
+    transform: rotateX(180deg) rotateY(180deg);
   }
 }
 .home-internet {
   background: linear-gradient(to bottom, #05113D, #02041D);
   height: 100%;
+  justify-content: center;
+  padding-top: 145px;
+  padding-bottom: 70px;
   .header-logo {
     // 82px->145px
     width: 450px;
     height: 53px;
-    float: right;
     margin: 58px 58px 35px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
   .map-title {
     text-align: center;

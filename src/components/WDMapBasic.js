@@ -24,12 +24,12 @@ class WDMapBasic extends Component {
         },
         itemStyle: {
           normal: {
-            areaColor: '#323c48',
-            borderColor: '#111'
-          },
-          emphasis: {
-            areaColor: '#2a333d'
+            areaColor: '#19274A',
+            borderColor: '#10B3FF'
           }
+          // emphasis: {
+          //   areaColor: '#2a333d'
+          // }
         }
       }
     };
