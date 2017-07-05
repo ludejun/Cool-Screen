@@ -68,8 +68,9 @@ export default class Commerce extends Component {
             </div>
           </div>
           <div className="img-container">
-            <div className="span-hanabi"></div>
+            <div className="span-hanabi span-hanabi-0"></div>
             <div className="span-hanabi span-hanabi-1"></div>
+            <div className="span-hanabi span-hanabi-2"></div>
             <img className="banner-img" src="/img/home-real.png" />
           </div>
         </div>
