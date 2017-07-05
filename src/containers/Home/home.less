@@ -1,5 +1,7 @@
+@import "../app";
+
 .super-home {
-  background: #02041D;
+  background: linear-gradient(to bottom, #05113D, #02041D);
   text-align: center;
   height: 100vh;
   width: 100vw;
@@ -28,8 +30,8 @@
   }
   .home-earth-container {
     margin: 31px auto 14px;
-    height: 850px;
-    width: 850px;
+    height: @home-earth-square;
+    width: @home-earth-square;
     border: 3px solid rgba(255, 255, 255, 0.06);
     border-radius: 100%;
     position: relative;
@@ -56,6 +58,40 @@
       top: 8%;
       left: 8%;
       width: 84%;
+      z-index: 100;
+    }
+
+    .home-star-container {
+      position: absolute;
+      width: @home-earth-square;
+      height: @home-earth-square;
+      z-index: 1;
+      animation: starmove 40s linear infinite;
+    }
+
+    .home-background-star {
+      position: absolute;
+
+      &.star1 {
+        bottom: 2%;
+        right: 15%;
+        width: 36px;
+      }
+      &.star2 {
+        top: 5%;
+        right: 1%;
+        width: 50px;
+      }
+      &.star3 {
+        top: 15%;
+        left: 4%;
+        width: 63px;
+      }
+      &.star4 {
+        top: 20%;
+        left: 1%;
+        width: 32px;
+      }
     }
   }
 
@@ -78,6 +114,14 @@
     }
     to {
       transform: rotateZ(0);
+    }
+  }
+  @keyframes starmove {
+    from {
+      left: -@home-earth-square;
+    }
+    to {
+      left: @home-earth-square;
     }
   }
 }

@@ -19,18 +19,166 @@
   &-header-left {
     left: 0;
     top: 97px;
+    .circle {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: rgba(18, 143, 234, .5)
+    }
+    .circle1 {
+        top: 26px;
+        left: 462px;
+        animation: circle1 2s linear 0s infinite;
+    }
+    .circle2 {
+        top: 26px;
+        left: 487px;
+        animation: circle1 2s linear .5s infinite;
+    }
+    .circle3 {
+        top: 26px;
+        left: 509px;
+        animation: circle1 2s linear 1s infinite;
+    }
+    .circle4 {
+        top: 26px;
+        left:533px;
+        animation: circle1 2s linear 1.5s infinite;
+    }
+    .circle5 {
+        background-color: rgba(18, 143, 234, 1);
+        top: 3px;
+        left: 498px;
+        animation: circle2 2s linear 2s infinite;
+    }
   }
   &-header-right {
     right: 0;
     top: 97px;
+    .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: rgba(18, 143, 234, .5)
+    }
+    .circle1 {
+        top: 26px;
+        right: 463px;
+        animation: circle1 2s linear 0s infinite;
+    }
+    .circle2 {
+        top: 26px;
+        right: 485px;
+        animation: circle1 2s linear .5s infinite;
+    }
+    .circle3 {
+        top: 26px;
+        right: 509px;
+        animation: circle1 2s linear 1s infinite;
+    }
+    .circle4 {
+        top: 26px;
+        right:533px;
+        animation: circle1 2s linear 1.5s infinite;
+    }
+    .circle5 {
+        background-color: rgba(18, 143, 234, 1);
+        top: 3px;
+        right: 498px;
+        animation: circle2 2s linear 2s infinite;
+    }
   }
   &-footer-left {
     left: 0;
     bottom: 23px;
+    .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: rgba(18, 143, 234, .5)
+    }
+    .circle1 {
+        top: 14px;
+        left: 462px;
+        animation: circle1 2s linear 0s infinite;
+    }
+    .circle2 {
+        top: 14px;
+        left: 487px;
+        animation: circle1 2s linear .5s infinite;
+    }
+    .circle3 {
+        top: 14px;
+        left: 509px;
+        animation: circle1 2s linear 1s infinite;
+    }
+    .circle4 {
+        top: 14px;
+        left:533px;
+        animation: circle1 2s linear 1.5s infinite;
+    }
+    .circle5 {
+        background-color: rgba(18, 143, 234, 1);
+        top: 35px;
+        left: 497px;
+        animation: circle2 2s linear 2s infinite;
+    }
   }
   &-footer-right {
     right: 0;
     bottom: 23px;
+    .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: rgba(18, 143, 234, .5)
+    }
+    .circle1 {
+        top: 14px;
+        right: 463px;
+        animation: circle1 2s linear 0s infinite;
+    }
+    .circle2 {
+        top: 14px;
+        right: 485px;
+        animation: circle1 2s linear .5s infinite;
+    }
+    .circle3 {
+        top: 14px;
+        right: 509px;
+        animation: circle1 2s linear 1s infinite;
+    }
+    .circle4 {
+        top: 14px;
+        right:533px;
+        animation: circle1 2s linear 1.5s infinite;
+    }
+    .circle5 {
+        background-color: rgba(18, 143, 234, 1);
+        top: 35px;
+        right: 497px;
+        animation: circle2 2s linear 2s infinite;
+    }
+  }
+  @keyframes circle1 {
+      0% {
+          background-color: rgba(18, 143, 234, 1)
+      }
+      100% {
+          background-color: rgba(18, 143, 234, .5)
+      }
+  }
+  @keyframes circle2 {
+      0% {
+          box-shadow: 0px 0px 0px 0px  #118fea
+      }
+      100% {
+          box-shadow: 0px 0px 15px 5px  #118fea
+      }
   }
 
   &-container {
