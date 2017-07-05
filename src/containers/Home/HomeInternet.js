@@ -95,9 +95,9 @@ export default class HomeInternet extends Component {
 
   render() {
     return (
-      <div className="home-internet">
+      <div className="home-internet flex-col">
         <img src="/img/wanda-logo.png" className="header-logo" />
-        <HomeCorner className="home-corner" />
+        <HomeCorner className="home-corner right-top" />
         <div className="home-info-banner flex-row">
           <div className="flex1">
             <p className="banner-title">互联网</p>

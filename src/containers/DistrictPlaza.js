@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { WDRadar } from '../components';
+import HeaderTitle from './Layout/HeaderTitle';
 import './DistrictPlaza.less';
 import { Rate } from 'antd';
 
@@ -7,6 +8,7 @@ export default class DistrictPlaza extends Component {
   render() {
     return (
       <div className="flex-row district-plaza">
+        <HeaderTitle title="万达大数据-商圈分析" />
 
         <div className="plaza-info">
           <div className="plaza-title">
@@ -42,7 +44,7 @@ export default class DistrictPlaza extends Component {
               }}
               className="score-radar"
             />
-            <div className="score-div">
+            <div className="score-div flex-col">
               <p>项目评级</p>
               <p className="score-num">91</p>
               <Rate disabled value={4.5} allowHalf />
