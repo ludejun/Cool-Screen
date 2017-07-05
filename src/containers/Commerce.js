@@ -26,14 +26,14 @@ export default class Commerce extends Component {
     const consume = ['31%', '43%', '26%'];
     const list = [
       { name: '上海市', val: '10283万元', percentage: '95%' },
-      { name: '上海市', val: '10283万元', percentage: '93%' },
+      { name: '上海市', val: '10283万元', percentage: '91%' },
       { name: '上海市', val: '10283万元', percentage: '90%' },
       { name: '广州市', val: '9283万元', percentage: '80%' },
       { name: '天津市', val: '8283万元', percentage: '80%' },
-      { name: '上海1市', val: '7283万元', percentage: '78%' },
+      { name: '上海1市', val: '7283万元', percentage: '75%' },
       { name: '南昌市', val: '6283万元', percentage: '70%' },
       { name: '上海4市', val: '5283万元', percentage: '60%' },
-      { name: '上海2市', val: '4283万元', percentage: '50%' },
+      { name: '上海2市', val: '4283万元', percentage: '48%' },
       { name: '上海3市', val: '3283万元', percentage: '40%' }
     ];
     const genderList = [
@@ -49,7 +49,7 @@ export default class Commerce extends Component {
       }
     ];
     return (
-      <div className="home-internet home-commerce">
+      <div className="home-internet home-commerce flex-col">
         <HomeCorner className="home-corner left-top" />
         <div className="home-info-banner flex-row">
           <div className="flex1">
@@ -67,7 +67,11 @@ export default class Commerce extends Component {
               )}
             </div>
           </div>
-          <img className="banner-img" src="/img/home-real.png" />
+          <div className="img-container">
+            <div className="span-hanabi"></div>
+            <div className="span-hanabi span-hanabi-1"></div>
+            <img className="banner-img" src="/img/home-real.png" />
+          </div>
         </div>
 
         <div className="flex-row container">
@@ -113,8 +117,7 @@ export default class Commerce extends Component {
             )}
           </div>
         </div>
-
-        {/* <HomeCorner className="home-corner left-bottom" /> */}
+        <HomeCorner className="home-corner left-bottom" />
       </div>
     );
   }
