@@ -14,7 +14,7 @@ export default class WDPillar extends Component {
       ' linear-gradient(-157deg, #0DF29E 4%, #040937 81%)']
     };
     return (
-      <div style={{width:160}}>
+      <div className="pillar-container">
         {['50%','83%','26%'].map((item,i)=>
           <div className="item-pillar" key={i}>
             <style>

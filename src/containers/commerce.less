@@ -1,48 +1,159 @@
 .home-corner {
-  &.left-top {
-    transform: rotateY(180deg);
-    margin-top: 111px;
-  }
-  &.left-bottom {
-    transform: rotateX(180deg) rotateY(180deg);
-    bottom: 70px;
-    position: absolute;
-  }
+    &.left-top {
+        transform: rotateY(180deg);
+        margin-top: 111px;
+    }
+
+    &.left-bottom {
+        transform: rotateX(180deg) rotateY(180deg);
+        bottom: 70px;
+        position: absolute;
+    }
 }
+
 .banner-title.banner-yellow {
-  color: #E99610 !important;
+    color: #E99610 !important;
 }
+
 .home-commerce {
-  .money-container {
-    font-size: 13.97px;
-    color: #FFFFFF;
-    .money-city {
-      width: 11%;
-      display: inline-block;
-      height: 20px;
-      text-align: right;
+    .container {
+        margin-top: 60px;
     }
-    .money-center {
-      display: inline-block;
-      width: 69%;
-      vertical-align: sub;
-      margin-right: 10px;
-      margin-left: 10px;
+
+    .pillar {
+        margin: 20px auto 220px;
+        width: 207px;
+        height: 145px;
+
+        .oval {
+            width: 207px;
+            height: 41px;
+            border: 1px solid #108EE9;
+            border-radius: 100%;
+            margin-left:-14px;
+            margin-top:-18px;
+            // animation: oval 3s infinite ease-out;
+        }
+
+        .pillar-title {
+            margin-top: 17px;
+            font-size: 14px;
+            color: #FFFFFF;
+            text-align: center;
+            margin-left:-10px;
+        }
+        .worker{
+          width: 100%;
+          margin:0 auto;
+        }
     }
-    .money-color-container {
-      height: 20px;
-      background: #F5F5F5;
-      border-radius: 2px;
+
+    .flex-center {
+        display: flex;
+        justify-content: center;
     }
-    .money-color {
-      width: 70%;
-      background-image: linear-gradient(-135deg, #108EE9 0%, #6D83F1 100%);
-      height: 100%;
+
+    .brackets {
+        font-size: 80px;
+        margin:0 10px;
     }
-    .money-num {
-      width: 10%;
-      display: inline-block;
-      height: 15px;
+
+    .image-bar-container {
+        width: 60%;
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
     }
-  }
+
+    .sub-title {
+        font-size: 14px;
+        color: #FFFFFF;
+    }
+
+    .num {
+        font-size: 54px;
+        color: #108EE9;
+    }
+
+    .unit {
+        font-size: 30px;
+        color: #108EE9;
+    }
+
+    .money-container {
+        font-size: 14px;
+        color: #FFFFFF;
+        margin-bottom: 15px;
+
+        .money-city {
+            width: 11%;
+            display: inline-block;
+            height: 20px;
+            text-align: right;
+        }
+
+        .money-center {
+            display: inline-block;
+            width: 69%;
+            vertical-align: sub;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .money-color-container {
+          height: 14px;
+          background: transparent;
+        }
+
+        .money-color {
+          height: 100%;
+        }
+
+        .left {
+            float: left;
+            border-bottom: 7px solid transparent;
+            border-top: 7px solid transparent;
+            border-right: 14px solid #6D83F1;
+        }
+
+        .middle {
+            background: linear-gradient(-135deg, #108EE9 0%, #6D83F1 100%);
+            float: left;
+            height:100%;
+        }
+
+        .right {
+            float: left;
+            border-bottom: 7px solid transparent;
+            border-top: 7px solid transparent;
+            border-left: 14px solid #108EE9;
+        }
+
+        .money-color::after{
+          content: '';
+          display: block;
+          clear: both;
+        }
+
+        .money-num {
+            width: 10%;
+            display: inline-block;
+            height: 15px;
+        }
+    }
+
+    .bar-title {
+        font-size: 20px;
+        color: #FFFFFF;
+        margin-top: 60px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+
+    @keyframes oval {
+        to {
+            margin-top: -20px;
+        }
+    }
 }

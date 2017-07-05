@@ -25,9 +25,9 @@ export default class Commerce extends Component {
   render() {
     const consume = ['31%', '43%', '26%'];
     const list = [
-      { name: '上海市', val: '10283万元', percentage: '99%' },
       { name: '上海市', val: '10283万元', percentage: '95%' },
-      { name: '上海市', val: '10283万元', percentage: '92%' },
+      { name: '上海市', val: '10283万元', percentage: '93%' },
+      { name: '上海市', val: '10283万元', percentage: '90%' },
       { name: '广州市', val: '9283万元', percentage: '80%' },
       { name: '天津市', val: '8283万元', percentage: '80%' },
       { name: '上海1市', val: '7283万元', percentage: '78%' },
@@ -41,13 +41,11 @@ export default class Commerce extends Component {
         itemImage: 'img/icon_male.png',
         percent: 0.9 * 100,
         color: '#4C9DFF',
-        minWidth: 11
       },
       {
         itemImage: 'img/icon_female.png',
         percent: 1 * 100,
         color: '#EA6C6B',
-        minWidth: 11
       }
     ];
     return (
@@ -72,31 +70,28 @@ export default class Commerce extends Component {
           <img className="banner-img" src="/img/home-real.png" />
         </div>
 
-        <div style={{ display: 'flex' }}>
-          <div style={{ flex: 1 }}>
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: 60 }}>
+        <div className="flex-row container">
+          <div className="flex1">
+            <div className="pillar">
               <WDPillar />
+              <div className="oval"></div>
+              <p className="pillar-title">广场内消费等级占比</p>
             </div>
-            <div>
-              <span style={{ fontSize: 112 }}>{'\u007B'}</span>
-              <WDImageBar dataList={genderList} />
-              <span style={{ fontSize: 112 }}>{'\u007D'}</span>
-              <span style={{ fontSize: 54, color: '#108EE9' }}>{comdify(1234567)}</span>
-              <span style={{ fontSize: 30, color: '#108EE9' }}>人</span>
+            <div className="flex-center">
+              <span className="brackets">{'\u007B'}</span>
+              <div className="image-bar-container">
+                <WDImageBar dataList={genderList} />
+              </div>
+              <span className="brackets">{'\u007D'}</span>
+              <div style={{display:'inline-block'}}>
+                <p className="sub-title">带动就业</p>
+                <span className="num">{comdify(1234567)}</span>
+                <span className="unit">人</span>
+              </div>
             </div>
           </div>
-          <div style={{ flex: 1 }}>
-            <p
-              style={{
-                fontSize: 20,
-                color: '#FFFFFF',
-                marginTop: 60,
-                marginBottom: 40,
-                textAlign: 'center'
-              }}
-            >
-              万达广场销售额省市排名 TOP10
-            </p>
+          <div className="flex1">
+            <p className="bar-title">万达广场销售额省市排名 TOP10</p>
             {list.map((item, i) =>
               <div className="money-container" key={i}>
                 <div className="money-city">
@@ -104,7 +99,11 @@ export default class Commerce extends Component {
                 </div>
                 <div className="money-center">
                   <div className="money-color-container">
-                    <div className="money-color" style={{ width: `${item.percentage}` }} />
+                    <div className="money-color" >
+                      <div className="left"></div>
+                      <div className="middle" style={{ width: `${item.percentage}` }}></div>
+                      <div className='right'></div>
+                    </div>
                   </div>
                 </div>
                 <div className="money-num">
@@ -115,7 +114,7 @@ export default class Commerce extends Component {
           </div>
         </div>
 
-        <HomeCorner className="home-corner left-bottom" />
+        {/* <HomeCorner className="home-corner left-bottom" /> */}
       </div>
     );
   }
