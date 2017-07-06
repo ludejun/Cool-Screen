@@ -38,6 +38,19 @@
       background:transparent;
       border: 1px solid #108EE9;
       text-align: center;
+      animation:jumptitle 5s linear infinite;
+      animation-direction: alternate;
+    }
+    @keyframes jumptitle {
+      0%{
+        transform:translateY(-23%);
+      }
+      50%{
+        transform:translateY(0);
+      }
+      100%{
+        transform:translateY(23%);
+      }
     }
     .tag-tail{
       position: absolute;
@@ -99,6 +112,13 @@
     width: 820px;
     margin-right:94px;
     position: relative;
+    .svg-style{
+       position: absolute;
+       top:0;
+       bottom:0;
+       left:0;
+       right:0;
+    }
     .right-container-bg{
       height:100%;
       width: 100%;

@@ -25,7 +25,6 @@ export default class HomeCorner extends Component {
             id="Line"
             className="corner-outline"
             stroke="#108EE9"
-            strokeLinecap="1"
             strokeLinecap="square"
             points="0 52.5 196 52.5 244.5 12 809 12 845.5 52.5 1183 52.5 1218 90"
           />
@@ -106,7 +105,6 @@ export default class HomeCorner extends Component {
             id="Line1"
             className="corner-outline corner-twoline"
             stroke="#108EE9"
-            strokeLinecap="1"
             strokeLinecap="square"
           />
           <path
@@ -114,7 +112,6 @@ export default class HomeCorner extends Component {
             id="Line2"
             className="corner-outline corner-twoline"
             stroke="#108EE9"
-            strokeLinecap="1"
             strokeLinecap="square"
           />
           <rect
