@@ -11,3 +11,6 @@ export { default as WDImagePercent } from './WDImagePercent';
 
 // maps
 export { default as WDMapBasic } from './WDMapBasic';
+
+// svgs
+export {default as WDPolyLine } from './PolyLine';
