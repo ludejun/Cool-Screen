@@ -3,6 +3,51 @@
 }
 
 .home-commerce {
+    .img-container{
+      height: 316px;
+      position: relative;
+      width:100%;
+
+      .span-hanabi {
+        width: 3px;
+        height: 30%;
+        border-radius: 2px 2px 0 0;
+        background: linear-gradient(to bottom, #328DEC, transparent);
+        animation: lineHeighter 2s linear infinite;
+        position: absolute;
+      }
+      .span-hanabi-0{
+        left:50px;
+      }
+      .span-hanabi-1{
+        left:250px;
+        animation-delay: 0.8s !important;
+      }
+      .span-hanabi-2{
+        left:400px;
+         animation-delay: 0.3s !important;
+      }
+      @keyframes lineHeighter {
+        0% {
+          height: 0;
+          top: 100%;
+          opacity: 0;
+        }
+        30%{
+          opacity: 1;
+        }
+        100% {
+          height: 30%;
+          top: -2%;
+          opacity: 1;
+        }
+      }
+      .banner-img{
+        position: absolute;
+        z-index: 0;
+      }
+    }
+
     .container {
         margin-top: 60px;
     }
@@ -18,7 +63,7 @@
             border: 1px solid #108EE9;
             border-radius: 100%;
             margin-left:-14px;
-            margin-top:-18px;
+            margin-top:-20px;
             // animation: oval 3s infinite ease-out;
         }
 
@@ -77,6 +122,7 @@
             display: inline-block;
             height: 20px;
             text-align: right;
+            vertical-align: text-top;
         }
 
         .money-center {
@@ -107,6 +153,7 @@
             background: linear-gradient(-135deg, #108EE9 0%, #6D83F1 100%);
             float: left;
             height:100%;
+            margin:0 -1px;
         }
 
         .right {
