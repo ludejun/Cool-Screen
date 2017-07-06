@@ -78,67 +78,66 @@ export default class DistrictBrandTag extends Component {
   render() {
     const { highlightBrand } = this.state;
     return (
-      <div className="district-brand-tag flex-col">
-        <HeaderTitle title="万达大数据-商圈分析" />
-        <div className="page-title-div">
+      <div className="district-brand-tag flex-row">
+        <HeaderTitle title="数字商业：品牌与标签相关性" />
+        {/* <div className="page-title-div">
           <span className="page-title">
             数字商业：品牌与标签相关性
           </span>
         </div>
-        <div className="flex-row">
-          <div>
-            <span className="type-title type-title-brand">品牌</span>
-            <div className="brand-anime-container">
-              <div className="brand-div">
-                {this.brandList.map((line, i) =>
-                  <div className="brand-line" key={i}>
-                    {line.map((v, j) =>
-                      <div
-                        className={`brand-block ${highlightBrand === v ? 'highlight' : ''}`}
-                        key={j}
-                      >
-                        <span className="brand-title type-title-tag">
-                          {this.data[v].name || ''}
-                        </span>
-                        <span className="brand-cube" />
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-              {this.data[highlightBrand].tag.map((v, i) =>
-                <div className={`brand-hanabi brand-hanabi-${i + 1}`} key={i}>
-                  <div className="span-hanabi" />
+        <div className="flex-row">*/}
+        <div>
+          <span className="type-title type-title-brand">品牌</span>
+          <div className="brand-anime-container">
+            <div className="brand-div">
+              {this.brandList.map((line, i) =>
+                <div className="brand-line" key={i}>
+                  {line.map((v, j) =>
+                    <div
+                      className={`brand-block ${highlightBrand === v ? 'highlight' : ''}`}
+                      key={j}
+                    >
+                      <span className="brand-title type-title-tag">
+                        {this.data[v].name || ''}
+                      </span>
+                      <span className="brand-cube" />
+                    </div>
+                  )}
                 </div>
               )}
             </div>
-          </div>
-          <div className="tag-div flex1 flex-col">
-            <span className="type-title type-title-tag">标签</span>
-            <div className="flex1 tag-gragh">
-              {this.data[highlightBrand].tag.map((v, i) =>
-                <div className={`join-line join-line-${i + 1}`} id={`JoinLine${i + 1}`} key={i} />
-              )}
-
-              {this.data[highlightBrand].tag.map((v, i) =>
-                <div
-                  className={`round-square round-square-${i + 1}`}
-                  id={`RoundSquare${i + 1}`}
-                  key={i}
-                >
-                  <img className="round-square-img" src="/img/tag-node.png" />
-                  <div className="round-square-content">{`主力店${v}`}</div>
-                </div>
-              )}
-
-              <div className="center-round-out">
-                <img className="center-circle" src="/img/home-circle.png" />
-                <div className="center-round">{this.data[highlightBrand].name}</div>
+            {this.data[highlightBrand].tag.map((v, i) =>
+              <div className={`brand-hanabi brand-hanabi-${i + 1}`} key={i}>
+                <div className="span-hanabi" />
               </div>
-            </div>
-
+            )}
           </div>
         </div>
+        <div className="tag-div flex1 flex-col">
+          <div><span className="type-title type-title-tag">标签</span></div>
+          <div className="flex1 tag-gragh">
+            {this.data[highlightBrand].tag.map((v, i) =>
+              <div className={`join-line join-line-${i + 1}`} id={`JoinLine${i + 1}`} key={i} />
+            )}
+
+            {this.data[highlightBrand].tag.map((v, i) =>
+              <div
+                className={`round-square round-square-${i + 1}`}
+                id={`RoundSquare${i + 1}`}
+                key={i}
+              >
+                <img className="round-square-img" src="/img/tag-node.png" />
+                <div className="round-square-content">{`主力店${v}`}</div>
+              </div>
+            )}
+
+            <div className="center-round-out">
+              <img className="center-circle" src="/img/home-circle.png" />
+              <div className="center-round">{this.data[highlightBrand].name}</div>
+            </div>
+          </div>
+        </div>
+        {/*  </div>*/}
       </div>
     );
   }
