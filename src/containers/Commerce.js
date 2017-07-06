@@ -120,7 +120,7 @@ export default class Commerce extends Component {
             )}
           </div>
         </div>
-        {/* <HomeCorner className="home-corner left-bottom" /> */}
+        <HomeCorner className="home-corner left-bottom" />
       </div>
     );
   }
