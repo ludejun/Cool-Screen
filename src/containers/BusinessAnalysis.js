@@ -171,7 +171,7 @@ const option = {
   ]
 };
 const radioList = ['Test1', 'Test2', 'Test3'];
-const listArray = ['55,10 55,80', '55,10 55,60 90,60 90,120', '55,10 55,40 20,40 20,80'];
+const listArray = ['55,10 55,40 78,40 78,80', '55,10 55,60 90,60 90,120', '55,10 55,40 20,40 20,80'];
 
 export default class BusinessAnalysis extends Component {
   constructor(props) {
@@ -180,11 +180,12 @@ export default class BusinessAnalysis extends Component {
       tab: 0,
       consumeCount: 1
     };
+    this.timer = null;
   }
   componentDidMount() {
-    clearInterval(timer);
+    clearInterval(this.timer);
     clearInterval(reRender);
-    const timer = setInterval(() => {
+    this.timer = setInterval(() => {
       if (this.state.tab < 2) {
         this.setState({
           tab: this.state.tab + 1
@@ -316,13 +317,17 @@ export default class BusinessAnalysis extends Component {
     };
     return <Echarts className="consume-chart" option={consumeOption}/>;
   }
+  radioChange = (e) => {
+    clearInterval(this.timer);
+    this.setState({tab: e.target.value});
+  }
   render() {
     return (
       <div className="analysis-container">
         <HeaderTitle title="万达大数据-商圈分析"/>
         <div className="left-container">
           <p>广场楼层分布实例图：</p>
-          <Radio.Group className="overview-month-group" value={this.state.tab}>
+          <Radio.Group className="overview-month-group" value={this.state.tab} onChange={this.radioChange}>
             {radioList.map((v, i) => (
               <Radio.Button key={i} value={i} className="overview-month">{v}</Radio.Button>
             ))}
@@ -348,11 +353,7 @@ export default class BusinessAnalysis extends Component {
         <div className="right-container">
           <img src="/img/analysis-border.png" className="right-container-bg"/>
           <svg
-            style={{
-            position: 'absolute',
-            width: "820px",
-            height: "687px"
-          }}
+            className="svg-style"
             viewBox="0 0 820 687"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg">
@@ -363,7 +364,7 @@ export default class BusinessAnalysis extends Component {
                 fillOpacity="0.600883152"
                 fill="#108EE9"
                 opacity="0.498471467"
-                x="260"
+                x="40%"
                 y="8"
                 width="180"
                 height="12"></rect>
