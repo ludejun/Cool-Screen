@@ -1,6 +1,7 @@
 // animations
 export { default as AnimeParticule } from './AnimeParticule';
 export { default as AnimeBrandTag } from './AnimeBrandTag';
+export { default as AnimeNumber } from './AnimeNumber';
 
 // charts
 export { default as WDRadar } from './WDRadar';

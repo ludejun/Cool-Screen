@@ -47,7 +47,6 @@ export default class DistrictBrandTag extends Component {
         direction: 'reverse',
         easing: 'easeInOutQuart',
         duration: 500,
-        translateX: '-50%',
         scaleX: 0
       });
     }, 10000);
@@ -107,8 +106,8 @@ export default class DistrictBrandTag extends Component {
                   </div>
                 )}
               </div>
-              {this.data[highlightBrand].tag.map(v =>
-                <div className={`brand-hanabi brand-hanabi-${v}`} key={v}>
+              {this.data[highlightBrand].tag.map((v, i) =>
+                <div className={`brand-hanabi brand-hanabi-${i + 1}`} key={i}>
                   <div className="span-hanabi" />
                 </div>
               )}
