@@ -78,8 +78,10 @@ export default class Commerce extends Component {
         <div className="flex-row container">
           <div className="flex1">
             <div className="pillar">
-              <WDPillar />
-              <div className="oval"></div>
+              <div className="pillar-animation">
+                <WDPillar />
+                <div className="oval"></div>
+              </div>
               <p className="pillar-title">广场内消费等级占比</p>
             </div>
             <div className="flex-center">
@@ -118,7 +120,7 @@ export default class Commerce extends Component {
             )}
           </div>
         </div>
-        <HomeCorner className="home-corner left-bottom" />
+        {/* <HomeCorner className="home-corner left-bottom" /> */}
       </div>
     );
   }
