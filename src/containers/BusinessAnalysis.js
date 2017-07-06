@@ -201,10 +201,10 @@ export default class BusinessAnalysis extends Component {
 
     anime({
       targets: '.Rectangle-19',
-      translateX: -40,
+      translateX: '50%',
       easing: 'easeInOutQuad',
       direction: 'alternate',
-      duration: 400,
+      duration: 300,
       loop: true
     });
 
@@ -348,11 +348,7 @@ export default class BusinessAnalysis extends Component {
         <div className="right-container">
           <img src="/img/analysis-border.png" className="right-container-bg"/>
           <svg
-            style={{
-            position: 'absolute',
-            width: "820px",
-            height: "687px"
-          }}
+            className="svg"
             viewBox="0 0 820 687"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg">
@@ -365,7 +361,7 @@ export default class BusinessAnalysis extends Component {
                 opacity="0.498471467"
                 x="260"
                 y="8"
-                width="180"
+                width="232"
                 height="12"></rect>
             </g>
           </svg>
