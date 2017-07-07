@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { WDPillar, WDImageBar } from '../components';
+import { WDPillar, WDImageBar, AnimeNumber } from '../components';
 import HomeCorner from './Home/HomeCorner';
 import { comdify } from '../utils';
 import './commerce.less';
@@ -40,12 +40,12 @@ export default class Commerce extends Component {
       {
         itemImage: 'img/icon_male.png',
         percent: 0.9 * 100,
-        color: '#4C9DFF',
+        color: '#4C9DFF'
       },
       {
         itemImage: 'img/icon_female.png',
         percent: 1 * 100,
-        color: '#EA6C6B',
+        color: '#EA6C6B'
       }
     ];
     return (
@@ -61,16 +61,16 @@ export default class Commerce extends Component {
                     <i className={`iconfont ${v.icon} line-icon`} />{v.title}
                   </p>
                   <p className="line-num">
-                    {comdify(v.num)}<span className="line-unit">{v.unit}</span>
+                    <AnimeNumber num={v.num} /><span className="line-unit">{v.unit}</span>
                   </p>
                 </div>
               )}
             </div>
           </div>
           <div className="img-container">
-            <div className="span-hanabi span-hanabi-0"></div>
-            <div className="span-hanabi span-hanabi-1"></div>
-            <div className="span-hanabi span-hanabi-2"></div>
+            <div className="span-hanabi span-hanabi-0" />
+            <div className="span-hanabi span-hanabi-1" />
+            <div className="span-hanabi span-hanabi-2" />
             <img className="banner-img" src="/img/home-real.png" />
           </div>
         </div>
@@ -78,8 +78,10 @@ export default class Commerce extends Component {
         <div className="flex-row container">
           <div className="flex1">
             <div className="pillar">
-              <WDPillar />
-              <div className="oval"></div>
+              <div className="pillar-animation">
+                <WDPillar />
+                <div className="oval" />
+              </div>
               <p className="pillar-title">广场内消费等级占比</p>
             </div>
             <div className="flex-center">
@@ -88,7 +90,7 @@ export default class Commerce extends Component {
                 <WDImageBar dataList={genderList} />
               </div>
               <span className="brackets">{'\u007D'}</span>
-              <div style={{display:'inline-block'}}>
+              <div style={{ display: 'inline-block' }}>
                 <p className="sub-title">带动就业</p>
                 <span className="num">{comdify(1234567)}</span>
                 <span className="unit">人</span>
@@ -104,10 +106,10 @@ export default class Commerce extends Component {
                 </div>
                 <div className="money-center">
                   <div className="money-color-container">
-                    <div className="money-color" >
-                      <div className="left"></div>
-                      <div className="middle" style={{ width: `${item.percentage}` }}></div>
-                      <div className='right'></div>
+                    <div className="money-color">
+                      <div className="left" />
+                      <div className="middle" style={{ width: `${item.percentage}` }} />
+                      <div className="right" />
                     </div>
                   </div>
                 </div>

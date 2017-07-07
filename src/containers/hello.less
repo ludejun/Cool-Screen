@@ -10,3 +10,37 @@ h1 {
   color: #fff;
   background-image: url("/img/home_background_1.jpg");
 }
+
+.test-svg {
+  width: 593px;
+  height: 50px;
+  margin: 20px auto;
+
+  &-polyline {
+    animation: polylinemove 5s ease-in-out infinite alternate;
+  }
+  &-circle {
+    animation: testcirclemove 1.5s ease-in-out 5s infinite alternate;
+  }
+
+  @keyframes polylinemove {
+    from {
+      stroke-dasharray: 0, 200%;
+    }
+    to {
+      stroke-dasharray: 200%, 0;
+    }
+  }
+  @keyframes testcirclemove {
+    from {
+      stroke: #108EE9;
+      //transform: scale(1);
+    }
+    to {
+      stroke: #fff;
+      transform-origin: center;
+      transform: scale(1.2);
+      //r: 11;
+    }
+  }
+}
