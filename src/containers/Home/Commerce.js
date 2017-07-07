@@ -8,10 +8,6 @@ export default class Commerce extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      width:0,
-      height:0
-    };
     this.banner = [
       {
         icon: 'icon-home-people',
