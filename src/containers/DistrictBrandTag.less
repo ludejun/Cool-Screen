@@ -50,15 +50,16 @@
     display: inline-block;
     margin: 30px 0 0 30px;
     position: relative;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
     &::before {
       content: "";
-      display: inline-block;
       position: absolute;
       width: 80%;
       height: 5px;
-      bottom: -2px;
+      bottom: 0;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-50%) translateY(50%);
     }
     // &::before {
     //   content: "\e600"; //<
@@ -77,14 +78,14 @@
     // }
     &.type-title-brand {
       color: #108EE9;
-      border-bottom: 1px solid #108EE9;
+      border-bottom-color: #108EE9;
       &::before {
         background-color: #108EE9;
       }
     }
     &.type-title-tag {
       color: #09CDC6;
-      border-bottom: 1px solid #09CDC6;
+      border-bottom-color: #09CDC6;
       &::before {
         background-color: #09CDC6;
       }
