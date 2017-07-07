@@ -1,17 +1,14 @@
 @import "../app";
-
 .super-home {
   background: linear-gradient(to bottom, #05113D, #02041D);
   text-align: center;
   height: 100vh;
   width: 100vw;
-
   .home-title {
-    margin: 58px 0 9px 0;
+    margin: 58px 0 9px;
     width: 753px;
     height: 118px;
   }
-
   .home-slogan-container {
     border: 2px solid rgba(255, 255, 255, 0.41);
     height: 75px;
@@ -35,7 +32,6 @@
     border: 3px solid rgba(255, 255, 255, 0.06);
     border-radius: 100%;
     position: relative;
-
     .home-earth-oval-1 {
       position: absolute;
       top: 3%;
@@ -60,7 +56,6 @@
       width: 84%;
       z-index: 100;
     }
-
     .home-star-container {
       position: absolute;
       width: @home-earth-square;
@@ -68,10 +63,8 @@
       z-index: 1;
       animation: starmove 40s linear infinite;
     }
-
     .home-background-star {
       position: absolute;
-
       &.star1 {
         bottom: 2%;
         right: 15%;
@@ -94,12 +87,10 @@
       }
     }
   }
-
   .home-chart-title {
     font-weight: bold;
     font-size: 14px;
   }
-
   @keyframes ring1move {
     from {
       transform: rotateZ(0);

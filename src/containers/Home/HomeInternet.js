@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { WDMapBasic } from '../../components';
+import { WDMapBasic, AnimeNumber, WDLogoSvg } from '../../components';
 import HomeCorner from './HomeCorner';
-import { comdify } from '../../utils';
 import weibo from '../../assets/map/weibo.json'; // 'http://echarts.baidu.com/data/asset/data/weibo.json';
 import './HomeInternet.less';
 
@@ -20,7 +19,7 @@ export default class HomeInternet extends Component {
         icon: 'icon-home-car',
         title: '飞凡入驻商家人数',
         num: 3148385,
-        unit: '辆'
+        unit: '人'
       }
     ];
   }
@@ -96,7 +95,7 @@ export default class HomeInternet extends Component {
   render() {
     return (
       <div className="home-internet flex-col">
-        <img src="/img/wanda-logo.png" className="header-logo" />
+        <WDLogoSvg className="header-logo" />
         <HomeCorner className="home-corner right-top" />
         <div className="home-info-banner flex-row">
           <div className="flex1">
@@ -108,7 +107,7 @@ export default class HomeInternet extends Component {
                     <i className={`iconfont ${v.icon} line-icon`} />{v.title}
                   </p>
                   <p className="line-num">
-                    {comdify(v.num)}<span className="line-unit">{v.unit}</span>
+                    <AnimeNumber num={v.num} /><span className="line-unit">{v.unit}</span>
                   </p>
                 </div>
               )}
@@ -123,7 +122,28 @@ export default class HomeInternet extends Component {
             <p className="map-title">飞凡会员分布图</p>
           </div>
           <div className="flex1">
-            <img className="internet-gragh" src="/img/home-internet-gragh.png" />
+            <div className="internet-net-div">
+              {[
+                ['icon-home-users', '互联网用户'],
+                ['icon-home-shop', '商铺'],
+                ['飞凡通'],
+                ['万达财富', '小贷'],
+                ['wifi'],
+                ['整合', '营销传播'],
+                ['飞凡APP']
+              ].map((v, i) =>
+                <div className={`net-cube-div net-cube-div-${i}`} key={i}>
+                  <div className="net-cube outer" />
+                  <div className="net-cube inner flex-col">
+                    {v[0].indexOf('icon') > -1
+                      ? <i className={`iconfont ${v[0]} net-cube-icon`} />
+                      : <span>{v[0]}</span>}
+                    <span>{v[1]}</span>
+                  </div>
+                </div>
+              )}
+              <img className="internet-gragh" src="/img/home-net.png" />
+            </div>
             <p className="map-title">数字商业互联</p>
           </div>
         </div>

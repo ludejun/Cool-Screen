@@ -59,11 +59,124 @@
       margin: -50px -300px;
     }
   }
-  .internet-gragh {
-    width: 688px;
-    height: 775px;
-    display: block;
-    margin: 20px auto;
+  .internet-net-div {
+    position: relative;
+    text-align: center;
+    margin: 58px 0;
+    height: 700px;
+    .net-cube-div {
+      position: absolute;
+      font-size: 25px;
+      color: #FFFCFF;
+      &-0,
+      &-1 {
+        .net-cube {
+          background-color: #17A19C !important;
+          &::before {
+            border-bottom-color: #17A19C !important;
+          }
+          &::after {
+            border-top-color: #17A19C !important;
+          }
+        }
+      }
+      &-0 {
+        top: 6%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &-1 {
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &-2 {
+        top: 25%;
+        left: 21%;
+        transform: scale(0.618);
+        font-size: 35px;
+      }
+      &-3 {
+        top: 27%;
+        right: 21%;
+        transform: scale(0.618);
+        font-size: 30px;
+      }
+      &-4 {
+        top: 51%;
+        left: 10%;
+        transform: scale(0.743);
+        font-size: 58px;
+      }
+      &-5 {
+        top: 54%;
+        right: 10%;
+        transform: scale(0.743);
+        font-size: 30px;
+      }
+      &-6 {
+        top: 47%;
+        left: 50%;
+        transform: translateX(-50%) scale(0.8);
+        font-size: 35px;
+      }
+      .net-cube {
+        width: 168px;
+        height: 96px;
+        background-color: #4B94FF;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        &.inner {
+          z-index: 100;
+          top: -50%;
+          position: absolute;
+          transform: translateY(50%);
+        }
+        &.outer {
+          opacity: 0.2;
+          position: relative;
+          transform: scale(1.25);
+          animation: homeCubeScaleInOut 2s ease-out infinite;
+          animation-direction: alternate;
+          @keyframes homeCubeScaleInOut {
+            0% {
+              transform: scale(1);
+            }
+            100% {
+              transform: scale(1.25);
+            }
+          }
+        }
+        &::after,
+        &::before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-width: 48px 84px;
+          border-color: transparent;
+          border-style: solid;
+          position: absolute;
+          left: 0;
+        }
+        &::before {
+          border-bottom-color: #4B94FF;
+          top: -96px;
+        }
+        &::after {
+          border-top-color: #4B94FF;
+          bottom: -96px;
+        }
+        .net-cube-icon {
+          font-size: 50px;
+        }
+      }
+    }
+    .internet-gragh {
+      height: 100%;
+      display: block;
+      margin: auto;
+    }
   }
 }
 

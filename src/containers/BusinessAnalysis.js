@@ -58,10 +58,10 @@ const genderList = [
 const dataStyle = {
   normal: {
     label: {
-      show: false
+      show: true
     },
     labelLine: {
-      show: false
+      show: true
     },
     shadowBlur: 40,
     shadowColor: 'rgba(40, 40, 40, 0.5)'
@@ -178,7 +178,8 @@ export default class BusinessAnalysis extends Component {
     super(props);
     this.state = {
       tab: 0,
-      consumeCount: 1
+      consumeCount: 1,
+      path: ''
     };
     this.timer = null;
   }
@@ -229,7 +230,6 @@ export default class BusinessAnalysis extends Component {
         delay: 1100
       });
     }
-
   }
 
   renderEchart = () => {
@@ -238,8 +238,8 @@ export default class BusinessAnalysis extends Component {
         '#85b6b2', '#6d4f8d', '#cd5e7e', '#e38980', '#f7db88'
       ],
       tooltip: {
-        show: false,
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
+        show: true,
+        formatter: "{a} <br/>{b} : {d}%"
       },
       grid: {
         left: 10,
@@ -256,7 +256,7 @@ export default class BusinessAnalysis extends Component {
       },
       series: [
         {
-          name: 'Line 1',
+          name: '等级占比',
           type: 'pie',
           clockWise: false,
           radius: [
@@ -270,12 +270,12 @@ export default class BusinessAnalysis extends Component {
               name: '低端消费'
             }, {
               value: parseInt(Math.random() * 60),
-              name: 'invisible',
+              name: '低端消费',
               itemStyle: placeHolderStyle
             }
           ]
         }, {
-          name: 'Line 2',
+          name: '等级占比',
           type: 'pie',
           clockWise: false,
           radius: [
@@ -289,12 +289,12 @@ export default class BusinessAnalysis extends Component {
               name: '中端消费'
             }, {
               value: parseInt(Math.random() * 70),
-              name: 'invisible',
+              name: '中端消费',
               itemStyle: placeHolderStyle
             }
           ]
         }, {
-          name: 'Line 3',
+          name: '等级占比',
           type: 'pie',
           clockWise: false,
           hoverAnimation: false,
@@ -308,14 +308,14 @@ export default class BusinessAnalysis extends Component {
               name: '高端消费'
             }, {
               value: parseInt(Math.random() * 30),
-              name: 'invisible',
+              name: '高端消费',
               itemStyle: placeHolderStyle
             }
           ]
         }
       ]
     };
-    return <Echarts className="consume-chart" option={consumeOption}/>;
+    return <Echarts className="consume-chart" option={consumeOption} />;
   }
   radioChange = (e) => {
     clearInterval(this.timer);
@@ -324,7 +324,7 @@ export default class BusinessAnalysis extends Component {
   render() {
     return (
       <div className="analysis-container">
-        <HeaderTitle title="万达大数据-商圈分析"/>
+        <HeaderTitle title="万达大数据-商圈分析" />
         <div className="left-container">
           <p>广场楼层分布实例图：</p>
           <Radio.Group className="overview-month-group" value={this.state.tab} onChange={this.radioChange}>
@@ -382,7 +382,7 @@ export default class BusinessAnalysis extends Component {
               <Echarts className="age-chart" option={option}/>
             </div>
           </div>
-          <div className="right-sub-container">
+          <div className="right-sub-container flex-right">
             <div>
               <p className="right-sub-title">车辆情况对比</p>
               <WDImagePercent dataList={carList}/>
