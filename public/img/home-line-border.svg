@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1081px" height="86px" viewBox="0 0 1081 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1085px" height="86px" viewBox="0 0 1085 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
     <title>边框</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="超大屏" transform="translate(-2159.000000, -92.000000)">
-            <g id="边框" transform="translate(2772.000000, 129.500000) scale(-1, 1) translate(-2772.000000, -129.500000) translate(2160.000000, 82.000000)">
-                <g opacity="0.699898098" stroke-width="1" transform="translate(0.000000, 12.000000)">
-                    <polyline id="Line" stroke="#108EE9" stroke-linecap="square" points="0 40.5 196 40.5 244.5 0 809 0 845.5 40.5 1183 40.5 1218 78"></polyline>
-                    <circle id="Oval-7" stroke="#108EE9" cx="195.319281" cy="39.3192815" r="17"></circle>
-                    <circle id="Oval-7" fill="#108EE9" cx="195" cy="39" r="5.68071852"></circle>
-                    <circle id="Oval-7" stroke="#108EE9" cx="1215" cy="74" r="8.84035926"></circle>
-                    <circle id="Oval-7" fill="#108EE9" cx="1215" cy="74" r="5.68071852"></circle>
-                    <circle id="Oval-7" fill="#108EE9" cx="895" cy="40" r="5.68071852"></circle>
-                    <circle id="Oval-7" fill="#108EE9" cx="925" cy="40" r="5.68071852"></circle>
-                    <circle id="Oval-7" fill="#108EE9" cx="955" cy="40" r="5.68071852"></circle>
-                    <circle id="Oval-7" fill="#108EE9" cx="985" cy="40" r="5.68071852"></circle>
-                    <path d="M246.5,23.5 L611.636961,23.5" id="Line" stroke="#108EE9" stroke-linecap="square"></path>
-                    <path d="M225.5,33.5 L590.636961,33.5" id="Line" stroke="#108EE9" stroke-linecap="square"></path>
-                </g>
-                <rect id="Rectangle" fill="#108EE9" opacity="0.595391757" x="42" y="51" width="94" height="4"></rect>
-                <rect id="Rectangle-Copy-2" fill="#108EE9" opacity="0.595391757" x="1114" y="51" width="70" height="4"></rect>
-                <rect id="Rectangle-Copy" fill="#108EE9" opacity="0.595391757" x="257" y="10" width="210" height="4"></rect>
+        <g id="超大屏" transform="translate(0.000000, -92.000000)">
+            <g id="边框" transform="translate(-140.000000, 92.000000)">
+                <polygon id="Line" fill="#108EE9" fill-rule="nonzero" points="808.777523 2.5 845.277523 43 1182.78272 43 1217.97563 80.7066868 1218.70669 80.0243685 1183.21728 42 845.722477 42 809.222477 1.5 244.318688 1.5 195.818688 42 -0.5 42 -0.5 43 196.181312 43 244.681312 2.5"></polygon>
+                <circle id="Oval-8" stroke="#108EE9" stroke-width="1" cx="195.319281" cy="41.3192815" r="17"></circle>
+                <circle id="Oval-7" fill="#108EE9" fill-rule="evenodd" cx="195" cy="41" r="5.68071852"></circle>
+                <circle id="Oval-6" stroke="#108EE9" stroke-width="1" cx="1215" cy="76" r="8.84035926"></circle>
+                <circle id="Oval-5" fill="#108EE9" fill-rule="evenodd" cx="1215" cy="76" r="5.68071852"></circle>
+                <circle id="Oval-4" fill="#108EE9" fill-rule="evenodd" cx="895" cy="42" r="5.68071852"></circle>
+                <circle id="Oval-3" fill="#108EE9" fill-rule="evenodd" cx="925" cy="42" r="5.68071852"></circle>
+                <circle id="Oval-2" fill="#108EE9" fill-rule="evenodd" cx="955" cy="42" r="5.68071852"></circle>
+                <circle id="Oval-1" fill="#108EE9" fill-rule="evenodd" cx="985" cy="42" r="5.68071852"></circle>
+                <path d="M246.5,25.5 L611.636961,25.5" id="Line-2" stroke="#108EE9" stroke-width="1" stroke-linecap="square"></path>
+                <path d="M225.5,35.5 L590.636961,35.5" id="Line-1" stroke="#108EE9" stroke-width="1" stroke-linecap="square"></path>
+                <rect id="Rectangle-2" fill="#108EE9" fill-rule="evenodd" opacity="0.595391757" x="1114" y="41" width="70" height="4"></rect>
+                <rect id="Rectangle-1" fill="#108EE9" fill-rule="evenodd" opacity="0.595391757" x="257" y="0" width="210" height="4"></rect>
             </g>
         </g>
     </g>

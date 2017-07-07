@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { WDMapBasic, AnimeNumber } from '../../components';
+import { WDMapBasic, AnimeNumber, WDLogoSvg } from '../../components';
 import HomeCorner from './HomeCorner';
 import weibo from '../../assets/map/weibo.json'; // 'http://echarts.baidu.com/data/asset/data/weibo.json';
 import './HomeInternet.less';
@@ -95,7 +95,7 @@ export default class HomeInternet extends Component {
   render() {
     return (
       <div className="home-internet flex-col">
-        <img src="/img/wanda-logo.png" className="header-logo" />
+        <WDLogoSvg className="header-logo" />
         <HomeCorner className="home-corner right-top" />
         <div className="home-info-banner flex-row">
           <div className="flex1">
