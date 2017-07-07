@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { WDPillar, WDImageBar } from '../components';
-import HomeCorner from './Home/HomeCorner';
-import { comdify } from '../utils';
+import { WDPillar, WDImageBar } from '../../components';
+import HomeCorner from './HomeCorner';
+import { comdify } from '../../utils';
 import './commerce.less';
 
 export default class Commerce extends Component {
-  constructor() {
-    super();
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      width:0,
+      height:0
+    };
     this.banner = [
       {
         icon: 'icon-home-people',
@@ -49,7 +54,7 @@ export default class Commerce extends Component {
       }
     ];
     return (
-      <div className="home-internet home-commerce flex-col">
+      <div className="home-commerce flex-col">
         <HomeCorner className="home-corner left-top" />
         <div className="home-info-banner flex-row">
           <div className="flex1">
