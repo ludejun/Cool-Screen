@@ -9,6 +9,7 @@ ReactDOM.render(
 
       <Route component={Routes.Main}>
         <Route path="hello" component={Routes.Hello} />
+        <Route path="vis-analysis" component={Routes.VisAnalysis} />
         <Route path="district-plaza" component={Routes.DistrictPlaza} />
         <Route path="district-brand-tag" component={Routes.DistrictBrandTag} />
         <Route path="analysis" component={Routes.BusinessAnalysis} />
