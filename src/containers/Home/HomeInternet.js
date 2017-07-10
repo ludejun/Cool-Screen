@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { WDMapBasic, AnimeNumber, WDLogoSvg } from '../../components';
 import HomeCorner from './HomeCorner';
-import weibo from '../../assets/map/weibo.json'; // 'http://echarts.baidu.com/data/asset/data/weibo.json';
+import feifanChina from '../../assets/map/feifanChina.json';
 import './HomeInternet.less';
 import { resizeSquarePage } from '../../utils';
 
@@ -26,28 +26,10 @@ export default class HomeInternet extends Component {
   }
 
   getMapOption() {
-    const weiboData = weibo.map((serieData, idx) => {
-      let px = serieData[0] / 1000;
-      let py = serieData[1] / 1000;
-      const res = [[px, py]];
-
-      for (let i = 2; i < serieData.length; i += 2) {
-        const dx = serieData[i] / 1000;
-        const dy = serieData[i + 1] / 1000;
-        const x = px + dx;
-        const y = py + dy;
-        res.push([x.toFixed(2), y.toFixed(2), 1]);
-
-        px = x;
-        py = y;
-      }
-      return res;
-    });
-
     const seriesConfig = {
       type: 'scatter',
       coordinateSystem: 'geo',
-      symbolSize: 1,
+      symbolSize: 2,
       large: true
     };
 
@@ -63,7 +45,7 @@ export default class HomeInternet extends Component {
               color: 'rgba(37, 140, 249, 0.8)'
             }
           },
-          data: weiboData[0]
+          data: feifanChina[0]
         },
         {
           ...seriesConfig,
@@ -75,10 +57,15 @@ export default class HomeInternet extends Component {
               color: 'rgba(14, 241, 242, 0.8)'
             }
           },
-          data: weiboData[1]
+          data: feifanChina[1]
         },
         {
           ...seriesConfig,
+          // type: 'effectScatter',
+          // showEffectOn: 'render',
+          // rippleEffect: {
+          //   brushType: 'stroke'
+          // },
           name: '强',
           itemStyle: {
             normal: {
@@ -87,7 +74,7 @@ export default class HomeInternet extends Component {
               color: 'rgba(255, 255, 255, 0.8)'
             }
           },
-          data: weiboData[2]
+          data: feifanChina[2]
         }
       ]
     };
