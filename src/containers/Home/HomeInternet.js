@@ -3,11 +3,11 @@ import { WDMapBasic, AnimeNumber, WDLogoSvg } from '../../components';
 import HomeCorner from './HomeCorner';
 import weibo from '../../assets/map/weibo.json'; // 'http://echarts.baidu.com/data/asset/data/weibo.json';
 import './HomeInternet.less';
+import { resizeSquarePage } from '../../utils';
 
 export default class HomeInternet extends Component {
   constructor() {
     super();
-
     this.banner = [
       {
         icon: 'icon-home-people',
@@ -22,7 +22,9 @@ export default class HomeInternet extends Component {
         unit: '人'
       }
     ];
+    resizeSquarePage();
   }
+
   getMapOption() {
     const weiboData = weibo.map((serieData, idx) => {
       let px = serieData[0] / 1000;
