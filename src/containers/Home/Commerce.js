@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { WDPillar, WDImageBar, AnimeNumber } from '../../components';
 import HomeCorner from './HomeCorner';
-import { comdify } from '../../utils';
+import { comdify, resizeSquarePage } from '../../utils';
 import './commerce.less';
 
 export default class Commerce extends Component {
-
   constructor(props) {
     super(props);
     this.banner = [
@@ -22,6 +21,7 @@ export default class Commerce extends Component {
         unit: '辆'
       }
     ];
+    resizeSquarePage();
   }
   render() {
     const consume = ['31%', '43%', '26%'];

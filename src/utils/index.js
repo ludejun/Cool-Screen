@@ -176,3 +176,8 @@ export function comdify(n) {
 export function getBaseFontSize() {
   return parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
+
+// 正方形的时候html字体10vw->10vh
+export function resizeSquarePage() {
+  document.getElementsByTagName('html')[0].style = 'font-size:10vh';
+}
