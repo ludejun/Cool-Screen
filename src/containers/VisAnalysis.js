@@ -3,8 +3,15 @@ import './VisAnalysis.less';
 
 const yArray = [22,20,18,16,14,12,10,8,6,4,2];
 const xArray = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100,105,110];
-const ballArray = [{chinese:'警察',english:'police',x:17,y19}];
+const ballArray = [{chinese:'警察',english:'police',x:17,y:19}];
 class VisAnalysis extends Component {
+    componentDidMount(){
+        const content = this.refs.contentAss;
+        const style = window.getComputedStyle(content);
+        const width = style.getPropertyValue('width');
+        const height = style.getPropertyValue('height');
+        const yPer = (height/yArray.length)/5;
+    }
     render() {
         return <div>
             <svg
@@ -52,16 +59,16 @@ class VisAnalysis extends Component {
                 </g>
             </svg>
             <div className="content">
-                <div className="content-ruler">
+                <div ref="contentAss" className="content-ruler">
                     <section className="left-degree">
                         <div className="degree-center count">次数</div>
-                        {yArray.map((it) => {
-                            return  <div className="degree-center">{it}</div>
+                        {yArray.map((it,index) => {
+                            return  <div key={index} className="degree-center">{it}</div>
                         })}
                     </section>
                     <div className="bottom-degree">{
-                        xArray.map((it) => {
-                            return <span className="y-degree">{it}</span>
+                        xArray.map((it,index) => {
+                            return <span key={index} className="y-degree">{it}</span>
                         })
                         }<span>时常（分钟）</span></div>
                 </div>
