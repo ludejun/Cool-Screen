@@ -407,6 +407,17 @@
         transform: translateX(-50%) scale(0.8);
         font-size: 35px;
       }
+      // &-1,
+      // &-6 {
+      //   .net-cube.inner {
+      //     &::before {
+      //       transform: translateY(-102%);
+      //     }
+      //     &::after {
+      //       transform: translateY(102%);
+      //     }
+      //   }
+      // }
       .net-cube {
         width: 168px;
         height: 96px;
@@ -448,14 +459,17 @@
         }
         &::before {
           border-bottom-color: #4B94FF;
-          top: -96px;
+          top: 0;
+          transform: translateY(-99%);
         }
         &::after {
           border-top-color: #4B94FF;
-          bottom: -96px;
+          bottom: 0;
+          transform: translateY(99%);
         }
         .net-cube-icon {
           font-size: 50px;
+          line-height: 1.2;
         }
       }
     }
