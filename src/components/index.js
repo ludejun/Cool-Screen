@@ -16,3 +16,4 @@ export { default as WDMapBasic } from './WDMapBasic';
 // svgs
 export { default as WDLogoSvg } from './WDLogoSvg';
 export { default as WDPolyLine } from './PolyLine';
+export { default as WDLayout } from './layout';
