@@ -179,5 +179,7 @@ export function getBaseFontSize() {
 
 // 正方形的时候html字体10vw->10vh
 export function resizeSquarePage() {
-  document.getElementsByTagName('html')[0].style = 'font-size:10vh';
+  if (window.outerWidth > window.outerHeight) {
+    document.getElementsByTagName('html')[0].style = 'font-size:10vh';
+  }
 }
