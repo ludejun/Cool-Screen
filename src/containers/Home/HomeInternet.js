@@ -102,7 +102,30 @@ export default class HomeInternet extends Component {
               )}
             </div>
           </div>
-          <img className="banner-img" src="/img/home-internet.png" />
+          <div className="right-img">
+            <div className="outer">
+              <div className="inner">
+                <div className="line1">
+                  <div className="circle"></div>
+                </div>
+                <div className="line2">
+                  <div className="circle"></div>
+                </div>
+              </div>
+            </div>
+            <div className="ball1"></div>
+            <div className="ball2"></div>
+            <div className="ball3">
+              <div className="outshadow"></div>
+            </div>
+            <div className="ball4">
+              <div className="outshadow1"></div>
+            </div>
+            <div className="ball5"></div>
+            <div className="ball6"></div>
+            <div className="ball7"></div>
+            <div className="ball8"></div>
+          </div>
         </div>
 
         <div className="flex-row">

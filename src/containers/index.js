@@ -9,9 +9,11 @@ export { default as VisAnalysis } from './VisAnalysis';
 export { default as DistrictPlaza } from './DistrictPlaza';
 export { default as DistrictBrandTag } from './DistrictBrandTag';
 export { default as BusinessAnalysis } from './BusinessAnalysis';
-export { default as InnerScatter } from './InnerScatter';
 
-// 超大屏-互联网
-export {default as Home } from './Home';
+// 超大屏
+export { default as Home } from './Home';
 export { default as HomeInternet } from './Home/HomeInternet';
 export { default as Commerce } from './Home/Commerce';
+
+//
+export { default as InnerScatter } from './InnerScatter';
