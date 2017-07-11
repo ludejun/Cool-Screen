@@ -2,7 +2,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(to left bottom, #02041D, #041B26);
-  position: relative;
+  position: absolute;
   .bg-pic{
     width:100%;
     height:100%;
@@ -119,6 +119,7 @@
 
   @keyframes hanabi-left {
     0% {
+      height:0;
       width: 0;
       left: 50%;
       opacity: 0;
@@ -130,6 +131,7 @@
       width: 20%;
       left: 0;
       opacity: 1;
+      height:5px;
     }
   }
 

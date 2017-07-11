@@ -13,12 +13,13 @@ ReactDOM.render(
         <Route path="district-plaza" component={Routes.DistrictPlaza} />
         <Route path="district-brand-tag" component={Routes.DistrictBrandTag} />
         <Route path="analysis" component={Routes.BusinessAnalysis} />
-        <Route path="innerScatter" component={Routes.InnerScatter} />
       </Route>
 
       <Route path="home" components={Routes.Home} />
       <Route path="home-internet" component={Routes.HomeInternet} />
       <Route path="commerce" component={Routes.Commerce} />
+
+      <Route path="inner-scatter" component={Routes.InnerScatter} />
 
     </Route>
   </Router>,
