@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
 import {WDMapBasic, BgAnimation} from '../components';
 import {geoCoordMap} from '../assets/map/geoCoordMap';
+import HeaderTitle from './Layout/HeaderTitle';
 import './innerScatter.less';
 const series = {
   series: [
@@ -9,6 +10,10 @@ const series = {
       type: 'effectScatter',
       coordinateSystem: 'geo',
       z: 10,
+      left:0,
+      right:0,
+      bottom:0,
+      top:0,
       rippleEffect: {
         brushType: 'stroke'
       },
@@ -79,30 +84,37 @@ export default class InnerScatter extends Component {
   render() {
     return (
       <div className="inner-scatter-container">
+        <HeaderTitle title="数字商业：内场分布 + 指标排名" className="sum-title"/>
         <BgAnimation />
-        <div className="main-content">
-          <div className="china-map">
-            {/*<WDMapBasic optionCustom={series} style={{width: '100%', height: '100%'}}/>*/}
-          </div>
-          <div className="bar">
-            <div className="bar-title"></div>
-            <img src="/img/pillar-bg.png" className="pillar-bg"/>
-            <div className="pillar-list">
-              {city.map((item, i) => (
-                <div key={i} className="erea">
-                  <div className="pillar"/>
-                  <div className="name">{item.name}</div>
-                </div>
-              ))}
+        <div>
+          <div className="main-content">
+            <div className="china-map">
+              <WDMapBasic optionCustom={series} style={{width: '100%', height: '100%'}}/>
             </div>
+
+            <div className="bar">
+              <div className="bar-title"></div>
+              <img src="/img/pillar-bg.png" className="pillar-bg"/>
+              <div className="pillar-list">
+                {city.map((item, i) => (
+                  <div key={i} className="erea">
+                    <div className="pillar"/>
+                    <div className="name">{item.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
-        </div>
-        <div className="slide-btn">
-          <ul id="slideWrap" className="slide-wrap">
-            {showType.map((item, i) => (
-              <li key={i} onClick={this.alertMsg}>{item}</li>
-            ))}
-          </ul>
+
+          <div className="slide-btn">
+            <ul id="slideWrap" className="slide-wrap">
+              {showType.map((item, i) => (
+                <li key={i} onClick={this.alertMsg}>{item}</li>
+              ))}
+            </ul>
+          </div>
+
         </div>
       </div>
     )
