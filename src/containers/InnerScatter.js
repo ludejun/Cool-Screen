@@ -36,6 +36,7 @@ const city = [{'name': '上海', value: '90%'}, {'name': '北京', value: '80%'}
   'name': '杭州',
   value: '60%'
 }, {'name': '广州', value: '50%'}];
+const pillar = [0,1,2,3,4,5,6,7,8,9];
 const showType = ['广场', '城市', '省份', '区域'];
 export default class InnerScatter extends Component {
 
@@ -88,12 +89,16 @@ export default class InnerScatter extends Component {
             <div className="bar-title"></div>
             <img src="/img/pillar-bg.png" className="pillar-bg"/>
             <div className="pillar-list">
+              <div className="erea-wrap">
               {city.map((item, i) => (
-                <div key={i} className="erea">
-                  <div className="pillar"/>
+                <div key={i} className="erea" style={{height: item.value}}>
+                  {pillar.map((item,i) => (
+                    <div key={i} className="pillar"/>
+                  ))}
                   <div className="name">{item.name}</div>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         </div>
