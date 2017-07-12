@@ -2,13 +2,20 @@ import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
 import {WDMapBasic, BgAnimation} from '../components';
 import {geoCoordMap} from '../assets/map/geoCoordMap';
+import HeaderTitle from './Layout/HeaderTitle';
 import './innerScatter.less';
 const series = {
   series: [
     {
+      symbolSize: 2,
+      large: true,
       type: 'effectScatter',
       coordinateSystem: 'geo',
       z: 10,
+      left:0,
+      right:0,
+      bottom:0,
+      top:0,
       rippleEffect: {
         brushType: 'stroke'
       },
@@ -16,7 +23,7 @@ const series = {
       label: {
         normal: {
           show: true,
-          position: 'right',
+          position: 'top',
           formatter: '{b}',
           textStyle: {
             color: '#fff',
@@ -80,29 +87,32 @@ export default class InnerScatter extends Component {
   render() {
     return (
       <div className="inner-scatter-container">
+        <HeaderTitle title="数字商业：内场分布 + 指标排名" className="sum-title"/>
         <BgAnimation />
-        <div className="main-content">
-          <div className="china-map">
-            {/*<WDMapBasic optionCustom={series} style={{width: '100%', height: '100%'}}/>*/}
-          </div>
-          <div className="bar">
-            <div className="bar-title"></div>
-            <img src="/img/pillar-bg.png" className="pillar-bg"/>
-            <div className="pillar-list">
-              <div className="erea-wrap">
-              {city.map((item, i) => (
-                <div key={i} className="erea" style={{height: item.value}}>
-                  {pillar.map((item,i) => (
-                    <div key={i} className="pillar"/>
+        <div>
+          <div className="main-content">
+            <div className="china-map">
+              <WDMapBasic optionCustom={series} style={{width: '120%', height: '120%'}} top={0} left={0}/>
+            </div>
+
+            <div className="bar">
+              <div className="bar-title"></div>
+              <img src="/img/pillar-bg.png" className="pillar-bg"/>
+              <div className="pillar-list">
+                <div className="erea-wrap">
+                  {city.map((item, i) => (
+                    <div key={i} className="erea" style={{height: item.value}}>
+                      {pillar.map((item,i) => (
+                        <div key={i} className="pillar"/>
+                      ))}
+                      <div className="name">{item.name}</div>
+                    </div>
                   ))}
-                  <div className="name">{item.name}</div>
                 </div>
-              ))}
-            </div>
-            </div>
-          </div>
-        </div>
-        <div className="slide-btn">
+             </div>
+           </div>
+         </div>
+         <div className="slide-btn">
           <ul id="slideWrap" className="slide-wrap">
             {showType.map((item, i) => (
               <li key={i} onClick={this.alertMsg}>{item}</li>
@@ -110,6 +120,7 @@ export default class InnerScatter extends Component {
           </ul>
         </div>
       </div>
+    </div>
     )
   }
 }

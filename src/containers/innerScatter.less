@@ -4,29 +4,15 @@
   align-items: center;
   height: 100%;
   position: relative;
+
   .main-content {
-
+    padding:80px 130px 0 130px;
+    height: 750px;
   }
-  .main-content div {
-    float: left;
-  }
-  .slide-btn {
-    position: absolute;
-    left: 50%;
-    bottom: 64.5px;
-    transform: translateX(-50%)
-  }
-  .slide-wrap {
-    text-align: center;
-  }
-  .slide-wrap li:after {
-
-  }
-  .main-content {
-  }
-
-  .main-content div {
-    float: left;
+  .main-content::after{
+    display: block;
+    content:'';
+    clear:both;
   }
   .main-content:after {
     content: '';
@@ -36,13 +22,15 @@
   }
 
   .china-map {
-    width: 1089px;
-    height: 803px;
+    float:left;
+    width: 960px;
+    height:100%;
   }
 
   .bar {
+    float:left;
     width: 551.5px;
-    height: 603px;
+    height:100%;
     position: relative;
     .bar-title {
       width: 48px;
@@ -61,9 +49,8 @@
     }
 
     .pillar-list {
-      width: 100%;
-      top: 96px;
-      left: 68px;
+      bottom: 115px;
+      left: 74px;
       position: absolute;
       .erea-wrap {
         position: relative;
@@ -126,14 +113,9 @@
   }
 
   .slide-btn {
-    position: absolute;
-    left: 50%;
-    bottom: 64.5px;
-    transform: translateX(-50%);
-  }
-
-  .slide-wrap {
-    text-align: center;
+    width:800px;
+    margin:30px auto 60px;
+    height:62px;
   }
 
   .slide-wrap li {
@@ -187,4 +169,3 @@
     background: #108EE9;
   }
 }
-
