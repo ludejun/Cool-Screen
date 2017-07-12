@@ -6,6 +6,35 @@
     transform:translate(-50%,-50%);
     width:80%;
     height:70%;
+    .left-degree {
+        font-size: 25px;
+        stroke:#fff;
+        fill:#fff;
+        stroke-width:1px;
+        text-anchor: middle;
+    }
+    .english-degree{
+        font-size: 15px;
+        stroke:#fff;
+        fill:#fff;
+        stroke-width:1px;
+        width:40px;
+        text-anchor: middle;
+    }
+    .circle-dump{
+        animation:dump 2s linear infinite;
+        animation-direction: alternate-reverse;
+        perspective: 1000;
+        transform-style: preserve-3d;
+    }
+    @keyframes dump {
+        from {
+            transform:translateY(0);
+        }
+        to{
+            transform:translateY(20px);
+        }
+    }
     .angle-flash{
         animation: angle 1s linear infinite;
         animation-direction: alternate-reverse;
@@ -28,96 +57,4 @@
         width:75%;
         height:65%;
         overflow: hidden;
-}
-.content{
-        z-index: 20;
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
-        width:75%;
-        height:65%;
-        .content-ruler{
-            position:absolute;
-            top:48%;
-            left:50%;
-            transform:translate(-50%,-50%);
-            width:90%;
-            height:90%;
-            border-left:5px solid #00BFF2;
-            border-bottom:5px solid #00BFF2;
-            .ball-style{
-                background: linear-gradient(to top,#06437A,#00C2F5);
-                box-shadow: 0 0 0 15px #05264C;
-                font-size: 6px;
-                animation:updown 1.5s linear infinite;
-                animation-direction: alternate-reverse;
-                position:relative;
-                div{
-                    position:absolute;
-                    top:50%;
-                    left:50%;
-                    transform:translate(-50%,-50%);
-                }
-                span{
-                    display:inline-block;
-                    line-height: 1;
-                    margin-bottom:2px;
-                    text-align: center;
-                    width:100%;
-                }
-                span:nth-child(2){
-                    font-size: 2px;
-                    transform: scale(0.6);
-                }
-            }
-            @keyframes updown {
-               0% {
-                    transform:translateY(0px);
-               }
-               20%{
-                   transform:translateY(2px);
-               }
-               40%{
-                   transform:translateY(4px);
-               }
-               60%{
-                   transform:translateY(6px);
-               }
-               80%{
-                   transform:translateY(8px);
-               }
-               100%{
-                   transform:translateY(10px);
-               }
-            }
-        }
-        .bottom-degree{
-            position:absolute;
-            width:100%;
-            bottom:-40px;
-            height:35px;
-            font-size: 14px;
-            .y-degree{
-                display:inline-block;
-                width:4.1%;
-            }
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-        .left-degree{
-            position:absolute;
-            left:-45px;
-            width:90px;
-            height:100%;
-            font-size: 14px;
-            .degree-center{
-               padding-left:10px;
-               height:8.5%;
-            }
-            .count{
-                padding-left:0;
-            }
-        }
 }
