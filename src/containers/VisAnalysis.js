@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import HeaderTitle from './Layout/HeaderTitle';
 import './VisAnalysis.less';
 
 const yArray = [
@@ -299,6 +300,7 @@ class VisAnalysis extends Component {
     }
     render() {
         return <div>
+            <HeaderTitle title="智慧生活： 客群黏性分析" />
             <svg
                 className="svg-container"
                 viewBox="0 0 1724 771"
