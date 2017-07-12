@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import './WDImageBar.less';
+import { getProperSize } from '../utils';
 
 export default class WDImageBar extends Component {
   constructor(props) {
@@ -7,7 +8,6 @@ export default class WDImageBar extends Component {
   }
   render() {
     const { dataList } = this.props;
-    // let maxPercent = dataList.map((v)=>{return v.percent}).reduce((x,y)=>{return Math.max(x,y)})
     return (
       <div className="image-bar">
         {dataList.map((v, i) => {
@@ -17,17 +17,20 @@ export default class WDImageBar extends Component {
                 key={i}
                 className="line"
                 style={{
-                  backgroundImage: `url(${v.itemImage})`,
-                  width: `${v.percent}%`
+                  width: !v.color ? `${v.percent}%` : '100%'
                 }}
               >
-                {/* <span
+                <span
                   className="backImage"
-
-                /><span className="percent" style={{color: v.color }}>
-                  {`${v.show ? v.percent.toFixed(0)+'%' : ''} `}
-                </span>
-                */}
+                  style={{
+                    backgroundImage: `url(${v.itemImage})`,
+                    width: v.color ? `${getProperSize(v.percent, 0, 100, 0, 80)}%` : '100%'
+                  }}
+                />
+                {!!v.color &&
+                  <span className="percent" style={{ color: v.color }}>
+                    {`${v.percent.toFixed(0)}%`}
+                  </span>}
               </div>) ||
             null
           );

@@ -151,6 +151,7 @@ export function formatDTString(dateString) {
 }
 
 // 给定一个范围，按比例计算圆圈大小。
+// getProperSize(item.height, minH, maxH, 10, 100)
 export function getProperSize(now, min, max, minTarget, maxTarget) {
   if (!now) {
     return 0;
