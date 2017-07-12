@@ -1,19 +1,306 @@
 import React, {Component} from 'react';
+import HeaderTitle from './Layout/HeaderTitle';
 import './VisAnalysis.less';
 
-const yArray = [22,20,18,16,14,12,10,8,6,4,2];
-const xArray = [5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100,105,110];
-const ballArray = [{chinese:'警察',english:'police',x:17,y:19}];
+const yArray = [
+    22,
+    20,
+    18,
+    16,
+    14,
+    12,
+    10,
+    8,
+    6,
+    4,
+    2
+];
+const xArray = [
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    80,
+    85,
+    90,
+    95,
+    100,
+    105,
+    110
+];
+const circle = [
+    {
+        x: 350,
+        y: 500,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 250,
+        y: 300,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1650,
+        y: 700,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1360,
+        y: 400,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 200,
+        y: 800,
+        color: '#108EE9',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 940,
+        y: 650,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 850,
+        y: 300,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1460,
+        y: 500,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1600,
+        y: 465,
+        color: '#108EE9',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1100,
+        y: 870,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 980,
+        y: 430,
+        color: '#09CDC6',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 568,
+        y: 698,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1000,
+        y: 428,
+        color: '#09CDC6',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 888,
+        y: 666,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1548,
+        y: 500,
+        color: '#09CDC6',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1368,
+        y: 777,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 543,
+        y: 888,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 777,
+        y: 398,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 356,
+        y: 877,
+        color: '#108EE9',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1689,
+        y: 654,
+        color: '#108EE9',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 300,
+        y: 800,
+        color: '#09CDC6',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 400,
+        y: 700,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 500,
+        y: 800,
+        color: '#09CDC6',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 600,
+        y: 600,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 460,
+        y: 740,
+        color: '#09CDC6',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 700,
+        y: 800,
+        color: '#108EE9',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1300,
+        y: 800,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1200,
+        y: 700,
+        color: '#108EE9',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1400,
+        y: 700,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1300,
+        y: 600,
+        color: '#09CDC6',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1000,
+        y: 500,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1340,
+        y: 790,
+        color: '#108EE9',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 940,
+        y: 790,
+        color: '#F8E81C',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 990,
+        y: 700,
+        color: '#09CDC6',
+        r: Math.ceil(Math.random()*10)
+    }, {
+        x: 1040,
+        y: 630,
+        color: '#09CDC6',
+        r: Math.ceil(Math.random()*10)
+    }
+]
+const ballArray = [
+    {
+        chinese: '警察',
+        english: 'police',
+        x: 17,
+        y: 19,
+        width: 60
+    }, {
+        chinese: '司机',
+        english: 'driver',
+        x: 35,
+        y: 14,
+        width: 50
+    }, {
+        chinese: '教师',
+        english: 'teacher',
+        x: 24,
+        y: 7,
+        width: 40
+    }, {
+        chinese: '医生',
+        english: 'doctor',
+        x: 64,
+        y: 15,
+        width: 66
+    }, {
+        chinese: '工人',
+        english: 'worker',
+        x: 50,
+        y: 8,
+        width: 73
+    }, {
+        chinese: '公务员',
+        english: 'civil servant',
+        x: 83,
+        y: 20,
+        width: 78
+    }, {
+        chinese: '律师',
+        english: 'lawyer',
+        x: 74,
+        y: 75,
+        width: 30
+    }, {
+        chinese: '金融',
+        english: 'finance',
+        x: 87,
+        y: 10,
+        width: 70
+    }, {
+        chinese: '服务业',
+        english: 'services',
+        x: 103,
+        y: 18,
+        width: 50
+    }, {
+        chinese: '私企',
+        english: 'private enterprises',
+        x: 115,
+        y: 10,
+        width: 60
+    }
+];
 class VisAnalysis extends Component {
-    componentDidMount(){
+    constructor() {
+        super();
+        this.state = {
+            xPer: 0,
+            yPer: 0,
+            ballArray: null
+        };
+    }
+    componentDidMount() {
         const content = this.refs.contentAss;
         const style = window.getComputedStyle(content);
-        const width = style.getPropertyValue('width');
-        const height = style.getPropertyValue('height');
-        const yPer = (height/yArray.length)/5;
+        const width = parseFloat(style.getPropertyValue('width'));
+        const height = parseFloat(style.getPropertyValue('height'));
+        const yPer = (height / (yArray.length + 2)) / 2;
+        const xPer = (width / (xArray.length + 5)) / 5;
+        this.setState({xPer, yPer, ballArray});
     }
     render() {
         return <div>
+            <HeaderTitle title="智慧生活： 客群黏性分析" />
             <svg
                 className="svg-container"
                 viewBox="0 0 1724 771"
@@ -55,22 +342,49 @@ class VisAnalysis extends Component {
                             stroke="#48AAFD"
                             opacity="1"
                             d="M164,950 L114,950 L114,900"></path>
+                            {circle.map((it,index) => {
+                                return  <circle key={index} stroke="none" cx={it.x.toString()} cy={it.y.toString()} r={it.r.toString()} fill={it.color.toString()} opacity="0.3"/>
+                            })}
                     </g>
                 </g>
             </svg>
             <div className="content">
                 <div ref="contentAss" className="content-ruler">
+                    {this.state.ballArray && this
+                        .state
+                        .ballArray
+                        .map((it, index) => {
+                            const y = it.y * this.state.yPer;
+                            return <div
+                                className="ball-style"
+                                key={index}
+                                style={{
+                                position: 'absolute',
+                                bottom: y,
+                                left: it.x * this.state.xPer,
+                                width: it.width,
+                                height: it.width,
+                                borderRadius: '50%',
+                                animationDelay: index + 's'
+                            }}>
+                                <div>
+                                    <span>{it.chinese}</span>
+                                    <span>{it.english}</span>
+                                </div>
+                            </div>
+                        })}
                     <section className="left-degree">
                         <div className="degree-center count">次数</div>
-                        {yArray.map((it,index) => {
-                            return  <div key={index} className="degree-center">{it}</div>
+                        {yArray.map((it, index) => {
+                            return <div key={index} className="degree-center">{it}</div>
                         })}
                     </section>
-                    <div className="bottom-degree">{
-                        xArray.map((it,index) => {
+                    <div className="bottom-degree">{xArray.map((it, index) => {
                             return <span key={index} className="y-degree">{it}</span>
                         })
-                        }<span>时常（分钟）</span></div>
+}
+                        <span>时常（分钟）</span>
+                    </div>
                 </div>
             </div>
             <div className="net-style">
