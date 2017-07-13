@@ -93,7 +93,7 @@ export default class InnerScatter extends Component {
           <div>
             <div className="main-content">
               <div className="china-map">
-                  <WDMapBasic optionCustom={series} style={{width: '130%', height: '130%',marginLeft:'-20%',marginTop:'-10%'}}/>
+                <WDMapBasic optionCustom={series} className="map"/>
               </div>
               <div className="bar">
                 <div className="bar-title"></div>
