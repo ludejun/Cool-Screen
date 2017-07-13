@@ -20,3 +20,5 @@ export { default as WDLayout } from './layout';
 
 // background
 export { default as BgAnimation } from './BgAnimation';
+
+export { default as WDAnalysis} from './WDAnalysis';

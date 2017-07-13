@@ -49,6 +49,9 @@ export default class InnerScatter extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      index:0
+    }
   }
 
   componentDidMount() {
@@ -58,29 +61,18 @@ export default class InnerScatter extends Component {
   slideBtn() {
     let timer = null;
     clearInterval(timer);
-    let num = 0;
     let ul = document.getElementById('slideWrap');
     let allLI = ul.getElementsByTagName("li");
     let selectTitle = document.querySelector('.bar-title');
+
     timer = setInterval(() => {
-      if (num >= showType.length) {
-        num = 0;
-        showType.map((item, idx) => {
-          allLI[idx].className = '';
-        })
-        selectTitle.innerHTML = '';
-        allLI[num].className = 'active';
-        selectTitle.innerHTML = showType[num];
-        num++;
-      } else {
-        showType.map((item, idx) => {
-          allLI[idx].className = '';
-        })
-        selectTitle.innerHTML = '';
-        allLI[num].className = 'active';
-        selectTitle.innerHTML = showType[num];
-        num++
+      
+      if(this.state.index === 3){
+        this.setState({index:0});
+      }else{
+        this.setState({index:this.state.index+1});
       }
+      selectTitle.innerHTML = showType[this.state.index];
     }, 1000)
   }
 
@@ -115,7 +107,7 @@ export default class InnerScatter extends Component {
            <div className="slide-btn">
             <ul id="slideWrap" className="slide-wrap">
               {showType.map((item, i) => (
-                <li key={i} onClick={this.alertMsg}>{item}</li>
+                <li key={i} className={i === this.state.index ? "active": ""} onClick={this.alertMsg}>{item}</li>
               ))}
             </ul>
           </div>
