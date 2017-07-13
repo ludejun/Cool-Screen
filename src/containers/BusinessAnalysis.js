@@ -203,7 +203,7 @@ export default class BusinessAnalysis extends Component {
       this.setState({
         consumeCount: this.state.consumeCount + 1
       });
-    }, 1000);
+    }, 3000);
 
     anime({
       targets: '.Rectangle-19',
@@ -237,40 +237,31 @@ export default class BusinessAnalysis extends Component {
   }
 
   renderEchart = () => {
+    const randomL = parseInt(Math.random() * 60);
+    const randomM = parseInt(Math.random() * 70);
+    const randomH = parseInt(Math.random() * 30);
     const consumeOption = {
       color: ['#85b6b2', '#6d4f8d', '#cd5e7e', '#e38980', '#f7db88'],
       tooltip: {
         show: true,
-        formatter: '{a} <br/>{b} : {d}%'
-      },
-      grid: {
-        left: 10,
-        top: 10,
-        right: 10,
-        bottom: 50
-      },
-      legend: {
-        show: false,
-        orient: 'vertical',
-        top: 'bottom',
-        // right:'20px',
-        data: ['低端消费', '中端消费', '高端消费']
+        formatter: '{a} <br/>{b}'
       },
       series: [
         {
           name: '等级占比',
           type: 'pie',
           clockWise: false,
-          radius: [70, 80],
+          radius: [60, 70],
           itemStyle: dataStyle,
           hoverAnimation: false,
           data: [
             {
               value: consume[0],
-              name: '低端消费'
+              name:  '低端消费' + (100 - randomL) + '%',
+              label: {normal:{textStyle:{fontSize:10}}}
             },
             {
-              value: parseInt(Math.random() * 60),
+              value: randomL,
               name: '低端消费',
               itemStyle: placeHolderStyle
             }
@@ -286,10 +277,10 @@ export default class BusinessAnalysis extends Component {
           data: [
             {
               value: consume[1],
-              name: '中端消费'
+              name: '中端消费' + (100 - randomM) + '%'
             },
             {
-              value: parseInt(Math.random() * 70),
+              value: randomM,
               name: '中端消费',
               itemStyle: placeHolderStyle
             }
@@ -305,10 +296,10 @@ export default class BusinessAnalysis extends Component {
           data: [
             {
               value: consume[2],
-              name: '高端消费'
+              name: '高端消费' + (100 - randomH) + '%'
             },
             {
-              value: parseInt(Math.random() * 30),
+              value: randomH,
               name: '高端消费',
               itemStyle: placeHolderStyle
             }
@@ -386,13 +377,13 @@ export default class BusinessAnalysis extends Component {
           <div className="right-sub-container right-sub-container-first">
             <div>
               <p className="consume-title">消费等级占比</p>
-              <div className="consume-container">
+              <div style={{transform: 'translate(60px)'}} className="consume-container">
                 {this.renderEchart()}
               </div>
             </div>
             <div className="age-container">
               <p className="age-title">年龄分布</p>
-              <Echarts className="age-chart" option={option} />
+              <Echarts style={{transform: 'translate(30px)'}} className="age-chart" option={option} />
             </div>
           </div>
           <div className="right-sub-container flex-col">
