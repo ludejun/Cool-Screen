@@ -83,7 +83,7 @@ export default class HomeInternet extends Component {
 
   render() {
     return (
-      <div className="home-internet home-internet-bg flex-col">
+      <div className="home-internet dark-bg flex-col">
         <WDLogoSvg className="header-logo" />
         <HomeCorner className="home-corner right-top" />
         <div className="home-info-banner flex-row">

@@ -1,52 +1,46 @@
-.bg-animation{
-  z-index:-1;
+.bg-animation {
+  z-index: -1;
   width: 100%;
   height: 100%;
   background: linear-gradient(to left bottom, #02041D, #041B26);
   position: absolute;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  .main-header-logo{
+  .bg-animation-container {
+    width: 1772px;
     position: absolute;
-  }
-
-  .bg-animation-container{
-    width:1772px;
-    position: absolute;
-
-    .bg-pic{
-      width:100%;
+    .bg-pic {
+      width: 100%;
     }
-    .area{
+    .area {
       position: absolute;
       display: flex;
       justify-content: center;
     }
-    .top-left{
-      left:276px;
-      top:10px;
+    .top-left {
+      left: 276px;
+      top: 10px;
     }
-    .top-right{
-      left:1334px;
-      top:10px;
+    .top-right {
+      left: 1334px;
+      top: 10px;
     }
-    .bottom-left{
-      left:276px;
-      bottom:18px;
+    .bottom-left {
+      left: 276px;
+      bottom: 18px;
     }
-    .bottom-right{
-      left:1334px;
-      bottom:18px;
+    .bottom-right {
+      left: 1334px;
+      bottom: 18px;
     }
     .circle {
-      flex:1;
-      margin:3px;
+      flex: 1;
+      margin: 3px;
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      display:inline-block;
+      display: inline-block;
       background-color: rgba(18, 143, 234, .5);
     }
     .circle1 {
@@ -76,64 +70,56 @@
     .circle9 {
       animation: circle-bg 1.8s linear 1.8s infinite;
     }
-
-    .hanabi-pointer{
+    .hanabi-pointer {
       position: absolute;
-      width:597px;
-      height:27px;
-      left:593px;
-      display:flex;
+      width: 597px;
+      height: 27px;
+      left: 593px;
+      display: flex;
       align-items: center;
       justify-content: center;
-
-      .hanabi{
+      .hanabi {
         position: absolute;
         width: 20%;
         height: 5px;
         border-radius: 2px 2px 0 0;
-
       }
-      .left{
-         animation: hanabi-left 2s linear infinite;
-         background: linear-gradient(to right, #328DEC, transparent);
-
+      .left {
+        animation: hanabi-left 2s linear infinite;
+        background: linear-gradient(to right, #328DEC, transparent);
       }
-      .right{
+      .right {
         animation: hanabi-right 2s linear infinite;
         background: linear-gradient(to left, #328DEC, transparent);
       }
-      .circle{
+      .circle {
         position: absolute;
-        margin:3px;
+        margin: 3px;
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        display:inline-block;
+        display: inline-block;
         background-color: rgba(18, 143, 234, .5);
         animation: circle-bg 2.5s linear infinite;
       }
     }
-    .center-top{
-      top:8px;
+    .center-top {
+      top: 8px;
     }
-    .center-bottom{
-      bottom:18px;
+    .center-bottom {
+      bottom: 18px;
     }
-
     @keyframes circle-bg {
       0% {
         background-color: rgba(18, 143, 234, 0);
       }
-
       100% {
         background-color: rgba(18, 143, 234, 1);
       }
     }
-
-
     @keyframes hanabi-left {
       0% {
-        height:0;
+        height: 0;
         width: 0;
         left: 50%;
         opacity: 0;
@@ -147,7 +133,6 @@
         opacity: 1;
       }
     }
-
     @keyframes hanabi-right {
       0% {
         width: 0;
