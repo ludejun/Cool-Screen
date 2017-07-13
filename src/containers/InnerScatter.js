@@ -62,13 +62,15 @@ export default class InnerScatter extends Component {
     let ul = document.getElementById('slideWrap');
     let allLI = ul.getElementsByTagName("li");
     let selectTitle = document.querySelector('.bar-title');
+    allLI[num].className = 'active';
+    selectTitle.innerHTML = showType[num];
+
     timer = setInterval(() => {
       if (num >= showType.length) {
         num = 0;
         showType.map((item, idx) => {
           allLI[idx].className = '';
         })
-        selectTitle.innerHTML = '';
         allLI[num].className = 'active';
         selectTitle.innerHTML = showType[num];
         num++;
@@ -76,7 +78,6 @@ export default class InnerScatter extends Component {
         showType.map((item, idx) => {
           allLI[idx].className = '';
         })
-        selectTitle.innerHTML = '';
         allLI[num].className = 'active';
         selectTitle.innerHTML = showType[num];
         num++
