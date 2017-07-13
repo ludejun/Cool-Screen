@@ -30,22 +30,27 @@
   .right-img {
     width: 462px;
     height: 356px;
-    background: url("/img/home-internet.png");
+    background: url(/img/home-computer.png);
     background-size: contain;
     position: relative;
     .outer {
       width: 150px;
       height: 150px;
-      background-color: rgba(44,81,147,.2);
       position: absolute;
       margin-left: 200px;
       left: -31px;
       top: 113px;
       border-radius: 50%;
-      .inner {
+      .inner{
+        .home-earth{
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: -10px;
+            top: -10px; 
+        }
         width: 130px;
         height: 130px;
-        background-color: #08cefe;
         border-radius: 50%;
         position: absolute;
         left: 10px;
@@ -80,7 +85,22 @@
             transform: rotate(90deg);
             left: 0;
             top: 50%;
-            transform: translate(-50%,-50%) rotateX(-90deg);
+            transform: translate(-50%,-50%) rotateX(-90deg) rotateY(180deg);
+            animation: rotation 4s linear infinite;
+            @keyframes rotation {
+              0% {
+                    transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg) ;
+                }
+                50% {
+                    transform: translate(-50%, -50%) rotateX(-90deg);
+                }
+                75% {
+                    transform: translate(-50%, -50%) rotateX(-90deg) rotateY(90deg)
+                }
+                100% {
+                    transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg)
+                }
+              }
           }
         }
         .line2 {
@@ -112,7 +132,22 @@
             transform: rotate(90deg);
             left: 0;
             top: 50%;
-            transform: translate(-50%,-50%) rotateX(-90deg);
+            transform: translate(-50%,-50%) rotateX(-90deg) rotateY(180deg);
+            animation: rotation1 4s linear infinite;
+            @keyframes rotation1 {
+              0% {
+                  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg) ;
+              }
+              25% {
+                  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(90deg);
+              }
+              50% {
+                  transform: translate(-50%, -50%) rotateX(-90deg)
+              }
+              100% {
+                  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg)
+              }
+            }
           }
         }
       }
