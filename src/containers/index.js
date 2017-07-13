@@ -7,6 +7,7 @@ export { default as HeaderTitle } from './Layout/HeaderTitle';
 // 智慧生活
 export { default as VisAnalysis } from './VisAnalysis';
 export { default as LifeMobile } from './Life/LifeMobile';
+export { default as LifeOSUV } from './Life/LifeOSUV';
 
 // 商圈分析
 export { default as DistrictPlaza } from './DistrictPlaza';
