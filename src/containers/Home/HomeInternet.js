@@ -105,6 +105,7 @@ export default class HomeInternet extends Component {
           <div className="right-img">
             <div className="outer">
               <div className="inner">
+                <img className="home-earth" src="/img/home-earth.png" />
                 <div className="line1">
                   <div className="circle" />
                 </div>
