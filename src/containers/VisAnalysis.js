@@ -431,7 +431,7 @@ class VisAnalysis extends Component {
 }
                         <text
                             className="left-degree"
-                            x={(maxX - 18).toString()}
+                            x={(maxX - 18 + 30).toString()}
                             y={(maxY + 30).toString()}>时常（分钟）</text>
                         {ballArray.map((it, index) => {
                             return <g  key={index} className="circle-dump">
