@@ -27,7 +27,7 @@ export default class LifeMobileBorder extends Component {
             <stop stopColor="#020A2C" stopOpacity="0" offset="70.1643076%" />
             <stop stopColor="#00BAFF" stopOpacity="0.490036232" offset="100%" />
           </radialGradient>
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="border-linearGradient-2">
             <stop stopColor="#17FFC2" stopOpacity="0.5" offset="0%" />
             <stop stopColor="#0F8FA3" stopOpacity="0" offset="49.1788903%" />
             <stop stopColor="#6E0684" stopOpacity="0.5" offset="100%" />
@@ -71,7 +71,7 @@ export default class LifeMobileBorder extends Component {
             <stop stopColor="#020A2C" stopOpacity="0" offset="70.1643076%" />
             <stop stopColor="#00BAFF" stopOpacity="0.490036232" offset="100%" />
           </radialGradient>
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-6">
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="border-linearGradient-6">
             <stop stopColor="#17C5FF" stopOpacity="0.5" offset="0%" />
             <stop stopColor="#0F8FA3" stopOpacity="0" offset="49.1788903%" />
             <stop stopColor="#6E0684" stopOpacity="0.5" offset="100%" />
@@ -80,7 +80,7 @@ export default class LifeMobileBorder extends Component {
             id="border-path-7"
             points="38.0057526 50.3413304 952.994247 50.3413304 952.994247 826.357688 645.733386 826.357688 622.872821 774.73209 367.742657 774.73209 347.090753 826.357688 38.0057526 826.357688"
           />
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="98.4713807%" id="linearGradient-8">
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="98.4713807%" id="border-linearGradient-8">
             <stop stopColor="#009FFF" stopOpacity="0.113394475" offset="0%" />
             <stop stopColor="#0DA0FF" stopOpacity="0.674649004" offset="100%" />
           </linearGradient>
@@ -96,7 +96,11 @@ export default class LifeMobileBorder extends Component {
           <g id="outer-border" opacity="0.31884058">
             <use fill="black" fillOpacity="1" filter="url(#filter-4)" xlinkHref="#border-path-3" />
             <use fill="url(#radialGradient-1)" fillRule="evenodd" xlinkHref="#border-path-3" />
-            <use fill="url(#linearGradient-2)" fillRule="evenodd" xlinkHref="#border-path-3" />
+            <use
+              fill="url(#border-linearGradient-2)"
+              fillRule="evenodd"
+              xlinkHref="#border-path-3"
+            />
             <path
               stroke="#40C1FF"
               strokeWidth="1.9"
@@ -106,7 +110,7 @@ export default class LifeMobileBorder extends Component {
           </g>
           <g id="inner-border" opacity="0.227411685">
             <use fill="url(#radialGradient-5)" xlinkHref="#border-path-7" />
-            <use fill="url(#linearGradient-6)" xlinkHref="#border-path-7" />
+            <use fill="url(#border-linearGradient-6)" xlinkHref="#border-path-7" />
           </g>
           <path
             d="M26.7840505,41.0232973 L964.215949,41.0232973 L964.215949,836.625558 L656.836886,836.625558 L628.608187,770.77002 L628.314605,770.085113 L627.569427,770.085113 L365.462216,770.085113 L364.731094,770.085113 L364.431377,770.751978 L334.825016,836.625558 L26.7840505,836.625558 L26.7840505,41.0232973 Z"
@@ -198,7 +202,7 @@ export default class LifeMobileBorder extends Component {
           </g>
           <polygon
             id="wanda-text-dev"
-            fill="url(#linearGradient-8)"
+            fill="url(#border-linearGradient-8)"
             points="369 782 622 782 644 837 347 837"
           />
           <text
