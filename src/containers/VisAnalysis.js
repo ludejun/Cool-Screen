@@ -289,16 +289,6 @@ const xSpan = (maxX - minX) / xArray.length;
 const xPer = xSpan / 5;
 const yPer = ySpan / 2;
 class VisAnalysis extends Component {
-    constructor() {
-        super();
-        this.state = {
-            xPer: 0,
-            yPer: 0,
-            ballArray: null
-        };
-    }
-    componentDidMount() {
-    }
     render() {
         return <div>
             <HeaderTitle title="智慧生活： 客群黏性分析"/>
