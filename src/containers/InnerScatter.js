@@ -87,38 +87,39 @@ export default class InnerScatter extends Component {
 
   render() {
     return (
-      <div className="inner-scatter-container">
+      <div>
         <HeaderTitle title="数字商业：内场分布 + 指标排名" className="sum-title"/>
         <BgAnimation />
-        <div>
-          <div className="main-content">
-            <div className="china-map">
-              <WDMapBasic optionCustom={series} style={{width: '120%', height: '120%'}} top={0} left={0}/>
+        <div className="inner-scatter-container">
+          <div>
+            <div className="main-content">
+              <div className="china-map">
+                <WDMapBasic optionCustom={series} className="map"/>
+              </div>
+              <div className="bar">
+                <div className="bar-title"></div>
+                <img src="/img/pillar-bg.png" className="pillar-bg"/>
+                <div className="pillar-list">
+                  <div className="erea-wrap">
+                    {city.map((item, i) => (
+                      <div key={i} className="erea" style={{height: item.value}}>
+                        {pillar.map((item,i) => (
+                          <div key={i} className="pillar"/>
+                        ))}
+                        <div className="name">{item.name}</div>
+                      </div>
+                    ))}
+                  </div>
+               </div>
+              </div>
             </div>
-
-            <div className="bar">
-              <div className="bar-title"></div>
-              <img src="/img/pillar-bg.png" className="pillar-bg"/>
-              <div className="pillar-list">
-                <div className="erea-wrap">
-                  {city.map((item, i) => (
-                    <div key={i} className="erea" style={{height: item.value}}>
-                      {pillar.map((item,i) => (
-                        <div key={i} className="pillar"/>
-                      ))}
-                      <div className="name">{item.name}</div>
-                    </div>
-                  ))}
-                </div>
-             </div>
-           </div>
-         </div>
-         <div className="slide-btn">
-          <ul id="slideWrap" className="slide-wrap">
-            {showType.map((item, i) => (
-              <li key={i} onClick={this.alertMsg}>{item}</li>
-            ))}
-          </ul>
+           <div className="slide-btn">
+            <ul id="slideWrap" className="slide-wrap">
+              {showType.map((item, i) => (
+                <li key={i} onClick={this.alertMsg}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
