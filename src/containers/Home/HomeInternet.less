@@ -85,7 +85,22 @@
             transform: rotate(90deg);
             left: 0;
             top: 50%;
-            transform: translate(-50%,-50%) rotateX(-90deg)
+            transform: translate(-50%,-50%) rotateX(-90deg) rotateY(180deg);
+            animation: rotation 4s linear infinite;
+            @keyframes rotation {
+              0% {
+                    transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg) ;
+                }
+                50% {
+                    transform: translate(-50%, -50%) rotateX(-90deg);
+                }
+                75% {
+                    transform: translate(-50%, -50%) rotateX(-90deg) rotateY(90deg)
+                }
+                100% {
+                    transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg)
+                }
+              }
           }
         }
         .line2{
@@ -117,7 +132,22 @@
             transform: rotate(90deg);
             left: 0;
             top: 50%;
-            transform: translate(-50%,-50%) rotateX(-90deg)
+            transform: translate(-50%,-50%) rotateX(-90deg) rotateY(180deg);
+            animation: rotation1 4s linear infinite;
+            @keyframes rotation1 {
+              0% {
+                  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg) ;
+              }
+              25% {
+                  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(90deg);
+              }
+              50% {
+                  transform: translate(-50%, -50%) rotateX(-90deg)
+              }
+              100% {
+                  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg)
+              }
+            }
           }
         }
 
