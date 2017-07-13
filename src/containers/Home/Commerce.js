@@ -62,7 +62,7 @@ export default class Commerce extends Component {
       ]
     ];
     return (
-      <div className="home-commerce home-internet-bg flex-col">
+      <div className="home-commerce dark-bg flex-col">
         <HomeCorner className="home-corner left-top" />
         <div className="home-info-banner flex-row">
           <div className="flex1">
