@@ -107,25 +107,25 @@ export default class HomeInternet extends Component {
               <div className="inner">
                 <img className="home-earth" src="/img/home-earth.png" />
                 <div className="line1">
-                  <div className="circle"></div>
+                  <div className="circle" />
                 </div>
                 <div className="line2">
-                  <div className="circle"></div>
+                  <div className="circle" />
                 </div>
               </div>
             </div>
-            <div className="ball1"></div>
-            <div className="ball2"></div>
+            <div className="ball1" />
+            <div className="ball2" />
             <div className="ball3">
-              <div className="outshadow"></div>
+              <div className="outshadow" />
             </div>
             <div className="ball4">
-              <div className="outshadow1"></div>
+              <div className="outshadow1" />
             </div>
-            <div className="ball5"></div>
-            <div className="ball6"></div>
-            <div className="ball7"></div>
-            <div className="ball8"></div>
+            <div className="ball5" />
+            <div className="ball6" />
+            <div className="ball7" />
+            <div className="ball8" />
           </div>
         </div>
 
@@ -146,10 +146,13 @@ export default class HomeInternet extends Component {
                 ['飞凡APP']
               ].map((v, i) =>
                 <div className={`net-cube-div net-cube-div-${i}`} key={i}>
-                  <div className="net-cube outer" />
-                  <div className="net-cube inner flex-col">
+                  <div className={`net-cube-scale-${i}`}>
+                    <div className="net-cube outer" />
+                    <div className="net-cube inner" />
+                  </div>
+                  <div className="net-content flex-col">
                     {v[0].indexOf('icon') > -1
-                      ? <i className={`iconfont ${v[0]} net-cube-icon`} />
+                      ? <i className={`iconfont ${v[0]} net-icon`} />
                       : <span>{v[0]}</span>}
                     <span>{v[1]}</span>
                   </div>
