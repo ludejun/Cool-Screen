@@ -3,8 +3,11 @@ export { default as Hello } from './Hello';
 
 export { default as Main } from './Layout/index';
 export { default as HeaderTitle } from './Layout/HeaderTitle';
+
 // 智慧生活
 export { default as VisAnalysis } from './VisAnalysis';
+export { default as LifeMobile } from './Life/LifeMobile';
+
 // 商圈分析
 export { default as DistrictPlaza } from './DistrictPlaza';
 export { default as DistrictBrandTag } from './DistrictBrandTag';
