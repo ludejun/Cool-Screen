@@ -21,3 +21,7 @@ export { default as Commerce } from './Home/Commerce';
 
 //
 export { default as InnerScatter } from './InnerScatter';
+
+
+//运营商对比
+export { default as OperatorsComparison } from './OperatorsComparison';
