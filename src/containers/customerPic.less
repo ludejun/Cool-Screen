@@ -6,6 +6,32 @@
     .customer-svg-container{
         position:relative;
         margin-top:100px;
+        .layout-cicle{
+            animation:circlef 2s linear infinite
+        }
+        .circle-1{
+            animation-delay: 1s;
+        }
+        .circle-2{
+            animation-delay: 2s;
+        }
+        .circle-3{
+            animation-delay: 3s;
+        }
+        .circle-4{
+            animation-delay: 4s;
+        }
+        .circle-5{
+            animation-delay: 5s;
+        }
+        @keyframes circlef {
+            from {
+                opacity:1;
+            }
+            to {
+                opacity:0;
+            }
+        }
         .customer-content{
             position:absolute;
             top:0;
@@ -16,6 +42,18 @@
             .customer-box {
                 flex:1;
                 padding:50px;
+                position:relative;
+                overflow:hidden;
+                .scan-div{
+                    display: inline-block;
+                    right:55px;
+                    left:55px;
+                    height:100%;
+                    top:100%;
+                    position:absolute;
+                    background: url('/img/scan.png') no-repeat;
+                    animation: runin 6s linear infinite;
+                }
                 .elipse-rotate{
                     transform-style: preserve-3d;
                     perspective: 1000;
@@ -42,6 +80,32 @@
                     animation-delay: 1s;
                     animation-direction: alternate-reverse;
                 }
+                .customer-pic{
+                    position:absolute;
+                    top:120px;
+                    bottom:50px;
+                    left:20px;
+                    right:50px;
+                    background: linear-gradient(to bottom, #09203D, #110C32);
+                    transform:scale(0.95);
+                    .angel{
+                        width:0;
+                        height:0;
+                        border-left:20px solid transparent;
+                        border-right:20px solid transparent;
+                        border-bottom:20px solid #02041D;
+                        position:absolute;
+                        transform:translateY(-20px) rotate(-45deg) translate(-20px);
+                    }
+                }
+                @keyframes runin {
+                    80% {
+                        top:100%;
+                    }
+                    100% {
+                        top:-100%;
+                    }
+                }
                 @keyframes wfloat {
                     from {
                         transform:translateY(0px);
@@ -58,10 +122,24 @@
                         transform: rotateX(70deg) rotate(180deg)
                     }
                 }
+                @keyframes flasha {
+                    from {
+                        opacity:1;
+                    }
+                    to {
+                        opacity:0;
+                    }
+                }
+                .four-angel{
+                    animation: flasha 2s linear infinite;
+                    animation-direction: alternate-reverse;
+                }
                 .svg-left{
                     width:100%;
                     height:100%;
+                    transform:scale(0.95);
                 }
+                
             }
         }
         
