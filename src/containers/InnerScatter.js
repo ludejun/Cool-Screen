@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
-import echarts from 'echarts';
-import {WDMapBasic, BgAnimation} from '../components';
+import {WDMapBasic, BgAnimation, WDAreaMap} from '../components';
 import {plazaGeo} from '../assets/map/wdplaza.geo';
 import {cityGeo} from '../assets/map/city.geo';
-import area from '../assets/map/area.geo.json';
+import {provinceValue, areaValue, proArea} from '../assets/map/mapAreaValue';
 import HeaderTitle from './Layout/HeaderTitle';
 import './innerScatter.less';
 
-// echarts.registerMap('china', area);
 const pillarData = [
   [
     {
@@ -103,69 +101,11 @@ const pillarData = [
     }
   ]
 ];
-
-const series = {
-  series: [
-    // {
-    //   symbolSize: 2,
-    //   large: true,
-    //   type: 'effectScatter',
-    //   coordinateSystem: 'geo',
-    //   z: 10,
-    //   rippleEffect: {
-    //     brushType: 'stroke'
-    //   },
-    //   symbolSize: 8,
-    //   label: {
-    //     normal: {
-    //       show: true,
-    //       position: 'top',
-    //       formatter: '{b}',
-    //       textStyle: {
-    //         color: '#fff',
-    //         fontSize:5,
-    //       }
-    //     }
-    //   },
-    //   itemStyle: {
-    //     normal: {
-    //       color: '#108EE9',
-    //     }
-    //   },
-    //   data: cityGeo
-    // }
-    {
-      type: 'map',
-      map: 'china',
-      label: {
-        normal: {
-          show: true,
-          position: 'top',
-          textStyle: {
-            color: '#fff',
-            fontSize:5,
-          }
-        }
-        },
-      roam: false,
-      itemStyle: {
-        normal: {
-          areaColor: '#eeeeee',
-          borderColor: '#666'
-        },
-        emphasis: {
-          areaColor: 'yellow'
-        }
-      },
-       data:pillarData[2],
-    }
-  ]
-};
-console.log("pillarData[4]",pillarData[4]);
 const city = [{'name': '上海', value: '90%'}, {'name': '北京', value: '80%'}, {'name': '天津', value: '70%'}, {
   'name': '杭州',
   value: '60%'
 }, {'name': '广州', value: '50%'}];
+
 const pillar = [0,1,2,3,4,5,6,7,8,9];
 const showType = ['广场', '城市', '省份', '区域'];
 export default class InnerScatter extends Component {
@@ -196,9 +136,98 @@ export default class InnerScatter extends Component {
         this.setState({index:this.state.index+1});
       }
       selectTitle.innerHTML = showType[this.state.index];
-    }, 1000)
+    }, 10000)
   }
 
+  renderMap(index){
+    const scatterMap = {
+      series: [
+        {
+          type: 'effectScatter',
+          coordinateSystem: 'geo',
+          z: 10,
+          left:0,
+          right:0,
+          bottom:0,
+          top:0,
+          rippleEffect: {
+            brushType: 'stroke'
+          },
+          symbolSize: 8,
+          label: {
+            normal: {
+              show: true,
+              position: 'top',
+              formatter: '{b}',
+              textStyle: {
+                color: '#fff',
+              }
+            }
+          },
+          itemStyle: {
+            normal: {
+              color: '#108EE9',
+            }
+          },
+          data:  plazaGeo
+        }
+      ]
+    };
+    const provinceMap = {
+      visualMap: {
+        min: Math.min.apply(null, provinceValue.map(i=>{return i.value})),
+        max: Math.max.apply(null, provinceValue.map(i=>{return i.value})),
+        show: false,
+        inRange: {
+          color: ['#e0ffff', '#006edd']
+        },
+        calculable: true,
+        precision: 2
+      },
+      series: [
+        {
+          type: 'map',
+          map: 'china',
+          label: {
+            emphasis: {
+              show: false
+            }
+          },
+          roam: false,
+          itemStyle: {
+            normal: {
+              areaColor: '#eeeeee',
+              borderColor: '#666'
+            },
+            emphasis: {
+              areaColor: 'yellow'
+            }
+          },
+          data: provinceValue
+        }
+      ]
+    };
+    // if(index === 2){
+    //   return(
+    //     <WDAreaMap areaData={provinceValue} mapType={'map'} className="map"/>
+    //   );
+    // }else if(index === 3){
+    //   return(
+    //     // <WDAreaMap areaData={areaValue} mapType={'chinaArea'} className="map"/>
+    //     <WDMapBasic optionCustom={scatterMap} className="map"/>
+    //   );
+    // }
+    // return(
+    //   <WDMapBasic optionCustom={scatterMap} className="map"/>
+    // );
+    return(
+      <div>
+        <WDMapBasic optionCustom={scatterMap} className="map"/>
+        <WDAreaMap areaData={proArea} mapType={'china'} className="map"/>
+        <WDMapBasic optionCustom={provinceMap} className="map"/>
+      </div>
+    )
+  }
   render() {
     return (
       <div>
@@ -208,7 +237,7 @@ export default class InnerScatter extends Component {
           <div>
             <div className="main-content">
               <div className="china-map">
-                <WDMapBasic optionCustom={series} className="map"/>
+                {this.renderMap(this.state.index)}
               </div>
               <div className="bar">
                 <div className="bar-title"></div>
