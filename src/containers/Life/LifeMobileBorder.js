@@ -21,7 +21,7 @@ export default class LifeMobileBorder extends Component {
             fy="50%"
             r="70.4835957%"
             gradientTransform="translate(0.500000,0.500000),scale(0.878910,1.000000),rotate(90.000000),translate(-0.500000,-0.500000)"
-            id="radialGradient-1"
+            id="border-radialGradient-1"
           >
             <stop stopColor="#020A2E" stopOpacity="0" offset="0%" />
             <stop stopColor="#020A2C" stopOpacity="0" offset="70.1643076%" />
@@ -42,7 +42,7 @@ export default class LifeMobileBorder extends Component {
             width="115.2%"
             height="117.3%"
             filterUnits="objectBoundingBox"
-            id="filter-4"
+            id="border-filter-4"
           >
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
             <feGaussianBlur stdDeviation="25" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
@@ -65,7 +65,7 @@ export default class LifeMobileBorder extends Component {
             fy="50%"
             r="70.4835957%"
             gradientTransform="translate(0.500000,0.500000),scale(0.848116,1.000000),rotate(90.000000),translate(-0.500000,-0.500000)"
-            id="radialGradient-5"
+            id="border-radialGradient-5"
           >
             <stop stopColor="#020A2E" stopOpacity="0" offset="0%" />
             <stop stopColor="#020A2C" stopOpacity="0" offset="70.1643076%" />
@@ -94,8 +94,17 @@ export default class LifeMobileBorder extends Component {
           fillRule="evenodd"
         >
           <g id="outer-border" opacity="0.31884058">
-            <use fill="black" fillOpacity="1" filter="url(#filter-4)" xlinkHref="#border-path-3" />
-            <use fill="url(#radialGradient-1)" fillRule="evenodd" xlinkHref="#border-path-3" />
+            <use
+              fill="black"
+              fillOpacity="1"
+              filter="url(#border-filter-4)"
+              xlinkHref="#border-path-3"
+            />
+            <use
+              fill="url(#border-radialGradient-1)"
+              fillRule="evenodd"
+              xlinkHref="#border-path-3"
+            />
             <use
               fill="url(#border-linearGradient-2)"
               fillRule="evenodd"
@@ -109,7 +118,7 @@ export default class LifeMobileBorder extends Component {
             <use stroke="#0BB5FF" strokeWidth="0.95" xlinkHref="#border-path-3" />
           </g>
           <g id="inner-border" opacity="0.227411685">
-            <use fill="url(#radialGradient-5)" xlinkHref="#border-path-7" />
+            <use fill="url(#border-radialGradient-5)" xlinkHref="#border-path-7" />
             <use fill="url(#border-linearGradient-6)" xlinkHref="#border-path-7" />
           </g>
           <path

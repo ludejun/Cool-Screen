@@ -24,7 +24,7 @@ export default class LifeMobileRadarBg extends Component {
             width="105.7%"
             height="105.7%"
             filterUnits="objectBoundingBox"
-            id="filter-2"
+            id="radar-filter-2"
           >
             <feGaussianBlur stdDeviation="13.5" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -52,7 +52,7 @@ export default class LifeMobileRadarBg extends Component {
             width="110.6%"
             height="110.6%"
             filterUnits="objectBoundingBox"
-            id="filter-4"
+            id="radar-filter-4"
           >
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
             <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
@@ -78,7 +78,7 @@ export default class LifeMobileRadarBg extends Component {
             width="107.6%"
             height="107.6%"
             filterUnits="objectBoundingBox"
-            id="filter-6"
+            id="radar-filter-6"
           >
             <feGaussianBlur stdDeviation="13.5" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -106,7 +106,7 @@ export default class LifeMobileRadarBg extends Component {
             width="107.8%"
             height="107.8%"
             filterUnits="objectBoundingBox"
-            id="filter-8"
+            id="radar-filter-8"
           >
             <feGaussianBlur stdDeviation="10.5" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -134,7 +134,7 @@ export default class LifeMobileRadarBg extends Component {
             width="107.5%"
             height="107.5%"
             filterUnits="objectBoundingBox"
-            id="filter-10"
+            id="radar-filter-10"
           >
             <feGaussianBlur stdDeviation="7" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -162,7 +162,7 @@ export default class LifeMobileRadarBg extends Component {
             width="111.6%"
             height="111.6%"
             filterUnits="objectBoundingBox"
-            id="filter-12"
+            id="radar-filter-12"
           >
             <feGaussianBlur stdDeviation="6.5" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -180,7 +180,7 @@ export default class LifeMobileRadarBg extends Component {
               in="shadowInnerInner1"
             />
           </filter>
-          <linearGradient x1="0%" y1="0%" x2="100%" y2="95.2891392%" id="linearGradient-13">
+          <linearGradient x1="0%" y1="0%" x2="100%" y2="95.2891392%" id="radar-linearGradient-13">
             <stop stopColor="#37FAFF" stopOpacity="0" offset="0%" />
             <stop stopColor="#009DFF" offset="100%" />
           </linearGradient>
@@ -189,11 +189,21 @@ export default class LifeMobileRadarBg extends Component {
         <g id="radar" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="radarbg" transform="translate(155.000000, 45.000000)">
             <g id="oval-6" opacity="0.558254076">
-              <use fill="black" fillOpacity="1" filter="url(#filter-2)" xlinkHref="#radar-path-1" />
+              <use
+                fill="black"
+                fillOpacity="1"
+                filter="url(#radar-filter-2)"
+                xlinkHref="#radar-path-1"
+              />
               <use stroke="#00C7FF" strokeWidth="0.72" xlinkHref="#radar-path-1" />
             </g>
             <g id="oval-5">
-              <use fill="black" fillOpacity="1" filter="url(#filter-4)" xlinkHref="#radar-path-3" />
+              <use
+                fill="black"
+                fillOpacity="1"
+                filter="url(#radar-filter-4)"
+                xlinkHref="#radar-path-3"
+              />
               <use
                 fillOpacity="0.170000002"
                 fill="#108EE9"
@@ -207,18 +217,28 @@ export default class LifeMobileRadarBg extends Component {
               />
             </g>
             <g id="oval-4" opacity="0.497282609">
-              <use fill="black" fillOpacity="1" filter="url(#filter-6)" xlinkHref="#radar-path-5" />
+              <use
+                fill="black"
+                fillOpacity="1"
+                filter="url(#radar-filter-6)"
+                xlinkHref="#radar-path-5"
+              />
               <use stroke="#008BC0" strokeWidth="0.72" xlinkHref="#radar-path-5" />
             </g>
             <g id="oval-3" opacity="0.496942935">
-              <use fill="black" fillOpacity="1" filter="url(#filter-8)" xlinkHref="#radar-path-7" />
+              <use
+                fill="black"
+                fillOpacity="1"
+                filter="url(#radar-filter-8)"
+                xlinkHref="#radar-path-7"
+              />
               <use stroke="#008BC0" strokeWidth="0.5472" xlinkHref="#radar-path-7" />
             </g>
             <g id="oval-2" opacity="0.499886775">
               <use
                 fill="black"
                 fillOpacity="1"
-                filter="url(#filter-10)"
+                filter="url(#radar-filter-10)"
                 xlinkHref="#radar-path-9"
               />
               <use stroke="#008BC0" strokeWidth="0.5" xlinkHref="#radar-path-9" />
@@ -227,7 +247,7 @@ export default class LifeMobileRadarBg extends Component {
               <use
                 fill="black"
                 fillOpacity="1"
-                filter="url(#filter-12)"
+                filter="url(#radar-filter-12)"
                 xlinkHref="#radar-path-11"
               />
               <use stroke="#008BC0" strokeWidth="0.5" xlinkHref="#radar-path-11" />
@@ -266,7 +286,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="cengwang-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               x="587"
               y="48"
@@ -291,7 +311,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="yulexiaoqian-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               x="689"
               y="149"
@@ -316,7 +336,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="qichexiangguan-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               transform="translate(124.500000, 165.500000) scale(-1, 1) translate(-124.500000, -165.500000) "
               x="65"
@@ -342,7 +362,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="zhutigexing-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               transform="translate(226.500000, 64.500000) scale(-1, 1) translate(-226.500000, -64.500000) "
               x="167"
@@ -368,7 +388,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="wanggouzhifu-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               x="723"
               y="288"
@@ -393,7 +413,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="paishemeihua-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               x="687"
               y="466"
@@ -418,7 +438,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="xinwenzixun-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               x="587"
               y="568"
@@ -442,7 +462,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="lvyoujiaotong-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               transform="translate(225.500000, 584.500000) scale(-1, 1) translate(-225.500000, -584.500000) "
               x="166"
@@ -467,7 +487,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="bianlishenghuo-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               transform="translate(123.500000, 482.500000) scale(-1, 1) translate(-123.500000, -482.500000) "
               x="64"
@@ -493,7 +513,7 @@ export default class LifeMobileRadarBg extends Component {
             />
             <rect
               id="liulanqi-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               transform="translate(81.000000, 304.500000) scale(-1, 1) translate(-81.000000, -304.500000) "
               x="5"
@@ -513,7 +533,7 @@ export default class LifeMobileRadarBg extends Component {
             </text>
             <rect
               id="liaotianshejiao-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               x="376"
               y="0"
@@ -531,7 +551,7 @@ export default class LifeMobileRadarBg extends Component {
             </text>
             <rect
               id="jinronglicai-rect"
-              fill="url(#linearGradient-13)"
+              fill="url(#radar-linearGradient-13)"
               opacity="0.425611413"
               transform="translate(435.500000, 634.500000) scale(-1, 1) translate(-435.500000, -634.500000) "
               x="376"

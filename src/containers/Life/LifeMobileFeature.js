@@ -24,7 +24,7 @@ export default class LifeMobileFeature extends Component {
             width="108.1%"
             height="113.2%"
             filterUnits="objectBoundingBox"
-            id="filter-2"
+            id="feature-filter-2"
           >
             <feGaussianBlur stdDeviation="24" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -47,12 +47,18 @@ export default class LifeMobileFeature extends Component {
             y1="93.7615716%"
             x2="50%"
             y2="-4.19648043%"
-            id="linearGradient-3"
+            id="feature-linearGradient-3"
           >
             <stop stopColor="#1054CD" offset="0%" />
             <stop stopColor="#1A87FF" offset="100%" />
           </linearGradient>
-          <linearGradient x1="50%" y1="2.31231902%" x2="50%" y2="88.0308231%" id="linearGradient-4">
+          <linearGradient
+            x1="50%"
+            y1="2.31231902%"
+            x2="50%"
+            y2="88.0308231%"
+            id="feature-linearGradient-4"
+          >
             <stop stopColor="#12E7FF" offset="0%" />
             <stop stopColor="#62F5FF" stopOpacity="0.890879755" offset="100%" />
           </linearGradient>
@@ -60,11 +66,11 @@ export default class LifeMobileFeature extends Component {
             id="feature-path-5"
             points="0.834862385 127.544379 45.5 153.926762 45.5 294.26169 0.834862385 267.238143"
           />
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="86.4541925%" id="linearGradient-6">
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="86.4541925%" id="feature-linearGradient-6">
             <stop stopColor="#0F4CFF" offset="0%" />
             <stop stopColor="#0018E2" stopOpacity="0.75611413" offset="100%" />
           </linearGradient>
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="74.477838%" id="linearGradient-7">
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="74.477838%" id="feature-linearGradient-7">
             <stop stopColor="#70FEFF" offset="0%" />
             <stop stopColor="#28CBDB" stopOpacity="0.88111413" offset="100%" />
           </linearGradient>
@@ -78,23 +84,29 @@ export default class LifeMobileFeature extends Component {
             width="217.9%"
             height="277.9%"
             filterUnits="objectBoundingBox"
-            id="filter-9"
+            id="feature-filter-9"
           >
             <feGaussianBlur stdDeviation="2.94642857" in="SourceGraphic" />
           </filter>
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-10">
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="feature-linearGradient-10">
             <stop stopColor="#D9D9D9" offset="0%" />
             <stop stopColor="#DEFAFF" stopOpacity="0" offset="100%" />
           </linearGradient>
-          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-11">
+          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="feature-linearGradient-11">
             <stop stopColor="#C6E2D8" offset="0%" />
             <stop stopColor="#626864" offset="100%" />
           </linearGradient>
-          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-12">
+          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="feature-linearGradient-12">
             <stop stopColor="#EAFFF3" offset="0%" />
             <stop stopColor="#94A1A0" offset="100%" />
           </linearGradient>
-          <linearGradient x1="97.6116222%" y1="50%" x2="2.2401148%" y2="50%" id="linearGradient-13">
+          <linearGradient
+            x1="97.6116222%"
+            y1="50%"
+            x2="2.2401148%"
+            y2="50%"
+            id="feature-linearGradient-13"
+          >
             <stop stopColor="#F5FFF2" offset="0%" />
             <stop stopColor="#6C7874" offset="100%" />
           </linearGradient>
@@ -103,7 +115,7 @@ export default class LifeMobileFeature extends Component {
             y1="93.7615716%"
             x2="50%"
             y2="-1.64874331%"
-            id="linearGradient-14"
+            id="feature-linearGradient-14"
           >
             <stop stopColor="#787D7A" offset="0%" />
             <stop stopColor="#F1FFEF" offset="100%" />
@@ -118,7 +130,7 @@ export default class LifeMobileFeature extends Component {
             width="212.5%"
             height="180.6%"
             filterUnits="objectBoundingBox"
-            id="filter-16"
+            id="feature-filter-16"
           >
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
             <feGaussianBlur stdDeviation="9" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
@@ -138,7 +150,7 @@ export default class LifeMobileFeature extends Component {
             width="200.0%"
             height="171.6%"
             filterUnits="objectBoundingBox"
-            id="filter-18"
+            id="feature-filter-18"
           >
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
             <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
@@ -162,23 +174,29 @@ export default class LifeMobileFeature extends Component {
             width="217.9%"
             height="277.9%"
             filterUnits="objectBoundingBox"
-            id="filter-21"
+            id="feature-filter-21"
           >
             <feGaussianBlur stdDeviation="2.94642857" in="SourceGraphic" />
           </filter>
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-22">
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="feature-linearGradient-22">
             <stop stopColor="#B2F7FF" offset="0%" />
             <stop stopColor="#DEFAFF" stopOpacity="0" offset="100%" />
           </linearGradient>
-          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-23">
+          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="feature-linearGradient-23">
             <stop stopColor="#00A8FC" offset="0%" />
             <stop stopColor="#0037C5" offset="100%" />
           </linearGradient>
-          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-24">
+          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="feature-linearGradient-24">
             <stop stopColor="#96E3FF" offset="0%" />
             <stop stopColor="#508BFF" offset="100%" />
           </linearGradient>
-          <linearGradient x1="100%" y1="50%" x2="2.2401148%" y2="50%" id="linearGradient-25">
+          <linearGradient
+            x1="100%"
+            y1="50%"
+            x2="2.2401148%"
+            y2="50%"
+            id="feature-linearGradient-25"
+          >
             <stop stopColor="#67DFFF" offset="0%" />
             <stop stopColor="#0A5BD8" offset="100%" />
           </linearGradient>
@@ -187,7 +205,7 @@ export default class LifeMobileFeature extends Component {
             y1="93.7615716%"
             x2="50%"
             y2="-4.19648043%"
-            id="linearGradient-26"
+            id="feature-linearGradient-26"
           >
             <stop stopColor="#005ECB" offset="0%" />
             <stop stopColor="#3FDCFF" offset="100%" />
@@ -202,7 +220,7 @@ export default class LifeMobileFeature extends Component {
             width="155.8%"
             height="170.1%"
             filterUnits="objectBoundingBox"
-            id="filter-28"
+            id="feature-filter-28"
           >
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
             <feGaussianBlur stdDeviation="9" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
@@ -222,7 +240,7 @@ export default class LifeMobileFeature extends Component {
             width="159.0%"
             height="174.5%"
             filterUnits="objectBoundingBox"
-            id="filter-30"
+            id="feature-filter-30"
           >
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
             <feGaussianBlur stdDeviation="9" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
@@ -246,27 +264,33 @@ export default class LifeMobileFeature extends Component {
             width="217.9%"
             height="277.9%"
             filterUnits="objectBoundingBox"
-            id="filter-33"
+            id="feature-filter-33"
           >
             <feGaussianBlur stdDeviation="2.94642857" in="SourceGraphic" />
           </filter>
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-34">
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="feature-linearGradient-34">
             <stop stopColor="#FFD4A9" offset="0%" />
             <stop stopColor="#000000" stopOpacity="0" offset="100%" />
           </linearGradient>
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-35">
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="feature-linearGradient-35">
             <stop stopColor="#FFDDB2" offset="0%" />
             <stop stopColor="#DEFAFF" stopOpacity="0" offset="100%" />
           </linearGradient>
-          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-36">
+          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="feature-linearGradient-36">
             <stop stopColor="#FF8B1C" offset="0%" />
             <stop stopColor="#953100" offset="100%" />
           </linearGradient>
-          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-37">
+          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="feature-linearGradient-37">
             <stop stopColor="#FFD1B2" offset="0%" />
             <stop stopColor="#FF7327" offset="100%" />
           </linearGradient>
-          <linearGradient x1="98.5134169%" y1="50%" x2="2.2401148%" y2="50%" id="linearGradient-38">
+          <linearGradient
+            x1="98.5134169%"
+            y1="50%"
+            x2="2.2401148%"
+            y2="50%"
+            id="feature-linearGradient-38"
+          >
             <stop stopColor="#FFCA5D" offset="0%" />
             <stop stopColor="#E64500" offset="100%" />
           </linearGradient>
@@ -275,7 +299,7 @@ export default class LifeMobileFeature extends Component {
             y1="93.7615716%"
             x2="50%"
             y2="-1.64874331%"
-            id="linearGradient-39"
+            id="feature-linearGradient-39"
           >
             <stop stopColor="#CB4200" offset="0%" />
             <stop stopColor="#FFC53F" offset="100%" />
@@ -290,7 +314,7 @@ export default class LifeMobileFeature extends Component {
             width="178.3%"
             height="162.7%"
             filterUnits="objectBoundingBox"
-            id="filter-41"
+            id="feature-filter-41"
           >
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
             <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
@@ -310,7 +334,7 @@ export default class LifeMobileFeature extends Component {
             width="178.3%"
             height="162.6%"
             filterUnits="objectBoundingBox"
-            id="filter-43"
+            id="feature-filter-43"
           >
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
             <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
@@ -320,7 +344,13 @@ export default class LifeMobileFeature extends Component {
               in="shadowBlurOuter1"
             />
           </filter>
-          <linearGradient x1="50%" y1="85.8551157%" x2="50%" y2="13.737228%" id="linearGradient-44">
+          <linearGradient
+            x1="50%"
+            y1="85.8551157%"
+            x2="50%"
+            y2="13.737228%"
+            id="feature-linearGradient-44"
+          >
             <stop stopColor="#001EDF" offset="0%" />
             <stop stopColor="#079CFF" offset="100%" />
           </linearGradient>
@@ -329,7 +359,7 @@ export default class LifeMobileFeature extends Component {
             y1="79.4283689%"
             x2="34.63213%"
             y2="31.4881664%"
-            id="linearGradient-45"
+            id="feature-linearGradient-45"
           >
             <stop stopColor="#001EDF" offset="0%" />
             <stop stopColor="#079CFF" offset="100%" />
@@ -348,7 +378,7 @@ export default class LifeMobileFeature extends Component {
                 <use
                   fill="black"
                   fillOpacity="1"
-                  filter="url(#filter-2)"
+                  filter="url(#feature-filter-2)"
                   xlinkHref="#feature-path-1"
                 />
                 <use stroke="#01C0FF" strokeWidth="1" xlinkHref="#feature-path-1" />
@@ -356,12 +386,12 @@ export default class LifeMobileFeature extends Component {
               <g id="apple-div" transform="translate(74.000000, 296.000000)">
                 <g id="Rectangle">
                   <use
-                    fill="url(#linearGradient-3)"
+                    fill="url(#feature-linearGradient-3)"
                     fillRule="evenodd"
                     xlinkHref="#feature-path-5"
                   />
                   <path
-                    stroke="url(#linearGradient-4)"
+                    stroke="url(#feature-linearGradient-4)"
                     strokeWidth="0.84"
                     d="M1.25486239,128.280256 L45.08,154.166476 L45.08,293.51669 L1.25486239,267.001364 L1.25486239,128.280256 Z"
                   />
@@ -372,12 +402,12 @@ export default class LifeMobileFeature extends Component {
                   transform="translate(67.832569, 211.106305) scale(-1, 1) translate(-67.832569, -211.106305) "
                 >
                   <use
-                    fill="url(#linearGradient-6)"
+                    fill="url(#feature-linearGradient-6)"
                     fillRule="evenodd"
                     xlinkHref="#feature-path-8"
                   />
                   <path
-                    stroke="url(#linearGradient-7)"
+                    stroke="url(#feature-linearGradient-7)"
                     strokeWidth="0.84"
                     d="M45.92,128.280256 L89.7451376,154.166476 L89.7451376,293.923231 L45.92,267.407904 L45.92,128.280256 Z"
                   />
@@ -406,40 +436,40 @@ export default class LifeMobileFeature extends Component {
                   id="Oval-4"
                   fill="#055168"
                   opacity="0.309952446"
-                  filter="url(#filter-9)"
+                  filter="url(#feature-filter-9)"
                 />
                 <polygon
                   id="Rectangle-4"
-                  fill="url(#linearGradient-10)"
+                  fill="url(#feature-linearGradient-10)"
                   opacity="0.22044837"
                   points="45.5 134.310405 67.8325688 121.094675 67.8325688 252.257429 45.5 265.066568"
                 />
                 <polygon
                   id="Rectangle-4-Copy"
-                  fill="url(#linearGradient-10)"
+                  fill="url(#feature-linearGradient-10)"
                   opacity="0.22044837"
                   transform="translate(34.333716, 188.767264) scale(-1, 1) translate(-34.333716, -188.767264) "
                   points="23.1674312 134.310405 45.5 121.094675 45.5 243.630716 23.1674312 256.439854"
                 />
                 <polygon
                   id="Path-102"
-                  fill="url(#linearGradient-11)"
+                  fill="url(#feature-linearGradient-11)"
                   points="45.380682 132.051561 45.380682 144.770883 67.7286057 131.702747 67.7286057 118.817556"
                 />
                 <polygon
                   id="Path-102-Copy-6"
-                  fill="url(#linearGradient-11)"
+                  fill="url(#feature-linearGradient-11)"
                   points="129.073715 324.926651 129.073715 337.56105 151.151606 324.837208 151.151606 312.113366"
                 />
                 <polygon
                   id="Path-102-Copy"
-                  fill="url(#linearGradient-12)"
+                  fill="url(#feature-linearGradient-12)"
                   transform="translate(34.166284, 131.899408) scale(-1, 1) translate(-34.166284, -131.899408) "
                   points="23 132.079494 23 144.798817 45.3325688 131.885191 45.3325688 119"
                 />
                 <polygon
                   id="Path-102-Copy-7"
-                  fill="url(#linearGradient-12)"
+                  fill="url(#feature-linearGradient-12)"
                   transform="translate(118.039413, 324.817512) scale(-1, 1) translate(-118.039413, -324.817512) "
                   points="107 324.929047 107 337.554555 129.078827 324.658571 129.078827 312.080469"
                 />
@@ -451,13 +481,13 @@ export default class LifeMobileFeature extends Component {
                 <polygon
                   id="Path-2"
                   fillOpacity="0.829999983"
-                  fill="url(#linearGradient-13)"
+                  fill="url(#feature-linearGradient-13)"
                   points="84.7633224 3.98074241 76.354831 0.282591675 5.24812826 41.172226 13.5348753 45.1540013"
                 />
                 <polygon
                   id="Path-3"
                   fillOpacity="0.829999983"
-                  fill="url(#linearGradient-14)"
+                  fill="url(#feature-linearGradient-14)"
                   points="5.22988506 41.1307468 5.22988506 107.040466 13.5977011 114.122584 13.5690608 45.165095"
                 />
               </g>
@@ -466,7 +496,7 @@ export default class LifeMobileFeature extends Component {
                   <use
                     fill="black"
                     fillOpacity="1"
-                    filter="url(#filter-16)"
+                    filter="url(#feature-filter-16)"
                     xlinkHref="#feature-path-15"
                   />
                   <use fill="#C1C1C1" fillRule="evenodd" xlinkHref="#feature-path-15" />
@@ -490,7 +520,7 @@ export default class LifeMobileFeature extends Component {
                   <use
                     fill="black"
                     fillOpacity="1"
-                    filter="url(#filter-18)"
+                    filter="url(#feature-filter-18)"
                     xlinkHref="#feature-path-17"
                   />
                   <use fill="#FFFFFF" fillRule="evenodd" xlinkHref="#feature-path-17" />
@@ -499,24 +529,24 @@ export default class LifeMobileFeature extends Component {
               <g id="ss-div" transform="translate(241.000000, 203.000000)">
                 <g id="Rectangle">
                   <use
-                    fill="url(#linearGradient-3)"
+                    fill="url(#feature-linearGradient-3)"
                     fillRule="evenodd"
                     xlinkHref="#feature-path-19"
                   />
                   <path
-                    stroke="url(#linearGradient-4)"
+                    stroke="url(#feature-linearGradient-4)"
                     strokeWidth="0.84"
                     d="M1.25486239,123.280256 L45.08,149.166476 L45.08,308.51669 L1.25486239,282.001364 L1.25486239,123.280256 Z"
                   />
                 </g>
                 <g id="Rectangle-Copy" opacity="0.485507246">
                   <use
-                    fill="url(#linearGradient-6)"
+                    fill="url(#feature-linearGradient-6)"
                     fillRule="evenodd"
                     xlinkHref="#feature-path-20"
                   />
                   <path
-                    stroke="url(#linearGradient-7)"
+                    stroke="url(#feature-linearGradient-7)"
                     strokeWidth="0.84"
                     d="M89.7451376,123.280256 L89.7451376,282.407904 L45.92,308.923231 L45.92,149.166476 L89.7451376,123.280256 Z"
                   />
@@ -545,38 +575,38 @@ export default class LifeMobileFeature extends Component {
                   id="Oval-4"
                   fill="#051068"
                   opacity="0.309952446"
-                  filter="url(#filter-21)"
+                  filter="url(#feature-filter-21)"
                 />
                 <polygon
                   id="Rectangle-4"
-                  fill="url(#linearGradient-22)"
+                  fill="url(#feature-linearGradient-22)"
                   opacity="0.22044837"
                   points="45.5 129.310405 67.8325688 116.094675 67.8325688 287.257429 45.5 300.066568"
                 />
                 <polyline
                   id="Rectangle-4-Copy"
-                  fill="url(#linearGradient-22)"
+                  fill="url(#feature-linearGradient-22)"
                   opacity="0.22044837"
                   points="45.5 129.310405 23.1674312 116.094675 23.1674312 258.630716 45.5 271.439854"
                 />
                 <polygon
                   id="Path-102"
-                  fill="url(#linearGradient-23)"
+                  fill="url(#feature-linearGradient-23)"
                   points="45.3865892 127.225313 45.3865892 139.944636 67.719158 127.03101 67.719158 114.145819"
                 />
                 <polygon
                   id="Path-102-Copy-2"
-                  fill="url(#linearGradient-23)"
+                  fill="url(#feature-linearGradient-23)"
                   points="115.058929 328.051729 115.058929 340.796173 137.332569 327.974427 137.332569 315.152681"
                 />
                 <polyline
                   id="Path-102-Copy"
-                  fill="url(#linearGradient-24)"
+                  fill="url(#feature-linearGradient-24)"
                   points="45.3325688 127.079494 45.3325688 139.798817 23 126.885191 23 114"
                 />
                 <polygon
                   id="Path-102-Copy-3"
-                  fill="url(#linearGradient-24)"
+                  fill="url(#feature-linearGradient-24)"
                   transform="translate(103.884648, 327.985947) scale(-1, 1) translate(-103.884648, -327.985947) "
                   points="92.7077718 328.036926 92.7077718 340.789703 115.061523 327.713002 115.061523 315.182192"
                 />
@@ -587,12 +617,12 @@ export default class LifeMobileFeature extends Component {
                 />
                 <polygon
                   id="Path-2"
-                  fill="url(#linearGradient-25)"
+                  fill="url(#feature-linearGradient-25)"
                   points="81.3748028 4.0355034 74.5260839 0.551502203 8.8282978 37.6461767 16.7820669 41.3225627"
                 />
                 <polygon
                   id="Path-3"
-                  fill="url(#linearGradient-26)"
+                  fill="url(#feature-linearGradient-26)"
                   points="8.81077982 37.5955628 8.81077982 97.4796499 16.7866972 103.960449 16.7593982 41.2873684"
                 />
               </g>
@@ -604,7 +634,7 @@ export default class LifeMobileFeature extends Component {
                   <use
                     fill="black"
                     fillOpacity="1"
-                    filter="url(#filter-28)"
+                    filter="url(#feature-filter-28)"
                     xlinkHref="#feature-path-27"
                   />
                   <use fill="#FFFFFF" fillRule="evenodd" xlinkHref="#feature-path-27" />
@@ -613,7 +643,7 @@ export default class LifeMobileFeature extends Component {
                   <use
                     fill="black"
                     fillOpacity="1"
-                    filter="url(#filter-30)"
+                    filter="url(#feature-filter-30)"
                     xlinkHref="#feature-path-29"
                   />
                   <use fill="#FFFFFF" fillRule="evenodd" xlinkHref="#feature-path-29" />
@@ -628,12 +658,12 @@ export default class LifeMobileFeature extends Component {
               <g id="xiaomi-div" transform="translate(391.000000, 95.000000)">
                 <g id="Rectangle">
                   <use
-                    fill="url(#linearGradient-3)"
+                    fill="url(#feature-linearGradient-3)"
                     fillRule="evenodd"
                     xlinkHref="#feature-path-31"
                   />
                   <path
-                    stroke="url(#linearGradient-4)"
+                    stroke="url(#feature-linearGradient-4)"
                     strokeWidth="0.84"
                     d="M1.25486239,123.280256 L45.08,149.166476 L45.08,328.51669 L1.25486239,302.001364 L1.25486239,123.280256 Z"
                   />
@@ -644,12 +674,12 @@ export default class LifeMobileFeature extends Component {
                   transform="translate(67.832569, 226.106305) scale(-1, 1) translate(-67.832569, -226.106305) "
                 >
                   <use
-                    fill="url(#linearGradient-6)"
+                    fill="url(#feature-linearGradient-6)"
                     fillRule="evenodd"
                     xlinkHref="#feature-path-32"
                   />
                   <path
-                    stroke="url(#linearGradient-7)"
+                    stroke="url(#feature-linearGradient-7)"
                     strokeWidth="0.84"
                     d="M45.92,123.280256 L89.7451376,149.166476 L89.7451376,328.923231 L45.92,302.407904 L45.92,123.280256 Z"
                   />
@@ -678,40 +708,40 @@ export default class LifeMobileFeature extends Component {
                   id="Oval-4"
                   fill="#683805"
                   opacity="0.309952446"
-                  filter="url(#filter-33)"
+                  filter="url(#feature-filter-33)"
                 />
                 <polygon
                   id="Rectangle-4"
-                  fill="url(#linearGradient-34)"
+                  fill="url(#feature-linearGradient-34)"
                   opacity="0.227411685"
                   points="45.5 129.310405 67.8325688 116.094675 67.8325688 307.257429 45.5 320.066568"
                 />
                 <polygon
                   id="Rectangle-4-Copy"
-                  fill="url(#linearGradient-35)"
+                  fill="url(#feature-linearGradient-35)"
                   opacity="0.22044837"
                   transform="translate(34.333716, 203.767264) scale(-1, 1) translate(-34.333716, -203.767264) "
                   points="23.1674312 129.310405 45.5 116.094675 45.5 278.630716 23.1674312 291.439854"
                 />
                 <polygon
                   id="Path-102"
-                  fill="url(#linearGradient-36)"
+                  fill="url(#feature-linearGradient-36)"
                   points="45.310491 127.160821 45.310491 139.880144 67.6430598 126.966518 67.6430598 114.081327"
                 />
                 <polygon
                   id="Path-102-Copy-4"
-                  fill="url(#linearGradient-36)"
+                  fill="url(#feature-linearGradient-36)"
                   points="116.321954 347.899408 116.321954 360.858826 139.059243 348.139487 139.059243 335.420149"
                 />
                 <polygon
                   id="Path-102-Copy"
-                  fill="url(#linearGradient-37)"
+                  fill="url(#feature-linearGradient-37)"
                   transform="translate(34.166284, 126.899408) scale(-1, 1) translate(-34.166284, -126.899408) "
                   points="23 127.079494 23 139.798817 45.3325688 126.885191 45.3325688 114"
                 />
                 <polygon
                   id="Path-102-Copy-5"
-                  fill="url(#linearGradient-37)"
+                  fill="url(#feature-linearGradient-37)"
                   transform="translate(105.166284, 348.250974) scale(-1, 1) translate(-105.166284, -348.250974) "
                   points="94 347.899408 94 360.845942 116.332569 347.879791 116.332569 335.656006"
                 />
@@ -723,13 +753,13 @@ export default class LifeMobileFeature extends Component {
                 <polygon
                   id="Path-2"
                   fillOpacity="0.829999983"
-                  fill="url(#linearGradient-38)"
+                  fill="url(#feature-linearGradient-38)"
                   points="81.3748028 4.0355034 74.5260839 0.551502203 8.8282978 37.6461767 16.7820669 41.3225627"
                 />
                 <polygon
                   id="Path-3"
                   fillOpacity="0.829999983"
-                  fill="url(#linearGradient-39)"
+                  fill="url(#feature-linearGradient-39)"
                   points="8.81077982 37.5955628 8.81077982 97.4796499 16.7866972 103.960449 16.7593982 41.2873684"
                 />
               </g>
@@ -738,7 +768,7 @@ export default class LifeMobileFeature extends Component {
                   <use
                     fill="black"
                     fillOpacity="1"
-                    filter="url(#filter-41)"
+                    filter="url(#feature-filter-41)"
                     xlinkHref="#feature-path-40"
                   />
                   <use fill="#BABABA" fillRule="evenodd" xlinkHref="#feature-path-40" />
@@ -782,7 +812,7 @@ export default class LifeMobileFeature extends Component {
                   <use
                     fill="black"
                     fillOpacity="1"
-                    filter="url(#filter-43)"
+                    filter="url(#feature-filter-43)"
                     xlinkHref="#feature-path-42"
                   />
                   <use fill="#FFFFFF" fillRule="evenodd" xlinkHref="#feature-path-42" />
@@ -791,17 +821,17 @@ export default class LifeMobileFeature extends Component {
               <path
                 d="M99,362.256487 C99,359.728657 101.01515,356.503109 103.487254,355.060027 L108.397738,352.193547 C109.432688,351.589399 110.739835,350.108717 111.308447,348.90516 L113.390475,344.498221 C113.847332,343.531212 114.880407,342.360437 115.710017,341.876154 L131.346006,332.748696 C132.170197,332.267577 133.202716,332.244839 133.644263,332.689906 L135.630141,334.691613 C136.187071,335.252983 137.473986,335.22038 138.514664,334.612888 L143.509655,331.697078 C145.989604,330.249416 148,331.130894 148,333.652894 L148,354.743181 C148,357.27101 145.98779,360.494842 143.510783,361.940787 L103.489217,385.303248 C101.009891,386.750547 99,385.868774 99,383.346774 L99,362.256487 Z M123.5,368.329253 C128.830385,365.217658 133.151515,358.294431 133.151515,352.865793 C133.151515,347.437154 128.830385,345.55882 123.5,348.670415 C118.169615,351.78201 113.848485,358.705237 113.848485,364.133875 C113.848485,369.562514 118.169615,371.440848 123.5,368.329253 Z M101.598485,353.138153 C101.598485,352.511772 102.105721,351.707891 102.716058,351.351609 L107.533942,348.539185 C108.15116,348.178886 108.651515,348.390221 108.651515,349.020969 C108.651515,349.64735 108.144279,350.45123 107.533942,350.807513 L102.716058,353.619937 C102.09884,353.980236 101.598485,353.768901 101.598485,353.138153 Z"
                 id="camera"
-                fill="url(#linearGradient-44)"
+                fill="url(#feature-linearGradient-44)"
               />
               <path
                 d="M262,264.412612 L265.595196,262.283481 L272.128881,270.691893 L272.128881,258.41413 L275.323374,256.522302 L275.323374,274.109689 L271.895138,276.139945 L265.194493,267.615637 L265.194493,280.108171 L262,282 L262,264.412612 Z M281.339484,260.738963 C280.935069,261.471645 280.680922,262.290326 280.577036,263.19503 L285.507909,260.27489 C285.455965,259.406789 285.201818,258.875208 284.74546,258.68013 C284.289101,258.485052 283.7233,258.587462 283.048037,258.987363 C282.313412,259.42242 281.7439,260.006281 281.339484,260.738963 Z M285.775044,255.176947 C286.583874,255.103626 287.251706,255.348456 287.778559,255.911444 C288.253468,256.401785 288.561413,257.114287 288.702402,258.048972 C288.784027,258.597222 288.817419,259.436524 288.802578,260.566903 L280.499121,265.484339 C280.543644,266.762516 280.925792,267.45096 281.645577,267.549691 C282.083384,267.616551 282.610229,267.46761 283.226128,267.102866 C283.879128,266.716148 284.409684,266.203085 284.817809,265.56366 C285.040423,265.217052 285.237062,264.802309 285.407733,264.319417 L288.646749,262.401221 C288.565124,263.221151 288.190396,264.22658 287.522554,265.41754 C286.483689,267.297543 285.029301,268.791231 283.159344,269.898648 C281.615888,270.812707 280.254253,271.086143 279.0744,270.718963 C277.894546,270.351783 277.304628,268.967079 277.304628,266.56481 C277.304628,264.313676 277.837038,262.272267 278.901875,260.440519 C279.966711,258.608772 281.348752,257.189747 283.048037,256.183404 C284.05722,255.58575 284.966213,255.250268 285.775044,255.176947 Z M296.660808,248.467728 L299.877563,246.562716 L301.725249,254.834905 L303.617458,244.347892 L306.923257,242.390146 L303.405975,257.478734 L300.144698,259.410113 L298.241359,251.063497 L296.315759,261.677671 L293.02109,263.628826 L289.615114,252.640299 L293.02109,250.623227 L294.913298,258.833254 L296.660808,248.467728 Z M311.141769,248.74523 C311.208553,249.310224 311.35325,249.65407 311.575864,249.77678 C311.969149,249.997279 312.696343,249.793324 313.757469,249.164909 C314.380788,248.79577 314.876097,248.40301 315.243409,247.986618 C315.610722,247.570226 315.794376,247.163173 315.794376,246.765446 C315.794376,246.383629 315.645969,246.181182 315.349151,246.158099 C315.052332,246.135016 313.95041,246.445552 312.043351,247.089715 C310.670565,247.536792 309.702209,247.652888 309.138254,247.438009 C308.574299,247.231083 308.292326,246.61854 308.292326,245.600359 C308.292326,244.399224 308.731982,243.106768 309.611306,241.722951 C310.490631,240.339134 311.727975,239.174833 313.323374,238.230012 C314.837149,237.333532 316.070782,236.927097 317.024312,237.010697 C317.977841,237.094296 318.525092,237.889789 318.666081,239.397201 L315.493849,241.275846 C315.449326,240.864714 315.334311,240.58681 315.148799,240.442128 C314.800037,240.187307 314.206409,240.308185 313.367897,240.804765 C312.677794,241.213455 312.186196,241.619926 311.893087,242.024191 C311.599979,242.428456 311.453427,242.785696 311.453427,243.095923 C311.453427,243.485695 311.609254,243.675794 311.920914,243.666224 C312.232573,243.664609 313.334496,243.326232 315.226714,242.651085 C316.488192,242.222199 317.434287,242.143149 318.065026,242.413933 C318.688345,242.697066 319,243.327826 319,244.306234 C319,245.594869 318.552924,246.911606 317.658758,248.256484 C316.764592,249.601363 315.382552,250.827493 313.512595,251.93491 C311.605536,253.0643 310.197525,253.46662 309.288518,253.141881 C308.379511,252.817142 307.925015,251.986604 307.925015,250.650242 L311.141769,248.74523 Z"
                 id="News"
-                fill="url(#linearGradient-45)"
+                fill="url(#feature-linearGradient-45)"
               />
               <path
                 d="M433.049422,163.330024 L424.920259,146.551773 L418.623606,150.039895 C417.726913,150.53663 417,150.115482 417,149.099233 C417,148.082984 417.726913,146.856467 418.623606,146.359731 L427.052938,141.690181 L435.182102,158.468432 L456.835952,146.472969 C457.732645,145.976233 458.459558,146.397381 458.459558,147.41363 C458.459558,148.429879 457.732645,149.656396 456.835952,150.153132 L433.049422,163.330024 Z M437.030164,170.666375 C435.595456,171.461152 434.432395,170.787314 434.432395,169.161316 C434.432395,167.535317 435.595456,165.572891 437.030164,164.778113 C438.464873,163.983336 439.627934,164.657174 439.627934,166.283172 C439.627934,167.909171 438.464873,169.871597 437.030164,170.666375 Z M453.915664,161.312408 C452.480956,162.107185 451.317895,161.433348 451.317895,159.807349 C451.317895,158.181351 452.480956,156.218924 453.915664,155.424147 C455.350373,154.629369 456.513434,155.303207 456.513434,156.929206 C456.513434,158.555204 455.350373,160.517631 453.915664,161.312408 Z M434.924011,139.180631 C434.385995,139.478673 433.949847,139.225984 433.949847,138.616234 C433.949847,138.006485 434.385995,137.270575 434.924011,136.972533 L457.70516,124.352586 C459.485115,123.366555 460.481372,124.535357 459.767014,126.779524 L455.727572,139.469494 C454.997055,141.764424 453.021436,144.324102 451.20095,145.332586 L439.921635,151.580926 C439.383619,151.878968 438.947472,151.626279 438.947472,151.016529 C438.947472,150.40678 439.383619,149.67087 439.921635,149.372828 L451.20095,143.124488 C452.24729,142.544853 453.522692,140.892401 453.942922,139.572242 L457.982363,126.882273 C458.13217,126.411652 458.0815,126.352206 457.70516,126.560684 L434.924011,139.180631 Z"
                 id="trolley"
-                fill="url(#linearGradient-44)"
+                fill="url(#feature-linearGradient-44)"
                 fillRule="nonzero"
               />
               <polyline

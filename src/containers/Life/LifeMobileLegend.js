@@ -21,7 +21,7 @@ export default class LifeMobileLegend extends Component {
             fy="50%"
             r="70.4835957%"
             gradientTransform="translate(0.500000,0.500000),scale(1.000000,0.887315),rotate(90.000000),translate(-0.500000,-0.500000)"
-            id="radialGradient-1"
+            id="legend-radialGradient-1"
           >
             <stop stopColor="#020A2E" stopOpacity="0" offset="0%" />
             <stop stopColor="#020A2C" stopOpacity="0" offset="70.1643076%" />
@@ -37,7 +37,7 @@ export default class LifeMobileLegend extends Component {
             width="224.8%"
             height="210.7%"
             filterUnits="objectBoundingBox"
-            id="filter-3"
+            id="legend-filter-3"
           >
             <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
             <feGaussianBlur stdDeviation="25" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
@@ -95,7 +95,7 @@ export default class LifeMobileLegend extends Component {
             width="266.7%"
             height="266.7%"
             filterUnits="objectBoundingBox"
-            id="filter-7"
+            id="legend-filter-7"
           >
             <feGaussianBlur stdDeviation="9" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -120,7 +120,7 @@ export default class LifeMobileLegend extends Component {
             width="266.7%"
             height="266.7%"
             filterUnits="objectBoundingBox"
-            id="filter-9"
+            id="legend-filter-9"
           >
             <feGaussianBlur stdDeviation="9" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -145,7 +145,7 @@ export default class LifeMobileLegend extends Component {
             width="308.3%"
             height="308.3%"
             filterUnits="objectBoundingBox"
-            id="filter-11"
+            id="legend-filter-11"
           >
             <feMorphology
               radius="1"
@@ -173,7 +173,7 @@ export default class LifeMobileLegend extends Component {
             width="383.3%"
             height="383.3%"
             filterUnits="objectBoundingBox"
-            id="filter-12"
+            id="legend-filter-12"
           >
             <feGaussianBlur stdDeviation="9" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -218,8 +218,17 @@ export default class LifeMobileLegend extends Component {
           fillRule="evenodd"
         >
           <g id="border" opacity="0.31884058">
-            <use fill="black" fillOpacity="1" filter="url(#filter-3)" xlinkHref="#legend-path-2" />
-            <use fill="url(#radialGradient-1)" fillRule="evenodd" xlinkHref="#legend-path-2" />
+            <use
+              fill="black"
+              fillOpacity="1"
+              filter="url(#legend-filter-3)"
+              xlinkHref="#legend-path-2"
+            />
+            <use
+              fill="url(#legend-radialGradient-1)"
+              fillRule="evenodd"
+              xlinkHref="#legend-path-2"
+            />
             <use
               fillOpacity="0.356827446"
               fill="#00AEFF"
@@ -248,7 +257,12 @@ export default class LifeMobileLegend extends Component {
               fillRule="evenodd"
               xlinkHref="#legend-path-6"
             />
-            <use fill="black" fillOpacity="1" filter="url(#filter-7)" xlinkHref="#legend-path-6" />
+            <use
+              fill="black"
+              fillOpacity="1"
+              filter="url(#legend-filter-7)"
+              xlinkHref="#legend-path-6"
+            />
             <use stroke="#FFFFFF" strokeWidth="2" xlinkHref="#legend-path-6" />
           </g>
           <g id="samsung-oval" opacity="0.900758605">
@@ -258,14 +272,19 @@ export default class LifeMobileLegend extends Component {
               fillRule="evenodd"
               xlinkHref="#legend-path-8"
             />
-            <use fill="black" fillOpacity="1" filter="url(#filter-9)" xlinkHref="#legend-path-8" />
+            <use
+              fill="black"
+              fillOpacity="1"
+              filter="url(#legend-filter-9)"
+              xlinkHref="#legend-path-8"
+            />
             <use stroke="#2871FF" strokeWidth="2" xlinkHref="#legend-path-8" />
           </g>
           <g id="xiaomi-oval" opacity="0.900758605">
             <use
               fill="black"
               fillOpacity="1"
-              filter="url(#filter-11)"
+              filter="url(#legend-filter-11)"
               xlinkHref="#legend-path-10"
             />
             <use
@@ -277,7 +296,7 @@ export default class LifeMobileLegend extends Component {
             <use
               fill="black"
               fillOpacity="1"
-              filter="url(#filter-12)"
+              filter="url(#legend-filter-12)"
               xlinkHref="#legend-path-10"
             />
             <use stroke="#FFB37C" strokeWidth="2" xlinkHref="#legend-path-10" />
