@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { WDPillar, WDImageBar, WDImagePercent, WDPolyLine } from '../components';
+import { WDPillar, WDImageBar, WDImagePercent, WDAnalysis, WDPolyLine } from '../components';
 import HeaderTitle from './Layout/HeaderTitle';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
@@ -187,128 +187,7 @@ export default class BusinessAnalysis extends Component {
     };
     this.timer = null;
   }
-  componentDidMount() {
-    clearInterval(this.timer);
-    clearInterval(reRender);
-    this.timer = setInterval(() => {
-      if (this.state.tab < 2) {
-        this.setState({
-          tab: this.state.tab + 1
-        });
-      } else {
-        this.setState({ tab: 0 });
-      }
-    }, 3000);
-    const reRender = setInterval(() => {
-      this.setState({
-        consumeCount: this.state.consumeCount + 1
-      });
-    }, 3000);
 
-    anime({
-      targets: '.Rectangle-19',
-      translateX: -40,
-      easing: 'easeInOutQuad',
-      direction: 'alternate',
-      duration: 400,
-      loop: true
-    });
-
-    for (let i = 0; i < 4; i++) {
-      anime({
-        targets: '.tag',
-        // translateY: 50,
-        opacity: 1,
-        easing: 'easeInOutQuad',
-        duration: 1600,
-        delay: 2000
-        // loop: true
-      });
-      anime({
-        targets: `.tag-tail-${i}`,
-        opacity: 1,
-        translateY: 50,
-        easing: 'easeInOutQuad',
-        direction: 'reverse',
-        duration: 800,
-        delay: 1100
-      });
-    }
-  }
-
-  renderEchart = () => {
-    const randomL = parseInt(Math.random() * 60);
-    const randomM = parseInt(Math.random() * 70);
-    const randomH = parseInt(Math.random() * 30);
-    const consumeOption = {
-      color: ['#85b6b2', '#6d4f8d', '#cd5e7e', '#e38980', '#f7db88'],
-      tooltip: {
-        show: true,
-        formatter: '{a} <br/>{b}'
-      },
-      series: [
-        {
-          name: '等级占比',
-          type: 'pie',
-          clockWise: false,
-          radius: [60, 70],
-          itemStyle: dataStyle,
-          hoverAnimation: false,
-          data: [
-            {
-              value: consume[0],
-              name:  '低端消费' + (100 - randomL) + '%',
-              label: {normal:{textStyle:{fontSize:10}}}
-            },
-            {
-              value: randomL,
-              name: '低端消费',
-              itemStyle: placeHolderStyle
-            }
-          ]
-        },
-        {
-          name: '等级占比',
-          type: 'pie',
-          clockWise: false,
-          radius: [40, 50],
-          itemStyle: dataStyle,
-          hoverAnimation: false,
-          data: [
-            {
-              value: consume[1],
-              name: '中端消费' + (100 - randomM) + '%'
-            },
-            {
-              value: randomM,
-              name: '中端消费',
-              itemStyle: placeHolderStyle
-            }
-          ]
-        },
-        {
-          name: '等级占比',
-          type: 'pie',
-          clockWise: false,
-          hoverAnimation: false,
-          radius: [20, 30],
-          itemStyle: dataStyle,
-          data: [
-            {
-              value: consume[2],
-              name: '高端消费' + (100 - randomH) + '%'
-            },
-            {
-              value: randomH,
-              name: '高端消费',
-              itemStyle: placeHolderStyle
-            }
-          ]
-        }
-      ]
-    };
-    return <Echarts className="consume-chart" option={consumeOption} />;
-  };
   radioChange = (e) => {
     clearInterval(this.timer);
     this.setState({ tab: e.target.value });
@@ -352,55 +231,7 @@ export default class BusinessAnalysis extends Component {
           </div>
           <img src="/img/building.png" className="left-img" />
         </div>
-        <div className="right-container">
-          <img src="/img/analysis-border.png" className="right-container-bg" />
-          <svg
-            className="svg-style"
-            viewBox="0 0 820 687"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs />
-            <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-              <rect
-                className="Rectangle-19"
-                fillOpacity="0.600883152"
-                fill="#108EE9"
-                opacity="0.498471467"
-                x="40%"
-                y="8"
-                width="180"
-                height="12"
-              />
-            </g>
-          </svg>
-          <div className="right-sub-container right-sub-container-first">
-            <div>
-              <p className="consume-title">消费等级占比</p>
-              <div style={{transform: 'translate(60px)'}} className="consume-container">
-                {this.renderEchart()}
-              </div>
-            </div>
-            <div className="age-container">
-              <p className="age-title">年龄分布</p>
-              <Echarts style={{transform: 'translate(30px)'}} className="age-chart" option={option} />
-            </div>
-          </div>
-          <div className="right-sub-container flex-col">
-            <div className="flex1">
-              <p className="right-sub-title">车辆情况对比</p>
-              <WDImagePercent dataList={carList} />
-            </div>
-            <div className="gender-compare flex1">
-              <p className="right-sub-title">性别对比</p>
-              <WDImageBar dataList={genderList} />
-            </div>
-            <div className="flex1">
-              <p className="right-sub-title">已婚对比</p>
-              <WDImagePercent dataList={marriage} />
-            </div>
-          </div>
-        </div>
+        <div  className="right-container"><WDAnalysis/></div>
       </div>
     );
   }

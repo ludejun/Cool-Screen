@@ -16,8 +16,6 @@ class WDMapBasic extends Component {
         trigger: 'item'
       },
       geo: {
-        top: this.props.top || 'auto',
-        left: this.props.left || 'auto',
         map: 'china',
         label: {
           emphasis: {
