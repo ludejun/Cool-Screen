@@ -14,7 +14,7 @@ ReactDOM.render(
         <Route path="district-brand-tag" component={Routes.DistrictBrandTag} />
         <Route path="analysis" component={Routes.BusinessAnalysis} />
       </Route>
-
+      <Route path="customerPic" component={Routes.CustomerPic} />
       <Route path="home" components={Routes.Home} />
       <Route path="home-internet" component={Routes.HomeInternet} />
       <Route path="commerce" component={Routes.Commerce} />

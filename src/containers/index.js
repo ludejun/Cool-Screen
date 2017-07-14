@@ -14,6 +14,7 @@ export { default as BusinessAnalysis } from './BusinessAnalysis';
 export { default as Home } from './Home';
 export { default as HomeInternet } from './Home/HomeInternet';
 export { default as Commerce } from './Home/Commerce';
-
+//客群画像
+export { default as CustomerPic } from './customerPic';
 //
 export { default as InnerScatter } from './InnerScatter';
