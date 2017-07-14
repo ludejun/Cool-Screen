@@ -94,10 +94,12 @@ export default class InnerScatter extends Component {
                   <div className="erea-wrap">
                     {city.map((item, i) => (
                       <div key={i} className="erea" style={{height: item.value}}>
-                        {pillar.map((item,i) => (
-                          <div key={i} className="pillar"/>
-                        ))}
-                        <div className="name">{item.name}</div>
+                        <div className="child-item">
+                          {pillar.map((item,i) => (
+                            <div key={i} className="pillar"/>
+                          ))}
+                          <div className="name">{item.name}</div>
+                        </div>
                       </div>
                     ))}
                   </div>

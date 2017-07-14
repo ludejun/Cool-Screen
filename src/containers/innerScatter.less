@@ -1,10 +1,10 @@
 .inner-scatter-container {
   display: flex;
   justify-content: center;
-  padding-top:130px;
+  padding-top: 130px;
 
   .main-content {
-    margin-top:100px;
+    margin-top: 100px;
   }
   .main-content:after {
     content: '';
@@ -14,21 +14,21 @@
   }
 
   .china-map {
-    float:left;
+    float: left;
     width: 960px;
-    height:600px;
+    height: 600px;
   }
-  .map{
+  .map {
     width: 130%;
     height: 130% !important;
-    margin-left:-20%;
-    margin-top:-10%;
+    margin-left: -20%;
+    margin-top: -10%;
   }
 
   .bar {
-    float:left;
+    float: left;
     width: 551.5px;
-    height:600px;
+    height: 600px;
     position: relative;
     .bar-title {
       width: 48px;
@@ -42,20 +42,38 @@
       top: 5px;
     }
     @keyframes fade-in {
-      0% {opacity: 0;}/*初始状态 透明度为0*/
-      40% {opacity: 0.2;}/*过渡状态 透明度为0*/
-      100% {opacity: 1;}/*结束状态 透明度为1*/
+      0% {
+        opacity: 0;
+      }
+      /*初始状态 透明度为0*/
+      40% {
+        opacity: 0.2;
+      }
+      /*过渡状态 透明度为0*/
+      100% {
+        opacity: 1;
+      }
+      /*结束状态 透明度为1*/
     }
-    .fadein{
-      animation:fade-in 1s ease;
+    .fadein {
+      animation: fade-in 1s ease;
     }
     @keyframes fade-out {
-      0% {opacity: 1;}/*初始状态 透明度为0*/
-      40% {opacity: .2;}/*过渡状态 透明度为0*/
-      100% {opacity: 0;}/*结束状态 透明度为1*/
+      0% {
+        opacity: 1;
+      }
+      /*初始状态 透明度为0*/
+      40% {
+        opacity: .2;
+      }
+      /*过渡状态 透明度为0*/
+      100% {
+        opacity: 0;
+      }
+      /*结束状态 透明度为1*/
     }
-    .fadeout{
-      animation:fade-out 1s ease;
+    .fadeout {
+      animation: fade-out 1s ease;
     }
     .pillar-bg {
       width: 100%;
@@ -83,13 +101,25 @@
           clear: both;
           height: 0;
         }
+        @keyframes up {
+          from {
+            height: 0%;
+          }
+          to {
+            height: 100%;
+          }
+        }
+        .child-item {
+          position: absolute;
+          bottom: 0;
+          animation: up 2s .5s;
+          height: 100%;
+        }
         .pillar {
-          //position: absolute;
-          //bottom:0;
           float: left;
           width: 4px;
           height: 100%;
-          background-image: linear-gradient(rgba(52,208,245,0.60) 2%, rgba(60,134,248,0.30) 98%);
+          background-image: linear-gradient(rgba(52, 208, 245, 0.60) 2%, rgba(60, 134, 248, 0.30) 98%);
           transform: skewY(-45deg);
         }
 
@@ -97,7 +127,10 @@
           font-size: 20px;
           color: #fff;
           position: absolute;
-          bottom:-40px;
+          bottom: -40px;
+          left: -23px;
+          width: 86px;
+          text-align: center;
         }
       }
       .erea:nth-child(1) {
@@ -127,9 +160,9 @@
   }
 
   .slide-btn {
-    width:880px;
+    width: 880px;
     margin: 60px auto 30px;
-    height:62px;
+    height: 62px;
   }
 
   .slide-wrap li {
