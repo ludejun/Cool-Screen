@@ -55,7 +55,6 @@ class WDMapBasic extends Component {
   }
 
   render() {
-    console.log("option ",this.getOption());
     return (
       <ReactEcharts
         {...this.props}
