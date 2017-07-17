@@ -14,7 +14,7 @@ export default class AnimeNumber extends Component {
   componentDidMount() {
     const { num, fromNum, duration, delay } = this.props;
     const obj = { num };
-    console.log(444, this.props);
+
     const domAttributes = anime({
       targets: obj,
       num: fromNum || 0, // num - 100,
