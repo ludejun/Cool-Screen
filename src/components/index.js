@@ -12,6 +12,7 @@ export { default as WDImagePercent } from './WDImagePercent';
 
 // maps
 export { default as WDMapBasic } from './WDMapBasic';
+export { default as WDMapCar } from './WDMapCar';
 
 // svgs
 export { default as WDLogoSvg } from './WDLogoSvg';
