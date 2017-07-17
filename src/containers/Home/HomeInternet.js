@@ -96,7 +96,8 @@ export default class HomeInternet extends Component {
                     <i className={`iconfont ${v.icon} line-icon`} />{v.title}
                   </p>
                   <p className="line-num">
-                    <AnimeNumber num={v.num} /><span className="line-unit">{v.unit}</span>
+                    <AnimeNumber num={v.num} fromNum={v.num - 100} />
+                    <span className="line-unit">{v.unit}</span>
                   </p>
                 </div>
               )}

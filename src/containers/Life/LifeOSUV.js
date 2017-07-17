@@ -18,7 +18,6 @@ export default class LifeOSUV extends Component {
     return (
       <div className="life-osuv flex-row flex-center dark-bg">
         <HeaderTitle title="智慧生活：按照移动OS类型／应用UV对比" />
-
         {this.list.map(v =>
           <div className="dotted-panel flex1" key={v}>
             <LifeOSUVDotBg className={`dot-bg dot-bg-${v}`} />
@@ -26,7 +25,7 @@ export default class LifeOSUV extends Component {
             {v === 'ios'
               ? <AppleLogo className="center-logo" />
               : <AndroidLogo className="center-logo-android" />}
-            <WDButtonSvg className="wd-button-svg title-button" title={v} />
+            <WDButtonSvg className="title-button" title={v} />
           </div>
         )}
       </div>

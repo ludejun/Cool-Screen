@@ -9,6 +9,16 @@ class WDMapBasic extends Component {
     return this.mapInstance;
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.refs.echarts_Instance) {
+      let echarts_Instance = this.refs.echarts_Instance.getEchartsInstance();
+      echarts_Instance.clear();
+      if (nextProps) {
+        echarts_Instance.setOption(this.getOption(nextProps));
+      }
+    }
+  }
+
   getOption() {
     const { optionCustom = {} } = this.props;
     const optionStatic = {
