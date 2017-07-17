@@ -21,7 +21,7 @@
   .map {
     width: 130%;
     height: 130% !important;
-    margin-left: -20%;
+    margin-left: -20% !important;
     margin-top: -10%;
   }
 
@@ -87,7 +87,7 @@
       .erea-wrap {
         position: relative;
         width: 100%;
-        height: 450px;
+        height: 394px;
       }
       .erea {
         width: 40px;
@@ -101,7 +101,7 @@
           clear: both;
           height: 0;
         }
-        @keyframes up {
+        @keyframes height-up {
           from {
             height: 0%;
           }
@@ -111,10 +111,11 @@
         }
         .child-item {
           position: absolute;
-          bottom: 0;
-          animation: up 2s .5s;
+          bottom: 10px;
           height: 100%;
+          animation: height-up 2s;
         }
+
         .pillar {
           float: left;
           width: 4px;
@@ -127,10 +128,13 @@
           font-size: 20px;
           color: #fff;
           position: absolute;
-          bottom: -40px;
+          bottom: -48px;
           left: -23px;
           width: 86px;
           text-align: center;
+        }
+        .name-rotate{
+          transform: rotate(-28deg);
         }
       }
       .erea:nth-child(1) {

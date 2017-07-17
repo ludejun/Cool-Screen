@@ -16,7 +16,15 @@ export default class operatorsComparison extends Component {
       <div>
         <HeaderTitle title="智慧生活：飞凡会员运营商设备活跃对比" className="sum-title"/>
         <div className="content-wrap clearfix">
-          <div className="comparison-map">map</div>
+          <div className="comparison-map">
+            <div className="operators-move">
+              <img className="base-seat" src="img/base.png" alt=""/>
+              <img className="unicom-style" src="img/unicom.png" alt=""/>
+              <img className="mobile-style" src="img/mobile.png" alt=""/>
+              <img className="telecom-style" src="img/telecom.png" alt=""/>
+              <img className="phone-style" src="img/phone.png" alt=""/>
+            </div>
+          </div>
           <div className="operators">
             <img className="bg-img" src="/img/provider.png" alt=""/>
             <p className="operators-title">三大运营商</p>
