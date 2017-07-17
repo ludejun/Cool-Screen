@@ -138,6 +138,7 @@ export default class InnerScatter extends Component {
 
   renderMap(index){
     const geo = index === 0 ? plazaGeo : cityGeo;
+    const multiple = index === 0 ? 1000 : 10000;
     const color = index === 0 ? 'red' : '#108EE9';
     const scatterMap = {
       series: [
@@ -148,7 +149,9 @@ export default class InnerScatter extends Component {
           rippleEffect: {
             brushType: 'stroke'
           },
-          symbolSize: 8/192*getBaseFontSize(),
+          symbolSize:function (val) {
+            return val[2] /multiple/192*getBaseFontSize();
+          },
           label: {
             normal: {
               show: true,
