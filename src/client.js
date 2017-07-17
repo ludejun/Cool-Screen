@@ -13,10 +13,10 @@ ReactDOM.render(
         <Route path="district-plaza" component={Routes.DistrictPlaza} />
         <Route path="district-brand-tag" component={Routes.DistrictBrandTag} />
         <Route path="analysis" component={Routes.BusinessAnalysis} />
+        <Route path="operators-comparison" component={Routes.OperatorsComparison} />
         <Route path="life-osuv" component={Routes.LifeOSUV} />
-
       </Route>
-
+      <Route path="customerPic" component={Routes.CustomerPic} />
       <Route path="home" components={Routes.Home} />
       <Route path="home-internet" component={Routes.HomeInternet} />
       <Route path="commerce" component={Routes.Commerce} />
