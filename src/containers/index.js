@@ -22,7 +22,8 @@ export { default as Commerce } from './Home/Commerce';
 export { default as CustomerPic } from './customerPic';
 //
 export { default as InnerScatter } from './InnerScatter';
-
+// 停车分析
+export { default as ParkingAnalysis } from './parkingAnalysis/parkingAnalysis';
 
 //运营商对比
 export { default as OperatorsComparison } from './OperatorsComparison';
