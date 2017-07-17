@@ -161,6 +161,7 @@ export default class InnerScatter extends Component {
               formatter: '{b}',
               textStyle: {
                 color: '#fff',
+                fontSize:'6px !important'
               }
             }
           },
@@ -221,11 +222,12 @@ export default class InnerScatter extends Component {
     //   <WDMapBasic optionCustom={scatterMap} className="map"/>
     // );
     return(
-      <div>
-        <WDMapBasic optionCustom={scatterMap} className="map"/>
-        <WDAreaMap areaData={proArea} mapType={'china'} className="map"/>
-        <WDMapBasic optionCustom={provinceMap} className="map"/>
-      </div>
+      // <div>
+      //   <WDMapBasic optionCustom={scatterMap} className="map"/>
+      //   <WDAreaMap areaData={proArea} mapType={'china'} className="map"/>
+      //   <WDMapBasic optionCustom={provinceMap} className="map"/>
+      // </div>
+      <WDMapBasic optionCustom={scatterMap} className="map"/>
     )
   }
   render() {

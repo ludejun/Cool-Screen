@@ -22,6 +22,7 @@ ReactDOM.render(
       <Route path="commerce" component={Routes.Commerce} />
 
       <Route path="inner-scatter" component={Routes.InnerScatter} />
+      <Route path="map-scatter" component={Routes.MapScatter} />
       <Route path="life-mobile" component={Routes.LifeMobile} />
 
     </Route>
