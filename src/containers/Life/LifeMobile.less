@@ -39,34 +39,87 @@
   }
   .brand-feature {
     position: relative;
-    margin: 0 32px 0 100px;
+    margin: 0 30px 0 100px;
     text-align: center;
     .feature-bg {
-      width: 620px;
-      height: 679px;
+      width: 673px;
+      height: 766px;
+      z-index: 10;
     }
     .feature-square {
       font-size: 24px;
       text-align: left;
       position: absolute;
-      background: linear-gradient(to bottom right, rgba(13, 22, 72, .36), rgba(3, 40, 226, .32));
-      border: 2px dashed rgba(0,122,255,.5);
+      // background: linear-gradient(to bottom right, rgba(13, 22, 72, .36), rgba(3, 40, 226, .32));
+      // border: 2px dashed rgba(0,122,255,.5);
       padding: 7px 15px;
       &-0 {
-        left: -8%;
-        top: 12%;
+        left: 63%;
+        bottom: 2%;
+        animation-delay+: 2.5s !important;
       }
       &-1 {
-        left: 25%;
-        top: -7%;
+        left: 0;
+        top: 17%;
+        animation-delay+: 5.8s !important;
       }
       &-2 {
-        left: 59%;
-        bottom: -3%;
+        left: 31%;
+        top: 0;
+        animation-delay+: 9.1s !important;
       }
       .feature-square-title {
         font-size: 30px;
         color: #00D6FF;
+      }
+    }
+    .feature-percent {
+      position: absolute;
+      color: #00ACFF;
+      font-size: 60px;
+      text-shadow: -2px -1px 0 #0A2EFF;
+      transform: skew(-40deg) rotate(-40deg) rotateY(50deg);
+      &-0 {
+        left: 18%;
+        top: 37%;
+      }
+      &-1 {
+        left: 41%;
+        top: 25%;
+      }
+      &-2 {
+        left: 64%;
+        top: 11%;
+      }
+    }
+    .feature-hanabi {
+      position: absolute;
+      height: 100px;
+      width: 4px;
+      border-radius: 4px 4px 0 0;
+      background: linear-gradient(to bottom, #4C30FF, transparent);
+      z-index: 1;
+      &-1 {
+        left: 1%;
+        bottom: 0;
+      }
+      &-2 {
+        left: 55%;
+        bottom: 4%;
+        background: linear-gradient(to bottom, #328DEC, transparent);
+      }
+      &-3 {
+        left: 35%;
+        bottom: 39%;
+        background: linear-gradient(to bottom, #328DEC, transparent);
+      }
+      &-4 {
+        left: 57%;
+        bottom: 71%;
+      }
+      &-5 {
+        left: 96%;
+        bottom: 37%;
       }
     }
   }

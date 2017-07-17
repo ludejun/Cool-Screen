@@ -231,7 +231,7 @@ export default class BusinessAnalysis extends Component {
           </div>
           <img src="/img/building.png" className="left-img" />
         </div>
-        <div  className="right-container"><WDAnalysis/></div>
+        <div className="right-container"><WDAnalysis /></div>
       </div>
     );
   }

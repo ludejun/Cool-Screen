@@ -77,7 +77,7 @@ export default class LifeMobileLegend extends Component {
             points="86 7.20807721 93.2080772 0 126.444463 0 126.444463 48.2247817"
           />
           <mask
-            id="mask-5"
+            id="legend-mask-5"
             maskContentUnits="userSpaceOnUse"
             maskUnits="objectBoundingBox"
             x="0"
@@ -196,7 +196,7 @@ export default class LifeMobileLegend extends Component {
             points="7.45785801 105.012689 7.45785801 145.068694 50.9050628 145.068694"
           />
           <mask
-            id="mask-14"
+            id="legend-mask-14"
             maskContentUnits="userSpaceOnUse"
             maskUnits="objectBoundingBox"
             x="0"
@@ -245,7 +245,7 @@ export default class LifeMobileLegend extends Component {
           <use
             id="corner-right"
             stroke="#1D4B7B"
-            mask="url(#mask-5)"
+            mask="url(#legend-mask-5)"
             strokeWidth="2"
             strokeDasharray="4"
             xlinkHref="#legend-path-4"
@@ -331,7 +331,7 @@ export default class LifeMobileLegend extends Component {
           <use
             id="corner-left"
             stroke="#1D4B7B"
-            mask="url(#mask-14)"
+            mask="url(#legend-mask-14)"
             strokeWidth="2"
             strokeDasharray="4"
             xlinkHref="#legend-path-13"
