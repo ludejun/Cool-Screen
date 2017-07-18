@@ -7,6 +7,7 @@ import AppleLogo from './AppleLogo';
 import AndroidLogo from './AndroidLogo';
 
 import './LifeOSUV.less';
+import './LifeOSUVAnime.less';
 
 export default class LifeOSUV extends Component {
   constructor() {
@@ -21,7 +22,11 @@ export default class LifeOSUV extends Component {
         {this.list.map(v =>
           <div className="dotted-panel flex1" key={v}>
             <LifeOSUVDotBg className={`dot-bg dot-bg-${v}`} />
-            <LifeOSUVRoundBoard className="round-board" />
+            <LifeOSUVRoundBoard
+              className="round-board"
+              outerDashArray={{ strokeDasharray: '50% 30% 30% 40% 20%' }}
+              innerDashArray={{ strokeDasharray: '50%' }}
+            />
             {v === 'ios'
               ? <AppleLogo className="center-logo" />
               : <AndroidLogo className="center-logo-android" />}

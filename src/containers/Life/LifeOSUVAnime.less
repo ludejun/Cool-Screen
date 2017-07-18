@@ -1,0 +1,84 @@
+.life-osuv {
+  .dotted-many {
+    animation: OsuvDotMove 1s linear infinite;
+  }
+  @keyframes OsuvDotMove {
+    0% {
+      transform+: translateX(0);
+    }
+    100% {
+      transform+: translateX(2.5%);
+    }
+  }
+  .logo-shine-bigger {
+    animation+: OsuvBiggerLogo 2s ease-in-out infinite alternate;
+    transform-origin: center;
+    &.android {
+      animation-delay+: 1s;
+    }
+  }
+  @keyframes OsuvBiggerLogo {
+    0% {
+      transform+_: scale(.95);
+    }
+    100% {
+      transform+_: scale(1);
+    }
+  }
+  .logo-shine-border,
+  .round-circle-1,
+  .round-circle-3 {
+    animation: OsuvShineLogo 2s ease-in-out infinite alternate;
+    &.android {
+      animation-delay+: 1s;
+    }
+  }
+  // .round-circle-3 {
+  //   animation: OsuvShineLogo 5s ease-out infinite;
+  // }
+  @keyframes OsuvShineLogo {
+    0% {
+      opacity+: 0;
+    }
+    100% {
+      opacity+: 1;
+    }
+  }
+  .round-circle-2,
+  .round-circle-5-line,
+  .round-circle-7 {
+    transform-origin: center;
+    animation: OsuvRotate 10s linear infinite;
+  }
+  .round-circle-4-line,
+  .round-circle-6 {
+    transform-origin: center;
+    animation: OsuvRotate 15s linear infinite reverse;
+  }
+  .round-circle-4-line,
+  .round-circle-5-line {
+    animation-duration: 20s;
+  }
+  .round-circle-2 {
+    animation-duration: 30s;
+  }
+  @keyframes OsuvRotate {
+    0% {
+      transform+: rotate(0);
+    }
+    100% {
+      transform+: rotate(360deg);
+    }
+  }
+  // 10, 11, 20
+  .round-circle-4 {
+    // 970.35986328125
+    stroke-dashoffset: 0;
+    // stroke-dasharray: 50% 30% 30% 40% 20%;
+  }
+  .round-circle-5 {
+    // 1196.4632568359375
+    stroke-dashoffset: 0;
+    // stroke-dasharray: 50%;
+  }
+}
