@@ -322,7 +322,10 @@ class customerPic extends Component {
                         </svg>
                     </div>
                     <div className="customer-box">
-                        <div className="customer-pic"><div className="angel"/></div>
+                        <div className="customer-pic">
+                          <div className="angel"/>
+                          <div className="customer-right"><WDAnalysis /></div>
+                        </div>
                     </div>
                 </div>
             </div>
