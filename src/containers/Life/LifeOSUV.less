@@ -26,9 +26,11 @@
     }
     .round-board {
       position: absolute;
-      width: 540px;
+      // width: 590px;
+      // height: 590px;
+      width: 560px;
       height: 550px;
-      top: ~"calc(50% - 13px)";
+      top: ~"calc(50% - 25px)";
       left: ~"calc(50% + 25px)";
       transform: translateX(-50%) translateY(-50%);
     }
@@ -36,23 +38,23 @@
       position: absolute;
       width: 77px;
       height: 88px;
-      top: ~"calc(50% - 23px)";
+      top: ~"calc(50% - 25px)";
       left: ~"calc(50% + 25px)";
-      transform: translateX(-50%) translateY(-50%);
+      transform+: translateX(-50%) translateY(-50%);
+      &-android {
+        position: absolute;
+        width: 79px;
+        height: 96px;
+        top: ~"calc(50% - 25px)";
+        left: ~"calc(50% + 25px)";
+        transform+: translateX(-50%) translateY(-50%);
+      }
     }
     .title-button {
       position: absolute;
-      bottom: 26px;
+      bottom: 5%;
       left: ~"calc(50% + 25px)";
       transform: translateX(-50%);
-    }
-    .center-logo-android {
-      position: absolute;
-      width: 79px;
-      height: 96px;
-      top: 48%;
-      left: ~"calc(50% + 25px)";
-      transform: translateX(-50%) translateY(-50%);
     }
   }
 }
