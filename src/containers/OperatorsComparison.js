@@ -5,9 +5,20 @@ import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
 import HeaderTitle from './Layout/HeaderTitle'
 import './OperatorsComparison.less'
-
+import { getBaseFontSize } from '../utils';
 const cir = [0,1,2,3,4];
+
+var pillarChart = function(data){
+  return(
+    <div className="pillar-container clearfix">
+      {data.map((item,i)=>(
+        <span key={i} className="pillar" style={{width:data[i]/192*getBaseFontSize()}}></span>
+      ))}
+    </div>
+  );
+}
 export default class operatorsComparison extends Component {
+
   componentDidMount (){
 
   }
@@ -17,6 +28,8 @@ export default class operatorsComparison extends Component {
         <HeaderTitle title="智慧生活：飞凡会员运营商设备活跃对比" className="sum-title"/>
         <div className="content-wrap clearfix">
           <div className="comparison-map">
+            <div className="map-container">
+            </div>
             <div className="operators-move">
               <img className="base-seat" src="img/base.png" alt=""/>
               <img className="unicom-style" src="img/unicom.png" alt=""/>
