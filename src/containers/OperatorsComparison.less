@@ -183,9 +183,9 @@
       height:44px;
       position: absolute;
       right: 90px;
-      top: 70px;
-      background-image: linear-gradient(360deg,#328DEC 0%, rgba(27,54,134,0.00) 86%);
-      animation: translate-star 2s linear .6s infinite;
+      top: 550px;
+      background-image: linear-gradient(-180deg,#328DEC 0%, rgba(27,54,134,0.00) 86%);
+      animation: translate-star3 2s linear infinite;
     }
     .star{
       width:2px;
@@ -197,7 +197,15 @@
         top:70px;
       }
       100% {
-        top:520px;
+        top:550px;
+      }
+    }
+    @keyframes translate-star3 {
+      0% {
+        top:550px;
+      }
+      100% {
+        top:90px;
       }
     }
 
