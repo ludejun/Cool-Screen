@@ -15,6 +15,7 @@ ReactDOM.render(
         <Route path="analysis" component={Routes.BusinessAnalysis} />
         <Route path="operators-comparison" component={Routes.OperatorsComparison} />
         <Route path="life-osuv" component={Routes.LifeOSUV} />
+        <Route path="parking-analysis" component={Routes.ParkingAnalysis} />
       </Route>
       <Route path="customerPic" component={Routes.CustomerPic} />
       <Route path="home" components={Routes.Home} />
