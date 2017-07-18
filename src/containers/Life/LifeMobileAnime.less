@@ -1,0 +1,173 @@
+.life-mobile {
+  .life-mobile-border {
+    // 下方八个小方块按心脏跳动
+    .generate-heartbeats(4);
+    .generate-heartbeats(@n, @i:1) when (@i =< @n) {
+      .border-heartbeat-@{i} {
+        transform-origin: center;
+        animation: lifeMobileHeartbeat ease-out 1s infinite;
+        animation-delay: unit((@i - 1)/4,s);
+      }
+      .generate-heartbeats(@n, (@i + 1));
+    }
+    // 外圈四个角移动
+    // 逆时针圈
+    .border-corner-lb,
+    .border-corner-lt,
+    .border-corner-rb,
+    .border-corner-rt {
+      stroke-dasharray: 100, 3590;
+      animation: lifeMobileCircleRect 15s linear infinite; //alternate;
+    }
+    // 顺时针圈
+    .border-corner-lb,
+    .border-corner-lt {
+      animation-direction: reverse;
+    }
+    .border-corner-lb,
+    .border-corner-rb {
+      animation-delay: 7.5s;
+    }
+    // 中圈dash转一圈
+    .border-dash-rect {
+      stroke-dasharray: 6.18;
+      animation: lifeMobileCircleRect 100s linear infinite;
+    }
+    // .border-corner-dot {
+    //   animation: lifeMobileDotRect 15s linear infinite;
+    // }
+  }
+  // @keyframes lifeMobileDotRect {
+  //   0% {
+  //     stroke-dashoffset: 0;
+  //     stroke-dasharray: 0, 3590;
+  //     // stroke-dashoffset: 500;
+  //   }
+  //   // 上
+  //   12.5% {
+  //     stroke-dashoffset: 0;
+  //     stroke-dasharray: 1000, 2689.47998046875;
+  //   }
+  //   25% {
+  //     stroke-dashoffset: -1000;
+  //     stroke-dasharray: 0, 3590;
+  //   }
+  //   // 右
+  //   37.5% {
+  //     stroke-dashoffset: -1000;
+  //     stroke-dasharray: 845, 2844.47998046875;
+  //   }
+  //   50% {
+  //     stroke-dashoffset: -1845;
+  //     stroke-dasharray: 0, 3590;
+  //   }
+  //   // 下
+  //   62.5% {
+  //     stroke-dashoffset: -1845;
+  //     stroke-dasharray: 1000, 2689.47998046875;
+  //   }
+  //   75% {
+  //     stroke-dashoffset: -2845;
+  //     stroke-dasharray: 0, 3590;
+  //   }
+  //   // 左
+  //   87.5% {
+  //     stroke-dashoffset: -2845;
+  //     stroke-dasharray: 845, 2844.47998046875;
+  //   }
+  //   100% {
+  //     stroke-dashoffset: -3590;
+  //     stroke-dasharray: 0, 3590;
+  //   }
+  // }
+  @keyframes lifeMobileCircleRect {
+    0% {
+      stroke-dashoffset: 500;
+    }
+    100% {
+      stroke-dashoffset: 3590+500;
+    }
+  }
+  @keyframes lifeMobileHeartbeat {
+    0%,
+    100%,
+    50% {
+      transform+: scale(1);
+    }
+    25% {
+      transform+: scale(1.5);
+    }
+  }
+  .life-mobile-radar-bg {
+    // radar背景一圈一圈闪
+    .generate-radarovals(10);
+    .generate-radarovals(@n, @i:1) when (@i =< @n) {
+      .radar-ovals-@{i} {
+        animation: LifeMobileRadar ease-in-out 10s infinite reverse;
+        animation-delay: unit((@i - 1) / 10, s);
+      }
+      .generate-radarovals(@n, (@i + 1));
+    }
+  }
+  @keyframes LifeMobileRadar {
+    0% {
+      opacity: 0.5;
+    }
+    100%,
+    50% {
+      opacity: 1;
+    }
+  }
+  .feature-hanabi {
+    animation: LifeMobileHanabi 2s linear infinite;
+  }
+  @keyframes LifeMobileHanabi {
+    0% {
+      height: 0;
+    }
+    100%,
+    80% {
+      height: 100px;
+    }
+  }
+  .brand-logo {
+    animation: LifeMobileLogoUpDown 2s ease-in-out infinite alternate;
+  }
+  @keyframes LifeMobileLogoUpDown {
+    0% {
+      transform+: translateY(0);
+    }
+    100% {
+      transform+: translateY(20px);
+    }
+  }
+  .logo-line {
+    animation: LifeMobileLogoLine 50s linear infinite reverse;
+  }
+  @keyframes LifeMobileLogoLine {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 100%;
+    }
+  }
+  .life-mobile .brand-feature .feature-square {
+    animation+: LifeMobileScale 10s ease-in-out infinite;
+  }
+  @keyframes LifeMobileScale {
+    0%,
+    100%,
+    25%,
+    29%,
+    33% {
+      transform+: scale(1);
+      opacity: 0.9;
+    }
+    27%,
+    31% {
+      transform+: scale(1.05);
+      opacity: 1;
+    }
+  }
+}

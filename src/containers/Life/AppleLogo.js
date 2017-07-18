@@ -12,11 +12,11 @@ export default class AppleLogo extends Component {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         {...this.props}
       >
-        <title>appleLogo</title>
         <defs>
           <path
             d="M533.062453,518.314591 C533.062453,528.380819 524.973473,536.578836 514.872488,536.899449 C514.777272,536.141138 514.72823,535.368663 514.72823,534.584861 C514.72823,524.518633 522.81721,516.320616 532.918194,516.000003 C533.01341,516.758312 533.062453,517.530788 533.062453,518.314591 Z M547.292801,540.607378 C547.292801,540.607378 549.125808,542.04939 551.174552,544.845546 C545.417451,548.024288 541.524402,554.108525 541.524402,561.091892 C541.524402,569.165677 546.72813,576.037622 554,578.607114 C551.786835,584.756044 548.074488,590.782374 542.340704,596.62738 C540.370134,598.916754 536.594482,602 532.429866,602 C530.769665,602 529.268303,601.690979 527.836388,601.076913 C527.738625,601.033505 527.659529,601.010532 527.574934,600.968881 C524.388875,599.384051 521.299714,598.281081 517.548879,598.281081 C513.736597,598.281081 510.412774,599.642806 507.226106,601.330878 C506.444212,601.881741 504.668193,602 503.286206,602 C499.12159,602 495.667783,599.241293 493.375368,596.62738 C482.335431,585.373295 478.789442,573.446995 479.009558,561.267664 C479.252562,547.8219 488.42327,540.607378 488.488878,540.645302 C491.804828,537.747709 496.162568,535.989189 500.935665,535.989189 C503.20359,535.989189 505.377743,536.386202 507.390923,537.113778 C507.703798,537.191488 508.027916,537.274205 508.362598,537.362181 C511.050482,538.068728 513.160305,539.591477 517.798307,539.591477 C522.191765,539.591477 524.691714,537.891288 527.497881,537.112391 C529.857841,536.457347 531.773449,536.194909 532.781534,536.093002 C533.438331,536.024378 534.105214,535.989189 534.780407,535.989189 C539.553504,535.989189 543.911243,537.747709 547.292801,540.607378 Z"
-            id="path-1"
+            id="apple-path-1"
+            transform="translate(-478.000000, -515.000000)"
           />
           <filter
             x="-13.2%"
@@ -24,7 +24,7 @@ export default class AppleLogo extends Component {
             width="126.4%"
             height="123.0%"
             filterUnits="objectBoundingBox"
-            id="filter-2"
+            id="apple-filter-2"
           >
             <feGaussianBlur stdDeviation="9.5" in="SourceAlpha" result="shadowBlurInner1" />
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1" />
@@ -44,16 +44,22 @@ export default class AppleLogo extends Component {
           </filter>
         </defs>
         <g
-          id="appleLogo"
+          id="AppleLogo"
           stroke="none"
           strokeWidth="1"
           fill="none"
           fillRule="evenodd"
-          transform="translate(-478.000000, -515.000000)"
+          className="logo-shine-bigger"
         >
-          <use fill="#FFFFFF" fillRule="evenodd" xlinkHref="#path-1" />
-          <use fill="black" fillOpacity="1" filter="url(#filter-2)" xlinkHref="#path-1" />
-          <use stroke="#20E9FF" strokeWidth="0.729" xlinkHref="#path-1" />
+          <use fill="#FFFFFF" fillRule="evenodd" xlinkHref="#apple-path-1" />
+          <use
+            fill="black"
+            fillOpacity="1"
+            filter="url(#apple-filter-2)"
+            xlinkHref="#apple-path-1"
+            className="logo-shine-border"
+          />
+          <use stroke="#20E9FF" strokeWidth="0.729" xlinkHref="#apple-path-1" />
         </g>
       </svg>
     );

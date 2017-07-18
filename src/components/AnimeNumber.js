@@ -2,25 +2,28 @@ import React, { Component, PropTypes } from 'react';
 import anime from 'animejs';
 import { comdify } from '../utils';
 
+// usage
+// <AnimeNumber num={100} fromNum={100-10} duration={10} delay={10}/>
+
 export default class AnimeNumber extends Component {
   constructor(props) {
     super(props);
-    this.timestamp = new Date().getTime();
+    this.timestamp = new Date().getTime() + Math.random().toString().substr(2);
   }
 
   componentDidMount() {
-    const { num } = this.props;
+    const { num, fromNum, duration, delay } = this.props;
     const obj = { num };
 
     const domAttributes = anime({
       targets: obj,
-      num: num - 100,
+      num: fromNum || 0, // num - 100,
       easing: 'easeInQuad',
       direction: 'reverse',
       loop: true,
       round: 1,
-      duration: 10000,
-      delay: 10000,
+      duration: duration || 10000,
+      delay: delay || 10000,
       update: () => {
         const el = document.querySelector(`.anime-number-${this.timestamp}`);
         el.innerHTML = comdify(obj.num);
