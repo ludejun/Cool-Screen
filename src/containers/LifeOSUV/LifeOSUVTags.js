@@ -86,23 +86,8 @@ export default class LifeOSUVTags extends Component {
         </defs>
 
         <g id="osuv-tags" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          {/*
-            <use
-              stroke="#108EE9"
-              strokeWidth="1"
-              fill="black"
-              fillOpacity="1"
-              filter="url(#tags-filter-2)"
-              xlinkHref="#tags-path-1"
-            />
-          */}
-          <use
-            // stroke="#168EFF"
-            // fill="url(#tags-linearGradient-3)"
-            // opacity="0.540194746"
-            xlinkHref="#tags-path-1"
-            {...this.typelist[this.props.type]}
-          />
+
+          <use xlinkHref="#tags-path-1" {...this.typelist[this.props.type]} />
 
           <text
             id="35%"
