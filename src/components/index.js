@@ -12,12 +12,14 @@ export { default as WDImagePercent } from './WDImagePercent';
 
 // maps
 export { default as WDMapBasic } from './WDMapBasic';
+export { default as WDAreaMap } from './WDAreaMap';
 
 // svgs
 export { default as WDLogoSvg } from './WDLogoSvg';
 export { default as WDButtonSvg } from './WDButtonSvg';
 export { default as WDPolyLine } from './PolyLine';
 export { default as WDLayout } from './layout';
+export { default as AngelAside } from './AngelAside';
 
 // background
 export { default as BgAnimation } from './BgAnimation';

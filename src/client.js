@@ -27,12 +27,20 @@ ReactDOM.render(
         <Route path="operators-comparison" component={Routes.OperatorsComparison} />
         // 智慧生活：移动OS类型
         <Route path="life-osuv" component={Routes.LifeOSUV} />
+<<<<<<< HEAD
 
+=======
+        <Route path="parking-analysis" component={Routes.ParkingAnalysis} />
+>>>>>>> origin/NewReact
       </Route>
 
       // 数字商业：内场分布 + 指标排名
       <Route path="inner-scatter" component={Routes.InnerScatter} />
+<<<<<<< HEAD
       // 智慧生活：移动品牌及兴趣维度对比
+=======
+      <Route path="map-scatter" component={Routes.MapScatter} />
+>>>>>>> origin/NewReact
       <Route path="life-mobile" component={Routes.LifeMobile} />
       // 数字金融：客群画像
       <Route path="customerPic" component={Routes.CustomerPic} />
