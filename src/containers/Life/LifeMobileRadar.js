@@ -4,6 +4,23 @@ import Echarts from 'echarts-for-react';
 export default class LifeMobileRadar extends Component {
   constructor(props) {
     super(props);
+    this.LifeMobileRadarRef = null;
+    this.echartsInstantce = null;
+    this.refInterval = null;
+  }
+
+  componentDidMount() {
+    clearInterval(this.refInterval);
+    const eInstance = this.LifeMobileRadarRef && this.LifeMobileRadarRef.getEchartsInstance();
+    !!eInstance &&
+      (this.refInterval = setInterval(() => {
+        eInstance.clear();
+        eInstance.setOption(this.getOption());
+      }, 10000));
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.refInterval);
   }
 
   getOption() {
@@ -71,6 +88,12 @@ export default class LifeMobileRadar extends Component {
   }
 
   render() {
-    return <Echarts {...this.props} option={this.getOption()} />;
+    return (
+      <Echarts
+        {...this.props}
+        option={this.getOption()}
+        ref={ref => (this.LifeMobileRadarRef = ref)}
+      />
+    );
   }
 }
