@@ -33,6 +33,7 @@
             position:absolute;
             bottom:100px;
             left:20%;
+            display:flex;
             .angel-style {
                 width:30%;
                 height:40%;
@@ -56,34 +57,100 @@
                 right:0;
                 transform:rotateX(-180deg) rotateY(180deg);
             }
+            .top-bar{
+                position:absolute;
+                width:20%;
+                left:40%;
+                height:10%;
+                top:-6px;
+            }
+            .right-info{
+                flex:2;
+                position:relative;
+                .right-bgsvg{
+                    position:absolute;
+                    width:80%;
+                    height:100%;
+                    left:10%;
+                    transform: scale(0.9);
+                }
+                
+            }
+            .left-info{
+                flex:3;
+                position:relative;
+                .mask{
+                    position:absolute;
+                    width:100%;
+                    height:100%;
+                    z-index: 10;
+                }
+                .left-map{
+                    position:absolute;
+                    z-index: 1;
+                    width:100%;
+                    left:50%;
+                    top:50%;
+                    transform:translate(-50%,-50%) scale(1.2);
+                }
+                .city-area{
+                    position:absolute;
+                    text-align: center;
+                    font-size: 10px;
+                    bottom:11%;
+                    width:100%;
+                }
+            }
         }
         .bar-container-1{
             transform: translateZ(-200px);
-            animation: reversea 10s linear infinite;
+            animation: reversea 20s linear infinite;
+            animation-direction: alternate-reverse;
         }
         @keyframes reversea {
-            80%{
+            30%{
+                filter: blur(0px);
                 transform: translateZ(-200px);
             }
-            90% {
+            40% {
+                filter: blur(5px);
                 transform:translateX(-300px) translateZ(-600px);
             }
-            100% {
+            70%{
+                filter: blur(5px);
+                transform:translateX(-300px) translateZ(-600px);
+            }
+            80% {
+                filter: blur(5px);
+                transform:translateX(300px) translateZ(-600px);
+            }
+            100%{
+                filter: blur(5px);
                 transform:translateX(300px) translateZ(-600px);
             }
         }
         .bar-container-2{
             transform: translateZ(-600px) translateX(-300px);
             filter: blur(5px);
-            animation: reverseb 10s linear infinite;
+            animation: reverseb 20s linear infinite;
+            animation-direction: alternate-reverse;
         }
         @keyframes reverseb {
-            80%{
+            30%{
+                filter: blur(5px);
                 transform: translateZ(-600px) translateX(-300px);
             }
-            90% {
+            40% {
                 filter: blur(5px);
                 transform:translateX(300px) translateZ(-600px);
+            }
+            70% {
+                filter: blur(5px);
+                transform:translateX(300px) translateZ(-600px);
+            }
+            80% {
+                filter: blur(0px);
+                transform:translateX(0px) translateZ(-200px);
             }
             100% {
                 filter: blur(0px);
@@ -93,15 +160,25 @@
         .bar-container-3{
             transform: translateZ(-600px) translateX(300px);
              filter: blur(5px);
-             animation: reversec 10s linear infinite;
+             animation: reversec 20s linear infinite;
+             animation-direction: alternate-reverse;
         }
         @keyframes reversec {
-            80%{
+            30%{
+                filter: blur(5px);
                 transform: translateZ(-600px) translateX(300px);
             }
-            90% {
+            40% {
                 filter: blur(0px);
                 transform:translateX(0px) translateZ(-200px);
+            }
+            70% {
+                filter: blur(0px);
+                transform:translateX(0px) translateZ(-200px);
+            }
+            80% {
+                filter: blur(5px);
+                transform:translateX(-300px) translateZ(-600px);
             }
             100% {
                 filter: blur(5px);
