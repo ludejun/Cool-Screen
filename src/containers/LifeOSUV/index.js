@@ -42,8 +42,8 @@ export default class LifeOSUV extends Component {
 
     this.list = {
       ios: {
-        out: '46% 40% 34% 27% 25% 28%',
-        in: '33% 27% 22% 20.5% 22.5% 46%',
+        out: '46% 40% 34% 27% 25% 28%', // change less anime OsuvDashToZeroOutIos
+        in: '33% 27% 22% 20.5% 22.5% 46%', // change less anime OsuvDashToZeroInIos
         offset: '-37%',
         tags: [
           { title: '广场', percent: 23, line: 'M130,3 L50,80 L0,80' },
@@ -55,8 +55,8 @@ export default class LifeOSUV extends Component {
         ]
       },
       android: {
-        out: '57% 39% 37% 21% 18% 28%',
-        in: '32% 30% 17% 14.5% 22.5% 51%',
+        out: '57% 39% 37% 21% 18% 28%', // change less anime OsuvDashToZeroOutAndroid
+        in: '32% 30% 17% 14.5% 22.5% 51%', // change less anime OsuvDashToZeroInAndroid
         offset: '-46%',
         tags: [
           { title: '广场', percent: 29, line: 'L100,100 L145,100' },
@@ -68,18 +68,6 @@ export default class LifeOSUV extends Component {
         ]
       }
     };
-  }
-
-  componentDidMount() {
-    // clearInterval(this.highlightInterval);
-    // this.highlightInterval = setInterval(() => {
-    //   this.setState({
-    //     highlightTag: (this.state.highlightTag + 1) % 6
-    //   });
-    // }, 2000);
-  }
-  componentWillUnmount() {
-    // clearInterval(this.highlightInterval);
   }
 
   render() {
@@ -103,17 +91,18 @@ export default class LifeOSUV extends Component {
               : <AndroidLogo className="center-logo" />}
             <WDButtonSvg className="title-button" title={v} />
             {this.list[v].tags.map((t, i) =>
-              <div>
-                <LifeOSUVTagLine className={`tag-line tag-line-${v}-${i}`} line={t.line} />
-                <LifeOSUVTags key={i} className={`tags tags-${v}-${i}`} {...t} type={i % 3} />
+              <div key={i}>
+                <LifeOSUVTagLine
+                  className={`tag-line tag-line-${v}-${i} tag-group-${i % 2}`}
+                  line={t.line}
+                />
+                <LifeOSUVTags
+                  className={`tags tags-${v}-${i} tag-group-${i % 2}`}
+                  {...t}
+                  type={i % 3}
+                />
               </div>
             )}
-            {false &&
-              <LifeOSUVTags
-                className={`tags tags-${v}-${highlightTag}`}
-                {...this.list[v].tags[highlightTag]}
-                type={highlightTag % 3}
-              />}
           </div>
         )}
       </div>
