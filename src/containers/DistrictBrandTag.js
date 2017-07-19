@@ -80,12 +80,6 @@ export default class DistrictBrandTag extends Component {
     return (
       <div className="district-brand-tag flex-row">
         <HeaderTitle title="数字商业：品牌与标签相关性" />
-        {/* <div className="page-title-div">
-          <span className="page-title">
-            数字商业：品牌与标签相关性
-          </span>
-        </div>
-        <div className="flex-row">*/}
         <div>
           <span className="type-title type-title-brand">品牌</span>
           <div className="brand-anime-container">

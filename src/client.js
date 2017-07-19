@@ -20,6 +20,8 @@ ReactDOM.render(
 
         // 数字商业：品牌与标签相关性
         <Route path="district-brand-tag" component={Routes.DistrictBrandTag} />
+        // 数字商业：精准化推荐Demo
+        <Route path="digital-recomand" component={Routes.DigitalRecomand} />
 
         // 智慧生活：客群黏性分析
         <Route path="vis-analysis" component={Routes.VisAnalysis} />
