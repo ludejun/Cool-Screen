@@ -346,7 +346,7 @@ export default class Analysis extends Component {
             </div>
             <div className="age-container">
               <p className="age-title">年龄分布</p>
-              <Echarts style={{transform: 'translate(30px)'}} className="age-chart" option={option} />
+              <Echarts style={{transform: 'translate(10px,-20px) scale(0.9)'}} className="age-chart" option={option} />
             </div>
           </div>
           <div className="right-sub-container flex-col">

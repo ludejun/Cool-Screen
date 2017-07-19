@@ -19,6 +19,11 @@
     }
     .right-sub-container-first {
       margin-left: 10px;
+      display:flex;
+      flex-direction: column;
+      div{
+        flex:1;
+      }
     }
     .right-sub-container {
       flex: 1;
@@ -41,7 +46,7 @@
         left: -96px;
       }
       .age-container {
-        margin-top: 25px;
+        position: relative;
       }
       .age-title {
         display: inline-block;
@@ -49,10 +54,13 @@
         font-size: 14px;
       }
       .age-chart {
+        position: absolute;
         width: 350px !important;
         height: 300px !important;
         display: inline-block;
         vertical-align: middle;
+        left: 0;
+        top: 0;
       }
     }
     .right-sub-title {

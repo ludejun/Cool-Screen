@@ -106,8 +106,20 @@ class customerPic extends Component {
                     </g>
                 </svg>
                 <div className="customer-content">
+                    <div className="circle-line">
+                            <svg
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink">
+                            <circle cx="20" cy="70" r="5" fill="#0E7BCD"/>
+                            <circle cx="20" cy="70" r="10" fill="#0E7BCD" opacity="0.6"/>
+                            <polyline points="20,70 190,70 220,90" stroke="#0E7BCD" fill="none"/>
+                            </svg>
+                        </div>
                     <div className="customer-box">
-                        <div className="scan-div"/>
+                        <div className="scan-container">
+                            <div className="scan-div"/>
+                        </div>
                         <svg
                             ref={'svgLayout'}
                             className="svg-left"
@@ -322,7 +334,10 @@ class customerPic extends Component {
                         </svg>
                     </div>
                     <div className="customer-box">
-                        <div className="customer-pic"><div className="angel"/></div>
+                        <div className="customer-pic">
+                          <div className="angel"/>
+                          <div className="customer-right"><WDAnalysis /></div>
+                        </div>
                     </div>
                 </div>
             </div>
