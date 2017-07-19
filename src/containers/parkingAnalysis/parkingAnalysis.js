@@ -4,6 +4,14 @@ import './parkingAnalysis.less';
 import HeaderTitle from '../Layout/HeaderTitle';
 import {AngelAside} from '../../components';
 
+
+
+const cityNumber={
+        name:"上海",
+        id: 21,
+        price:11.388
+    };
+
 const parkingInfo = [
     {
         name: 'a'
@@ -208,6 +216,33 @@ export default class ParkingAnalysis extends Component {
                                     </g>
                                 </g>
                             </svg>
+                            <div className="right-carinfo">
+                                <div className="area">
+                                    <span>{ cityNumber.name } <i>({ cityNumber.id })</i></span>
+                                </div>
+                                <div className="averageCost">
+                                    <span>平均每次停车消费</span>
+                                    <div className="averageMoney">
+                                      <span>{ cityNumber.price }<i>元</i></span>
+                                    </div>
+                                </div>
+                                <div className="carProportion">
+                                    <span className="span1">车牌占比分析</span>
+                                    <div className="analysisCarProportion">
+                                      <div className="isProportion">
+                                        <span>56%</span>
+                                        <img src="/img/money.svg"></img>
+                                        <p>沪 牌</p>
+                                      </div>
+                                      <div className="isnotProportion">
+                                        <span>44%</span>
+                                        <img src="/img/money2.svg"></img>
+                                        <p>非 沪 牌</p>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 })
@@ -217,4 +252,4 @@ export default class ParkingAnalysis extends Component {
         </div>
     }
 
-}
+} 
