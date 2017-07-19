@@ -46,11 +46,11 @@ export default class LifeOSUV extends Component {
         in: '33% 27% 22% 20.5% 22.5% 46%',
         offset: '-37%',
         tags: [
-          { title: '广场', percent: 23 },
-          { title: '优惠券', percent: 20 },
-          { title: '电影', percent: 17 },
-          { title: '闪购', percent: 14 },
-          { title: '门店', percent: 12 },
+          { title: '广场', percent: 23, line: 'M130,3 L50,80 L0,80' },
+          { title: '优惠券', percent: 20, line: 'M150,130 L20,0 L0,0' },
+          { title: '电影', percent: 17, line: 'M3,75 L80,0 L145,0' },
+          { title: '闪购', percent: 14, line: 'L167,3' },
+          { title: '门店', percent: 12, line: 'L70,70 L118,70' },
           { title: '其它', percent: 14, line: 'L120,120 L154,120' }
         ]
       },
@@ -59,12 +59,12 @@ export default class LifeOSUV extends Component {
         in: '32% 30% 17% 14.5% 22.5% 51%',
         offset: '-46%',
         tags: [
-          { title: '广场', percent: 29 },
-          { title: '优惠券', percent: 19 },
-          { title: '电影', percent: 9 },
-          { title: '闪购', percent: 19 },
-          { title: '门店', percent: 11 },
-          { title: '其它', percent: 13 }
+          { title: '广场', percent: 29, line: 'L100,100 L145,100' },
+          { title: '优惠券', percent: 19, line: 'M170,3 L50,70 L0,70' },
+          { title: '电影', percent: 9, line: 'M120,3  L0,3' },
+          { title: '闪购', percent: 19, line: 'M150,100 L50,0 L0,0' },
+          { title: '门店', percent: 11, line: 'M3,110 L80,0 L127,0' },
+          { title: '其它', percent: 13, line: 'M3,110 L90,0 L134,0' }
         ]
       }
     };
