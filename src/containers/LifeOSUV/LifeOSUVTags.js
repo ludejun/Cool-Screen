@@ -15,8 +15,6 @@ export default class LifeOSUVTags extends Component {
         opacity: '0.540194746'
       },
       2: {
-        stroke: '#108EE9',
-        strokeWidth: '1',
         fill: 'black',
         fillOpacity: '1',
         filter: 'url(#tags-filter-2)'
@@ -63,23 +61,12 @@ export default class LifeOSUVTags extends Component {
               in="shadowInnerInner1"
             />
           </filter>
-          <linearGradient
-            x1="42.6479507%"
-            y1="-26.362553%"
-            x2="78.2587965%"
-            y2="117.349448%"
-            id="tags-linearGradient-3"
-          >
+          <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="tags-linearGradient-3">
             <stop stopColor="#00B6FF" offset="0%" />
             <stop stopColor="#2D0094" stopOpacity="0.091796875" offset="100%" />
           </linearGradient>
-          <linearGradient
-            x1="32.0846325%"
-            y1="-64.3980795%"
-            x2="78.2587965%"
-            y2="117.349448%"
-            id="tags-linearGradient-4"
-          >
+
+          <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="tags-linearGradient-4">
             <stop stopColor="#32ECD9" offset="0%" />
             <stop stopColor="#1B861E" stopOpacity="0.091796875" offset="100%" />
           </linearGradient>
@@ -88,7 +75,9 @@ export default class LifeOSUVTags extends Component {
         <g id="osuv-tags" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
 
           <use xlinkHref="#tags-path-1" {...this.typelist[this.props.type]} />
-
+          {this.props.type == 2
+            ? <use xlinkHref="#tags-path-1" stroke="#108EE9" strokeWidth="1" />
+            : null}
           <text
             id="35%"
             fontFamily="PingFangSC-Regular, PingFang SC"

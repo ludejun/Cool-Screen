@@ -6,6 +6,7 @@ import AndroidLogo from './AndroidLogo';
 import LifeOSUVDotBg from './LifeOSUVDotBg';
 import LifeOSUVRoundBoard from './LifeOSUVRoundBoard';
 import LifeOSUVTags from './LifeOSUVTags';
+import LifeOSUVTagLine from './LifeOSUVTagLine';
 
 import './LifeOSUV.less';
 import './LifeOSUVAnime.less';
@@ -13,6 +14,11 @@ import './LifeOSUVAnime.less';
 export default class LifeOSUV extends Component {
   constructor() {
     super();
+
+    this.state = {
+      highlightTag: 0
+    };
+    this.highlightInterval = null;
 
     //     1	ios	广场	27712	23.060855961188	46.121711922376
     // 2	ios	优惠券	24214	20.1499554793666	40.2999109587331
@@ -45,7 +51,7 @@ export default class LifeOSUV extends Component {
           { title: '电影', percent: 17 },
           { title: '闪购', percent: 14 },
           { title: '门店', percent: 12 },
-          { title: '其它', percent: 14 }
+          { title: '其它', percent: 14, line: 'L120,120 L154,120' }
         ]
       },
       android: {
@@ -54,17 +60,30 @@ export default class LifeOSUV extends Component {
         offset: '-46%',
         tags: [
           { title: '广场', percent: 29 },
-          { title: '闪购', percent: 19 },
           { title: '优惠券', percent: 19 },
-          { title: '门店', percent: 11 },
           { title: '电影', percent: 9 },
+          { title: '闪购', percent: 19 },
+          { title: '门店', percent: 11 },
           { title: '其它', percent: 13 }
         ]
       }
     };
   }
 
+  componentDidMount() {
+    // clearInterval(this.highlightInterval);
+    // this.highlightInterval = setInterval(() => {
+    //   this.setState({
+    //     highlightTag: (this.state.highlightTag + 1) % 6
+    //   });
+    // }, 2000);
+  }
+  componentWillUnmount() {
+    // clearInterval(this.highlightInterval);
+  }
+
   render() {
+    const { highlightTag } = this.state;
     return (
       <div className="life-osuv flex-row flex-center dark-bg">
         <HeaderTitle title="智慧生活：按照移动OS类型／应用UV对比" />
@@ -84,8 +103,17 @@ export default class LifeOSUV extends Component {
               : <AndroidLogo className="center-logo" />}
             <WDButtonSvg className="title-button" title={v} />
             {this.list[v].tags.map((t, i) =>
-              <LifeOSUVTags key={i} className={`tags tags-${v}-${i}`} {...t} type={i % 3} />
+              <div>
+                <LifeOSUVTagLine className={`tag-line tag-line-${v}-${i}`} line={t.line} />
+                <LifeOSUVTags key={i} className={`tags tags-${v}-${i}`} {...t} type={i % 3} />
+              </div>
             )}
+            {false &&
+              <LifeOSUVTags
+                className={`tags tags-${v}-${highlightTag}`}
+                {...this.list[v].tags[highlightTag]}
+                type={highlightTag % 3}
+              />}
           </div>
         )}
       </div>
