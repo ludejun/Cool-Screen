@@ -117,7 +117,9 @@ class customerPic extends Component {
                             </svg>
                         </div>
                     <div className="customer-box">
-                        <div className="scan-div"/>
+                        <div className="scan-container">
+                            <div className="scan-div"/>
+                        </div>
                         <svg
                             ref={'svgLayout'}
                             className="svg-left"
