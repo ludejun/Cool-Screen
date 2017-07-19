@@ -33,9 +33,6 @@
       animation-delay+: 1s;
     }
   }
-  // .round-circle-3 {
-  //   animation: OsuvShineLogo 5s ease-out infinite;
-  // }
   @keyframes OsuvShineLogo {
     0% {
       opacity+: 0;
@@ -70,15 +67,173 @@
       transform+: rotate(360deg);
     }
   }
-  // 10, 11, 20
-  .round-circle-4 {
-    // 970.35986328125
-    // stroke-dashoffset: 0;
-    // stroke-dasharray: 50% 30% 30% 40% 20%;
+  .panel-ios {
+    .round-circle-4 {
+      animation: OsuvDashToZeroInIos 10s ease-in-out infinite;
+    }
+    @keyframes OsuvDashToZeroInIos {
+      0% {
+        stroke-dasharray: 0 200%;
+      }
+      20% {
+        stroke-dasharray: 33% 27% 22% 20.5% 22.5% 46%;
+      }
+    }
+    .round-circle-5 {
+      animation: OsuvDashToZeroOutIos 10s ease-in-out infinite;
+    }
+    @keyframes OsuvDashToZeroOutIos {
+      0% {
+        stroke-dasharray: 0 200%;
+      }
+      20% {
+        stroke-dasharray: 46% 40% 34% 27% 25% 28%;
+      }
+    }
   }
-  .round-circle-5 {
-    // 1196.4632568359375
-    stroke-dashoffset: 0;
-    // stroke-dasharray: 50%;
+  .panel-android {
+    .round-circle-4 {
+      animation: OsuvDashToZeroInAndroid 10s ease-in-out infinite;
+    }
+    @keyframes OsuvDashToZeroInAndroid {
+      0% {
+        stroke-dasharray: 0 200%;
+      }
+      20% {
+        stroke-dasharray: 32% 30% 17% 14.5% 22.5% 51%;
+      }
+    }
+    .round-circle-5 {
+      animation: OsuvDashToZeroOutAndroid 10s ease-in-out infinite;
+    }
+    @keyframes OsuvDashToZeroOutAndroid {
+      0% {
+        stroke-dasharray: 0 200%;
+      }
+      20% {
+        stroke-dasharray: 57% 39% 37% 21% 18% 28%;
+      }
+    }
+  }
+  .tag-line {
+    &-circle {
+      opacity: 0;
+    }
+    &-line {
+      opacity: 0;
+    }
+  }
+  .tags {
+    opacity: 0;
+  }
+  .tag-group {
+    &-0 {
+      .tag-line {
+        &-circle {
+          animation: OsuvTagCircle 10s ease infinite;
+        }
+        &-line {
+          animation: OsuvTagLine 10s linear infinite;
+        }
+      }
+      &.tags {
+        animation: OsuvTags 10s ease-out infinite;
+      }
+      @keyframes OsuvTagCircle {
+        0%,
+        20%,
+        60% {
+          opacity: 0;
+        }
+        21%,
+        59% {
+          opacity: 1;
+        }
+      }
+      @keyframes OsuvTagLine {
+        0%,
+        21% {
+          stroke-dasharray: 0 200%;
+          opacity: 1;
+        }
+        31%,
+        59% {
+          stroke-dasharray: 200%;
+          opacity: 1;
+        }
+        60% {
+          opacity: 0;
+        }
+      }
+      @keyframes OsuvTags {
+        0%,
+        30% {
+          transform: scaleX(0);
+          opacity: 1;
+        }
+        33%,
+        59% {
+          transform: scaleX(1);
+          opacity: 1;
+        }
+        60% {
+          opacity: 0;
+        }
+      }
+    }
+    &-1 {
+      .tag-line {
+        &-circle {
+          animation: OsuvTagCircle1 10s ease infinite;
+        }
+        &-line {
+          animation: OsuvTagLine1 10s linear infinite;
+        }
+      }
+      &.tags {
+        animation: OsuvTags1 10s ease-out infinite;
+      }
+      @keyframes OsuvTagCircle1 {
+        0%,
+        100%,
+        60% {
+          opacity: 0;
+        }
+        61%,
+        99% {
+          opacity: 1;
+        }
+      }
+      @keyframes OsuvTagLine1 {
+        0%,
+        61% {
+          stroke-dasharray: 0 200%;
+          opacity: 1;
+        }
+        71%,
+        99% {
+          stroke-dasharray: 200%;
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes OsuvTags1 {
+        0%,
+        70% {
+          transform: scaleX(0);
+          opacity: 1;
+        }
+        73%,
+        99% {
+          transform: scaleX(1);
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    }
   }
 }

@@ -21,6 +21,7 @@ export default class LifeOSUVTags extends Component {
       }
     };
   }
+
   render() {
     return (
       <svg
@@ -73,7 +74,6 @@ export default class LifeOSUVTags extends Component {
         </defs>
 
         <g id="osuv-tags" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-
           <use xlinkHref="#tags-path-1" {...this.typelist[this.props.type]} />
           {this.props.type == 2
             ? <use xlinkHref="#tags-path-1" stroke="#108EE9" strokeWidth="1" />
@@ -89,7 +89,7 @@ export default class LifeOSUVTags extends Component {
             <tspan x="65.2" y="38" fontSize="20">%</tspan>
           </text>
           <text
-            id="闪购购"
+            id="title"
             fontFamily="PingFangSC-Regular, PingFang SC"
             fontSize="24"
             fontWeight="normal"

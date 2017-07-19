@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+// import anime from 'animejs';
 
 export default class LifeOSUVRoundBoard extends Component {
+  // componentDidMount() {
+  //   const lineDrawing = anime({
+  //     targets: '.round-circle-4',
+  //     strokeDasharray: '200%', // '200%', // ['33%', '27%', '22%', '20.5%', '22.5%', '46%'],
+  //     easing: 'linear', // 'easeInOutSine',
+  //     delay: (el, i) => {
+  //       return 1000;
+  //     },
+  //     duration: 2000,
+  //     // direction: 'reverse',
+  //     loop: true
+  //   });
+  // }
   render() {
     return (
       <svg
@@ -12,7 +26,6 @@ export default class LifeOSUVRoundBoard extends Component {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         {...this.props}
       >
-        <title>仪表盘</title>
         <defs>
           <linearGradient x1="50%" y1="0%" x2="50%" y2="98.4913106%" id="board-linearGradient-1">
             <stop stopColor="#2ED1FE" offset="0%" />
