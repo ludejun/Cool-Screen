@@ -3,42 +3,23 @@ import HeaderTitle from './Layout/HeaderTitle';
 import './VisAnalysis.less';
 
 const yArray = [
+    1,
     2,
+    3,
     4,
-    6,
-    8,
-    10,
-    12,
-    14,
-    16,
-    18,
-    20,
-    22
-];
-const xArray = [
     5,
-    10,
-    15,
-    20,
-    25,
-    30,
-    35,
-    40,
-    45,
-    50,
-    55,
-    60,
-    65,
-    70,
-    75,
-    80,
-    85,
-    90,
-    95,
-    100,
-    105,
-    110
+    6,
+    7,
+    8,
+    9,
+    10
 ];
+const xArray = [];
+((xArray)=>{
+    for(let i = 1; i <= 30; i++){
+        xArray.push(i*2);
+    }
+})(xArray)
 const circle = [
     {
         x: 350,
@@ -219,64 +200,76 @@ const circle = [
 ]
 const ballArray = [
     {
-        chinese: '警察',
-        english: 'police',
-        x: 17,
-        y: 19,
+        chinese: '程序员',
+        english: 'Programer',
+        x: 5,
+        y: 9.7,
+        width: 50
+    }, {
+        chinese: '学生',
+        english: 'Student',
+        x: 8,
+        y: 5.7,
+        width: 40
+    }, {
+        chinese: '金融业',
+        english: 'finance',
+        x: 13,
+        y: 4.5,
+        width: 37
+    }, {
+        chinese: '医生',
+        english: 'doctor',
+        x: 18,
+        y: 4.3,
+        width: 46
+    }, {
+        chinese: '设计师',
+        english: 'designer',
+        x: 23,
+        y: 3.6,
+        width: 44
+    }, {
+        chinese: '教师',
+        english: 'teacher',
+        x: 28,
+        y: 4,
         width: 50
     }, {
         chinese: '司机',
         english: 'driver',
-        x: 35,
-        y: 14,
+        x: 33,
+        y: 5.9,
+        width: 35
+    }, {
+        chinese: '导游',
+        english: 'guide',
+        x: 38,
+        y: 2.2,
+        width: 55
+    }, {
+        chinese: '保险销售',
+        english: 'insurance sales',
+        x: 43,
+        y: 3.6,
         width: 40
     }, {
-        chinese: '教师',
-        english: 'teacher',
-        x: 24,
-        y: 7,
-        width: 30
-    }, {
-        chinese: '医生',
-        english: 'doctor',
-        x: 64,
-        y: 15,
+        chinese: '公共管理',
+        english: 'public administration',
+        x: 50,
+        y: 3.6,
         width: 56
     }, {
-        chinese: '工人',
-        english: 'worker',
-        x: 50,
-        y: 8,
-        width: 63
+        chinese: '百货',
+        english: 'department store',
+        x: 53,
+        y: 4.4,
+        width: 50
     }, {
-        chinese: '公务员',
-        english: 'civil servant',
-        x: 83,
-        y: 20,
-        width: 78
-    }, {
-        chinese: '律师',
-        english: 'lawyer',
-        x: 74,
-        y: 75,
-        width: 20
-    }, {
-        chinese: '金融',
-        english: 'finance',
-        x: 87,
-        y: 10,
-        width: 60
-    }, {
-        chinese: '服务业',
-        english: 'services',
-        x: 103,
-        y: 18,
-        width: 40
-    }, {
-        chinese: '私企',
-        english: 'private enterprises',
-        x: 115,
-        y: 10,
+        chinese: '科研',
+        english: 'scientific research',
+        x: 58,
+        y: 4.9,
         width: 50
     }
 ];
@@ -286,8 +279,8 @@ const minX = 210;
 const maxX = 1730;
 const ySpan = (maxY - minY) / yArray.length;
 const xSpan = (maxX - minX) / xArray.length;
-const xPer = xSpan / 5;
-const yPer = ySpan / 2;
+const xPer = xSpan / 2;
+const yPer = ySpan / 1;
 export default function VisAnalysis() {
     return <div>
         <HeaderTitle title="智慧生活： 客群黏性分析"/>
@@ -454,12 +447,12 @@ export default function VisAnalysis() {
 }
                     <text
                         className="left-degree"
-                        x={(maxX - 18 + 30).toString()}
+                        x={(maxX - 18 + 50).toString()}
                         y={(maxY + 30).toString()}>时常（分钟）</text>
                     {ballArray.map((it, index) => {
                         return <g key={index} className="circle-dump">
                             <circle
-                                cx={(it.x * xPer + minX - 50).toString()}
+                                cx={(it.x * xPer + minX - 70).toString()}
                                 cy={(maxY - it.y * yPer).toString()}
                                 r={(it.width + 20).toString()}
                                 stroke="none"
@@ -467,7 +460,7 @@ export default function VisAnalysis() {
                                 opacity="0.5"/>
                             <circle
                                 className="circle-scale"
-                                cx={(it.x * xPer + minX - 50).toString()}
+                                cx={(it.x * xPer + minX - 70).toString()}
                                 cy={(maxY - it.y * yPer).toString()}
                                 r={it
                                 .width
@@ -475,11 +468,11 @@ export default function VisAnalysis() {
                                 stroke="none"
                                 fill="url(#grad1)"/>
                             <text
-                                x={(it.x * xPer + minX - 50).toString()}
+                                x={(it.x * xPer + minX - 70).toString()}
                                 y={(maxY - it.y * yPer).toString()}
                                 className="left-degree">{it.chinese}</text>
                             <text
-                                x={(it.x * xPer + minX - 50).toString()}
+                                x={(it.x * xPer + minX - 70).toString()}
                                 y={(maxY - it.y * yPer + 20).toString()}
                                 className="english-degree"
                                 textLength="47"

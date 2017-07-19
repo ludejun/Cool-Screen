@@ -6,6 +6,9 @@
     .customer-svg-container{
         position:relative;
         margin-top:100px;
+        .svg{
+            margin:0 30px;
+        }
         .layout-cicle{
             animation:circlef 2s linear infinite
         }
@@ -53,16 +56,22 @@
                 padding:50px;
                 position:relative;
                 overflow:hidden;
-                
-                .scan-div{
-                    display: inline-block;
-                    right:55px;
-                    left:55px;
+                .scan-container{
+                    width:100%;
                     height:100%;
-                    top:100%;
                     position:absolute;
-                    background: url('/img/scan.png') no-repeat;
-                    animation: runin 6s linear infinite;
+                    top:0;
+                    left:0;
+                    .scan-div{
+                        display: inline-block;
+                        right:70px;
+                        left:70px;
+                        height:100%;
+                        top:100%;
+                        position:absolute;
+                        background: url('/img/scan.png') no-repeat;
+                        animation: runin 6s linear infinite;
+                    }
                 }
                 .elipse-rotate{
                     transform-style: preserve-3d;
@@ -119,7 +128,7 @@
                         top:100%;
                     }
                     100% {
-                        top:-100%;
+                        top:-24%;
                     }
                 }
                 @keyframes wfloat {
