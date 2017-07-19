@@ -3,7 +3,7 @@ import Echarts from 'echarts-for-react';
 import {WDMapBasic, BgAnimation, WDAreaMap} from '../components';
 import {plazaGeo} from '../assets/map/wdplaza.geo';
 import {cityGeo} from '../assets/map/city.geo';
-import {provinceValue, areaValue, proArea} from '../assets/map/mapAreaValue';
+
 import HeaderTitle from './Layout/HeaderTitle';
 import { getBaseFontSize } from '../utils';
 import './innerScatter.less';

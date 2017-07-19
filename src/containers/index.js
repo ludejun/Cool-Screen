@@ -6,8 +6,8 @@ export { default as HeaderTitle } from './Layout/HeaderTitle';
 
 // 智慧生活
 export { default as VisAnalysis } from './VisAnalysis';
-export { default as LifeMobile } from './Life/LifeMobile';
-export { default as LifeOSUV } from './Life/LifeOSUV';
+export { default as LifeMobile } from './LifeMobile';
+export { default as LifeOSUV } from './LifeOSUV';
 export { default as MapScatter } from './Life/MapScatter';
 
 // 商圈分析
@@ -19,13 +19,13 @@ export { default as BusinessAnalysis } from './BusinessAnalysis';
 export { default as Home } from './Home';
 export { default as HomeInternet } from './Home/HomeInternet';
 export { default as Commerce } from './Home/Commerce';
-//客群画像
+// 客群画像
 export { default as CustomerPic } from './customerPic';
 
-//数字商业
+// 数字商业
 export { default as InnerScatter } from './InnerScatter';
 // 停车分析
 export { default as ParkingAnalysis } from './parkingAnalysis/parkingAnalysis';
 
-//运营商对比
+// 运营商对比
 export { default as OperatorsComparison } from './OperatorsComparison';
