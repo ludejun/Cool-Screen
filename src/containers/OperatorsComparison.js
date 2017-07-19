@@ -3,24 +3,25 @@
  */
 import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
-import HeaderTitle from './Layout/HeaderTitle'
-import './OperatorsComparison.less'
+import HeaderTitle from './Layout/HeaderTitle';
+import './OperatorsComparison.less';
 import { getBaseFontSize } from '../utils';
+import {operators} from '../assets/map/mapAreaValue';
 const cir = [0,1,2,3,4];
 
-var pillarChart = function(data){
-  return(
-    <div className="pillar-container clearfix">
-      {data.map((item,i)=>(
-        <span key={i} className="pillar" style={{width:data[i]/192*getBaseFontSize()}}></span>
-      ))}
-    </div>
-  );
-}
+// var pillarChart = function(data){
+//   return(
+//     {/*<div className="pillar-container clearfix">*/}
+//       {/*{data.map((item,i)=>(*/}
+//         {/*<span key={i} className="pillar" style={{width:data[i]/192*getBaseFontSize()}}></span>*/}
+//       {/*))}*/}
+//     {/*</div>*/}
+//   );
+// }
 export default class operatorsComparison extends Component {
 
   componentDidMount (){
-
+    console.log(operators)
   }
   render () {
     return (
@@ -29,6 +30,17 @@ export default class operatorsComparison extends Component {
         <div className="content-wrap clearfix">
           <div className="comparison-map">
             <div className="map-container">
+              {operators.map((item,i) =>(
+                <div key={i} className="yys-wrap">
+                  <div className="pillar-container clearfix">
+                    {item.value.map((v,i)=>(
+                      <span key={i} className="pillar" style={{width:v/400000/192*getBaseFontSize()}}></span>
+                    ))}
+                  </div>
+                  <span key={i} className="province-name">{item.name}</span>
+                </div>
+              ))}
+              <img className="base-img" src="/img/operatorsmap.png" alt=""/>
             </div>
             <div className="operators-move">
               <img className="base-seat" src="img/base.png" alt=""/>
