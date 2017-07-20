@@ -399,29 +399,34 @@ export default class RecomandBuilding extends Component {
               in="shadowBlurOuter1"
             />
           </filter>
+
+          <circle id="building-filter-37" fill="#79FFF9" cx="0" cy="0" r="6" />
+          <circle id="building-filter-38" fill="#FA6767" cx="0" cy="0" r="6" />
+
         </defs>
 
         <g
-          id="left"
+          id="RecomandBuilding"
           transform="translate(1, 1)"
           stroke="none"
           strokeWidth="1"
           fill="none"
           fillRule="evenodd"
         >
-          <g id="build-big-dot" strokeDasharray="5.471999816894531">
-            <use
-              fill="black"
-              fillOpacity="1"
-              filter="url(#building-filter-3)"
-              xlinkHref="#building-path-2"
-            />
-            <use
-              stroke="url(#building-linearGradient-1)"
-              strokeWidth="1.824"
-              xlinkHref="#building-path-2"
-            />
-          </g>
+          <use
+            fill="black"
+            fillOpacity="1"
+            filter="url(#building-filter-3)"
+            stroke="url(#building-linearGradient-1)"
+            xlinkHref="#building-path-2"
+          />
+          <use
+            className="build-big-dot"
+            stroke="url(#building-linearGradient-1)"
+            strokeWidth="1.824"
+            strokeDasharray="5.5"
+            xlinkHref="#building-path-2"
+          />
           <g id="build-big-3">
             <use
               fill="black"
@@ -782,34 +787,37 @@ export default class RecomandBuilding extends Component {
           />
           <polyline
             id="building-path-red"
+            className="building-path-red"
             stroke="url(#building-linearGradient-33)"
             strokeWidth="3.84"
             strokeDasharray="8.640000000000001,5.76"
             points="232 225.148642 272.40502 236.472604 289.508755 197.483792 472.433975 249.318896 415.039983 414.223209 556.463941 454.989828"
           />
-          <ellipse
+
+          <circle
             id="oval-red-5-shadow"
-            fillOpacity="0.50999999"
+            fillOpacity="0.5"
             fill="#FA6767"
             cx="557"
             cy="455"
-            rx="11"
-            ry="11"
+            r="11"
           />
-          <circle id="oval-red-5" fill="#F76768" cx="557" cy="455" r="6" />
-          <circle id="oval-red-4" fill="#F76768" cx="427" cy="379" r="6" />
-          <circle id="oval-red-3" fill="#F76768" cx="461" cy="246" r="6" />
-          <circle id="oval-red-2" fill="#F76768" cx="341" cy="212" r="6" />
-          <ellipse
+
+          <use xlinkHref="#building-filter-38" x="557" y="455" />
+          <use xlinkHref="#building-filter-38" x="427" y="379" />
+          <use xlinkHref="#building-filter-38" x="461" y="246" />
+          <use xlinkHref="#building-filter-38" x="341" y="212" />
+
+          <circle
             id="oval-red-1-shadow"
-            fillOpacity="0.50999999"
+            fillOpacity="0.5"
             fill="#FA6767"
             cx="232.5"
             cy="226.5"
-            rx="13.5"
-            ry="13.5"
+            r="13.5"
           />
           <circle id="oval-red-1" fill="#FA6767" cx="232.5" cy="226.5" r="7.5" />
+
           <g id="building-path-green" strokeLinecap="round" strokeLinejoin="round">
             <use
               fill="black"
@@ -820,31 +828,32 @@ export default class RecomandBuilding extends Component {
             <use
               stroke="url(#building-linearGradient-34)"
               strokeWidth="5.76"
+              className="building-path-blue"
               xlinkHref="#building-path-35"
             />
           </g>
-          <ellipse
+          <circle
             id="oval-green-6-shadow"
-            fillOpacity="0.50999999"
+            fillOpacity="0.5"
             fill="#79FFF9"
             cx="654"
             cy="491"
-            rx="11"
-            ry="11"
+            r="11"
           />
-          <circle id="oval-green-6" fill="#79FFF9" cx="654" cy="491" r="6" />
-          <circle id="oval-green-5" fill="#79FFF9" cx="657" cy="367" r="6" />
-          <circle id="oval-green-4" fill="#79FFF9" cx="507" cy="346" r="6" />
-          <circle id="oval-green-3" fill="#79FFF9" cx="367" cy="270" r="6" />
-          <circle id="oval-green-2" fill="#79FFF9" cx="249" cy="210" r="6" />
-          <ellipse
+
+          <use xlinkHref="#building-filter-37" x="654" y="491" />
+          <use xlinkHref="#building-filter-37" x="657" y="367" />
+          <use xlinkHref="#building-filter-37" x="507" y="346" />
+          <use xlinkHref="#building-filter-37" x="367" y="270" />
+          <use xlinkHref="#building-filter-37" x="249" y="210" />
+
+          <circle
             id="oval-green-1-shadow"
-            fillOpacity="0.50999999"
+            fillOpacity="0.5"
             fill="#79FFF9"
             cx="188.5"
             cy="349.5"
-            rx="13.5"
-            ry="13.5"
+            r="13.5"
           />
           <circle id="oval-green-1" fill="#79FFF9" cx="188.5" cy="349.5" r="7.5" />
           <text

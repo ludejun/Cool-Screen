@@ -6,6 +6,7 @@ import RecomandBuilding from './RecomandBuilding';
 import RecomandTitle from './RecomandTitle';
 
 import './DigitalRecomand.less';
+import './DigitalRecomandAnime.less';
 
 export default class DigitalRecomand extends Component {
   constructor() {
