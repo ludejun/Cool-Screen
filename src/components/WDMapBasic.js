@@ -14,6 +14,7 @@ class WDMapBasic extends Component {
       let echarts_Instance = this.refs.echarts_Instance.getEchartsInstance();
       echarts_Instance.clear();
       if (nextProps) {
+        echarts_Instance.clear();
         echarts_Instance.setOption(this.getOption(nextProps));
       }
     }
@@ -43,7 +44,6 @@ class WDMapBasic extends Component {
         }
       }
     };
-
     return {
       ...optionStatic,
       ...optionCustom
