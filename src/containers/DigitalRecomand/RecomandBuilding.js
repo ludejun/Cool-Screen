@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
 
 export default class RecomandBuilding extends Component {
+  constructor() {
+    super();
+    this.state = {
+      pathRedPoints: ''
+    };
+    this.pointsInterval = null;
+  }
+  componentDidMount() {
+    const points = '232 225.148642, 272.40502 236.472604, 289.508755 197.483792, 472.433975 249.318896, 415.039983 414.223209, 556.463941 454.989828'.split(
+      ','
+    );
+    let index = 0;
+    clearInterval(this.pointsInterval);
+    this.pointsInterval = setInterval(() => {
+      this.setState({
+        pathRedPoints: index === 0 ? points[index] : this.state.pathRedPoints + points[index]
+      });
+      index = (index + 1) % 6;
+    }, 500);
+  }
+  componentWillUnmount() {
+    clearInterval(this.pointsInterval);
+  }
   render() {
+    const { pathRedPoints } = this.state;
     return (
       <svg
         // width="838px"
@@ -791,7 +815,7 @@ export default class RecomandBuilding extends Component {
             stroke="url(#building-linearGradient-33)"
             strokeWidth="3.84"
             strokeDasharray="8.640000000000001,5.76"
-            points="232 225.148642 272.40502 236.472604 289.508755 197.483792 472.433975 249.318896 415.039983 414.223209 556.463941 454.989828"
+            points={pathRedPoints} // "232 225.148642 272.40502 236.472604 289.508755 197.483792 472.433975 249.318896 415.039983 414.223209 556.463941 454.989828"
           />
 
           <circle
