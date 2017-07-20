@@ -12,7 +12,6 @@ export { default as MapScatter } from './Life/MapScatter';
 
 // 商圈分析
 export { default as DistrictPlaza } from './DistrictPlaza';
-export { default as DistrictBrandTag } from './DistrictBrandTag';
 export { default as BusinessAnalysis } from './BusinessAnalysis';
 
 // 超大屏
@@ -21,9 +20,13 @@ export { default as HomeInternet } from './Home/HomeInternet';
 export { default as Commerce } from './Home/Commerce';
 // 客群画像
 export { default as CustomerPic } from './customerPic';
-
+// 广场竞品客流分析
+export { default as CompeteAnalysis } from './CompeteAnalysis/competeAnalysis';
 // 数字商业
 export { default as InnerScatter } from './InnerScatter';
+export { default as DistrictBrandTag } from './DistrictBrandTag';
+export { default as DigitalRecomand } from './DigitalRecomand';
+
 // 停车分析
 export { default as ParkingAnalysis } from './parkingAnalysis/parkingAnalysis';
 
