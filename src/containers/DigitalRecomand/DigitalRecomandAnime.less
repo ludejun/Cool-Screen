@@ -1,0 +1,38 @@
+.digital-recomand {
+  .build-big-dot {
+    // stroke-dasharray: 0, 200%;
+    // stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
+    animation: buildDotMove 1s linear infinite;
+  }
+  @keyframes buildDotMove {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 11;
+    }
+  }
+  .building-path-blue {
+    animation: buildPathMoveBlue 10s linear infinite;
+  }
+  @keyframes buildPathMoveBlue {
+    0% {
+      stroke-dasharray: 0 949.9126586914062;
+    }
+    100% {
+      stroke-dasharray: 949.9126586914062;
+    }
+  }
+  .building-path-red {
+    animation: buildPathMoveRed 10s linear infinite;
+  }
+  @keyframes buildPathMoveRedo {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 10;
+    }
+  }
+}

@@ -37,6 +37,24 @@
     //   animation: lifeMobileDotRect 15s linear infinite;
     // }
   }
+  @keyframes lifeMobileCircleRect {
+    0% {
+      stroke-dashoffset: 500;
+    }
+    100% {
+      stroke-dashoffset: 3590+500;
+    }
+  }
+  @keyframes lifeMobileHeartbeat {
+    0%,
+    100%,
+    50% {
+      transform+: scale(1);
+    }
+    25% {
+      transform+: scale(1.5);
+    }
+  }
   // @keyframes lifeMobileDotRect {
   //   0% {
   //     stroke-dashoffset: 0;
@@ -80,24 +98,6 @@
   //     stroke-dasharray: 0, 3590;
   //   }
   // }
-  @keyframes lifeMobileCircleRect {
-    0% {
-      stroke-dashoffset: 500;
-    }
-    100% {
-      stroke-dashoffset: 3590+500;
-    }
-  }
-  @keyframes lifeMobileHeartbeat {
-    0%,
-    100%,
-    50% {
-      transform+: scale(1);
-    }
-    25% {
-      transform+: scale(1.5);
-    }
-  }
   .life-mobile-radar-bg {
     // radar背景一圈一圈闪
     .generate-radarovals(10);
