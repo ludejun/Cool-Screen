@@ -20,7 +20,8 @@ export { default as HomeInternet } from './Home/HomeInternet';
 export { default as Commerce } from './Home/Commerce';
 // 客群画像
 export { default as CustomerPic } from './customerPic';
-
+// 广场竞品客流分析
+export { default as CompeteAnalysis } from './CompeteAnalysis/competeAnalysis';
 // 数字商业
 export { default as InnerScatter } from './InnerScatter';
 export { default as DistrictBrandTag } from './DistrictBrandTag';

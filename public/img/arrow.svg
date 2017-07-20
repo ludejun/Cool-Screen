@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="车牌分析" transform="translate(-1142.000000, -566.000000)" fill="#09CDC6">
+            <g id="上海" transform="translate(396.000000, 254.000000)">
+                <g id="车牌占比" transform="translate(746.000000, 307.000000)">
+                    <polygon id="Triangle" transform="translate(5.000000, 10.000000) rotate(90.000000) translate(-5.000000, -10.000000) " points="5 5 10 15 5 12.5 0 15"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -10,12 +10,47 @@
 	.map-scatter-img{
 		width:960px;
 	}
-	.map-list{
-
+	.area-map-tag{
+		animation: area-map 2s ease-out;
 	}
+
+	@keyframes area-map{
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 100;
+		}
+	}
+
 	.area-map{
 		width:467px;
 		position: absolute;
+
+		.map-container{
+			width:306px;
+			height:238px;
+			position: absolute;
+			top:0;
+		}
+		.map{
+		}
+
+		.map-0{
+			width:130%;
+			height:130% !important;
+			margin-left: -5%;
+		}
+		.map-1{
+			width:130%;
+			height:130% !important;
+			margin-left: 25%;
+		}
+		.map-2{
+			width:130%;
+			height:130% !important;
+			margin-left: 25%;
+		}
 	}
 
 	.top-left{
@@ -50,44 +85,78 @@
 	}
 	.line{
 		position: absolute;
-		background: linear-gradient(0deg, rgba(5,13,50,0.00) 0%, #030A24 93%, #0A0A0A 100%);
+		background: linear-gradient(to bottom right, #0057FF 60%, #0EFFB5 100%);
 	}
 
 	.line-0-0{
 		height:1px;
-		width:432px;
-		left:468px;
-		top:100px;
+		width:535px;
+		left:465px;
+		top:96px;
 	}
 	.line-0-1{
-		height:206px;
+		height:230px;
 		width:1px;
-		left:900px;
-		top:100px;
+		left:1001px;
+		top:96px;
 	}
 	.line-1-0{
 		height:1px;
-		width:150px;
-		left:999px;
-		top:100px;
+		width:50px;
+		left:1103px;
+		top:96px;
 	}
 	.line-1-1{
-		height:366px;
+		height:384px;
 		width:1px;
-		left:999px;
-		top:100px;
+		left:1102px;
+		top:96px;
 	}
 	.line-2-0{
 		height:1px;
-		width:280px;
+		width:153px;
 		left:999px;
+		bottom:183px;
 	}
 	.line-2-1{
-		height:88,px;
+		height:77px;
 		width:1px;
 		left:999px;
+		bottom:106px;
 	}
 
+	.circle{
+		border-radius:50%;
+		width:4px;
+		height:4px;
+		display:inline-block;
+    box-shadow: 0 0 4px 0 rgba(43,31,3,0.72);
+		position:absolute;
+		background:linear-gradient(rgba(113,255,163,0.39) 50%, #FFF42E 50%);
+		border: 1px solid #0DFFB5;
+		animation: circle-area 1s infinite;
+	}
 
+	@keyframes circle-area{
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+			tranform: scale(1.1);
+		}
+	}
 
+	.circle-0{
+		left: 999px;
+		top: 326px;
+	}
+	.circle-1{
+		left: 1101px;
+		top:480px;
+	}
+	.circle-2{
+		left: 998px;
+		bottom:103px;
+	}
 }

@@ -43,7 +43,8 @@ ReactDOM.render(
       <Route path="life-mobile" component={Routes.LifeMobile} />
       // 数字金融：客群画像
       <Route path="customerPic" component={Routes.CustomerPic} />
-
+      // 广场竞品客流分析
+      <Route path="compete-analysis" component={Routes.CompeteAnalysis} />
     </Route>
   </Router>,
   document.getElementById('main')
