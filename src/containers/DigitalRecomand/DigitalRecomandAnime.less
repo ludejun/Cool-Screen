@@ -25,14 +25,15 @@
     }
   }
   .building-path-red {
+    //596.4539794921875
     animation: buildPathMoveRed 10s linear infinite;
   }
-  @keyframes buildPathMoveRedo {
+  @keyframes buildPathMoveRed {
     0% {
-      stroke-dashoffset: 0;
+      stroke-dasharray: 0, 596.4539794921875;
     }
     100% {
-      stroke-dashoffset: 10;
+      stroke-dasharray: 596.4539794921875;
     }
   }
 }
