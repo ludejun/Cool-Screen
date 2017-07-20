@@ -13,6 +13,7 @@ export { default as WDImagePercent } from './WDImagePercent';
 // maps
 export { default as WDMapBasic } from './WDMapBasic';
 export { default as WDAreaMap } from './WDAreaMap';
+export { default as WDCurve } from './WDMapCurve';
 
 // svgs
 export { default as WDLogoSvg } from './WDLogoSvg';
