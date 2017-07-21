@@ -25,3 +25,6 @@ export { default as AngelAside } from './AngelAside';
 // background
 export { default as BgAnimation } from './BgAnimation';
 export { default as WDAnalysis } from './WDAnalysis';
+
+// three
+export {default as ThreeModel } from './ThreeModel';
