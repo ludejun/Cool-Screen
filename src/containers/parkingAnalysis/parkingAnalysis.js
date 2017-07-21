@@ -164,7 +164,7 @@ export default class ParkingAnalysis extends Component {
                 {['1', '2', '3'].map((i, index) => {
                     return <div key={index} className={`bar-container-${i} bar-container`}>
                         <div className="angel-style left-top-angel">
-                            <AngelAside/>
+                            <AngelAside />
                         </div>
                         <div className="angel-style rigth-top-angel">
                             <AngelAside/>
@@ -269,7 +269,7 @@ export default class ParkingAnalysis extends Component {
                                                 </span>
                                                 <span className="under-line">单次平均停车消费</span>
                                             </div>
-                                            <div className="arrow-content" style={{paddingLeft:30}}>
+                                            <div className="arrow-content" style={{paddingLeft:40}}>
                                                 <span>
                                                     <svg
                                                         width="23px"
@@ -337,7 +337,7 @@ export default class ParkingAnalysis extends Component {
                                                 </div>
                                                 <div className="content-column left">
                                                     <div>44%</div>
-                                                    <div>
+                                                    <div className="img-svg2">
                                                         <img className="img-svg" src="/img/money2.svg"></img>
                                                     </div>
                                                     <div>非沪牌</div>
