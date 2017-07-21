@@ -16,7 +16,7 @@ export default function AngelAside(props) {
                             fill="#FFFFFF"
                             opacity="0.204144022"
                             points="281 0.5 14 0 0 14 0.5 251 5.5 243.5 5.5 192.497549 12 185 12 77.4709342 20 69.5 20 39.2965234 41.5 15 139.505102 15 150.5 7.5 272.025717 7.5"></polygon>
-                        <polygon points="-1,14.5 -1,0 14.1516237,0" fill={props.color || "#030f21"}/>
+
                         <polyline
                             id="Path-103"
                             stroke="#108EE9"
