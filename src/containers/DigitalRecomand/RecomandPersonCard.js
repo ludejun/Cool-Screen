@@ -66,7 +66,10 @@ export default class RecomandPersonCard extends Component {
               in="shadowBlurOuter1"
             />
           </filter>
-          <polygon id="card-path-3" points="349 62.724517 374.407519 37 534 37 534 284 349 284" />
+          <path
+            d="M349.5,62.9298103 L374.616444,37.5 L533.5,37.5 L533.5,283.5 L349.5,283.5 L349.5,62.9298103 Z"
+            id="card-path-3"
+          />
           <mask
             id="card-mask-4"
             maskContentUnits="userSpaceOnUse"
@@ -271,6 +274,7 @@ export default class RecomandPersonCard extends Component {
 
           <use
             id="info-div"
+            className="build-big-dot"
             stroke={this.typelist[type].InfoStrokeColor}
             mask="url(#card-mask-4)"
             strokeWidth="2"
@@ -279,33 +283,15 @@ export default class RecomandPersonCard extends Component {
             strokeDasharray="5"
             xlinkHref="#card-path-3"
           />
+
           <use
-            id="hanabi-path"
-            className="transCenter"
+            id="hanabi-right"
+            className="trans-center hanabi-right"
+            stroke={this.typelist[type].InfoStrokeColor}
+            strokeWidth="2"
             xlinkHref="#card-path-3"
-            transform="scale(0.85)"
           />
 
-          <rect
-            id="hanabi-right"
-            fill="url(#card-linearGradient-5)"
-            transform="translate(519.000000, 235.000000) scale(1, -1) translate(-519.000000, -235.000000) "
-            x="518"
-            y="213"
-            width="2"
-            height="44"
-            rx="1"
-          />
-          <rect
-            id="hanabi-left"
-            fill="url(#card-linearGradient-5)"
-            transform="translate(362.000000, 105.000000) scale(1, -1) rotate(-180.000000) translate(-362.000000, -105.000000) "
-            x="361"
-            y="83"
-            width="2"
-            height="44"
-            rx="1"
-          />
           {this.typelist[type].cardInfo.map((v, i) =>
             <text
               // id="gender"

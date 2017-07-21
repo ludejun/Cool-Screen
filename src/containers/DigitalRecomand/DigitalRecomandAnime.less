@@ -1,39 +1,337 @@
 .digital-recomand {
   .build-big-dot {
-    // stroke-dasharray: 0, 200%;
-    // stroke-dashoffset: 0;
     stroke-dashoffset: 0;
-    animation: buildDotMove 1s linear infinite;
+    animation: buildDotMove 100s linear infinite;
   }
   @keyframes buildDotMove {
     0% {
       stroke-dashoffset: 0;
     }
     100% {
-      stroke-dashoffset: 11;
+      stroke-dashoffset: 100%;
+    }
+  }
+  .path-point-shadow {
+    transform-origin: center;
+    animation: buildPathPointShadow 2s ease-in-out infinite alternate;
+  }
+  @keyframes buildPathPointShadow {
+    0% {
+      transform: scale(0.7);
+    }
+    100% {
+      transform: scale(1);
     }
   }
   .building-path-blue {
-    animation: buildPathMoveBlue 10s linear infinite;
+    animation: buildPathMoveBlue 15s linear infinite;
   }
   @keyframes buildPathMoveBlue {
-    0% {
+    0%,
+    16% {
       stroke-dasharray: 0 949.9126586914062;
     }
-    100% {
+    100%,
+    80% {
       stroke-dasharray: 949.9126586914062;
     }
   }
   .building-path-red {
-    //596.4539794921875
-    animation: buildPathMoveRed 10s linear infinite;
+    animation: buildPathMoveRed 15s linear infinite;
   }
   @keyframes buildPathMoveRed {
+    0%,
+    20% {
+      stroke-dasharray: 0 596.4539794921875;
+    }
+    100%,
+    80% {
+      stroke-dasharray: 596.4539794921875;
+    }
+  }
+  .tag-line {
+    &-green {
+      .generate-tagline-blue(5);
+      .generate-tagline-blue(@n, @i:0) when (@i =< @n) {
+        &-@{i} {
+          animation: 15s linear infinite;
+          animation-name: ~"buildTagShowBlue@{i}";
+        }
+        .generate-tagline-blue(@n, (@i + 1));
+      }
+    }
+    &-red {
+      .generate-tagline-red(4);
+      .generate-tagline-red(@n, @i:0) when (@i =< @n) {
+        &-@{i} {
+          animation: 15s linear infinite;
+          animation-name: ~"buildTagShowRed@{i}";
+        }
+        .generate-tagline-red(@n, (@i + 1));
+      }
+    }
+    @keyframes buildTagShowBlue0 {
+      0% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      16% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowBlue1 {
+      0%,
+      16% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      32% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowBlue2 {
+      0%,
+      32% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      48% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowBlue3 {
+      0%,
+      48% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      64% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowBlue4 {
+      0%,
+      64% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      80% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowBlue5 {
+      0%,
+      80% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      96% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowRed0 {
+      0% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      20% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowRed1 {
+      0%,
+      20% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      40% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowRed2 {
+      0%,
+      40% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      60% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowRed3 {
+      0%,
+      60% {
+        stroke-dasharray: 0 100%;
+      }
+      100%,
+      80% {
+        stroke-dasharray: 100%;
+      }
+    }
+    @keyframes buildTagShowRed4 {
+      0%,
+      80% {
+        stroke-dasharray: 0 100%;
+      }
+      100% {
+        stroke-dasharray: 100%;
+      }
+    }
+  }
+  .tag-text {
+    &-green {
+      .generate-text-blue(5);
+      .generate-text-blue(@n, @i:0) when (@i =< @n) {
+        &-@{i} {
+          animation: 15s linear infinite;
+          animation-name: ~"buildTagTextShowBlue@{i}";
+        }
+        .generate-text-blue(@n, (@i + 1));
+      }
+    }
+    &-red {
+      .generate-text-red(4);
+      .generate-text-red(@n, @i:0) when (@i =< @n) {
+        &-@{i} {
+          animation: 15s linear infinite;
+          animation-name: ~"buildTagTextShowRed@{i}";
+        }
+        .generate-text-red(@n, (@i + 1));
+      }
+    }
+  }
+  @keyframes buildTagTextShowBlue0 {
     0% {
-      stroke-dasharray: 0, 596.4539794921875;
+      opacity: 0;
+    }
+    100%,
+    16% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowBlue1 {
+    0%,
+    16% {
+      opacity: 0;
+    }
+    100%,
+    32% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowBlue2 {
+    0%,
+    32% {
+      opacity: 0;
+    }
+    100%,
+    48% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowBlue3 {
+    0%,
+    48% {
+      opacity: 0;
+    }
+    100%,
+    64% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowBlue4 {
+    0%,
+    64% {
+      opacity: 0;
+    }
+    100%,
+    80% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowBlue5 {
+    0%,
+    80% {
+      opacity: 0;
+    }
+    100%,
+    96% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowRed0 {
+    0% {
+      opacity: 0;
+    }
+    100%,
+    20% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowRed1 {
+    0%,
+    20% {
+      opacity: 0;
+    }
+    100%,
+    40% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowRed2 {
+    0%,
+    40% {
+      opacity: 0;
+    }
+    100%,
+    60% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowRed3 {
+    0%,
+    60% {
+      opacity: 0;
+    }
+    100%,
+    80% {
+      opacity: 1;
+    }
+  }
+  @keyframes buildTagTextShowRed4 {
+    0%,
+    80% {
+      opacity: 0;
     }
     100% {
-      stroke-dasharray: 596.4539794921875;
+      opacity: 1;
+    }
+  }
+  .cards-div {
+    animation: buildCardDivUpDown 2s ease-in-out infinite alternate;
+  }
+  @keyframes buildCardDivUpDown {
+    0% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(5px);
+    }
+  }
+  .hanabi-right {
+    transform-origin: center;
+    transform: scale(0.85);
+    stroke-dashoffset: 0;
+    stroke-dasharray: 25 845.196044921875/2;
+    animation: buildHanabiRight 10s linear infinite reverse;
+  }
+  @keyframes buildHanabiRight {
+    //845.196044921875
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 845.196044921875+50;
     }
   }
 }
