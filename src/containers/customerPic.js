@@ -68,11 +68,12 @@ class customerPic extends Component {
                                         id="Path-154"
                                         fill="#108EE9"
                                         points="1 124 25.5 150.5 25.5 529.033024 11.5737965 542.959227 11.5737965 826.502033 57.5 879 80.5 875.5 108.5 902 283.525712 902 302.5 891.5 709.622832 891.5 720.561588 902.438757 1522.50538 902.438757 1539 891 1793.73761 891 1841.87022 842.867392 1841.87022 561.461912 1825 539 1825 356.777608 1848.5 323 1847 850 1788 909.5 66.9999274 909.5 1 831"></polyline>
-                                    <circle className="circle-1 layout-cicle" id="Oval-29" fill="#108EE9" cx="1840" cy="142" r="9"></circle>
-                                    <circle className="circle-2 layout-cicle" id="Oval-29-Copy" fill="#108EE9" cx="1840" cy="176" r="9"></circle>
-                                    <circle className="circle-3 layout-cicle" id="Oval-29-Copy-2" fill="#108EE9" cx="1840" cy="210" r="9"></circle>
-                                    <circle className="circle-4 layout-cicle" id="Oval-29-Copy-3" fill="#108EE9" cx="1840" cy="244" r="9"></circle>
-                                    <circle className="circle-5 layout-cicle" id="Oval-29-Copy-4" fill="#108EE9" cx="1840" cy="278" r="9"></circle>
+                                    <circle className="circle-1 layout-cicle" id="Oval-29" fill="#108EE9" cx="1840" cy="130" r="8"></circle>
+                                    <circle className="circle-2 layout-cicle" id="Oval-29-Copy" fill="#108EE9" cx="1840" cy="158" r="8"></circle>
+                                    <circle className="circle-3 layout-cicle" id="Oval-29-Copy-2" fill="#108EE9" cx="1840" cy="190" r="8"></circle>
+                                    <circle className="circle-4 layout-cicle" id="Oval-29-Copy-3" fill="#108EE9" cx="1840" cy="222" r="8"></circle>
+                                    <circle className="circle-5 layout-cicle" id="Oval-29-Copy-4" fill="#108EE9" cx="1840" cy="254" r="8"></circle>
+                                    <circle className="circle-6 layout-cicle" id="Oval-29-Copy-5" fill="#108EE9" cx="1840" cy="286" r="8"></circle>
                                     <polyline
                                         id="Path-206"
                                         stroke="#108EE9"
