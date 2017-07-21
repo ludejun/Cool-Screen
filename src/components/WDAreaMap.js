@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import ReactEcharts from 'echarts-for-react';
 import '../assets/map/china';
 import echarts from 'echarts';
-import area from '../assets/map/area.geo.json';
-echarts.registerMap('chinaArea', area);
 
 class WDAreaMap extends Component {
   getInstance() {
@@ -12,75 +10,67 @@ class WDAreaMap extends Component {
   }
 
   getOption() {
-    const { optionCustom = {},areaData, mapType, areaValue} = this.props;
+    const { optionCustom = {}, data, name, map} = this.props;
+    echarts.registerMap(name, map);
+    const seriesConfig = {
+      type: 'scatter',
+      coordinateSystem: 'geo',
+      symbolSize: 2,
+    };
+
     const optionStatic = {
-      tooltip: {
-        trigger: 'item'
-      },
-      geo: {
-				map:'china',
-        label: {
-          emphasis: {
-            show: false
-          }
-        },
-        itemStyle: {
-          normal: {
-            areaColor: '#19274A',
-            borderColor: '#10B3FF'
-          }
-        }
-      },
-			// visualMap: {
-      //   min: Math.min.apply(null, areaValue.map(i=>{return i.value})),
-      //   max: Math.max.apply(null, areaValue.map(i=>{return i.value})),
-      //   show: false,
-      //   inRange: {
-      //     color: ['#e0ffff', '#006edd']
-      //   },
-      //   calculable: true,
-      //   precision: 2
-      // },
-      series: [
-        {
-          type: 'map',
-          geoIndex:0,
-          label: {
-            emphasis: {
-              show: false
-            }
-          },
-          roam: false,
+      geo:{
+        map:name,
+        roam:true,
           itemStyle: {
-             normal: {
-                 borderColor: 'white',
-                 color: function(obj) {
-                    // console.log("obj",obj.data.name, obj.data.region);
-                     var color = "";
-                     switch (obj.data.region) {
-                         case "华北":
-                             color = "red";
-                             break;
-                         case "华东":
-                              console.log(obj.data.name);
-                             color = "pink";
-                             break;
-                         case "华南":
-                             color = "#49296a";
-                             break;
-                         case "华西":
-                             color = "#b3bb31";
-                             break;
-                         default:
-                            color = 'yellow';
-                     }
-                     return color;
-                 }
-             }
-         },
-          data: areaData
-        }
-      ]
+            normal: {
+              areaColor: '#19274A',
+              borderColor: '#10B3FF'
+            },
+            emphasis: {
+              areaColor: '#389BB7',
+              borderWidth: 0
+            }
+          }
+      },
+      series: [
+          {
+            ...seriesConfig,
+            name: '弱',
+            itemStyle: {
+              normal: {
+                shadowBlur: 2,
+                shadowColor: 'rgba(37, 140, 249, 0.8)',
+                color: 'rgba(37, 140, 249, 0.8)'
+              }
+            },
+            data: data[0]
+          },
+          {
+            ...seriesConfig,
+            name: '中',
+            itemStyle: {
+              normal: {
+                shadowBlur: 2,
+                shadowColor: 'rgba(14, 241, 242, 0.8)',
+                color: 'rgba(14, 241, 242, 0.8)'
+              }
+            },
+            data: data[1]
+          },
+          {
+            ...seriesConfig,
+            name: '强',
+            itemStyle: {
+              normal: {
+                shadowBlur: 2,
+                shadowColor: 'rgba(255, 255, 255, 0.8)',
+                color: 'rgba(255, 255, 255, 0.8)'
+              }
+            },
+            data: data[2]
+          }
+       ]
     };
 
     return {

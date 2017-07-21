@@ -88,54 +88,113 @@ export const provinceValue = [
     value: 2
   }
 ];
-export const areaValue = [
-  {
-    "name": "华东区",
-    value: 83619
-  }, {
-    "name": "中南区",
-    value: 69384
-  }, {
-    "name": "西南区",
-    value: 45931
-  }, {
-    "name": "东北区",
-    value: 26467
-  }, {
-    "name": "华北区",
-    value: 20775
-  }, {
-    "name": "西北区",
-    value: 5550
-  }
-];
+export const areaValue =
+{
+  "华东区":83619,
+  "华南区":69384,
+  "华中区":69384,
+  "西南区":45931,
+  "东北区":26467,
+  "华北区":20775,
+  "西北区":5550
+};
 
 export const proArea = [
   {
-    name: '江苏',
-    region: ' 华东'
-  }, {
-    name: '浙江',
-    region: ' 华东'
+    name: '上海',
+    area: '华东区'
   }, {
     name: '安徽',
-    region: ' 华东'
-  }, {
-    name: '福建',
-    region: ' 华东'
-  }, {
-    name: '江西',
-    region: ' 华东'
+    area: '华东区'
   }, {
     name: '山东',
-    region: ' 华东'
+    area: '华东区'
   }, {
-    name: '台湾',
-    region: ' 华东'
+    name: '福建',
+    area: '华东区'
   }, {
-    name: '上海',
-    region: ' 华东'
-  }
+    name: '江苏',
+    area: '华东区'
+  }, {
+    name: '浙江',
+    area: '华东区'
+  }, {
+    name: '广西',
+    area: '华南区'
+  }, {
+    name: '广东',
+    area: '华南区'
+  }, {
+    name: '海南',
+    area: '华南区'
+  }, {
+    name: '河南',
+    area: '华中区'
+  }, {
+    name: '湖南',
+    area: '华中区'
+  }, {
+    name: '江西',
+    area: '华中区'
+  }, {
+    name: '湖北',
+    area: '华中区'
+  }, {
+    name: '北京',
+    area: '华北区'
+  }, {
+    name: '天津',
+    area: '华北区'
+  }, {
+    name: '河北',
+    area: '华北区'
+  }, {
+    name: '山西',
+    area: '华北区'
+  }, {
+    name: '内蒙古',
+    area: '华北区'
+  }, {
+    name: '宁夏',
+    area: '西北区'
+  }, {
+    name: '新疆',
+    area: '西北区'
+  }, {
+    name: '甘肃',
+    area: '西北区'
+  }, {
+    name: '陕西',
+    area: '西北区'
+  }, {
+    name: '青海',
+    area: '西北区'
+  }, {
+    name: '重庆',
+    area: '西南区'
+  }, {
+    name: '云南',
+    area: '西南区'
+  }, {
+    name: '贵州',
+    area: '西南区'
+  }, {
+    name: '西藏',
+    area: '西南区'
+  }, {
+    name: '四川',
+    area: '西南区'
+  },
+  {
+    name: '辽宁',
+    area: '东北区'
+  }, {
+    name: '黑龙江',
+    area: '东北区'
+  }, {
+    name: '吉林',
+    area: '东北区'
+  },
 ];
 export const operators = [
   {name:"北京",value:[5728833,11185777,23078399]},

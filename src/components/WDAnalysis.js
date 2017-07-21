@@ -205,15 +205,6 @@ export default class Analysis extends Component {
       });
     }, 3000);
 
-    anime({
-      targets: '.Rectangle-19',
-      translateX: -40,
-      easing: 'easeInOutQuad',
-      direction: 'alternate',
-      duration: 400,
-      loop: true
-    });
-
     for (let i = 0; i < 4; i++) {
       anime({
         targets: '.tag',
@@ -330,11 +321,13 @@ export default class Analysis extends Component {
                 fillOpacity="0.600883152"
                 fill="#108EE9"
                 opacity="0.498471467"
-                x="40%"
+                x="47%"
                 y="8"
                 width="180"
                 height="12"
-              />
+              >
+                <animate attributeName="x" values="47%;29%;47%" dur="3s" repeatCount="indefinite" />
+              </rect>
             </g>
           </svg>
           <div className="right-sub-container right-sub-container-first">

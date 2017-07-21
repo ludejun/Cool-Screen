@@ -13,6 +13,7 @@ export { default as WDImagePercent } from './WDImagePercent';
 // maps
 export { default as WDMapBasic } from './WDMapBasic';
 export { default as WDAreaMap } from './WDAreaMap';
+export { default as WDCurve } from './WDMapCurve';
 
 // svgs
 export { default as WDLogoSvg } from './WDLogoSvg';
@@ -24,3 +25,6 @@ export { default as AngelAside } from './AngelAside';
 // background
 export { default as BgAnimation } from './BgAnimation';
 export { default as WDAnalysis } from './WDAnalysis';
+
+// three
+export {default as ThreeModel } from './ThreeModel';
