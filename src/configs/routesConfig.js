@@ -22,24 +22,30 @@ const routeConfig = {
     },
     {
       path: 'home',
-      breadcrumbName: '超大屏 - 首页',
-      component: Routes.Home
+      childRoutes: [
+        {
+          path: 'sum',
+          breadcrumbName: '超大屏',
+          component: Routes.HomeSum
+        },
+        {
+          path: 'internet',
+          breadcrumbName: '超大屏 - 右边',
+          component: Routes.HomeInternet
+        },
+        {
+          path: 'commerce',
+          breadcrumbName: '超大屏 - 左边',
+          component: Routes.Commerce
+        },
+        {
+          path: 'global',
+          breadcrumbName: '超大屏 - 中间地球',
+          component: Routes.Home
+        }
+      ]
     },
-    {
-      path: 'home-internet',
-      breadcrumbName: '超大屏 - 右边',
-      component: Routes.HomeInternet
-    },
-    {
-      path: 'commerce',
-      breadcrumbName: '超大屏 - 左边',
-      component: Routes.Commerce
-    },
-    {
-      path: 'home-sum',
-      breadcrumbName: '超大屏',
-      component: Routes.HomeSum
-    },
+
     {
       component: Routes.Main,
       childRoutes: [
