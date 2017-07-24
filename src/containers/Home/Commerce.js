@@ -23,9 +23,6 @@ export default class Commerce extends Component {
     ];
     resizeSquarePage();
   }
-  componentDidMount() {
-
-  }
   render() {
     const consume = ['31%', '43%', '26%'];
     const list = [
