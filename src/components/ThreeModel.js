@@ -3,8 +3,11 @@ import * as THREE from 'three';
 import OBJLoader from 'three-obj-loader';
 OBJLoader(THREE);
 
-export default class extends Component {
+export default class Three extends Component {
   componentDidMount() {
+    const ThreeDom = this.refs.container;
+    const id = `three${Math.random()}`;
+    ThreeDom.id = id;
     const {width,height,modelPath} = this.props;
     let container;
     let camera, scene, renderer;
@@ -16,7 +19,7 @@ export default class extends Component {
     const init = () => {
       console.log('init...');
 
-      container = document.getElementById('three-container');
+      container = document.getElementById(id);
       camera = new THREE.PerspectiveCamera( 45, width / height, 1, 2000 );
       camera.position.z = 250;
 
@@ -122,9 +125,8 @@ export default class extends Component {
     };
 
     const render = ()=> {
-
-      camera.position.x += ( mouseX - camera.position.x ) * .05;
-      camera.position.y += ( - mouseY - camera.position.y ) * .05;
+      camera.position.x += ( 97.25 - camera.position.x ) * .05;
+      camera.position.y += ( - 9.25 - camera.position.y ) * .05;
       if(model) model.rotation.y += 0.05;
 
       camera.lookAt( scene.position );
@@ -139,7 +141,7 @@ export default class extends Component {
 
   render () {
     return (
-      <div id="three-container" style={this.props.style}></div>
+      <div ref={'container'} style={this.props.style}></div>
     );
   }
 
