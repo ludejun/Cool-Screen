@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import RoutesConfig from '../configs/routesConfig';
+
 import './app.less';
 
 export default class App extends Component {

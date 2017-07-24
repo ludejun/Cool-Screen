@@ -283,15 +283,15 @@ export default class RecomandPersonCard extends Component {
             strokeDasharray="5"
             xlinkHref="#card-path-3"
           />
-          {/*
           <use
             id="hanabi-right"
             className="trans-center hanabi-right"
+            transform="scale(0.85) translate(78, 28)"
             stroke={this.typelist[type].InfoStrokeColor}
             strokeWidth="2"
             xlinkHref="#card-path-3"
           />
-        */}
+          {/*
           <polygon
             id="hanabi-path"
             className="trans-center hanabi-right"
@@ -299,6 +299,7 @@ export default class RecomandPersonCard extends Component {
             strokeWidth="2"
             points="363 76.766899 384.562056 55 520 55 520 264 363 264"
           />
+        */}
 
           {this.typelist[type].cardInfo.map((v, i) =>
             <text
@@ -474,7 +475,7 @@ export default class RecomandPersonCard extends Component {
                 <tspan x="213" y="173">终点</tspan>
               </text>
             </g>
-            : <g id="steps-blue" transform="translate(40.000000, 30.000000)">
+            : <g id="steps-blue" transform="translate(40, 30)">
               <use
                 id="step-card-path-shadow-blue"
                 xlinkHref="#card-path-17"
