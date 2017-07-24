@@ -10,15 +10,15 @@ export default class WDPillar extends Component {
 
   componentDidMount(){
     // Set up our canvas
-  	var canvas = document.createElement('canvas');
-  	var oDiv = document.getElementById('div1');
+  	let canvas = document.createElement('canvas');
+  	let oDiv = document.getElementById('div1');
   	canvas.width = oDiv.offsetWidth;
   	canvas.height = oDiv.offsetHeight;
   	oDiv.appendChild(canvas);
-  	var ctx = canvas.getContext('2d');
-  	var y = 80;
-    var x = 40;
-  	var color = '#ff8d4b';
+  	let ctx = canvas.getContext('2d');
+  	let y = 80;
+    let x = 40;
+  	let color = '#ff8d4b';
 
   	// Animation function
   	function draw() {
@@ -42,7 +42,7 @@ export default class WDPillar extends Component {
   	// Colour adjustment function
   	function shadeColor(color, percent) {
   		color = color.substr(1);
-  		var num = parseInt(color, 16),
+  		let num = parseInt(color, 16),
   			amt = Math.round(2.55 * percent),
   			R = (num >> 16) + amt,
   			G = (num >> 8 & 0x00FF) + amt,
