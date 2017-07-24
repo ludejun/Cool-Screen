@@ -23,9 +23,7 @@ export default class DigitalRecomand extends Component {
         </div>
         <div className="flex-col cards-div">
           {['blue', 'red'].map(v =>
-            <div className="card-div" key={v}>
-              <RecomandPersonCard className="recomand-card" type={v} />
-            </div>
+            <RecomandPersonCard key={v} className="recomand-card" type={v} />
           )}
         </div>
       </div>

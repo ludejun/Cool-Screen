@@ -23,6 +23,9 @@ export default class Commerce extends Component {
     ];
     resizeSquarePage();
   }
+  componentDidMount() {
+
+  }
   render() {
     const consume = ['31%', '43%', '26%'];
     const list = [
@@ -92,10 +95,7 @@ export default class Commerce extends Component {
         <div className="flex-row commerce-bottom">
           <div className="flex1">
             <div className="pillar">
-              <div className="pillar-animation">
-                <WDPillar />
-                <div className="oval" />
-              </div>
+              <WDPillar />
               <p className="pillar-title">广场内消费等级占比</p>
             </div>
             <div className="flex-row flex-center">
