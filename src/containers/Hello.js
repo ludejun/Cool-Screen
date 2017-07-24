@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
+import * as THREE from 'three';
 import HeaderTitle from './Layout/HeaderTitle';
 import './hello.less';
+import {ThreeModel} from '../components';
 
 export default class Hello extends Component {
+  componentDidMount() {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize( 400, 400 );
+    this.refs.threeTest.appendChild( renderer.domElement );
+    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+    const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    const cube = new THREE.Mesh( geometry, material );
+    scene.add( cube );
+
+    camera.position.z = 5;
+    renderer.render( scene, camera );
+  }
+
   render() {
     return (
       <div style={{textAlign: 'center'}}>
@@ -20,9 +38,11 @@ export default class Hello extends Component {
               <g id="边框"
                  transform="translate(1622.500000, 122.000000) scale(-1, 1) translate(-1622.500000, -122.000000) translate(1326.000000, 97.000000)">
                 <g opacity="0.699898098">
-                  <polyline className="test-svg-polyline" id="Line" stroke="#108EE9" strokeWidth="3" strokeLinecap="square"
+                  <polyline className="test-svg-polyline" id="Line" stroke="#108EE9" strokeWidth="3"
+                            strokeLinecap="square"
                             points="2 49.5 127.5 49.5 174.5 20.5 415.5 20.5 453.5 49.5 593 49.5 563.5 9 507.5 9"></polyline>
-                  <circle className="test-svg-circle" id="Oval-7" stroke="#108EE9" cx="505.840359" cy="8.84035926" r="8.84035926"></circle>
+                  <circle className="test-svg-circle" id="Oval-7" stroke="#108EE9" cx="505.840359" cy="8.84035926"
+                          r="8.84035926"></circle>
                   <circle id="Oval-7" fill="#108EE9" cx="505.680719" cy="8.68071852" r="5.68071852"></circle>
                   <circle id="Oval-7" fill="#108EE9" cx="471" cy="32" r="5.68071852"></circle>
                   <circle id="Oval-7" fill="#108EE9" cx="494.333333" cy="32" r="5.68071852"></circle>
@@ -39,6 +59,12 @@ export default class Hello extends Component {
             </g>
           </g>
         </svg>
+
+
+        <p>测试Three</p>
+        <div ref="threeTest" style={{float:'left'}}></div>
+        <ThreeModel width={400} height={400} modelPath={'/model/male02/male02.obj'}/>
+        <ThreeModel width={400} height={400} modelPath={'/model/female02/female02.obj'}/>
       </div>
     );
   }

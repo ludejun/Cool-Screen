@@ -53,35 +53,18 @@
     padding: 0 44px;
     align-items: center;
   }
-  .pillar {
-    margin: 20px auto 220px;
-    width: 250px;
-    height: 145px;
-    .pillar-animation {
-      animation: pillarCommerce ease 2s infinite;
+  .pillar-title {
+    margin-bottom: 89px;
+    font-size: 25px;
+    text-align: center;
+  }
+  @keyframes pillarCommerce {
+    0%,
+    100% {
+      transform: translateY(0);
     }
-    .oval {
-      width: 207px;
-      height: 41px;
-      border: 1px solid #108EE9;
-      border-top: 0;
-      border-radius: 100%;
-      margin-left: -14px;
-      margin-top: -20px;
-    }
-    .pillar-title {
-      margin-top: 25px;
-      font-size: 25px;
-      text-align: center;
-    }
-    @keyframes pillarCommerce {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-2px);
-      }
+    40% {
+      transform: translateY(-2px);
     }
   }
   .image-bar-container {

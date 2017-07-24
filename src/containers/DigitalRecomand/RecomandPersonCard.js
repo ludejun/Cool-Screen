@@ -283,14 +283,23 @@ export default class RecomandPersonCard extends Component {
             strokeDasharray="5"
             xlinkHref="#card-path-3"
           />
-
           <use
             id="hanabi-right"
             className="trans-center hanabi-right"
+            transform="scale(0.85) translate(78, 28)"
             stroke={this.typelist[type].InfoStrokeColor}
             strokeWidth="2"
             xlinkHref="#card-path-3"
           />
+          {/*
+          <polygon
+            id="hanabi-path"
+            className="trans-center hanabi-right"
+            stroke={this.typelist[type].InfoStrokeColor}
+            strokeWidth="2"
+            points="363 76.766899 384.562056 55 520 55 520 264 363 264"
+          />
+        */}
 
           {this.typelist[type].cardInfo.map((v, i) =>
             <text
@@ -344,6 +353,7 @@ export default class RecomandPersonCard extends Component {
 
               <circle
                 id="step-red-4-shadow"
+                className="path-point-shadow"
                 fillOpacity="0.5"
                 fill="#FA6767"
                 cx="227"
@@ -363,6 +373,7 @@ export default class RecomandPersonCard extends Component {
 
               <circle
                 id="step-red-0-shadow"
+                className="path-point-shadow"
                 fillOpacity="0.5"
                 fill="#FA6767"
                 cx="21"
@@ -375,6 +386,7 @@ export default class RecomandPersonCard extends Component {
               <path
                 d="M21,30 L21,73.460342"
                 id="step-red-line-0"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-9)"
                 strokeDasharray="5"
                 strokeWidth="1"
@@ -382,38 +394,39 @@ export default class RecomandPersonCard extends Component {
               <path
                 d="M88,34 L88,77.460342"
                 id="step-red-line-1"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-9)"
                 strokeDasharray="5"
                 strokeWidth="1"
-                transform="translate(88.000000, 55.730171) scale(1, -1) translate(-88.000000, -55.730171) "
               />
               <path
                 d="M169,57 L169,100.460342"
                 id="step-red-line-2"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-9)"
                 strokeDasharray="5"
                 strokeWidth="1"
-                transform="translate(169.000000, 78.730171) scale(1, -1) translate(-169.000000, -78.730171) "
               />
               <path
                 d="M155,140 L155,183.460342"
                 id="step-red-line-3"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-9)"
                 strokeDasharray="5"
                 strokeWidth="1"
-                transform="translate(155.000000, 161.730171) scale(1, -1) translate(-155.000000, -161.730171) "
               />
               <path
                 d="M227,188 L227,231.460342"
                 id="step-red-line-4"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-9)"
                 strokeDasharray="5"
                 strokeWidth="1"
-                transform="translate(227.000000, 209.730171) scale(1, -1) translate(-227.000000, -209.730171) "
               />
 
               <text
                 id="step-0"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -423,6 +436,7 @@ export default class RecomandPersonCard extends Component {
               </text>
               <text
                 id="step1"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -432,6 +446,7 @@ export default class RecomandPersonCard extends Component {
               </text>
               <text
                 id="step2"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -441,6 +456,7 @@ export default class RecomandPersonCard extends Component {
               </text>
               <text
                 id="step3"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -450,6 +466,7 @@ export default class RecomandPersonCard extends Component {
               </text>
               <text
                 id="step-4"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -458,7 +475,7 @@ export default class RecomandPersonCard extends Component {
                 <tspan x="213" y="173">终点</tspan>
               </text>
             </g>
-            : <g id="steps-blue" transform="translate(40.000000, 30.000000)">
+            : <g id="steps-blue" transform="translate(40, 30)">
               <use
                 id="step-card-path-shadow-blue"
                 xlinkHref="#card-path-17"
@@ -470,6 +487,7 @@ export default class RecomandPersonCard extends Component {
 
               <circle
                 id="step-blue-5-shadow"
+                className="path-point-shadow"
                 fillOpacity="0.5"
                 fill="#79FFF9"
                 cx="255.25"
@@ -485,6 +503,7 @@ export default class RecomandPersonCard extends Component {
 
               <circle
                 id="step-blue-0-shadow"
+                className="path-point-shadow"
                 fillOpacity="0.5"
                 fill="#79FFF9"
                 cx="22"
@@ -496,42 +515,49 @@ export default class RecomandPersonCard extends Component {
               <path
                 d="M22,183.774655 L22,96"
                 id="step-blue-line-0"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-14)"
                 strokeDasharray="5"
               />
               <path
                 d="M52,113.774655 L52,26"
                 id="step-blue-line-1"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-14)"
                 strokeDasharray="5"
               />
               <path
                 d="M112,143.774655 L112,56"
                 id="step-blue-line-2"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-14)"
                 strokeDasharray="5"
               />
               <path
                 d="M182,182.774655 L182,95"
                 id="step-blue-line-3"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-14)"
                 strokeDasharray="5"
               />
               <path
                 d="M257,192.774655 L257,105"
                 id="step-blue-line-4"
+                className="path-line-up"
                 stroke="url(#card-linearGradient-14)"
                 strokeDasharray="5"
               />
               <path
                 d="M254.511014,249.318114 L186.489731,249.318114"
                 id="step-blue-line-5"
+                className="path-line-right"
                 stroke="url(#card-linearGradient-15)"
                 strokeDasharray="5"
               />
 
               <text
                 id="step-0"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -541,6 +567,7 @@ export default class RecomandPersonCard extends Component {
               </text>
               <text
                 id="step-1"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -550,6 +577,7 @@ export default class RecomandPersonCard extends Component {
               </text>
               <text
                 id="step-2"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -559,6 +587,7 @@ export default class RecomandPersonCard extends Component {
               </text>
               <text
                 id="step-3"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -568,6 +597,7 @@ export default class RecomandPersonCard extends Component {
               </text>
               <text
                 id="step-4"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
@@ -577,6 +607,7 @@ export default class RecomandPersonCard extends Component {
               </text>
               <text
                 id="step-5"
+                className="path-step-text"
                 fontFamily="PingFangSC-Regular, PingFang SC"
                 fontSize="14"
                 fontWeight="normal"
