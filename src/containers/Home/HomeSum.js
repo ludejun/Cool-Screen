@@ -7,7 +7,6 @@ export default class HomeSum extends Component{
 
 	render(){
 		return(
-			// <div>1111</div>
 			<div className="home-sum flex-row" >
 				<div className="flex1">
 					<Commerce/>
