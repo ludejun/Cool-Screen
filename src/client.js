@@ -10,6 +10,7 @@ ReactDOM.render(
       <Route path="home" components={Routes.Home} />
       <Route path="home-internet" component={Routes.HomeInternet} />
       <Route path="commerce" component={Routes.Commerce} />
+      <Route path="home-sum" component={Routes.HomeSum} />
 
       <Route component={Routes.Main}>
         <Route path="hello" component={Routes.Hello} />
