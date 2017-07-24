@@ -113,15 +113,22 @@
     text-align: center;
   }
   .money-container {
+    //height: 14px;
     font-size: 25px;
     margin: 25px 0;
     .money-city {
       width: 170px;
+      height: 50px;
+      font-size: 14px;
+    }
+    .flex1{
+      margin-left: 20px;
     }
     .money-color-container {
       height: 75%;
-      transform: translateY(15%);
+      //transform: translateY(15%);
       background: transparent;
+      height: 50px;
     }
     .money-color {
       height: 100%;
@@ -131,23 +138,32 @@
       position: relative;
       &::before {
         content: "";
-        border: 13.5px solid transparent;
-        border-right-color: #6D83F1;
+        width:0;
+        height:0;
+        border-top:25px solid transparent;
+        border-bottom:25px solid transparent;
+        border-right:25px solid #108EE9;
         position: absolute;
-        left: 0;
-        transform: translateX(-100%);
+        left: -9PX;
+        top: 0;
+        overflow: hidden;
+        //transform: translateX(-100%);
       }
       &::after {
         content: "";
-        border: 13.5px solid transparent;
-        border-left-color: #108EE9;
+        width:0;
+        height:0;
+        border-top:25px solid transparent;
+        border-bottom:25px solid transparent;
+        border-left:25px solid #6D83F1;
         position: absolute;
-        right: 0;
-        transform: translateX(99%);
+        right: -8PX;
+        top: 0;
+        //transform: translateX(99%);
       }
     }
     .money-num {
-      width: 156px;
+      width: 170px;
       text-align: right;
     }
   }

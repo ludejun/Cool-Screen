@@ -1,7 +1,56 @@
 import React, { Component } from 'react';
 
 export default class RecomandBuilding extends Component {
+  constructor() {
+    super();
+    // this.state = {
+    //   pathRedPoints: ''
+    // };
+    // this.pointsInterval = null;
+
+    this.typeList = {
+      red: {
+        tags: [
+          { text: 'B.C.R', x: '111.41', y: '26' },
+          { text: 'ochirly', x: '315.14', y: '56' },
+          { text: '亦谷', x: '534', y: '63' },
+          { text: '凯迪·米拉', x: '347', y: '642' },
+          { text: 'TGGC', x: '498.15', y: '690' }
+        ]
+      },
+      green: {
+        tags: [
+          { text: 'MIGAINO', x: '22.03', y: '541' },
+          { text: 'B.C.R', x: '43.41', y: '102' },
+          { text: 'lagogo', x: '197.04', y: '597' },
+          { text: 'JOPSHOP', x: '561.44', y: '142' },
+          { text: 'JNBY', x: '740', y: '194' },
+          { text: 'LuLualways', x: '606.28', y: '740' }
+        ]
+      }
+    };
+  }
+  // componentDidMount() {
+  //   const points = 'M231,227.148642 L239.332335,229.483873 M244.881924,231.039208 L253.185551,233.366392 M258.767621,234.93083 L267.046425,237.251059 M271.902294,237.339043 L275.365697,229.444044 M277.680922,224.166375 L281.153456,216.250561 M283.475875,210.956493 L286.925669,203.092515 M290.320327,199.997133 L298.606942,202.345292 M304.177719,203.923871 L312.530203,206.290695 M318.043977,207.85312 L326.344848,210.20532 M331.885467,211.775352 L340.181672,214.126229 M345.722271,215.696256 L354.01871,218.047199 M359.570775,219.620475 L367.881413,221.975442 M373.427485,223.54702 L381.739661,225.902422 M387.280343,227.472472 L395.595296,229.828662 M400,231.076813 L408,233.343755 M420.80084,236.9711 L412.512461,234.62244 M434.637921,240.892082 L426.330471,238.538019 M448.514257,244.824188 L440.217129,242.473049 M462.444886,248.771678 L454.04774,246.392198 M468.000538,250.345971 L471.433975,251.318896 L469.79424,256.030178 M465.059235,269.634788 L467.879759,261.530861 M460.325624,283.235389 L463.171509,275.058599 M455.595969,296.824626 L458.415773,288.722771 M450.833622,310.507792 L453.660256,302.386312 M446.120742,324.04883 L448.945182,315.933654 M441.40196,337.606826 L444.222042,329.504171 M436.652028,351.254321 L439.516932,343.022884 M431.902226,364.901445 L434.757075,356.698898 M427.147781,378.561908 L430.023072,370.300626 M422.442367,392.081493 L425.289406,383.901388 M417.710436,405.677268 L420.544273,397.535093 M415.813965,411.126205 L414.039983,416.223209 L417.121595,417.111509 M430.978847,421.105976 L422.659637,418.707896 M444.849342,425.10426 L436.523087,422.704149 M458.623607,429.074805 L450.28111,426.670012 M472.471217,433.066493 L464.20043,430.682371 M486.359223,437.069825 L478.035266,434.670376 M500.157133,441.047186 L491.818491,438.643504 M513.920384,445.014556 L505.712557,442.648582 M527.842328,449.027671 L519.439177,446.605393 M541.63554,453.003677 L533.374232,450.622287 M555.463941,456.989828 L547.194219,454.606012'.split(
+  //     ' '
+  //   );
+  //
+  //   let index = 0;
+  //   const timeGap = 10000 / 86;
+  //   clearInterval(this.pointsInterval);
+  //   this.pointsInterval = setInterval(() => {
+  //     this.setState({
+  //       pathRedPoints: index === 0 ? points[index] : this.state.pathRedPoints + points[index]
+  //     });
+  //     index = (index + 1) % 86;
+  //   }, timeGap); // timeGap = 9890 / 86;
+  // }
+  // componentWillUnmount() {
+  //   clearInterval(this.pointsInterval);
+  // }
+
   render() {
+    // const { pathRedPoints } = this.state;
     return (
       <svg
         // width="838px"
@@ -369,7 +418,7 @@ export default class RecomandBuilding extends Component {
             d="M189,349.077355 L256.103213,194 L380.406442,230.183626 L355.581738,303.855996 L553.713749,360.085024 L577.386665,284.707011 L638.635637,303.599877 C638.635637,303.599877 668.094721,320.825245 662.226866,345.273715 C656.35901,369.722185 629.002008,466.690488 629.002008,466.690488 L658.727936,474.635628 L654.521051,491"
             id="building-path-35"
           />
-          <filter
+          {/* <filter
             x="-5.8%"
             y="-5.2%"
             width="110.7%"
@@ -398,7 +447,7 @@ export default class RecomandBuilding extends Component {
               type="matrix"
               in="shadowBlurOuter1"
             />
-          </filter>
+          </filter>*/}
 
           <circle id="building-filter-37" fill="#79FFF9" cx="0" cy="0" r="6" />
           <circle id="building-filter-38" fill="#FA6767" cx="0" cy="0" r="6" />
@@ -785,31 +834,99 @@ export default class RecomandBuilding extends Component {
             fill="url(#building-linearGradient-32)"
             points="734.312685 525.543596 733.410517 539.14194 741.363312 512.903201 741.363312 501.030728"
           />
+
+          {/*
+            <use
+              fill="black"
+              fillOpacity="1"
+              // filter="url(#building-filter-36)"
+              xlinkHref="#building-path-35"
+            />
+        */}
+          <use
+            id="building-path-green"
+            className="building-path-blue"
+            stroke="url(#building-linearGradient-34)"
+            strokeWidth="5.76"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            xlinkHref="#building-path-35"
+          />
+          <circle
+            id="oval-green-6-shadow"
+            className="path-point-shadow"
+            fillOpacity="0.5"
+            fill="#79FFF9"
+            cx="654"
+            cy="491"
+            r="11"
+          />
+          {/* <use className="path-point-shadow" xlinkHref="#building-filter-37" x="654" y="491" />*/}
+
+          <use xlinkHref="#building-filter-37" x="654" y="491" />
+          <use className="tag-text-red-3" xlinkHref="#building-filter-37" x="657" y="367" />
+          <use className="tag-text-red-2" xlinkHref="#building-filter-37" x="507" y="346" />
+          <use className="tag-text-red-1" xlinkHref="#building-filter-37" x="367" y="270" />
+          <use className="tag-text-red-0" xlinkHref="#building-filter-37" x="249" y="210" />
+
+          <circle
+            id="oval-green-1-shadow"
+            className="path-point-shadow"
+            fillOpacity="0.5"
+            fill="#79FFF9"
+            cx="188.5"
+            cy="349.5"
+            r="13.5"
+          />
+          {/* <use
+            className="path-point-shadow"
+            xlinkHref="#building-filter-37"
+            x="188.5"
+            y="349.5"
+            r="13.5"
+          /> */}
+          <circle id="oval-green-1" fill="#79FFF9" cx="188.5" cy="349.5" r="7.5" />
           <polyline
             id="building-path-red"
             className="building-path-red"
             stroke="url(#building-linearGradient-33)"
             strokeWidth="3.84"
-            strokeDasharray="8.640000000000001,5.76"
+            strokeDasharray="8.64,5.76"
             points="232 225.148642 272.40502 236.472604 289.508755 197.483792 472.433975 249.318896 415.039983 414.223209 556.463941 454.989828"
           />
+          {/*
+          <path
+            // d="M231,227.148642 L239.332335,229.483873 M244.881924,231.039208 L253.185551,233.366392 M258.767621,234.93083 L267.046425,237.251059 M271.902294,237.339043 L275.365697,229.444044 M277.680922,224.166375 L281.153456,216.250561 M283.475875,210.956493 L286.925669,203.092515 M290.320327,199.997133 L298.606942,202.345292 M304.177719,203.923871 L312.530203,206.290695 M318.043977,207.85312 L326.344848,210.20532 M331.885467,211.775352 L340.181672,214.126229 M345.722271,215.696256 L354.01871,218.047199 M359.570775,219.620475 L367.881413,221.975442 M373.427485,223.54702 L381.739661,225.902422 M387.280343,227.472472 L395.595296,229.828662 M400,231.076813 L408,233.343755 M420.80084,236.9711 L412.512461,234.62244 M434.637921,240.892082 L426.330471,238.538019 M448.514257,244.824188 L440.217129,242.473049 M462.444886,248.771678 L454.04774,246.392198 M469.79424,256.030178 L471.433975,251.318896 L468.000538,250.345971 M465.059235,269.634788 L467.879759,261.530861 M460.325624,283.235389 L463.171509,275.058599 M455.595969,296.824626 L458.415773,288.722771 M450.833622,310.507792 L453.660256,302.386312 M446.120742,324.04883 L448.945182,315.933654 M441.40196,337.606826 L444.222042,329.504171 M436.652028,351.254321 L439.516932,343.022884 M431.902226,364.901445 L434.757075,356.698898 M427.147781,378.561908 L430.023072,370.300626 M422.442367,392.081493 L425.289406,383.901388 M417.710436,405.677268 L420.544273,397.535093 M417.121595,417.111509 L414.039983,416.223209 L415.813965,411.126205 M430.978847,421.105976 L422.659637,418.707896 M444.849342,425.10426 L436.523087,422.704149 M458.623607,429.074805 L450.28111,426.670012 M472.471217,433.066493 L464.20043,430.682371 M486.359223,437.069825 L478.035266,434.670376 M500.157133,441.047186 L491.818491,438.643504 M513.920384,445.014556 L505.712557,442.648582 M527.842328,449.027671 L519.439177,446.605393 M541.63554,453.003677 L533.374232,450.622287 M555.463941,456.989828 L547.194219,454.606012"
+            d={pathRedPoints}
+            id="building-path-red"
+            className="building-path-red"
+            stroke="url(#building-linearGradient-33)"
+            strokeWidth="3.84"
+          />
+          */}
 
           <circle
             id="oval-red-5-shadow"
+            className="path-point-shadow"
             fillOpacity="0.5"
             fill="#FA6767"
             cx="557"
             cy="455"
             r="11"
           />
+          {/*
+          <use className="path-point-shadow" xlinkHref="#building-filter-38" x="557" y="455" />
+          */}
 
           <use xlinkHref="#building-filter-38" x="557" y="455" />
-          <use xlinkHref="#building-filter-38" x="427" y="379" />
-          <use xlinkHref="#building-filter-38" x="461" y="246" />
-          <use xlinkHref="#building-filter-38" x="341" y="212" />
+          <use className="tag-text-red-2" xlinkHref="#building-filter-38" x="427" y="379" />
+          <use className="tag-text-red-1" xlinkHref="#building-filter-38" x="461" y="246" />
+          <use className="tag-text-red-0" xlinkHref="#building-filter-38" x="341" y="212" />
 
+          {/* <use className="path-point-shadow" xlinkHref="#building-filter-38" x="232.5" y="226.5" />*/}
           <circle
             id="oval-red-1-shadow"
+            className="path-point-shadow"
             fillOpacity="0.5"
             fill="#FA6767"
             cx="232.5"
@@ -818,196 +935,85 @@ export default class RecomandBuilding extends Component {
           />
           <circle id="oval-red-1" fill="#FA6767" cx="232.5" cy="226.5" r="7.5" />
 
-          <g id="building-path-green" strokeLinecap="round" strokeLinejoin="round">
-            <use
-              fill="black"
-              fillOpacity="1"
-              filter="url(#building-filter-36)"
-              xlinkHref="#building-path-35"
-            />
-            <use
-              stroke="url(#building-linearGradient-34)"
-              strokeWidth="5.76"
-              className="building-path-blue"
-              xlinkHref="#building-path-35"
-            />
-          </g>
-          <circle
-            id="oval-green-6-shadow"
-            fillOpacity="0.5"
-            fill="#79FFF9"
-            cx="654"
-            cy="491"
-            r="11"
-          />
+          {['green', 'red'].map((l, i) => {
+            return this.typeList[l].tags.map((v, j) =>
+              <text
+                key={`${i}${j}`}
+                className={`tag-text-${l}-${j}`}
+                fontFamily="HoeflerText-Regular, Hoefler Text"
+                fontSize="20"
+                fontWeight="normal"
+                fill={l === 'green' ? '#79FFF9' : '#F76768'}
+              >
+                <tspan x={v.x} y={v.y}>{v.text}</tspan>
+              </text>
+            );
+          })}
 
-          <use xlinkHref="#building-filter-37" x="654" y="491" />
-          <use xlinkHref="#building-filter-37" x="657" y="367" />
-          <use xlinkHref="#building-filter-37" x="507" y="346" />
-          <use xlinkHref="#building-filter-37" x="367" y="270" />
-          <use xlinkHref="#building-filter-37" x="249" y="210" />
-
-          <circle
-            id="oval-green-1-shadow"
-            fillOpacity="0.5"
-            fill="#79FFF9"
-            cx="188.5"
-            cy="349.5"
-            r="13.5"
-          />
-          <circle id="oval-green-1" fill="#79FFF9" cx="188.5" cy="349.5" r="7.5" />
-          <text
-            id="MIGAINO"
-            fontFamily="HoeflerText-Regular, Hoefler Text"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#79FFF9"
-          >
-            <tspan x="22.03" y="541">MIGAINO</tspan>
-          </text>
-          <text
-            id="B.C.R"
-            fontFamily="HoeflerText-Regular, Hoefler Text"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#79FFF9"
-          >
-            <tspan x="43.41" y="102">B.C.R</tspan>
-          </text>
-          <text
-            id="B.C.R-Copy"
-            fontFamily="HoeflerText-Regular, Hoefler Text"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#F76768"
-          >
-            <tspan x="111.41" y="26">B.C.R</tspan>
-          </text>
-          <text
-            id="凯迪·米拉"
-            fontFamily="STSongti-SC-Regular, Songti SC"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#F76768"
-          >
-            <tspan x="347" y="642">凯迪·米拉</tspan>
-          </text>
-          <text
-            id="亦谷"
-            fontFamily="STSongti-SC-Regular, Songti SC"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#F76768"
-          >
-            <tspan x="534" y="63">亦谷</tspan>
-          </text>
-          <text
-            id="lagogo"
-            fontFamily="HoeflerText-Regular, Hoefler Text"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#79FFF9"
-          >
-            <tspan x="197.04" y="597">lagogo</tspan>
-          </text>
-          <text
-            id="ochirly"
-            fontFamily="HoeflerText-Regular, Hoefler Text"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#F76768"
-          >
-            <tspan x="315.14" y="56">ochirly</tspan>
-          </text>
-          <text
-            id="JOPSHOP"
-            fontFamily="HoeflerText-Regular, Hoefler Text"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#79FFF9"
-          >
-            <tspan x="561.44" y="142">JOPSHOP</tspan>
-          </text>
-          <text
-            id="TGGC"
-            fontFamily="HoeflerText-Regular, Hoefler Text"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#F76768"
-          >
-            <tspan x="498.15" y="690">TGGC</tspan>
-          </text>
-          <text
-            id="JNBY"
-            fontFamily="HoeflerText-Regular, Hoefler Text"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#79FFF9"
-          >
-            <tspan x="740" y="194">JNBY</tspan>
-          </text>
-          <text
-            id="LuLualways"
-            fontFamily="HoeflerText-Regular, Hoefler Text"
-            fontSize="20"
-            fontWeight="normal"
-            fill="#79FFF9"
-          >
-            <tspan x="606.28" y="740">LuLualways</tspan>
-          </text>
           <path
             d="M17.7215909,515 L142,515 L142,543.474576 L130.238636,555 L4,555 L4,525.169492 L17.7215909,515 Z M189.548503,350.080769 L189.548503,534.57526 L141.118694,534.57526"
             id="tag-green-1"
+            className="tag-line-green-0"
             stroke="#79FFF9"
           />
           <path
             d="M13.7215909,76 L138,76 L138,104.474576 L126.238636,116 L0,116 L0,86.1694915 L13.7215909,76 Z M249.725818,209.906518 L249.725818,93.0238483 L137.273236,93.0238483"
             id="tag-green-2"
+            className="tag-line-green-1"
             stroke="#79FFF9"
           />
           <path
             d="M340.721591,615 L465,615 L465,643.474576 L453.238636,655 L327,655 L327,625.169492 L340.721591,615 Z M425.800862,380.19047 L425.800862,615.509712 L426.800862,615.509712 L426.800862,380.19047"
             id="tag-red-4"
+            className="tag-line-red-3"
             stroke="#F76768"
           />
           <path
             d="M498.721591,36 L623,36 L623,64.4745763 L611.238636,76 L485,76 L485,46.1694915 L498.721591,36 Z M462.313128,245.973222 L462.313128,60.2639019 L485.220437,60.2639019"
             id="tag-red-3"
+            className="tag-line-red-2"
             stroke="#F76768"
           />
           <path
             d="M168.721591,571 L293,571 L293,599.474576 L281.238636,611 L155,611 L155,581.169492 L168.721591,571 Z M368.081462,269.577248 L368.081462,584.582028 L292.960969,584.582028"
             id="tag-green-3"
+            className="tag-line-green-2"
             stroke="#79FFF9"
           />
           <path
             d="M288.721591,30 L413,30 L413,58.4745763 L401.238636,70 L275,70 L275,40.1694915 L288.721591,30 Z M342.592301,211.273501 L342.592301,70.395571 L341.592301,70.395571 L341.592301,211.273501"
             id="tag-red-2"
+            className="tag-line-red-1"
             stroke="#F76768"
           />
           <path
             d="M552.721591,116 L677,116 L677,144.474576 L665.238636,156 L539,156 L539,126.169492 L552.721591,116 Z M508.888219,345.926696 L508.888219,141.491477 L540.220733,141.491477"
             id="tag-green-4"
+            className="tag-line-green-3"
             stroke="#79FFF9"
           />
           <path
             d="M473.721591,664 L598,664 L598,692.474576 L586.238636,704 L460,704 L460,674.169492 L473.721591,664 Z M555.986109,455.165006 L555.986109,664.047755 L556.986109,664.047755 L556.986109,455.165006"
             id="tag-red-5"
+            className="tag-line-red-4"
             stroke="#F76768"
           />
           <path
             d="M711.721591,168 L836,168 L836,196.474576 L824.238636,208 L698,208 L698,178.169492 L711.721591,168 Z M658.08696,368.40732 L658.08696,188.611086 L698.693365,188.611086"
             id="tag-green-5"
+            className="tag-line-green-4"
             stroke="#79FFF9"
           />
           <path
             d="M600.721591,714 L725,714 L725,742.474576 L713.238636,754 L587,754 L587,724.169492 L600.721591,714 Z M654.589823,492.015121 L654.589823,714.389274 L655.589823,714.389274 L655.589823,492.015121"
             id="tag-green-6"
+            className="tag-line-green-5"
             stroke="#79FFF9"
           />
           <path
             d="M81.7215909,0 L206,0 L206,28.4745763 L194.238636,40 L68,40 L68,10.1694915 L81.7215909,0 Z M234.518135,225.601074 L234.518135,18.6795584 L205.014082,18.6795584"
             id="tag-red-1"
+            className="tag-line-red-0"
             stroke="#F76768"
           />
         </g>
