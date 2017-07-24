@@ -36,6 +36,11 @@ const routeConfig = {
       component: Routes.Commerce
     },
     {
+      path: 'home-sum',
+      breadcrumbName: '超大屏',
+      component: Routes.HomeSum
+    },
+    {
       component: Routes.Main,
       childRoutes: [
         {

@@ -19,6 +19,7 @@ export { default as BusinessAnalysis } from './BusinessAnalysis';
 export { default as Home } from './Home';
 export { default as HomeInternet } from './Home/HomeInternet';
 export { default as Commerce } from './Home/Commerce';
+export { default as HomeSum } from './Home/HomeSum';
 // 客群画像
 export { default as CustomerPic } from './customerPic';
 // 广场竞品客流分析
