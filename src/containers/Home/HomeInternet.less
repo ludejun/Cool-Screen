@@ -1,6 +1,7 @@
 .flex1 {
   flex: 1;
 }
+
 .home-info-banner {
   align-items: center;
   padding: 48px 32px 53px 71px;
@@ -41,13 +42,13 @@
       left: -31px;
       top: 113px;
       border-radius: 50%;
-      .inner{
-        .home-earth{
-            width: 150px;
-            height: 150px;
-            position: absolute;
-            left: -10px;
-            top: -10px;
+      .inner {
+        .home-earth {
+          width: 150px;
+          height: 150px;
+          position: absolute;
+          left: -10px;
+          top: -10px;
         }
         width: 130px;
         height: 130px;
@@ -60,7 +61,7 @@
           width: 210px;
           height: 210px;
           border-radius: 50%;
-          border: 2px solid rgba(55,84,179,.5);
+          border: 2px solid rgba(55, 84, 179, .5);
           margin-left: 200px;
           position: absolute;
           left: -248px;
@@ -85,29 +86,29 @@
             transform: rotate(90deg);
             left: 0;
             top: 50%;
-            transform: translate(-50%,-50%) rotateX(-90deg) rotateY(180deg);
+            transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg);
             animation: rotation 4s linear infinite;
             @keyframes rotation {
               0% {
-                    transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg) ;
-                }
-                50% {
-                    transform: translate(-50%, -50%) rotateX(-90deg);
-                }
-                75% {
-                    transform: translate(-50%, -50%) rotateX(-90deg) rotateY(90deg)
-                }
-                100% {
-                    transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg)
-                }
+                transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg);
               }
+              50% {
+                transform: translate(-50%, -50%) rotateX(-90deg);
+              }
+              75% {
+                transform: translate(-50%, -50%) rotateX(-90deg) rotateY(90deg)
+              }
+              100% {
+                transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg)
+              }
+            }
           }
         }
         .line2 {
           width: 210px;
           height: 210px;
           border-radius: 50%;
-          border: 2px solid rgba(55,84,179,.5);
+          border: 2px solid rgba(55, 84, 179, .5);
           margin-left: 200px;
           position: absolute;
           left: -248px;
@@ -128,25 +129,25 @@
             height: 20px;
             border-radius: 50%;
             background-color: #b2d18c;
-            background:radial-gradient(circle at 100px 100px, #5cabff, #b2d18c);
+            background: radial-gradient(circle at 100px 100px, #5cabff, #b2d18c);
             position: absolute;
             transform: rotate(90deg);
             left: 0;
             top: 50%;
-            transform: translate(-50%,-50%) rotateX(-90deg) rotateY(180deg);
+            transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg);
             animation: rotation1 4s linear infinite;
             @keyframes rotation1 {
               0% {
-                  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg) ;
+                transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg);
               }
               25% {
-                  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(90deg);
+                transform: translate(-50%, -50%) rotateX(-90deg) rotateY(90deg);
               }
               50% {
-                  transform: translate(-50%, -50%) rotateX(-90deg)
+                transform: translate(-50%, -50%) rotateX(-90deg)
               }
               100% {
-                  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg)
+                transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg)
               }
             }
           }
@@ -205,7 +206,7 @@
       .outshadow {
         width: 62px;
         height: 62px;
-        background-color: rgba(8,68,96,.2);
+        background-color: rgba(8, 68, 96, .2);
         border-radius: 50%;
         position: absolute;
         left: -7px;
@@ -240,7 +241,7 @@
       .outshadow1 {
         width: 70px;
         height: 70px;
-        background-color: rgba(81,177,186,.2);
+        background-color: rgba(81, 177, 186, .2);
         border-radius: 50%;
         position: absolute;
         left: -8px;
@@ -348,17 +349,19 @@
     }
   }
 }
+
 .home-internet {
   padding-top: 145px;
   padding-bottom: 70px;
+  position: relative;
   .header-logo {
     // 82px->145px
     width: 450px;
     height: 53px;
-    margin: 58px 58px 35px 0;
-    position: fixed;
-    right: 0;
-    top: 0;
+    margin-bottom: 35px;
+    position: absolute;
+    right: 58px;
+    top: 58px;
   }
   .map-title {
     text-align: center;

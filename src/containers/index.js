@@ -7,6 +7,7 @@ export { default as HeaderTitle } from './Layout/HeaderTitle';
 
 //四环屏
 export { default as LayoutFour } from './LayoutFour/index';
+export { default as HeaderTitleRight } from './LayoutFour/HeaderTitleRight';
 
 // 智慧生活
 export { default as VisAnalysis } from './VisAnalysis';
