@@ -7,7 +7,7 @@ export { default as HeaderTitle } from './Layout/HeaderTitle';
 
 //四环屏
 export { default as LayoutFour } from './LayoutFour/index';
-
+export { default as Fparkinganalysis } from './LayoutFour/parkingAnalysis';
 // 智慧生活
 export { default as VisAnalysis } from './VisAnalysis';
 export { default as LifeMobile } from './LifeMobile';
