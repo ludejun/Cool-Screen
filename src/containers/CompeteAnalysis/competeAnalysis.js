@@ -206,7 +206,61 @@ class CompeteAnalysis extends Component {
                                 direction={'out'}/>
                         </div>
                     </div>
-                    <div className="compete-right"></div>
+                    <div className="compete-right">
+                        <div className="compete-right-title">客群流入交叉TOP10商场</div>
+                        <div className="compete-right-content">
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading2.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading3.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading4.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading5.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading6.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading7.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading8.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading9.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                            <div className="line">
+                                <span>世博园</span>
+                                <div><img src="/img/loading10.svg"></img></div>
+                                <i>45%</i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </BgAnimation>
         </div>
