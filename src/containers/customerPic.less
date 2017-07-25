@@ -45,6 +45,10 @@
             left:0;
             right:0;
             display: flex;
+            .Td-people{
+                position:absolute;
+                z-index: 100;
+            }
             .circle-line{
                     position:absolute;
                     width:40%;
@@ -59,6 +63,25 @@
                 padding:50px;
                 position:relative;
                 overflow:hidden;
+                .Td-people{
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    z-index: 10;
+                    width:100%;
+                    height:100%;
+                    display:flex;
+                    .male{
+                        padding-top: 25%;
+                        flex:1;
+                        margin-left: 3%
+                    }
+                    .female{
+                        padding-top: 25%;
+                        flex:1;
+                        margin-left: -15%;
+                    }
+                }
                 .scan-container{
                     width:100%;
                     height:100%;
@@ -127,11 +150,14 @@
                     }
                 }
                 @keyframes runin {
+                    79%{
+                        top: 100%;
+                    }
                     80% {
-                        top:100%;
+                        top:55%;
                     }
                     100% {
-                        top:-24%;
+                        top:-30%;
                     }
                 }
                 @keyframes wfloat {

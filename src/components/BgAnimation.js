@@ -12,7 +12,7 @@ export default class BgAnimation extends Component {
       <div className="bg-animation">
         <WDLogoSvg className="main-header-logo" />
         <div className="bg-animation-container">
-          <img className="bg-pic"  src="/img/bgAnimation.png"/>
+          {this.props.children}
           <div className="top-left area">
             <div className="circle  circle1" />
             <div className="circle  circle2" />
