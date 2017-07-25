@@ -1,0 +1,69 @@
+.compete-contatiner{
+    height:100%;
+    width:100%;
+    .competess-content{
+        position:relative;
+        min-height: 900px;
+        display:flex;
+        padding:70px 80px;
+        padding-top:50px;
+        .competee-left{
+            flex:3;
+            position:relative;
+            .compete-map{
+                position:absolute;
+                height:100%;
+                width:100%;
+                padding:20px;
+                border:1px solid #6278F0;
+                @keyframes roate-cross {
+                    from {
+                        transform: rotate(0deg);
+                    }
+                    to{
+                        transform: rotate(360deg);
+                    }
+                }
+                .cross-common {
+                     .svg-container{
+                        width:30px;
+                        height:30px;
+                    }
+                    animation: roate-cross 1s linear infinite;
+                }
+                .cross-left-top{
+                    position:absolute;
+                    width:30px;
+                    height:30px;
+                    top:-15px;
+                    left:-15px;
+                }
+                .cross-right-top{
+                    position:absolute;
+                    width:30px;
+                    height:30px;
+                    top:-15px;
+                    right:-15px;
+                }
+                .cross-left-bottom{
+                    position:absolute;
+                    width:30px;
+                    height:30px;
+                    bottom:-15px;
+                    left:-15px;
+                
+                }
+                .cross-right-bottom{
+                    position:absolute;
+                    width:30px;
+                    height:30px;
+                    bottom:-15px;
+                    right:-15px;
+                }
+            }
+        }
+        .compete-right{
+            flex:2;
+        }
+    }
+}

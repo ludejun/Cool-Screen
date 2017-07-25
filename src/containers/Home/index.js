@@ -49,7 +49,7 @@ export default class Home extends Component {
           // trailColor: '#fff',
         },
         lineStyle: {
-          color: 'rgb(50, 50, 150)',
+          color: 'yellow',
           width: 1,
           opacity: 0.4,
         },

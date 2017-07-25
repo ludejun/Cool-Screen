@@ -46,16 +46,18 @@ class WDBaiduMapCurve extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    nextProps.curveObj.plaza.name !== this.props.curveObj.plaza.name &&
+    if (nextProps.curveObj.plaza.name !== this.props.curveObj.plaza.name || nextProps.direction !== this.props.direction) {
       this.mapLoad(nextProps);
+    }
   }
 
   mapLoad(nextProps) {
     // let dataList = this.curveList;
+    let direction = this.props.direction;
     let dataList = this.props.curveObj;
-    nextProps && (dataList = nextProps.curveObj);
+    nextProps && (dataList = nextProps.curveObj) && (direction = nextProps.direction);
     let fromPoint = dataList.plaza;
-    let toPoint = dataList.toPlazas;
+    let toPoint = direction === 'out' ? dataList.toPlazas : dataList.inPlazas;
     let nothPoint = toPoint[0];
     let southPoint = toPoint[0];
     toPoint.forEach((item) => {
@@ -129,7 +131,7 @@ class WDBaiduMapCurve extends Component {
         valeArray.push(
           dataItem.baidu_lng,
           dataItem.baidu_lat,
-          dataItem.percent * 100,
+          dataItem.ratio * 100,
         );
         return {
           name: dataItem.name,
@@ -143,7 +145,41 @@ class WDBaiduMapCurve extends Component {
       }),
     };
     let arrayFrom = [];
+    let data = [];
     arrayFrom.push(fromPoint.baidu_lng, fromPoint.baidu_lat);
+    if(direction === 'out'){
+      data = toPoint.map((item, i) => {
+        let itemArray = [];
+        itemArray.push(item.baidu_lng, item.baidu_lat);
+        return {
+          fromName: fromPoint.name,
+          toName: item.name,
+          name: item.name,
+          coords: [arrayFrom, itemArray],
+          lineStyle: {
+            normal: {
+              color: color[i],
+            },
+          },
+        };
+      });
+    } else {
+      data = toPoint.map((item, i) => {
+        let itemArray = [];
+        itemArray.push(item.baidu_lng, item.baidu_lat);
+        return {
+          fromName: fromPoint.name,
+          toName: item.name,
+          name: item.name,
+          coords: [itemArray, arrayFrom],
+          lineStyle: {
+            normal: {
+              color: color[i],
+            },
+          },
+        };
+      });
+    }
     let lines = {
       type: 'lines',
       coordinateSystem: 'bmap',
@@ -162,21 +198,7 @@ class WDBaiduMapCurve extends Component {
           curveness: 0.2,
         },
       },
-      data: toPoint.map((item, i) => {
-        let itemArray = [];
-        itemArray.push(item.baidu_lng, item.baidu_lat);
-        return {
-          fromName: fromPoint.name,
-          toName: item.name,
-          name: item.name,
-          coords: [arrayFrom, itemArray],
-          lineStyle: {
-            normal: {
-              color: color[i],
-            },
-          },
-        };
-      }),
+      data,
     };
 
     let series = [];
@@ -229,6 +251,10 @@ class WDBaiduMapCurve extends Component {
       EMap.addOverlay(circle);
     });
     EMap.setZoom(this.scaleLevel(Math.ceil(span / 2)));
+    setTimeout(() => {
+      document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL') && (document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL').innerHTML = '');
+      document.querySelector('div.anchorBL') && (document.querySelector('div.anchorBL').innerHTML = '');
+    }, 100);
   }
 
   scaleLevel(dis) {
