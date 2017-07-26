@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="246px" height="18px" viewBox="0 0 246 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="280" height="18px" viewBox="0 0 280 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
     <title>Group 5</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <rect id="path-1" x="0" y="0" width="246" height="18"></rect>
+        <rect id="path-1" x="0" y="0" width="300" height="18"></rect>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="广场竞品客流分析" transform="translate(-1341.000000, -311.000000)">
@@ -14,7 +14,7 @@
                         <mask id="mask-2" fill="white">
                             <use xlink:href="#path-1"></use>
                         </mask>
-                        <rect stroke="#272727" stroke-width="1.8" x="0.9" y="0.9" width="244.2" height="16.2"></rect>
+                        <!-- <rect stroke="#272727" stroke-width="1.8" x="0.9" y="0.9" width="244.2" height="16.2"></rect> -->s
                         <g mask="url(#mask-2)" fill="#FDB933">
                             <g transform="translate(-18.000000, -11.000000)">
                                 <polygon id="Rectangle-4" points="19.5 0 23.5 0 4 43 0 43"></polygon>
@@ -48,7 +48,11 @@
                                 <polygon id="Rectangle-4" points="245.478261 0 249.478261 0 229.978261 43 225.978261 43"></polygon>
                                 <polygon id="Rectangle-4-Copy-15" points="270.586957 0 274.586957 0 255.086957 43 251.086957 43"></polygon>
                                 <polygon id="Rectangle-4" points="262.217391 0 266.217391 0 246.717391 43 242.717391 43"></polygon>
-                                <polygon id="Rectangle-4" points="278.956522 0 282.956522 0 263.456522 43 259.456522 43"></polygon>
+                                <polygon id="Rectangle-4-Copy-16" points="287.326088 0 291.326088 0 272.326088 43 268.326088 43"></polygon>
+                                <polygon id="Rectangle-4" points="278.956521 0 282.956521 0 262.956521 43 258.956521 43"></polygon>
+                                <polygon id="Rectangle-4-Copy-17" points="304.065219 0 308.065219 0 389.065219 43 285.065219 43"></polygon>
+                                <polygon id="Rectangle-4" points="295.695651 0 299.695651 0 279.695651 43 275.695651 43"></polygon>
+                                <!-- <polygon id="Rectangle-4" points="278.956522 0 282.956522 0 263.456522 43 259.456522 43"></polygon> -->
                             </g>
                         </g>
                     </g>
