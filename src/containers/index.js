@@ -29,7 +29,8 @@ export { default as CustomerPic } from './customerPic';
 // 广场竞品客流分析
 export { default as CompeteAnalysis } from './CompeteAnalysis/competeAnalysis';
 // 数字商业
-export { default as InnerScatter } from './InnerScatter';
+export { default as InnerScatter } from './InnerScatter/';
+export { default as InnerScatterLong } from './InnerScatter/InnerScatterLong';
 export { default as DistrictBrandTag } from './DistrictBrandTag';
 export { default as DistrictBrandTagLong } from './DistrictBrandTag/DistrictBrandTagLong';
 
