@@ -102,6 +102,15 @@ const routeConfig = {
       ]
     },
     {
+      path: 'four',
+      component: Routes.LayoutFour,
+      childRoutes: [{
+        path: 'f-parking-analysis',
+        breadcrumbName: '四环屏-停车场分析',
+        component: Routes.Fparkinganalysis
+      }]
+    },
+    {
       path: 'inner-scatter',
       breadcrumbName: '数字商业：内场分布 + 指标排名',
       component: Routes.InnerScatter
