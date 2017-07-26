@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
-import {WDMapBasic, BgAnimation} from '../components';
-import {plazaGeo} from '../assets/map/wdplaza.geo';
-import {cityGeo} from '../assets/map/city.geo';
-import {provinceValue, proArea, areaValue} from '../assets/map/mapAreaValue';
-import HeaderTitle from './Layout/HeaderTitle';
-import { getBaseFontSize } from '../utils';
-import './innerScatter.less';
+import {WDMapBasic} from '../../components';
+import {plazaGeo} from '../../assets/map/wdplaza.geo';
+import {cityGeo} from '../../assets/map/city.geo';
+import {provinceValue, proArea, areaValue} from '../../assets/map/mapAreaValue';
+import HeaderTitle from '../Layout/HeaderTitle';
+import { getBaseFontSize } from '../../utils';
+import './innerScatterLong.less';
 
 const pillarData = [
   [
@@ -105,7 +105,7 @@ const pillarData = [
 
 const pillar = [0,1,2,3,4,5,6,7,8,9];
 const showType = ['广场', '城市', '省份', '区域'];
-export default class InnerScatter extends Component {
+export default class InnerScatterFour extends Component {
 
   constructor(props) {
     super(props);
@@ -121,10 +121,6 @@ export default class InnerScatter extends Component {
   slideBtn() {
     let timer = null;
     clearInterval(timer);
-    let ul = document.getElementById('slideWrap');
-    let allLI = ul.getElementsByTagName("li");
-    let selectTitle = document.querySelector('.bar-title');
-    selectTitle.innerHTML = showType[this.state.index];
 
     timer = setInterval(() => {
       if(this.state.index === 3){
@@ -132,14 +128,13 @@ export default class InnerScatter extends Component {
       }else{
         this.setState({index:this.state.index+1});
       }
-      selectTitle.innerHTML = showType[this.state.index];
     }, 3000)
   }
 
   renderMap(index){
     const topGeo = index === 0 ? pillarData[0] : pillarData[1];
     const geo = index === 0 ? plazaGeo : cityGeo;
-    const multiple = index === 0 ? 1000 : 10000;
+    const multiple = index === 0 ? 1500 : 15000;
     const color = '#108EE9';
     const scatterMap = {
       series: [
@@ -303,41 +298,38 @@ export default class InnerScatter extends Component {
   render() {
     return (
       <div>
-        <HeaderTitle title="数字商业：内场分布 + 指标排名" className="sum-title"/>
-        <BgAnimation />
-        <div className="inner-scatter-container">
-          <div>
-            <div className="main-content">
-              <div className="china-map">
-                {this.renderMap(this.state.index)}
-              </div>
-              <div className="bar">
-                <div className="bar-title"></div>
-                <img src="/img/pillar-bg.png" className="pillar-bg"/>
-                <div className="pillar-list">
-                  <div className="erea-wrap" >
-                    {pillarData[this.state.index].map((item, i) => (
-                      <div key={i} className="erea" style={{height: item.percent}}>
-                        <div key={this.state.index} className="child-item">
-                          {pillar.map((item,i) => (
-                            <div key={i} className="pillar"/>
-                          ))}
-                          <div className={this.state.index === 0 ? "name name-rotate" : "name"}>{item.name.substring(0,4)}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-               </div>
-              </div>
+        <HeaderTitle title="数字商业：内场分布 + 指标排名"/>
+        <div className="inner-scatter-four">
+					<div className="map-out">
+						<img src="/img/inner-scatter-bg.png" className="bg-pic"/>
+            <div className="map-inner">
+              {this.renderMap(this.state.index)}
             </div>
-           <div className="slide-btn">
-            <ul id="slideWrap" className="slide-wrap">
-              {showType.map((item, i) => (
-                <li key={i} className={i === this.state.index ? "active": ""} onClick={this.alertMsg}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+					</div>
+					{
+						showType.map((item,i)=>(
+							<div key={i} className={this.state.index === i ? 'box-active': 'box'}>
+								<img className="box-pic" src={this.state.index === i ? '/img/pillar-bg-active.png': '/img/pillar-bg-normal.png'} />
+								<div className="bar-title">{item}</div>
+								<div className="pillar-wrap">
+									{pillarData[i].map((item, k) => (
+										<div key={k} className="erea" style={{height: item.percent}}>
+											{pillar.map((item,j) => (
+												<div key={j} className="pillar"/>
+											))}
+										</div>
+									))}
+								</div>
+								<div className={i === 0 ? "name-wrap-rotate" : "name-wrap"}>
+									{pillarData[i].map((item, k) => (
+										<div key={k} className={i === 0 ? "name-rotate" : "name"}>
+											{item.name.substring(0,4)}
+										</div>
+									))}
+								</div>
+							</div>
+						))
+					}
       </div>
     </div>
     )

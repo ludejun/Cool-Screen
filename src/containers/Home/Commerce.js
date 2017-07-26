@@ -40,23 +40,23 @@ export default class Commerce extends Component {
     const genderList = [
       [
         {
-          itemImage: 'img/icon_male.png',
+          itemImage: '../img/icon_male.png',
           percent: 1 * 100
         }
       ],
       [
         {
-          itemImage: 'img/icon_male.png',
+          itemImage: '../img/icon_male.png',
           percent: 0.4 * 100
         },
         {
-          itemImage: 'img/icon_female.png',
+          itemImage: '../img/icon_female.png',
           percent: 0.6 * 100
         }
       ],
       [
         {
-          itemImage: 'img/icon_female.png',
+          itemImage: '../img/icon_female.png',
           percent: 1 * 100
         }
       ]
