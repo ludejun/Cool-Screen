@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Echarts from 'echarts-for-react';
-import './parkingAnalysis.less';
+import './parkingAnalysisLong.less';
 
 const data = [
   {
