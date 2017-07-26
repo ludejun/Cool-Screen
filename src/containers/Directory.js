@@ -8,11 +8,13 @@ export default class Directory extends Component {
     this.getChildRoutes(RoutesConfig);
   }
 
-  getChildRoutes(route, prefix = '/') {
+  getChildRoutes(route, prefix = '') {
     if (route) {
-      if (route.breadcrumbName && route.path) {
-        this.directory.push({ name: route.breadcrumbName, path: prefix + route.path });
-        prefix += `${route.path}/`;
+      if (route.path) {
+        if (route.breadcrumbName) {
+          this.directory.push({ name: route.breadcrumbName, path: prefix + route.path });
+        }
+        prefix += `${route.path === '/' ? '' : route.path}/`;
       }
       route.childRoutes &&
         route.childRoutes.forEach((v) => {
