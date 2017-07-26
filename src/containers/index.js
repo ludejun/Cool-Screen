@@ -2,7 +2,7 @@ export { default as App } from './App';
 export { default as Hello } from './Hello';
 export { default as Directory } from './Directory';
 
-export { default as Main } from './Layout/index';
+export { default as Main } from './Layout';
 export { default as HeaderTitle } from './Layout/HeaderTitle';
 
 //四环屏
@@ -31,6 +31,8 @@ export { default as CompeteAnalysis } from './CompeteAnalysis/competeAnalysis';
 // 数字商业
 export { default as InnerScatter } from './InnerScatter';
 export { default as DistrictBrandTag } from './DistrictBrandTag';
+export { default as DistrictBrandTagLong } from './DistrictBrandTag/DistrictBrandTagLong';
+
 export { default as DigitalRecomand } from './DigitalRecomand';
 
 // 停车分析

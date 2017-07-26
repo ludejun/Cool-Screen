@@ -45,7 +45,17 @@ const routeConfig = {
         }
       ]
     },
-
+    {
+      component: Routes.LayoutFour,
+      path: 'circle',
+      childRoutes: [
+        {
+          path: 'district-brand-tag',
+          component: Routes.DistrictBrandTagLong,
+          breadcrumbName: '四环屏-数字商业：品牌与标签相关性'
+        }
+      ]
+    },
     {
       component: Routes.Main,
       childRoutes: [
