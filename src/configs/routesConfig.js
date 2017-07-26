@@ -22,23 +22,28 @@ const routeConfig = {
     },
     {
       path: 'home',
-      breadcrumbName: '超大屏 - 首页',
-      component: Routes.Home
-    },
-    {
-      path: 'home-internet',
-      breadcrumbName: '超大屏 - 右边',
-      component: Routes.HomeInternet
-    },
-    {
-      path: 'commerce',
-      breadcrumbName: '超大屏 - 左边',
-      component: Routes.Commerce
-    },
-    {
-      path: 'home-sum',
-      breadcrumbName: '超大屏',
-      component: Routes.HomeSum
+      childRoutes: [
+        {
+          path: 'sum',
+          breadcrumbName: '超大屏',
+          component: Routes.HomeSum
+        },
+        {
+          path: 'internet',
+          breadcrumbName: '超大屏 - 右边',
+          component: Routes.HomeInternet
+        },
+        {
+          path: 'commerce',
+          breadcrumbName: '超大屏 - 左边',
+          component: Routes.Commerce
+        },
+        {
+          path: 'global',
+          breadcrumbName: '超大屏 - 中间地球',
+          component: Routes.Home
+        }
+      ]
     },
     {
       component: Routes.Main,
@@ -83,6 +88,27 @@ const routeConfig = {
           component: Routes.ParkingAnalysis,
           breadcrumbName: '车牌分析'
         }
+      ]
+    },
+    {
+      path: 'circle',
+      component: Routes.LayoutFour,
+      childRoutes: [
+        {
+          path: 'parking-analysis',
+          breadcrumbName: '四环屏-停车场分析',
+          component: Routes.Fparkinganalysis
+        },
+        {
+          path: 'district-brand-tag',
+          component: Routes.DistrictBrandTagLong,
+          breadcrumbName: '四环屏-数字商业：品牌与标签相关性'
+        },
+        {
+          path: 'inner-scatter',
+          breadcrumbName: '数字商业：内场分布 + 指标排名',
+          component: Routes.InnerScatterLong
+        },
       ]
     },
     {

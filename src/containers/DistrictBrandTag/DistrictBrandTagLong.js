@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import anime from 'animejs';
 // import { WDForceGragh, AnimeBrandTag } from '../components';
-import HeaderTitle from './Layout/HeaderTitle';
-import { getBaseFontSize } from '../utils';
+import HeaderTitle from '../Layout/HeaderTitle';
+import { getBaseFontSize } from '../../utils';
 import './DistrictBrandTag.less';
 
 export default class DistrictBrandTag extends Component {
