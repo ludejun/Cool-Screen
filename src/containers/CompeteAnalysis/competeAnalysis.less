@@ -69,6 +69,7 @@
                 line-height: 120px;
                 text-align: center;
                 font-size: 30px;
+                position: relative;
             }
             .compete-right-content{
                 .line{
@@ -81,18 +82,25 @@
                         height: 38px;
                         line-height: 38px;
                     }
-                    div{
+                    .line-m{
                         width: 75%;
                         display: inline-block;
                         padding: 2px;
                         height: 36px;
-                        line-height: 36px;
                         border: 1px solid #0a2851;
-                        img{
-                            border:0;
+                        position: relative;
+                        margin-top: 17px;
+                        vertical-align: bottom;
+
+                        .mask{
+                            position: absolute;
+                            right: 0;
+                            top:0 ;
+                            height: 36px;
+                            background-color: #0a1c41;
                         }
                     }
-                    i{  
+                    i{
                         padding-left: 20px;
                         width: 30px;
                         display: inline-block;
