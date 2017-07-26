@@ -8,9 +8,42 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    position:relative;
     .name {
       position: absolute;
       bottom: 0;
+    }
+    .line-gab{
+      position:absolute;
+      left: 77%;
+      top: 50%;
+      z-index: 100;
+      .animate{
+        animation: moves-lines 20s linear infinite;
+      }
+      @keyframes moves-lines {
+        30% {
+          stroke-dasharray: 300,0;
+        }
+        31%{
+          stroke-dasharray: 0,300;
+        }
+        40% {
+          stroke-dasharray: 300,0;
+        }
+        70% {
+          stroke-dasharray: 300,0;
+        }
+        71%{
+          stroke-dasharray: 0,300
+        }
+        80% {
+          stroke-dasharray: 300,0
+        }
+        100% {
+          stroke-dasharray: 300,0
+        }
+      }
     }
     .parking-layout {
       position: relative;
@@ -182,10 +215,96 @@
   }
   .parking-right {
     flex: 1;
+    position:relative;
     .right-layout {
       position: absolute;
-      top: 0;
-      left: 0;
+      width:380PX;
+      height:155PX;
+      bottom: 27PX;
+      left: 65PX;
+      display:flex;
+      .svg-lay{
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+      }
+      .right-content{
+        flex:1;
+        .content{
+          width:172PX;
+          height:126PX;
+          position:absolute;
+          border:1px dashed #0D62C4;
+          top:15PX;
+          .first-content{
+            margin-top:10PX;
+            padding-left:10PX;
+            .title{
+                margin-left: 10PX;
+                border-bottom:1px solid #09CDC6;
+              }
+          }
+          .second-content{
+              margin-top:10PX;
+              padding-left:27PX;
+              .content-column{
+                display: inline-block;
+                margin-right:30PX;
+                div{
+                  text-align: center;
+                  font-size: 10PX;
+                }
+                .text{
+                  transform:scale(0.8);
+                }
+              }
+          }
+        }
+      }
+      .left-content{
+        flex:1;
+        position:relative;
+        .content{
+          position:absolute;
+          z-index: 99;
+          width:100%;
+          height:100%;
+          .top-title{
+            width:89PX;
+            height:21PX;
+            position:absolute;
+            top:20PX;
+            left:30PX;
+            .title-content{
+              position:absolute;
+              top:3PX;
+              left:15PX;
+            }
+          }
+          .detail{
+            width:155PX;
+            height:88PX;
+            position:absolute;
+            left:27PX;
+            top:54PX;
+            border:1px dashed #0D62C4;
+            .first-content{
+              padding-left:10PX;
+              margin-top:10PX;
+              .title{
+                margin-left: 10PX;
+                border-bottom:1px solid #09CDC6;
+              }
+            }
+            .second-content{
+              margin-top:15PX;
+              padding-left:27PX;
+            }
+          }
+        }
+      }
     }
   }
 }
