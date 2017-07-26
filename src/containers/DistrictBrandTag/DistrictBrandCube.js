@@ -1,138 +1,138 @@
 import React, { Component } from 'react';
-import anime from 'animejs';
-// import { WDForceGragh, AnimeBrandTag } from '../components';
-import HeaderTitle from './Layout/HeaderTitle';
-import { getBaseFontSize } from '../utils';
-import './DistrictBrandTag.less';
 
-export default class DistrictBrandTag extends Component {
-  constructor(props) {
-    super(props);
-    this.data = {
-      0: { id: 0, name: '必胜客', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      1: { id: 1, name: '屈臣氏', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
-      2: { id: 2, name: '汉拿山', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      3: { id: 3, name: 'ZARA', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
-      4: { id: 4, name: '避风塘', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      5: { id: 5, name: '万达影城', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
-      6: { id: 6, name: '汤姆熊', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      7: { id: 7, name: '宝大祥', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      8: { id: 8, name: '一茶一座', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      9: { id: 9, name: '海澜之家', tag: [1, 2, 3, 4, 5, 6, 7, 8] }
-    };
-    this.brandList = [[0, 1, 2], [3, 4, 5, 6], [7, 8, 9]];
-    this.highlightInterval = null;
-
-    this.state = {
-      highlightBrand: 0
-    };
-  }
-
-  generateRandomNumber(n) {
-    return (Math.random() * n * 2 - n) / 192 * getBaseFontSize();
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.highlightInterval);
-  }
-
-  componentDidMount() {
-    clearInterval(this.highlightInterval);
-    this.highlightInterval = setInterval(() => {
-      this.setState({
-        highlightBrand: (this.state.highlightBrand + 1) % Object.keys(this.data).length
-      });
-      anime({
-        targets: '.tag-div',
-        direction: 'reverse',
-        easing: 'easeInOutQuart',
-        duration: 500,
-        scaleX: 0
-      });
-    }, 10000);
-
-    Object.keys(this.data).forEach((v) => {
-      const tagAnime = anime({
-        targets: `#RoundSquare${v}`,
-        translateX: this.generateRandomNumber(15),
-        translateY: this.generateRandomNumber(15),
-        scale: this.generateRandomNumber(0.3) + 1,
-        direction: 'alternate',
-        easing: 'linear',
-        duration: 3000,
-        loop: true,
-        delay: Math.random() * 2000
-      });
-      const lineAnime = anime({
-        targets: `#JoinLine${v}`,
-        opacity: 1 - Math.random() * 0.7,
-        direction: 'alternate',
-        easing: 'linear',
-        duration: 3000,
-        loop: true,
-        delay: Math.random() * 2000
-      });
-    });
-  }
-
+export default class DistrictBrandCube extends Component {
   render() {
-    const { highlightBrand } = this.state;
     return (
-      <div className="district-brand-tag flex-row">
-        <HeaderTitle title="数字商业：品牌与标签相关性" />
-        <div>
-          <span className="type-title type-title-brand">品牌</span>
-          <div className="brand-anime-container">
-            <div className="brand-div">
-              {this.brandList.map((line, i) =>
-                <div className="brand-line" key={i}>
-                  {line.map((v, j) =>
-                    <div
-                      className={`brand-block ${highlightBrand === v ? 'highlight' : ''}`}
-                      key={j}
-                    >
-                      <span className="brand-title type-title-tag">
-                        {this.data[v].name || ''}
-                      </span>
-                      <span className="brand-cube" />
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-            {this.data[highlightBrand].tag.map((v, i) =>
-              <div className={`brand-hanabi brand-hanabi-${i + 1}`} key={i}>
-                <div className="span-hanabi" />
-              </div>
-            )}
-          </div>
-        </div>
-        <div className="tag-div flex1 flex-col">
-          <div><span className="type-title type-title-tag">标签</span></div>
-          <div className="flex1 tag-gragh">
-            {this.data[highlightBrand].tag.map((v, i) =>
-              <div className={`join-line join-line-${i + 1}`} id={`JoinLine${i + 1}`} key={i} />
-            )}
+      <svg
+        width="109px"
+        height="94px"
+        viewBox="0 0 109 94"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+      >
 
-            {this.data[highlightBrand].tag.map((v, i) =>
-              <div
-                className={`round-square round-square-${i + 1}`}
-                id={`RoundSquare${i + 1}`}
-                key={i}
-              >
-                <img className="round-square-img" src="/img/tag-node.png" />
-                <div className="round-square-content">{`主力店${v}`}</div>
-              </div>
-            )}
+        <defs>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stopColor="#FFFFFF" stopOpacity="0.5" offset="0%" />
+            <stop stopColor="#000000" stopOpacity="0.5" offset="100%" />
+          </linearGradient>
+          <polygon
+            id="path-2"
+            points="11.7415938 53.5539146 53.5413837 77.6049063 53.6778257 73.6563336 11.8780358 49.6053419"
+          />
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="86.3351397%" id="linearGradient-3">
+            <stop stopColor="#324EEC" offset="0%" />
+            <stop stopColor="#1B3686" stopOpacity="0" offset="100%" />
+          </linearGradient>
+          <linearGradient x1="50%" y1="18.8957281%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stopColor="#344DF5" offset="0%" />
+            <stop stopColor="#3C86F8" stopOpacity="0" offset="100%" />
+          </linearGradient>
+          <path
+            d="M50.4471046,28.2352941 L104.857776,59.5414213 L54.4106715,88.7593387 L0,57.4532115 L50.4471046,28.2352941 Z M50.5790845,30.2506388 L3.49158032,57.5227453 L54.2786917,86.743994 L101.366196,59.4718875 L50.5790845,30.2506388 Z"
+            id="path-5"
+          />
+          <filter
+            x="-7.2%"
+            y="-12.4%"
+            width="114.3%"
+            height="124.8%"
+            filterUnits="objectBoundingBox"
+            id="filter-6"
+          >
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+            <feColorMatrix
+              values="0 0 0 0 0.062745098   0 0 0 0 0.366398258   0 0 0 0 0.91372549  0 0 0 0.661373415 0"
+              type="matrix"
+              in="shadowBlurOuter1"
+            />
+          </filter>
+          <path
+            d="M50.4471046,23.5294118 L104.857776,54.8355389 L54.4106715,84.0534563 L0,52.7473292 L50.4471046,23.5294118 Z M50.5790845,25.5447565 L3.49158032,52.8168629 L54.2786917,82.0381116 L101.366196,54.7660052 L50.5790845,25.5447565 Z"
+            id="path-7"
+          />
+          <filter
+            x="-7.2%"
+            y="-12.4%"
+            width="114.3%"
+            height="124.8%"
+            filterUnits="objectBoundingBox"
+            id="filter-8"
+          >
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1" />
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+            <feColorMatrix
+              values="0 0 0 0 0.062745098   0 0 0 0 0.366398258   0 0 0 0 0.91372549  0 0 0 0.661373415 0"
+              type="matrix"
+              in="shadowBlurOuter1"
+            />
+          </filter>
+        </defs>
+        <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
 
-            <div className="center-round-out">
-              <img className="center-circle" src="/img/home-circle.png" />
-              <div className="center-round">{this.data[highlightBrand].name}</div>
-            </div>
-          </div>
-        </div>
-        {/*  </div>*/}
-      </div>
+          <g id="bottom-left" opacity="0.462352808">
+            <use fill="#31C9FF" xlinkHref="#path-2" />
+            <use fill="url(#linearGradient-1)" xlinkHref="#path-2" />
+          </g>
+          <polygon
+            id="bottom-front"
+            fill="#108EE9"
+            points="53.6782192 73.6559413 53.5417773 77.6045141 92.2965493 55.1591009 92.4343033 51.2105282"
+          />
+          <polygon
+            id="bottom-top"
+            fillOpacity="0.943982111"
+            fill="#1767F6"
+            opacity="0.406136775"
+            points="50.6330702 27.158752 11.8769862 49.6054726 53.678088 73.6564643 92.4341721 51.2097437"
+          />
+          <polygon
+            id="out-left"
+            fill="url(#linearGradient-3)"
+            opacity="0.693670743"
+            points="23.6166162 49.7520691 53.3422289 66.7680201 53.4392587 32.8961485 23.713646 15.8801975"
+          />
+          <polygon
+            id="out-front"
+            fill="url(#linearGradient-4)"
+            opacity="0.615375906"
+            points="53.4395386 32.895871 53.3425088 66.7677426 80.9026796 50.88773 81.0006422 17.0158585"
+          />
+          <polygon
+            id="out-top"
+            fill="#105DE9"
+            opacity="0.253396739"
+            points="51.2740033 0.000185006262 23.7128996 15.8801975 53.4394453 32.8961485 81.000549 17.016136"
+          />
+          <polygon
+            id="inner-left"
+            fill="url(#linearGradient-3)"
+            points="37.786586 46.633017 53.38035 55.5004844 53.4312509 37.8489457 37.8374868 28.9814783"
+          />
+          <polygon
+            id="inner-front"
+            fill="url(#linearGradient-4)"
+            points="53.4313977 37.8488011 53.3804969 55.5003397 67.8382913 47.2248403 67.8896816 29.5733016"
+          />
+          <polygon
+            id="inner-top"
+            fill="#105DE9"
+            opacity="0.784703351"
+            points="52.2953792 20.7059788 37.8370953 28.9814783 53.4313488 37.8489457 67.8896327 29.5734462"
+          />
+          <g id="halo-bottom" opacity="0.145833333">
+            <use fill="black" fillOpacity="1" filter="url(#filter-6)" xlinkHref="#path-5" />
+            <use fill="#105DE9" fillRule="evenodd" xlinkHref="#path-5" />
+          </g>
+          <g id="halo-top" opacity="0.297554348">
+            <use fill="black" fillOpacity="1" filter="url(#filter-8)" xlinkHref="#path-7" />
+            <use fill="#105DE9" fillRule="evenodd" xlinkHref="#path-7" />
+          </g>
+
+        </g>
+      </svg>
     );
   }
 }

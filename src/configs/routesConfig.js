@@ -46,17 +46,6 @@ const routeConfig = {
       ]
     },
     {
-      component: Routes.LayoutFour,
-      path: 'circle',
-      childRoutes: [
-        {
-          path: 'district-brand-tag',
-          component: Routes.DistrictBrandTagLong,
-          breadcrumbName: '四环屏-数字商业：品牌与标签相关性'
-        }
-      ]
-    },
-    {
       component: Routes.Main,
       childRoutes: [
         {
@@ -102,13 +91,20 @@ const routeConfig = {
       ]
     },
     {
-      path: 'four',
+      path: 'circle',
       component: Routes.LayoutFour,
-      childRoutes: [{
-        path: 'f-parking-analysis',
-        breadcrumbName: '四环屏-停车场分析',
-        component: Routes.Fparkinganalysis
-      }]
+      childRoutes: [
+        {
+          path: 'parking-analysis',
+          breadcrumbName: '四环屏-停车场分析',
+          component: Routes.Fparkinganalysis
+        },
+        {
+          path: 'district-brand-tag',
+          component: Routes.DistrictBrandTagLong,
+          breadcrumbName: '四环屏-数字商业：品牌与标签相关性'
+        }
+      ]
     },
     {
       path: 'inner-scatter',
