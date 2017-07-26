@@ -1,49 +1,49 @@
-.page-title-div {
-  text-align: center;
-  margin-bottom: 45px;
-  .page-title {
-    color: #108EE9;
-    font-size: 36px;
-    line-height: 2;
-    display: inline-block;
-    border: 2px solid rgba(16,142,233,.5);
-    border-left: none;
-    border-right: none;
-    position: relative;
-    // &::before,
-    &::after {
-      content: " "; // necessary
-      display: inline-block;
-      border: none;
-      border-top: 6px solid rgba(16,142,233,.5);
-      width: 60%;
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: lineWider 3s linear infinite;
-    }
-    // &::before {
-    //   top: -4px;
-    //   animation-delay: 1.5s;
-    // }
-  }
-  @keyframes lineWider {
-    0% {
-      width: 1px;
-    }
-    50% {
-      width: 100%;
-    }
-    100% {
-      width: 1px;
-    }
-  }
-}
+// .page-title-div {
+//   text-align: center;
+//   margin-bottom: 45px;
+//   .page-title {
+//     color: #108EE9;
+//     font-size: 36px;
+//     line-height: 2;
+//     display: inline-block;
+//     border: 2px solid rgba(16,142,233,.5);
+//     border-left: none;
+//     border-right: none;
+//     position: relative;
+//     // &::before,
+//     &::after {
+//       content: " "; // necessary
+//       display: inline-block;
+//       border: none;
+//       border-top: 6px solid rgba(16,142,233,.5);
+//       width: 60%;
+//       position: absolute;
+//       bottom: -4px;
+//       left: 50%;
+//       transform: translateX(-50%);
+//       animation: lineWider 3s linear infinite;
+//     }
+//     // &::before {
+//     //   top: -4px;
+//     //   animation-delay: 1.5s;
+//     // }
+//   }
+//   @keyframes lineWider {
+//     0% {
+//       width: 1px;
+//     }
+//     50% {
+//       width: 100%;
+//     }
+//     100% {
+//       width: 1px;
+//     }
+//   }
+// }
 .district-brand-tag {
   padding: 147px 0 73px;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   height: 100%;
   .type-title {
     font-size: 24px;
@@ -111,6 +111,7 @@
           transform: skewX(-30deg) translateX(25%) translateY(100%);
           width: 100%;
           font-size: 20px;
+          z-index: 100;
         }
         .brand-cube {
           width: 238px;
