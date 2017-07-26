@@ -30,7 +30,7 @@
       height: 189PX;
     }
     .bar-title {
-      color: #FFFCFF;
+      color: #fffcff;
       text-align: center;
       font-size: 9PX;
       position: absolute;
@@ -50,7 +50,6 @@
       margin: 0 6PX;
       display: flex;
       align-items: flex-end;
-      // animation: gradualHeight 2s ease-out;
     }
     .name-wrap {
       position: absolute;
@@ -77,6 +76,9 @@
       text-align: center;
       transform: rotate(-28deg);
     }
+    .pillar-active {
+      animation: gradualHeight 2s ease-out;
+    }
   }
   .box {
     width: 135PX;
@@ -87,7 +89,7 @@
       height: 150PX;
     }
     .bar-title {
-      color: #FFFCFF;
+      color: #fffcff;
       text-align: center;
       font-size: 5PX;
       position: absolute;
@@ -107,7 +109,6 @@
       margin: 0 3PX;
       display: flex;
       align-items: flex-end;
-      // animation: gradualHeight 2s ease-out;
     }
     .name-wrap {
       position: absolute;
@@ -137,7 +138,10 @@
   .pillar {
     width: 1PX;
     height: 100%;
-    background-image: linear-gradient(rgba(52, 208, 245, 0.60) 2%, rgba(60, 134, 248, 0.30) 98%);
+    background-image: linear-gradient(
+      rgba(52, 208, 245, 0.60) 2%,
+      rgba(60, 134, 248, 0.30) 98%
+    );
     transform: skewY(-45deg);
   }
   .name-wrap::after {

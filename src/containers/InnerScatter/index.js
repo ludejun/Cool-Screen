@@ -119,14 +119,13 @@ export default class InnerScatter extends Component {
   }
 
   slideBtn() {
-    let timer = null;
     clearInterval(timer);
     let ul = document.getElementById('slideWrap');
     let allLI = ul.getElementsByTagName("li");
     let selectTitle = document.querySelector('.bar-title');
     selectTitle.innerHTML = showType[this.state.index];
 
-    timer = setInterval(() => {
+    let timer = setInterval(() => {
       if(this.state.index === 3){
         this.setState({index:0});
       }else{
