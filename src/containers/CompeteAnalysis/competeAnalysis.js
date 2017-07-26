@@ -3,6 +3,21 @@ import {BgAnimation, WDCurve} from '../../components';
 import HeaderTitle from '../Layout/HeaderTitle';
 import './competeAnalysis.less';
 
+
+
+const percent={
+    percent1:90,
+    percent2:80,
+    percent3:70,
+    percent4:60,
+    percent5:50,
+    percent6:40,
+    percent7:30,
+    percent8:20,
+    percent9:10,
+    percent10:5
+};
+
 class CompeteAnalysis extends Component {
     constructor() {
         super();
@@ -211,53 +226,73 @@ class CompeteAnalysis extends Component {
                         <div className="compete-right-content">
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent1}%`
+                                }}></div></div>
+                                <i>{percent.percent1}%</i>
                             </div>
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading2.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading2.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent2}%`
+                                }}></div></div>
+                                <i>{percent.percent2}%</i>
                             </div>
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading3.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading3.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent3}%`
+                                }}></div></div>
+                                <i>{percent.percent3}%</i>
                             </div>
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading4.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading4.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent4}%`
+                                }}></div></div>
+                                <i>{percent.percent4}%</i>
                             </div>
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading5.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading5.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent5}%`
+                                }}></div></div>
+                                <i>{percent.percent5}%</i>
                             </div>
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading6.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading6.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent6}%`
+                                }}></div></div>
+                                <i>{percent.percent6}%</i>
                             </div>
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading7.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading7.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent7}%`
+                                }}></div></div>
+                                <i>{percent.percent7}%</i>
                             </div>
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading8.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading8.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent8}%`
+                                }}></div></div>
+                                <i>{percent.percent8}%</i>
                             </div>
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading9.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading9.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent9}%`
+                                }}></div></div>
+                                <i>{percent.percent9}%</i>
                             </div>
                             <div className="line">
                                 <span>世博园</span>
-                                <div><img src="/img/competeloading10.svg"></img></div>
-                                <i>45%</i>
+                                <div className="line-m"><img src="/img/competeloading10.svg"></img><div className="mask" style={{
+                                    width:`${100-percent.percent10}%`
+                                }}></div></div>
+                                <i>{percent.percent10}%</i>
                             </div>
                         </div>
                     </div>
