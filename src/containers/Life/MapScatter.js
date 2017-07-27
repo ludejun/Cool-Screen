@@ -13,26 +13,17 @@ const mapList = [
   {
     img: '/img/beijing-tab.png',
     city: '北京市',
-    name: 'beijing',
-    data: '',
-    position1: 'top-left',
-    position: 'left'
+    name: 'beijing'
   },
   {
     img: '/img/shanghai-tab.png',
     city: '上海市',
-    name: 'shanghai',
-    data: '',
-    position1: 'top-right',
-    position: 'right'
+    name: 'shanghai'
   },
   {
     img: '/img/guangzhou-tab.png',
     city: '广州市',
-    name: 'guangzhou',
-    data: '',
-    position1: 'bottom-right',
-    position: 'right'
+    name: 'guangzhou'
   }
 ];
 
@@ -45,9 +36,8 @@ export default class MapScatter extends Component {
   }
 
   componentDidMount() {
-    let timer = null;
     clearInterval(timer);
-    timer = setInterval(() => {
+    let timer = setInterval(() => {
       if (this.state.index === 2) {
         this.setState({ index: 0 });
       } else {
@@ -66,17 +56,17 @@ export default class MapScatter extends Component {
         <div className="map-scatter">
           <img className="map-scatter-img" src="/img/map-scatter.png" />
           <div key={this.state.index} className="area-map-tag">
-            <div className={`area-map ${mapList[this.state.index].position1}`}>
+            <div className="area-map">
               <img src={mapList[this.state.index].img} className="small-area-img" />
               <div className="map-container">
                 <WDAreaMap
-                  className={`map map-${this.state.index}`}
+                  className="map"
                   name={mapList[this.state.index].name}
                   data={data[this.state.index]}
                   map={map[this.state.index]}
                 />
               </div>
-              <p className={`name ${mapList[this.state.index].position}`}>
+              <p className="name">
                 {mapList[this.state.index].city}
               </p>
             </div>

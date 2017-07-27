@@ -204,7 +204,9 @@ export default class BusinessAnalysis extends Component {
             onChange={this.radioChange}
           >
             {radioList.map((v, i) =>
-              <Radio.Button key={i} value={i} className="overview-month">{v}</Radio.Button>
+              <Radio.Button key={i} value={i} className="overview-month">
+                {v}
+              </Radio.Button>
             )}
           </Radio.Group>
           <div className="tag tag-0">
@@ -231,7 +233,9 @@ export default class BusinessAnalysis extends Component {
           </div>
           <img src="/img/building.png" className="left-img" />
         </div>
-        <div className="right-container"><WDAnalysis /></div>
+        <div className="right-container">
+          <WDAnalysis />
+        </div>
       </div>
     );
   }

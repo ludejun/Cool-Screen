@@ -336,19 +336,19 @@ export default class InnerScatter extends Component {
               <div className="bar">
                 <div className="bar-title" />
                 <img src="/img/pillar-bg.png" className="pillar-bg" />
-                <div className="pillar-list">
-                  <div className="erea-wrap">
-                    {pillarData[this.state.index].map((item, i) =>
-                      <div key={i} className="erea" style={{ height: item.percent }}>
-                        <div key={this.state.index} className="child-item">
-                          {pillar.map((item, i) => <div key={i} className="pillar" />)}
-                          <div className={this.state.index === 0 ? 'name name-rotate' : 'name'}>
-                            {item.name.substring(0, 4)}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                <div key={this.state.index} className="pillar-container">
+                  {pillarData[this.state.index].map((item, i) =>
+                    <div key={i} className="area" style={{ height: item.percent }}>
+                      {pillar.map((item, i) => <div key={i} className="pillar" />)}
+                    </div>
+                  )}
+                </div>
+                <div className="name-container">
+                  {pillarData[this.state.index].map((item, i) =>
+                    <div key={i} className={this.state.index === 0 ? 'name name-rotate' : 'name'}>
+                      {item.name.substring(0, 4)}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
