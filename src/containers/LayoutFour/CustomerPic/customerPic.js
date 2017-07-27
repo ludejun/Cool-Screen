@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
-import {WDImageBar, WDImagePercent} from '../../components';
+import {WDImageBar, WDImagePercent} from '../../../components';
 import './customerPic.less';
 
 const consume = [120, 40, 10];
