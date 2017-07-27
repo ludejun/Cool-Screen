@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { WDPillar, WDImageBar, WDImagePercent, WDPolyLine } from './index';
+import { WDPillar, WDImageBar, WDImagePercent } from './index';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
-import { Radio } from 'antd';
 import anime from 'animejs';
 import './WDAnalysis.less';
 
@@ -170,12 +169,6 @@ const option = {
     }
   ]
 };
-const radioList = ['Test1', 'Test2', 'Test3'];
-const listArray = [
-  '55,10 55,40 78,40 78,80',
-  '55,10 55,60 90,60 90,120',
-  '55,10 55,40 20,40 20,80'
-];
 
 export default class Analysis extends Component {
   constructor(props) {
