@@ -103,6 +103,11 @@ const routeConfig = {
           path: 'district-brand-tag',
           component: Routes.DistrictBrandTagLong,
           breadcrumbName: '四环屏-数字商业：品牌与标签相关性'
+        },
+        {
+          path: 'customer-pic',
+          component: Routes.FcustomerPic,
+          breadcrumbName: '四环屏-万达大数据-商圈分析'
         }
       ]
     },

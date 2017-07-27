@@ -26,6 +26,7 @@ export { default as Commerce } from './Home/Commerce';
 export { default as HomeSum } from './Home/HomeSum';
 // 客群画像
 export { default as CustomerPic } from './customerPic';
+export { default as FcustomerPic} from './CustomerPic/customerPic';
 // 广场竞品客流分析
 export { default as CompeteAnalysis } from './CompeteAnalysis/competeAnalysis';
 // 数字商业
