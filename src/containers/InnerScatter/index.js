@@ -127,6 +127,7 @@ export default class InnerScatter extends Component {
     this.state = {
       index: 0
     };
+    this.timer = null;
   }
 
   componentDidMount() {
@@ -134,13 +135,13 @@ export default class InnerScatter extends Component {
   }
 
   slideBtn() {
-    clearInterval(timer);
+    clearInterval(this.timer);
     const ul = document.getElementById('slideWrap');
     const allLI = ul.getElementsByTagName('li');
     const selectTitle = document.querySelector('.bar-title');
     selectTitle.innerHTML = showType[this.state.index];
 
-    let timer = setInterval(() => {
+    this.timer = setInterval(() => {
       if (this.state.index === 3) {
         this.setState({ index: 0 });
       } else {
@@ -148,6 +149,10 @@ export default class InnerScatter extends Component {
       }
       selectTitle.innerHTML = showType[this.state.index];
     }, 3000);
+  }
+
+  componentWillUnMount() {
+    clearInterval(this.timer);
   }
 
   renderMap(index) {

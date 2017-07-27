@@ -21,7 +21,6 @@
     .hanabi-1 {
       width: 60PX;
       height: 2PX;
-      left: 120PX;
       animation: hanabi-1 2s linear infinite;
     }
     .hanabi-2 {
@@ -37,7 +36,6 @@
     .hanabi-3 {
       width: 50PX;
       height: 2PX;
-      left: 100PX;
       animation: hanabi-3 2s linear infinite;
     }
     .hanabi-4 {
@@ -54,7 +52,7 @@
     @keyframes hanabi-1 {
       0% {
         width: 0;
-        left: 120PX;
+        left: 165PX;
         opacity: 0;
       }
       10% {
@@ -82,7 +80,7 @@
     @keyframes hanabi-3 {
       0% {
         width: 0;
-        left: 100PX;
+        left: 145PX;
         opacity: 0;
       }
       10% {
@@ -187,9 +185,6 @@
       transform: rotate(-28deg);
       transition: all linear 0.5s;
     }
-    .pillar-active {
-      // animation: gradualHeight 2s ease-out;
-    }
   }
   .box {
     width: 135PX;
@@ -262,17 +257,10 @@
     transform: skewY(-45deg);
     transition: all linear 0.5s;
   }
-  // .name-wrap::after {
-  //   display: block;
-  //   content: "";
-  //   clear: both;
-  // }
-}
-@keyframes gradualHeight {
-  0% {
-    height: 50%;
-  }
-  100% {
-    height: 100%;
+  .name-wrap::after {
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
   }
 }
