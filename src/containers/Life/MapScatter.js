@@ -33,17 +33,22 @@ export default class MapScatter extends Component {
     this.state = {
       index: 0
     };
+    this.timer = null;
   }
 
   componentDidMount() {
-    clearInterval(timer);
-    let timer = setInterval(() => {
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
       if (this.state.index === 2) {
         this.setState({ index: 0 });
       } else {
         this.setState({ index: this.state.index + 1 });
       }
     }, 6000);
+  }
+
+  componentWillUnMount() {
+    clearInterval(this.timer);
   }
 
   render() {
