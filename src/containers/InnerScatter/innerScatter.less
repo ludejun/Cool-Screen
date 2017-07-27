@@ -1,0 +1,133 @@
+.inner-scatter-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 130px;
+
+  .main-content {
+    margin-top: 100px;
+  }
+  .main-content:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+  }
+
+  .china-map {
+    float: left;
+    width: 960px;
+    height: 600px;
+  }
+  .map {
+    width: 130%;
+    height: 130% !important;
+    margin-left: -20% !important;
+    margin-top: -10%;
+  }
+
+  .bar {
+    float: left;
+    width: 551.5px;
+    height: 600px;
+    position: relative;
+    .bar-title {
+      width: 48px;
+      height: 33px;
+      color: #fffcff;
+      text-align: center;
+      line-height: 33px;
+      font-size: 24px;
+      position: absolute;
+      left: 80px;
+      top: 5px;
+    }
+    .pillar-bg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .pillar-container {
+      bottom: 92px;
+      left: 54px;
+      position: absolute;
+      height: 394px;
+      display: flex;
+      align-items: flex-end;
+
+      .area {
+        width: 40px;
+        margin-left: 42px;
+        display: flex;
+        align-items: flex-end;
+
+        @keyframes gradualHeight {
+          0% {
+            height: 0%;
+          }
+        }
+        .pillar {
+          width: 4px;
+          height: 100%;
+          background-image: linear-gradient(
+            rgba(52, 208, 245, 0.60) 2%,
+            rgba(60, 134, 248, 0.30) 98%
+          );
+          transform: skewY(-45deg);
+          animation: gradualHeight 2s ease-out;
+        }
+      }
+    }
+    .name-container {
+      bottom: 53px;
+      left: 73px;
+      position: absolute;
+      .name {
+        font-size: 20px;
+        color: #fff;
+        float: left;
+        width: 82px;
+        text-align: center;
+      }
+      .name-rotate {
+        transform: rotate(-28deg);
+      }
+    }
+    .name-container::after {
+      display: block;
+      content: '';
+      clear: both;
+      height: 0;
+    }
+  }
+
+  .slide-btn {
+    width: 880px;
+    margin: 60px auto 30px;
+    height: 62px;
+  }
+
+  .slide-wrap li {
+    cursor: pointer;
+    float: left;
+    font-size: 30px;
+    color: #fff;
+    width: 182px;
+    height: 62px;
+    text-align: center;
+    line-height: 62px;
+    position: relative;
+    background-image: url("/img/normal.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slide-wrap li + li {
+    margin-left: 44px;
+  }
+
+  .active {
+    background-image: url("/img/active.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}

@@ -21,6 +21,7 @@ export { default as WDButtonSvg } from './WDButtonSvg';
 export { default as WDPolyLine } from './PolyLine';
 export { default as WDLayout } from './layout';
 export { default as AngelAside } from './AngelAside';
+export { default as CompeteSvg } from './competeSvg';
 
 // background
 export { default as BgAnimation } from './BgAnimation';

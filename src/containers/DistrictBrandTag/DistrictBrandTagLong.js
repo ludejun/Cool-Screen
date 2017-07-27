@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import anime from 'animejs';
-// import { WDForceGragh, AnimeBrandTag } from '../components';
 import HeaderTitle from '../Layout/HeaderTitle';
 import { getBaseFontSize } from '../../utils';
 import './DistrictBrandTag.less';
+import './DistrictBrandTagLong.less';
 
 export default class DistrictBrandTag extends Component {
   constructor(props) {
     super(props);
     this.data = {
-      0: { id: 0, name: '必胜客', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      1: { id: 1, name: '屈臣氏', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
-      2: { id: 2, name: '汉拿山', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      3: { id: 3, name: 'ZARA', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
-      4: { id: 4, name: '避风塘', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      5: { id: 5, name: '万达影城', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
-      6: { id: 6, name: '汤姆熊', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      7: { id: 7, name: '宝大祥', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      8: { id: 8, name: '一茶一座', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      9: { id: 9, name: '海澜之家', tag: [1, 2, 3, 4, 5, 6, 7, 8] }
+      0: { name: '万达影城', tag: ['管理', '金融', 'IT', '中青年', '女性', '有小孩', '无车', '高等教育'] },
+      1: { name: '汉拿山', tag: ['教育', '医药卫生', '中年', '青年', '北方人', '女性', '有小孩', '无车'] },
+      2: { name: '避风塘', tag: ['IT', '教育', '女性', '青年', '无小孩', '江浙沪', '已婚', '无车'] },
+      3: { name: '必胜客', tag: ['公共管理', '教育', 'IT', '住宿旅游', '大学生', '青年', '无小孩', '高中生'] },
+      4: { name: 'ZARA', tag: ['教育', 'IT', '金融', '女性', '青年', '中年', '高学历', '一线城市'] },
+      5: { name: '屈臣氏', tag: ['教育', '医药卫生', '公共管理', '金融', 'IT', '女性', '年轻人', '无车'] },
+      6: { name: '海澜之家', tag: ['公共服务', '餐饮', '教育', '医疗卫生', '中年', '青年', '无车', '二线城市'] },
+      7: { name: '大玩家', tag: ['教育', '公共管理', '女性', '年轻人', '亲子', '无车', '学生', '二线'] },
+      8: { name: '乐町', tag: ['教育', '医药卫生', '旅游', 'IT', '年轻人', '女性', '无车', '未婚'] },
+      9: { name: '宝大祥', tag: ['教育', 'IT', '旅游', '女性', '年轻人', '有孩子', '亲子', '无车'] }
     };
+
     this.brandList = [[0, 1, 2], [3, 4, 5, 6], [7, 8, 9]];
     this.highlightInterval = null;
 
@@ -45,12 +46,11 @@ export default class DistrictBrandTag extends Component {
       anime({
         targets: '.tag-div',
         direction: 'reverse',
-        easing: 'easeInOutQuart',
-        duration: 500,
-        scaleX: 0
+        easing: 'linear',
+        duration: 1000,
+        opacity: 0.5
       });
-    }, 10000);
-
+    }, 6000);
     Object.keys(this.data).forEach((v) => {
       const tagAnime = anime({
         targets: `#RoundSquare${v}`,
@@ -78,34 +78,31 @@ export default class DistrictBrandTag extends Component {
   render() {
     const { highlightBrand } = this.state;
     return (
-      <div className="district-brand-tag flex-row">
+      <div className="district-brand-tag district-brand-tag-circle flex-row flex-center">
         <HeaderTitle title="数字商业：品牌与标签相关性" />
-        <div>
+        <div className="brand-anime-container">
           <span className="type-title type-title-brand">品牌</span>
-          <div className="brand-anime-container">
-            <div className="brand-div">
-              {this.brandList.map((line, i) =>
-                <div className="brand-line" key={i}>
-                  {line.map((v, j) =>
-                    <div
-                      className={`brand-block ${highlightBrand === v ? 'highlight' : ''}`}
-                      key={j}
-                    >
-                      <span className="brand-title type-title-tag">
-                        {this.data[v].name || ''}
-                      </span>
-                      <span className="brand-cube" />
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-            {this.data[highlightBrand].tag.map((v, i) =>
-              <div className={`brand-hanabi brand-hanabi-${i + 1}`} key={i}>
-                <div className="span-hanabi" />
+
+          {/* <img className="brand-div-bg" src="/img/brand-tag-bg.svg" />*/}
+          <div className="brand-div">
+            {this.brandList.map((line, i) =>
+              <div className="brand-line" key={i}>
+                {line.map((v, j) =>
+                  <div className={`brand-block ${highlightBrand === v ? 'highlight' : ''}`} key={j}>
+                    <span className="brand-title type-title-tag">
+                      {this.data[v].name || ''}
+                    </span>
+                    <span className="brand-cube" />
+                  </div>
+                )}
               </div>
             )}
           </div>
+          {[1, 2, 3, 4, 5, 6].map((v, i) =>
+            <div className={`brand-hanabi brand-hanabi-${i + 1}`} key={i}>
+              <div className="span-hanabi" />
+            </div>
+          )}
         </div>
         <div className="tag-div flex1 flex-col">
           <div><span className="type-title type-title-tag">标签</span></div>
@@ -120,8 +117,7 @@ export default class DistrictBrandTag extends Component {
                 id={`RoundSquare${i + 1}`}
                 key={i}
               >
-                <img className="round-square-img" src="/img/tag-node.png" />
-                <div className="round-square-content">{`主力店${v}`}</div>
+                {v || ''}
               </div>
             )}
 
@@ -131,7 +127,6 @@ export default class DistrictBrandTag extends Component {
             </div>
           </div>
         </div>
-        {/*  </div>*/}
       </div>
     );
   }

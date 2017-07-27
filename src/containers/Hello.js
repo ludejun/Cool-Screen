@@ -65,6 +65,7 @@ export default class Hello extends Component {
         <div ref="threeTest" style={{float:'left'}}></div>
         <ThreeModel width={400} height={400} modelPath={'/model/male02/male02.obj'}/>
         <ThreeModel width={400} height={400} modelPath={'/model/female02/female02.obj'}/>
+
       </div>
     );
   }
