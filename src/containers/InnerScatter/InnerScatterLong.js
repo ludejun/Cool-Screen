@@ -310,6 +310,10 @@ export default class InnerScatterFour extends Component {
         <HeaderTitle title="数字商业：内场分布 + 指标排名" />
         <div className="inner-scatter-four">
           <div className="map-out">
+            <div className="hanabi hanabi-1" />
+            <div className="hanabi hanabi-2" />
+            <div className="hanabi hanabi-3" />
+            <div className="hanabi hanabi-4" />
             <img src="/img/inner-scatter-bg.png" className="bg-pic" />
             <div className="map-inner">
               {this.renderMap(this.state.index)}
