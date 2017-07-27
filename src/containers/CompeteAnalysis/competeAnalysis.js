@@ -149,6 +149,14 @@ class CompeteAnalysis extends Component {
             '#7FB80E',
             '#63C5FA'
         ];
+        this.state = {flag: true};
+    }
+    componentDidMount(){
+        setInterval(() => {
+            this.setState({
+                flag:!this.state.flag
+            })
+        },5000)
     }
     labelFormatter(params) {
         return `${parseInt(params.value[2], 10)}%`;
@@ -209,7 +217,7 @@ class CompeteAnalysis extends Component {
                                 </svg>
                             </div>
                             <WDCurve
-                                projectName={'武汉菱角万达广场'}
+                                projectName={''}
                                 radius={[2000, 5000, 10000]}
                                 colors={this.color}
                                 curveObj={this.config}
@@ -218,7 +226,7 @@ class CompeteAnalysis extends Component {
                                 height: '100%',
                                 width: '100%'
                             }}
-                                direction={'out'}/>
+                                direction={this.state.flag ? 'out' : 'in'}/>
                         </div>
                     </div>
                     <div className="compete-right">

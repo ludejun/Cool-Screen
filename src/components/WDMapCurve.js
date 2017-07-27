@@ -5,6 +5,7 @@ import 'echarts/extension/bmap/bmap';
 class WDBaiduMapCurve extends Component {
   constructor(props) {
     super(props);
+    this.circles = [];
     this.color = props.colors || [
       '#FDB933',
       '#D64F44',
@@ -66,7 +67,9 @@ class WDBaiduMapCurve extends Component {
     });
     let planePath = this.symbol[this.props.symbol] || this.symbol[6];
     let color = this.color;
-    let myChart = echarts.init(document.getElementById('WMapContainer'));
+
+    let myChart = echarts.getInstanceByDom(document.getElementById('WMapContainer'));
+    if (!myChart) myChart = echarts.init(document.getElementById('WMapContainer'));
     let startPoint = {
       x: fromPoint.baidu_lng,
       y: fromPoint.baidu_lat,
@@ -213,48 +216,51 @@ class WDBaiduMapCurve extends Component {
       color: ['#108EE9'],
     };
     myChart.setOption(option);
-    let EMap = myChart.getModel().getComponent('bmap').getBMap();
-    const top_left_navigation = new BMap.NavigationControl();
-    EMap.enableDragging();
-    EMap.addControl(top_left_navigation);
-    let point = new BMap.Point(fromPoint.baidu_lng, fromPoint.baidu_lat);
-    let circle = this.props.radius || [];
-    let span = (nothPoint.baidu_lat - southPoint.baidu_lat) * 111;
-    const labels = circle.map((it) => {
-      return { span: it / 111000 - 0.01, miter: it / 1000 };
-    });
-    labels.forEach((it) => {
-      const lpoint = new BMap.Point(
-        fromPoint.baidu_lng,
-        fromPoint.baidu_lat + it.span,
-      );
-      const label = new BMap.Label(`${it.miter}km`, {
-        position: lpoint,
-        offset: new BMap.Size(0, 0),
-      });
-      label.setStyle({
-        color: '#fff',
-        fontSize: '8px',
-        border: 'none',
-        backgroundColor: 'transparent',
-      });
-      EMap.addOverlay(label);
-    });
-    circle.forEach((item) => {
-      let circle = new BMap.Circle(point, item, {
-        fillColor: '#4990E2',
-        fillOpacity: 0.3,
-        strokeOpacity: 0.3,
-        strokeColor: '#4990E2',
-        strokeWeight: 1,
-      });
-      EMap.addOverlay(circle);
-    });
-    EMap.setZoom(this.scaleLevel(Math.ceil(span / 2)));
-    setTimeout(() => {
-      document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL') && (document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL').innerHTML = '');
-      document.querySelector('div.anchorBL') && (document.querySelector('div.anchorBL').innerHTML = '');
-    }, 100);
+    if(this.circles.length === 0){
+        let EMap = myChart.getModel().getComponent('bmap').getBMap();
+        const top_left_navigation = new BMap.NavigationControl();
+        EMap.enableDragging();
+        EMap.addControl(top_left_navigation);
+        let point = new BMap.Point(fromPoint.baidu_lng, fromPoint.baidu_lat);
+        let circle = this.props.radius || [];
+        let span = (nothPoint.baidu_lat - southPoint.baidu_lat) * 111;
+        const labels = circle.map((it) => {
+          return { span: it / 111000 - 0.01, miter: it / 1000 };
+        });
+        labels.forEach((it) => {
+          const lpoint = new BMap.Point(
+            fromPoint.baidu_lng,
+            fromPoint.baidu_lat + it.span,
+          );
+          const label = new BMap.Label(`${it.miter}km`, {
+            position: lpoint,
+            offset: new BMap.Size(0, 0),
+          });
+          label.setStyle({
+            color: '#fff',
+            fontSize: '8px',
+            border: 'none',
+            backgroundColor: 'transparent',
+          });
+          EMap.addOverlay(label);
+        });
+        circle.forEach((item) => {
+          let circle = new BMap.Circle(point, item, {
+            fillColor: '#4990E2',
+            fillOpacity: 0.3,
+            strokeOpacity: 0.3,
+            strokeColor: '#4990E2',
+            strokeWeight: 1,
+          });
+          this.circles.push(circle);
+          EMap.addOverlay(circle);
+        });
+        EMap.setZoom(this.scaleLevel(Math.ceil(span / 2)));
+        setTimeout(() => {
+          document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL') && (document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL').innerHTML = '');
+          document.querySelector('div.anchorBL') && (document.querySelector('div.anchorBL').innerHTML = '');
+        }, 100);
+    }
   }
 
   scaleLevel(dis) {
