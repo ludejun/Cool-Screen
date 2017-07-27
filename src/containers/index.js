@@ -26,7 +26,7 @@ export { default as Commerce } from './Home/Commerce';
 export { default as HomeSum } from './Home/HomeSum';
 // 客群画像
 export { default as CustomerPic } from './customerPic';
-export { default as FcustomerPic} from './CustomerPic/customerPic';
+export { default as FcustomerPic} from './LayoutFour/CustomerPic/customerPic';
 // 广场竞品客流分析
 export { default as CompeteAnalysis } from './CompeteAnalysis/competeAnalysis';
 // 数字商业
@@ -39,7 +39,7 @@ export { default as DigitalRecomand } from './DigitalRecomand';
 
 // 停车分析
 export { default as ParkingAnalysis } from './parkingAnalysis/parkingAnalysis';
-export { default as Fparkinganalysis } from './parkingAnalysis/parkingAnalysisLong';
+export { default as Fparkinganalysis } from './LayoutFour/parkingAnalysis/parkingAnalysisLong';
 
 // 运营商对比
 export { default as OperatorsComparison } from './OperatorsComparison';

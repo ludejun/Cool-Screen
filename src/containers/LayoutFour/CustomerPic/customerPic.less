@@ -50,7 +50,9 @@
                 .cell-title{
                     flex:1;
                     transform:translate(10PX);
-                    
+                    border-top:3px solid #3D5079;
+                    text-align: center;
+                    padding-top:10PX;
                 }
                 .cell-content{
                     flex:15;
@@ -66,16 +68,25 @@
                 }
             }
             .second-row{
+                padding-top:40PX;
                 .cell{
                     display:block;
                     p{
-                        text-align: center;
-                        border-bottom:1px solid #3E507A;
+                        position:relative;
+                        padding-left: 50PX;
+                        span{
+                            position:absolute;
+                            width:60%;
+                            left:22%;
+                            bottom:0;
+                            border-bottom: 1px solid #3D5079;
+                        }
                     }
                     .car-situation{
                         transform:scale(0.7);
                     }
                     .sex-situation{
+                        width:110%;
                         transform:scale(0.6);
                     }
                 }

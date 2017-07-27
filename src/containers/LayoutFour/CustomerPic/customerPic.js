@@ -273,15 +273,15 @@ class Cuspic extends Component {
                     </div>
                     <div className="row second-row">
                         <div className="cell">
-                            <p>车辆情况对比</p>
+                            <p>车辆情况对比<span /></p>
                              <div className="car-situation"><WDImagePercent dataList={carList} /></div>
                         </div>
                         <div className="cell">
-                            <p className="right-sub-title">性别对比</p>
+                            <p className="right-sub-title">性别对比<span /></p>
                             <div className="sex-situation"><WDImageBar dataList={genderList}/></div>
                         </div>
                         <div className="cell">
-                            <p className="right-sub-title">已婚对比</p>
+                            <p className="right-sub-title">已婚对比<span /></p>
                             <div className="car-situation"><WDImagePercent dataList={marriage}/></div>
                         </div>
                     </div>
