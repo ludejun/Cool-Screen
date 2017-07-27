@@ -127,23 +127,20 @@ export default class InnerScatterFour extends Component {
     this.state = {
       index: 0
     };
+    this.timer = null;
   }
 
   componentDidMount() {
-    this.slideBtn();
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      this.setState({
+        index: (this.state.index + 1) % 4
+      });
+    }, 3000);
   }
 
-  slideBtn() {
-    clearInterval(timer);
-    let timer = setInterval(() => {
-      if (this.state.index === 3) {
-        this.setState({ index: 0 });
-      } else {
-        this.setState({
-          index: this.state.index + 1
-        });
-      }
-    }, 3000);
+  componentWillUnMount() {
+    clearInterval(this.timer);
   }
 
   renderMap(index) {
