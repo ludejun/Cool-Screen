@@ -5,6 +5,106 @@
   .map-out {
     width: 356PX;
     height: 231PX;
+    position: relative;
+    .hanabi {
+      position: absolute;
+      border-radius: 2PX 2PX 0 0;
+    }
+    .hanabi-1,
+    .hanabi-3 {
+      background: linear-gradient(to right, #328dec, transparent);
+    }
+    .hanabi-2,
+    .hanabi-4 {
+      background: linear-gradient(to left, #328dec, transparent);
+    }
+    .hanabi-1 {
+      width: 60PX;
+      height: 2PX;
+      animation: hanabi-1 2s linear infinite;
+    }
+    .hanabi-2 {
+      width: 30PX;
+      height: 2PX;
+      left: 255PX;
+      animation: hanabi-2 2s linear infinite;
+    }
+    .hanabi-1,
+    .hanabi-2 {
+      top: 18PX;
+    }
+    .hanabi-3 {
+      width: 50PX;
+      height: 2PX;
+      animation: hanabi-3 2s linear infinite;
+    }
+    .hanabi-4 {
+      width: 15PX;
+      height: 2PX;
+      left: 250PX;
+      animation: hanabi-4 2s linear infinite;
+    }
+    .hanabi-3,
+    .hanabi-4 {
+      bottom: 6PX;
+    }
+
+    @keyframes hanabi-1 {
+      0% {
+        width: 0;
+        left: 165PX;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        left: 80PX;
+        opacity: 1;
+      }
+    }
+    @keyframes hanabi-2 {
+      0% {
+        width: 0;
+        left: 255PX;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        left: 275PX;
+        opacity: 1;
+      }
+    }
+    @keyframes hanabi-3 {
+      0% {
+        width: 0;
+        left: 145PX;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        left: 60PX;
+        opacity: 1;
+      }
+    }
+    @keyframes hanabi-4 {
+      0% {
+        width: 0;
+        left: 250PX;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        left: 260PX;
+        opacity: 1;
+      }
+    }
     .bg-pic {
       height: 241PX;
     }
@@ -12,13 +112,13 @@
       width: 340PX;
       height: 210PX;
       position: absolute;
-      top: 29PX;
+      top: 17PX;
     }
     .map {
-      width: 110%;
-      height: 110% !important;
+      width: 115%;
+      height: 115% !important;
       margin-left: -4% !important;
-      margin-top: -2% !important;
+      margin-top: -4% !important;
     }
   }
   .box-active {
@@ -26,8 +126,10 @@
     height: 187PX;
     margin-left: 28PX;
     position: relative;
+    transition: all linear 0.5s;
     .box-pic {
       height: 189PX;
+      transition: all linear 0.5s;
     }
     .bar-title {
       color: #fffcff;
@@ -36,6 +138,7 @@
       position: absolute;
       left: 24PX;
       top: 0;
+      transition: all linear 0.5s;
     }
     .pillar-wrap {
       position: absolute;
@@ -44,17 +147,20 @@
       left: 24PX;
       display: flex;
       align-items: flex-end;
+      transition: all linear 0.5s;
     }
     .erea {
       width: 15PX;
       margin: 0 6PX;
       display: flex;
       align-items: flex-end;
+      transition: all linear 0.5s;
     }
     .name-wrap {
       position: absolute;
       bottom: 22PX;
       left: 20PX;
+      transition: all linear 0.5s;
     }
     .name {
       float: left;
@@ -62,22 +168,22 @@
       color: #fff;
       width: 28PX;
       text-align: center;
+      transition: all linear 0.5s;
     }
     .name-wrap-rotate {
       position: absolute;
       bottom: 20PX;
-      left: 13PX;
+      left: 22PX;
       width: 180PX;
+      transition: all linear 0.5s;
     }
     .name-rotate {
       float: left;
-      font-size: 8PX;
+      font-size: 7PX;
       color: #fff;
       text-align: center;
       transform: rotate(-28deg);
-    }
-    .pillar-active {
-      animation: gradualHeight 2s ease-out;
+      transition: all linear 0.5s;
     }
   }
   .box {
@@ -85,8 +191,10 @@
     height: 148PX;
     margin-left: 28PX;
     position: relative;
+    transition: all linear 0.5s;
     .box-pic {
       height: 150PX;
+      transition: all linear 0.5s;
     }
     .bar-title {
       color: #fffcff;
@@ -95,6 +203,7 @@
       position: absolute;
       left: 20PX;
       top: 2PX;
+      transition: all linear 0.5s;
     }
     .pillar-wrap {
       position: absolute;
@@ -103,29 +212,34 @@
       left: 24PX;
       display: flex;
       align-items: flex-end;
+      transition: all linear 0.5s;
     }
     .erea {
       width: 15PX;
       margin: 0 3PX;
       display: flex;
       align-items: flex-end;
+      transition: all linear 0.5s;
     }
     .name-wrap {
       position: absolute;
       bottom: 15PX;
       left: 25PX;
+      transition: all linear 0.5s;
     }
     .name {
       float: left;
       font-size: 5PX;
       color: #fff;
       width: 21PX;
+      transition: all linear 0.5s;
     }
     .name-wrap-rotate {
       width: 150PX;
       position: absolute;
       bottom: 15PX;
-      left: 15PX;
+      left: 23PX;
+      transition: all linear 0.5s;
     }
     .name-rotate {
       float: left;
@@ -133,6 +247,7 @@
       color: #fff;
       text-align: center;
       transform: rotate(-28deg);
+      transition: all linear 0.5s;
     }
   }
   .pillar {
@@ -140,18 +255,12 @@
     height: 100%;
     background-image: linear-gradient(rgba(52, 208, 245, 0.60) 2%, rgba(60, 134, 248, 0.30) 98%);
     transform: skewY(-45deg);
+    transition: all linear 0.5s;
   }
   .name-wrap::after {
     display: block;
     content: "";
     clear: both;
-  }
-}
-@keyframes gradualHeight {
-  0% {
     height: 0;
-  }
-  100% {
-    height: 100%;
   }
 }

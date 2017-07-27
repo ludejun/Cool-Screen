@@ -1,0 +1,100 @@
+.customer-container-f{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    .left{
+        flex:2;
+        padding:16PX 10PX;
+        position:relative;
+        .left-layout{
+            position:absolute;
+            top:16PX;
+            bottom:16PX;
+            width:44PX;
+            svg{
+                height:100%;
+                width:100%;
+            }
+        }
+        .right-layout{
+            position:absolute;
+            top:16PX;
+            bottom:16PX;
+            width:44PX;
+            right:0;
+            transform:rotateY(180deg);
+            svg{
+                height:100%;
+                width:100%;
+            }
+        }
+        .content{
+            position:absolute;
+            z-index: 99;
+            left:40PX;
+            right:40PX;
+            top:18PX;
+            bottom:18PX;
+            background: #04123E;
+            display:flex;
+            flex-direction: column;
+            .row{
+                flex:1;
+                display:flex;
+            }
+            .cell{
+                flex:1;
+                display: flex;
+                .cell-title{
+                    flex:1;
+                    transform:translate(10PX);
+                    border-top:3px solid #3D5079;
+                    text-align: center;
+                    padding-top:3PX;
+                }
+                .cell-content{
+                    flex:15;
+                    position:relative;
+                    .circle-chart{
+                        width: 300PX !important;
+                        height: 100PX !important;
+                    }
+                    .age-chart{
+                        width: 200PX !important;
+                        height: 130PX !important;
+                    }
+                }
+            }
+            .second-row{
+                padding-top:40PX;
+                .cell{
+                    display:block;
+                    p{
+                        position:relative;
+                        padding-left: 50PX;
+                        span{
+                            position:absolute;
+                            width:60%;
+                            left:22%;
+                            bottom:0;
+                            border-bottom: 1px solid #3D5079;
+                        }
+                    }
+                    .car-situation{
+                        transform:scale(0.7);
+                    }
+                    .sex-situation{
+                        width:110%;
+                        transform:scale(0.6);
+                    }
+                }
+            }
+        }
+    }
+    .right{
+        flex:1;
+        padding-top: 40PX;
+    }
+}

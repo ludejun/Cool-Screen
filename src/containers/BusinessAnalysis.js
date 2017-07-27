@@ -11,7 +11,9 @@ export default class BusinessAnalysis extends Component {
         <HeaderTitle title="万达大数据-商圈分析" />
         <div className="left-container"><WDFloor />
         </div>
-        <div className="right-container"><WDAnalysis /></div>
+        <div className="right-container">
+          <WDAnalysis />
+        </div>
       </div>
     );
   }
