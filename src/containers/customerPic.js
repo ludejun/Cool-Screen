@@ -151,7 +151,7 @@ class customerPic extends Component {
                             xmlns="http://www.w3.org/2000/svg"
                             xmlnsXlink="http://www.w3.org/1999/xlink">
                             <circle cx="20" cy="70" r="5" fill="#0E7BCD"/>
-                            <circle cx="20" cy="70" r="10" fill="#0E7BCD" opacity="0.6"/>
+                            <circle className="circle-bubble" cx="20" cy="70" r="10" fill="#0E7BCD" opacity="0.6"/>
                             <polyline points="20,70 190,70 220,90" stroke="#0E7BCD" fill="none"/>
                         </svg>
                     </div>
