@@ -25,21 +25,26 @@ export default class WDFloor extends Component {
 	    this.setState({ tab: e.target.value });
 
 	};
-  	componentDidMount() {
-    	this.radioCarousel();
-  	}
+  	
 
-  radioCarousel() {
-    clearInterval(timer);
-    let timer = setInterval(() => {
-      if (this.state.tab === 2) {
-        this.setState({ tab: 0 });
-      } else {
+
+componentDidMount() {
+    clearInterval(this.timer);
+    clearInterval(reRender);
+    this.timer = setInterval(() => {
+      if (this.state.tab < 2) {
         this.setState({
           tab: this.state.tab + 1
         });
+      } else {
+        this.setState({ tab: 0 });
       }
-    }, 2000);
+    }, 3000);
+    const reRender = setInterval(() => {
+      this.setState({
+        consumeCount: this.state.consumeCount + 1
+      });
+    }, 3000);
   }
   render() {
     return (
