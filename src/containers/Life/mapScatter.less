@@ -27,7 +27,13 @@
     width: 776px;
     height: 515px;
     position: absolute;
-
+    .animate-wrap {
+      width: 160px;
+      height: 106px;
+      position: absolute;
+      left: 74px;
+      top: 77px;
+    }
     .map-container {
       //width:306px;
       //height:238px;
@@ -97,11 +103,10 @@
     width: 1px;
     left: 1347px;
     top: 229px;
-    //background: red;
   }
   .line-1-0 {
     height: 1px;
-    width: 676px;
+    width: 675px;
     left: 745px;
     top: 235px;
   }
@@ -157,5 +162,148 @@
   .circle-2 {
     left: 1313px;
     bottom: 98px;
+  }
+}
+
+.month-container {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .dot {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    z-index: 2;
+    background: #11ABFF;
+  }
+  /* 产生动画（向外扩散变大）的圆圈  */
+  .pulse {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border: 6px solid #11ABFF;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.5;
+    animation: warn 2s ease-out infinite;
+    //box-shadow: 1px 1px 30px #11ABFF;
+    background: #11ABFF;
+  }
+
+  .pulse1 {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border: 6px solid #11ABFF;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.3;
+    animation: warn1 2s ease-out infinite;
+    background: #11ABFF;
+  }
+}
+
+.line-container {
+  position: absolute;
+  width: 160px;
+  height: 60px;
+  left: 0;
+  top: 40px;
+  overflow: hidden;
+  .hover-line {
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+  .hover-line:nth-child(1) {
+    right: 15px;
+    top: 5px;
+    animation: hover-line 2s ease-out infinite alternate-reverse;
+  }
+  .hover-line:nth-child(2) {
+    right: 0;
+    top: 20px;
+    animation: hover-line 2s .3s ease-out infinite alternate-reverse;
+  }
+  .hover-line:nth-child(3) {
+    left: 0;
+    top: 35px;
+    animation: hover-line 2s .6s ease-out infinite alternate-reverse;
+  }
+  .hover-line:nth-child(4) {
+    left: 15px;
+    top: 50px;
+    animation: hover-line 2s .9s ease-out infinite alternate-reverse;
+  }
+}
+
+@keyframes hover-line {
+  0% {
+    transform: translateX(15px);
+  }
+  0% {
+    transform: translateX(-15px);
+  }
+}
+
+@keyframes warn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.0;
+  }
+
+  25% {
+    transform: scale(0.3);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+
+  75% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.0;
+  }
+}
+
+@keyframes warn1 {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+
+  25% {
+    transform: scale(0.3);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: scale(0.3);
+    opacity: 0.3;
+  }
+
+  75% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
   }
 }
