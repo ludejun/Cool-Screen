@@ -127,23 +127,20 @@ export default class InnerScatterFour extends Component {
     this.state = {
       index: 0
     };
+    this.timer = null;
   }
 
   componentDidMount() {
-    this.slideBtn();
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      this.setState({
+        index: (this.state.index + 1) % 4
+      });
+    }, 3000);
   }
 
-  slideBtn() {
-    clearInterval(timer);
-    let timer = setInterval(() => {
-      if (this.state.index === 3) {
-        this.setState({ index: 0 });
-      } else {
-        this.setState({
-          index: this.state.index + 1
-        });
-      }
-    }, 3000);
+  componentWillUnMount() {
+    clearInterval(this.timer);
   }
 
   renderMap(index) {
@@ -313,6 +310,10 @@ export default class InnerScatterFour extends Component {
         <HeaderTitle title="数字商业：内场分布 + 指标排名" />
         <div className="inner-scatter-four">
           <div className="map-out">
+            <div className="hanabi hanabi-1" />
+            <div className="hanabi hanabi-2" />
+            <div className="hanabi hanabi-3" />
+            <div className="hanabi hanabi-4" />
             <img src="/img/inner-scatter-bg.png" className="bg-pic" />
             <div className="map-inner">
               {this.renderMap(this.state.index)}

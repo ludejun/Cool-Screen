@@ -133,10 +133,10 @@ export default class WDPillar extends Component {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Wobble the cube using a sine wave
-      const wobble = Math.sin(Date.now() / 250) * canvas.height / 50;
+      const wobble = Math.sin(Date.now() / 250) * canvas.height / 10;
 
       // draw oval
-      drawEllipse(ctx, 50, 190 + wobble, 280, 60);
+      drawEllipse(ctx, 50, 190 + wobble, 280 + wobble / 4, 60);
       // draw the cube
       drawCube(100, 190 + wobble + y / 2, x, x, cube.height[0], cube.color[0]);
       drawCube(180, 180 + wobble + y / 2, x, x, cube.height[1], cube.color[1]);
@@ -156,7 +156,9 @@ export default class WDPillar extends Component {
             <p className={`percentage ${i !== 0 ? 'word-r' : ''}`} style={{ color: `${item.top}` }}>
               {item.percentage}
             </p>
-            <p className={`name ${i !== 0 ? 'word-r' : ''}`}>{item.name}</p>
+            <p className={`name ${i !== 0 ? 'word-r' : ''}`}>
+              {item.name}
+            </p>
           </div>
         )}
       </div>

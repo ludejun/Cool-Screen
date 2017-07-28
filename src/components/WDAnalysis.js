@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { WDPillar, WDImageBar, WDImagePercent, WDPolyLine } from './index';
+import { WDPillar, WDImageBar, WDImagePercent } from './index';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
-import { Radio } from 'antd';
 import anime from 'animejs';
 import './WDAnalysis.less';
 
@@ -170,12 +169,6 @@ const option = {
     }
   ]
 };
-const radioList = ['Test1', 'Test2', 'Test3'];
-const listArray = [
-  '55,10 55,40 78,40 78,80',
-  '55,10 55,60 90,60 90,120',
-  '55,10 55,40 20,40 20,80'
-];
 
 export default class Analysis extends Component {
   constructor(props) {
@@ -187,46 +180,6 @@ export default class Analysis extends Component {
     };
     this.timer = null;
   }
-  componentDidMount() {
-    clearInterval(this.timer);
-    clearInterval(reRender);
-    this.timer = setInterval(() => {
-      if (this.state.tab < 2) {
-        this.setState({
-          tab: this.state.tab + 1
-        });
-      } else {
-        this.setState({ tab: 0 });
-      }
-    }, 3000);
-    const reRender = setInterval(() => {
-      this.setState({
-        consumeCount: this.state.consumeCount + 1
-      });
-    }, 3000);
-
-    for (let i = 0; i < 4; i++) {
-      anime({
-        targets: '.tag',
-        // translateY: 50,
-        opacity: 1,
-        easing: 'easeInOutQuad',
-        duration: 1600,
-        delay: 2000
-        // loop: true
-      });
-      anime({
-        targets: `.tag-tail-${i}`,
-        opacity: 1,
-        translateY: 50,
-        easing: 'easeInOutQuad',
-        direction: 'reverse',
-        duration: 800,
-        delay: 1100
-      });
-    }
-  }
-
   renderEchart = () => {
     const randomL = parseInt(Math.random() * 60);
     const randomM = parseInt(Math.random() * 70);
@@ -299,10 +252,6 @@ export default class Analysis extends Component {
       ]
     };
     return <Echarts className="consume-chart" option={consumeOption} />;
-  };
-  radioChange = (e) => {
-    clearInterval(this.timer);
-    this.setState({ tab: e.target.value });
   };
   render() {
     return (

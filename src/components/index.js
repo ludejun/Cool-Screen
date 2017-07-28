@@ -26,6 +26,9 @@ export { default as CompeteSvg } from './competeSvg';
 // background
 export { default as BgAnimation } from './BgAnimation';
 export { default as WDAnalysis } from './WDAnalysis';
+export { default as WDFloor } from './WDFloor';
+
+
 
 // three
 export {default as ThreeModel } from './ThreeModel';

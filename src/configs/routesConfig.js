@@ -105,10 +105,15 @@ const routeConfig = {
           breadcrumbName: '四环屏-数字商业：品牌与标签相关性'
         },
         {
+          path: 'customer-pic',
+          component: Routes.FcustomerPic,
+          breadcrumbName: '四环屏-万达大数据-商圈分析'
+        },
+        {
           path: 'inner-scatter',
           breadcrumbName: '数字商业：内场分布 + 指标排名',
           component: Routes.InnerScatterLong
-        },
+        }
       ]
     },
     {
@@ -135,6 +140,11 @@ const routeConfig = {
       path: 'compete-analysis',
       breadcrumbName: '广场竞品客流分析',
       component: Routes.CompeteAnalysis
+    },
+    {
+      path: 'digital-finance',
+      breadcrumbName: '数字金融-财富／小贷客群的万达生态描绘',
+      component: Routes.DigitalFinance
     },
     {
       path: '*',

@@ -149,6 +149,48 @@ class CompeteAnalysis extends Component {
             '#7FB80E',
             '#63C5FA'
         ];
+        this.rightColor = [
+            '#FDB933',
+            '#d64f44',
+            '#e0861a',
+            '#00a6ac',
+            '#1d953f',
+            '#328869',
+            '#894c50',
+            '#5db9ee',
+            '#7fb80e',
+            '#a04b2e'
+        ];
+        this.state = {
+            flag: true,
+            percent:[
+                    90,
+                    80,
+                    70,
+                    60,
+                    50,
+                    40,
+                    30,
+                    20,
+                    10,
+                    5
+            ]
+        };
+    }
+    componentDidMount(){
+        setInterval(() => {
+            this.randomP();
+            this.setState({
+                flag:!this.state.flag
+            })
+        },5000)
+    }
+    randomP = () => {
+        this.percent = [];
+        [1,2,3,4,5,6,7,8,9,0].forEach(() => {
+            this.percent.push(Math.ceil(Math.random()*100));
+        });
+        this.setState({percent:this.percent})
     }
     labelFormatter(params) {
         return `${parseInt(params.value[2], 10)}%`;
@@ -209,7 +251,7 @@ class CompeteAnalysis extends Component {
                                 </svg>
                             </div>
                             <WDCurve
-                                projectName={'武汉菱角万达广场'}
+                                projectName={''}
                                 radius={[2000, 5000, 10000]}
                                 colors={this.color}
                                 curveObj={this.config}
@@ -218,119 +260,27 @@ class CompeteAnalysis extends Component {
                                 height: '100%',
                                 width: '100%'
                             }}
-                                direction={'out'}/>
+                                direction={this.state.flag ? 'out' : 'in'}/>
                         </div>
                     </div>
                     <div className="compete-right">
-                        <div className="compete-right-title">客群流入交叉TOP10商场</div>
+                        <div className="compete-right-title">{this.state.flag?'商场客流流出top10':'商场客流流入top10'}</div>
                         <div className="compete-right-content">
-                            <div className="line">
-                                <span>世博园</span>
-                                <div className="line-m">
-                                  <CompeteSvg  style={{height: '100%',width: '100%'}}  color="#FDB933" />
-                                  <div className="mask" style={{
-                                    width:`${100-percent.percent1}%`
-                                  }}>
-                                  </div>
-                                </div>
-                                <i>{percent.percent1}%</i>
-                            </div>
-                            <div className="line">
-                                <span>世博园</span>
-                                <div className="line-m"><CompeteSvg style={{height: '100%',width: '100%'}} color="#d64f44"/>
-                                    <div className="mask" style={{
-                                        width:`${100-percent.percent2}%`
-                                    }}>
+                            {
+                                this.rightColor.map((it,index) => {
+                                    return <div className="line" key={index}>
+                                        <span>世博园</span>
+                                        <div className="line-m">
+                                        <CompeteSvg  style={{height: '100%',width: '100%'}}  color={it} />
+                                        <div className="mask" style={{
+                                            width:`${100-this.state.percent[index]}%`
+                                        }}>
+                                        </div>
+                                        </div>
+                                        <i>{this.state.percent[index]}%</i>
                                     </div>
-                                </div>
-                                <i>{percent.percent2}%</i>
-                            </div>
-                            <div className="line">
-                                <span>世博园</span>
-                                <div className="line-m">
-                                    <CompeteSvg  style={{height: '100%',width: '100%'}}  color="#e0861a" />
-                                    <div className="mask" style={{
-                                        width:`${100-percent.percent3}%`
-                                    }}>
-                                    </div>
-                                </div>
-                                <i>{percent.percent3}%</i>
-                            </div>
-                            <div className="line">
-                                <span>世博园</span>
-                                <div className="line-m">
-                                    <CompeteSvg  style={{height: '100%',width: '100%'}}  color="#00a6ac" />
-                                    <div className="mask" style={{
-                                        width:`${100-percent.percent4}%`
-                                    }}>
-                                    </div>
-                                </div>
-                                <i>{percent.percent4}%</i>
-                            </div>
-                            <div className="line">
-                                <span>世博园</span>
-                                    <div className="line-m"><CompeteSvg  style={{height: '100%',width: '100%'}}  color="#1d953f" />
-                                    <div className="mask" style={{
-                                        width:`${100-percent.percent5}%`
-                                    }}>
-                                    </div>
-                                    </div>
-                                <i>{percent.percent5}%</i>
-                            </div>
-                            <div className="line">
-                                <span>世博园</span>
-                                <div className="line-m">
-                                    <CompeteSvg  style={{height: '100%',width: '100%'}}  color="#328869" />
-                                    <div className="mask" style={{
-                                        width:`${100-percent.percent6}%`
-                                    }}>
-                                    </div>
-                                </div>
-                                <i>{percent.percent6}%</i>
-                            </div>
-                            <div className="line">
-                                <span>世博园</span>
-                                <div className="line-m">
-                                <CompeteSvg  style={{height: '100%',width: '100%'}}  color="#894c50" />
-                                    <div className="mask" style={{
-                                        width:`${100-percent.percent7}%`
-                                    }}>
-                                    </div>
-                                </div>
-                                <i>{percent.percent7}%</i>
-                            </div>
-                            <div className="line">
-                                <span>世博园</span>
-                                <div className="line-m"><CompeteSvg  style={{height: '100%',width: '100%'}}  color="#5db9ee" />
-                                    <div className="mask" style={{
-                                        width:`${100-percent.percent8}%`
-                                    }}>
-                                    </div>
-                                </div>
-                                <i>{percent.percent8}%</i>
-                            </div>
-                            <div className="line">
-                                <span>世博园</span>
-                                <div className="line-m">
-                                    <CompeteSvg  style={{height: '100%',width: '100%'}}  color="#7fb80e" />
-                                    <div className="mask" style={{
-                                        width:`${100-percent.percent9}%`
-                                    }}>
-                                    </div>
-                                </div>
-                                <i>{percent.percent9}%</i>
-                            </div>
-                            <div className="line">
-                                <span>世博园</span>
-                                <div className="line-m">
-                                    <CompeteSvg  style={{height: '100%',width: '100%'}}  color="#a04b2e" />
-                                    <div className="mask" style={{
-                                        width:`${100-percent.percent10}%`
-                                    }}>
-                                    </div>
-                                </div>
-                                <i>{percent.percent10}%</i>
-                            </div>
+                                })
+                            }
                         </div>
                     </div>
                 </div>

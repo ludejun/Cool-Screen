@@ -142,29 +142,11 @@ export default class ParkingAnalysis extends Component {
             <HeaderTitle title="车牌分析:  万达广场停车分析"/>
             <div className="parking-layout">
                 <div className="layout-front"></div>
-                <div ref="svgPath" className="layout-head">
-                    {this.state.width && <svg
-                        width="100%"
-                        height="100%"
-                        version="1.1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlnsXlink="http://www.w3.org/1999/xlink">
-                        <defs>
-                            <path
-                                d={`M0,0 L${this.state.width},0 ${this.state.width},${this.state.height} 0,${this.state.height} 0,0`}
-                                id="circlePath"/>
-                        </defs>
-                        <circle cx="0" cy="0" r="10" stroke="#fff" fill="white">
-                            <animateMotion begin="0s" dur="3s" rotate="auto" repeatCount="indefinite">
-                                <mpath xlinkHref="#circlePath"/>
-                            </animateMotion>
-                        </circle>
-                    </svg>}
-                </div>
+                <div ref="svgPath" className="layout-head"></div>
                 {['1', '2', '3'].map((i, index) => {
                     return <div key={index} className={`bar-container-${i} bar-container`}>
                         <div className="angel-style left-top-angel">
-                            <AngelAside />
+                            <AngelAside/>
                         </div>
                         <div className="angel-style rigth-top-angel">
                             <AngelAside/>
@@ -191,8 +173,10 @@ export default class ParkingAnalysis extends Component {
                             </svg>
                         </div>
                         <div className="left-info">
-                            <div className="mask"/>
-                            {<Echarts option={option} className="left-map"/>}
+                            <div className="mask"/> {< Echarts option = {
+                                option
+                            }
+                            className = "left-map" />}
                             <div className="city-area">上海市牌照所属区域分布图</div>
                         </div>
                         <div className="right-info">
@@ -220,22 +204,36 @@ export default class ParkingAnalysis extends Component {
                                         <li>
                                             <div className="belong-to">
                                                 <svg
-                                                    viewBox="0 0 135 42"
+                                                    width="135px"
+                                                    height="42px"
+                                                    viewBox="0 0 147 42"
                                                     version="1.1"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     xmlnsXlink="http://www.w3.org/1999/xlink">
                                                     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                                                        <g transform="translate(-1188.000000, -392.000000)">
-                                                            <g transform="translate(396.000000, 254.000000)">
-                                                                <g transform="translate(792.000000, 138.000000)">
+                                                        <g id="车牌分析" transform="translate(-1182.000000, -392.000000)">
+                                                            <g id="上海" transform="translate(396.000000, 254.000000)">
+                                                                <g id="Group-5" transform="translate(787.000000, 138.000000)">
                                                                     <path
-                                                                        d="M7.69554468,0.568781513 L126.685294,0.568781513 L134.035103,20.6588235 L126.685294,40.7488655 L7.69554468,40.7488655 L1.210419,20.6588235 L7.69554468,0.568781513 Z"
+                                                                        d="M12.6955447,0.568781513 L131.685294,0.568781513 L139.035103,20.6588235 L131.685294,40.7488655 L12.6955447,40.7488655 L6.210419,20.6588235 L12.6955447,0.568781513 Z"
                                                                         id="Rectangle-6"
                                                                         stroke="#108EE9"
-                                                                        strokeWidth="1.03"></path>
+                                                                        stroke-width="1.03"></path>
                                                                     <polygon
+                                                                        id="Rectangle-6"
                                                                         fill="#108EE9"
-                                                                        points="9.88480915 2.62941176 124.774421 2.62941176 132.008212 20.6588235 124.774421 38.6882353 9.88480915 38.6882353 3.50205292 20.6588235"></polygon>
+                                                                        points="14.8848091 2.62941176 129.774421 2.62941176 137.008212 20.6588235 129.774421 38.6882353 14.8848091 38.6882353 8.50205292 20.6588235"></polygon>
+                                                                    <polyline
+                                                                        id="Path-104"
+                                                                        stroke="#108EE9"
+                                                                        strokeWidth="2.06"
+                                                                        points="5.66925182 3.65966387 0.51870438 20.1436975 6.18430657 36.6277311"></polyline>
+                                                                    <polyline
+                                                                        id="Path-104"
+                                                                        stroke="#108EE9"
+                                                                        strokeWidth="2.06"
+                                                                        transform="translate(141.386177, 20.143697) scale(-1, 1) translate(-141.386177, -20.143697) "
+                                                                        points="143.703923 3.65966387 138.553376 20.1436975 144.218978 36.6277311"></polyline>
                                                                 </g>
                                                             </g>
                                                         </g>
@@ -269,7 +267,11 @@ export default class ParkingAnalysis extends Component {
                                                 </span>
                                                 <span className="under-line">单次平均停车消费</span>
                                             </div>
-                                            <div className="arrow-content" style={{paddingLeft:40}}>
+                                            <div
+                                                className="arrow-content"
+                                                style={{
+                                                paddingLeft: 40
+                                            }}>
                                                 <span>
                                                     <svg
                                                         width="23px"

@@ -41,100 +41,31 @@
       left: 80px;
       top: 5px;
     }
-    @keyframes fade-in {
-      0% {
-        opacity: 0;
-      }
-      /*初始状态 透明度为0*/
-      40% {
-        opacity: 0.2;
-      }
-      /*过渡状态 透明度为0*/
-      100% {
-        opacity: 1;
-      }
-      /*结束状态 透明度为1*/
-    }
-    .fadein {
-      animation: fade-in 1s ease;
-    }
-    @keyframes fade-out {
-      0% {
-        opacity: 1;
-      }
-      /*初始状态 透明度为0*/
-      40% {
-        opacity: .2;
-      }
-      /*过渡状态 透明度为0*/
-      100% {
-        opacity: 0;
-      }
-      /*结束状态 透明度为1*/
-    }
-    .fadeout {
-      animation: fade-out 1s ease;
-    }
     .pillar-bg {
       width: 100%;
       height: 100%;
     }
 
-    .pillar-list {
+    .pillar-container {
       bottom: 92px;
-      left: 74px;
+      left: 54px;
       position: absolute;
-      .erea-wrap {
-        position: relative;
-        width: 100%;
-        height: 394px;
-      }
-      .erea {
+      height: 394px;
+      display: flex;
+      align-items: flex-end;
+
+      .area {
         width: 40px;
-        margin: 0 20px;
-        float: left;
-        position: absolute;
-        bottom: 10px;
-        .erea::after {
-          display: block;
-          content: '';
-          clear: both;
-          height: 0;
-        }
-        @keyframes height-up {
-          from {
-            height: 0%;
-          }
-          to {
-            height: 100%;
-          }
-        }
-        .child-item {
-          //height: 0%;
-          position: absolute;
-          bottom: 10px;
-          height: 100%;
-          animation: gradualHeight 2s ease-out;
-        }
+        margin-left: 42px;
+        display: flex;
+        align-items: flex-end;
 
         @keyframes gradualHeight {
           0% {
             height: 0%;
           }
-          100% {
-            height: 100%;
-          }
         }
-        .current {
-          height: 0%;
-          position: absolute;
-          bottom: 10px;
-          animation: height-up 2s;
-          height: 100%;
-        }
-
         .pillar {
-          float: left;
           width: 4px;
           height: 100%;
           background-image: linear-gradient(
@@ -142,39 +73,26 @@
             rgba(60, 134, 248, 0.30) 98%
           );
           transform: skewY(-45deg);
+          animation: gradualHeight 2s ease-out;
         }
-
-        .name {
-          font-size: 20px;
-          color: #fff;
-          position: absolute;
-          bottom: -48px;
-          left: -23px;
-          width: 86px;
-          text-align: center;
-        }
-        .name-rotate {
-          transform: rotate(-28deg);
-        }
-      }
-      .erea:nth-child(1) {
-        left: 10px;
-      }
-      .erea:nth-child(2) {
-        left: 90px;
-      }
-      .erea:nth-child(3) {
-        left: 170px;
-      }
-      .erea:nth-child(4) {
-        left: 250px;
-      }
-      .erea:nth-child(5) {
-        left: 330px;
       }
     }
-
-    .erea-wrap::after {
+    .name-container {
+      bottom: 53px;
+      left: 73px;
+      position: absolute;
+      .name {
+        font-size: 20px;
+        color: #fff;
+        float: left;
+        width: 82px;
+        text-align: center;
+      }
+      .name-rotate {
+        transform: rotate(-28deg);
+      }
+    }
+    .name-container::after {
       display: block;
       content: '';
       clear: both;

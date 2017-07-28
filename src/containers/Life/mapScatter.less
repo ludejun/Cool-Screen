@@ -34,9 +34,10 @@
       left: 74px;
       top: 77px;
     }
+    left: 94px;
+    top: 50%;
+    transform: translateY(-50%);
     .map-container {
-      //width:306px;
-      //height:238px;
       width: 500px;
       height: 100%;
       position: absolute;
@@ -44,29 +45,9 @@
       right: 0;
     }
     .map {
-    }
-
-    .map-0 {
-      width: 100%;
-      height: 100% !important;
-      //margin-left: -5%;
-    }
-    .map-1 {
       width: 100%;
       height: 100% !important;
     }
-    .map-2 {
-      width: 100%;
-      height: 100% !important;
-    }
-  }
-
-  .top-left,
-  .top-right,
-  .bottom-right {
-    left: 94px;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
   .small-area-img {
@@ -93,38 +74,38 @@
   }
 
   .line-0-0 {
-    height: 1px;
+    height: 1PX;
     width: 607px;
     left: 740px;
     top: 229px;
   }
   .line-0-1 {
     height: 100px;
-    width: 1px;
+    width: 1PX;
     left: 1347px;
     top: 229px;
   }
   .line-1-0 {
     height: 1px;
-    width: 675px;
+    width: 676px;
     left: 745px;
     top: 235px;
   }
   .line-1-1 {
     height: 222px;
-    width: 1px;
+    width: 1PX;
     left: 1419px;
     top: 235px;
   }
   .line-2-0 {
-    height: 1px;
+    height: 1PX;
     width: 558px;
     left: 756px;
     bottom: 183px;
   }
   .line-2-1 {
     height: 77px;
-    width: 1px;
+    width: 1PX;
     left: 1313px;
     bottom: 106px;
   }
@@ -165,6 +146,10 @@
   }
 }
 
+.show {
+  visibility: visible !important;
+}
+
 .month-container {
   position: absolute;
   right: 0px;
@@ -174,6 +159,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
   .dot {
     position: absolute;
     width: 17px;
@@ -198,9 +184,9 @@
 
   .pulse1 {
     position: absolute;
-    width: 34px;
-    height: 34px;
-    border: 6px solid #11ABFF;
+    width: 68px;
+    height: 68px;
+    //border: 6px solid #11ABFF;
     border-radius: 50%;
     z-index: 1;
     opacity: 0.3;
@@ -247,17 +233,17 @@
 
 @keyframes hover-line {
   0% {
-    transform: translateX(15px);
+    transform: translateX(20px);
   }
   0% {
-    transform: translateX(-15px);
+    transform: translateX(-20px);
   }
 }
 
 @keyframes warn {
   0% {
     transform: scale(0.3);
-    opacity: 0.0;
+    opacity: 0;
   }
 
   25% {
