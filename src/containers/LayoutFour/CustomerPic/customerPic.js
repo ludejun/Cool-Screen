@@ -266,8 +266,8 @@ class Cuspic extends Component {
                             <div className="cell-title">
                                 年龄分布
                             </div>
-                            <div className="cell-content">
-                                <Echarts className="age-chart" option={option}/>
+                            <div className="cell-content" style={{textAlign: 'left'}}>
+                                <Echarts className="age-chart" option={option} />
                             </div>
                         </div>
                     </div>
