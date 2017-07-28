@@ -57,6 +57,17 @@
                     top:5%;
                     transform:translate(-50%);
                     z-index: 99;
+                    .circle-bubble{
+                        animation: bubble-circle-svg 1s linear infinite;
+                    }
+                    @keyframes bubble-circle-svg {
+                        from {
+                            r:5;
+                        }
+                        to {
+                            r:10;
+                        }
+                    }
             }
             .customer-box {
                 flex:1;
@@ -96,7 +107,7 @@
                         top:100%;
                         position:absolute;
                         background: url('/img/scan.png') no-repeat;
-                        animation: runin 6s linear infinite;
+                        animation: runin 3s linear infinite;
                     }
                 }
                 .elipse-rotate{
@@ -150,12 +161,10 @@
                     }
                 }
                 @keyframes runin {
-                    79%{
+                    49%{
                         top: 100%;
                     }
-                    80% {
-                        top:55%;
-                    }
+
                     100% {
                         top:-30%;
                     }

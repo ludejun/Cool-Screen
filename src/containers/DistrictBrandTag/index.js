@@ -4,22 +4,12 @@ import anime from 'animejs';
 import HeaderTitle from '../Layout/HeaderTitle';
 import { getBaseFontSize } from '../../utils';
 import './DistrictBrandTag.less';
+import DistrictBrandTagData from './DistrictBrandTagData';
 
 export default class DistrictBrandTag extends Component {
   constructor(props) {
     super(props);
-    this.data = {
-      0: { id: 0, name: '必胜客', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      1: { id: 1, name: '屈臣氏', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
-      2: { id: 2, name: '汉拿山', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      3: { id: 3, name: 'ZARA', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
-      4: { id: 4, name: '避风塘', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      5: { id: 5, name: '万达影城', tag: [10, 20, 30, 40, 50, 60, 70, 80] },
-      6: { id: 6, name: '汤姆熊', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      7: { id: 7, name: '宝大祥', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      8: { id: 8, name: '一茶一座', tag: [1, 2, 3, 4, 5, 6, 7, 8] },
-      9: { id: 9, name: '海澜之家', tag: [1, 2, 3, 4, 5, 6, 7, 8] }
-    };
+    this.data = DistrictBrandTagData;
     this.brandList = [[0, 1, 2], [3, 4, 5, 6], [7, 8, 9]];
     this.highlightInterval = null;
 
@@ -121,7 +111,7 @@ export default class DistrictBrandTag extends Component {
                 key={i}
               >
                 <img className="round-square-img" src="/img/tag-node.png" />
-                <div className="round-square-content">{`主力店${v}`}</div>
+                <div className="round-square-content">{v}</div>
               </div>
             )}
 

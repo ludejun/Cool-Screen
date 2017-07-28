@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BgAnimation, WDAreaMap } from '../../components';
+import React, {Component} from 'react';
+import {BgAnimation, WDAreaMap} from '../../components';
 import HeaderTitle from '../Layout/HeaderTitle';
 import './mapScatter.less';
 import beijing from '../../assets/map/feifanBeijing.json';
@@ -26,7 +26,25 @@ const mapList = [
     name: 'guangzhou'
   }
 ];
-
+const SkyAnimate = React.createClass({
+  render(){
+    return (
+      <div>
+        <div className={this.props.name != 'beijing' ? 'month-container' : 'month-container show'}>
+          <div className="dot"></div>
+          <div className="pulse"></div>
+          <div className="pulse1"></div>
+        </div>
+        <div className="line-container">
+          <div className="hover-line"></div>
+          <div className="hover-line"></div>
+          <div className="hover-line"></div>
+          <div className="hover-line"></div>
+        </div>
+      </div>
+    )
+  }
+})
 export default class MapScatter extends Component {
   constructor(props) {
     super(props);
@@ -40,9 +58,9 @@ export default class MapScatter extends Component {
     clearInterval(this.timer);
     this.timer = setInterval(() => {
       if (this.state.index === 2) {
-        this.setState({ index: 0 });
+        this.setState({index: 0});
       } else {
-        this.setState({ index: this.state.index + 1 });
+        this.setState({index: this.state.index + 1});
       }
     }, 6000);
   }
@@ -56,13 +74,16 @@ export default class MapScatter extends Component {
     const map = [beijingMap, shanghaiMap, guangzhouMap];
     return (
       <div>
-        <HeaderTitle title="智慧生活：飞凡会员分布地图" className="sum-title" />
+        <HeaderTitle title="智慧生活：飞凡会员分布地图" className="sum-title"/>
         <BgAnimation />
         <div className="map-scatter">
-          <img className="map-scatter-img" src="/img/map-scatter.png" />
+          <img className="map-scatter-img" src="/img/map-scatter.png"/>
           <div key={this.state.index} className="area-map-tag">
             <div className="area-map">
-              <img src={mapList[this.state.index].img} className="small-area-img" />
+              <div className="animate-wrap">
+                <SkyAnimate name={mapList[this.state.index].name}/>
+              </div>
+              <img src={mapList[this.state.index].img} className="small-area-img"/>
               <div className="map-container">
                 <WDAreaMap
                   className="map"
@@ -75,9 +96,9 @@ export default class MapScatter extends Component {
                 {mapList[this.state.index].city}
               </p>
             </div>
-            <span className={`line line-${this.state.index}-0`} />
-            <span className={`line line-${this.state.index}-1`} />
-            <span className={`circle circle-${this.state.index}`} />
+            <span className={`line line-${this.state.index}-0`}/>
+            <span className={`line line-${this.state.index}-1`}/>
+            <span className={`circle circle-${this.state.index}`}/>
           </div>
         </div>
       </div>

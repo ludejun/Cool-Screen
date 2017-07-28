@@ -181,17 +181,7 @@ export default class Analysis extends Component {
     this.timer = null;
   }
   componentDidMount() {
-    clearInterval(this.timer);
     clearInterval(reRender);
-    this.timer = setInterval(() => {
-      if (this.state.tab < 2) {
-        this.setState({
-          tab: this.state.tab + 1
-        });
-      } else {
-        this.setState({ tab: 0 });
-      }
-    }, 3000);
     const reRender = setInterval(() => {
       this.setState({
         consumeCount: this.state.consumeCount + 1
@@ -219,6 +209,7 @@ export default class Analysis extends Component {
       });
     }
   }
+
 
   renderEchart = () => {
     const randomL = parseInt(Math.random() * 60);
@@ -292,10 +283,6 @@ export default class Analysis extends Component {
       ]
     };
     return <Echarts className="consume-chart" option={consumeOption} />;
-  };
-  radioChange = (e) => {
-    clearInterval(this.timer);
-    this.setState({ tab: e.target.value });
   };
   render() {
     return (

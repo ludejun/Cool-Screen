@@ -142,7 +142,7 @@ class ParkingAnalysis extends Component {
           </div>
           <svg
             className="line-gab"
-            width="200px"
+            width="263px"
             height="23px"
             viewBox="0 0 265 23"
             version="1.1"
@@ -167,7 +167,7 @@ class ParkingAnalysis extends Component {
                 <polyline
                   className="animate"
                   id="Path-3"
-                  points="359.551579 142.235322 380.319507 163.003249 623.514543 163.003249"></polyline>
+                  points="359.551579 142.235322 380.319507 163.003249 723.514543 163.003249"></polyline>
               </g>
             </g>
           </svg>
