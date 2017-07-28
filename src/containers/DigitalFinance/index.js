@@ -91,31 +91,71 @@ export default class DigitalFinance extends Component {
         type: 'category',
         data: xData,
         axisLabel: { show: false },
-        splitLine: { show: false }
+        splitLine: { show: false },
+        axisLine: {
+          lineStyle: {
+            color: '#0C55B7'
+          }
+        }
       },
       yAxis3D: {
         name: '',
         type: 'category',
         data: ['0'],
-        axisLabel: { show: false }
+        axisLabel: { show: false },
+        splitLine: {
+          lineStyle: {
+            color: 'rgba(5,60,116,0.89)'
+          }
+        }
       },
       zAxis3D: {
         name: '',
-        type: 'value'
+        type: 'value',
+        axisLine: {
+          lineStyle: {
+            color: '#0C55B7'
+          }
+        },
+        splitLine: {
+          lineStyle: {
+            color: 'rgba(5,60,116,0.89)'
+          }
+        }
       },
       grid3D: {
-        // axisLine:{interval:1},
+        // environment: new echarts.graphic.LinearGradient(
+        //   0,
+        //   0,
+        //   1,
+        //   1,
+        //   [
+        //     {
+        //       offset: 0,
+        //       color: 'rgba(65,177,255,1)'
+        //     },
+        //     {
+        //       offset: 1,
+        //       color: 'rgba(23,84,243,0.91)'
+        //     }
+        //   ],
+        //   false
+        // ),
+        boxHeight: 200 / 192 * getBaseFontSize(),
+        regionHeight: 10,
         boxWidth: 500 / 192 * getBaseFontSize(),
         boxDepth: 20 / 192 * getBaseFontSize(),
         viewControl: {
           rotateSensitivity: 0,
           beta: 0,
-          alpha: 10
+          alpha: 0
         },
         light: {
           main: {
-            intensity: 1.2,
-            shadow: true
+            intensity: 2.2,
+            shadow: true,
+            beta: 0,
+            alpha: 90
           },
           ambient: {
             intensity: 0.3
@@ -131,11 +171,7 @@ export default class DigitalFinance extends Component {
             };
           }),
           itemStyle: {
-            // color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-            //   { offset: 0, color: '#3CF1FF' },
-            //   { offset: 1, color: '#1D7CDE' }
-            // ])
-            color: 'red'
+            color: '#ED504E'
           }
         },
         {
@@ -146,11 +182,7 @@ export default class DigitalFinance extends Component {
             };
           }),
           itemStyle: {
-            color: 'green'
-            // color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-            //   { offset: 0, color: '#FF9999' },
-            //   { offset: 1, color: '#ED504E' }
-            // ])
+            color: '#1D7CDE'
           }
         }
       ]
@@ -361,41 +393,54 @@ export default class DigitalFinance extends Component {
             </g>
           </g>
         </svg>
-
-        <svg
-          // width="129px"
-          // height="60px"
-          className="title-bg"
-          viewBox="0 0 129 60"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-        >
-          <defs />
-          <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-            <g id="数字金融" transform="translate(-1244.000000, -647.000000)">
-              <g id="文字框Copy-Copy-6" transform="translate(1244.000000, 647.000000)">
-                <path
-                  d="M0.5,14.2274618 L9.36559076,6.5 L128.5,6.5 L128.5,52.5 L69.6217963,52.5 L69.379514,52.5 L69.2293737,52.6901542 L64.0851972,59.2053019 L58.6727697,52.6807678 L58.5228138,52.5 L58.287944,52.5 L0.5,52.5 L0.5,14.2274618 Z"
-                  id="Rectangle-55"
-                  stroke="#258DFF"
-                />
-                <polyline
-                  id="Path-876"
-                  stroke="#258DFF"
-                  points="61.155647 49.786014 64.0652463 53.2915287 66.9925242 49.5304112"
-                />
-                <polyline
-                  id="Path-877"
-                  stroke="#258DFF"
-                  points="2.28990232 5.43537872 8.20426794 0.655167616 43.2027768 0.655167616"
-                />
-                <circle id="Oval-46" fill="#258DFF" cx="2" cy="6" r="2" />
+        {data.map((item, i) =>
+          <svg
+            // width="129px"
+            // height="60px"
+            key={i}
+            className={`title-bg-${i}`}
+            viewBox="0 0 129 60"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <text
+              x="50%"
+              y="50%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#fff"
+              className="title"
+            >
+              {item.name}
+            </text>
+            <defs />
+            <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+              <g id="数字金融" transform="translate(-1244.000000, -647.000000)">
+                <g id="文字框Copy-Copy-6" transform="translate(1244.000000, 647.000000)">
+                  <path
+                    d="M0.5,14.2274618 L9.36559076,6.5 L128.5,6.5 L128.5,52.5 L69.6217963,52.5 L69.379514,52.5 L69.2293737,52.6901542 L64.0851972,59.2053019 L58.6727697,52.6807678 L58.5228138,52.5 L58.287944,52.5 L0.5,52.5 L0.5,14.2274618 Z"
+                    id="Rectangle-55"
+                    stroke="#258DFF"
+                  />
+                  <polyline
+                    id="Path-876"
+                    stroke="#258DFF"
+                    points="61.155647 49.786014 64.0652463 53.2915287 66.9925242 49.5304112"
+                  />
+                  <polyline
+                    id="Path-877"
+                    stroke="#258DFF"
+                    points="2.28990232 5.43537872 8.20426794 0.655167616 43.2027768 0.655167616"
+                  />
+                  <circle id="Oval-46" fill="#258DFF" cx="2" cy="6" r="2" />
+                </g>
               </g>
             </g>
-          </g>
-        </svg>
+          </svg>
+        )}
 
+        <p className="echart-title">近一年进店人数占广场中出现的人数比例</p>
         <ReactEcharts
           ref="echarts_Instance"
           {...this.props}
