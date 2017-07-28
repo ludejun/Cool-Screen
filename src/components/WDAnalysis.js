@@ -221,9 +221,6 @@ export default class Analysis extends Component {
   }
 
   renderEchart = () => {
-    const randomL = parseInt(Math.random() * 60);
-    const randomM = parseInt(Math.random() * 70);
-    const randomH = parseInt(Math.random() * 30);
     const consumeOption = {
       color: ['#85b6b2', '#6d4f8d', '#cd5e7e', '#e38980', '#f7db88'],
       tooltip: {
@@ -240,13 +237,13 @@ export default class Analysis extends Component {
           hoverAnimation: false,
           data: [
             {
-              value: consume[0],
-              name:  '低端消费' + (100 - randomL) + '%',
+              value: this.props.customerPic.consume.low,
+              name:  '低端消费' + this.props.customerPic.consume.low + '%',
               label: {normal:{textStyle:{fontSize:10}}}
             },
             {
-              value: randomL,
-              name: '低端消费',
+              value: (100 - this.props.customerPic.consume.low),
+              name:  '低端消费' + this.props.customerPic.consume.low + '%',
               itemStyle: placeHolderStyle
             }
           ]
@@ -260,13 +257,13 @@ export default class Analysis extends Component {
           hoverAnimation: false,
           data: [
             {
-              value: consume[1],
-              name: '中端消费' + (100 - randomM) + '%'
+              value: (100 - this.props.customerPic.consume.middle),
+              name: '中端消费' + this.props.customerPic.consume.middle + '%',
+              itemStyle: placeHolderStyle
             },
             {
-              value: randomM,
-              name: '中端消费',
-              itemStyle: placeHolderStyle
+              value: this.props.customerPic.consume.middle,
+              name: '中端消费' + this.props.customerPic.consume.middle + '%'
             }
           ]
         },
@@ -279,12 +276,12 @@ export default class Analysis extends Component {
           itemStyle: dataStyle,
           data: [
             {
-              value: consume[2],
-              name: '高端消费' + (100 - randomH) + '%'
+              value: this.props.customerPic.consume.high,
+              name: '高端消费' + this.props.customerPic.consume.high + '%'
             },
             {
-              value: randomH,
-              name: '高端消费',
+              value: (100 - this.props.customerPic.consume.high),
+              name: '高端消费' + this.props.customerPic.consume.high + '%',
               itemStyle: placeHolderStyle
             }
           ]

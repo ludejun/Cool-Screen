@@ -151,7 +151,13 @@ class customerPic extends Component {
                             xmlns="http://www.w3.org/2000/svg"
                             xmlnsXlink="http://www.w3.org/1999/xlink">
                             <circle cx="20" cy="70" r="5" fill="#0E7BCD"/>
-                            <circle className="circle-bubble" cx="20" cy="70" r="10" fill="#0E7BCD" opacity="0.6"/>
+                            <circle
+                                className="circle-bubble"
+                                cx="20"
+                                cy="70"
+                                r="10"
+                                fill="#0E7BCD"
+                                opacity="0.6"/>
                             <polyline points="20,70 190,70 220,90" stroke="#0E7BCD" fill="none"/>
                         </svg>
                     </div>
@@ -160,11 +166,17 @@ class customerPic extends Component {
                             <div className="scan-div"/>
                         </div>
                         <div className="Td-people">
-                            <div className="male" ref = {'male'}>
-                                {this.state.TWidth && <ThreeModel width={this.state.TWidth} height={this.state.TWidth} modelPath={'/model/male02/male02.obj'} />}
+                            <div className="male" ref={'male'}>
+                                {this.state.TWidth && <ThreeModel
+                                    width={this.state.TWidth}
+                                    height={this.state.TWidth}
+                                    modelPath={'/model/male02/male02.obj'}/>}
                             </div>
                             <div className="female">
-                                {this.state.TWidth && <ThreeModel width={this.state.TWidth} height={this.state.TWidth} modelPath={'/model/female02/female02.obj'} />}
+                                {this.state.TWidth && <ThreeModel
+                                    width={this.state.TWidth}
+                                    height={this.state.TWidth}
+                                    modelPath={'/model/female02/female02.obj'}/>}
                             </div>
                         </div>
                         <svg
@@ -311,7 +323,15 @@ class customerPic extends Component {
                     <div className="customer-box">
                         <div className="customer-pic">
                             <div className="angel"/>
-                            <div className="customer-right"><WDAnalysis/></div>
+                            <div className="customer-right"><WDAnalysis
+                                customerPic={{
+                                    consume: {
+                                        high: 27,
+                                        middle: 33,
+                                        low: 40
+                                    }
+                                }}/>
+                            </div>
                         </div>
                     </div>
                 </div>
