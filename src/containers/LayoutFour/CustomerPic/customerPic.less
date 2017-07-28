@@ -97,14 +97,12 @@
         flex:1;
         padding-top: 40PX;
         position: relative;
-        .left-img{
-            width: 60%;
-            height: 60%;
-            transform:rotateZ(20deg);
-            position: absolute;
-            top: 0;
-            left: 300px;
-            
+        .left-container{
+            width: 560px;
+            height: 340px;
+            p{
+                font-size:16px;
+            }
         }
         .tag {
           position: absolute;
@@ -112,21 +110,93 @@
           transform:scale(.6)
         }
         .tag-0 {
-          left: 300px;
+          left: 50px;
           top: 60px;
         }
         .tag-1 {
-          left: 420px;
+          left: 150px;
           top: 30px;
         }
         .tag-2 {
           top: 0;
-          left: 520px;
+          left: 270px;
         }
         .tag-3 {
           top: -20px;
-          left: 650px;
+          left: 350px;
         }
-    
+
+        .overview-month-group {
+          width: 100%;
+          .overview-month {
+            margin: 10px 16px;
+            margin-left: 0;
+            padding: 5px 0px;
+            border: 1px solid #108ee9;
+            border-radius: 10px;
+            width: ~"calc(100% / 12 - 10px)";
+            width: 50px;
+            text-align: center;
+            height: 100%;
+            color: #fff;
+            background: transparent;
+            &.ant-radio-button-wrapper-checked {
+              background: #108ee9;
+              box-shadow: none !important;
+            }
+          }
+          .ant-radio-button-wrapper:not(:first-child)::before {
+            width: 0 !important;
+          }
+        }
+
+        .left-img {
+          bottom: 0;
+          left: 40px;
+        }
+
+        .left-container-border{
+          position: absolute;
+          width: 220px;
+          height: 100px;
+          left: 5px;
+          top: -10px;
+          border: 1px solid #108EE9 ;
+          z-index:-1;
+          .line1{
+            width: 180px;
+            height: 4px;
+            background-color: #04113C;
+            position: absolute;
+            top: -2px;
+            left: 20px;
+          }
+          .line2{
+            width: 180px;
+            height: 4px;
+            background-color: #04113C;
+            position: absolute;
+            top: 96px;
+            left: 20px;
+          }
+          .line3{
+            width: 4px;
+            height: 60px;
+            background-color: #04113C;
+            position: absolute;
+            top: 20px;
+            left: -2px;
+          }
+          .line4{
+            width: 4px;
+            height: 60px;
+            background-color: #04113C;
+            position: absolute;
+            top: 20px;
+            left: 216px;
+          }
+        }
+
+
     }
 }
