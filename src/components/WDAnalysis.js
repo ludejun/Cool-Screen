@@ -180,6 +180,37 @@ export default class Analysis extends Component {
     };
     this.timer = null;
   }
+  componentDidMount() {
+    clearInterval(reRender);
+    const reRender = setInterval(() => {
+      this.setState({
+        consumeCount: this.state.consumeCount + 1
+      });
+    }, 3000);
+
+    for (let i = 0; i < 4; i++) {
+      anime({
+        targets: '.tag',
+        // translateY: 50,
+        opacity: 1,
+        easing: 'easeInOutQuad',
+        duration: 1600,
+        delay: 2000
+        // loop: true
+      });
+      anime({
+        targets: `.tag-tail-${i}`,
+        opacity: 1,
+        translateY: 50,
+        easing: 'easeInOutQuad',
+        direction: 'reverse',
+        duration: 800,
+        delay: 1100
+      });
+    }
+  }
+
+
   renderEchart = () => {
     const randomL = parseInt(Math.random() * 60);
     const randomM = parseInt(Math.random() * 70);
