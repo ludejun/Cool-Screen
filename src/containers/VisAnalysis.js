@@ -252,7 +252,7 @@ const ballArray = [
         english: 'insurance sales',
         x: 43,
         y: 3.6,
-        width: 40
+        width: 55
     }, {
         chinese: '公共管理',
         english: 'public administration',
@@ -362,7 +362,6 @@ export default function VisAnalysis() {
                             const result = [];
                             const yL = 715;
                             for (let i = 1; i < 30; i++) {
-                                console.log(yL + i);
                                 result.push(<line
                                     key={i}
                                     x1={i * 32}
@@ -400,6 +399,7 @@ export default function VisAnalysis() {
                     <path
                         opacity="0.301856884"
                         strokeDasharray="5,5"
+                        className="dash-move"
                         d="M123,218 L1797,218 L1797,940 L123,940 L123,218"></path>
                     <path
                         className="angle-flash"
@@ -425,7 +425,7 @@ export default function VisAnalysis() {
                         stroke="#48AAFD"
                         opacity="1"
                         d="M164,950 L114,950 L114,900"></path>
-                    <polyline points="1730,890 210,890 210,260 " stroke="#00BFF2" strokeWidth="5"/> {yArray.map((it, index, array) => {
+                    <polyline points="1730,890 210,890 210,260 " stroke="#00BFF2" strokeWidth="3"/> {yArray.map((it, index, array) => {
                         return <text
                             className="left-degree"
                             key={index}
@@ -470,12 +470,12 @@ export default function VisAnalysis() {
                             <text
                                 x={(it.x * xPer + minX - 70).toString()}
                                 y={(maxY - it.y * yPer).toString()}
+                                style={{fontSize:20}}
                                 className="left-degree">{it.chinese}</text>
                             <text
                                 x={(it.x * xPer + minX - 70).toString()}
                                 y={(maxY - it.y * yPer + 20).toString()}
                                 className="english-degree"
-                                textLength="47"
                                 lengthAdjust="spacingAndGlyphs">{it.english}</text>
                         </g>
                     })

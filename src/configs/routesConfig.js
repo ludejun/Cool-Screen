@@ -142,6 +142,11 @@ const routeConfig = {
       component: Routes.CompeteAnalysis
     },
     {
+      path: 'digital-finance',
+      breadcrumbName: '数字金融-财富／小贷客群的万达生态描绘',
+      component: Routes.DigitalFinance
+    },
+    {
       path: '*',
       component: Routes.Hello
     }
