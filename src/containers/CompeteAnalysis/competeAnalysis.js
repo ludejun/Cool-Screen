@@ -264,7 +264,7 @@ class CompeteAnalysis extends Component {
                         </div>
                     </div>
                     <div className="compete-right">
-                        <div className="compete-right-title">客群流入交叉TOP10商场</div>
+                        <div className="compete-right-title">{this.state.flag?'商场客流流出top10':'商场客流流入top10'}</div>
                         <div className="compete-right-content">
                             {
                                 this.rightColor.map((it,index) => {
