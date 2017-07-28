@@ -24,7 +24,8 @@ export default class LifeOSUVRoundBoard extends Component {
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        {...this.props}
+        // {...this.props}
+        className={this.props.className}
       >
         <defs>
           <linearGradient x1="50%" y1="0%" x2="50%" y2="98.4913106%" id="board-linearGradient-1">
