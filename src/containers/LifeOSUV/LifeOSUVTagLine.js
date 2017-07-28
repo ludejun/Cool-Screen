@@ -13,7 +13,8 @@ export default class LifeOSUVTagLine extends Component {
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        {...this.props}
+        // {...this.props}
+        className={this.props.className}
       >
         <defs>
           <circle id="tag-line-path-1" r="3" fill="#fff" />
