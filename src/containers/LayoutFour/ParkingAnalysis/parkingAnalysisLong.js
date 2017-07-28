@@ -215,6 +215,7 @@ class ParkingAnalysis extends Component {
                             <polygon
                               id="Rectangle-6"
                               fill="#108EE9"
+                              className="bar-flash"
                               points="7.52248328 1.90909091 79.1650539 1.90909091 83.6049383 11.9090909 79.1650539 21.9090909 7.52248328 21.9090909 3.60493827 11.9090909"></polygon>
                             <polyline
                               id="Path-104"
@@ -236,6 +237,17 @@ class ParkingAnalysis extends Component {
                     上海（021）</div>
                 </div>
                 <div className="detail">
+                  <svg
+                    width="155"
+                    height="88"
+                    className="dotted-svg"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink">
+                    <g stroke="#0D62C4" strokeWidth="1" fill="none" fillRule="evenodd">
+                      <polyline className="polyline" points="0,0 155,0 155,88 0,88 0,0"/>
+                    </g>
+                  </svg>
                   <div className="first-content">
                     <svg
                       display="inline-block"
@@ -295,6 +307,17 @@ class ParkingAnalysis extends Component {
             </div>
             <div className="right-content">
               <div className="content">
+                <svg
+                  width="172"
+                  height="126"
+                  className="dotted-svg"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink">
+                  <g stroke="#0D62C4" strokeWidth="1" fill="none" fillRule="evenodd">
+                    <polyline className="polyline" points="0,0 172,0 172,126 0,126 0,0"/>
+                  </g>
+                </svg>
                 <div className="first-content">
                   <svg
                     display="inline-block"
