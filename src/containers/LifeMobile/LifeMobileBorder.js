@@ -156,12 +156,14 @@ export default class LifeMobileBorder extends Component {
           />
           <polyline
             id="corner-lt"
+            // className="angle-flash"
             stroke="#108EE9"
             strokeWidth="9.04134"
             points="7.60115053 80.736096 7.60115053 18.046892 7.60115053 18.046892 38.9558965 18.046892"
           />
           <polyline
             id="corner-lb"
+            // className="angle-flash"
             stroke="#108EE9"
             strokeWidth="9.04134"
             transform="translate(23.278523, 822.558342) scale(1, -1) translate(-23.278523, -822.558342) "
@@ -169,6 +171,7 @@ export default class LifeMobileBorder extends Component {
           />
           <polyline
             id="corner-rt"
+            // className="angle-flash"
             stroke="#108EE9"
             strokeWidth="9.04134"
             transform="translate(964.871045, 50.341330) scale(-1, 1) translate(-964.871045, -50.341330) "
@@ -176,6 +179,7 @@ export default class LifeMobileBorder extends Component {
           />
           <polyline
             id="corner-rb"
+            // className="angle-flash"
             stroke="#108EE9"
             strokeWidth="9.04134"
             transform="translate(964.871045, 822.558342) scale(-1, -1) translate(-964.871045, -822.558342) "

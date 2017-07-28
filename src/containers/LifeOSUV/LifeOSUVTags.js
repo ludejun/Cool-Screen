@@ -31,7 +31,8 @@ export default class LifeOSUVTags extends Component {
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        {...this.props}
+        // {...this.props}
+        className={this.props.className}
       >
         <defs>
           <polygon
@@ -79,17 +80,14 @@ export default class LifeOSUVTags extends Component {
             ? <use xlinkHref="#tags-path-1" stroke="#108EE9" strokeWidth="1" />
             : null}
           <text
-            id="35%"
             fontFamily="PingFangSC-Regular, PingFang SC"
             fontSize="36"
             fontWeight="normal"
             fill={this.props.type === 2 ? '#30D3FE' : '#fff'}
           >
-            <tspan x="22" y="38">{this.props.percent || '00'}</tspan>
-            <tspan x="65.2" y="38" fontSize="20">%</tspan>
+            <tspan x="22" y="38">{this.props.percent || '00'}<tspan fontSize="20">%</tspan></tspan>
           </text>
           <text
-            id="title"
             fontFamily="PingFangSC-Regular, PingFang SC"
             fontSize="24"
             fontWeight="normal"
