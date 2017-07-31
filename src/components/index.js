@@ -27,8 +27,7 @@ export { default as CompeteSvg } from './competeSvg';
 export { default as BgAnimation } from './BgAnimation';
 export { default as WDAnalysis } from './WDAnalysis';
 export { default as WDFloor } from './WDFloor';
-
-
+export { default as BgGradualHeight } from './BgGradualHeight';
 
 // three
-export {default as ThreeModel } from './ThreeModel';
+export { default as ThreeModel } from './ThreeModel';
