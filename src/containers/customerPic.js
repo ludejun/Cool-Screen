@@ -172,11 +172,19 @@ class customerPic extends Component {
                                     height={this.state.TWidth}
                                     modelPath={'/model/male02/male02.obj'}/>}
                             </div>
-                            <div className="female">
-                                {this.state.TWidth && <ThreeModel
-                                    width={this.state.TWidth}
-                                    height={this.state.TWidth}
-                                    modelPath={'/model/female02/female02.obj'}/>}
+                            <div className="Td-people">
+                                <div className="male" ref={'male'}>
+                                    {this.state.TWidth && <ThreeModel
+                                        width={this.state.TWidth}
+                                        height={this.state.TWidth}
+                                        modelPath={'/model/male02/male02.obj'}/>}
+                                </div>
+                                <div className="female">
+                                    {this.state.TWidth && <ThreeModel
+                                        width={this.state.TWidth}
+                                        height={this.state.TWidth}
+                                        modelPath={'/model/female02/female02.obj'}/>}
+                                </div>
                             </div>
                         </div>
                         <svg
@@ -325,31 +333,31 @@ class customerPic extends Component {
                             <div className="angel"/>
                             <div className="customer-right"><WDAnalysis
                                 customerPic={{
-                                    consume: {
-                                        high: 27,
-                                        middle: 33,
-                                        low: 40
-                                    },
-                                    cars: {
-                                        haveCar:46,
-                                        noCar:54
-                                    },
-                                    sex: {
-                                        male: 59,
-                                        female: 41
-                                    },
-                                    marriage: {
-                                        yes: 38,
-                                        no: 62
-                                    },
-                                    age: {
-                                        18:0.01,
-                                        24:0.2,
-                                        34:0.55,
-                                        44:0.17,
-                                        45:0.25
-                                    }
-                                }}/>
+            consume: {
+                high: 27,
+                middle: 33,
+                low: 40
+            },
+            cars: {
+                haveCar: 46,
+                noCar: 54
+            },
+            sex: {
+                male: 59,
+                female: 41
+            },
+            marriage: {
+                yes: 38,
+                no: 62
+            },
+            age: {
+                18: 0.01,
+                24: 0.2,
+                34: 0.55,
+                44: 0.17,
+                45: 0.25
+            }
+        }}/>
                             </div>
                         </div>
                     </div>

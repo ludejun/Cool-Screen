@@ -1,3 +1,37 @@
+.corner {
+  animation: borderCornerRipple ease-out 3s infinite;
+  // &-center {
+  //   &-rt {
+  //     transform-origin: 80% 10%;
+  //   }
+  //   &-rb {
+  //     transform-origin: 80% 90%;
+  //   }
+  //   &-lt {
+  //     transform-origin: 20% 10%;
+  //   }
+  //   &-lb {
+  //     transform-origin: 20% 90%;
+  //   }
+  // }
+  transform-origin: center;
+  &-1 {
+    animation-delay: 1s;
+  }
+  &-2 {
+    animation-delay: 2s;
+  }
+}
+@keyframes borderCornerRipple {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
 .life-mobile {
   .life-mobile-border {
     // 下方八个小方块按心脏跳动
