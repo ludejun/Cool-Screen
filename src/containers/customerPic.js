@@ -329,6 +329,25 @@ class customerPic extends Component {
                                         high: 27,
                                         middle: 33,
                                         low: 40
+                                    },
+                                    cars: {
+                                        haveCar:46,
+                                        noCar:54
+                                    },
+                                    sex: {
+                                        male: 59,
+                                        female: 41
+                                    },
+                                    marriage: {
+                                        yes: 38,
+                                        no: 62
+                                    },
+                                    age: {
+                                        18:0.01,
+                                        24:0.2,
+                                        34:0.55,
+                                        44:0.17,
+                                        45:0.25
                                     }
                                 }}/>
                             </div>

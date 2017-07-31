@@ -11,47 +11,6 @@ const age = {
   name: ['18岁以下', '18~24岁', '25岁~34岁', '35岁~44岁', '45岁以上'],
   val: [0.4, 0.8, 0.2, 0.3, 0.1]
 };
-const carList = [
-  {
-    itemIcon: 'icon-car',
-    percent: 0.56 * 100,
-    color: '#7096EE',
-    name: '有车'
-  },
-  {
-    itemIcon: 'icon-walk',
-    percent: 0.44 * 100,
-    color: '#9DD455',
-    name: '无车'
-  }
-];
-const marriage = [
-  {
-    itemIcon: 'icon-client-married',
-    percent: 0.34 * 100,
-    color: '#EA6C6B',
-    name: '已婚'
-  },
-  {
-    itemIcon: 'icon-client-hearts',
-    percent: 0.54 * 100,
-    color: '#4C9DFF',
-    name: '未婚'
-  }
-];
-const genderList = [
-  {
-    itemImage: 'img/icon_male.png',
-    percent: 0.9 * 100,
-    color: '#4C9DFF'
-  },
-  {
-    itemImage: 'img/icon_female.png',
-    percent: 1 * 100,
-    color: '#EA6C6B'
-  }
-];
-// /////
 const dataStyle = {
   normal: {
     label: {
@@ -79,97 +38,6 @@ const placeHolderStyle = {
   }
 };
 
-const rawData = [
-  {
-    name: '18岁以下',
-    val: 0.8
-  },
-  {
-    name: '18~24岁',
-    val: 0.3
-  },
-  {
-    name: '25~34岁',
-    val: 0.9
-  },
-  {
-    name: '35~44岁',
-    val: 0.3
-  },
-  {
-    name: '45岁以上',
-    val: 0.2
-  }
-];
-const option = {
-  xAxis: {
-    data: rawData.map((item) => {
-      return item.name;
-    }),
-    axisTick: {
-      show: false
-    },
-    axisLine: {
-      show: false
-    },
-
-    axisLabel: {
-      interval: 0,
-      rotate: -45,
-      textStyle: {
-        color: '#999999',
-        fontSize: 12
-      }
-    }
-  },
-  grid: {
-    left: 50,
-    top: 10,
-    right: 10,
-    bottom: 50
-  },
-  yAxis: {
-    type: 'value',
-    splitLine: {
-      show: true
-    },
-    axisLine: {
-      show: false
-    },
-    axisLabel: {
-      show: true,
-      textStyle: {
-        color: '#999',
-        fontSize: 12
-      }
-    }
-  },
-  series: [
-    {
-      itemStyle: {
-        normal: {
-          color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-            {
-              offset: 0,
-              color: '#6D83F1'
-            },
-            {
-              offset: 1,
-              color: '#06F0FB'
-            }
-          ])
-        }
-      },
-      name: 'hill',
-      type: 'pictorialBar',
-      symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
-      data: rawData.map((item) => {
-        return item.val;
-      })
-    }
-  ]
-};
-
 export default class Analysis extends Component {
   constructor(props) {
     super(props);
@@ -179,6 +47,68 @@ export default class Analysis extends Component {
       path: ''
     };
     this.timer = null;
+    this.carList = [
+      {
+        itemIcon: 'icon-car',
+        percent: props.customerPic.cars.haveCar,
+        color: '#7096EE',
+        name: '有车'
+      },
+      {
+        itemIcon: 'icon-walk',
+        percent: props.customerPic.cars.noCar,
+        color: '#9DD455',
+        name: '无车'
+      }
+    ];
+    this.genderList = [
+      {
+        itemImage: 'img/icon_male.png',
+        percent: props.customerPic.sex.male,
+        color: '#4C9DFF'
+      },
+      {
+        itemImage: 'img/icon_female.png',
+        percent: props.customerPic.sex.female,
+        color: '#EA6C6B'
+      }
+    ];
+    this.marriage = [
+      {
+        itemIcon: 'icon-client-married',
+        percent: props.customerPic.marriage.yes,
+        color: '#EA6C6B',
+        name: '已婚'
+      },
+      {
+        itemIcon: 'icon-client-hearts',
+        percent: props.customerPic.marriage.no,
+        color: '#4C9DFF',
+        name: '未婚'
+      }
+    ];
+    this.rawData = [
+      {
+        name: '18岁以下',
+        val: props.customerPic.age[18]
+      },
+      {
+        name: '18~24岁',
+        val: props.customerPic.age[24]
+      },
+      {
+        name: '25~34岁',
+        val: props.customerPic.age[34]
+      },
+      {
+        name: '35~44岁',
+        val: props.customerPic.age[44]
+      },
+      {
+        name: '45岁以上',
+        val: props.customerPic.age[45]
+      }
+    ];
   }
   componentDidMount() {
     clearInterval(this.timer);
@@ -219,7 +149,78 @@ export default class Analysis extends Component {
       });
     }
   }
+  
+  assembleAge = () => {
+    const option = {
+      xAxis: {
+        data: this.rawData.map((item) => {
+          return item.name;
+        }),
+        axisTick: {
+          show: false
+        },
+        axisLine: {
+          show: false
+        },
 
+        axisLabel: {
+          interval: 0,
+          rotate: -45,
+          textStyle: {
+            color: '#999999',
+            fontSize: 12
+          }
+        }
+      },
+      grid: {
+        left: 50,
+        top: 10,
+        right: 10,
+        bottom: 50
+      },
+      yAxis: {
+        type: 'value',
+        splitLine: {
+          show: true
+        },
+        axisLine: {
+          show: false
+        },
+        axisLabel: {
+          show: true,
+          textStyle: {
+            color: '#999',
+            fontSize: 12
+          }
+        }
+      },
+      series: [
+        {
+          itemStyle: {
+            normal: {
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                {
+                  offset: 0,
+                  color: '#6D83F1'
+                },
+                {
+                  offset: 1,
+                  color: '#06F0FB'
+                }
+              ])
+            }
+          },
+          name: 'hill',
+          type: 'pictorialBar',
+          symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
+          data: this.rawData.map((item) => {
+            return item.val;
+          })
+        }
+      ]
+    };
+    return option;
+  }
   renderEchart = () => {
     const consumeOption = {
       color: ['#85b6b2', '#6d4f8d', '#cd5e7e', '#e38980', '#f7db88'],
@@ -329,21 +330,21 @@ export default class Analysis extends Component {
             </div>
             <div className="age-container">
               <p className="age-title">年龄分布</p>
-              <Echarts style={{transform: 'translate(10px,-20px) scale(0.9)'}} className="age-chart" option={option} />
+              <Echarts style={{transform: 'translate(10px,-20px) scale(0.9)'}} className="age-chart" option={this.assembleAge()} />
             </div>
           </div>
           <div className="right-sub-container flex-col">
             <div className="flex1">
               <p className="right-sub-title">车辆情况对比</p>
-              <WDImagePercent dataList={carList} />
+              <WDImagePercent dataList={this.carList} />
             </div>
             <div className="gender-compare flex1">
               <p className="right-sub-title">性别对比</p>
-              <WDImageBar dataList={genderList} />
+              <WDImageBar dataList={this.genderList} />
             </div>
             <div className="flex1">
               <p className="right-sub-title">已婚对比</p>
-              <WDImagePercent dataList={marriage} />
+              <WDImagePercent dataList={this.marriage} />
             </div>
           </div>
         </div>
