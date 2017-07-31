@@ -31,7 +31,14 @@ export default class BgGradualHeight extends Component {
                 fillOpacity="0.479676178"
                 fill="#2D8CFF"
                 points="1822.42462 681.164401 1797.90131 705.687714 1797.90131 857.094095 1761.23391 893.761486 1794.11592 893.761486 1822.42462 862.951518"
-              />
+              >
+                <animate
+                  attributeName="opacity"
+                  values="0.479676178;1;0.479676178"
+                  dur="3s"
+                  repeatCount="indefinite"
+                />
+              </polygon>
               <polygon
                 id="Path-913-Copy"
                 stroke="#1872E9"
@@ -39,7 +46,14 @@ export default class BgGradualHeight extends Component {
                 fill="#2D8CFF"
                 transform="translate(30.595352, 787.298542) scale(-1, 1) translate(-30.595352, -787.298542) "
                 points="61.1907043 681 36.6673913 705.523313 36.6673913 856.929693 0 893.597085 32.8820089 893.597085 61.1907043 862.787117"
-              />
+              >
+                <animate
+                  attributeName="opacity"
+                  values="0.479676178;1;0.479676178"
+                  dur="3s"
+                  repeatCount="indefinite"
+                />
+              </polygon>
               <polygon
                 id="Path-913-Copy-3"
                 stroke="#1872E9"
@@ -47,7 +61,14 @@ export default class BgGradualHeight extends Component {
                 fill="#2D8CFF"
                 transform="translate(1791.595352, 106.298542) scale(1, -1) translate(-1791.595352, -106.298542) "
                 points="1822.1907 0 1797.66739 24.523313 1797.66739 175.929693 1761 212.597085 1793.88201 212.597085 1822.1907 181.787117"
-              />
+              >
+                <animate
+                  attributeName="opacity"
+                  values="0.479676178;1;0.479676178"
+                  dur="3s"
+                  repeatCount="indefinite"
+                />
+              </polygon>
               <polygon
                 id="Path-913-Copy-2"
                 stroke="#1872E9"
@@ -55,7 +76,14 @@ export default class BgGradualHeight extends Component {
                 fill="#2D8CFF"
                 transform="translate(30.595352, 106.298542) scale(-1, -1) translate(-30.595352, -106.298542) "
                 points="61.1907043 0 36.6673913 24.523313 36.6673913 175.929693 0 212.597085 32.8820089 212.597085 61.1907043 181.787117"
-              />
+              >
+                <animate
+                  attributeName="opacity"
+                  values="0.479676178;1;0.479676178"
+                  dur="3s"
+                  repeatCount="indefinite"
+                />
+              </polygon>
               <path
                 d="M20,636.621808 L20,256"
                 id="Path-914"
@@ -79,19 +107,10 @@ export default class BgGradualHeight extends Component {
                 width="14"
                 // height="228"
               >
-                <animate
-                  attributeName="y"
-                  from="50%"
-                  to="28%"
-                  begin="0s"
-                  dur="3s"
-                  repeatCount="indefinite"
-                />
+                <animate attributeName="y" values="50%;29%;50%" dur="3s" repeatCount="indefinite" />
                 <animate
                   attributeName="height"
-                  from="0%"
-                  to="43%"
-                  begin="0s"
+                  values="0%;43%;0%"
                   dur="3s"
                   repeatCount="indefinite"
                 />
@@ -103,19 +122,10 @@ export default class BgGradualHeight extends Component {
                 x="1798"
                 width="14"
               >
-                <animate
-                  attributeName="y"
-                  from="50%"
-                  to="28%"
-                  begin="0s"
-                  dur="3s"
-                  repeatCount="indefinite"
-                />
+                <animate attributeName="y" values="50%;29%;50%" dur="3s" repeatCount="indefinite" />
                 <animate
                   attributeName="height"
-                  from="0%"
-                  to="43%"
-                  begin="0s"
+                  values="0%;43%;0%"
                   dur="3s"
                   repeatCount="indefinite"
                 />

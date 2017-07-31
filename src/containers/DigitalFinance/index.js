@@ -80,12 +80,6 @@ export default class DigitalFinance extends Component {
     ];
     this.option = {
       tooltip: {},
-      // visualMap: {
-      //     max: 20,
-      //     inRange: {
-      //         color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
-      //     }
-      // },
       xAxis3D: {
         name: '',
         type: 'category',
@@ -142,8 +136,6 @@ export default class DigitalFinance extends Component {
         //   false
         // ),
         boxHeight: 200 / 192 * getBaseFontSize(),
-        regionHeight: 10,
-        shading: 'lambert',
         boxWidth: 500 / 192 * getBaseFontSize(),
         boxDepth: 20 / 192 * getBaseFontSize(),
         viewControl: {
@@ -153,11 +145,9 @@ export default class DigitalFinance extends Component {
         },
         light: {
           main: {
-            intensity: 3,
+            intensity: 1.2,
             shadow: true,
-            shadowQuality: 'high',
-            // beta: 110,
-            alpha: -40
+            alpha: 50
           },
           ambient: {
             intensity: 0.3
@@ -167,6 +157,7 @@ export default class DigitalFinance extends Component {
       series: [
         {
           type: 'bar3D',
+          shading: 'lambert',
           data: data1.map((item) => {
             return {
               value: [item[0], item[1], item[2]]
@@ -178,6 +169,7 @@ export default class DigitalFinance extends Component {
         },
         {
           type: 'bar3D',
+          shading: 'lambert',
           data: data2.map((item) => {
             return {
               value: [item[0], item[1], item[2]]
