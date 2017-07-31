@@ -6,17 +6,17 @@ import './competeAnalysis.less';
 
 
 const percent={
-    percent1:90,
-    percent2:80,
-    percent3:70,
-    percent4:60,
-    percent5:50,
-    percent6:40,
-    percent7:30,
-    percent8:20,
-    percent9:10,
-    percent10:5
-};
+        percent1:90,
+        percent2:80,
+        percent3:70,
+        percent4:60,
+        percent5:50,
+        percent6:40,
+        percent7:30,
+        percent8:20,
+        percent9:10,
+        percent10:5
+    };
 
 class CompeteAnalysis extends Component {
     constructor() {
@@ -267,17 +267,17 @@ class CompeteAnalysis extends Component {
                         <div className="compete-right-title">{this.state.flag?'商场客流流出top10':'商场客流流入top10'}</div>
                         <div className="compete-right-content">
                             {
-                                this.rightColor.map((it,index) => {
+                                this.config[this.state.flag ? 'toPlazas' : 'inPlazas'].map((it,index) => {
                                     return <div className="line" key={index}>
-                                        <span>世博园</span>
+                                        <span>{it.project_name}</span>
                                         <div className="line-m">
-                                        <CompeteSvg  style={{height: '100%',width: '100%'}}  color={it} />
+                                        <CompeteSvg  style={{height: '100%',width: '100%'}}  color={this.rightColor[index]} />
                                         <div className="mask" style={{
-                                            width:`${100-this.state.percent[index]}%`
+                                            width:`${100-(it.ratio*100)}%`
                                         }}>
                                         </div>
                                         </div>
-                                        <i>{this.state.percent[index]}%</i>
+                                        <i>{(it.ratio*100).toFixed(2)}%</i>
                                     </div>
                                 })
                             }
