@@ -87,7 +87,12 @@ const routeConfig = {
           path: 'parking-analysis',
           component: Routes.ParkingAnalysis,
           breadcrumbName: '车牌分析'
-        }
+        },
+        {
+          path: 'popular-feeling',
+          component: Routes.PopularFeeling,
+          breadcrumbName: '数字金融：万达金融产品舆情'
+        },
       ]
     },
     {
@@ -143,7 +148,7 @@ const routeConfig = {
     },
     {
       path: 'digital-finance',
-      breadcrumbName: '数字金融-财富／小贷客群的万达生态描绘',
+      breadcrumbName: '数字金融：财富／小贷客群的万达生态描绘',
       component: Routes.DigitalFinance
     },
     {
