@@ -142,7 +142,26 @@ export default class ParkingAnalysis extends Component {
             <HeaderTitle title="车牌分析:  万达广场停车分析"/>
             <div className="parking-layout">
                 <div className="layout-front"></div>
-                <div ref="svgPath" className="layout-head"></div>
+                <div ref="svgPath" className="layout-head">
+                    {this.state.width && <svg
+                        width="100%"
+                        height="100%"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                            <path
+                                d={`M0,0 L${this.state.width},0 ${this.state.width},${this.state.height} 0,${this.state.height} 0,0`}
+                                id="circlePath"/>
+
+                        </defs>
+                        <circle cx="0" cy="0" r="10" stroke="#fff" fill="white">
+                            <animateMotion begin="0s" dur="3s" rotate="auto" repeatCount="indefinite">
+                                <mpath xlinkHref="#circlePath"/>
+                            </animateMotion>
+                        </circle>
+                    </svg>}
+                </div>
                 {['1', '2', '3'].map((i, index) => {
                     return <div key={index} className={`bar-container-${i} bar-container`}>
                         <div className="angel-style left-top-angel">
