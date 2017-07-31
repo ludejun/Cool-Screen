@@ -24,7 +24,7 @@
     left: 265px;
     top: 261px;
     z-index: 2;
-    animation: gradualOpacity 2s linear infinite;
+    animation: gradualOpacity 2s linear infinite alternate;
   }
   .circle-bottom-inner {
     width: 34px;
@@ -33,7 +33,7 @@
     left: 263px;
     top: 810px;
     z-index: 2;
-    animation: gradualOpacity 2s 1s linear infinite;
+    animation: gradualOpacity 2s linear infinite alternate;
   }
   .circle-bottom-out {
     width: 42px;
@@ -42,7 +42,7 @@
     left: 257px;
     top: 806px;
     z-index: 2;
-    animation: gradualOpacity 2s linear infinite;
+    animation: gradualOpacity 2s linear infinite alternate;
   }
 
   .echart-title {
@@ -139,13 +139,13 @@
     animation: descTagLineMove 2s ease-out infinite alternate;
   }
   .desc-tag-circle {
-    animation: gradualOpacity 2s linear infinite;
+    animation: gradualOpacity 2s linear infinite alternate;
   }
 }
 
 @keyframes gradualOpacity {
   0% {
-    opacity: 0.2;
+    opacity: 0.3;
     transform: scale(0.95);
   }
   100% {
