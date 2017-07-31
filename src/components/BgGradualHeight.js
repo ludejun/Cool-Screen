@@ -8,9 +8,9 @@ export default class BgGradualHeight extends Component {
   render() {
     return (
       <svg
+        className={this.props.className}
         // width="1826px"
         // height="896px"
-        // className="bg-svg"
         viewBox="0 0 1826 896"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"

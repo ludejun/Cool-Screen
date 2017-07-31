@@ -191,9 +191,8 @@ export default class DigitalFinance extends Component {
         <HeaderTitle title="数字金融-财富 / 小贷客群的万达生态描绘" className="sum-title" />
         <WDLogoSvg className="header-logo" />
         {/* background */}
-        <div className="bg-svg">
-          <BgGradualHeight />
-        </div>
+        <BgGradualHeight className="bg-svg" />
+
         {/* describe tag*/}
         <svg
           className="desc-tag"
