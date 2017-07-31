@@ -20,9 +20,9 @@ export default class BgGradualHeight extends Component {
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
-        <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g id="数字金融">
-            <g id="边框">
+        <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+          <g>
+            <g>
               <polygon
                 id="Path-912"
                 stroke="#0B58C0"

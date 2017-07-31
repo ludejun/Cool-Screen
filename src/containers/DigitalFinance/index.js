@@ -348,8 +348,8 @@ export default class DigitalFinance extends Component {
                     strokeDasharray="5,3"
                     points="11.3765294 51.1327502 11.3765294 91.7730403 7.07411894 96.0754508 7.07411894 120.089813 72.0173095 120.089813"
                   />
-                  <circle id="Oval-5" fill="#147BF4" cx="69" cy="120" r="2" />
-                  <circle id="Oval-5-Copy" fill="#147BF4" cx="142" cy="10" r="2" />
+                  <circle fill="#147BF4" cx="69" cy="120" r="2" />
+                  <circle fill="#147BF4" cx="142" cy="10" r="2" />
                   <polyline
                     className="desc-tag-bottom"
                     stroke="#137BF4"
@@ -391,9 +391,9 @@ export default class DigitalFinance extends Component {
               {item.name}
             </text>
             <defs />
-            <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-              <g id="数字金融" transform="translate(-1244.000000, -647.000000)">
-                <g id="文字框Copy-Copy-6" transform="translate(1244.000000, 647.000000)">
+            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+              <g transform="translate(-1244.000000, -647.000000)">
+                <g transform="translate(1244.000000, 647.000000)">
                   <path
                     d="M0.5,14.2274618 L9.36559076,6.5 L128.5,6.5 L128.5,52.5 L69.6217963,52.5 L69.379514,52.5 L69.2293737,52.6901542 L64.0851972,59.2053019 L58.6727697,52.6807678 L58.5228138,52.5 L58.287944,52.5 L0.5,52.5 L0.5,14.2274618 Z"
                     id="Rectangle-55"
@@ -409,7 +409,7 @@ export default class DigitalFinance extends Component {
                     stroke="#258DFF"
                     points="2.28990232 5.43537872 8.20426794 0.655167616 43.2027768 0.655167616"
                   />
-                  <circle id="Oval-46" fill="#258DFF" cx="2" cy="6" r="2" />
+                  <circle fill="#258DFF" cx="2" cy="6" r="2" />
                 </g>
               </g>
             </g>
