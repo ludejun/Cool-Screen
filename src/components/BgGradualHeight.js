@@ -1,3 +1,6 @@
+{
+  /* <BgGradualHeight show={true} className={"xxxx"}/> */
+}
 import React, { Component, PropTypes } from 'react';
 import { WDLogoSvg } from './';
 
@@ -6,6 +9,7 @@ export default class BgGradualHeight extends Component {
     super(props);
   }
   render() {
+    const styleShow = this.props.show ? { display: 'block' } : { display: 'none' };
     return (
       <svg
         className={this.props.className}
@@ -131,56 +135,64 @@ export default class BgGradualHeight extends Component {
                 />
               </rect>
               <polygon
-                id="Path-915"
+                style={styleShow}
+                className="declining"
                 stroke="#1981EC"
                 fillOpacity="0.242102582"
                 fill="#31BDEB"
                 points="78.6868851 14 60 31.7205052 70.2619891 31.7205052 89.7908502 14"
               />
               <polygon
-                id="Path-915-Copy-3"
+                style={styleShow}
+                className="declining"
                 stroke="#1981EC"
                 fillOpacity="0.242102582"
                 fill="#31BDEB"
                 points="98.6868851 14 80 31.7205052 90.2619891 31.7205052 109.79085 14"
               />
               <polygon
-                id="Path-915-Copy-4"
+                style={styleShow}
+                className="declining"
                 stroke="#1981EC"
                 fillOpacity="0.242102582"
                 fill="#31BDEB"
                 points="118.686885 14 100 31.7205052 110.261989 31.7205052 129.79085 14"
               />
               <polygon
-                id="Path-915-Copy-2"
+                style={styleShow}
+                className="declining"
                 stroke="#1981EC"
                 fillOpacity="0.242102582"
                 fill="#31BDEB"
                 points="138.686885 14 120 31.7205052 340.261989 31.7205052 359.79085 14"
               />
               <polygon
-                id="Path-915-Copy-8"
+                style={styleShow}
+                className="declining"
                 stroke="#1981EC"
                 fillOpacity="0.242102582"
                 fill="#31BDEB"
                 points="1707.68689 861 1689 878.720505 1699.26199 878.720505 1718.79085 861"
               />
               <polygon
-                id="Path-915-Copy-7"
+                style={styleShow}
+                className="declining"
                 stroke="#1981EC"
                 fillOpacity="0.242102582"
                 fill="#31BDEB"
                 points="1727.68689 861 1709 878.720505 1719.26199 878.720505 1738.79085 861"
               />
               <polygon
-                id="Path-915-Copy-6"
+                style={styleShow}
+                className="declining"
                 stroke="#1981EC"
                 fillOpacity="0.242102582"
                 fill="#31BDEB"
                 points="1747.68689 861 1729 878.720505 1739.26199 878.720505 1758.79085 861"
               />
               <polygon
-                id="Path-915-Copy-5"
+                style={styleShow}
+                className="declining"
                 stroke="#1981EC"
                 fillOpacity="0.242102582"
                 fill="#31BDEB"
