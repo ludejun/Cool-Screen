@@ -1,0 +1,63 @@
+.feeling-bg {
+  height: 786px;
+  width: 1820px;
+  margin: 186px 50px 108px;
+  transform: scale(1.15,1);
+}
+
+.feeling-container {
+  height: 744px;
+  width: 1714px;
+  background: url("/img/feeling-background.png") no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 206px;
+  left: 102px;
+  overflow: hidden;
+
+  .feeling-star-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #004DA6;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    filter: blur(4px);
+    animation: feeling-star-center 1s ease-in-out infinite alternate;
+  }
+  .feeling-star-left {
+    position: absolute;
+    left: -217px;
+    height: 2px;
+    width: 217px;
+    background: linear-gradient(to right, #080A2B, #004EB0);
+    animation: feeling-star-left 10s linear infinite;
+  }
+  .feeling-star-right {
+    position: absolute;
+    right: 0;
+    height: 2px;
+    width: 217px;
+    background: linear-gradient(to left, #080A2B, #004EB0);
+    animation: feeling-star-right 10s linear infinite;
+  }
+}
+
+@keyframes feeling-star-center {
+  100% {
+    width: 30px;
+    height: 30px;
+  }
+}
+@keyframes feeling-star-left {
+  100% {
+    left: 100%;
+  }
+}
+@keyframes feeling-star-right {
+  100% {
+    right: 100%;
+  }
+}

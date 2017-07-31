@@ -21,8 +21,8 @@ export default class BgGradualHeight extends Component {
         xmlnsXlink="http://www.w3.org/1999/xlink"
       >
         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g id="数字金融" transform="translate(-41.000000, -140.000000)">
-            <g id="边框" transform="translate(42.000000, 141.000000)">
+          <g id="数字金融">
+            <g id="边框">
               <polygon
                 id="Path-912"
                 stroke="#0B58C0"
