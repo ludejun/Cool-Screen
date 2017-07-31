@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import anime from 'animejs';
 
 export default class LifeMobileBorder extends Component {
   render() {
@@ -88,6 +89,42 @@ export default class LifeMobileBorder extends Component {
             <stop stopColor="#009FFF" stopOpacity="0.113394475" offset="0%" />
             <stop stopColor="#0DA0FF" stopOpacity="0.674649004" offset="100%" />
           </linearGradient>
+
+          <path
+            id="border-linearGradient-9"
+            stroke="#108EE9"
+            // fill="#108EE9"
+            strokeWidth="1"
+            d="M949.750275,14.9819981 L984.545622,14.9441594 L984.552738,81.2220814 L976.552318,81.191403 L976.475134,23.5160553 L976.474466,23.0166763 L975.975086,23.0167244 L949.697106,23.0192539 L949.750275,14.9819981 Z"
+          />
+
+          <path
+            id="border-linearGradient-10"
+            // id="corner-lt"
+            stroke="#108EE9"
+            // fill="#108EE9"
+            strokeWidth="1"
+            d="M3.58280332,14.0265994 L38.4585595,14.0289597 L38.4585595,22.0666809 L12.125946,22.0666809 L11.6259924,22.0666809 L11.625946,22.5666345 L11.6205943,80.2391245 L3.5819916,80.2345956 L3.58280332,14.0265994 Z"
+          />
+
+          <path
+            id="border-linearGradient-11"
+            // id="corner-rb"
+            stroke="#108EE9"
+            // fill="#108EE9"
+            strokeWidth="1"
+            d="M949.699112,849.886333 L976.02603,849.882111 L976.52595,849.882031 L976.52595,849.382111 L976.52595,791.71361 L984.570011,791.71361 L984.570011,857.924412 L949.699112,857.924412 L949.699112,849.886333 Z"
+          />
+
+          <path
+            id="border-linearGradient-12"
+            // id="corner-lb"
+            stroke="#108EE9"
+            // fill="#108EE9"
+            strokeWidth="1"
+            d="M3.58172477,791.715637 L11.6222966,791.715637 L11.6222966,849.382746 L11.6222966,849.882746 L12.1222966,849.882746 L38.4545961,849.882746 L38.4545961,857.920159 L3.5795314,857.920159 L3.58172477,791.715637 Z"
+          />
+
         </defs>
         <g
           className="life-mobile-border"
@@ -115,7 +152,7 @@ export default class LifeMobileBorder extends Component {
               xlinkHref="#border-path-3"
             />
             <use stroke="#40C1FF" strokeWidth="3" xlinkHref="#border-path-3" />
-
+            {/*
             <use
               stroke="#108EE9"
               className="border-corner-rt"
@@ -139,7 +176,7 @@ export default class LifeMobileBorder extends Component {
               className="border-corner-lb"
               strokeWidth="9.04134"
               xlinkHref="#border-path-3"
-            />
+            />*/}
           </g>
 
           <g id="inner-border" opacity="0.227411685">
@@ -154,39 +191,86 @@ export default class LifeMobileBorder extends Component {
             strokeWidth="2.260335"
             opacity="0.62669837"
           />
-          <polyline
-            id="corner-lt"
-            // className="angle-flash"
-            stroke="#108EE9"
-            strokeWidth="9.04134"
-            points="7.60115053 80.736096 7.60115053 18.046892 7.60115053 18.046892 38.9558965 18.046892"
-          />
-          <polyline
-            id="corner-lb"
-            // className="angle-flash"
-            stroke="#108EE9"
-            strokeWidth="9.04134"
-            transform="translate(23.278523, 822.558342) scale(1, -1) translate(-23.278523, -822.558342) "
-            points="7.60115053 853.902944 7.60115053 791.21374 7.60115053 791.21374 38.9558965 791.21374"
-          />
-          <polyline
-            id="corner-rt"
-            // className="angle-flash"
-            stroke="#108EE9"
-            strokeWidth="9.04134"
-            transform="translate(964.871045, 50.341330) scale(-1, 1) translate(-964.871045, -50.341330) "
-            points="949.193672 81.6859324 949.193672 18.9967285 949.193672 18.9967285 980.548418 18.9967285"
-          />
-          <polyline
-            id="corner-rb"
-            // className="angle-flash"
-            stroke="#108EE9"
-            strokeWidth="9.04134"
-            transform="translate(964.871045, 822.558342) scale(-1, -1) translate(-964.871045, -822.558342) "
-            points="949.193672 853.902944 949.193672 791.21374 949.193672 791.21374 980.548418 791.21374"
-          />
+
+          {['rt', 'lt', 'rb', 'lb'].map((v, i) => {
+            return [0, 1, 2, 3].map((j) => {
+              const fill = j === 0 ? { fill: '#108EE9' } : null;
+              return (
+                <use
+                  className={`${j !== 0 ? 'corner' : ''} corner-${j} `} // corner-center-${v}
+                  xlinkHref={`#border-linearGradient-${9 + i}`}
+                  {...fill}
+                  key={v + j}
+                />
+              );
+            });
+          })}
 
           {/*
+
+                      <path
+                        id="corner-rt"
+                        stroke="#108EE9"
+                        fill="#108EE9"
+                        strokeWidth="1"
+                        d="M949.750275,14.9819981 L984.545622,14.9441594 L984.552738,81.2220814 L976.552318,81.191403 L976.475134,23.5160553 L976.474466,23.0166763 L975.975086,23.0167244 L949.697106,23.0192539 L949.750275,14.9819981 Z"
+                      />
+
+                                <path
+                                  id="corner-lt"
+                                  stroke="#108EE9"
+                                  fill="#108EE9"
+                                  strokeWidth="1"
+                                  d="M3.58280332,14.0265994 L38.4585595,14.0289597 L38.4585595,22.0666809 L12.125946,22.0666809 L11.6259924,22.0666809 L11.625946,22.5666345 L11.6205943,80.2391245 L3.5819916,80.2345956 L3.58280332,14.0265994 Z"
+                                />
+
+                                <path
+                                  id="corner-rb"
+                                  stroke="#108EE9"
+                                  fill="#108EE9"
+                                  strokeWidth="1"
+                                  d="M949.699112,849.886333 L976.02603,849.882111 L976.52595,849.882031 L976.52595,849.382111 L976.52595,791.71361 L984.570011,791.71361 L984.570011,857.924412 L949.699112,857.924412 L949.699112,849.886333 Z"
+                                />
+
+                                <path
+                                  id="corner-lb"
+                                  stroke="#108EE9"
+                                  fill="#108EE9"
+                                  strokeWidth="1"
+                                  d="M3.58172477,791.715637 L11.6222966,791.715637 L11.6222966,849.382746 L11.6222966,849.882746 L12.1222966,849.882746 L38.4545961,849.882746 L38.4545961,857.920159 L3.5795314,857.920159 L3.58172477,791.715637 Z"
+                                />
+
+            <polyline
+              id="corner-lt"
+              // className="angle-flash"
+              stroke="#108EE9"
+              strokeWidth="9.04134"
+              points="7.60115053 80.736096 7.60115053 18.046892 7.60115053 18.046892 38.9558965 18.046892"
+            />
+            <polyline
+              id="corner-lb"
+              // className="angle-flash"
+              stroke="#108EE9"
+              strokeWidth="9.04134"
+              transform="translate(23.278523, 822.558342) scale(1, -1) translate(-23.278523, -822.558342) "
+              points="7.60115053 853.902944 7.60115053 791.21374 7.60115053 791.21374 38.9558965 791.21374"
+            />
+            <polyline
+              id="corner-rt"
+              // className="angle-flash"
+              stroke="#108EE9"
+              strokeWidth="9.04134"
+              transform="translate(964.871045, 50.341330) scale(-1, 1) translate(-964.871045, -50.341330) "
+              points="949.193672 81.6859324 949.193672 18.9967285 949.193672 18.9967285 980.548418 18.9967285"
+            />
+            <polyline
+              id="corner-rb"
+              // className="angle-flash"
+              stroke="#108EE9"
+              strokeWidth="9.04134"
+              transform="translate(964.871045, 822.558342) scale(-1, -1) translate(-964.871045, -822.558342) "
+              points="949.193672 853.902944 949.193672 791.21374 949.193672 791.21374 980.548418 791.21374"
+            />
             <use
               stroke="#108EE9"
               className="border-corner-dot"
