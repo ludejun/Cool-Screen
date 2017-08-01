@@ -17,6 +17,34 @@
     position: absolute;
     margin: 128px 42px 0;
   }
+  .circle-top {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 265px;
+    top: 261px;
+    z-index: 2;
+    animation: gradualOpacity 2s linear infinite alternate;
+  }
+  .circle-bottom-inner {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    left: 263px;
+    top: 810px;
+    z-index: 2;
+    animation: gradualOpacity 2s linear infinite alternate;
+  }
+  .circle-bottom-out {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    left: 257px;
+    top: 806px;
+    z-index: 2;
+    animation: gradualOpacity 2s linear infinite alternate;
+  }
+
   .echart-title {
     color: #5ec8ff;
     font-size: 24px;
@@ -59,10 +87,10 @@
   .title-bg {
     position: absolute;
     height: 54px;
-    animation: buildCardDivUpDown 2s ease-in-out infinite alternate;
+    animation: titleBgUpDown 2s ease-in-out infinite alternate;
   }
   .title-bg-0 {
-    top: 384px;
+    top: 422px;
     left: 307px;
   }
   .title-bg-1 {
@@ -70,23 +98,23 @@
     left: 452px;
   }
   .title-bg-2 {
-    top: 460px;
-    left: 571px;
+    top: 312px;
+    left: 590px;
   }
   .title-bg-3 {
-    top: 592px;
+    top: 630px;
     left: 731px;
   }
   .title-bg-4 {
-    top: 353px;
+    top: 544px;
     left: 845px;
   }
   .title-bg-5 {
-    top: 192px;
+    top: 422px;
     left: 994px;
   }
   .title-bg-6 {
-    top: 508px;
+    top: 192px;
     left: 1134px;
   }
   .title-bg-7 {
@@ -98,11 +126,48 @@
     left: 1391px;
   }
   .title-bg-9 {
-    top: 370px;
+    top: 677px;
     left: 1521px;
   }
   .title {
     color: #fff;
     font-size: 29px;
+  }
+
+  .desc-tag-top,
+  .desc-tag-bottom {
+    animation: descTagLineMove 2s ease-out infinite alternate;
+  }
+  .desc-tag-circle {
+    animation: gradualOpacity 2s linear infinite alternate;
+  }
+}
+
+@keyframes gradualOpacity {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes descTagLineMove {
+  0% {
+    stroke-dasharray: 5, 3;
+  }
+  100% {
+    stroke-dasharray: 5, 5;
+  }
+}
+
+@keyframes titleBgUpDown {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }
