@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
-import {WDImageBar, WDImagePercent,WDFloor} from '../../../components';
+import {WDImageBar, WDImagePercent, WDFloor} from '../../../components';
 import './customerPic.less';
 
 const consume = [120, 40, 10];
@@ -167,10 +167,117 @@ const radioList = ['Test1', 'Test2', 'Test3'];
 const listArray = ['55,10 55,40 78,40 78,80', '55,10 55,60 90,60 90,120', '55,10 55,40 20,40 20,80'];
 
 class Cuspic extends Component {
-    renderEchart = () => {
-        const randomL = parseInt(Math.random() * 60);
-        const randomM = parseInt(Math.random() * 70);
-        const randomH = parseInt(Math.random() * 30);
+    constructor(props) {
+        super(props);
+        this.timer = null;
+        this.state = {
+            tab: 0
+        };
+        this.brandsName = [
+            [
+                'CROCS', 'GUESS 时尚表', '1001牛肉面'
+            ],
+            [
+                '中国黄金', '海澜之家', '吴良材眼镜'
+            ],
+            ['上海书城', '沃尔玛', 'DISSONA']
+        ];
+        this.customerPic = [
+            {
+                consume: {
+                    high: 7,
+                    middle: 28,
+                    low: 65
+                },
+                cars: {
+                    haveCar: 67,
+                    noCar: 33
+                },
+                sex: {
+                    male: 37,
+                    female: 63
+                },
+                marriage: {
+                    yes: 38,
+                    no: 62
+                },
+                age: {
+                    18: 0.04,
+                    24: 0.24,
+                    34: 0.41,
+                    44: 0.22,
+                    45: 0.09
+                }
+            }, {
+                consume: {
+                    high: 7,
+                    middle: 26,
+                    low: 67
+                },
+                cars: {
+                    haveCar: 67,
+                    noCar: 33
+                },
+                sex: {
+                    male: 37,
+                    female: 63
+                },
+                marriage: {
+                    yes: 38,
+                    no: 62
+                },
+                age: {
+                    18: 0.04,
+                    24: 0.24,
+                    34: 0.41,
+                    44: 0.22,
+                    45: 0.09
+                }
+            }, {
+                consume: {
+                    high: 7,
+                    middle: 29,
+                    low: 64
+                },
+                cars: {
+                    haveCar: 67,
+                    noCar: 33
+                },
+                sex: {
+                    male: 37,
+                    female: 63
+                },
+                marriage: {
+                    yes: 38,
+                    no: 62
+                },
+                age: {
+                    18: 0.04,
+                    24: 0.24,
+                    34: 0.41,
+                    44: 0.22,
+                    45: 0.09
+                }
+            }
+        ];
+    }
+    componentDidMount() {
+        clearInterval(this.timer);
+        this.timer = setInterval(() => {
+            if (this.state.tab < 2) {
+                this.setState({
+                    tab: this.state.tab + 1
+                });
+            } else {
+                this.setState({tab: 0});
+            }
+        }, 3000);
+    }
+    radioChange = (e) => {
+        clearInterval(this.timer);
+        this.setState({tab: e.target.value});
+    }
+    renderEchart = (customerPic) => {
         const consumeOption = {
             color: [
                 '#85b6b2', '#6d4f8d', '#cd5e7e', '#e38980', '#f7db88'
@@ -191,8 +298,8 @@ class Cuspic extends Component {
                     hoverAnimation: false,
                     data: [
                         {
-                            value: consume[0],
-                            name: '低端消费' + (100 - randomL) + '%',
+                            value: customerPic.consume.low,
+                            name: '低端消费' + customerPic.consume.low + '%',
                             label: {
                                 normal: {
                                     textStyle: {
@@ -201,8 +308,8 @@ class Cuspic extends Component {
                                 }
                             }
                         }, {
-                            value: randomL,
-                            name: '低端消费',
+                            value: (100 - customerPic.consume.low),
+                            name: '低端消费' + customerPic.consume.low + '%',
                             itemStyle: placeHolderStyle
                         }
                     ]
@@ -217,12 +324,12 @@ class Cuspic extends Component {
                     hoverAnimation: false,
                     data: [
                         {
-                            value: consume[1],
-                            name: '中端消费' + (100 - randomM) + '%'
-                        }, {
-                            value: randomM,
-                            name: '中端消费',
+                            value: (100 - customerPic.consume.middle),
+                            name: '中端消费' + customerPic.consume.middle + '%',
                             itemStyle: placeHolderStyle
+                        }, {
+                            value: customerPic.consume.middle,
+                            name: '中端消费' + customerPic.consume.middle + '%'
                         }
                     ]
                 }, {
@@ -236,11 +343,11 @@ class Cuspic extends Component {
                     itemStyle: dataStyle,
                     data: [
                         {
-                            value: consume[2],
-                            name: '高端消费' + (100 - randomH) + '%'
+                            value: customerPic.consume.high,
+                            name: '高端消费' + customerPic.consume.high + '%'
                         }, {
-                            value: randomH,
-                            name: '高端消费',
+                            value: (100 - customerPic.consume.high),
+                            name: '高端消费' + customerPic.consume.high + '%',
                             itemStyle: placeHolderStyle
                         }
                     ]
@@ -259,29 +366,33 @@ class Cuspic extends Component {
                                 消费等级占比
                             </div>
                             <div className="cell-content">
-                                {this.renderEchart()}
+                                {this.renderEchart(this.customerPic[this.state.tab])}
                             </div>
                         </div>
                         <div className="cell">
                             <div className="cell-title">
                                 年龄分布
                             </div>
-                            <div className="cell-content" style={{textAlign: 'left'}}>
-                                <Echarts className="age-chart" option={option} />
+                            <div
+                                className="cell-content"
+                                style={{
+                                textAlign: 'left'
+                            }}>
+                                <Echarts className="age-chart" option={option}/>
                             </div>
                         </div>
                     </div>
                     <div className="row second-row">
                         <div className="cell">
-                            <p>车辆情况对比<span /></p>
-                             <div className="car-situation"><WDImagePercent dataList={carList} /></div>
+                            <p>车辆情况对比<span/></p>
+                            <div className="car-situation"><WDImagePercent dataList={carList}/></div>
                         </div>
                         <div className="cell">
-                            <p className="right-sub-title">性别对比<span /></p>
+                            <p className="right-sub-title">性别对比<span/></p>
                             <div className="sex-situation"><WDImageBar dataList={genderList}/></div>
                         </div>
                         <div className="cell">
-                            <p className="right-sub-title">已婚对比<span /></p>
+                            <p className="right-sub-title">已婚对比<span/></p>
                             <div className="car-situation"><WDImagePercent dataList={marriage}/></div>
                         </div>
                     </div>
@@ -336,7 +447,12 @@ class Cuspic extends Component {
                 </div>
 
             </div>
-            <div className="right"><WDFloor /></div>
+            <div className="right">
+                <WDFloor
+                    brandsName={this.brandsName[this.state.tab]}
+                    tab={this.state.tab}
+                    radioChange={this.radioChange}/>
+            </div>
         </div>
     }
 }
