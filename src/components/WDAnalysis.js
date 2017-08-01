@@ -226,7 +226,7 @@ export default class Analysis extends Component {
           type: 'pie',
           clockWise: false,
           radius: [
-            60, 70
+            50, 60
           ],
           itemStyle: dataStyle,
           hoverAnimation: false,
@@ -252,7 +252,7 @@ export default class Analysis extends Component {
           type: 'pie',
           clockWise: false,
           radius: [
-            40, 50
+            30, 40
           ],
           itemStyle: dataStyle,
           hoverAnimation: false,
@@ -272,7 +272,7 @@ export default class Analysis extends Component {
           clockWise: false,
           hoverAnimation: false,
           radius: [
-            20, 30
+            10, 20
           ],
           itemStyle: dataStyle,
           data: [
@@ -299,7 +299,6 @@ export default class Analysis extends Component {
           viewBox="0 0 820 687"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg">
-          <defs/>
           <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <rect
               className="Rectangle-19"
@@ -333,7 +332,7 @@ export default class Analysis extends Component {
             <p className="age-title">年龄分布</p>
             <Echarts
               style={{
-              transform: 'translate(10px,-20px) scale(0.9)'
+              transform: 'translate(-20px,-20px) scaleX(0.77)'
             }}
               className="age-chart"
               option={this.assembleAge()}/>

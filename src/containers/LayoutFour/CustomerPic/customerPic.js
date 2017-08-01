@@ -389,7 +389,7 @@ class Cuspic extends Component {
                         </div>
                         <div className="cell">
                             <p className="right-sub-title">性别对比<span/></p>
-                            <div className="sex-situation"><WDImageBar dataList={genderList}/></div>
+                            <div className="sex-situation"><WDImageBar four={true} dataList={genderList}/></div>
                         </div>
                         <div className="cell">
                             <p className="right-sub-title">已婚对比<span/></p>
