@@ -52,7 +52,7 @@ class customerPic extends Component {
     }
     render() {
         return <div className="container">
-            <HeaderTitle title="数字金融:客群画像"/>
+            <HeaderTitle title="数字金融：客群画像"/>
             <div className="customer-svg-container">
                 <svg
                     className="svg"

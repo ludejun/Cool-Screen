@@ -156,7 +156,7 @@ export default class ParkingAnalysis extends Component {
 
                         </defs>
                         <circle cx="0" cy="0" r="10" stroke="#fff" fill="white">
-                            <animateMotion begin="0s" dur="3s" rotate="auto" repeatCount="indefinite">
+                            <animateMotion begin="0s" dur="7s" rotate="auto" repeatCount="indefinite">
                                 <mpath xlinkHref="#circlePath"/>
                             </animateMotion>
                         </circle>
