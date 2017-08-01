@@ -22,6 +22,8 @@ export { default as WDPolyLine } from './PolyLine';
 export { default as WDLayout } from './layout';
 export { default as AngelAside } from './AngelAside';
 export { default as CompeteSvg } from './competeSvg';
+export { default as WDTextContainer } from './WDTextContainer';
+export { default as WDFeelingContainer } from './WDFeelingContainer';
 
 // background
 export { default as BgAnimation } from './BgAnimation';

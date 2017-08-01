@@ -2,7 +2,7 @@
   height: 786px;
   width: 1820px;
   margin: 186px 50px 108px;
-  transform: scale(1.15,1);
+  transform: scale(1.15, 1);
 }
 
 .feeling-container {
@@ -43,6 +43,32 @@
     background: linear-gradient(to left, #080A2B, #004EB0);
     animation: feeling-star-right 10s linear infinite;
   }
+
+  .feeling-text-container {
+    width: 227px;
+    height: 98px;
+    .left-circle, .right-circle {
+      opacity: 0.5;
+      animation: feeling-circle-change 2s ease-in-out infinite alternate;
+    }
+  }
+  .feeling-main-container {
+    width: 561px;
+    height: 526px;
+    margin-top: -24px;
+    .rect-dasharray {
+      animation: feeling-rect-dasharray 5s linear infinite;
+    }
+  }
+  .feeling-wealth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    bottom: 60px;
+    left: 97px;
+  }
 }
 
 @keyframes feeling-star-center {
@@ -59,5 +85,17 @@
 @keyframes feeling-star-right {
   100% {
     right: 100%;
+  }
+}
+@keyframes feeling-circle-change {
+  100% {
+    opacity: 1;
+    transform-origin: center;
+    transform: scale(1.3);
+  }
+}
+@keyframes feeling-rect-dasharray {
+  100% {
+    stroke-dashoffset: 200px;
   }
 }
