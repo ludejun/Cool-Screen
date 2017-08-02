@@ -4,26 +4,30 @@ import HeaderTitle from '../Layout/HeaderTitle';
 import FeelingImageContainer from './FeelingImageContainer';
 import './popularFeeling.less';
 
+
+
+
+const cfg = [
+  {
+    'img': '/img/wealth.jpg',
+    'name': '万达财富'
+  },
+  {
+    'img': '/img/loan.jpg',
+    'name': '万达小贷'
+  },
+  {
+    'img': '/img/cost.jpg',
+    'name': '快易花'
+  },
+  {
+    'img': '/img/bill.jpg',
+    'name': '快钱钱包'
+  }
+];
 export default class PoluparFeeling extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      'small':true,
-      'big':true
-    };
-    this.timer = null;
-  }
 
-  componentDidMount (){
-    let now = true;
-    this.timer = setInterval(() => {
-      this.setState({
-        'small':!now,
-        'big':!now
-      })
-    },5000)
-  }
 
   render() {
     return (
@@ -39,16 +43,16 @@ export default class PoluparFeeling extends Component {
           <div className="feeling-star-right" style={{bottom: 23}}></div>
 
           <div className="feeling-wealth">
-            <div className="transform-sm-1"></div>
+            <FeelingImageContainer title={cfg[0].name} src={ cfg[0].img } className="transform-sm-1"/>
           </div>
           <div className="feeling-loan">
-            <div className="transform-big-1"></div>
+            <FeelingImageContainer title={cfg[1].name} src={ cfg[1].img } className="transform-big-1"/>
           </div>
           <div className="feeling-cost">
-            <div className="transform-big-2"></div>
+            <FeelingImageContainer title={cfg[2].name} src={ cfg[2].img } className="transform-big-2"/>
           </div>
           <div className="feeling-bill">
-            <div className="transform-sm-2"></div>
+            <FeelingImageContainer title={cfg[3].name} src={ cfg[3].img } className="transform-sm-2"/>
           </div>
         </div>
       </div>

@@ -24,11 +24,12 @@ export default class WDImageBar extends Component {
                   className="backImage"
                   style={{
                     backgroundImage: `url(${v.itemImage})`,
-                    width: v.color ? `${getProperSize(v.percent, 0, 100, 0, 80)}%` : '100%'
+                    transform: this.props.four ? '' : 'translate(30px)',
+                    width: v.color ? `${(v.percent)*0.6}%` : '100%'
                   }}
                 />
                 {!!v.color &&
-                  <span className="percent" style={{ color: v.color }}>
+                  <span className="percent" style={{ transform: this.props.four ? '' : 'translate(-40px)', color: v.color }}>
                     {`${v.percent.toFixed(0)}%`}
                   </span>}
               </div>) ||

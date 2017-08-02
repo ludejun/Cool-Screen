@@ -3,11 +3,15 @@ import { WDTextContainer, WDFeelingContainer } from '../../components';
 
 export default function (props) {
   return(
-    <div>
-      <WDTextContainer className="feeling-text-container feeling-text-wealth" />
-      <WDFeelingContainer className="feeling-main-container" style={{...props.style}}/>
-
-
+    <div className={ `feeling-wealth-compent ${props.className}` } >
+    	<p className="feeling-title">{ props.title }</p>
+    	<img className="feeling-img"  src={props.src} style={{ width: '81%', height: '68%'}} />
+      <WDTextContainer className="feeling-text-container feeling-text-weal th" />
+      <WDFeelingContainer className="feeling-main-container" />
+      <div className="feeling-circle feeling-circle1"></div>
+      <div className="feeling-circle feeling-circle2"></div>
+      <div className="feeling-circle feeling-circle3"></div>
+      <div className="feeling-circle feeling-circle4"></div>
     </div>
   );
 }
