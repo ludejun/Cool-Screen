@@ -8,8 +8,20 @@ import beijingMap from '../../assets/map/beijing.json';
 import shanghaiMap from '../../assets/map/shanghai.json';
 import guangzhouMap from '../../assets/map/guangzhou.json';
 import guangzhou from '../../assets/map/feifanguangzhou.json';
+import { getBaseFontSize } from '../../utils';
 
-const linePoint = ['0 0, 300 0, 300 70', '0 0, 348 0, 348 169', '0 0, 282 0, 282 264'];
+const pointList = [
+  `0,0 ${484 / 192 * getBaseFontSize()},0 ${484 / 192 * getBaseFontSize()},${133 /
+    192 *
+    getBaseFontSize()}`,
+  `0,0 ${557 / 192 * getBaseFontSize()},0 ${557 / 192 * getBaseFontSize()},${282 /
+    192 *
+    getBaseFontSize()}`,
+  `0,0 ${451 / 192 * getBaseFontSize()},0 ${451 / 192 * getBaseFontSize()},${430 /
+    192 *
+    getBaseFontSize()}`
+];
+
 const mapList = [
   {
     img: '/img/beijing-tab.png',
@@ -59,9 +71,13 @@ export default class MapScatter extends Component {
     clearInterval(this.timer);
     this.timer = setInterval(() => {
       if (this.state.index === 2) {
-        this.setState({ index: 0 });
+        this.setState({
+          index: 0
+        });
       } else {
-        this.setState({ index: this.state.index + 1 });
+        this.setState({
+          index: this.state.index + 1
+        });
       }
     }, 6000);
   }
@@ -112,7 +128,7 @@ export default class MapScatter extends Component {
                 </linearGradient>
               </defs>
               <polyline
-                points={linePoint[this.state.index]}
+                points={pointList[this.state.index]}
                 stroke="url(#grad1)"
                 fill="none"
                 className={`line-fill line-fill-${this.state.index}`}

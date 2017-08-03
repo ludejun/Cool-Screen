@@ -76,17 +76,18 @@
     position: absolute;
     left: 864px;
     top: 192px;
+
     &-0 {
-      width: 480px;
-      height: 200px;
+      width: 484px;
+      height: 133px;
     }
     &-1 {
       width: 557px;
-      height: 271px;
+      height: 282px;
     }
     &-2 {
       width: 451px;
-      height: 422px;
+      height: 430px;
     }
   }
 
@@ -97,41 +98,41 @@
     stroke-dashoffset: 0;
 
     &-0 {
-      stroke-dasharray: 370, 0;
+      stroke-dasharray: 617, 0;
       animation: lineMove0 2s ease-out;
     }
     &-1 {
-      stroke-dasharray: 517, 0;
+      stroke-dasharray: 839, 0;
       animation: lineMove1 2s ease-out;
     }
     &-2 {
-      stroke-dasharray: 546, 0;
+      stroke-dasharray: 881, 0;
       animation: lineMove2 2s ease-out;
     }
   }
 
   @keyframes lineMove0 {
     0% {
-      stroke-dasharray: 0, 370;
+      stroke-dasharray: 0, 617;
     }
     100% {
-      stroke-dasharray: 370, 0;
+      stroke-dasharray: 617, 0;
     }
   }
   @keyframes lineMove1 {
     0% {
-      stroke-dasharray: 0, 517;
+      stroke-dasharray: 0, 839;
     }
     100% {
-      stroke-dasharray: 517, 0;
+      stroke-dasharray: 839, 0;
     }
   }
   @keyframes lineMove2 {
     0% {
-      stroke-dasharray: 0, 546;
+      stroke-dasharray: 0, 881;
     }
     100% {
-      stroke-dasharray: 546, 0;
+      stroke-dasharray: 881, 0;
     }
   }
   .circle-inner {
@@ -140,7 +141,7 @@
     position: absolute;
     z-index: 2;
     opacity: 0;
-    animation: gradualOpacity1 2s 2s linear infinite alternate;
+    animation: gradualOpacity1 2s 1s linear infinite alternate;
 
     &-0 {
       left: 1330px;
