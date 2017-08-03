@@ -2,7 +2,7 @@
   height: 786px;
   width: 1820px;
   margin: 186px 50px 108px;
-  transform: scale(1.15,1);
+  transform: scale(1.15, 1);
 }
 
 .feeling-container {
@@ -43,6 +43,214 @@
     background: linear-gradient(to left, #080A2B, #004EB0);
     animation: feeling-star-right 10s linear infinite;
   }
+
+  .feeling-text-container {
+    width: 227px;
+    height: 98px;
+    .left-circle, .right-circle {
+      opacity: 0.5;
+      animation: feeling-circle-change 2s ease-in-out infinite alternate;
+    }
+  }
+  .feeling-main-container {
+    width: 561px;
+    height: 526px;
+    margin-top: -24px;
+    .rect-dasharray {
+      animation: feeling-rect-dasharray 5s linear infinite;
+    }
+  }
+  .feeling-wealth-compent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    .feeling-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .feeling-img {
+      position: absolute;
+      bottom: 8%;
+      left: 8%;
+    }
+    .feeling-circle {
+      width: 7px;
+      height: 7px;
+      background-color: #015BCB;
+      border-radius: 50%;
+      animation: feeling-circle-change 2s ease-in-out infinite alternate;
+      position: absolute;
+    }
+    .feeling-circle1 {
+      left: 0;
+      bottom: 0;
+    }
+    .feeling-circle2 {
+      right: 2.5%;
+      bottom: 0;
+    }
+    .feeling-circle3 {
+      left: 0;
+      top: 15.6%;
+    }
+    .feeling-circle4 {
+      right: 2.5%;
+      top: 15.6%;
+    }
+  }
+  .feeling-wealth {
+    width: 540px;
+    height: 590px;
+    position: absolute;
+    z-index: 100;
+    bottom: 60px;
+    left: 97px;
+    .transform-sm-1 {
+      animation: sm1 16s infinite;
+      transform-origin: 0 bottom 0;
+    }
+  }
+  .feeling-loan {
+    position: absolute;
+    left: 870px;
+    top: -600px;
+    .transform-big-1 {
+      transform-origin: 0 100% 0;
+      transform: scale(.37) rotate(180deg);
+      animation: sm2 16s infinite;
+    }
+    .feeling-title {
+      transform: translateX(-50%) rotate(180deg);
+    }
+    .feeling-img {
+      transform: rotate(180deg);
+    }
+
+  }
+  .feeling-cost {
+    width: 285px;
+    height: 126px;
+    position: absolute;
+    left: 891px;
+    bottom: 496px;
+    .feeling-circle {
+      transform: scale(.68, 1.61);
+      animation: circle-only 2s ease-in-out infinite alternate;
+    }
+    .feeling-title {
+      transform: translateX(-50%) scale(.68, 1.61);
+    }
+    .feeling-text-container {
+      transform: scale(.68, 1.61);
+    }
+    .transform-big-2 {
+      transform: scale(.51, .22);
+      animation: big2 16s infinite;
+      transform-origin: 0 bottom 0;
+    }
+  }
+  .feeling-bill {
+    width: 540px;
+    height: 590px;
+    position: absolute;
+    top: -591px;
+    right: 693px;
+    .transform-sm-2 {
+      transform: rotate(180deg);
+      animation: big1 16s infinite;
+      transform-origin: 100% 100% 0;
+    }
+    .feeling-title {
+      transform: translateX(-50%) rotate(180deg);
+    }
+    .feeling-img {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@keyframes circle-only {
+  100% {
+    opacity: 1;
+    transform-origin: center;
+    transform: scale(.88, 2.09);
+  }
+}
+
+@keyframes sm1 {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.37);
+  }
+  80% {
+    transform: scale(.37);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes sm2 {
+  0% {
+    transform: scale(.37) rotate(180deg);
+  }
+  30% {
+    transform: scale(.37) rotate(180deg);
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+  }
+  80% {
+    transform: scale(1) rotate(180deg);
+  }
+  100% {
+    transform: scale(.37) rotate(180deg);
+  }
+}
+
+@keyframes big1 {
+  0% {
+    transform: scale(1) rotate(180deg);
+  }
+  30% {
+    transform: scale(1) rotate(180deg);
+  }
+  50% {
+    transform: scale(.37) rotate(180deg);
+  }
+  80% {
+    transform: scale(.37) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+@keyframes big2 {
+  0% {
+    transform: scale(.53, .22);
+  }
+  30% {
+    transform: scale(.53, .22);
+  }
+  50% {
+    transform: scale(1.46, .62);
+  }
+  80% {
+    transform: scale(1.46, .62);
+  }
+
+  100% {
+    transform: scale(.53, .22);
+
+  }
 }
 
 @keyframes feeling-star-center {
@@ -51,13 +259,29 @@
     height: 30px;
   }
 }
+
 @keyframes feeling-star-left {
   100% {
     left: 100%;
   }
 }
+
 @keyframes feeling-star-right {
   100% {
     right: 100%;
+  }
+}
+
+@keyframes feeling-circle-change {
+  100% {
+    opacity: 1;
+    transform-origin: center;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes feeling-rect-dasharray {
+  100% {
+    stroke-dashoffset: 200px;
   }
 }
