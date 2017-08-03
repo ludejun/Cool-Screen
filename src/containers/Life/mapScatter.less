@@ -72,82 +72,120 @@
     left: 88px;
     bottom: 52px;
   }
-
-  .line {
+  .line-wrap {
     position: absolute;
-    background: linear-gradient(to bottom right, #0057ff 60%, #0effb5 100%);
+    left: 864px;
+    top: 192px;
+
+    &-0 {
+      width: 484px;
+      height: 133px;
+    }
+    &-1 {
+      width: 557px;
+      height: 282px;
+    }
+    &-2 {
+      width: 451px;
+      height: 430px;
+    }
   }
 
-  .line-0-0 {
-    height: 1PX;
-    width: 607px;
-    left: 740px;
-    top: 229px;
-  }
-  .line-0-1 {
-    height: 100px;
-    width: 1PX;
-    left: 1347px;
-    top: 229px;
-  }
-  .line-1-0 {
-    height: 1px;
-    width: 676px;
-    left: 745px;
-    top: 235px;
-  }
-  .line-1-1 {
-    height: 222px;
-    width: 1PX;
-    left: 1419px;
-    top: 235px;
-  }
-  .line-2-0 {
-    height: 1PX;
-    width: 558px;
-    left: 756px;
-    bottom: 183px;
-  }
-  .line-2-1 {
-    height: 77px;
-    width: 1PX;
-    left: 1313px;
-    bottom: 106px;
+  .line-fill {
+    stroke-width: 2PX;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-dashoffset: 0;
+
+    &-0 {
+      stroke-dasharray: 617, 0;
+      animation: lineMove0 2s ease-out;
+    }
+    &-1 {
+      stroke-dasharray: 839, 0;
+      animation: lineMove1 2s ease-out;
+    }
+    &-2 {
+      stroke-dasharray: 881, 0;
+      animation: lineMove2 2s ease-out;
+    }
   }
 
-  .circle {
-    border-radius: 50%;
-    width: 4px;
-    height: 4px;
-    display: inline-block;
-    box-shadow: 0 0 4px 0 rgba(43, 31, 3, 0.72);
+  @keyframes lineMove0 {
+    0% {
+      stroke-dasharray: 0, 617;
+    }
+    100% {
+      stroke-dasharray: 617, 0;
+    }
+  }
+  @keyframes lineMove1 {
+    0% {
+      stroke-dasharray: 0, 839;
+    }
+    100% {
+      stroke-dasharray: 839, 0;
+    }
+  }
+  @keyframes lineMove2 {
+    0% {
+      stroke-dasharray: 0, 881;
+    }
+    100% {
+      stroke-dasharray: 881, 0;
+    }
+  }
+  .circle-inner {
+    width: 34px;
+    height: 34px;
     position: absolute;
-    background: linear-gradient(rgba(113, 255, 163, 0.39) 50%, #fff42e 50%);
-    border: 1px solid #0dffb5;
-    animation: circle-area 1s infinite;
-  }
+    z-index: 2;
+    opacity: 0;
+    animation: gradualOpacity1 2s 1s linear infinite alternate;
 
-  @keyframes circle-area {
+    &-0 {
+      left: 1330px;
+      top: 312px;
+    }
+    &-1 {
+      left: 1402px;
+      top: 462px;
+    }
+    &-2 {
+      left: 1296px;
+      top: 614px;
+    }
+  }
+  .circle-out {
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    animation: gradualOpacity1 2s 2s linear infinite alternate;
+
+    &-0 {
+      left: 1325px;
+      top: 307px;
+    }
+    &-1 {
+      left: 1399px;
+      top: 458px;
+    }
+    &-2 {
+      left: 1294px;
+      top: 610px;
+    }
+  }
+  @keyframes gradualOpacity1 {
     0% {
       opacity: 0;
+      transform: scale(0.95);
     }
     100% {
       opacity: 1;
-      tranform: scale(1.1);
+      transform: scale(1.05);
     }
-  }
-
-  .circle-0 {
-    left: 1347px;
-    top: 329px;
-  }
-  .circle-1 {
-    left: 1421px;
-    top: 459px;
-  }
-  .circle-2 {
-    left: 1313px;
-    bottom: 98px;
   }
 }
 
@@ -171,20 +209,20 @@
     height: 17px;
     border-radius: 50%;
     z-index: 2;
-    background: #11ABFF;
+    background: #11abff;
   }
   /* 产生动画（向外扩散变大）的圆圈  */
   .pulse {
     position: absolute;
     width: 34px;
     height: 34px;
-    border: 6px solid #11ABFF;
+    border: 6px solid #11abff;
     border-radius: 50%;
     z-index: 1;
     opacity: 0.5;
     animation: warn 2s ease-out infinite;
     //box-shadow: 1px 1px 30px #11ABFF;
-    background: #11ABFF;
+    background: #11abff;
   }
 
   .pulse1 {
@@ -196,7 +234,7 @@
     z-index: 1;
     opacity: 0.3;
     animation: warn1 2s ease-out infinite;
-    background: #11ABFF;
+    background: #11abff;
   }
 }
 
@@ -212,7 +250,7 @@
     height: 1px;
     border: 1px solid #fff;
     border-radius: 50%;
-    box-shadow: 1px 1px 3px #11ABFF;
+    box-shadow: 1px 1px 3px #11abff;
   }
   .hover-line:nth-child(1) {
     right: 15px;
