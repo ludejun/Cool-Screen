@@ -176,26 +176,20 @@ class ParkingAnalysis extends Component {
           <div className="right-layout">
             <svg
               className="svg-lay"
-              viewBox="0 0 390 166"
+              viewBox="0 0 704 172"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink">
               <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                <g transform="translate(-622.000000, -65.000000)">
-                  <g transform="translate(622.000000, 65.000000)">
-                    <g >
-                      <g fill="#0D62C4">
-                        <path
-                          d="M2.42597693,0.992782142 L22.83384,0.992782142 L40.0700369,0.992782142 L44.187356,4.15946518 L384.139513,4.15946518 L387.864706,8.11781897 L387.864706,71.8473151 L389.629271,75.6077512 L389.629271,147.396435 L387.864706,152.542294 L387.864706,165.80278 L364.729294,165.80278 L360.219849,163.625685 L35.756655,163.625685 L32.8157129,165.80278 L7.13148443,165.80278 C7.13148443,165.80278 3.3938067,162.344161 2.42597693,161.448591 C1.45814716,160.55302 2.42597693,103.316228 2.42597693,103.316228 L0.269285995,97.5766148 L0.269285995,38.5971432 L2.42597693,33.4512833 L2.42597693,0.992782142 Z"
-                          id="Rectangle"></path>
-                      </g>
-                      <polygon
-                        id="Path-103"
-                        fill="#092293"
-                        points="11.3550814 9.07588862 39.6544298 9.07588862 43.7903276 6.2819317 375.59191 6.2819317 379.326878 6.2819317 383.061846 6.2819317 385.224195 9.07588862 385.224195 156.984296 381.29265 160.691935 32.7820016 160.691935 27.4744159 155.104022 8.00929733 155.104022 4.7541941 151.799389 4.7541941 9.07588862"></polygon>
+                <g id="车牌分析" transform="translate(-468.000000, -64.000000)" fill="#0D62C4">
+                    <g id="Group-5" transform="translate(468.000000, 64.000000)">
+                        <path d="M2.42597693,0.992782142 L40.0700369,0.992782142 L44.187356,4.15946518 L698.139513,4.15946518 L701.864706,8.11781897 L701.864706,71.8473151 L703.629271,75.6077512 L703.629271,147.396435 L701.864706,152.542294 L701.864706,171.80278 L678.729294,171.80278 L674.219849,169.625685 L35.756655,169.625685 L32.8157129,171.80278 L7.13148443,171.80278 C7.13148443,171.80278 3.3938067,168.344161 2.42597693,167.448591 C1.45814716,166.55302 2.42597693,103.316228 2.42597693,103.316228 L0.269285995,97.5766148 L0.269285995,38.5971432 L2.42597693,33.4512833 L2.42597693,0.992782142 Z" id="Rectangle"></path>
+
+
+                        <polygon transform="translate(4.000000, 6.000000)" id="Path-103" fill="#092293" points="7.35508142 3.07588862 35.6544298 3.07588862 39.7903276 0.281931701 685.59191 0.281931701 689.326878 0.281931701 693.061846 0.281931701 695.224195 3.07588862 695.224195 156.984296 691.29265 160.691935 28.7820016 160.691935 23.4744159 155.104022 4.00929733 155.104022 0.7541941 151.799389 0.7541941 3.07588862"></polygon>
                     </g>
-                  </g>
                 </g>
+
               </g>
             </svg>
             <div className="left-content">
@@ -238,14 +232,14 @@ class ParkingAnalysis extends Component {
                 </div>
                 <div className="detail">
                   <svg
-                    width="155"
+                    width="135"
                     height="88"
                     className="dotted-svg"
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink">
                     <g stroke="#0D62C4" strokeWidth="1" fill="none" fillRule="evenodd">
-                      <polyline className="polyline" points="0,0 155,0 155,88 0,88 0,0"/>
+                      <polyline className="polyline" points="0,0 135,0 135,88 0,88 0,0"/>
                     </g>
                   </svg>
                   <div className="first-content">
@@ -305,17 +299,17 @@ class ParkingAnalysis extends Component {
                 </div>
               </div>
             </div>
-            <div className="right-content">
+            <div className="middle-content">
               <div className="content">
                 <svg
-                  width="172"
+                  width="146"
                   height="126"
                   className="dotted-svg"
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink">
                   <g stroke="#0D62C4" strokeWidth="1" fill="none" fillRule="evenodd">
-                    <polyline className="polyline" points="0,0 172,0 172,126 0,126 0,0"/>
+                    <polyline className="polyline" points="0,0 146,0 146,126 0,126 0,0"/>
                   </g>
                 </svg>
                 <div className="first-content">
@@ -356,6 +350,80 @@ class ParkingAnalysis extends Component {
                     </div>
                     <div className="text">非沪牌</div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="right-content">
+              <div className="content">
+                <svg
+                  width="279"
+                  height="126"
+                  className="dotted-svg"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink">
+                  <g stroke="#0D62C4" strokeWidth="1" fill="none" fillRule="evenodd">
+                    <polyline className="polyline" points="0,0 279,0 279,126 0,126 0,0"/>
+                  </g>
+                </svg>
+                <div className="first-content">
+                  <svg
+                    display="inline-block"
+                    width="8px"
+                    height="7px"
+                    viewBox="0 0 8 7"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink">
+                    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                      <g transform="translate(-652.000000, -142.000000)" fill="#09CDC6">
+                        <g transform="translate(622.000000, 65.000000)">
+                          <g transform="translate(30.000000, 72.000000)">
+                            <polygon
+                              transform="translate(4.067176, 8.633987) rotate(90.000000) translate(-4.067176, -8.633987) "
+                              points="4.06717557 5.31699346 7.33435115 11.9509804 4.06717557 10.2924837 0.8 11.9509804"></polygon>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                  <span className="title">车辆类型及车辆品牌占比排名</span>
+                </div>
+                <div className="second-content">
+                  <ul>
+                    <li>
+                      <div className="content-number">
+                        <div className="level-img"><img src="/img/level1.png"/></div>
+                        <div className="car-img"><img src="/img/car1.png"/></div>
+                        <div className="car-name">轿车</div>
+                      </div>
+                      <div className="content-lavish">
+                        <div className="car-logo"><img src="/img/logo1.png"/></div>
+                        <div className="car-name">大众</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="content-number">
+                        <div className="level-img"><img src="/img/level2.png"/></div>
+                        <div className="car-img"><img src="/img/car2.png"/></div>
+                        <div className="car-name">多用途乘用车</div>
+                      </div>
+                      <div className="content-lavish">
+                        <div className="car-logo"><img src="/img/logo2.png"/></div>
+                        <div className="car-name">别克</div>                        
+                      </div>
+                    </li>
+                    <li>
+                      <div className="content-number">
+                        <div className="level-img"><img src="/img/level3.png"/></div>
+                        <div className="car-img"><img src="/img/car3.png"/></div>
+                        <div className="car-name">越野车</div></div>
+                      <div className="content-lavish">
+                        <div className="car-logo"><img src="/img/logo3.png"/></div>
+                        <div className="car-name">东风</div>                       
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
