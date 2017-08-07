@@ -9,7 +9,7 @@ export default function (props) {
        <WDLayout />
       </div>
 
-      <WDLogoSvg className="main-header-logo" />
+      {/*<WDLogoSvg className="main-header-logo" />*/}
       <div className="main-header-right">
         <WDLayout />
       </div>
