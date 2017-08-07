@@ -2,10 +2,51 @@
   display: flex;
   flex-direction: row;
 }
+
 .flex-col {
   display: flex;
   flex-direction: column;
 }
+
+.left-wrap {
+  width: 1076px;
+  height: 726px;
+  position: relative;
+  .base-map {
+    width: 843px;
+    height: 415px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .side-map {
+    width: 350px;
+    height: 440px;
+    position: absolute;
+    left: 0;
+    top: 100px;
+  }
+  .line-a {
+    width: 60px;
+    height: 170px;
+    position: absolute;
+    left: 372px;
+    bottom: 280px;
+  }
+  .line-c {
+    width: 120px;
+    position: absolute;
+    right: -10px;
+    top: 210px;
+  }
+  .plaza-img {
+    width: 554px;
+    position: absolute;
+    top: 77px;
+    right: 68px;
+  }
+}
+
 .district-plaza {
   // padding: 0 130px;
   width: 1638px;
@@ -67,10 +108,6 @@
     margin-top: -10%;
     width: 207px;
     height: 332px;
-  }
-  .plaza-image {
-    width: 824px;
-    vertical-align: middle;
   }
   .ant-rate-star-full .ant-rate-star-second,
   .ant-rate-star-half .ant-rate-star-first {
