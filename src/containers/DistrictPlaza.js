@@ -10,9 +10,9 @@ export default class DistrictPlaza extends Component {
       <div className="flex-row district-plaza">
         <HeaderTitle title="万达大数据-商圈分析"/>
         <div className="left-wrap">
-          <img className="side-map" src="/img/sideMap.svg" alt=""/>
-          <img className="base-map" src="/img/main-map.svg" alt=""/>
-          <img className="line-a" src="/img/lineA.svg" alt=""/>
+          <img className="side-map" src="/img/sideMap.svg" />
+          <img className="main-map" src="/img/main-map.png" />
+          <img className="line-a" src="/img/lineA.svg" />
           <img className="plaza-img" src="img/wd-build.png"/>
           <img className="line-c" src="img/lineC.svg"/>
         </div>

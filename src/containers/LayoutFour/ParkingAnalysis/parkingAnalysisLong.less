@@ -5,7 +5,7 @@
   width: 100%;
   display: flex;
   .parking-left {
-    flex: 1;
+    flex: 2;
     display: flex;
     justify-content: center;
     position:relative;
@@ -46,7 +46,8 @@
       }
     }
     .parking-layout {
-      position: relative;
+      position: absolute;
+      left: 20PX;
       width: 424PX;
       height: 200PX;
       transform-style: preserve-3d;
@@ -214,21 +215,21 @@
     }
   }
   .parking-right {
-    flex: 1;
+    flex: 3;
     position:relative;
     .right-layout {
       position: absolute;
-      width:380PX;
+      width:594PX;
       height:155PX;
       bottom: 27PX;
-      left: 65PX;
+      left: 35PX;
       display:flex;
       .svg-lay{
         width:100%;
         height:100%;
         position:absolute;
         top:0;
-        left:0;
+        left:-12px;
       }
       .polyline{
            stroke-dasharray: 4,1;
@@ -239,12 +240,14 @@
           top:0;
           left:0;
       }
-      .right-content{
+      .middle-content{
+        position: relative;
         flex:1;
         .content{
-          width:172PX;
+          width:146PX;
           height:126PX;
           position:absolute;
+          left: -5PX;
           top:15PX;
           @keyframes dotted-move {
             from {
@@ -267,7 +270,7 @@
               padding-left:27PX;
               .content-column{
                 display: inline-block;
-                margin-right:30PX;
+                margin-right:25PX;
                 div{
                   text-align: center;
                   font-size: 10PX;
@@ -292,7 +295,7 @@
             height:21PX;
             position:absolute;
             top:20PX;
-            left:30PX;
+            left:3PX;
             .bar-flash{
               animation: flash-f-bar 1s linear infinite;
               animation-direction: alternate-reverse;
@@ -312,10 +315,9 @@
             }
           }
           .detail{
-            width:155PX;
+            width:135PX;
             height:88PX;
             position:absolute;
-            left:27PX;
             top:54PX;
             .first-content{
               padding-left:10PX;
@@ -328,6 +330,75 @@
             .second-content{
               margin-top:15PX;
               padding-left:27PX;
+            }
+          } 
+        }
+      }
+      .right-content{
+        flex:2;
+        position: relative;
+        .content{
+          position: absolute;
+          top:15PX;
+          left: 2PX;
+          .first-content{
+            margin-top:10PX;
+            padding-left:10PX;
+            .title{
+                margin-left: 10PX;
+                border-bottom:1px solid #09CDC6;
+              }
+          }
+          .second-content{
+            margin-top: 5PX;
+            padding-left: 27PX;
+            width: 240px;
+            height: 200px;
+            li{
+              display: inline-block;
+              margin-bottom: 5px;
+              width: 254PX;
+              .content-number{
+                vertical-align: top;
+                display: inline-block;
+                width: 161PX;
+                height: 25PX;
+                background: rgba(26,208,250,0.26);
+                margin-right: 10px;
+                .level-img{
+                  padding:0 10px 0px 20px;
+                  display: inline-block;
+                  opacity: 1;
+                  vertical-align:top;
+                }
+                .car-img{
+                  padding-top: 10px;
+                  padding-right: 10px;
+                  display: inline-block;
+                }
+                .car-name{
+                  vertical-align: top;
+                  display: inline-block;
+                  padding-top: 5px;
+                }
+              }
+              .content-lavish{
+                vertical-align: top;
+                display: inline-block;
+                width: 82PX;
+                height: 25PX;
+                background: rgba(26,208,250,0.26);
+                .car-logo{
+                  vertical-align: top;
+                  padding: 0 12px 0 12px;
+                  display: inline-block;
+                }
+                .car-name{
+                  vertical-align: top;
+                  display: inline-block;
+                  padding-top: 5px;
+                }
+              }
             }
           }
         }
