@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { WDRadar } from '../components';
 import HeaderTitle from './Layout/HeaderTitle';
+import MainmapBg from './MainmapBg';
 import './DistrictPlaza.less';
 import { Rate } from 'antd';
 
@@ -9,7 +10,13 @@ export default class DistrictPlaza extends Component {
     return (
       <div className="flex-row district-plaza">
         <HeaderTitle title="万达大数据-商圈分析" />
-
+        <div className="left-wrap">
+          <img className="side-map" src="/img/sideMap.svg" alt=""/>
+          <img className="base-map" src="/img/main-map.svg" alt=""/>
+          <img className="line-a" src="/img/lineA.svg" alt=""/>
+          <img className="plaza-img" src="img/wd-build.png" />
+          <img className="line-c" src="img/lineC.svg" />
+        </div>
         <div className="plaza-info">
           <div className="plaza-title">
             五角场万达广场
@@ -51,42 +58,6 @@ export default class DistrictPlaza extends Component {
             </div>
           </div>
         </div>
-
-        <svg viewBox="0 0 212 336" className="plaza-line">
-          <defs>
-            <linearGradient x1="8.38388457e-14%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
-              <stop stopColor="#06F0FB" stopOpacity="0.8" offset="0%" />
-              <stop stopColor="#6D83F1" offset="100%" />
-            </linearGradient>
-          </defs>
-          <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-            <g
-              id="商圈分析"
-              transform="translate(-737.000000, -339.000000)"
-              stroke="url(#linearGradient-1)"
-            >
-              <g id="Group-6" transform="translate(739.000000, 341.000000)">
-                <polyline
-                  id="Path-52"
-                  strokeWidth="4.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  points="18 9 77 9 77 249.5 207 331.5"
-                />
-                <ellipse
-                  id="Oval-3"
-                  strokeWidth="3.6"
-                  cx="9"
-                  cy="9.00300601"
-                  rx="9"
-                  ry="9.00300601"
-                />
-              </g>
-            </g>
-          </g>
-        </svg>
-
-        <img className="plaza-image" src="img/district-plaza.png" />
 
       </div>
     );

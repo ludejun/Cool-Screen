@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="155px" viewBox="0 0 65 155" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 821</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="-66.3384491%" y2="105.386595%" id="linearGradient-1">
+            <stop stop-color="#6D83F1" offset="0%"></stop>
+            <stop stop-color="#CD3B4F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="商圈分析" transform="translate(-476.000000, -448.000000)" stroke-width="3" stroke="url(#linearGradient-1)">
+            <polyline id="Path-821" points="477.761125 601.294458 539.400415 584.529081 539.400415 449.782005"></polyline>
+        </g>
+    </g>
+</svg>
