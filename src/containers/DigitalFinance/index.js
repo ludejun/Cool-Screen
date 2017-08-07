@@ -380,18 +380,8 @@ export default class DigitalFinance extends Component {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
           >
-            <text
-              x="50%"
-              y="50%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="#fff"
-              className="title"
-            >
-              {item.name}
-            </text>
             <defs />
-            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+            <g stroke="none" strokeWidth="1" fill="#02041d" fillRule="evenodd">
               <g transform="translate(-1244.000000, -647.000000)">
                 <g transform="translate(1244.000000, 647.000000)">
                   <path
@@ -413,6 +403,16 @@ export default class DigitalFinance extends Component {
                 </g>
               </g>
             </g>
+            <text
+              x="50%"
+              y="50%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#fff"
+              className="title"
+            >
+              {item.name}
+            </text>
           </svg>
         )}
 
