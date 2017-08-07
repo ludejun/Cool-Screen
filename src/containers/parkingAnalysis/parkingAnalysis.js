@@ -133,8 +133,8 @@ export default class ParkingAnalysis extends Component {
     }
     componentDidMount() {
         const svgDOM = this.refs.svgPath;
-        const width = parseInt(window.getComputedStyle(svgDOM).width);
-        const height = parseInt(window.getComputedStyle(svgDOM).height);
+        let width = parseInt(window.getComputedStyle(svgDOM).width);
+        let height = parseInt(window.getComputedStyle(svgDOM).height);
         this.setState({width, height});
     }
     render() {
@@ -372,7 +372,6 @@ export default class ParkingAnalysis extends Component {
                     </div>
                 })
 }
-
             </div>
         </div>
     }

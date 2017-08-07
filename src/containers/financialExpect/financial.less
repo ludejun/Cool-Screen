@@ -1,0 +1,296 @@
+.financial-contianer-j{
+    position:absolute;
+    top:155px;
+    bottom:90px;
+    left:0;
+    right:0;
+    display: flex;
+    .financial-left{
+        flex:3;
+        height:100%;
+        position:relative;
+        .financial-svg{
+            position:absolute;
+            width:100%;
+            height:100%;
+            z-index: 1;
+        }
+        .svg-content{
+            width:90%;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            .dotted-circle{
+                animation: rounds-dotted-circle 10s linear infinite;
+            }
+            .flash-circle{
+                animation: circle-flash-svg 1s linear infinite;
+                animation-direction: alternate-reverse;
+            }
+            .flash-people{
+                animation: people-flash-svg 2s linear infinite;
+                animation-direction: alternate-reverse;
+            }
+            .poly-move {
+                animation: poly-move .6s linear infinite;
+                animation-direction: alternate-reverse;
+            }
+            .poly-move-1 {
+                animation: poly-move-1 .6s linear infinite;
+                animation-direction: alternate-reverse;
+            }
+            .circle-bubble-jin{
+                animation: jin-circle-buttle 2s linear infinite;
+                animation-direction: alternate-reverse;
+            }
+            @keyframes jin-circle-buttle {
+                from {
+                    r:10
+                }
+                to {
+                    r:4
+                }
+            }
+             @keyframes poly-move-1 {
+                from {
+                    transform: translate(0%);
+                }
+                to {
+                    transform: translate(-200%);
+                }
+            }
+            @keyframes poly-move {
+                from {
+                    transform: translate(0%);
+                }
+                to {
+                    transform: translate(200%);
+                }
+            }
+            .run-circle-flash{
+                circle {
+                    animation-name:  run-flash-j-s ;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate-reverse;
+                }
+                circle:nth-child(1){
+                    animation-duration: 2s;
+                    animation-delay: 2.4s;
+                }
+                circle:nth-child(2){
+                    animation-duration: 2s;
+                    animation-delay: 2.2s;
+                }
+                circle:nth-child(3){
+                    animation-duration: 2s;
+                    animation-delay: 2s;
+                }
+                circle:nth-child(4){
+                    animation-duration: 2s;
+                    animation-delay: 1.8s;
+                }
+                circle:nth-child(5){
+                    animation-duration: 2s;
+                    animation-delay: 1.6s;
+                }
+                circle:nth-child(6){
+                    animation-duration: 2s;
+                    animation-delay: 1.4s;
+                }
+                circle:nth-child(7){
+                    animation-duration: 2s;
+                    animation-delay: 1.2s;
+                }
+                circle:nth-child(8){
+                    opacity:1;
+                    animation-duration: 2s;
+                    animation-delay: 1s;
+                }
+                circle:nth-child(9){
+                    animation-duration: 2s;
+                    animation-delay: .8s;
+                }
+                circle:nth-child(10){
+                    animation-duration: 2s;
+                    animation-delay: .6s;
+                }
+                circle:nth-child(11){
+                    animation-duration: 2s;
+                    animation-delay: .4s;
+                }
+                circle:nth-child(12){
+                    animation-duration: 2s;
+                    animation-delay: 0.2s;
+                }
+                circle:nth-child(13){
+                    animation-duration: 2s;
+                }
+            }
+            @keyframes run-flash-j {
+                from {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+            @keyframes run-flash-j-s {
+                from {
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 0.5;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes people-flash-svg {
+                from {
+                    fill-opacity:0.246886322;
+                }
+                to {
+                    fill-opacity:1;
+                }
+            }
+            @keyframes circle-flash-svg {
+                from {
+                    stroke-opacity:0.246886322;
+                }
+                to {
+                    stroke-opacity:1;
+                }
+            }
+            @keyframes rounds-dotted-circle{
+                from {
+                    stroke-dashoffset: 0;
+                }
+                to {
+                    stroke-dashoffset: 500;
+                }
+            }
+        }
+    }
+    .financial-right{
+        flex:2;
+        height:100%;
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        .cursor-svg{
+            cursor:pointer;
+        }
+        .cursor-svg:hover{
+            filter:url(#filter-5);
+            text{
+                stroke:#fff;
+                fill:#fff;
+            }
+            path:nth-child(1){
+                fill: #1146AF;
+            }
+            .logo-svg{
+                .need-fill{
+                    fill:#fff;
+                }
+                path{
+                    stroke:#fff;
+                }
+                circle{
+                    stroke:#fff;
+                }
+                rect{
+                    stroke:#fff;
+                }
+                .special-circle{
+                    fill:#0A7AEE
+                }
+                polygon{
+                    fill:#fff;
+                }
+
+            }
+            .logo-svg-s{
+                fill:#fff;
+            }
+            .logo-svg-l{
+                stroke:#fff;
+            }
+        }
+        .top-content{
+            flex:1;
+            padding:20px;
+            position:relative;
+            .svg-content-left{
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+            }
+        }
+        .bottom-content{
+            flex:1;
+            padding:20px;
+            position:relative;
+            .state-play{
+                position:absolute;
+                width:100%;
+                height:100%;
+                transform-style: preserve-3d;
+                perspective: 1000;
+                .layer-svg{
+                    position:absolute;
+                    top:10%;
+                    left:20%;
+                }
+                .layer-1{
+                    position:absolute;
+                    top:10%;
+                    left:30%;
+                    width:300px;
+                    height:300px;
+                    border:1px dotted #2440DB;
+                    background-color: rgba(8,38,92,0.4);
+                    transform: rotateX(55deg) rotate(45deg);
+                }
+                .layer-2{
+                    position:absolute;
+                    top:43%;
+                    left:41%;
+                    width:200px;
+                    height:200px;
+                    border:1px solid #2137BA;
+                    transform: rotateX(58deg) rotate(45deg);
+                    animation:rect-anima-div 6s linear infinite;
+                    animation-direction: alternate-reverse;
+                }
+                .layer-3{
+                    position:absolute;
+                    top:45%;
+                    left:41%;
+                    width:200px;
+                    height:200px;
+                    border:1px solid #2137BA;
+                    transform: rotateX(58deg) rotate(45deg);
+                    animation:rect-anima-div 6s linear infinite;
+                    animation-direction: alternate-reverse;
+                }
+                @keyframes rect-anima-div {
+                    from {
+                        transform: rotateX(58deg) rotate(45deg);
+                    }
+                    to {
+                        transform: rotateX(58deg) rotate(405deg);
+                    }
+                }
+            }
+        }
+    }
+}
