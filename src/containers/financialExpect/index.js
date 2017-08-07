@@ -135,6 +135,7 @@ class Expect extends Component {
         const svgDOM = this.refs.svgCon;
         const width = parseInt(window.getComputedStyle(svgDOM).width);
         const height = parseInt(window.getComputedStyle(svgDOM).height);
+        this.setState({leftWidth: width, leftHeight: height});
     }
     change = (key) => {
         return () => {
