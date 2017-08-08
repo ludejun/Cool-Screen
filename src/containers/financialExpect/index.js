@@ -7,9 +7,12 @@ class Expect extends Component {
             leftWidth: null,
             leftHeight: null,
             content: null,
-            purStyle: null
+            purStyle: null,
+            tagName: null
         };
+        this.reverseArray = [];
         this.color = ['#1772F3', '#E9C969', '#E96A69', '#80EBFD'];
+        this.colorShift = ['#E9C969', '#E96A69', '#80EBFD', '#1772F3'];
         this.filter = ['filter-10', 'filter-14', 'filter-12', 'filter-16'];
         this.offset = [0];
         this.lengthArray = [];
@@ -41,7 +44,7 @@ class Expect extends Component {
                     {
                         content: '承担风险 求收益',
                         count: 45402,
-                        percent: 0.3
+                        percent: 0.4
                     }, {
                         content: '保本 适当波动',
                         count: 65423,
@@ -49,7 +52,7 @@ class Expect extends Component {
                     }, {
                         content: '低风险才求收益',
                         count: 453,
-                        percent: 0.3
+                        percent: 0.2
                     }, {
                         content: '低风险才求收益',
                         count: 453,
@@ -136,31 +139,34 @@ class Expect extends Component {
         const width = parseInt(window.getComputedStyle(svgDOM).width);
         const height = parseInt(window.getComputedStyle(svgDOM).height);
         this.setState({leftWidth: width, leftHeight: height});
+        this.assembleData('shortExpects');
     }
     change = (key) => {
         return () => {
+            this.assembleData(key);
+        }
+    }
+    assembleData = (key)=>{
+        this.reverseArray = [];
             this.offset = [0];
             this.lengthArray = [];
             this.offsetArray = [];
             this.contentArray[key].expects.forEach((it, index) => {
                 const length = 700 * it.percent;
-                this
-                    .lengthArray
-                    .push(length);
-                const offsetX = this
-                    .offset
-                    .reduce((sum, value) => {
+                this.lengthArray.push(length);
+                const offsetX = this.offset.reduce((sum, value) => {
                         return sum + value;
-                    }, 0);
-                this
-                    .offsetArray
-                    .push(offsetX);
-                this
-                    .offset
-                    .push(length);
-        });
-        this.setState({content:this.contentArray[key]})
-        }
+                }, 0);
+                this.offsetArray.push(offsetX);
+                this.offset.push(length);
+            });
+            this.setState({content:this.contentArray[key]});
+            for(let i = 0; i < this.contentArray[key].expects.length; i++){
+                this.reverseArray.push(this.contentArray[key].expects[i]);
+            }
+            const pop = this.reverseArray.shift();
+            this.reverseArray.push(pop);
+            this.setState({tagName: key});
     }
     render() {
         return <div className="financial-contianer-j">
@@ -617,7 +623,7 @@ class Expect extends Component {
                                             .content
                                             .expects
                                             .map((it, index) => {
-                                                return <g key={index}>
+                                                return <g key={index+Math.random()}>
                                                     <circle
                                                         className={`jin-circle-dash-${index}`}
                                                         filter={`url(#${this.filter[index]})`}
@@ -647,25 +653,39 @@ class Expect extends Component {
                                                 const y = Math.sin((it + 40 + this.lengthArray[index]) / 110) * 110 + 132;
                                                 const flagX = (x - 132) / Math.abs(x - 132);
                                                 const flagY = (y - 132) / Math.abs(y - 132);
-
                                                 let points = `${x},${y} ${x + flagX * 60},${y + flagY * 60} ${x + flagX * 60 + flagX * 70},${y + flagY * 60}`
                                                 const xSpan = 220;
                                                 const ySpan = 100;
-
-                                                return <g key={index}>
+                                                return <g key={index+Math.random()}>
                                                     <polyline
+                                                        className="content-box"
                                                         stroke="#2870E8"
                                                         strokeWidth="3"
-                                                        points={`${x + flagX * 60 + flagX * 70},${y + flagY * 30} ${x + flagX * 60 + flagX * 70 + flagX * xSpan - flagX * 10},${y + flagY * 30} ${x + flagX * 60 + flagX * 70 + flagX * xSpan},${y + flagY * 30 + flagY * 10} ${x + flagX * 60 + flagX * 70 + flagX * xSpan},${y + flagY * 30 + flagY * ySpan} ${x + flagX * 60 + flagX * 70 + flagX * 10},${y + flagY * 30 + flagY * ySpan} ${x + flagX * 60 + flagX * 70},${y + flagY * 30 + flagY * ySpan - flagY * 10} ${x + flagX * 60 + flagX * 70},${y + flagY * 30}`}/>
-                                                    <circle cx={x} cy={y} r="5" fill="#fff"/>
-                                                    <polyline points={points} stroke="#fff"/>
-                                                    <circle cx={x + flagX * 60 + flagX * 70} cy={y + flagY * 60} r="4" fill="#fff"/>
+                                                        points={`${x + flagX * 60 + flagX * 70},${y + flagY * 30} 
+                                                                 ${x + flagX * 60 + flagX * 70 + flagX * xSpan - flagX * 10},${y + flagY * 30} 
+                                                                 ${x + flagX * 60 + flagX * 70 + flagX * xSpan},${y + flagY * 30 + flagY * 10} 
+                                                                 ${x + flagX * 60 + flagX * 70 + flagX * xSpan},${y + flagY * 30 + flagY * ySpan} 
+                                                                 ${x + flagX * 60 + flagX * 70 + flagX * 10},${y + flagY * 30 + flagY * ySpan} 
+                                                                 ${x + flagX * 60 + flagX * 70},${y + flagY * 30 + flagY * ySpan - flagY * 10} 
+                                                                 ${x + flagX * 60 + flagX * 70},${y + flagY * 30}`}/>
+                                                    
+                                                    <circle className="from-circle" cx={x} cy={y} r="5" fill="#fff"/>
+                                                    <polyline strokeDasharray="0,400" className="to-line" points={points} stroke="#fff"/>
+                                                    <circle opacity="0" className="to-circle-quiet" cx={x + flagX * 60 + flagX * 70} cy={y + flagY * 60} r="4" fill="#fff"/>
                                                     <circle
                                                         className="circle-bubble-jin"
                                                         cx={x + flagX * 60 + flagX * 70}
                                                         cy={y + flagY * 60}
                                                         r="10"
                                                         stroke="#3D83FF"/>
+                                                    {
+                                                        flagX > 0 ? <text className="text-appear" fill="#fff" x={x + flagX * 60 + flagX * 70 + 20} y={flagY > 0 ? y + flagY * 60 + 10:y + flagY * 90}>{this.reverseArray[index].content}</text>:
+                                                                    <text className="text-appear" fill="#fff" x={x + flagX * 60 + flagX * 70 + flagX * xSpan + 14} y={flagY > 0 ? y + flagY * 30 + flagY * ySpan - 60 :y + flagY * 30 + flagY * ySpan + 35 }>{this.reverseArray[index].content}</text>
+                                                    }
+                                                    {
+                                                        flagX > 0 ? <text className="text-appear" fill={this.colorShift[index]} x={x + flagX * 60 + flagX * 70 + 20} y={flagY > 0 ? y + flagY * 60 + 60:y + flagY * 90 + 50 }>{`${this.reverseArray[index].percent * 100}%`}</text>:
+                                                                    <text className="text-appear" fill={this.colorShift[index]} x={x + flagX * 60 + flagX * 70 + flagX * xSpan + 14} y={flagY > 0 ? y + flagY * 30 + flagY * ySpan-10 :y + flagY * 30 + flagY * ySpan + 90 }>{`${this.reverseArray[index].percent * 100}%`}</text>
+                                                    }
                                                 </g>
                                             })
 }
@@ -997,7 +1017,7 @@ class Expect extends Component {
                                     stroke="#0A7AEE"/>
                                 <g
                                     onClick={this.change('investAge')}
-                                    className="cursor-svg"
+                                    className={this.state.tagName === 'investAge'?"cursor-svgs":'cursor-svg'}
                                     id="投资"
                                     transform="translate(284.000000, 180.000000)">
                                     <path
@@ -1107,7 +1127,7 @@ class Expect extends Component {
                                 </g>
                                 <g
                                     onClick={this.change('riskAttitude')}
-                                    className="cursor-svg"
+                                    className={this.state.tagName === 'riskAttitude'?"cursor-svgs":'cursor-svg'}
                                     id="风险"
                                     transform="translate(26.000000, 31.000000)">
                                     <path
@@ -1142,7 +1162,7 @@ class Expect extends Component {
                                 </g>
                                 <g
                                     onClick={this.change('experiencePre')}
-                                    className="cursor-svg"
+                                    className={this.state.tagName === 'experiencePre'?"cursor-svgs":'cursor-svg'}
                                     id="经验"
                                     transform="translate(284.000000, 78.000000)">
                                     <path
@@ -1180,7 +1200,7 @@ class Expect extends Component {
                                 </g>
                                 <g
                                     onClick={this.change('shortExpects')}
-                                    className="cursor-svg"
+                                    className={this.state.tagName === 'shortExpects'?"cursor-svgs":'cursor-svg'}
                                     id="短期"
                                     transform="translate(26.000000, 133.000000)">
                                     <g id="Rectangle-64">
@@ -1218,7 +1238,7 @@ class Expect extends Component {
                                 </g>
                                 <g
                                     onClick={this.change('investProject')}
-                                    className="cursor-svg"
+                                    className={this.state.tagName === 'investProject'?"cursor-svgs":'cursor-svg'}
                                     id="目的"
                                     transform="translate(26.000000, 235.000000)">
                                     <path
@@ -1273,7 +1293,7 @@ class Expect extends Component {
                                 </g>
                                 <g
                                     onClick={this.change('targetLimit')}
-                                    className="cursor-svg"
+                                    className={this.state.tagName === 'targetLimit'?"cursor-svgs":'cursor-svg'}
                                     id="purposeSvg"
                                     transform="translate(284.000000, 282.000000)">
                                     <path
@@ -1323,7 +1343,7 @@ class Expect extends Component {
                         <div className="layer-svg">
                             <svg
                                 width="399px"
-                                height="230px"
+                                height="270px"
                                 viewBox="0 0 399 230"
                                 version="1.1"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -1766,25 +1786,7 @@ class Expect extends Component {
                                                         opacity="0.647418478"
                                                         filter="url(#jin-filter-17)"
                                                         points="197.806108 138.411023 189.306481 140.728623 160.900552 124.76172 168.142836 122.360497"></polygon>
-                                                    <polygon
-                                                        id="Path-64"
-                                                        fill="url(#jin-linearGradient-14)"
-                                                        opacity="0.828577899"
-                                                        filter="url(#jin-filter-18)"
-                                                        points="240.621741 86.8946317 170.340725 120.196728 171.876153 108.015854 226.134462 78.5462673"></polygon>
-                                                    <polygon
-                                                        id="Path-64-Copy"
-                                                        fill="url(#jin-linearGradient-14)"
-                                                        opacity="0.818953804"
-                                                        filter="url(#jin-filter-19)"
-                                                        points="291.916028 114.348364 202 125.648261 203.535428 113.467387 277.428749 106"></polygon>
-                                                    <polygon
-                                                        id="Path-65"
-                                                        fill="url(#jin-linearGradient-20)"
-                                                        filter="url(#jin-filter-21)"
-                                                        transform="translate(230.793986, 101.492928) rotate(-2.000000) translate(-230.793986, -101.492928) "
-                                                        points="222.104065 92.1609533 248.867709 108.743084 232.21991 110.824902 212.720263 96.6476648"></polygon>
-                                                    <g id="Group-17" transform="translate(226.000000, 5.000000)">
+                                                    <g id="Group-17" className="a-animation">
                                                         <polyline
                                                             id="Fill-4"
                                                             fill="#3ABDFC"
@@ -1888,7 +1890,7 @@ class Expect extends Component {
                                                             fill="#044869"
                                                             points="0.0157726584 55.2631886 0.0157726584 59.4920614 29.5285995 75.5512631 29.5285995 71.7636695"></polygon>
                                                     </g>
-                                                    <g id="Group-16" transform="translate(102.000000, 0.000000)">
+                                                    <g className="q-animation" id="Group-16" transform="translate(102.000000, 0.000000)">
                                                         <polyline
                                                             id="Fill-10"
                                                             fill="#0D347A"
@@ -1926,10 +1928,12 @@ class Expect extends Component {
                                                             points="42.612 70.911 33.843 66.702 40.776 53.393 49.546 57.602 42.612 70.911"></polyline>
                                                     </g>
                                                     <polyline
+                                                        className="line-move"
                                                         id="Path-942"
                                                         stroke="#215AD2"
                                                         points="156.07656 95.274665 174.904063 106.39552 146.94551 122.651149 195.043145 150.532777 242.376654 122.662688 223.301708 111.277722 263.151653 88.861647"></polyline>
                                                     <polyline
+                                                         className="line-move"
                                                         id="Path-66"
                                                         stroke="#215AD2"
                                                         points="159.218488 115.995 146.311046 108.466709 113.520699 127.259768 149.23302 148.171556 169.214943 135.796582"></polyline>

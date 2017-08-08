@@ -40,16 +40,66 @@
                 animation: poly-move-1 .6s linear infinite;
                 animation-direction: alternate-reverse;
             }
+            .text-appear{
+                opacity:0;
+                animation:circle-appera 1s linear;
+                animation-fill-mode: forwards;
+                animation-delay: 1s;
+            }
+            .to-line{
+                stroke-dasharray: 0,400;
+                animation: to-line-move 1s linear;
+                animation-fill-mode:forwards;
+            }
+            @keyframes to-line-move {
+                from {
+                    stroke-dasharray: 0,400;
+                }
+                to {
+                    stroke-dasharray: 300,400;
+                }
+            }
+            .to-circle-quiet{
+                opacity: 0;
+                animation:circle-appera 1s linear;
+                animation-fill-mode: forwards;
+            }
+            @keyframes circle-appera {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
             .circle-bubble-jin{
                 animation: jin-circle-buttle 2s linear infinite;
+                animation-delay: 1s;
                 animation-direction: alternate-reverse;
+                opacity:0;
+            }
+            .content-box{
+                animation:draw-square 1s linear;
+                animation-delay: 0.3s;
+                animation-fill-mode: forwards;
+                stroke-dasharray: 0,500;
+            }
+            @keyframes draw-square {
+                from {
+                    stroke-dasharrsy:0,500;
+                }
+                to {
+                    stroke-dasharray: 500,0;
+                }
             }
             @keyframes jin-circle-buttle {
                 from {
-                    r:10
+                    r:10;
+                    opacity:1;
                 }
                 to {
-                    r:4
+                    r:4;
+                    opacity:1;
                 }
             }
              @keyframes poly-move-1 {
@@ -185,7 +235,7 @@
         .cursor-svg{
             cursor:pointer;
         }
-        .cursor-svg:hover{
+        .cursor-svgs{
             filter:url(#filter-5);
             text{
                 stroke:#fff;
@@ -249,10 +299,41 @@
                     position:absolute;
                     top:10%;
                     left:20%;
+                    .q-animation{
+                        transform:translate(102px, 0px);
+                        animation: up-and-down 2s linear infinite;
+                        animation-direction: alternate-reverse;
+                    }
+                    @keyframes up-and-down {
+                        from {
+                            transform:translate(102px, 0px);
+                        }
+                        to {
+                            transform:translate(102px, -10px);
+                        }
+                    }
+                    .a-animation{
+                        transform:translate(276px, 5px);
+                        animation: up-and-down-a 2s linear infinite;
+                        animation-direction: alternate-reverse;
+                    }
+                    @keyframes up-and-down-a {
+                        from {
+                            transform:translate(276px,-30px);
+                        }
+                        to {
+                            transform:translate(276px,-20px);
+                        }
+                    }
+                    .line-move{
+                        animation: to-line-move 2s linear infinite;
+                        animation-direction: alternate-reverse;
+                    }
+
                 }
                 .layer-1{
                     position:absolute;
-                    top:10%;
+                    top:7%;
                     left:30%;
                     width:300px;
                     height:300px;
@@ -262,7 +343,7 @@
                 }
                 .layer-2{
                     position:absolute;
-                    top:43%;
+                    top:50%;
                     left:41%;
                     width:200px;
                     height:200px;
@@ -273,7 +354,7 @@
                 }
                 .layer-3{
                     position:absolute;
-                    top:45%;
+                    top:48%;
                     left:41%;
                     width:200px;
                     height:200px;
