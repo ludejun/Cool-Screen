@@ -8,7 +8,7 @@ const debug = require('debug')('event:server');
 
 const server = http.createServer(app);
 
-const port = '3001';
+const port = '3100';
 
 app.use(compression());
 app.set('port', port);
