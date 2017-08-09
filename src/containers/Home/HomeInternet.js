@@ -11,15 +11,15 @@ export default class HomeInternet extends Component {
     this.banner = [
       {
         icon: 'icon-home-people',
-        title: '飞凡会员总数',
-        num: 20348729,
+        title: '飞凡注册会员数',
+        num: 241783164,
         unit: '人'
       },
       {
         icon: 'icon-home-car',
-        title: '飞凡入驻商家人数',
-        num: 3148385,
-        unit: '人'
+        title: '飞凡入驻商家数',
+        num: 94157,
+        unit: '家'
       }
     ];
     resizeSquarePage();
@@ -131,10 +131,10 @@ export default class HomeInternet extends Component {
               {[
                 ['icon-home-users', '互联网用户'],
                 ['icon-home-shop', '商铺'],
-                ['飞凡通'],
-                ['万达财富', '小贷'],
-                ['wifi'],
-                ['整合', '营销传播'],
+                ['Beacon'],
+                ['财富', '小贷APP'],
+                ['Wi-Fi'],
+                ['云Pos'],
                 ['飞凡APP']
               ].map((v, i) =>
                 <div className={`net-cube-div net-cube-div-${i}`} key={i}>
