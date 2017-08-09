@@ -105,7 +105,7 @@ export default class Commerce extends Component {
               <div>
                 <p className="sub-title">带动就业</p>
                 <p className="num">
-                  {comdify(1820000)}
+                  <AnimeNumber num={1820000} fromNum={1820000 - 100} />
                   <span className="unit">人</span>
                 </p>
               </div>
