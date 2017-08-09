@@ -17,9 +17,12 @@ module.exports = {
     'no-param-reassign': 0,
     'no-restricted-syntax': 0,
     'class-methods-use-this': 0,
-    'react/forbid-prop-types': [1, {
-      forbid: ['any']
-    }],
+    'react/forbid-prop-types': [
+      1,
+      {
+        forbid: ['any']
+      }
+    ],
     'react/jsx-filename-extension': 0,
     // 无状态的组件目前不检测
     'react/prefer-stateless-function': 0,
@@ -41,12 +44,12 @@ module.exports = {
     // 文件最后留一个空行
     'eol-last': ['error', 'always'],
     'comma-dangle': ['error', 'never'],
-    'no-use-before-define': 0,  //styles 定义
+    'no-use-before-define': 0, //styles 定义
     'no-unused-expressions': [2, { allowShortCircuit: true, allowTernary: true }],
     'jsx-a11y/img-has-alt': 0,
     // 'semi': ['error', 'never'],
     'no-unreachable': 2,
     'no-unexpected-multiline': 2,
-    'no-constant-condition': 0  // sagas watch
+    'no-constant-condition': 0 // sagas watch
   }
 };
