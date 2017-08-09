@@ -5,8 +5,6 @@ import FeelingImageContainer from './FeelingImageContainer';
 import './popularFeeling.less';
 
 
-
-
 const cfg = [
   {
     'img': '/img/wealth.jpg',
@@ -26,7 +24,6 @@ const cfg = [
   }
 ];
 export default class PoluparFeeling extends Component {
-
 
 
   render() {

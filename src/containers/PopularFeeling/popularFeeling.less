@@ -127,15 +127,23 @@
     .feeling-img {
       transform: rotate(180deg);
     }
+
   }
   .feeling-cost {
     width: 285px;
     height: 126px;
     position: absolute;
-    left: 892px;
+    left: 891px;
     bottom: 496px;
-    .feeling-title{
-      //animation: sm1 12s  infinite !important;
+    .feeling-circle {
+      transform: scale(.68, 1.61);
+      animation: circle-only 2s ease-in-out infinite alternate;
+    }
+    .feeling-title {
+      transform: translateX(-50%) scale(.68, 1.61);
+    }
+    .feeling-text-container {
+      transform: scale(.68, 1.61);
     }
     .transform-big-2 {
       transform: scale(.51, .22);
@@ -148,11 +156,11 @@
     height: 590px;
     position: absolute;
     top: -591px;
-    right: -493px;
+    right: 693px;
     .transform-sm-2 {
       transform: rotate(180deg);
       animation: big1 16s infinite;
-      transform-origin: 0 100% 0;
+      transform-origin: 100% 100% 0;
     }
     .feeling-title {
       transform: translateX(-50%) rotate(180deg);
@@ -160,6 +168,14 @@
     .feeling-img {
       transform: rotate(180deg);
     }
+  }
+}
+
+@keyframes circle-only {
+  100% {
+    opacity: 1;
+    transform-origin: center;
+    transform: scale(.88, 2.09);
   }
 }
 
@@ -210,7 +226,7 @@
     transform: scale(.37) rotate(180deg);
   }
   80% {
-    transform: scale(.37)rotate(180deg);
+    transform: scale(.37) rotate(180deg);
   }
   100% {
     transform: scale(1) rotate(180deg);
