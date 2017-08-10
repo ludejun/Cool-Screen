@@ -9,8 +9,502 @@ const data = [
   }
 ];
 const geoCoordMap = {
-  武汉: [114.31, 30.52]
+  北京: [116.4136103013, 39.9110666857],
+  上海: [121.4803295328, 31.2363429624],
+  广州: [113.270813674, 23.1351666766]
 };
+
+const arrayC = [
+  {
+    native: {
+      name: "北京",
+      location: [116.4136103013, 39.9110666857],
+      percent: 0.85
+    },
+    nonlocal: {
+      distribution: [
+        {
+          province: "河北",
+          count: 202191,
+          percentage: 0.481532112
+        },
+        {
+          province: "天津",
+          count: 50705,
+          percentage: 0.12075753
+        },
+        {
+          province: "山东",
+          count: 25246,
+          percentage: 0.060125128
+        },
+        {
+          province: "辽宁",
+          count: 16085,
+          percentage: 0.038307561
+        },
+        {
+          province: "湖南",
+          count: 15077,
+          percentage: 0.035906938
+        },
+        {
+          province: "河南",
+          count: 13881,
+          percentage: 0.033058579
+        },
+        {
+          province: "内蒙古",
+          count: 11522,
+          percentage: 0.027440455
+        },
+        {
+          province: "山西",
+          count: 11129,
+          percentage: 0.026504498
+        },
+        {
+          province: "黑龙江",
+          count: 11066,
+          percentage: 0.026354459
+        },
+        {
+          province: "江苏",
+          count: 8820,
+          percentage: 0.021005451
+        },
+        {
+          province: "广东",
+          count: 7893,
+          percentage: 0.018797736
+        },
+        {
+          province: "海南",
+          count: 6466,
+          percentage: 0.015399235
+        },
+        {
+          province: "吉林",
+          count: 6282,
+          percentage: 0.014961026
+        },
+        {
+          province: "四川",
+          count: 5026,
+          percentage: 0.011969773
+        },
+        {
+          province: "安徽",
+          count: 4978,
+          percentage: 0.011855458
+        },
+        {
+          province: "湖北",
+          count: 4590,
+          percentage: 0.010931408
+        },
+        {
+          province: "浙江",
+          count: 3661,
+          percentage: 0.008718929
+        },
+        {
+          province: "江西",
+          count: 3140,
+          percentage: 0.007478131
+        },
+        {
+          province: "陕西",
+          count: 2863,
+          percentage: 0.006818436
+        },
+        {
+          province: "福建",
+          count: 1944,
+          percentage: 0.004629773
+        },
+        {
+          province: "上海",
+          count: 1687,
+          percentage: 0.004017709
+        },
+        {
+          province: "广西",
+          count: 1601,
+          percentage: 0.003812894
+        },
+        {
+          province: "重庆",
+          count: 1267,
+          percentage: 0.00301745
+        },
+        {
+          province: "甘肃",
+          count: 1090,
+          percentage: 0.002595912
+        },
+        {
+          province: "宁夏",
+          count: 503,
+          percentage: 0.00119793
+        },
+        {
+          province: "云南",
+          count: 409,
+          percentage: 0.000974062
+        },
+        {
+          province: "贵州",
+          count: 288,
+          percentage: 0.000685892
+        },
+        {
+          province: "新疆",
+          count: 267,
+          percentage: 0.000635879
+        },
+        {
+          province: "青海",
+          count: 211,
+          percentage: 0.000502511
+        },
+        {
+          province: "西藏",
+          count: 3,
+          percentage: 0.00000714471
+        }
+      ],
+      percent: 0.15
+    },
+    averageCost: 8.5
+  },
+  {
+    native: {
+      name: "上海",
+      location: [121.4803295328, 31.2363429624],
+      percent: 0.6
+    },
+    nonlocal: {
+      distribution: [
+        {
+          province: "江苏",
+          count: 839426,
+          percentage: 0.340271098
+        },
+        {
+          province: "浙江",
+          count: 364743,
+          percentage: 0.14785282
+        },
+        {
+          province: "安徽",
+          count: 270048,
+          percentage: 0.109467099
+        },
+        {
+          province: "江西",
+          count: 117904,
+          percentage: 0.047793758
+        },
+        {
+          province: "福建",
+          count: 115549,
+          percentage: 0.046839132
+        },
+        {
+          province: "山东",
+          count: 109992,
+          percentage: 0.044586537
+        },
+        {
+          province: "广东",
+          count: 95986,
+          percentage: 0.038909042
+        },
+        {
+          province: "湖南",
+          count: 95324,
+          percentage: 0.038640693
+        },
+        {
+          province: "天津",
+          count: 87673,
+          percentage: 0.035539271
+        },
+        {
+          province: "河南",
+          count: 82691,
+          percentage: 0.033519759
+        },
+        {
+          province: "湖北",
+          count: 44125,
+          percentage: 0.017886582
+        },
+        {
+          province: "黑龙江",
+          count: 40508,
+          percentage: 0.016420389
+        },
+        {
+          province: "四川",
+          count: 26688,
+          percentage: 0.010818291
+        },
+        {
+          province: "陕西",
+          count: 23509,
+          percentage: 0.009529647
+        },
+        {
+          province: "北京市",
+          count: 20511,
+          percentage: 0.008314373
+        },
+        {
+          province: "河北",
+          count: 20057,
+          percentage: 0.008130338
+        },
+        {
+          province: "山西",
+          count: 17158,
+          percentage: 0.006955195
+        },
+        {
+          province: "广西",
+          count: 16673,
+          percentage: 0.006758595
+        },
+        {
+          province: "辽宁",
+          count: 14672,
+          percentage: 0.005947466
+        },
+        {
+          province: "内蒙古",
+          count: 11983,
+          percentage: 0.004857448
+        },
+        {
+          province: "甘肃",
+          count: 11455,
+          percentage: 0.004643418
+        },
+        {
+          province: "贵州",
+          count: 9834,
+          percentage: 0.003986326
+        },
+        {
+          province: "吉林",
+          count: 8885,
+          percentage: 0.003601638
+        },
+        {
+          province: "重庆",
+          count: 6973,
+          percentage: 0.002826587
+        },
+        {
+          province: "宁夏",
+          count: 6763,
+          percentage: 0.002741461
+        },
+        {
+          province: "云南",
+          count: 3761,
+          percentage: 0.001524565
+        },
+        {
+          province: "海南",
+          count: 1552,
+          percentage: 0.000629121
+        },
+        {
+          province: "青海",
+          count: 1477,
+          percentage: 0.000598719
+        },
+        {
+          province: "新疆",
+          count: 906,
+          percentage: 0.000367258
+        },
+        {
+          province: "西藏",
+          count: 107,
+          percentage: 0.0000433737
+        }
+      ],
+      percent: 0.4
+    },
+    averageCost: 11.38
+  },
+  {
+    native: {
+      name: "广州",
+      location: [113.270813674, 23.1351666766],
+      percent: 0.92
+    },
+    nonlocal: {
+      distribution: [
+        {
+          province: "黑龙江",
+          count: 20529,
+          percentage: 0.140871069
+        },
+        {
+          province: "湖南",
+          count: 17177,
+          percentage: 0.11786947
+        },
+        {
+          province: "浙江",
+          count: 14452,
+          percentage: 0.099170378
+        },
+        {
+          province: "福建",
+          count: 11230,
+          percentage: 0.077060846
+        },
+        {
+          province: "四川",
+          count: 8923,
+          percentage: 0.061230091
+        },
+        {
+          province: "山东",
+          count: 7612,
+          percentage: 0.052233941
+        },
+        {
+          province: "湖北",
+          count: 7156,
+          percentage: 0.049104845
+        },
+        {
+          province: "江西",
+          count: 7041,
+          percentage: 0.048315709
+        },
+        {
+          province: "广西",
+          count: 6363,
+          percentage: 0.043663238
+        },
+        {
+          province: "天津",
+          count: 5578,
+          percentage: 0.038276527
+        },
+        {
+          province: "河南",
+          count: 5146,
+          percentage: 0.03531212
+        },
+        {
+          province: "江苏",
+          count: 4486,
+          percentage: 0.030783166
+        },
+        {
+          province: "北京市",
+          count: 3968,
+          percentage: 0.027228623
+        },
+        {
+          province: "上海",
+          count: 3336,
+          percentage: 0.022891806
+        },
+        {
+          province: "重庆",
+          count: 3262,
+          percentage: 0.022384014
+        },
+        {
+          province: "辽宁",
+          count: 2623,
+          percentage: 0.017999163
+        },
+        {
+          province: "河北",
+          count: 2192,
+          percentage: 0.015041618
+        },
+        {
+          province: "安徽",
+          count: 2173,
+          percentage: 0.014911239
+        },
+        {
+          province: "陕西",
+          count: 2168,
+          percentage: 0.014876929
+        },
+        {
+          province: "吉林",
+          count: 1877,
+          percentage: 0.012880072
+        },
+        {
+          province: "海南",
+          count: 1867,
+          percentage: 0.012811451
+        },
+        {
+          province: "山西",
+          count: 1498,
+          percentage: 0.010279354
+        },
+        {
+          province: "云南",
+          count: 1300,
+          percentage: 0.008920668
+        },
+        {
+          province: "贵州",
+          count: 1088,
+          percentage: 0.007465913
+        },
+        {
+          province: "内蒙古",
+          count: 792,
+          percentage: 0.005434745
+        },
+        {
+          province: "甘肃",
+          count: 718,
+          percentage: 0.004926953
+        },
+        {
+          province: "新疆",
+          count: 532,
+          percentage: 0.003650612
+        },
+        {
+          province: "宁夏",
+          count: 310,
+          percentage: 0.002127236
+        },
+        {
+          province: "青海",
+          count: 262,
+          percentage: 0.001797858
+        },
+        {
+          province: "西藏",
+          count: 70,
+          percentage: 0.000480344
+        }
+      ],
+      percent: 0.18
+    },
+    averageCost: 8.56
+  }
+];
 
 const convertData = function (data) {
   const res = [];
@@ -108,15 +602,110 @@ const option = {
 };
 class ParkingAnalysis extends Component {
   render() {
+    console.dir(window);
     return (
       <div className="parking-contariner-f">
         <div className="parking-left">
-          <div className="name">上海市牌照所属区域分布图</div>
           <div className="parking-layout">
             <div className="layout-front"/>
-            <div ref="svgPath" className="layout-head"/> {['1', '2', '3'].map((i, index) => {
+            <div ref="svgPath" className="layout-head"/> {arrayC.map((it, i) => {
+              const data = [
+              {
+                name: it.native.name,
+                value: 50
+              }
+            ];
+            const dataArray = it.nonlocal.distribution.map((it, index) => {
+              return {
+                name: it.province,
+                selected: false,
+                itemStyle: {
+                  normal: {
+                    areaColor: `rgba(${Math.round(
+                      Math.random() * 8 + 8
+                    )},${Math.round(Math.random() * 67 + 30)},${Math.round(
+                      Math.random() * 87 + 143
+                    )},1)`
+                  }
+                }
+              };
+            });
+            const option = {
+              backgroundColor: "transparent",
+              geo: {
+                map: "china",
+                label: {
+                  emphasis: {
+                    show: false
+                  }
+                },
+                roam: true,
+                itemStyle: {
+                  normal: {
+                    areaColor: "#323c48",
+                    borderColor: "#111"
+                  },
+                  emphasis: {
+                    areaColor: "#2a333d"
+                  }
+                }
+              },
+              series: [
+                {
+                  type: "effectScatter",
+                  coordinateSystem: "geo",
+                  data: convertData(
+                    data
+                      .sort(function(a, b) {
+                        return b.value - a.value;
+                      })
+                      .slice(0, 6)
+                  ),
+                  symbolSize: function(val) {
+                    return val[2] / 10;
+                  },
+                  showEffectOn: "render",
+                  rippleEffect: {
+                    brushType: "stroke"
+                  },
+                  hoverAnimation: true,
+                  label: {
+                    normal: {
+                      formatter: "{b}",
+                      position: "right",
+                      show: true
+                    }
+                  },
+                  itemStyle: {
+                    normal: {
+                      color: "#f4e925",
+                      shadowBlur: 10,
+                      shadowColor: "#333"
+                    }
+                  },
+                  zlevel: 1
+                },
+                {
+                  name: "中国",
+                  type: "map",
+                  mapType: "china",
+                  selectedMode: "multiple",
+                  label: {
+                    normal: {
+                      show: false
+                    }
+                  },
+                  itemStyle: {
+                    normal: {
+                      areaColor: "#14216A"
+                    }
+                  },
+                  data: dataArray
+                }
+              ]
+            };
               return (
-                <div key={index} className={`bar-container-${i} bar-container`}>
+                <div key={i} className={`bar-container-${i+1} bar-container`}>
                   <div className="top-bar">
                     <svg
                       width="100%"
@@ -167,7 +756,7 @@ class ParkingAnalysis extends Component {
                 <polyline
                   className="animate"
                   id="Path-3"
-                  points="359.551579 142.235322 380.319507 163.003249 723.514543 163.003249"></polyline>
+                  points="369.551579 152.235322 390.319507 163.003249 520.514543 163.003249"></polyline>
               </g>
             </g>
           </svg>

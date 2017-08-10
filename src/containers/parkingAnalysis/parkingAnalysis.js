@@ -593,7 +593,11 @@ export default class ParkingAnalysis extends Component {
                 selected: false,
                 itemStyle: {
                   normal: {
-                    areaColor: "#523CF1"
+                    areaColor: `rgba(${Math.round(
+                      Math.random() * 8 + 8
+                    )},${Math.round(Math.random() * 67 + 30)},${Math.round(
+                      Math.random() * 87 + 143
+                    )},1)`
                   }
                 }
               };
@@ -620,7 +624,6 @@ export default class ParkingAnalysis extends Component {
               },
               series: [
                 {
-                  name: "Top 5",
                   type: "effectScatter",
                   coordinateSystem: "geo",
                   data: convertData(
@@ -775,7 +778,7 @@ export default class ParkingAnalysis extends Component {
                                         d="M12.6955447,0.568781513 L131.685294,0.568781513 L139.035103,20.6588235 L131.685294,40.7488655 L12.6955447,40.7488655 L6.210419,20.6588235 L12.6955447,0.568781513 Z"
                                         id="Rectangle-6"
                                         stroke="#108EE9"
-                                        stroke-width="1.03"
+                                        strokWidth="1.03"
                                       />
                                       <polygon
                                         id="Rectangle-6"
