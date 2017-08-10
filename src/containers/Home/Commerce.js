@@ -10,15 +10,15 @@ export default class Commerce extends Component {
     this.banner = [
       {
         icon: 'icon-home-people',
-        title: '年平均进入商圈人数',
-        num: 20348729,
-        unit: '人'
+        title: '飞凡内场',
+        num: 202,
+        unit: '个'
       },
       {
         icon: 'icon-home-car',
-        title: '年平均进入商圈车流量',
-        num: 3148385,
-        unit: '辆'
+        title: '飞凡商业联盟广场总数',
+        num: 2764,
+        unit: '个'
       }
     ];
     resizeSquarePage();
@@ -105,7 +105,7 @@ export default class Commerce extends Component {
               <div>
                 <p className="sub-title">带动就业</p>
                 <p className="num">
-                  {comdify(1234567)}
+                  <AnimeNumber num={1820000} fromNum={1820000 - 100} />
                   <span className="unit">人</span>
                 </p>
               </div>

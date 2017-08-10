@@ -7,24 +7,22 @@ const cube = { height: [110, 160, 60], color: ['#00D1C6', '#29AAFF', '#0DF29E'] 
 export default class WDPillar extends Component {
   constructor(props) {
     super(props);
+    // this.real = [{'sm':[8045,0.13787],'md':[16157,0.276889],'lg':[34150,0.585241]}];
     this.data = [
       {
         name: '低端消费',
-        percentage: '50%',
+        percentage: '58.52%',
         top: '#00D1C6'
-        // color: 'linear-gradient(-187deg, #00D1C6 1%, #040937 88%)'
       },
       {
         name: '中端消费',
-        percentage: '83%',
+        percentage: '27.69%',
         top: '#29AAFF'
-        // color: 'linear-gradient(-180deg, #29AAFF 0%, #040937 86%)'
       },
       {
         name: '高端消费',
-        percentage: '26%',
+        percentage: '13.79%',
         top: '#0DF29E'
-        // color: 'linear-gradient(-157deg, #0DF29E 4%, #040937 81%)'
       }
     ];
   }
