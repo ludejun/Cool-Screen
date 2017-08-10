@@ -10,7 +10,7 @@ import './digitalFinance.less';
 // {"tag":["亲子","户外运动品牌店","数码"，"电影","海鲜"，"日料", "西餐", "停车","运动健身", "国际酒店"],'caifu':[4.73,4.16，6.97，0.78，2.13，6.52，11.52，2.29，2.26，0.02],'xiaodai':[16.38,17.29，29.47，2.76，7.26，21.18，49.51，8.03，7.26，0.07]},
 const data = [
   { name: '亲子', img: '/img/doll.png' },
-  { name: ' 户外运动品牌店 ', img: '/img/outdoor.png' },
+  { name: '户外运动品牌店', img: '/img/outdoor.png' },
   { name: '数码', img: '/img/camera.png' },
   { name: '电影', img: '/img/movie.png' },
   { name: '海鲜', img: '/img/seafood.png' },
