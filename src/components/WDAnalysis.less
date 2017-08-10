@@ -1,76 +1,76 @@
-  .right-container {
-    flex: 1;
+.right-container {
+  flex: 1;
+  display: flex;
+  height: 687px;
+  width: 820px;
+  margin-right: 94px;
+  position: relative;
+  .svg-style {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .right-container-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .right-sub-container-first {
+    margin-left: 10px;
     display: flex;
-    height: 687px;
-    width: 820px;
-    margin-right: 94px;
-    position: relative;
-    .svg-style {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-    .right-container-bg {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-    }
-    .right-sub-container-first {
-      margin-left: 10px;
-      display:flex;
-      flex-direction: column;
-      div{
-        flex:1;
-      }
-    }
-    .right-sub-container {
+    flex-direction: column;
+    div {
       flex: 1;
-      margin-top: 80px;
-      .consume-title {
-        display: inline-block;
-        width: 15px;
-        vertical-align: top;
-        font-size: 14px;
-      }
-      .consume-container {
-        display: inline-block;
-        vertical-align: top;
-      }
-      .consume-chart {
-        position: absolute;
-        width: 400px !important;
-        height: 200px !important;
-        top: 0px;
-        left: -80px;
-      }
-      .age-container {
-        position: relative;
-      }
-      .age-title {
-        display: inline-block;
-        width: 15px;
-        font-size: 14px;
-      }
-      .age-chart {
-        position: absolute;
-        width: 450px !important;
-        height: 250px !important;
-        display: inline-block;
-        vertical-align: middle;
-        transform:scale(0.9);
-        left: 0;
-        top: 0;
-      }
-    }
-    .right-sub-title {
-      font-size: 14px;
-      padding: 10px;
-      border-bottom: 1px solid rgba(193,223,255,0.30);
-      margin: 0 15px 15px;
-    }
-    .gender-compare {
-      margin: 30px 0;
     }
   }
+  .right-sub-container {
+    flex: 1;
+    margin-top: 80px;
+    .consume-title {
+      display: inline-block;
+      width: 15px;
+      vertical-align: top;
+      font-size: 14px;
+    }
+    .consume-container {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .consume-chart {
+      position: absolute;
+      width: 400px !important;
+      height: 200px !important;
+      top: 0px;
+      left: -80px;
+    }
+    .age-container {
+      position: relative;
+    }
+    .age-title {
+      display: inline-block;
+      width: 15px;
+      font-size: 14px;
+    }
+    .age-chart {
+      position: absolute;
+      width: 450px !important;
+      height: 250px !important;
+      display: inline-block;
+      vertical-align: middle;
+      transform: scale(0.9);
+      left: 0;
+      top: 0;
+    }
+  }
+  .right-sub-title {
+    font-size: 14px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(193, 223, 255, 0.30);
+    margin: 0 15px 15px;
+  }
+  .gender-compare {
+    margin: 30px 0;
+  }
+}

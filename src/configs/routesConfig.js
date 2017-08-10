@@ -49,11 +49,6 @@ const routeConfig = {
       component: Routes.Main,
       childRoutes: [
         {
-          path: 'financial-expect',
-          component: Routes.Expect,
-          breadcrumbName: '数字金融-财富客群投资方向、偏好及期望划分'
-        },
-        {
           path: 'district-plaza',
           component: Routes.DistrictPlaza,
           breadcrumbName: '万达大数据：商圈分析'
@@ -97,7 +92,12 @@ const routeConfig = {
           path: 'popular-feeling',
           component: Routes.PopularFeeling,
           breadcrumbName: '数字金融：万达金融产品舆情'
-        }
+        },
+        {
+          path: 'financial-expect',
+          component: Routes.Expect,
+          breadcrumbName: '数字金融-财富客群投资方向、偏好及期望划分'
+        },
       ]
     },
     {
@@ -121,7 +121,7 @@ const routeConfig = {
         },
         {
           path: 'inner-scatter',
-          breadcrumbName: '数字商业：内场分布 + 指标排名',
+          breadcrumbName: '四环屏-数字商业：内场分布 + 指标排名',
           component: Routes.InnerScatterLong
         }
       ]

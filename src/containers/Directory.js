@@ -27,7 +27,7 @@ export default class Directory extends Component {
     return (
       <div style={{ color: '#333' }}>
         {this.directory.map((v, i) =>
-          <div key={i}><a href={v.path}>{v.name}</a>:&ensp;&ensp;{v.path}</div>
+          <div key={i} style={{fontSize: 12, paddingLeft: 20}}><a href={v.path}>{v.name}</a>:&ensp;&ensp;{v.path}</div>
         )}
       </div>
     );
