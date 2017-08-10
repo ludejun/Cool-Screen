@@ -33,6 +33,7 @@ node_modules
 yarn.lock
 
 dist/js
+dist/
 
 
 .DS_Store

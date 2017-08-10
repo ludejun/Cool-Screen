@@ -97,7 +97,7 @@ const routeConfig = {
           path: 'popular-feeling',
           component: Routes.PopularFeeling,
           breadcrumbName: '数字金融：万达金融产品舆情'
-        },
+        }
       ]
     },
     {

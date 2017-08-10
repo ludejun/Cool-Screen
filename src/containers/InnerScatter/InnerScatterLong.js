@@ -202,14 +202,25 @@ export default class InnerScatterFour extends Component {
         }
       ]
     };
-    const colorList = ['#e0ffff', '#006edd'];
+    const provinceColor = ['#0F60E5', '#081E8F'];
+    const areaColor = ['#3F87FD', '#0F60E5', '#1A2EE4', '#0027AF', '#081E8F', '#121E67'];
     const provinceMap = {
       visualMap: {
-        min: Math.min.apply(null, provinceValue.map(i => i.value)),
-        max: Math.max.apply(null, provinceValue.map(i => i.value)),
+        min: Math.min.apply(
+          null,
+          provinceValue.map((i) => {
+            return i.value;
+          })
+        ),
+        max: Math.max.apply(
+          null,
+          provinceValue.map((i) => {
+            return i.value;
+          })
+        ),
         show: false,
         inRange: {
-          color: colorList
+          color: provinceColor
         },
         calculable: true,
         precision: 2
@@ -226,8 +237,9 @@ export default class InnerScatterFour extends Component {
           roam: false,
           itemStyle: {
             normal: {
-              areaColor: '#eeeeee',
-              borderColor: '#666'
+              areaColor: '#0F60E5',
+              borderColor: '#2A8EDA',
+              borderWidth: 0.5 / 192 * getBaseFontSize()
             },
             emphasis: {
               areaColor: 'yellow'
@@ -250,7 +262,7 @@ export default class InnerScatterFour extends Component {
         max: Object.values(areaValue).sort((prev, next) => next - prev)[0],
         show: false,
         inRange: {
-          color: colorList
+          color: areaColor
         },
         calculable: true,
         precision: 2
@@ -267,18 +279,21 @@ export default class InnerScatterFour extends Component {
           roam: false,
           itemStyle: {
             normal: {
-              areaColor: '#eeeeee',
-              borderColor: '#666'
+              areaColor: '#3F87FD',
+              borderColor: '#2A8EDA',
+              borderWidth: 0.5 / 192 * getBaseFontSize()
             },
             emphasis: {
               areaColor: 'yellow'
             }
           },
-          data: proArea.map(item => ({
-            name: item.name,
-            value: areaValue[item.area],
-            area: item.area
-          }))
+          data: proArea.map((item) => {
+            return {
+              name: item.name,
+              value: areaValue[item.area],
+              area: item.area
+            };
+          })
         }
       ]
     };
