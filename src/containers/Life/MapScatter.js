@@ -197,7 +197,7 @@ export default class MapScatter extends Component {
                 fillOpacity="0.265341938"
                 strokeDasharray="3"
               >
-                <g transform="translate(-146.000000, -834.000000)" stroke="#2C6CFF" fill="#2F45FF">
+                <g transform="translate(-146.000000, -834.000000)" stroke="#FFF42E" fill="#FFF42E">
                   <g transform="translate(147.000000, 240.000000)">
                     <circle id="Oval-44" cx="20" cy="615" r="20" />
                   </g>

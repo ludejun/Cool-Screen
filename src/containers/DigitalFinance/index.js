@@ -108,7 +108,8 @@ export default class DigitalFinance extends Component {
         name: '',
         type: 'value',
         axisLabel: {
-          formatter: '{value}% '
+          formatter: '{value}%',
+          margin: 12
         },
         axisLine: {
           lineStyle: {
@@ -375,7 +376,7 @@ export default class DigitalFinance extends Component {
             // height="60px"
             key={i}
             className={`title-bg title-bg-${i}`}
-            viewBox="0 0 129 60"
+            viewBox="0 0 160 60"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -385,7 +386,7 @@ export default class DigitalFinance extends Component {
               <g transform="translate(-1244.000000, -647.000000)">
                 <g transform="translate(1244.000000, 647.000000)">
                   <path
-                    d="M0.5,14.2274618 L9.36559076,6.5 L128.5,6.5 L128.5,52.5 L69.6217963,52.5 L69.379514,52.5 L69.2293737,52.6901542 L64.0851972,59.2053019 L58.6727697,52.6807678 L58.5228138,52.5 L58.287944,52.5 L0.5,52.5 L0.5,14.2274618 Z"
+                    d="M0.5,14.2274618 L9.36559076,6.5 L159.5,6.5 L159.5,52.5 L69.6215963,52.5 L69.379514,52.5 L69.2293737,52.6901542 L64.0851972,59.2053019 L58.6727697,52.6807678 L58.5228138,52.5 L58.287944,52.5 L0.5,52.5 L0.5,14.2274618 Z"
                     id="Rectangle-55"
                     stroke="#258DFF"
                   />
