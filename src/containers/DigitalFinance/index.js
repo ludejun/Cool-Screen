@@ -108,8 +108,8 @@ export default class DigitalFinance extends Component {
         name: '',
         type: 'value',
         axisLabel: {
-          formatter: '{value}% ',
-          margin: 14
+          formatter: '{value}%',
+          margin: 12
         },
         axisLine: {
           lineStyle: {
