@@ -29,7 +29,7 @@ export default class PoluparFeeling extends Component {
   render() {
     return (
       <div style={{textAlign: 'center'}}>
-        <HeaderTitle title={'数字金融：万达金融产品舆情'}/>
+        <HeaderTitle title={'万达互金产品评论词云'}/>
         <BgGradualHeight className="feeling-bg"/>
 
         <div className="feeling-container" id="wrapdiv">

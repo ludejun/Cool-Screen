@@ -333,7 +333,7 @@ export default class InnerScatter extends Component {
   render() {
     return (
       <div>
-        <HeaderTitle title="数字商业：内场分布 + 指标排名" className="sum-title" />
+        <HeaderTitle title="万达广场WiFi热度分布" className="sum-title" />
         <BgAnimation />
         <div className="inner-scatter-container">
           <div>

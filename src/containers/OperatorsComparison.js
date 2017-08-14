@@ -26,7 +26,7 @@ export default class operatorsComparison extends Component {
   render () {
     return (
       <div>
-        <HeaderTitle title="智慧生活：飞凡会员运营商设备活跃对比" className="sum-title"/>
+        <HeaderTitle title="飞凡会员运营商对比" className="sum-title"/>
         <div className="content-wrap clearfix">
           <div className="comparison-map">
             <div className="map-container">

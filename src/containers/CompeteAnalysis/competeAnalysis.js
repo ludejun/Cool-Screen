@@ -197,7 +197,7 @@ class CompeteAnalysis extends Component {
     }
     render() {
         return <div className="compete-contatiner">
-            <HeaderTitle title="数字商业: 广场竞品客流分析"/>
+            <HeaderTitle title="商圈客流动向"/>
             <BgAnimation>
                 <div className="competess-content">
                     <div className="competee-left">
