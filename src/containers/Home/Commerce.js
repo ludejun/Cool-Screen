@@ -10,7 +10,7 @@ export default class Commerce extends Component {
     this.banner = [
       {
         icon: 'icon-home-wanda',
-        title: '飞凡商业联盟广场总数',
+        title: '万达广场数',
         num: 202,
         unit: '个'
       },
@@ -133,10 +133,10 @@ export default class Commerce extends Component {
                   </div>
                 </div>
                 <div className="inner-scale">
-                  内场 {Math.round(item.val1 * 100)}%
+                  内场 {Math.round(item.val * 100)}%
                 </div>
                 <div className="outer-scale">
-                  外场 {Math.round(item.val * 100)}%
+                  外场 {Math.round(item.val1 * 100)}%
                 </div>
               </div>
             )}
