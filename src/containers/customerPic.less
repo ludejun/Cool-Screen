@@ -104,10 +104,11 @@
                         right:70px;
                         left:70px;
                         height:100%;
-                        top:100%;
+                        top:55%;
+                        opacity:0;
                         position:absolute;
                         background: url('/img/scan.png') no-repeat;
-                        animation: runin 3s linear infinite;
+                        animation: runin 2.6s linear infinite;
                     }
                 }
                 .elipse-rotate{
@@ -161,12 +162,19 @@
                     }
                 }
                 @keyframes runin {
-                    49%{
-                        top: 100%;
+                    0%{
+                        top:55%;
+                        opacity:0;
+                    }
+
+                    50%{
+                        top:55%;
+                        opacity:0;
                     }
 
                     100% {
                         top:-30%;
+                        opacity:0.8;
                     }
                 }
                 @keyframes wfloat {

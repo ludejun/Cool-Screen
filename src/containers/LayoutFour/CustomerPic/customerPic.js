@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
-import {WDImageBar, WDImagePercent, WDFloor} from '../../../components';
+import {WDImageBar, WDImagePercent, WDFloor, WDPan } from '../../../components';
 import './customerPic.less';
 
 const consume = [120, 40, 10];
@@ -366,7 +366,7 @@ class Cuspic extends Component {
                                 消费等级占比
                             </div>
                             <div className="cell-content">
-                                {this.renderEchart(this.customerPic[this.state.tab])}
+                                <WDPan/>
                             </div>
                         </div>
                         <div className="cell">
@@ -451,7 +451,8 @@ class Cuspic extends Component {
                 <WDFloor
                     brandsName={this.brandsName[this.state.tab]}
                     tab={this.state.tab}
-                    radioChange={this.radioChange}/>
+                    radioChange={this.radioChange}
+                />
             </div>
         </div>
     }

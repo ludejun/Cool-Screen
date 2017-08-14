@@ -24,6 +24,7 @@ export { default as AngelAside } from './AngelAside';
 export { default as CompeteSvg } from './competeSvg';
 export { default as WDTextContainer } from './WDTextContainer';
 export { default as WDFeelingContainer } from './WDFeelingContainer';
+export { default as WDPan } from './WDPan';
 
 // background
 export { default as BgAnimation } from './BgAnimation';
