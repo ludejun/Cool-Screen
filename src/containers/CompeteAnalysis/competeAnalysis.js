@@ -264,7 +264,7 @@ class CompeteAnalysis extends Component {
                         </div>
                     </div>
                     <div className="compete-right">
-                        <div className="compete-right-title">{this.state.flag?'商场客流流出top10':'商场客流流入top10'}</div>
+                        <div className="compete-right-title">{this.state.flag?'商场客流流出TOP10':'商场客流流入TOP10'}</div>
                         <div className="compete-right-content">
                             {
                                 this.config[this.state.flag ? 'toPlazas' : 'inPlazas'].map((it,index) => {
@@ -273,7 +273,7 @@ class CompeteAnalysis extends Component {
                                         <div className="line-m">
                                         <CompeteSvg  style={{height: '100%',width: '100%'}}  color={this.rightColor[index]} />
                                         <div className="mask" style={{
-                                            width:`${100-(it.ratio*100)}%`
+                                            width:`${80-(it.ratio*100)}%`
                                         }}>
                                         </div>
                                         </div>
