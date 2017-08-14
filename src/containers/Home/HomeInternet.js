@@ -16,7 +16,7 @@ export default class HomeInternet extends Component {
         unit: '人'
       },
       {
-        icon: 'icon-shop',
+        icon: 'icon-home-shop',
         title: '飞凡入驻商家数',
         num: 94157,
         unit: '家'
