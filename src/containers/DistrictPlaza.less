@@ -63,7 +63,16 @@
     background-image: url("/img/plaza-info.png");
     background-size: contain;
     background-repeat: no-repeat;
-    padding: 66px 75px 20px;
+    padding: 66px 76px 20px;
+    animation: UptoDown 2s ease-in-out infinite alternate;
+    @keyframes UptoDown {
+      0% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(5px);
+      }
+    }
     .plaza-title {
       margin: auto;
       font-size: 36px;

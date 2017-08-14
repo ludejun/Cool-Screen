@@ -12,6 +12,7 @@ export default class RecomandPersonCard extends Component {
         InfoStrokeColor: '#09B0CA',
         InfoFillColor: '#1CEEFF',
         stepPointFillColor: '#79FFF9',
+        name: '客户1',
         cardInfo: ['性别：女', '年龄：20～25', '爱好品牌：', 'ZARA', '亦谷']
       },
       red: {
@@ -22,6 +23,7 @@ export default class RecomandPersonCard extends Component {
         InfoStrokeColor: '#C35648',
         InfoFillColor: '#FF3F1C',
         stepPointFillColor: '#FA6767',
+        name: '客户2',
         cardInfo: ['性别：男', '年龄：20～30', '爱好品牌：', '迪士尼（童鞋）', '亦谷']
       }
     };
@@ -320,7 +322,7 @@ export default class RecomandPersonCard extends Component {
             fontWeight="normal"
             fill="#FFFFFF"
           >
-            <tspan x="417" y="79">客户2</tspan>
+            <tspan x="417" y="79">{this.typelist[type].name}</tspan>
           </text>
 
           <path

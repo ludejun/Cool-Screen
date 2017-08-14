@@ -69,7 +69,7 @@ export default class DistrictBrandTag extends Component {
     const { highlightBrand } = this.state;
     return (
       <div className="district-brand-tag district-brand-tag-circle flex-row flex-center">
-        <HeaderTitle title="数字商业：品牌与标签相关性" />
+        <HeaderTitle title="广场品牌标签相关性" />
         <div className="brand-anime-container">
           <span className="type-title type-title-brand">品牌</span>
 

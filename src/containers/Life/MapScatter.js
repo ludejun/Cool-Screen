@@ -7,7 +7,7 @@ import shanghai from '../../assets/map/feifanShanghai.json';
 import beijingMap from '../../assets/map/beijing.json';
 import shanghaiMap from '../../assets/map/shanghai.json';
 import guangzhouMap from '../../assets/map/guangzhou.json';
-import guangzhou from '../../assets/map/feifanguangzhou.json';
+import guangzhou from '../../assets/map/feifanGuangzhou.json';
 import { getBaseFontSize } from '../../utils';
 
 const pointList = [
