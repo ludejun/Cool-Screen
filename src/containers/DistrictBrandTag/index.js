@@ -39,7 +39,7 @@ export default class DistrictBrandTag extends Component {
         duration: 500,
         scaleX: 0
       });
-    }, 10000);
+    }, 6000);
 
     Object.keys(this.data).forEach((v) => {
       const tagAnime = anime({
