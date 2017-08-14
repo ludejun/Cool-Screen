@@ -194,7 +194,7 @@ export default class DigitalFinance extends Component {
   render() {
     return (
       <div className="digital-finance">
-        <HeaderTitle title="数字金融-财富 / 小贷客群的万达生态描绘" className="sum-title" />
+        <HeaderTitle title="万达广场消费生活对比" className="sum-title" />
         <WDLogoSvg className="header-logo" />
         {/* background */}
         <BgGradualHeight className="bg-svg" show />
