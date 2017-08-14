@@ -51,22 +51,22 @@ const routeConfig = {
         {
           path: 'district-plaza',
           component: Routes.DistrictPlaza,
-          breadcrumbName: '万达大数据：商圈分析'
+          breadcrumbName: '万达广场商圈热力图'
         },
         {
           path: 'analysis',
           component: Routes.BusinessAnalysis,
-          breadcrumbName: '万达大数据：商圈分析'
+          breadcrumbName: '商圈客群画像'
         },
         {
           path: 'district-brand-tag',
           component: Routes.DistrictBrandTag,
-          breadcrumbName: '数字商业：品牌与标签相关性'
+          breadcrumbName: '广场品牌标签相关性'
         },
         {
           path: 'digital-recomand',
           component: Routes.DigitalRecomand,
-          breadcrumbName: '数字商业：精准化推荐Demo'
+          breadcrumbName: '精准化营销示例'
         },
         {
           path: 'vis-analysis',
@@ -76,22 +76,22 @@ const routeConfig = {
         {
           path: 'operators-comparison',
           component: Routes.OperatorsComparison,
-          breadcrumbName: '智慧生活：飞凡会员运营商设备活跃对比'
+          breadcrumbName: '飞凡会员运营商对比'
         },
         {
           path: 'life-osuv',
           component: Routes.LifeOSUV,
-          breadcrumbName: '智慧生活：移动OS类型'
+          breadcrumbName: '飞凡移动生活服务'
         },
         {
           path: 'parking-analysis',
           component: Routes.ParkingAnalysis,
-          breadcrumbName: '车牌分析'
+          breadcrumbName: '万达广场停车画像'
         },
         {
           path: 'popular-feeling',
           component: Routes.PopularFeeling,
-          breadcrumbName: '数字金融：万达金融产品舆情'
+          breadcrumbName: '万达互金产品评论词云'
         },
         {
           path: 'financial-expect',
@@ -128,32 +128,32 @@ const routeConfig = {
     },
     {
       path: 'inner-scatter',
-      breadcrumbName: '数字商业：内场分布 + 指标排名',
+      breadcrumbName: '万达广场WiFi热度分布',
       component: Routes.InnerScatter
     },
     {
       path: 'map-scatter',
-      breadcrumbName: '智慧生活：飞凡会员分布地图',
+      breadcrumbName: '飞凡会员分布图',
       component: Routes.MapScatter
     },
     {
       path: 'life-mobile',
-      breadcrumbName: '智慧生活：移动品牌及兴趣维度对比',
+      breadcrumbName: '广场客群兴趣偏好',
       component: Routes.LifeMobile
     },
     {
       path: 'customerPic',
-      breadcrumbName: '数字金融：客群画像',
+      breadcrumbName: '万达财富客群画像',
       component: Routes.CustomerPic
     },
     {
       path: 'compete-analysis',
-      breadcrumbName: '广场竞品客流分析',
+      breadcrumbName: '商圈客流动向',
       component: Routes.CompeteAnalysis
     },
     {
       path: 'digital-finance',
-      breadcrumbName: '数字金融：财富／小贷客群的万达生态描绘',
+      breadcrumbName: '万达广场消费生活对比',
       component: Routes.DigitalFinance
     },
     {
