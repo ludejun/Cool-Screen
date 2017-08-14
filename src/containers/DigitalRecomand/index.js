@@ -16,7 +16,7 @@ export default class DigitalRecomand extends Component {
   render() {
     return (
       <div className="digital-recomand flex-row flex-center dark-bg">
-        <HeaderTitle title="数字商业：精准化推荐Demo" />
+        <HeaderTitle title="精准化营销示例" />
         <div className="recomand-div flex1 flex-row flex-center">
           <RecomandBuilding className="recomand-building" />
           <RecomandTitle className="recomand-title" />

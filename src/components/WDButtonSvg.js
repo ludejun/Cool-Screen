@@ -24,7 +24,7 @@ export default class WDButtonSvg extends Component {
             <g id="border" stroke="#108EE9">
               <path
                 d="M19.6418759,0.5 L168.358124,0.5 L180.991724,25 L168.358124,49.5 L19.6418759,49.5 L7.0082759,25 L19.6418759,0.5 Z"
-                id="rect"
+                id="rect" fill="#108EE9"
               />
               <polyline id="left" points="11.8171429 3.62903226 0 25 11.8171429 46.3709677" />
               <polyline
