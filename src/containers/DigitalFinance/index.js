@@ -359,11 +359,11 @@ export default class DigitalFinance extends Component {
                   />
                   <rect className="desc-rect" x="30" y="40" fill="#ED504E" />
                   <text fill="#fff" x="70" y="55" className="desc-title">
-                    财富
+                    理财类
                   </text>
                   <rect className="desc-rect" x="30" y="80" fill="#1D7CDE" />
                   <text fill="#fff" x="70" y="95" className="desc-title">
-                    小贷
+                    借贷类
                   </text>
                 </g>
               </g>

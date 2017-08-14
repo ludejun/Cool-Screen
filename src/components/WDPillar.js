@@ -20,7 +20,7 @@ export default class WDPillar extends Component {
         top: '#00D1C6'
       },
       {
-        name: '中端消费',
+        name: '低端消费',
         percentage: '27.69%',
         top: '#29AAFF'
       }
