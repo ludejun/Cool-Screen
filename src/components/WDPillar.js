@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import { getBaseFontSize } from '../utils';
 import './WDPillar.less';
 
-const cube = { height: [110, 160, 60], color: ['#00D1C6', '#29AAFF', '#0DF29E'] };
+const cube = { height: [150, 380, 230], color: ['#00D1C6', '#29AAFF', '#0DF29E'] };
 
 export default class WDPillar extends Component {
   constructor(props) {
     super(props);
     // this.real = [{'sm':[8045,0.13787],'md':[16157,0.276889],'lg':[34150,0.585241]}];
     this.data = [
+      {
+        name: '高端消费',
+        percentage: '13.79%',
+        top: '#0DF29E'
+      },
       {
         name: '低端消费',
         percentage: '58.52%',
@@ -18,11 +23,6 @@ export default class WDPillar extends Component {
         name: '中端消费',
         percentage: '27.69%',
         top: '#29AAFF'
-      },
-      {
-        name: '高端消费',
-        percentage: '13.79%',
-        top: '#0DF29E'
       }
     ];
   }
@@ -134,11 +134,11 @@ export default class WDPillar extends Component {
       const wobble = Math.sin(Date.now() / 250) * canvas.height / 10;
 
       // draw oval
-      drawEllipse(ctx, 50, 190 + wobble, 280 + wobble / 4, 60);
+      drawEllipse(ctx, 450, 190 + wobble, 280 + wobble / 4, 60);
       // draw the cube
-      drawCube(100, 190 + wobble + y / 2, x, x, cube.height[0], cube.color[0]);
-      drawCube(180, 180 + wobble + y / 2, x, x, cube.height[1], cube.color[1]);
-      drawCube(260, 190 + wobble + y / 2, x, x, cube.height[2], cube.color[2]);
+      drawCube(100, 470 + wobble + y / 2, x, x, cube.height[0], cube.color[0]);
+      drawCube(180, 460 + wobble + y / 2, x, x, cube.height[1], cube.color[1]);
+      drawCube(260, 470 + wobble + y / 2, x, x, cube.height[2], cube.color[2]);
 
       requestAnimationFrame(draw);
     };
