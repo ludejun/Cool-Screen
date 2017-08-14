@@ -137,7 +137,7 @@
     .generate-radarovals(10);
     .generate-radarovals(@n, @i:1) when (@i =< @n) {
       .radar-ovals-@{i} {
-        animation: LifeMobileRadar ease-in-out 10s infinite reverse;
+        animation: LifeMobileRadar ease-in-out 5s infinite;
         animation-delay: unit((@i - 1) / 10, s);
       }
       .generate-radarovals(@n, (@i + 1));
@@ -150,6 +150,32 @@
     100%,
     50% {
       opacity: 1;
+    }
+  }
+  .logo-oval {
+    animation: LifeMobileRadar ease-in-out 30s infinite;
+    &-apple {
+      animation-delay: 0;
+    }
+    &-ss {
+      animation-delay: 10s;
+    }
+    &-mi {
+      animation-delay: 20s;
+    }
+  }
+  @keyframes LifeMobileRadar {
+    0%,
+    33.33% {
+      opacity: 1;
+      font-weight: bold;
+      font-size: 26PX;
+    }
+    100%,
+    34% {
+      opacity: 0.5;
+      font-weight: normal;
+      font-size: 24PX;
     }
   }
   .feature-hanabi {
