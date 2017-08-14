@@ -11,11 +11,13 @@ export default class LifeMobileRadar extends Component {
 
   componentDidMount() {
     clearInterval(this.refInterval);
+    let i = 0;
     const eInstance = this.LifeMobileRadarRef && this.LifeMobileRadarRef.getEchartsInstance();
     !!eInstance &&
       (this.refInterval = setInterval(() => {
         eInstance.clear();
-        eInstance.setOption(this.getOption());
+        i = (i + 1) % 3;
+        eInstance.setOption(this.getOption(i));
       }, 10000));
   }
 
@@ -23,109 +25,57 @@ export default class LifeMobileRadar extends Component {
     clearInterval(this.refInterval);
   }
 
-  getOption() {
+  getOption(i) {
     const { opt } = this.props;
     const indicator = [];
-    const vals1 = [],
-      vals2 = [],
-      vals3 = [];
+    const showData = [];
+    let showIndex = 'apple';
+    let showColor = '#fff';
+
+    switch (i) {
+      case 0: // apple
+        showIndex = 'apple';
+        showColor = '#fff';
+        break;
+      case 1: // ss
+        showIndex = 'ss';
+        showColor = '#2871FF';
+        break;
+      case 2: // mi
+        showIndex = 'mi';
+        showColor = '#FFB37C';
+        break;
+      default:
+        showIndex = 'apple';
+    }
 
     !!opt.values.length &&
       opt.values.forEach((val) => {
         indicator.push({ text: val.name, max: opt.max });
-        vals1.push(val.apple);
-        vals2.push(val.ss);
-        vals3.push(val.mi);
+        showData.push(val[showIndex]);
       });
 
     const series = [
       {
         type: 'radar',
-        // tooltip: {
-        //   trigger: 'item',
-        //   [opt.formatter ? 'formatter' : '']: opt.formatter || ''
-        // },
-        // areaStyle: {
-        //   normal: {
-        //     opacity: 0.8,
-        //     color: opt.paddingColor || '#5ECBD5'
-        //   }
-        // },
-        // lineStyle: {
-        //   normal: {
-        //     color: opt.lineColor || '#5ECBD5'
-        //   }
-        // },
-        // itemStyle: {
-        //   normal: {
-        //     color: '#09CDC6'
-        //   }
-        // },
+        areaStyle: {
+          normal: {
+            color: showColor
+          }
+        },
+        lineStyle: {
+          normal: {
+            color: showColor
+          }
+        },
+        itemStyle: {
+          normal: {
+            color: showColor
+          }
+        },
         data: [
           {
-            value: vals1,
-            areaStyle: {
-              normal: {
-                opacity: 0.5,
-                color: '#fff'
-              }
-            },
-            lineStyle: {
-              normal: {
-                opacity: 0.5,
-                color: '#fff'
-              }
-            },
-
-            itemStyle: {
-              normal: {
-                opacity: 0.5,
-                color: '#fff'
-              }
-            }
-          },
-          {
-            value: vals2,
-            areaStyle: {
-              normal: {
-                opacity: 0.5,
-                color: '#2871FF'
-              }
-            },
-            lineStyle: {
-              normal: {
-                opacity: 0.5,
-                color: '#2871FF'
-              }
-            },
-
-            itemStyle: {
-              normal: {
-                opacity: 0.5,
-                color: '#2871FF'
-              }
-            }
-          },
-          {
-            value: vals3,
-            areaStyle: {
-              normal: {
-                opacity: 0.5,
-                color: '#FFB37C'
-              }
-            },
-            lineStyle: {
-              normal: {
-                opacity: 0.5,
-                color: '#FFB37C'
-              }
-            },
-            itemStyle: {
-              normal: {
-                opacity: 0.5,
-                color: '#FFB37C'
-              }
-            }
+            value: showData
           }
         ]
       }
