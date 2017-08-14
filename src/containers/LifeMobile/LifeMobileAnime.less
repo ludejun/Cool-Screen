@@ -137,7 +137,7 @@
     .generate-radarovals(10);
     .generate-radarovals(@n, @i:1) when (@i =< @n) {
       .radar-ovals-@{i} {
-        animation: LifeMobileRadar ease-in-out 5s infinite;
+        animation: LifeMobileRadar ease-in-out 10s infinite reverse;
         animation-delay: unit((@i - 1) / 10, s);
       }
       .generate-radarovals(@n, (@i + 1));
@@ -153,7 +153,7 @@
     }
   }
   .logo-oval {
-    animation: LifeMobileRadar ease-in-out 30s infinite;
+    animation: LifeMobileLogoLengend ease-in-out 30s infinite;
     &-apple {
       animation-delay: 0;
     }
@@ -164,7 +164,7 @@
       animation-delay: 20s;
     }
   }
-  @keyframes LifeMobileRadar {
+  @keyframes LifeMobileLogoLengend {
     0%,
     33.33% {
       opacity: 1;
