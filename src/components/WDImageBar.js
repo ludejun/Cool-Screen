@@ -25,7 +25,7 @@ export default class WDImageBar extends Component {
                   style={{
                     backgroundImage: `url(${v.itemImage})`,
                     // transform: this.props.four ? '' : 'translate(30px)',
-                    width: v.color ? `${v.percent+20}%` : '100%'
+                    width: v.color ? `${v.percent+10}%` : '100%'
                   }}
                 />
                 {!!v.color &&
