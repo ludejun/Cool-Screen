@@ -8,7 +8,6 @@ export default class WDPillar extends Component {
   constructor(props) {
     super(props);
     // this.real = [{'sm':[8045,0.13787],'md':[16157,0.276889],'lg':[34150,0.585241]}];
-    this.timer = null;
     this.data = [
       {
         name: '高端消费',
@@ -131,7 +130,7 @@ export default class WDPillar extends Component {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Wobble the cube using a sine wave
-      const wobble = Math.sin(Date.now() / 250) * canvas.height / 10;
+      const wobble = Math.sin(Date.now() / 250) * canvas.height / 20;
 
       // draw oval
       drawEllipse(ctx, 2, 430 + wobble, 320 + wobble / 4, 70);
@@ -139,12 +138,10 @@ export default class WDPillar extends Component {
       drawCube(100, 420 + wobble + y / 2, x, x, cube.height[0], cube.color[0]);
       drawCube(180, 410 + wobble + y / 2, x, x, cube.height[1], cube.color[1]);
       drawCube(260, 420 + wobble + y / 2, x, x, cube.height[2], cube.color[2]);
+      requestAnimationFrame(draw);
     };
+
     draw();
-    clearInterval(this.timer);
-    this.timer = setInterval(() => {
-      draw();
-    }, 400);
   }
 
   render() {
