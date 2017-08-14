@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { getBaseFontSize } from '../utils';
 import './WDPillar.less';
 
-const cube = { height: [150, 380, 230], color: ['#00D1C6', '#29AAFF', '#0DF29E'] };
+const cube = { height: [130, 380, 230], color: ['#00D1C6', '#29AAFF', '#0DF29E'] };
 
 export default class WDPillar extends Component {
   constructor(props) {
     super(props);
     // this.real = [{'sm':[8045,0.13787],'md':[16157,0.276889],'lg':[34150,0.585241]}];
+    this.timer = null;
     this.data = [
       {
         name: '高端消费',
@@ -20,7 +21,7 @@ export default class WDPillar extends Component {
         top: '#00D1C6'
       },
       {
-        name: '低端消费',
+        name: '中端消费',
         percentage: '27.69%',
         top: '#29AAFF'
       }
@@ -58,7 +59,6 @@ export default class WDPillar extends Component {
         .toString(16)
         .slice(1)}`;
     };
-
     const drawEllipse = (ctx, x1, y1, w1, h1) => {
       let x = this.getProperSize(x1),
         y = this.getProperSize(y1),
@@ -66,11 +66,11 @@ export default class WDPillar extends Component {
         h = this.getProperSize(h1);
 
       let kappa = 0.5522848,
-        ox = w / 2 * kappa, // control point offset horizontal
+        ox = w / 1.8 * kappa, // control point offset horizontal
         oy = h / 2 * kappa, // control point offset vertical
-        xe = x + w, // x-end
+        xe = x + 1.2 * w, // x-end
         ye = y + h, // y-end
-        xm = x + w / 2, // x-middle
+        xm = x + w / 1.8, // x-middle
         ym = y + h / 2; // y-middle
 
       ctx.beginPath();
@@ -134,15 +134,17 @@ export default class WDPillar extends Component {
       const wobble = Math.sin(Date.now() / 250) * canvas.height / 10;
 
       // draw oval
-      drawEllipse(ctx, 450, 190 + wobble, 280 + wobble / 4, 60);
+      drawEllipse(ctx, 2, 430 + wobble, 320 + wobble / 4, 70);
       // draw the cube
-      drawCube(100, 470 + wobble + y / 2, x, x, cube.height[0], cube.color[0]);
-      drawCube(180, 460 + wobble + y / 2, x, x, cube.height[1], cube.color[1]);
-      drawCube(260, 470 + wobble + y / 2, x, x, cube.height[2], cube.color[2]);
-
-      requestAnimationFrame(draw);
+      drawCube(100, 420 + wobble + y / 2, x, x, cube.height[0], cube.color[0]);
+      drawCube(180, 410 + wobble + y / 2, x, x, cube.height[1], cube.color[1]);
+      drawCube(260, 420 + wobble + y / 2, x, x, cube.height[2], cube.color[2]);
     };
     draw();
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      draw();
+    }, 400);
   }
 
   render() {
