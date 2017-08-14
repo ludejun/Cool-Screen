@@ -8,7 +8,6 @@ export default class WDPillar extends Component {
   constructor(props) {
     super(props);
     // this.real = [{'sm':[8045,0.13787],'md':[16157,0.276889],'lg':[34150,0.585241]}];
-    this.timer = null;
     this.data = [
       {
         name: '高端消费',
