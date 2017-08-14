@@ -322,7 +322,7 @@ export default class InnerScatterFour extends Component {
   render() {
     return (
       <div>
-        <HeaderTitle title="数字商业：内场分布 + 指标排名" />
+        <HeaderTitle title="万达广场WiFi热度分布" />
         <div className="inner-scatter-four">
           <div className="map-out">
             <div className="hanabi hanabi-1" />
