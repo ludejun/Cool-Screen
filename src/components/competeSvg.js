@@ -5,14 +5,14 @@ export default class competeSvg extends Component{
 
     render() {
         return (
-          <svg width="100%" height="100%" viewBox="0 0 280 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+          <svg width="90%" height="60%" viewBox="0 0 334 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
               <title>Group 5</title>
               <desc>Created with Sketch.</desc>
               <defs>
-                  <rect id="path-1" x="0" y="0" width="300" height="18"></rect>
+                  <rect id="path-1" x="0" y="0" width="334" height="18"></rect>
               </defs>
               <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                  <g id="广场竞品客流分析" transform="translate(-1341.000000, -311.000000)">
+                  <g id="广场竞品客流分析" transform="translate(-1335.000000, -311.000000)">
                       <g id="排行" transform="translate(1255.000000, 234.000000)">
                           <g id="Group-7" transform="translate(0.000000, 70.000000)">
                               <g id="Group-5" transform="translate(86.000000, 7.000000)">

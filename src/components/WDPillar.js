@@ -10,12 +10,12 @@ export default class WDPillar extends Component {
     // this.real = [{'sm':[8045,0.13787],'md':[16157,0.276889],'lg':[34150,0.585241]}];
     this.data = [
       {
-        name: '低端消费',
+        name: '中端消费',
         percentage: '58.52%',
         top: '#00D1C6'
       },
       {
-        name: '中端消费',
+        name: '低端消费',
         percentage: '27.69%',
         top: '#29AAFF'
       },
