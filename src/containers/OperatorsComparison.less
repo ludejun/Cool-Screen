@@ -296,6 +296,15 @@
     right: 40px;
     top: 50%;
     transform: translateY(-50%);
+    animation: UpDown 2s ease-in-out infinite alternate;
+    @keyframes UpDown {
+      0% {
+        transform: translateY(-49%);
+      }
+      100% {
+        transform: translateY(-52%);
+      }
+    }
     .bg-img {
       //margin:20px auto;
       width: 445px;

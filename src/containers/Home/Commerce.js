@@ -9,14 +9,14 @@ export default class Commerce extends Component {
     super(props);
     this.banner = [
       {
-        icon: 'icon-home-people',
-        title: '飞凡内场',
+        icon: 'icon-home-wanda',
+        title: '飞凡商业联盟广场总数',
         num: 202,
         unit: '个'
       },
       {
-        icon: 'icon-home-car',
-        title: '飞凡商业联盟广场总数',
+        icon: 'icon-home-feifan',
+        title: '飞凡商业联盟广场',
         num: 2764,
         unit: '个'
       }
@@ -132,9 +132,12 @@ export default class Commerce extends Component {
                     <div className="money-color-1" style={{width: `${item.val1 * 100}%`}} />
                   </div>
                 </div>
-                {/* <div className="money-num">
-                 {item.val}
-                 </div> */}
+                <div className="inner-scale">
+                  内场 {Math.round(item.val1*100)}%
+                </div>
+                <div className="outer-scale">
+                  外场 {Math.round(item.val*100)}%
+                </div>
               </div>
             )}
           </div>
