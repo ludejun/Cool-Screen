@@ -1,4 +1,5 @@
 import React from "react";
+import "./WDPan.less";
 
 export default function WDPie(props) {
   setTimeout(() => {
@@ -10,8 +11,25 @@ export default function WDPie(props) {
       );
   }, 0);
   const dic = { low: 80, middle: 58, high: 37 };
+  const color = { low: "#E96A69", middle: "#80EBFD", high: "#2592EE" };
+  const length = { low: 503, middle: 366, high: 234 };
+  const yArray = { low: 7, middle: 30, high: 50 };
   return (
-    <div>
+    <div
+      style={{ width: "100%", height: "100%", position: "absolute", top: 0 }}
+    >
+      {Object.keys(props.data).map((it, index) => {
+        return (
+          <style key={index + Math.random()}>
+            .jin-svg-pan-{it} {`{animation:jin-pan-${it} 1s linear;}`}
+            @keyframes{` jin-pan-${it}{from{stroke-dasharray:0,${length[
+              it
+            ]}} to{stroke-dasharray:${length[it] *
+              props.data[it] /
+              100},${length[it]}}}`}
+          </style>
+        );
+      })}
       <svg
         width="100%"
         height="100%"
@@ -27,69 +45,58 @@ export default function WDPie(props) {
             }}
           >
             <circle cx="86" cy="88" r="80" strokeWidth="10" stroke="#1B2441" />
-            <circle
-              cx="86"
-              cy="88"
-              r="80"
-              strokeWidth="10"
-              stroke="#E96A69"
-              strokeDasharray="300,503"
-            />
             <circle cx="86" cy="88" r="58" strokeWidth="10" stroke="#1B2441" />
-            <circle
-              cx="86"
-              cy="88"
-              r="58"
-              strokeWidth="10"
-              stroke="#80EBFD"
-              strokeDasharray="100,366"
-            />
             <circle cx="86" cy="88" r="37" strokeWidth="10" stroke="#1B2441" />
-            <circle
-              cx="86"
-              cy="88"
-              r="37"
-              strokeWidth="10"
-              stroke="#2592EE"
-              strokeDasharray="80,234"
-            />
+            {props &&
+              Object.keys(props.data).map((it, index) => {
+                return (
+                  <circle
+                    key={index + Math.random()}
+                    className={`jin-svg-pan-${it}`}
+                    cx="86"
+                    cy="88"
+                    r={dic[it]}
+                    strokeWidth="10"
+                    stroke={color[it]}
+                    strokeDasharray={`${length[it] *
+                      props.data[it] /
+                      100},${length[it]}`}
+                  />
+                );
+              })};
           </g>
           <g>
-            <line
-              x1="86"
-              y1="7"
-              x2="260"
-              y2="7"
-              stroke="#E96A69"
-              strokeWidth="1"
-              strokeDasharray="5,3"
-            />
-            <circle cx="260" cy="7" r="3" fill="#E96A69" />
-            <text fontSize="15" fill="#E96A69">
-              <tspan x={260 + 22} y={7 * 1.6}>
-                {"60%"}
-              </tspan>
-            </text>
-            <line
-              x1="86"
-              y1="30"
-              x2="260"
-              y2="30"
-              stroke="#80EBFD"
-              strokeWidth="1"
-              strokeDasharray="5,3"
-            />
-            <circle cx="260" cy="30" r="3" fill="#80EBFD" />
-            <line
-              x1="86"
-              y1="50"
-              x2="260"
-              y2="50"
-              stroke="#2592EE"
-              strokeWidth="1"
-              strokeDasharray="5,3"
-            />
-            <circle cx="260" cy="50" r="3" fill="#2592EE" />
+            {props.data &&
+              Object.keys(props.data).map((it, index) => {
+                return (
+                  <g key={index}>
+                    <line
+                      className="jin-svg-pan-line"
+                      x1="86"
+                      y1={yArray[it]}
+                      x2={176 + 180 * props.data[it] / 100}
+                      y2={yArray[it]}
+                      stroke={color[it]}
+                      strokeWidth="1"
+                      strokeDasharray="5,3"
+                    />
+                    <circle
+                      cx={176 + 180 * props.data[it] / 100}
+                      cy={yArray[it]}
+                      r="3"
+                      fill={color[it]}
+                    />
+                    <text fontSize="15" fill={color[it]}>
+                      <tspan
+                        x={176 + 180 * props.data[it] / 100 + 22}
+                        y={yArray[it] * 1.6}
+                      >
+                        {`${props.data[it]}%`}
+                      </tspan>
+                    </text>
+                  </g>
+                );
+              })}
           </g>
           <g transform="translate(286,116)">
             <circle cx="4" cy="4" r="6" fill="#E96A69" />
