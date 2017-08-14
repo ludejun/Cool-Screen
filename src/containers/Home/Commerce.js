@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { WDPillar, WDImageBar, AnimeNumber } from '../../components';
+import React, {Component} from 'react';
+import {WDPillar, WDImageBar, AnimeNumber} from '../../components';
 import HomeCorner from './HomeCorner';
-import { comdify, resizeSquarePage } from '../../utils';
+import {comdify, resizeSquarePage} from '../../utils';
 import './commerce.less';
 
 export default class Commerce extends Component {
@@ -64,7 +64,7 @@ export default class Commerce extends Component {
     ];
     return (
       <div className="home-commerce dark-bg flex-col">
-        <HomeCorner className="home-corner left-top" />
+        <HomeCorner className="home-corner left-top"/>
         <div className="home-info-banner flex-row">
           <div className="flex1">
             <p className="banner-title banner-yellow">实体商业</p>
@@ -72,11 +72,11 @@ export default class Commerce extends Component {
               {this.banner.map((v, i) =>
                 <div className="flex1" key={i}>
                   <p className="line-title">
-                    <i className={`iconfont ${v.icon} line-icon`} />
+                    <i className={`iconfont ${v.icon} line-icon`}/>
                     {v.title}
                   </p>
                   <p className="line-num">
-                    <AnimeNumber num={v.num} fromNum={parseInt(v.num * 0.9, 10)} />
+                    <AnimeNumber num={v.num} fromNum={parseInt(v.num * 0.9, 10)}/>
                     <span className="line-unit">
                       {v.unit}
                     </span>
@@ -86,10 +86,10 @@ export default class Commerce extends Component {
             </div>
           </div>
           <div className="img-container">
-            <div className="span-hanabi span-hanabi-0" />
-            <div className="span-hanabi span-hanabi-1" />
-            <div className="span-hanabi span-hanabi-2" />
-            <img className="banner-img" src="/img/home-real.png" />
+            <div className="span-hanabi span-hanabi-0"/>
+            <div className="span-hanabi span-hanabi-1"/>
+            <div className="span-hanabi span-hanabi-2"/>
+            <img className="banner-img" src="/img/home-real.png"/>
           </div>
         </div>
 
@@ -100,13 +100,13 @@ export default class Commerce extends Component {
 
             <div className="flex-row flex-center">
               <div className="image-bar-container flex1">
-                {[0, 1, 2].map(v => <WDImageBar key={v} dataList={genderList[v]} />)}
+                {[0, 1, 2].map(v => <WDImageBar key={v} dataList={genderList[v]}/>)}
               </div>
 
               <div>
                 <p className="sub-title">带动就业</p>
                 <p className="num">
-                  <AnimeNumber num={1820000} fromNum={1820000 - 100} />
+                  <AnimeNumber num={1820000} fromNum={1820000 - 100}/>
                   <span className="unit">+人</span>
                 </p>
               </div>
@@ -116,9 +116,9 @@ export default class Commerce extends Component {
           <div className="flex1">
             <p className="bar-title">广场分布省市排名Top 10</p>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <div className=" light-blue" />
+              <div className=" light-blue"/>
               <div className="legend">万达广场</div>
-              <div className=" deep-blue" />
+              <div className=" deep-blue"/>
               <div className=" legend">飞凡联盟</div>
             </div>
             {list.map((item, i) =>
@@ -128,21 +128,21 @@ export default class Commerce extends Component {
                 </div>
                 <div className="flex1">
                   <div className="money-color-container">
-                    <div className="money-color-0" style={{width: `${item.val * 100}%`}} />
-                    <div className="money-color-1" style={{width: `${item.val1 * 100}%`}} />
+                    <div className="money-color-0" style={{width: `${item.val * 100}%`}}/>
+                    <div className="money-color-1" style={{width: `${item.val1 * 100}%`}}/>
                   </div>
                 </div>
                 <div className="inner-scale">
-                  内场 {Math.round(item.val1*100)}%
+                  内场 {Math.round(item.val1 * 100)}%
                 </div>
                 <div className="outer-scale">
-                  外场 {Math.round(item.val*100)}%
+                  外场 {Math.round(item.val * 100)}%
                 </div>
               </div>
             )}
           </div>
         </div>
-        <HomeCorner className="home-corner left-bottom" />
+        <HomeCorner className="home-corner left-bottom"/>
       </div>
     );
   }
