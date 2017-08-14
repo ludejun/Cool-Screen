@@ -21,7 +21,7 @@ export default class DistrictPlaza extends Component {
             五角场万达广场
           </div>
           <div className="info-line">
-            <i className="iconfont icon-plaza-circle line-icon"/>商&ensp;&ensp;&ensp;圈：五角场
+            <i className="iconfont icon-plaza-circle line-icon"/>商&ensp;&ensp;&ensp;&ensp;圈：五角场
           </div>
           <div className="info-line">
             <i className="iconfont icon-plaza-building line-icon"/>所在城市：上海市
@@ -33,7 +33,7 @@ export default class DistrictPlaza extends Component {
             <i className="iconfont icon-plaza-arrow line-icon"/>日均客流：121596
           </div>
           <div className="info-line">
-            <i className="iconfont icon-plaza-map line-icon"/>地&emsp;&ensp;&nbsp;址：杨浦区邯郸路600号
+            <i className="iconfont icon-plaza-map line-icon"/>地&emsp;&ensp;&nbsp; 址：杨浦区邯郸路600号
           </div>
           <div className="hr"/>
           <div className="flex-row">
