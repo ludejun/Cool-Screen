@@ -40,7 +40,7 @@ export default class LifeMobile extends Component {
   render() {
     return (
       <div className="life-mobile flex-row flex-center dark-bg">
-        <HeaderTitle title="智慧生活：移动品牌及兴趣维度对比" />
+        <HeaderTitle title="广场客群兴趣偏好" />
         <WDLogoSvg className="main-header-logo" />
         <div className="app-use flex1">
           <LifeMobileBorder className="mobile-radar-border" />

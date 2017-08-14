@@ -118,7 +118,7 @@ export default class BusinessAnalysis extends Component {
   render() {
     return (
       <div className="analysis-container flex-center flex-row">
-        <HeaderTitle title="万达大数据-商圈分析"/>
+        <HeaderTitle title="商圈客群画像"/>
         <div className="left-container">
           <WDFloor
             brandsName={this.brandsName[this.state.tab]}

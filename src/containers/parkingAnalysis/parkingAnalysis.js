@@ -549,7 +549,7 @@ export default class ParkingAnalysis extends Component {
   render() {
     return (
       <div className="parking-container">
-        <HeaderTitle title="车牌分析:  万达广场停车分析" />
+        <HeaderTitle title="万达广场停车画像" />
         <div className="parking-layout">
           <div className="layout-front" />
           <div ref="svgPath" className="layout-head">

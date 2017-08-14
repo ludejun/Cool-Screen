@@ -8,7 +8,7 @@ export default class DistrictPlaza extends Component {
   render() {
     return (
       <div className="flex-row district-plaza">
-        <HeaderTitle title="万达大数据-商圈分析"/>
+        <HeaderTitle title="万达广场商圈热力图"/>
         <div className="left-wrap">
           <img className="side-map" src="/img/sideMap.svg" />
           <img className="main-map" src="/img/main-map.png" />

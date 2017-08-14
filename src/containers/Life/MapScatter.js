@@ -91,7 +91,7 @@ export default class MapScatter extends Component {
     const map = [beijingMap, shanghaiMap, guangzhouMap];
     return (
       <div>
-        <HeaderTitle title="智慧生活：飞凡会员分布地图" className="sum-title" />
+        <HeaderTitle title="飞凡会员分布图" className="sum-title" />
         <BgAnimation />
         <div className="map-scatter">
           <img className="map-scatter-img" src="/img/map-scatter.png" />

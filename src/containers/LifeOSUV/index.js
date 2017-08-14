@@ -74,7 +74,7 @@ export default class LifeOSUV extends Component {
     const { highlightTag } = this.state;
     return (
       <div className="life-osuv flex-row flex-center dark-bg">
-        <HeaderTitle title="智慧生活：按照移动OS类型／应用UV对比" />
+        <HeaderTitle title="飞凡移动生活服务" />
         {Object.keys(this.list).map(v =>
           <div className={`dotted-panel panel-${v} flex1`} key={v}>
             <LifeOSUVDotBg className="dot-bg" />
