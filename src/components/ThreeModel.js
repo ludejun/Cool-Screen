@@ -26,11 +26,15 @@ export default class Three extends Component {
       // scene
       scene = new THREE.Scene();
 
-      const ambient = new THREE.AmbientLight( 0x82CBFF );
+      // 0x82CBFF
+      // rgb(2,4,29)
+      // rgb(5,17,61)
+      const ambient = new THREE.AmbientLight( 'rgb(245,222,179)' );
       scene.add( ambient );
 
-      const directionalLight = new THREE.DirectionalLight( 0x82CBFF );
-      directionalLight.position.set( 0, 0, 1 );
+      // const directionalLight = new THREE.DirectionalLight( 'rgb(0 197 205)' );
+      const directionalLight = new THREE.PointLight( 'rgb(0 197 205)', 1, 100 );
+      directionalLight.position.set( 50, 50, 60 );
       scene.add( directionalLight );
 
       // texture
@@ -79,7 +83,7 @@ export default class Three extends Component {
         } );
 
         model = object;
-        model.position.y = - 95;
+        model.position.y = - 90;
         scene.add( model );
 
       }, onProgress, onError );

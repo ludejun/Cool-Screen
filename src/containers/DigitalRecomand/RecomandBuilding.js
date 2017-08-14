@@ -30,24 +30,6 @@ export default class RecomandBuilding extends Component {
       }
     };
   }
-  // componentDidMount() {
-  //   const points = 'M231,227.148642 L239.332335,229.483873 M244.881924,231.039208 L253.185551,233.366392 M258.767621,234.93083 L267.046425,237.251059 M271.902294,237.339043 L275.365697,229.444044 M277.680922,224.166375 L281.153456,216.250561 M283.475875,210.956493 L286.925669,203.092515 M290.320327,199.997133 L298.606942,202.345292 M304.177719,203.923871 L312.530203,206.290695 M318.043977,207.85312 L326.344848,210.20532 M331.885467,211.775352 L340.181672,214.126229 M345.722271,215.696256 L354.01871,218.047199 M359.570775,219.620475 L367.881413,221.975442 M373.427485,223.54702 L381.739661,225.902422 M387.280343,227.472472 L395.595296,229.828662 M400,231.076813 L408,233.343755 M420.80084,236.9711 L412.512461,234.62244 M434.637921,240.892082 L426.330471,238.538019 M448.514257,244.824188 L440.217129,242.473049 M462.444886,248.771678 L454.04774,246.392198 M468.000538,250.345971 L471.433975,251.318896 L469.79424,256.030178 M465.059235,269.634788 L467.879759,261.530861 M460.325624,283.235389 L463.171509,275.058599 M455.595969,296.824626 L458.415773,288.722771 M450.833622,310.507792 L453.660256,302.386312 M446.120742,324.04883 L448.945182,315.933654 M441.40196,337.606826 L444.222042,329.504171 M436.652028,351.254321 L439.516932,343.022884 M431.902226,364.901445 L434.757075,356.698898 M427.147781,378.561908 L430.023072,370.300626 M422.442367,392.081493 L425.289406,383.901388 M417.710436,405.677268 L420.544273,397.535093 M415.813965,411.126205 L414.039983,416.223209 L417.121595,417.111509 M430.978847,421.105976 L422.659637,418.707896 M444.849342,425.10426 L436.523087,422.704149 M458.623607,429.074805 L450.28111,426.670012 M472.471217,433.066493 L464.20043,430.682371 M486.359223,437.069825 L478.035266,434.670376 M500.157133,441.047186 L491.818491,438.643504 M513.920384,445.014556 L505.712557,442.648582 M527.842328,449.027671 L519.439177,446.605393 M541.63554,453.003677 L533.374232,450.622287 M555.463941,456.989828 L547.194219,454.606012'.split(
-  //     ' '
-  //   );
-  //
-  //   let index = 0;
-  //   const timeGap = 10000 / 86;
-  //   clearInterval(this.pointsInterval);
-  //   this.pointsInterval = setInterval(() => {
-  //     this.setState({
-  //       pathRedPoints: index === 0 ? points[index] : this.state.pathRedPoints + points[index]
-  //     });
-  //     index = (index + 1) % 86;
-  //   }, timeGap); // timeGap = 9890 / 86;
-  // }
-  // componentWillUnmount() {
-  //   clearInterval(this.pointsInterval);
-  // }
 
   render() {
     // const { pathRedPoints } = this.state;
@@ -847,7 +829,7 @@ export default class RecomandBuilding extends Component {
             id="building-path-green"
             className="building-path-blue"
             stroke="url(#building-linearGradient-34)"
-            strokeWidth="5.76"
+            strokeWidth="3.84"
             strokeLinecap="round"
             strokeLinejoin="round"
             xlinkHref="#building-path-35"
@@ -864,10 +846,10 @@ export default class RecomandBuilding extends Component {
           {/* <use className="path-point-shadow" xlinkHref="#building-filter-37" x="654" y="491" />*/}
 
           <use xlinkHref="#building-filter-37" x="654" y="491" />
-          <use className="tag-text-red-3" xlinkHref="#building-filter-37" x="657" y="367" />
-          <use className="tag-text-red-2" xlinkHref="#building-filter-37" x="507" y="346" />
-          <use className="tag-text-red-1" xlinkHref="#building-filter-37" x="367" y="270" />
-          <use className="tag-text-red-0" xlinkHref="#building-filter-37" x="249" y="210" />
+          <use className="tag-text-green-3" xlinkHref="#building-filter-37" x="657" y="367" />
+          <use className="tag-text-green-2" xlinkHref="#building-filter-37" x="507" y="346" />
+          <use className="tag-text-green-1" xlinkHref="#building-filter-37" x="367" y="270" />
+          <use className="tag-text-green-0" xlinkHref="#building-filter-37" x="249" y="210" />
 
           <circle
             id="oval-green-1-shadow"
@@ -886,6 +868,7 @@ export default class RecomandBuilding extends Component {
             r="13.5"
           /> */}
           <circle id="oval-green-1" fill="#79FFF9" cx="188.5" cy="349.5" r="7.5" />
+
           <polyline
             id="building-path-red"
             className="building-path-red"

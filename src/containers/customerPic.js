@@ -47,7 +47,7 @@ class customerPic extends Component {
             lines: resultX.concat(resultY),
             width,
             height,
-            TWidth: parseInt(window.getComputedStyle(male).width)
+            TWidth: parseInt(window.getComputedStyle(male).width) + 40
         });
     }
     render() {

@@ -152,6 +152,32 @@
       opacity: 1;
     }
   }
+  .logo-oval {
+    animation: LifeMobileLogoLengend ease-in-out 30s infinite;
+    &-apple {
+      animation-delay: 0;
+    }
+    &-ss {
+      animation-delay: 10s;
+    }
+    &-mi {
+      animation-delay: 20s;
+    }
+  }
+  @keyframes LifeMobileLogoLengend {
+    0%,
+    33.33% {
+      opacity: 1;
+      font-weight: bold;
+      font-size: 26PX;
+    }
+    100%,
+    34% {
+      opacity: 0.5;
+      font-weight: normal;
+      font-size: 24PX;
+    }
+  }
   .feature-hanabi {
     animation: LifeMobileHanabi 2s linear infinite;
     &-1 {
