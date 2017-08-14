@@ -139,34 +139,7 @@ export default class LifeMobileLegend extends Component {
             />
           </filter>
           <circle id="legend-path-10" cx="31" cy="122" r="6" />
-          <filter
-            x="-104.2%"
-            y="-87.5%"
-            width="308.3%"
-            height="308.3%"
-            filterUnits="objectBoundingBox"
-            id="legend-filter-11"
-          >
-            <feMorphology
-              radius="1"
-              operator="dilate"
-              in="SourceAlpha"
-              result="shadowSpreadOuter1"
-            />
-            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1" />
-            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-            <feComposite
-              in="shadowBlurOuter1"
-              in2="SourceAlpha"
-              operator="out"
-              result="shadowBlurOuter1"
-            />
-            <feColorMatrix
-              values="0 0 0 0 0.328815901   0 0 0 0 0.176769061   0 0 0 0 0.0132530557  0 0 0 0.701115263 0"
-              type="matrix"
-              in="shadowBlurOuter1"
-            />
-          </filter>
+
           <filter
             x="-141.7%"
             y="-125.0%"
@@ -252,52 +225,33 @@ export default class LifeMobileLegend extends Component {
           />
           <g id="apple-oval" opacity="0.900758605">
             <use
-              fillOpacity="0.049999997"
-              fill="#FFFFFF"
-              fillRule="evenodd"
-              xlinkHref="#legend-path-6"
-            />
-            <use
               fill="black"
               fillOpacity="1"
               filter="url(#legend-filter-7)"
               xlinkHref="#legend-path-6"
+              className="logo-oval logo-oval-apple"
             />
             <use stroke="#FFFFFF" strokeWidth="2" xlinkHref="#legend-path-6" />
           </g>
           <g id="samsung-oval" opacity="0.900758605">
-            <use
-              fillOpacity="0.049999997"
-              fill="#0045FF"
-              fillRule="evenodd"
-              xlinkHref="#legend-path-8"
-            />
+
             <use
               fill="black"
               fillOpacity="1"
               filter="url(#legend-filter-9)"
               xlinkHref="#legend-path-8"
+              className="logo-oval logo-oval-ss"
             />
             <use stroke="#2871FF" strokeWidth="2" xlinkHref="#legend-path-8" />
           </g>
           <g id="xiaomi-oval" opacity="0.900758605">
-            <use
-              fill="black"
-              fillOpacity="1"
-              filter="url(#legend-filter-11)"
-              xlinkHref="#legend-path-10"
-            />
-            <use
-              fillOpacity="0.200000003"
-              fill="#E86E1A"
-              fillRule="evenodd"
-              xlinkHref="#legend-path-10"
-            />
+
             <use
               fill="black"
               fillOpacity="1"
               filter="url(#legend-filter-12)"
               xlinkHref="#legend-path-10"
+              className="logo-oval logo-oval-mi"
             />
             <use stroke="#FFB37C" strokeWidth="2" xlinkHref="#legend-path-10" />
           </g>
@@ -307,6 +261,7 @@ export default class LifeMobileLegend extends Component {
             fontSize="24"
             fontWeight="normal"
             fill="#FFFFFF"
+            className="logo-oval logo-oval-apple"
           >
             <tspan x="58" y="48">苹果</tspan>
           </text>
@@ -316,6 +271,7 @@ export default class LifeMobileLegend extends Component {
             fontSize="24"
             fontWeight="normal"
             fill="#FFFFFF"
+            className="logo-oval logo-oval-ss"
           >
             <tspan x="58" y="89">三星</tspan>
           </text>
@@ -325,6 +281,7 @@ export default class LifeMobileLegend extends Component {
             fontSize="24"
             fontWeight="normal"
             fill="#FFFFFF"
+            className="logo-oval logo-oval-mi"
           >
             <tspan x="58" y="130">小米</tspan>
           </text>
