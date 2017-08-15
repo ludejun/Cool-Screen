@@ -131,6 +131,9 @@ const option = {
         },
         axisLabel: {
             show: true,
+            formatter: function (value, index) {
+              return value*100+'%'
+            },
             textStyle: {
                 color: '#999',
                 fontSize: 12
