@@ -177,7 +177,10 @@ export default class Analysis extends Component {
           textStyle: {
             color: '#999',
             fontSize: 12
-          }
+          },  
+          formatter: function (value, index) {
+            return value*100+'%'
+          },
         }
       },
       series: [
