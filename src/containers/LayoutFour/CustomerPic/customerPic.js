@@ -263,15 +263,15 @@ class Cuspic extends Component {
     }
     componentDidMount() {
         clearInterval(this.timer);
-        this.timer = setInterval(() => {
-            if (this.state.tab < 2) {
-                this.setState({
-                    tab: this.state.tab + 1
-                });
-            } else {
-                this.setState({tab: 0});
-            }
-        }, 3000);
+        // this.timer = setInterval(() => {
+        //     if (this.state.tab < 2) {
+        //         this.setState({
+        //             tab: this.state.tab + 1
+        //         });
+        //     } else {
+        //         this.setState({tab: 0});
+        //     }
+        // }, 3000);
     }
     radioChange = (e) => {
         clearInterval(this.timer);

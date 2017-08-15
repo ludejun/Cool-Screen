@@ -46,7 +46,8 @@ const arrayC = [
     native: {
       name: "北京",
       location: [116.4136103013, 39.9110666857],
-      percent: 0.85
+      percent: 0.85,
+      "locationnum":"010"
     },
     nonlocal: {
       distribution: [
@@ -209,7 +210,9 @@ const arrayC = [
     native: {
       name: "上海",
       location: [121.4803295328, 31.2363429624],
-      percent: 0.6
+      percent: 0.6,
+      "locationnum":"021"
+
     },
     nonlocal: {
       distribution: [
@@ -372,7 +375,8 @@ const arrayC = [
     native: {
       name: "广州",
       location: [113.270813674, 23.1351666766],
-      percent: 0.92
+      percent: 0.92,
+      "locationnum":"020"
     },
     nonlocal: {
       distribution: [
@@ -781,6 +785,7 @@ export default class ParkingAnalysis extends Component {
                                         strokWidth="1.03"
                                       />
                                       <polygon
+                                        className="flash-opacity"
                                         id="Rectangle-6"
                                         fill="#108EE9"
                                         points="14.8848091 2.62941176 129.774421 2.62941176 137.008212 20.6588235 129.774421 38.6882353 14.8848091 38.6882353 8.50205292 20.6588235"
@@ -804,7 +809,7 @@ export default class ParkingAnalysis extends Component {
                               </g>
                             </svg>
                             <span className="location-name">
-                              {it.native.name}
+                              {`${it.native.name}(${it.native.locationnum})`}
                             </span>
                           </div>
                         </li>
