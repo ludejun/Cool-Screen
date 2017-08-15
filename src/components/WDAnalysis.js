@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {WDPillar, WDImageBar, WDImagePercent} from './index';
+import {WDPillar, WDImageBar, WDImagePercent, WDPan} from './index';
 import Echarts from 'echarts-for-react';
 import echarts from 'echarts';
 import anime from 'animejs';
@@ -177,7 +177,10 @@ export default class Analysis extends Component {
           textStyle: {
             color: '#999',
             fontSize: 12
-          }
+          },  
+          formatter: function (value, index) {
+            return value*100+'%'
+          },
         }
       },
       series: [
@@ -318,14 +321,19 @@ export default class Analysis extends Component {
           </g>
         </svg>
         <div className="right-sub-container right-sub-container-first">
-          <div>
+          <div style={{position:'relative'}}>
             <p className="consume-title">消费等级占比</p>
             <div
               style={{
-              transform: 'translate(60px)'
+              transform: 'translate(60px)',
+              position:'absolute',
+              width:'90%',
+              height:'100%',
+              top:-30,
+              left:-40
             }}
               className="consume-container">
-              {this.renderEchart()}
+              <WDPan data={this.props.customerPic.consume} />
             </div>
           </div>
           <div className="age-container">

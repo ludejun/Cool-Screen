@@ -47,4 +47,4 @@ export { default as OperatorsComparison } from './OperatorsComparison';
 // 数字金融
 export { default as DigitalFinance } from './DigitalFinance';
 export { default as PopularFeeling } from './PopularFeeling';
-export { default as Expect } from './financialExpect';
+export { default as Expect } from './FinancialExpect';
