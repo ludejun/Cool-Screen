@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Echarts from 'echarts-for-react';
 import './parkingAnalysisLong.less';
 
@@ -18,6 +18,8 @@ const arrayC = [
   {
     native: {
       name: "北京",
+      code: "010",
+      otherName: "京",
       location: [116.4136103013, 39.9110666857],
       percent: 0.85
     },
@@ -181,6 +183,8 @@ const arrayC = [
   {
     native: {
       name: "上海",
+      code: "021",
+      otherName: "沪",
       location: [121.4803295328, 31.2363429624],
       percent: 0.6
     },
@@ -344,6 +348,8 @@ const arrayC = [
   {
     native: {
       name: "广州",
+      code: "020",
+      otherName: "穗",
       location: [113.270813674, 23.1351666766],
       percent: 0.92
     },
@@ -506,6 +512,70 @@ const arrayC = [
   }
 ];
 
+const carModel = [
+  {
+    city: '北京',
+    model: [
+      {
+        type: '轿车',
+        brand: '大众',
+        img: '/img/logo1.png',
+      },
+      {
+        type: '多用途乘用车',
+        brand: '东风',
+        img: '/img/logo3.png',
+      },
+      {
+        type: '越野车',
+        brand: '奥迪',
+        img: '/img/logo4.png',
+      }
+    ]
+  },
+  {
+    city: '上海',
+    model: [
+      {
+        type: '轿车',
+        brand: '大众',
+        img: '/img/logo1.png',
+      },
+      {
+        type: '多用途乘用车',
+        brand: '别克',
+        img: '/img/logo2.png',
+      },
+      {
+        type: '越野车',
+        brand: '东风',
+        img: '/img/logo3.png',
+      }
+    ]
+  },
+  {
+    city: '广州',
+    model: [
+      {
+        type: '轿车',
+        brand: '东风',
+        img: '/img/logo3.png',
+      },
+      {
+        type: '多用途乘用车',
+        brand: '丰田',
+        img: '/img/logo5.png',
+      },
+      {
+        type: '越野车',
+        brand: '别克',
+        img: '/img/logo2.png',
+      }
+    ]
+  }
+];
+
+
 const convertData = function (data) {
   const res = [];
   for (let i = 0; i < data.length; i++) {
@@ -605,22 +675,41 @@ class ParkingAnalysis extends Component {
     super(props);
     this.state = {
       width: null,
-      height: null
+      height: null,
+      city: '北京',
+      cityNo: 0,
     };
   }
+
   componentDidMount() {
     const svgDOM = this.refs.svgPath;
     let width = parseInt(window.getComputedStyle(svgDOM).width);
     let height = parseInt(window.getComputedStyle(svgDOM).height);
-    this.setState({ width, height });
+    this.setState({width, height});
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+    this.timer = setInterval(() => {
+      this.setState({
+        city: arrayC[this.state.cityNo].native.name,
+        cityNo: this.state.cityNo === 2 ? 0 : this.state.cityNo + 1,
+      });
+    }, 8000)
   }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
   render() {
-    console.dir(window);
+    const currentMap = arrayC.filter(item => item.native.name === this.state.city);
+    const currentCar = carModel.filter(item => item.city === this.state.city);
+    console.log(currentMap,currentCar);
     return (
       <div className="parking-contariner-f">
         <div className="parking-left">
           <div className="parking-layout">
-            <div className="layout-front"/>
+            <div className="layout-front" />
             <div ref="svgPath" className="layout-head">
               {this.state.width &&
               <svg
@@ -648,105 +737,105 @@ class ParkingAnalysis extends Component {
                   </animateMotion>
                 </circle>
               </svg>}
-            </div> 
-              {arrayC.map((it, i) => {
+            </div>
+            {arrayC.map((it, i) => {
               const data = [
-              {
-                name: it.native.name,
-                value: 50
-              }
-            ];
-            const dataArray = it.nonlocal.distribution.map((it, index) => {
-              return {
-                name: it.province,
-                selected: false,
-                itemStyle: {
-                  normal: {
-                    areaColor: `rgba(${Math.round(
-                      Math.random() * 8 + 8
-                    )},${Math.round(Math.random() * 67 + 30)},${Math.round(
-                      Math.random() * 87 + 143
-                    )},1)`
-                  }
-                }
-              };
-            });
-            const option = {
-              backgroundColor: "transparent",
-              geo: {
-                map: "china",
-                label: {
-                  emphasis: {
-                    show: false
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: "#323c48",
-                    borderColor: "#111"
-                  },
-                  emphasis: {
-                    areaColor: "#2a333d"
-                  }
-                }
-              },
-              series: [
                 {
-                  type: "effectScatter",
-                  coordinateSystem: "geo",
-                  data: convertData(
-                    data
-                      .sort(function(a, b) {
-                        return b.value - a.value;
-                      })
-                      .slice(0, 6)
-                  ),
-                  symbolSize: function(val) {
-                    return val[2] / 10;
-                  },
-                  showEffectOn: "render",
-                  rippleEffect: {
-                    brushType: "stroke"
-                  },
-                  hoverAnimation: true,
-                  label: {
-                    normal: {
-                      formatter: "{b}",
-                      position: "right",
-                      show: true
-                    }
-                  },
+                  name: it.native.name,
+                  value: 50
+                }
+              ];
+              const dataArray = it.nonlocal.distribution.map((it, index) => {
+                return {
+                  name: it.province,
+                  selected: false,
                   itemStyle: {
                     normal: {
-                      color: "#f4e925",
-                      shadowBlur: 10,
-                      shadowColor: "#333"
+                      areaColor: `rgba(${Math.round(
+                        Math.random() * 8 + 8
+                      )},${Math.round(Math.random() * 67 + 30)},${Math.round(
+                        Math.random() * 87 + 143
+                      )},1)`
                     }
-                  },
-                  zlevel: 1
-                },
-                {
-                  name: "中国",
-                  type: "map",
-                  mapType: "china",
-                  selectedMode: "multiple",
+                  }
+                };
+              });
+              const option = {
+                backgroundColor: "transparent",
+                geo: {
+                  map: "china",
                   label: {
-                    normal: {
+                    emphasis: {
                       show: false
                     }
                   },
+                  roam: true,
                   itemStyle: {
                     normal: {
-                      areaColor: "#14216A"
+                      areaColor: "#323c48",
+                      borderColor: "#111"
+                    },
+                    emphasis: {
+                      areaColor: "#2a333d"
                     }
+                  }
+                },
+                series: [
+                  {
+                    type: "effectScatter",
+                    coordinateSystem: "geo",
+                    data: convertData(
+                      data
+                        .sort(function (a, b) {
+                          return b.value - a.value;
+                        })
+                        .slice(0, 6)
+                    ),
+                    symbolSize: function (val) {
+                      return val[2] / 10;
+                    },
+                    showEffectOn: "render",
+                    rippleEffect: {
+                      brushType: "stroke"
+                    },
+                    hoverAnimation: true,
+                    label: {
+                      normal: {
+                        formatter: "{b}",
+                        position: "right",
+                        show: true
+                      }
+                    },
+                    itemStyle: {
+                      normal: {
+                        color: "#f4e925",
+                        shadowBlur: 10,
+                        shadowColor: "#333"
+                      }
+                    },
+                    zlevel: 1
                   },
-                  data: dataArray
-                }
-              ]
-            };
+                  {
+                    name: "中国",
+                    type: "map",
+                    mapType: "china",
+                    selectedMode: "multiple",
+                    label: {
+                      normal: {
+                        show: false
+                      }
+                    },
+                    itemStyle: {
+                      normal: {
+                        areaColor: "#14216A"
+                      }
+                    },
+                    data: dataArray
+                  }
+                ]
+              };
               return (
-                <div key={i} className={`bar-container-${i+1} bar-container`}>
+                <div key={i} className={`bar-container-${i + 1} bar-container`}>
                   <div className="top-bar">
                     <svg
                       width="100%"
@@ -759,12 +848,12 @@ class ParkingAnalysis extends Component {
                         points="0,0 100,100 700,100 800,0"
                         strokeWidth="20"
                         stroke="#16255D"
-                        fill="#1C91FF"/>
+                        fill="#1C91FF" />
                     </svg>
                   </div>
                   <div className="left-info">
-                    <div className="mask"/>
-                    <Echarts option={option} className="map"/>
+                    <div className="mask" />
+                    <Echarts option={option} className="map" />
                   </div>
                 </div>
               );
@@ -812,12 +901,15 @@ class ParkingAnalysis extends Component {
               xmlnsXlink="http://www.w3.org/1999/xlink">
               <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="车牌分析" transform="translate(-468.000000, -64.000000)" fill="#0D62C4">
-                    <g id="Group-5" transform="translate(468.000000, 64.000000)">
-                        <path d="M2.42597693,0.992782142 L40.0700369,0.992782142 L44.187356,4.15946518 L698.139513,4.15946518 L701.864706,8.11781897 L701.864706,71.8473151 L703.629271,75.6077512 L703.629271,147.396435 L701.864706,152.542294 L701.864706,171.80278 L678.729294,171.80278 L674.219849,169.625685 L35.756655,169.625685 L32.8157129,171.80278 L7.13148443,171.80278 C7.13148443,171.80278 3.3938067,168.344161 2.42597693,167.448591 C1.45814716,166.55302 2.42597693,103.316228 2.42597693,103.316228 L0.269285995,97.5766148 L0.269285995,38.5971432 L2.42597693,33.4512833 L2.42597693,0.992782142 Z" id="Rectangle"></path>
+                  <g id="Group-5" transform="translate(468.000000, 64.000000)">
+                    <path
+                      d="M2.42597693,0.992782142 L40.0700369,0.992782142 L44.187356,4.15946518 L698.139513,4.15946518 L701.864706,8.11781897 L701.864706,71.8473151 L703.629271,75.6077512 L703.629271,147.396435 L701.864706,152.542294 L701.864706,171.80278 L678.729294,171.80278 L674.219849,169.625685 L35.756655,169.625685 L32.8157129,171.80278 L7.13148443,171.80278 C7.13148443,171.80278 3.3938067,168.344161 2.42597693,167.448591 C1.45814716,166.55302 2.42597693,103.316228 2.42597693,103.316228 L0.269285995,97.5766148 L0.269285995,38.5971432 L2.42597693,33.4512833 L2.42597693,0.992782142 Z"
+                      id="Rectangle"></path>
 
 
-                        <polygon transform="translate(4.000000, 6.000000)" id="Path-103" fill="#092293" points="7.35508142 3.07588862 35.6544298 3.07588862 39.7903276 0.281931701 685.59191 0.281931701 689.326878 0.281931701 693.061846 0.281931701 695.224195 3.07588862 695.224195 156.984296 691.29265 160.691935 28.7820016 160.691935 23.4744159 155.104022 4.00929733 155.104022 0.7541941 151.799389 0.7541941 3.07588862"></polygon>
-                    </g>
+                    <polygon transform="translate(4.000000, 6.000000)" id="Path-103" fill="#092293"
+                             points="7.35508142 3.07588862 35.6544298 3.07588862 39.7903276 0.281931701 685.59191 0.281931701 689.326878 0.281931701 693.061846 0.281931701 695.224195 3.07588862 695.224195 156.984296 691.29265 160.691935 28.7820016 160.691935 23.4744159 155.104022 4.00929733 155.104022 0.7541941 151.799389 0.7541941 3.07588862"></polygon>
+                  </g>
                 </g>
 
               </g>
@@ -858,7 +950,8 @@ class ParkingAnalysis extends Component {
                     </g>
                   </svg>
                   <div className="title-content">
-                    上海（021）</div>
+                    {`${currentMap && currentMap.native.name} (${currentMap && currentMap.native.code})`}
+                  </div>
                 </div>
                 <div className="detail">
                   <svg
@@ -869,7 +962,7 @@ class ParkingAnalysis extends Component {
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink">
                     <g stroke="#0D62C4" strokeWidth="1" fill="none" fillRule="evenodd">
-                      <polyline className="polyline" points="0,0 135,0 135,88 0,88 0,0"/>
+                      <polyline className="polyline" points="0,0 135,0 135,88 0,88 0,0" />
                     </g>
                   </svg>
                   <div className="first-content">
@@ -923,7 +1016,7 @@ class ParkingAnalysis extends Component {
                     </svg>
                     <span style={{
                       fontSize: 27
-                    }}>11.38</span>
+                    }}>{currentMap.averageCost}</span>
                     <span>元</span>
                   </div>
                 </div>
@@ -939,7 +1032,7 @@ class ParkingAnalysis extends Component {
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink">
                   <g stroke="#0D62C4" strokeWidth="1" fill="none" fillRule="evenodd">
-                    <polyline className="polyline" points="0,0 146,0 146,126 0,126 0,0"/>
+                    <polyline className="polyline" points="0,0 146,0 146,126 0,126 0,0" />
                   </g>
                 </svg>
                 <div className="first-content">
@@ -967,18 +1060,18 @@ class ParkingAnalysis extends Component {
                 </div>
                 <div className="second-content">
                   <div className="content-column">
-                    <div className="text">56%</div>
+                    <div className="text">{currentMap && Math.round(currentMap.native.percent * 100, 0)}%</div>
                     <div>
                       <img width="32" height="42" className="img-svg" src="/img/money.svg"></img>
                     </div>
-                    <div className="text">沪牌</div>
+                    <div className="text">{currentMap && currentMap.native.otherName}牌</div>
                   </div>
                   <div className="content-column">
-                    <div className="text">44%</div>
+                    <div className="text">{currentMap && Math.round((1 - currentMap.native.percent) * 100, 0)}%</div>
                     <div className="img-svg2">
                       <img width="32" height="30" className="img-svg" src="/img/money2.svg"></img>
                     </div>
-                    <div className="text">非沪牌</div>
+                    <div className="text">非{currentMap && currentMap.native.otherName}牌</div>
                   </div>
                 </div>
               </div>
@@ -993,7 +1086,7 @@ class ParkingAnalysis extends Component {
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink">
                   <g stroke="#0D62C4" strokeWidth="1" fill="none" fillRule="evenodd">
-                    <polyline className="polyline" points="0,0 279,0 279,126 0,126 0,0"/>
+                    <polyline className="polyline" points="0,0 279,0 279,126 0,126 0,0" />
                   </g>
                 </svg>
                 <div className="first-content">
@@ -1021,38 +1114,19 @@ class ParkingAnalysis extends Component {
                 </div>
                 <div className="second-content">
                   <ul>
-                    <li>
-                      <div className="content-number">
-                        <div className="level-img"><img src="/img/level1.png"/></div>
-                        <div className="car-img"><img src="/img/car1.png"/></div>
-                        <div className="car-name">轿车</div>
-                      </div>
-                      <div className="content-lavish">
-                        <div className="car-logo"><img src="/img/logo1.png"/></div>
-                        <div className="car-name">大众</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="content-number">
-                        <div className="level-img"><img src="/img/level2.png"/></div>
-                        <div className="car-img"><img src="/img/car2.png"/></div>
-                        <div className="car-name">多用途乘用车</div>
-                      </div>
-                      <div className="content-lavish">
-                        <div className="car-logo"><img src="/img/logo2.png"/></div>
-                        <div className="car-name">别克</div>                        
-                      </div>
-                    </li>
-                    <li>
-                      <div className="content-number">
-                        <div className="level-img"><img src="/img/level3.png"/></div>
-                        <div className="car-img"><img src="/img/car3.png"/></div>
-                        <div className="car-name">越野车</div></div>
-                      <div className="content-lavish">
-                        <div className="car-logo"><img src="/img/logo3.png"/></div>
-                        <div className="car-name">东风</div>                       
-                      </div>
-                    </li>
+                    {currentCar && currentCar.model.map((model, index) => (
+                      <li>
+                        <div className="content-number">
+                          <div className="level-img"><img src="/img/level1.png" /></div>
+                          <div className="car-img"><img src={`/img/car${index}.png`} /></div>
+                          <div className="car-name">{model.type}</div>
+                        </div>
+                        <div className="content-lavish">
+                          <div className="car-logo"><img src={model.img} /></div>
+                          <div className="car-name">{model.brand}</div>
+                        </div>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
