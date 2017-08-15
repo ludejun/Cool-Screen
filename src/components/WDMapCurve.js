@@ -256,10 +256,10 @@ class WDBaiduMapCurve extends Component {
           EMap.addOverlay(circle);
         });
         EMap.setZoom(this.scaleLevel(Math.ceil(span / 2)));
-        setTimeout(() => {
-          document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL') && (document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL').innerHTML = '');
-          document.querySelector('div.anchorBL') && (document.querySelector('div.anchorBL').innerHTML = '');
-        }, 100);
+        // setTimeout(() => {
+        //   document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL') && (document.querySelector('.BMap_cpyCtrl.BMap_noprint.anchorBL').innerHTML = '');
+        //   document.querySelector('div.anchorBL') && (document.querySelector('div.anchorBL').innerHTML = '');
+        // }, 100);
     }
   }
 
