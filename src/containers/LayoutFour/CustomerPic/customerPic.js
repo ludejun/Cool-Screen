@@ -266,6 +266,7 @@ class Cuspic extends Component {
     }
     componentDidMount() {
         clearInterval(this.timer);
+
         this.timer = setInterval(() => {
             if (this.state.tab < 2) {
                 this.setState({

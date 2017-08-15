@@ -117,9 +117,9 @@ export default class Commerce extends Component {
             <p className="bar-title">广场分布省市排名Top 10</p>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <div className=" light-blue"/>
-              <div className="legend">万达广场</div>
+              <div className="legend">内场</div>
               <div className=" deep-blue"/>
-              <div className=" legend">飞凡联盟</div>
+              <div className=" legend">外场</div>
             </div>
             {list.map((item, i) =>
               <div className="money-container flex-row" key={i}>
