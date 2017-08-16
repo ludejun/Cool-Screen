@@ -110,7 +110,7 @@ const option = {
             interval: 0,
             rotate: -45,
             textStyle: {
-                color: '#999999',
+                color: '#ffffff',
                 fontSize: 12
             }
         }
@@ -135,7 +135,7 @@ const option = {
               return value*100+'%'
             },
             textStyle: {
-                color: '#999',
+                color: '#ffffff',
                 fontSize: 12
             }
         }
