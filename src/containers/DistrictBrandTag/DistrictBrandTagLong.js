@@ -29,18 +29,18 @@ export default class DistrictBrandTag extends Component {
 
   componentDidMount() {
     clearInterval(this.highlightInterval);
-    // this.highlightInterval = setInterval(() => {
-    //   this.setState({
-    //     highlightBrand: (this.state.highlightBrand + 1) % Object.keys(this.data).length
-    //   });
-    //   anime({
-    //     targets: '.tag-div',
-    //     direction: 'reverse',
-    //     easing: 'linear',
-    //     duration: 1000,
-    //     opacity: 0.5
-    //   });
-    // }, 6000);
+    this.highlightInterval = setInterval(() => {
+      this.setState({
+        highlightBrand: (this.state.highlightBrand + 1) % Object.keys(this.data).length
+      });
+      anime({
+        targets: '.tag-div',
+        direction: 'reverse',
+        easing: 'linear',
+        duration: 1000,
+        opacity: 0.5
+      });
+    }, 6000);
     Object.keys(this.data).forEach((v) => {
       const tagAnime = anime({
         targets: `#RoundSquare${v}`,
