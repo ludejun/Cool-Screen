@@ -126,9 +126,7 @@ export default class BusinessAnalysis extends Component {
             radioChange={this.radioChange}
           />
         </div>
-        <div className="right-container">
-          <WDAnalysis customerPic={this.customerPic[this.state.tab]} />
-        </div>
+        <WDAnalysis customerPic={this.customerPic[this.state.tab]} />
       </div>
     );
   }

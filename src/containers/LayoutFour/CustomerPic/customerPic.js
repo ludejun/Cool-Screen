@@ -131,6 +131,9 @@ const option = {
         },
         axisLabel: {
             show: true,
+            formatter: function (value, index) {
+              return value*100+'%'
+            },
             textStyle: {
                 color: '#999',
                 fontSize: 12
@@ -263,6 +266,7 @@ class Cuspic extends Component {
     }
     componentDidMount() {
         clearInterval(this.timer);
+
         this.timer = setInterval(() => {
             if (this.state.tab < 2) {
                 this.setState({
