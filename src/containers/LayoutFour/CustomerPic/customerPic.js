@@ -266,6 +266,7 @@ class Cuspic extends Component {
     }
     componentDidMount() {
         clearInterval(this.timer);
+
         this.timer = setInterval(() => {
             if (this.state.tab < 2) {
                 this.setState({
@@ -274,7 +275,7 @@ class Cuspic extends Component {
             } else {
                 this.setState({tab: 0});
             }
-        }, 3000);
+        }, 4000);
     }
     radioChange = (e) => {
         clearInterval(this.timer);
@@ -368,8 +369,8 @@ class Cuspic extends Component {
                             <div className="cell-title">
                                 消费等级占比
                             </div>
-                            <div className="cell-content">
-                                <WDPan/>
+                            <div className="cell-content WDPan">
+                                <WDPan data={this.customerPic[this.state.tab].consume}/>
                             </div>
                         </div>
                         <div className="cell">

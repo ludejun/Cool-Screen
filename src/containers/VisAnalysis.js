@@ -1,10 +1,10 @@
-import React from 'react';
-import HeaderTitle from './Layout/HeaderTitle';
-import './VisAnalysis.less';
+import React from "react";
+import HeaderTitle from "./Layout/HeaderTitle";
+import "./VisAnalysis.less";
 
 const yArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const xArray = [];
-((xArray) => {
+(xArray => {
   for (let i = 1; i <= 30; i++) {
     xArray.push(i * 2);
   }
@@ -13,295 +13,314 @@ const circle = [
   {
     x: 350,
     y: 500,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 250,
     y: 300,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1650,
     y: 700,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1360,
     y: 400,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 200,
     y: 800,
-    color: '#108EE9',
+    color: "#108EE9",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 940,
     y: 650,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 850,
     y: 300,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1460,
     y: 500,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1600,
     y: 465,
-    color: '#108EE9',
+    color: "#108EE9",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1100,
     y: 870,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 980,
     y: 430,
-    color: '#09CDC6',
+    color: "#09CDC6",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 568,
     y: 698,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1000,
     y: 428,
-    color: '#09CDC6',
+    color: "#09CDC6",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 888,
     y: 666,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1548,
     y: 500,
-    color: '#09CDC6',
+    color: "#09CDC6",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1368,
     y: 777,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 543,
     y: 888,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 777,
     y: 398,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 356,
     y: 877,
-    color: '#108EE9',
+    color: "#108EE9",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1689,
     y: 654,
-    color: '#108EE9',
+    color: "#108EE9",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 300,
     y: 800,
-    color: '#09CDC6',
+    color: "#09CDC6",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 400,
     y: 700,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 500,
     y: 800,
-    color: '#09CDC6',
+    color: "#09CDC6",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 600,
     y: 600,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 460,
     y: 740,
-    color: '#09CDC6',
+    color: "#09CDC6",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 700,
     y: 800,
-    color: '#108EE9',
+    color: "#108EE9",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1300,
     y: 800,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1200,
     y: 700,
-    color: '#108EE9',
+    color: "#108EE9",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1400,
     y: 700,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1300,
     y: 600,
-    color: '#09CDC6',
+    color: "#09CDC6",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1000,
     y: 500,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1340,
     y: 790,
-    color: '#108EE9',
+    color: "#108EE9",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 940,
     y: 790,
-    color: '#F8E81C',
+    color: "#F8E81C",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 990,
     y: 700,
-    color: '#09CDC6',
+    color: "#09CDC6",
     r: Math.ceil(Math.random() * 10)
   },
   {
     x: 1040,
     y: 630,
-    color: '#09CDC6',
+    color: "#09CDC6",
     r: Math.ceil(Math.random() * 10)
+  },
+  {
+    x: 576,
+    y: 400,
+    color: "#063870",
+    r: 40,
+    filter: true
+  },
+  {
+    x: 1190,
+    y: 350,
+    color: "#09CDC6",
+    r: 44,
+    linear: true
   }
 ];
 const ballArray = [
   {
-    chinese: '程序员',
-    english: 'Programer',
+    chinese: "程序员",
+    english: "Programer",
     x: 5,
     y: 9.7,
     width: 50
   },
   {
-    chinese: '学生',
-    english: 'Student',
+    chinese: "学生",
+    english: "Student",
     x: 8,
     y: 5.7,
-    width: 40
+    width: 40,
+    linear: true
   },
   {
-    chinese: '金融业',
-    english: 'finance',
+    chinese: "金融业",
+    english: "finance",
     x: 13,
     y: 4.5,
     width: 37
   },
   {
-    chinese: '医生',
-    english: 'doctor',
+    chinese: "医生",
+    english: "doctor",
     x: 18,
     y: 4.3,
     width: 46
   },
   {
-    chinese: '设计师',
-    english: 'designer',
+    chinese: "设计师",
+    english: "designer",
     x: 23,
     y: 3.6,
-    width: 44
+    width: 44,
+    linear: true
   },
   {
-    chinese: '教师',
-    english: 'teacher',
+    chinese: "教师",
+    english: "teacher",
     x: 28,
     y: 4,
     width: 50
   },
   {
-    chinese: '司机',
-    english: 'driver',
+    chinese: "司机",
+    english: "driver",
     x: 33,
     y: 5.9,
-    width: 35
+    width: 35,
+    linear: true
   },
   {
-    chinese: '导游',
-    english: 'guide',
+    chinese: "导游",
+    english: "guide",
     x: 38,
     y: 2.2,
-    width: 55
+    width: 55,
+    linear: true
   },
   {
-    chinese: '保险销售',
-    english: 'insurance sales',
+    chinese: "保险销售",
+    english: "insurance sales",
     x: 43,
     y: 3.6,
     width: 55
   },
   {
-    chinese: '公共管理',
-    english: 'public administration',
+    chinese: "公共管理",
+    english: "public administration",
     x: 50,
     y: 3.6,
     width: 56
   },
   {
-    chinese: '百货',
-    english: 'department store',
+    chinese: "百货",
+    english: "department store",
     x: 53,
     y: 4.4,
-    width: 50
+    width: 50,
+    linear: true
   },
   {
-    chinese: '科研',
-    english: 'scientific research',
+    chinese: "科研",
+    english: "scientific research",
     x: 58,
     y: 4.9,
     width: 50
@@ -326,29 +345,124 @@ export default function VisAnalysis() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
+          <filter
+            x="-84.8%"
+            y="-82.9%"
+            width="269.5%"
+            height="269.5%"
+            filterUnits="objectBoundingBox"
+            id="filter-3"
+          >
+            <feOffset
+              dx="0"
+              dy="2"
+              in="SourceAlpha"
+              result="shadowOffsetOuter1"
+            />
+            <feGaussianBlur
+              stdDeviation="30"
+              in="shadowOffsetOuter1"
+              result="shadowBlurOuter1"
+            />
+            <feColorMatrix
+              values="0 0 0 0 0.062745098   0 0 0 0 0.577264493   0 0 0 0 0.91372549  0 0 0 0.74926404 0"
+              type="matrix"
+              in="shadowBlurOuter1"
+            />
+          </filter>
+          <filter
+            x="-99.3%"
+            y="-97.1%"
+            width="298.6%"
+            height="298.6%"
+            filterUnits="objectBoundingBox"
+            id="filter-4"
+          >
+            <feOffset
+              dx="0"
+              dy="2"
+              in="SourceAlpha"
+              result="shadowOffsetOuter1"
+            />
+            <feGaussianBlur
+              stdDeviation="30"
+              in="shadowOffsetOuter1"
+              result="shadowBlurOuter1"
+            />
+            <feColorMatrix
+              values="0 0 0 0 0.062745098   0 0 0 0 0.837414749   0 0 0 0 0.91372549  0 0 0 0.74926404 0"
+              type="matrix"
+              in="shadowBlurOuter1"
+            />
+          </filter>
+          <filter
+            x="-41.0%"
+            y="-79.9%"
+            width="181.9%"
+            height="259.8%"
+            filterUnits="objectBoundingBox"
+            id="filter-10"
+          >
+            <feOffset
+              dx="0"
+              dy="0"
+              in="SourceAlpha"
+              result="shadowOffsetOuter1"
+            />
+            <feGaussianBlur
+              stdDeviation="11"
+              in="shadowOffsetOuter1"
+              result="shadowBlurOuter1"
+            />
+            <feColorMatrix
+              values="0 0 0 0 0.0402571165   0 0 0 0 0.333389556   0 0 0 0 0.804634354  0 0 0 1 0"
+              type="matrix"
+              in="shadowBlurOuter1"
+            />
+          </filter>
           <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop
               offset="0%"
               style={{
-                stopColor: '#00C2F5',
+                stopColor: "#00C2F5",
                 stopOpacity: 1
               }}
             />
             <stop
               offset="100%"
               style={{
-                stopColor: '#06437A',
+                stopColor: "#06437A",
+                stopOpacity: 1
+              }}
+            />
+          </linearGradient>
+          <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop
+              offset="0%"
+              style={{
+                stopColor: "#00F2E8",
+                stopOpacity: 1
+              }}
+            />
+            <stop
+              offset="100%"
+              style={{
+                stopColor: "#065A65",
                 stopOpacity: 1
               }}
             />
           </linearGradient>
         </defs>
         <g stroke="none" strokeWidth="1" fill="none">
-          <g transform="translate(-100.000000, -193.000000)" stroke="#108EE9" strokeWidth="3">
+          <g
+            transform="translate(-100.000000, -193.000000)"
+            stroke="#108EE9"
+            strokeWidth="3"
+          >
             <g transform="translate(123,218)">
               {(() => {
                 const result = [];
-                const xL = '0';
+                const xL = "0";
                 for (let i = 0; i < 23; i++) {
                   result.push(
                     <line
@@ -420,15 +534,21 @@ export default function VisAnalysis() {
             </g>
             {circle.map((it, index) => {
               return (
-                <circle
-                  key={index}
-                  stroke="none"
-                  cx={it.x.toString()}
-                  cy={it.y.toString()}
-                  r={it.r.toString()}
-                  fill={it.color.toString()}
-                  opacity="0.3"
-                />
+                <g key={index}>
+                  <circle
+                    key={index}
+                    stroke="none"
+                    cx={it.x.toString()}
+                    cy={it.y.toString()}
+                    r={it.r.toString()}
+                    opacity={it.filter || it.linear ? "0.5" : "0.3"}
+                    fill={
+                      it.filter
+                        ? "url(#grad2)"
+                        : it.linear ? "url(#grad1)" : it.color.toString()
+                    }
+                  />
+                </g>
               );
             })}
             <path
@@ -469,7 +589,11 @@ export default function VisAnalysis() {
               opacity="1"
               d="M164,950 L114,950 L114,900"
             />
-            <polyline points="1730,890 210,890 210,260 " stroke="#00BFF2" strokeWidth="3" />{' '}
+            <polyline
+              points="1730,890 210,890 210,260 "
+              stroke="#00BFF2"
+              strokeWidth="3"
+            />{" "}
             {yArray.map((it, index, array) => {
               return (
                 <text
@@ -482,7 +606,11 @@ export default function VisAnalysis() {
                 </text>
               );
             })}
-            <text className="left-degree" x={(minX - 40).toString()} y={(minY - 10).toString()}>
+            <text
+              className="left-degree"
+              x={(minX - 40).toString()}
+              y={(minY - 10).toString()}
+            >
               次数
             </text>
             {xArray.map((it, index, array) => {
@@ -518,7 +646,7 @@ export default function VisAnalysis() {
                     cy={(maxY - it.y * yPer).toString()}
                     r={it.width.toString()}
                     stroke="none"
-                    fill="#063870"
+                    fill={it.linear ? "#065A65" : "#063870"}
                     opacity="0.5"
                     style={{ animationDelay: `${animationDelay}s` }}
                   />
@@ -528,7 +656,18 @@ export default function VisAnalysis() {
                     cy={(maxY - it.y * yPer).toString()}
                     r={it.width.toString()}
                     stroke="none"
-                    fill="url(#grad1)"
+                    filter={`${!it.linear
+                      ? "url(#filter-10)"
+                      : "url(#filter-4)"}`}
+                    fill={`url(#${it.linear ? "grad2" : "grad1"})`}
+                  />
+                  <circle
+                    className="circle-scale"
+                    cx={(it.x * xPer + minX - 70).toString()}
+                    cy={(maxY - it.y * yPer).toString()}
+                    r={it.width.toString()}
+                    stroke="none"
+                    fill={`url(#${it.linear ? "grad2" : "grad1"})`}
                   />
                   <text
                     x={(it.x * xPer + minX - 70).toString()}
