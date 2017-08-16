@@ -103,6 +103,24 @@ export default class Analysis extends Component {
         val: props.customerPic.age[45]
       }
     ];
+    this.rawFData = [
+      {
+        name: '90后',
+        val: props.customerPic.age[18]
+      }, {
+        name: '80后',
+        val: props.customerPic.age[24]
+      }, {
+        name: '70后',
+        val: props.customerPic.age[34]
+      }, {
+        name: '60后',
+        val: props.customerPic.age[44]
+      }, {
+        name: '50后',
+        val: props.customerPic.age[45]
+      }
+    ];
   }
   componentDidMount() {
     clearInterval(reRender);
@@ -137,11 +155,11 @@ export default class Analysis extends Component {
   assembleAge = () => {
     const option = {
       xAxis: {
-        data: this
-          .rawData
-          .map((item) => {
-            return item.name;
-          }),
+        data: this.props.fPic ? this.rawFData.map((item) => {
+          return item.name;
+        }) : this.rawData.map((item) => {
+          return item.name;
+        }),
         axisTick: {
           show: false
         },
@@ -200,7 +218,9 @@ export default class Analysis extends Component {
           name: 'hill',
           type: 'pictorialBar',
           symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
-          data: this
+          data: this.props.fPic ? this.rawFData.map((item) => {
+            return item.val;
+          }) : this
             .rawData
             .map((item) => {
               return item.val;

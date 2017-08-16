@@ -52,7 +52,7 @@ class customerPic extends Component {
     }
     render() {
         return <div className="container">
-            <HeaderTitle title="万达财富客群画像"/>
+            <HeaderTitle title="互联网金融客群画像"/>
             <div className="customer-svg-container">
                 <svg
                     className="svg"
@@ -332,6 +332,7 @@ class customerPic extends Component {
                         <div className="customer-pic">
                             <div className="angel"/>
                             <div className="customer-right"><WDAnalysis
+                                fPic={true}
                                 customerPic={{
                                     consume: {
                                         high: 27,
@@ -351,11 +352,11 @@ class customerPic extends Component {
                                         no: 62
                                     },
                                     age: {
-                                        18: 0.01,
-                                        24: 0.2,
-                                        34: 0.55,
-                                        44: 0.17,
-                                        45: 0.25
+                                        18: 0.439,
+                                        24: 0.258,
+                                        34: 0.205,
+                                        44: 0.068,
+                                        45: 0.03
                                     }
                                 }}/>
                             </div>
