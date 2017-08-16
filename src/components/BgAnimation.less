@@ -37,6 +37,7 @@
       bottom: 8px;
     }
     .circle {
+      transform: translate3d(0, 0, 0);
       flex: 1;
       margin: 3px;
       width: 9px;
@@ -87,14 +88,17 @@
         border-radius: 2px 2px 0 0;
       }
       .left {
+        transform: translate3d(0, 0, 0);
         animation: hanabi-left 2s linear infinite;
         background: linear-gradient(to right, #328dec, transparent);
       }
       .right {
+        transform: translate3d(0, 0, 0);
         animation: hanabi-right 2s linear infinite;
         background: linear-gradient(to left, #328dec, transparent);
       }
       .circle {
+        transform: translate3d(0, 0, 0);
         position: absolute;
         margin: 3px;
         width: 12px;
@@ -121,31 +125,35 @@
     }
     @keyframes hanabi-left {
       0% {
-        width: 0;
-        left: 50%;
+        transform: translateX(-5%) scaleX(0);
+        //  width: 0;
+        //left: 50%;
         opacity: 0;
       }
       10% {
         opacity: 1;
       }
       100% {
-        width: 50%;
-        left: 0;
+        transform: translateX(-50%) scaleX(1);
+        //width: 50%;
+        //left: 0;
         opacity: 1;
       }
     }
     @keyframes hanabi-right {
       0% {
-        width: 0;
-        left: 50%;
+        transform: translateX(5%) scaleX(0);
+        //  width: 0;
+        //  left: 50%;
         opacity: 0;
       }
       10% {
         opacity: 1;
       }
       100% {
-        width: 50%;
-        left: 50%;
+        transform: translateX(50%) scaleX(1);
+        //  width: 50%;
+        //  left: 50%;
         opacity: 1;
       }
     }
