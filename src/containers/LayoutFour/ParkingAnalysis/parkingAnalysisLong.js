@@ -705,7 +705,6 @@ class ParkingAnalysis extends Component {
   render() {
     const currentMap = arrayC.filter(item => item.native.name === this.state.city)[0];
     const currentCar = carModel.filter(item => item.city === this.state.city)[0];
-    console.log(currentMap,currentCar);
     return (
       <div className="parking-contariner-f">
         <div className="parking-left">
