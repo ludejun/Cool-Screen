@@ -14,12 +14,12 @@ const age = {
 const carList = [
     {
         itemIcon: 'icon-car',
-        percent: 0.56 * 100,
+        percent: 0.67 * 100,
         color: '#7096EE',
         name: '有车'
     }, {
         itemIcon: 'icon-walk',
-        percent: 0.44 * 100,
+        percent: 0.33 * 100,
         color: '#9DD455',
         name: '无车'
     }
@@ -27,12 +27,12 @@ const carList = [
 const marriage = [
     {
         itemIcon: 'icon-client-married',
-        percent: 0.34 * 100,
+        percent: 0.38 * 100,
         color: '#EA6C6B',
         name: '已婚'
     }, {
         itemIcon: 'icon-client-hearts',
-        percent: 0.54 * 100,
+        percent: 0.62 * 100,
         color: '#4C9DFF',
         name: '未婚'
     }
@@ -40,11 +40,11 @@ const marriage = [
 const genderList = [
     {
         itemImage: '/img/icon_male.png',
-        percent: 0.9 * 100,
+        percent: 0.37 * 100,
         color: '#4C9DFF'
     }, {
         itemImage: '/img/icon_female.png',
-        percent: 1 * 100,
+        percent: 0.63 * 100,
         color: '#EA6C6B'
     }
 ];
@@ -110,7 +110,7 @@ const option = {
             interval: 0,
             rotate: -45,
             textStyle: {
-                color: '#999999',
+                color: '#ffffff',
                 fontSize: 12
             }
         }
@@ -135,7 +135,7 @@ const option = {
               return value*100+'%'
             },
             textStyle: {
-                color: '#999',
+                color: '#ffffff',
                 fontSize: 12
             }
         }
@@ -193,6 +193,7 @@ class Cuspic extends Component {
                     low: 65
                 },
                 cars: {
+                    itemIcon: 'icon-car',
                     haveCar: 67,
                     noCar: 33
                 },
@@ -281,85 +282,6 @@ class Cuspic extends Component {
         clearInterval(this.timer);
         this.setState({tab: e.target.value});
     }
-    renderEchart = (customerPic) => {
-        const consumeOption = {
-            color: [
-                '#85b6b2', '#6d4f8d', '#cd5e7e', '#e38980', '#f7db88'
-            ],
-            tooltip: {
-                show: true,
-                formatter: '{a} <br/>{b}'
-            },
-            series: [
-                {
-                    name: '等级占比',
-                    type: 'pie',
-                    clockWise: false,
-                    radius: [
-                        30, 35
-                    ],
-                    itemStyle: dataStyle,
-                    hoverAnimation: false,
-                    data: [
-                        {
-                            value: customerPic.consume.low,
-                            name: '低端消费' + customerPic.consume.low + '%',
-                            label: {
-                                normal: {
-                                    textStyle: {
-                                        fontSize: 10
-                                    }
-                                }
-                            }
-                        }, {
-                            value: (100 - customerPic.consume.low),
-                            name: '低端消费' + customerPic.consume.low + '%',
-                            itemStyle: placeHolderStyle
-                        }
-                    ]
-                }, {
-                    name: '等级占比',
-                    type: 'pie',
-                    clockWise: false,
-                    radius: [
-                        20, 25
-                    ],
-                    itemStyle: dataStyle,
-                    hoverAnimation: false,
-                    data: [
-                        {
-                            value: (100 - customerPic.consume.middle),
-                            name: '中端消费' + customerPic.consume.middle + '%',
-                            itemStyle: placeHolderStyle
-                        }, {
-                            value: customerPic.consume.middle,
-                            name: '中端消费' + customerPic.consume.middle + '%'
-                        }
-                    ]
-                }, {
-                    name: '等级占比',
-                    type: 'pie',
-                    clockWise: false,
-                    hoverAnimation: false,
-                    radius: [
-                        10, 15
-                    ],
-                    itemStyle: dataStyle,
-                    data: [
-                        {
-                            value: customerPic.consume.high,
-                            name: '高端消费' + customerPic.consume.high + '%'
-                        }, {
-                            value: (100 - customerPic.consume.high),
-                            name: '高端消费' + customerPic.consume.high + '%',
-                            itemStyle: placeHolderStyle
-                        }
-                    ]
-                }
-            ]
-        };
-        return <Echarts className="circle-chart" option={consumeOption}/>;
-    };
     render() {
         return <div className="customer-container-f">
             <div className="left">

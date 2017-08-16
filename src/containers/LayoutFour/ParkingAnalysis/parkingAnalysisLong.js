@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Echarts from 'echarts-for-react';
+import HeaderTitle from '../../Layout/HeaderTitle';
 import './parkingAnalysisLong.less';
 
 const data = [
@@ -15,171 +16,6 @@ const geoCoordMap = {
 };
 
 const arrayC = [
-  {
-    native: {
-      name: "北京",
-      code: "010",
-      otherName: "京",
-      location: [116.4136103013, 39.9110666857],
-      percent: 0.85
-    },
-    nonlocal: {
-      distribution: [
-        {
-          province: "河北",
-          count: 202191,
-          percentage: 0.481532112
-        },
-        {
-          province: "天津",
-          count: 50705,
-          percentage: 0.12075753
-        },
-        {
-          province: "山东",
-          count: 25246,
-          percentage: 0.060125128
-        },
-        {
-          province: "辽宁",
-          count: 16085,
-          percentage: 0.038307561
-        },
-        {
-          province: "湖南",
-          count: 15077,
-          percentage: 0.035906938
-        },
-        {
-          province: "河南",
-          count: 13881,
-          percentage: 0.033058579
-        },
-        {
-          province: "内蒙古",
-          count: 11522,
-          percentage: 0.027440455
-        },
-        {
-          province: "山西",
-          count: 11129,
-          percentage: 0.026504498
-        },
-        {
-          province: "黑龙江",
-          count: 11066,
-          percentage: 0.026354459
-        },
-        {
-          province: "江苏",
-          count: 8820,
-          percentage: 0.021005451
-        },
-        {
-          province: "广东",
-          count: 7893,
-          percentage: 0.018797736
-        },
-        {
-          province: "海南",
-          count: 6466,
-          percentage: 0.015399235
-        },
-        {
-          province: "吉林",
-          count: 6282,
-          percentage: 0.014961026
-        },
-        {
-          province: "四川",
-          count: 5026,
-          percentage: 0.011969773
-        },
-        {
-          province: "安徽",
-          count: 4978,
-          percentage: 0.011855458
-        },
-        {
-          province: "湖北",
-          count: 4590,
-          percentage: 0.010931408
-        },
-        {
-          province: "浙江",
-          count: 3661,
-          percentage: 0.008718929
-        },
-        {
-          province: "江西",
-          count: 3140,
-          percentage: 0.007478131
-        },
-        {
-          province: "陕西",
-          count: 2863,
-          percentage: 0.006818436
-        },
-        {
-          province: "福建",
-          count: 1944,
-          percentage: 0.004629773
-        },
-        {
-          province: "上海",
-          count: 1687,
-          percentage: 0.004017709
-        },
-        {
-          province: "广西",
-          count: 1601,
-          percentage: 0.003812894
-        },
-        {
-          province: "重庆",
-          count: 1267,
-          percentage: 0.00301745
-        },
-        {
-          province: "甘肃",
-          count: 1090,
-          percentage: 0.002595912
-        },
-        {
-          province: "宁夏",
-          count: 503,
-          percentage: 0.00119793
-        },
-        {
-          province: "云南",
-          count: 409,
-          percentage: 0.000974062
-        },
-        {
-          province: "贵州",
-          count: 288,
-          percentage: 0.000685892
-        },
-        {
-          province: "新疆",
-          count: 267,
-          percentage: 0.000635879
-        },
-        {
-          province: "青海",
-          count: 211,
-          percentage: 0.000502511
-        },
-        {
-          province: "西藏",
-          count: 3,
-          percentage: 0.00000714471
-        }
-      ],
-      percent: 0.15
-    },
-    averageCost: 8.5
-  },
   {
     native: {
       name: "上海",
@@ -344,6 +180,171 @@ const arrayC = [
       percent: 0.4
     },
     averageCost: 11.38
+  },
+  {
+    native: {
+      name: "北京",
+      code: "010",
+      otherName: "京",
+      location: [116.4136103013, 39.9110666857],
+      percent: 0.85
+    },
+    nonlocal: {
+      distribution: [
+        {
+          province: "河北",
+          count: 202191,
+          percentage: 0.481532112
+        },
+        {
+          province: "天津",
+          count: 50705,
+          percentage: 0.12075753
+        },
+        {
+          province: "山东",
+          count: 25246,
+          percentage: 0.060125128
+        },
+        {
+          province: "辽宁",
+          count: 16085,
+          percentage: 0.038307561
+        },
+        {
+          province: "湖南",
+          count: 15077,
+          percentage: 0.035906938
+        },
+        {
+          province: "河南",
+          count: 13881,
+          percentage: 0.033058579
+        },
+        {
+          province: "内蒙古",
+          count: 11522,
+          percentage: 0.027440455
+        },
+        {
+          province: "山西",
+          count: 11129,
+          percentage: 0.026504498
+        },
+        {
+          province: "黑龙江",
+          count: 11066,
+          percentage: 0.026354459
+        },
+        {
+          province: "江苏",
+          count: 8820,
+          percentage: 0.021005451
+        },
+        {
+          province: "广东",
+          count: 7893,
+          percentage: 0.018797736
+        },
+        {
+          province: "海南",
+          count: 6466,
+          percentage: 0.015399235
+        },
+        {
+          province: "吉林",
+          count: 6282,
+          percentage: 0.014961026
+        },
+        {
+          province: "四川",
+          count: 5026,
+          percentage: 0.011969773
+        },
+        {
+          province: "安徽",
+          count: 4978,
+          percentage: 0.011855458
+        },
+        {
+          province: "湖北",
+          count: 4590,
+          percentage: 0.010931408
+        },
+        {
+          province: "浙江",
+          count: 3661,
+          percentage: 0.008718929
+        },
+        {
+          province: "江西",
+          count: 3140,
+          percentage: 0.007478131
+        },
+        {
+          province: "陕西",
+          count: 2863,
+          percentage: 0.006818436
+        },
+        {
+          province: "福建",
+          count: 1944,
+          percentage: 0.004629773
+        },
+        {
+          province: "上海",
+          count: 1687,
+          percentage: 0.004017709
+        },
+        {
+          province: "广西",
+          count: 1601,
+          percentage: 0.003812894
+        },
+        {
+          province: "重庆",
+          count: 1267,
+          percentage: 0.00301745
+        },
+        {
+          province: "甘肃",
+          count: 1090,
+          percentage: 0.002595912
+        },
+        {
+          province: "宁夏",
+          count: 503,
+          percentage: 0.00119793
+        },
+        {
+          province: "云南",
+          count: 409,
+          percentage: 0.000974062
+        },
+        {
+          province: "贵州",
+          count: 288,
+          percentage: 0.000685892
+        },
+        {
+          province: "新疆",
+          count: 267,
+          percentage: 0.000635879
+        },
+        {
+          province: "青海",
+          count: 211,
+          percentage: 0.000502511
+        },
+        {
+          province: "西藏",
+          count: 3,
+          percentage: 0.00000714471
+        }
+      ],
+      percent: 0.15
+    },
+    averageCost: 8.5
   },
   {
     native: {
@@ -683,6 +684,7 @@ class ParkingAnalysis extends Component {
 
   componentDidMount() {
     const svgDOM = this.refs.svgPath;
+    console.dir(svgDOM);
     let width = parseInt(window.getComputedStyle(svgDOM).width);
     let height = parseInt(window.getComputedStyle(svgDOM).height);
     this.setState({width, height});
@@ -694,7 +696,7 @@ class ParkingAnalysis extends Component {
         city: arrayC[this.state.cityNo].native.name,
         cityNo: this.state.cityNo === 2 ? 0 : this.state.cityNo + 1,
       });
-    }, 8000)
+    }, 6000)
   }
 
   componentWillUnmount() {
@@ -702,11 +704,12 @@ class ParkingAnalysis extends Component {
   }
 
   render() {
-    const currentMap = arrayC.filter(item => item.native.name === this.state.city);
-    const currentCar = carModel.filter(item => item.city === this.state.city);
+    const currentMap = arrayC.filter(item => item.native.name === this.state.city)[0];
+    const currentCar = carModel.filter(item => item.city === this.state.city)[0];
     console.log(currentMap,currentCar);
     return (
       <div className="parking-contariner-f">
+        <HeaderTitle className="parking-title" title="车牌分析：万达广场停车分析"/>
         <div className="parking-left">
           <div className="parking-layout">
             <div className="layout-front" />
@@ -1115,10 +1118,10 @@ class ParkingAnalysis extends Component {
                 <div className="second-content">
                   <ul>
                     {currentCar && currentCar.model.map((model, index) => (
-                      <li>
+                      <li key={index}>
                         <div className="content-number">
-                          <div className="level-img"><img src="/img/level1.png" /></div>
-                          <div className="car-img"><img src={`/img/car${index}.png`} /></div>
+                          <div className="level-img"><img src={`/img/level${index+1}.png`} /></div>
+                          <div className="car-img"><img src={`/img/car${index+1}.png`} /></div>
                           <div className="car-name">{model.type}</div>
                         </div>
                         <div className="content-lavish">
