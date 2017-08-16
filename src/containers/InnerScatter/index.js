@@ -13,12 +13,24 @@ const pillarData = [
     {
       name: '郑州惠济万达广场',
       value: [113.640612525, 34.8684219261, 13478],
-      percent: '100%'
+      percent: '100%',
+      label:{
+        normal:{
+          show:true,
+          offset:[0,20]
+        }
+      }
     },
     {
       name: '徐州铜山万达广场',
       value: [117.1902587966, 34.1960255201, 11544],
-      percent: '85.7%'
+      percent: '85.7%',
+      label:{
+        normal:{
+          show:true,
+          offset:[0,-10]
+        }
+      }
     },
     {
       name: '北京槐房万达广场',
@@ -55,7 +67,13 @@ const pillarData = [
     {
       name: '徐州',
       value: [117.188106623, 34.2715534311, 195691],
-      percent: '57.8%'
+      percent: '57.8%',
+      label:{
+        normal:{
+          show:true,
+          offset:[20,10]
+        }
+      }
     },
     {
       name: '烟台',
@@ -177,7 +195,7 @@ export default class InnerScatter extends Component {
               formatter: '{b}',
               textStyle: {
                 color: '#fff',
-                fontSize: 10 / 192 * getBaseFontSize()
+                fontSize: 25 / 192 * getBaseFontSize()
               }
             }
           },
@@ -201,7 +219,7 @@ export default class InnerScatter extends Component {
               formatter: '{b}',
               textStyle: {
                 color: '#fff',
-                fontSize: 10 / 192 * getBaseFontSize()
+                fontSize: 16 / 192 * getBaseFontSize()
               }
             }
           },
