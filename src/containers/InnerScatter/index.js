@@ -17,7 +17,7 @@ const pillarData = [
       label:{
         normal:{
           show:true,
-          offset:[0,20]
+          offset:[0,22]
         }
       }
     },
@@ -195,7 +195,7 @@ export default class InnerScatter extends Component {
               formatter: '{b}',
               textStyle: {
                 color: '#fff',
-                fontSize: 25 / 192 * getBaseFontSize()
+                fontSize: 34 / 192 * getBaseFontSize()
               }
             }
           },
