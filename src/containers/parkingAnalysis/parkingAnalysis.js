@@ -704,8 +704,8 @@ export default class ParkingAnalysis extends Component {
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                   >
                     <polyline
-                      points="0,0 100,100 700,100 800,0"
-                      strokeWidth="20"
+                      points="0,0 100,50 700,50 800,0"
+                      strokeWidth="10"
                       stroke="#16255D"
                       fill="#1C91FF"
                     />

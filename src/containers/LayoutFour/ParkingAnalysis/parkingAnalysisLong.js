@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Echarts from 'echarts-for-react';
+import HeaderTitle from '../../Layout/HeaderTitle';
 import './parkingAnalysisLong.less';
 
 const data = [
@@ -705,9 +706,9 @@ class ParkingAnalysis extends Component {
   render() {
     const currentMap = arrayC.filter(item => item.native.name === this.state.city)[0];
     const currentCar = carModel.filter(item => item.city === this.state.city)[0];
-    console.log(currentMap,currentCar);
     return (
       <div className="parking-contariner-f">
+        <HeaderTitle className="parking-title" title="车牌分析：万达广场停车分析"/>
         <div className="parking-left">
           <div className="parking-layout">
             <div className="layout-front" />

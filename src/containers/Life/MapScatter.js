@@ -39,6 +39,9 @@ const mapList = [
     name: 'guangzhou'
   }
 ];
+const data = [beijing, shanghai, guangzhou];
+const map = [beijingMap, shanghaiMap, guangzhouMap];
+
 const SkyAnimate = React.createClass({
   render() {
     return (
@@ -68,8 +71,8 @@ export default class MapScatter extends Component {
   }
 
   componentDidMount() {
-    clearInterval(this.timer);
-    this.timer = setInterval(() => {
+    clearTimeout(this.timer);
+    const circleFn = () => {
       if (this.state.index === 2) {
         this.setState({
           index: 0
@@ -79,16 +82,17 @@ export default class MapScatter extends Component {
           index: this.state.index + 1
         });
       }
-    }, 6000);
+
+      this.timer = setTimeout(circleFn, 6000);
+    };
+    circleFn();
   }
 
   componentWillUnMount() {
-    clearInterval(this.timer);
+    clearTimeout(this.timer);
   }
 
   render() {
-    const data = [beijing, shanghai, guangzhou];
-    const map = [beijingMap, shanghaiMap, guangzhouMap];
     return (
       <div>
         <HeaderTitle title="飞凡会员分布图" className="sum-title" />
