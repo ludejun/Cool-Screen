@@ -782,7 +782,6 @@ export default class ParkingAnalysis extends Component {
                                         d="M12.6955447,0.568781513 L131.685294,0.568781513 L139.035103,20.6588235 L131.685294,40.7488655 L12.6955447,40.7488655 L6.210419,20.6588235 L12.6955447,0.568781513 Z"
                                         id="Rectangle-6"
                                         stroke="#108EE9"
-                                        strokWidth="1.03"
                                       />
                                       <polygon
                                         className="flash-opacity"
@@ -935,7 +934,7 @@ export default class ParkingAnalysis extends Component {
                           </div>
                           <div className="arrow-content">
                             <div className="content-column">
-                              <div>{`${it.native.percent * 100}%`}</div>
+                              <div>{`${Math.round(it.native.percent * 100)}%`}</div>
                               <div>
                                 <img className="img-svg" src="/img/money.svg" />
                               </div>
@@ -944,7 +943,7 @@ export default class ParkingAnalysis extends Component {
                               </div>
                             </div>
                             <div className="content-column left">
-                              <div>{`${it.nonlocal.percent}%`}</div>
+                              <div>{`${Math.round(it.nonlocal.percent * 100)}%`}</div>
                               <div className="img-svg2">
                                 <img
                                   className="img-svg"

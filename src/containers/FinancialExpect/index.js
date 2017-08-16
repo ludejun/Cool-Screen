@@ -157,7 +157,7 @@ class Expect extends Component {
       } else {
         this.tab = 0;
       }
-      this.assembleData(this.keyArray[this.tab]);
+      this.assembleData(this.keyArray[this.tab-1]);
     }, 4000);
   }
 
@@ -962,7 +962,7 @@ class Expect extends Component {
                                           {this.reverseArray[index] && this.reverseArray[index].content}
                                         </tspan>
                                         <tspan fill={this.colorShift[index]}>
-                                          {`${(this.reverseArray[index]
+                                          {`${this.reverseArray[index] && (this.reverseArray[index]
                                             .percent * 100).toFixed(1)}%`}
                                         </tspan>
                                       </text>
@@ -992,7 +992,7 @@ class Expect extends Component {
                                           {this.reverseArray[index] && this.reverseArray[index].content}
                                         </tspan>
                                         <tspan fill={this.colorShift[index]}>
-                                          {`${(this.reverseArray[index]
+                                          {`${this.reverseArray[index] && (this.reverseArray[index]
                                             .percent * 100).toFixed(1)}%`}
                                         </tspan>
                                       </text>}
