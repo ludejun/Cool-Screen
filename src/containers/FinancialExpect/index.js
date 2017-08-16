@@ -29,12 +29,12 @@ class Expect extends Component {
             percent: 0.09
           },
           {
-            content: "有一点了解",
-            percent: 0.2
-          },
-          {
             content: "不了解",
             percent: 0.71
+          },
+          {
+            content: "有一点了解",
+            percent: 0.2
           }
         ]
       },
@@ -152,12 +152,12 @@ class Expect extends Component {
     this.setState({ leftWidth: width, leftHeight: height });
     this.assembleData("shortExpects");
     this.interval = setInterval(() => {
-      if (this.tab < this.keyArray.length) {
+      if (this.tab < this.keyArray.length - 1) {
         this.tab = this.tab + 1;
       } else {
         this.tab = 0;
       }
-      this.assembleData(this.keyArray[this.tab-1]);
+      this.assembleData(this.keyArray[this.tab]);
     }, 4000);
   }
 
@@ -848,15 +848,21 @@ class Expect extends Component {
                             })}
                           {this.offsetArray.length > 0 &&
                             this.offsetArray.map((it, index) => {
+                              let currentR = it;
+                              if (this.lengthArray[index + 1] && this.lengthArray[index + 1] > 340){
+                                currentR = currentR + 120;
+                              }else {
+                                currentR = currentR +40;
+                              }
                               const x =
                                 Math.cos(
-                                  (it + 40 + this.lengthArray[index]) / 110
+                                  (currentR + this.lengthArray[index]) / 110
                                 ) *
                                   110 +
                                 132;
                               const y =
                                 Math.sin(
-                                  (it + 40 + this.lengthArray[index]) / 110
+                                  (currentR + this.lengthArray[index]) / 110
                                 ) *
                                   110 +
                                 132;
@@ -867,6 +873,7 @@ class Expect extends Component {
                                 flagY * 60}`;
                               const xSpan = 220;
                               const ySpan = 100;
+                              const span = 40;
                               return (
                                 <g key={index + Math.random()}>
                                   <polyline
@@ -897,21 +904,21 @@ class Expect extends Component {
                                                                    flagX *
                                                                      xSpan},${y +
                                       flagY * 30 +
-                                      flagY * ySpan}
+                                      flagY * ySpan - flagY * span}
                                                                  ${x +
                                                                    flagX * 60 +
                                                                    flagX * 70 +
                                                                    flagX *
                                                                      10},${y +
                                       flagY * 30 +
-                                      flagY * ySpan}
+                                      flagY * ySpan - flagY * span}
                                                                  ${x +
                                                                    flagX * 60 +
                                                                    flagX *
                                                                      70},${y +
                                       flagY * 30 +
                                       flagY * ySpan -
-                                      flagY * 10}
+                                      flagY * 10 - flagY * span}
                                                                  ${x +
                                                                    flagX * 60 +
                                                                    flagX *
@@ -955,13 +962,13 @@ class Expect extends Component {
                                         y={
                                           flagY > 0
                                             ? y + flagY * 60 + 10
-                                            : y + flagY * 90
+                                            : y + flagY * 90 + 35
                                         }
                                       >
                                         <tspan>
                                           {this.reverseArray[index] && this.reverseArray[index].content}
                                         </tspan>
-                                        <tspan fill={this.colorShift[index]}>
+                                        <tspan className="text-tspan" fill={this.colorShift[index]}>
                                           {`${this.reverseArray[index] && (this.reverseArray[index]
                                             .percent * 100).toFixed(1)}%`}
                                         </tspan>
@@ -980,18 +987,17 @@ class Expect extends Component {
                                           flagY > 0
                                             ? y +
                                               flagY * 30 +
-                                              flagY * ySpan -
-                                              50
+                                              flagY * ySpan - 55
                                             : y +
                                               flagY * 30 +
                                               flagY * ySpan +
-                                              45
+                                              80
                                         }
                                       >
                                         <tspan>
                                           {this.reverseArray[index] && this.reverseArray[index].content}
                                         </tspan>
-                                        <tspan fill={this.colorShift[index]}>
+                                        <tspan className="text-tspan" fill={this.colorShift[index]}>
                                           {`${this.reverseArray[index] && (this.reverseArray[index]
                                             .percent * 100).toFixed(1)}%`}
                                         </tspan>
