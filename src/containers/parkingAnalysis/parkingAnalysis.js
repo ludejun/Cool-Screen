@@ -531,7 +531,7 @@ const arrayC = [
           percentage: 0.000480344
         }
       ],
-      percent: 0.18
+      percent: 0.08
     },
     averageCost: 8.56
   }
