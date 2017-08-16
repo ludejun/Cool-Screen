@@ -110,7 +110,7 @@ const option = {
             interval: 0,
             rotate: -45,
             textStyle: {
-                color: '#999999',
+                color: '#ffffff',
                 fontSize: 12
             }
         }
@@ -135,7 +135,7 @@ const option = {
               return value*100+'%'
             },
             textStyle: {
-                color: '#999',
+                color: '#ffffff',
                 fontSize: 12
             }
         }
@@ -267,15 +267,15 @@ class Cuspic extends Component {
     componentDidMount() {
         clearInterval(this.timer);
 
-        this.timer = setInterval(() => {
-            if (this.state.tab < 2) {
-                this.setState({
-                    tab: this.state.tab + 1
-                });
-            } else {
-                this.setState({tab: 0});
-            }
-        }, 4000);
+        // this.timer = setInterval(() => {
+        //     if (this.state.tab < 2) {
+        //         this.setState({
+        //             tab: this.state.tab + 1
+        //         });
+        //     } else {
+        //         this.setState({tab: 0});
+        //     }
+        // }, 4000);
     }
     radioChange = (e) => {
         clearInterval(this.timer);
