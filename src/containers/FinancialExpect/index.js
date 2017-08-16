@@ -13,46 +13,50 @@ class Expect extends Component {
       tagName: null
     };
     this.reverseArray = [];
-    this.color = ["#1772F3", "#E9C969", "#E96A69", "#80EBFD"];
-    this.colorShift = ["#E9C969", "#E96A69", "#80EBFD", "#1772F3"];
-    this.filter = ["filter-10", "filter-14", "filter-12", "filter-16"];
+    this.color = ["#1772F3", "#E9C969", "#E96A69", "#80EBFD", "#fff"];
+    this.colorShift = ["#E9C969", "#E96A69", "#80EBFD", "#fff", "#1772F3"];
+    this.filter = ["filter-10", "filter-14", "filter-12", "filter-16", ""];
     this.offset = [0];
     this.lengthArray = [];
     this.offsetArray = [];
     this.contentArray = {
       riskAttitude: {
-        title: "风险态度",
-        titleContent: "如何描述客户投资态度？",
+        title: "风险认知",
+        titleContent: "客户对自己的风险承受能力是否了解？",
         expects: [
           {
-            content: "平衡型",
-            percent: 0.44
+            content: "非常了解",
+            percent: 0.09
           },
           {
-            content: "保守型",
-            percent: 0.44
+            content: "有一点了解",
+            percent: 0.2
           },
           {
-            content: "积极型",
-            percent: 0.12
+            content: "不了解",
+            percent: 0.71
           }
         ]
       },
       shortExpects: {
-        title: "短期期望",
-        titleContent: "客户对短期产品的投资期望是什么？",
+        title: "理财态度",
+        titleContent: "客户认为理财重要性如何？",
         expects: [
           {
-            content: "保本",
-            percent: 0.37
+            content: "必不可少",
+            percent: 0.5
           },
           {
-            content: "稳增",
-            percent: 0.27
+            content: "比较重要",
+            percent: 0.23
           },
           {
-            content: "高收益",
-            percent: 0.36
+            content: "可有可无",
+            percent: 0.18
+          },
+          {
+            content: "不需要理财",
+            percent: 0.09
           }
         ]
       },
@@ -75,38 +79,46 @@ class Expect extends Component {
         ]
       },
       experiencePre: {
-        title: "配置偏好",
-        titleContent: "客户倾向投资哪类产品？",
+        title: "理财渠道",
+        titleContent: "客户通过哪些渠道进行投资理财？",
         expects: [
           {
-            content: "均衡配置",
-            percent: 0.52
+            content: "移动端",
+            percent: 0.42
           },
           {
-            content: "偏股票基金",
-            percent: 0.26
-          },
-          {
-            content: "偏国债存款",
+            content: "PC端",
             percent: 0.22
+          },
+          {
+            content: "线下网点",
+            percent: 0.36
           }
         ]
       },
       investAge: {
-        title: "投资经验",
-        titleContent: "客户投资高风险产品的经验如何？",
+        title: "理财风格",
+        titleContent: "客户投资理财风格有哪些类型？",
         expects: [
           {
-            content: "成长期",
-            percent: 0.44
+            content: "盲目型",
+            percent: 0.272
           },
           {
-            content: "新手",
-            percent: 0.19
+            content: "进取型",
+            percent: 0.203
           },
           {
-            content: "有经验",
-            percent: 0.37
+            content: "稳健型",
+            percent: 0.336
+          },
+          {
+            content: "成长型",
+            percent: 0.101
+          },
+          {
+            content: "保守型",
+            percent: 0.088
           }
         ]
       },
@@ -181,7 +193,7 @@ class Expect extends Component {
   render() {
     return (
       <div>
-        <HeaderTitle title="财富客群投资偏好" />
+        <HeaderTitle title="互联网金融行业客群投资行为分析" />
         <div className="financial-contianer-j">
           {this.state.content &&
             this.state.content.expects.map((it, index) => {
@@ -947,11 +959,11 @@ class Expect extends Component {
                                         }
                                       >
                                         <tspan>
-                                          {this.reverseArray[index].content}
+                                          {this.reverseArray[index] && this.reverseArray[index].content}
                                         </tspan>
                                         <tspan fill={this.colorShift[index]}>
-                                          {`${this.reverseArray[index].percent *
-                                            100}%`}
+                                          {`${(this.reverseArray[index]
+                                            .percent * 100).toFixed(1)}%`}
                                         </tspan>
                                       </text>
                                     : <text
@@ -977,11 +989,11 @@ class Expect extends Component {
                                         }
                                       >
                                         <tspan>
-                                          {this.reverseArray[index].content}
+                                          {this.reverseArray[index] && this.reverseArray[index].content}
                                         </tspan>
                                         <tspan fill={this.colorShift[index]}>
-                                          {`${this.reverseArray[index].percent *
-                                            100}%`}
+                                          {`${(this.reverseArray[index]
+                                            .percent * 100).toFixed(1)}%`}
                                         </tspan>
                                       </text>}
                                   {/* {flagX > 0
@@ -1604,7 +1616,7 @@ class Expect extends Component {
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
-                          投资年龄
+                          理财风格
                         </tspan>
                       </text>
                       <g
@@ -1750,7 +1762,7 @@ class Expect extends Component {
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
-                          风险态度
+                          风险认知
                         </tspan>
                       </text>
                       <g
@@ -1811,7 +1823,7 @@ class Expect extends Component {
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
-                          经验偏好
+                          理财渠道
                         </tspan>
                       </text>
                       <g
@@ -1864,7 +1876,7 @@ class Expect extends Component {
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
-                          短期期望
+                          理财态度
                         </tspan>
                       </text>
                       <g
@@ -1915,7 +1927,7 @@ class Expect extends Component {
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
-                          投资目的
+                          投资期望
                         </tspan>
                       </text>
                       <g
