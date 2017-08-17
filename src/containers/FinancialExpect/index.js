@@ -13,9 +13,9 @@ class Expect extends Component {
       tagName: null
     };
     this.reverseArray = [];
-    this.color = ["#1772F3", "#E9C969", "#E96A69", "#80EBFD", "#fff"];
-    this.colorShift = ["#E9C969", "#E96A69", "#80EBFD", "#fff", "#1772F3"];
-    this.filter = ["filter-10", "filter-14", "filter-12", "filter-16", ""];
+    this.color = ["#1772F3", "#E9C969", "#E96A69", "#80EBFD", "#00F2E8"];
+    this.colorShift = ["#E9C969", "#E96A69", "#80EBFD", "#00F2E8", "#1772F3"];
+    this.filter = ["filter-10", "filter-14", "filter-12", "filter-16", "filter-4"];
     this.offset = [0];
     this.lengthArray = [];
     this.offsetArray = [];
@@ -228,6 +228,31 @@ class Expect extends Component {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
                 <defs>
+                <filter
+                  x="-99.3%"
+                  y="-97.1%"
+                  width="298.6%"
+                  height="298.6%"
+                  filterUnits="objectBoundingBox"
+                  id="filter-4"
+                >
+                  <feOffset
+                    dx="0"
+                    dy="2"
+                    in="SourceAlpha"
+                    result="shadowOffsetOuter1"
+                  />
+                  <feGaussianBlur
+                    stdDeviation="30"
+                    in="shadowOffsetOuter1"
+                    result="shadowBlurOuter1"
+                  />
+                  <feColorMatrix
+                    values="0 0 0 0 0.062745098   0 0 0 0 0.837414749   0 0 0 0 0.91372549  0 0 0 0.74926404 0"
+                    type="matrix"
+                    in="shadowBlurOuter1"
+                  />
+                 </filter>
                   <rect
                     id="path-1"
                     x="20"
