@@ -98,17 +98,17 @@ export default function WDPie(props) {
                 );
               })}
           </g>
-          <g transform="translate(286,116)">
-            <circle cx="4" cy="4" r="6" fill="#E96A69" />
-            <text x="20" y="7" fontSize="10px" fill="#fff">
+          <g transform="translate(270,116)">
+            <circle cx="0" cy="4" r="6" fill="#E96A69" />
+            <text x="14" y="7" fontSize="14px" fill="#fff">
               低端消费
             </text>
-            <circle cx="4" cy="23" r="6" fill="#80EBFD" />
-            <text x="20" y="26" fontSize="10px" fill="#fff">
+            <circle cx="0" cy="23" r="6" fill="#80EBFD" />
+            <text x="14" y="26" fontSize="14px" fill="#fff">
               中端消费
             </text>
-            <circle cx="4" cy="44" r="6" fill="#2592EE" />
-            <text x="20" y="47" fontSize="10px" fill="#fff">
+            <circle cx="0" cy="44" r="6" fill="#2592EE" />
+            <text x="14" y="47" fontSize="14px" fill="#fff">
               高端消费
             </text>
           </g>

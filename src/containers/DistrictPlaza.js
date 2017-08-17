@@ -33,7 +33,7 @@ export default class DistrictPlaza extends Component {
             <i className="iconfont icon-plaza-arrow line-icon"/>日均客流：121,596人
           </div>
           <div className="info-line">
-            <i className="iconfont icon-plaza-map line-icon"/>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：杨浦区邯郸路600号
+            <i className="iconfont icon-plaza-map line-icon"/>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：<span className="info-line-address">杨浦区邯郸路600号</span>
           </div>
           <div className="hr"/>
           <div className="flex-row">

@@ -594,7 +594,7 @@ export default function VisAnalysis() {
               stroke="#00BFF2"
               strokeWidth="3"
             />{" "}
-            {yArray.map((it, index, array) => {
+            {/* {yArray.map((it, index, array) => {
               return (
                 <text
                   className="left-degree"
@@ -605,7 +605,7 @@ export default function VisAnalysis() {
                   {it}
                 </text>
               );
-            })}
+            })} */}
             <text
               className="left-degree"
               x={(minX - 40).toString()}
@@ -613,7 +613,7 @@ export default function VisAnalysis() {
             >
               次数
             </text>
-            {xArray.map((it, index, array) => {
+            {/* {xArray.map((it, index, array) => {
               return (
                 <text
                   className="left-degree"
@@ -624,7 +624,7 @@ export default function VisAnalysis() {
                   {it}
                 </text>
               );
-            })}
+            })} */}
             <text
               className="left-degree"
               x={(maxX - 18 + 50).toString()}
