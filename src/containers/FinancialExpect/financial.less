@@ -289,89 +289,72 @@
     }
     .bottom-content {
       flex: 1;
-      padding: 20px;
+      padding: 10px;
       position: relative;
-      .state-play {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-        perspective: 1000;
-        .layer-svg {
+      text-align: center;
+      .bottom-content-wrap{
+        width: 338px;
+        height: 338px;
+        text-align: center;
+        position: relative;
+        margin-left: 200px;
+        .img1{
           position: absolute;
-          top: 10%;
-          left: 30%;
-          height:90%;
-          .q-animation {
-            transform: translate(102px, 0px);
-            animation: up-and-down 2s linear infinite;
-            animation-direction: alternate-reverse;
+          left: 0;
+          bottom: 0;
+          width: 338px;
+          height: 338px;
+          background: url("/img/expect-rotate-02.png");
+          background-size: 338px 338px;
+          backface-visibility:hidden;
+          animation: rotateimg1 10s linear infinite;
+        }
+        .img2{
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 338px;
+          height: 338px;
+          background: url("/img/expect-rotate-01.png");
+          background-size: 338px 338px;
+          transform:rotateY(180deg);
+          backface-visibility:hidden;
+          animation: rotateimg2 10s linear infinite;
+        }
+
+        @keyframes rotateimg1{
+
+          45%{
+            transform:rotateY(0deg)
           }
-          @keyframes up-and-down {
-            from {
-              transform: translate(102px, 0px);
-            }
-            to {
-              transform: translate(102px, -10px);
-            }
+          50%{
+            transform:rotateY(180deg)
           }
-          .a-animation {
-            transform: translate(276px, 5px);
-            animation: up-and-down-a 2s linear infinite;
-            animation-direction: alternate-reverse;
+          95%{
+            transform:rotateY(180deg)
           }
-          @keyframes up-and-down-a {
-            from {
-              transform: translate(276px, -30px);
-            }
-            to {
-              transform: translate(276px, -20px);
-            }
-          }
-          .line-move {
-            animation: to-line-move 2s linear infinite;
-            animation-direction: alternate-reverse;
+          100%{
+            transform:rotateY(0deg)
           }
         }
-        .layer-1 {
-          position: absolute;
-          top: 7%;
-          left: 30%;
-          width: 300px;
-          height: 300px;
-          border: 1px dotted #2440db;
-          background-color: rgba(8, 38, 92, 0.4);
-          transform: rotateX(55deg) rotate(45deg);
-        }
-        .layer-2 {
-          position: absolute;
-          top: 50%;
-          left: 45%;
-          width: 200px;
-          height: 200px;
-          border: 1px solid #2137ba;
-          transform: rotateX(58deg) rotate(45deg);
-          animation: rect-anima-div 6s linear infinite;
-          //animation-direction: alternate-reverse;
-        }
-        .layer-3 {
-          position: absolute;
-          top: 48%;
-          left: 45%;
-          width: 200px;
-          height: 200px;
-          border: 1px solid #2137ba;
-          transform: rotateX(58deg) rotate(45deg);
-          animation: rect-anima-div 6s linear infinite;
-          //animation-direction: alternate-reverse;
-        }
-        @keyframes rect-anima-div {
-          from {
-            transform: rotateX(58deg) rotate(45deg);
+
+        @keyframes rotateimg2{
+
+          45%{
+            transform:rotateY(180deg)
           }
-          to {
-            transform: rotateX(58deg) rotate(405deg);
+          50%{
+            transform:rotateY(360deg)
           }
+          95%{
+            transform:rotateY(360deg)
+          }
+          100%{
+            transform:rotateY(180deg)
+          }
+        }
+        p{
+          font-size: 28px;
         }
       }
     }
