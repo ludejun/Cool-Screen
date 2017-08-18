@@ -1620,8 +1620,7 @@ class Expect extends Component {
                       x="0"
                       y="0"
                       width="570"
-                      height="395"
-                      stroke="#0A7AEE"
+                      height="390"
                     />
                     <g
                       onClick={this.change("investAge")}
