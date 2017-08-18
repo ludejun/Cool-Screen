@@ -1412,6 +1412,7 @@ class Expect extends Component {
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
+                style={{transform: 'scaleX(1.2) scaleY(1.1) translateX(-218px) translateY(-107px)'}}
               >
                 <defs>
                   <rect id="jin-path-1" x="0" y="0" width="572" height="392"/>
@@ -1584,7 +1585,7 @@ class Expect extends Component {
                   fill="none"
                   fillRule="evenodd"
                 >
-                  <g transform="translate(0,44) scale(1.45,1.21)">
+                  <g transform="translate(100,32) scale(1.2)">
                     <polyline
                       id="jin-path-935"
                       stroke="#2E5DDD"
