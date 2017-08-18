@@ -19,6 +19,20 @@
     left: 0;
     bottom: 0;
   }
+  .red-point{
+    position: absolute;
+    left: 350px;
+    bottom: 310px;
+    animation: red-point 2s infinite;
+  }
+  @keyframes red-point {
+    0%{
+      transform: rotateY(0deg);
+    }
+    100%{
+      transform: rotateY(360deg);
+    }
+  }
   .side-map {
     width: 350px;
     height: 440px;
@@ -67,10 +81,10 @@
     animation: UptoDown 2s ease-in-out infinite alternate;
     @keyframes UptoDown {
       0% {
-        transform: translateY(-5px);
+        transform: translateY(-7px);
       }
       100% {
-        transform: translateY(5px);
+        transform: translateY(7px);
       }
     }
     .plaza-title {
@@ -111,7 +125,7 @@
       font-size: 12px;
       width: 160px;
       .score-num {
-        font-size: 48px;
+        font-size: 52px;
         margin: 10px 0;
       }
     }
