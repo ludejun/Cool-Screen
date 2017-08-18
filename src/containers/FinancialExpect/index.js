@@ -2078,7 +2078,7 @@ class Expect extends Component {
                 <div className="img2"></div>
               </div>
               <p className="financial-ad-text text1">扫码下载万达财富APP</p>
-              <p className="financial-ad-text text2">注册最高可得<span style={{color: 'yellow', fontWeight: '400'}}>88888</span>体验金</p>
+              <p className="financial-ad-text text2">注册最高可得<span style={{color: 'yellow', fontWeight: '400'}}>88888</span>元体验金</p>
             </div>
           </div>
         </div>
