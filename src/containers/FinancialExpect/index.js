@@ -1585,7 +1585,7 @@ class Expect extends Component {
                   fill="none"
                   fillRule="evenodd"
                 >
-                  <g transform="translate(100,32) scale(1.2)">
+                  <g transform="translate(95,32) scale(1.2,1.14)">
                     <polyline
                       id="jin-path-935"
                       stroke="#2E5DDD"
