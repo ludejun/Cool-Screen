@@ -1135,7 +1135,7 @@ class ParkingAnalysis extends Component {
               </div>
             </div>
           </div>
-          <div className="right-layout2 right-layout">
+          <div className="right-layout3 right-layout">
             <svg
               className="svg-lay"
               viewBox="0 0 704 172"
@@ -1375,7 +1375,7 @@ class ParkingAnalysis extends Component {
               </div>
             </div>
           </div>
-          <div className="right-layout3 right-layout">
+          <div className="right-layout2 right-layout">
             <svg
               className="svg-lay"
               viewBox="0 0 704 172"
