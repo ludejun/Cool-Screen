@@ -1643,7 +1643,7 @@ class Expect extends Component {
                         id="投资年龄"
                         fontFamily="PingFangSC-Semibold, PingFang SC"
                         fontSize="30"
-                        fontWeight="400"
+                        fontWeight="300"
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
@@ -1789,7 +1789,7 @@ class Expect extends Component {
                         id="风险态度"
                         fontFamily="PingFangSC-Semibold, PingFang SC"
                         fontSize="30"
-                        fontWeight="400"
+                        fontWeight="300"
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
@@ -1850,7 +1850,7 @@ class Expect extends Component {
                         id="经验偏好"
                         fontFamily="PingFangSC-Semibold, PingFang SC"
                         fontSize="30"
-                        fontWeight="400"
+                        fontWeight="300"
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
@@ -1903,7 +1903,7 @@ class Expect extends Component {
                         id="shortExpect"
                         fontFamily="PingFangSC-Semibold, PingFang SC"
                         fontSize="30"
-                        fontWeight="400"
+                        fontWeight="300"
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
@@ -1954,7 +1954,7 @@ class Expect extends Component {
                         id="投资目的"
                         fontFamily="PingFangSC-Semibold, PingFang SC"
                         fontSize="30"
-                        fontWeight="400"
+                        fontWeight="300"
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
@@ -2029,7 +2029,7 @@ class Expect extends Component {
                         id="目标期限"
                         fontFamily="PingFangSC-Semibold, PingFang SC"
                         fontSize="30"
-                        fontWeight="400"
+                        fontWeight="300"
                         fill="#275BEB"
                       >
                         <tspan x="96" y="51">
