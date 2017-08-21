@@ -52,7 +52,7 @@ export default class DistrictPlaza extends Component {
               className="score-radar"
             />
             <div className="score-div flex-col">
-              <p>项目评级</p>
+              <p className="radar-title">项目评级</p>
               <p className="score-num">91</p>
               <Rate disabled value={4.5} allowHalf/>
             </div>
