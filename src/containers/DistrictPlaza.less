@@ -21,8 +21,8 @@
   }
   .red-point{
     position: absolute;
-    left: 350px;
-    bottom: 310px;
+    left: 334px;
+    bottom: 315px;
     animation: red-point 2s infinite;
   }
   @keyframes red-point {
@@ -118,12 +118,24 @@
       height: 213px !important;
       flex: 1;
       vertical-align: middle;
+      //animation: radar-scale 2s infinite alternate-reverse;
+    }
+    @keyframes radar-scale {
+      0%{
+        transform: scale(1);
+      }
+      100%{
+        transform: scale(.67);
+      }
     }
     .score-div {
       justify-content: center;
       text-align: center;
       font-size: 12px;
       width: 160px;
+      .radar-title{
+        font-size: 16px;
+      }
       .score-num {
         font-size: 52px;
         margin: 10px 0;
