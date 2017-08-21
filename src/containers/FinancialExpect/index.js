@@ -1585,7 +1585,7 @@ class Expect extends Component {
                   fill="none"
                   fillRule="evenodd"
                 >
-                  <g transform="translate(100,32) scale(1.2)">
+                  <g transform="translate(95,32) scale(1.2,1.14)">
                     <polyline
                       id="jin-path-935"
                       stroke="#2E5DDD"
@@ -1620,8 +1620,7 @@ class Expect extends Component {
                       x="0"
                       y="0"
                       width="570"
-                      height="395"
-                      stroke="#0A7AEE"
+                      height="390"
                     />
                     <g
                       onClick={this.change("investAge")}
@@ -2079,7 +2078,7 @@ class Expect extends Component {
                 <div className="img2"></div>
               </div>
               <p className="financial-ad-text text1">扫码下载万达财富APP</p>
-              <p className="financial-ad-text text2">注册最高可得<span style={{color: 'yellow', fontWeight: '400'}}>88888</span>体验金</p>
+              <p className="financial-ad-text text2">注册最高可得<span style={{color: 'yellow', fontWeight: '400'}}>88888</span>元体验金</p>
             </div>
           </div>
         </div>

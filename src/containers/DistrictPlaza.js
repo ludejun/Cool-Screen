@@ -12,6 +12,7 @@ export default class DistrictPlaza extends Component {
         <div className="left-wrap">
           <img className="side-map" src="/img/sideMap.svg" />
           <img className="main-map" src="/img/main-map.png" />
+          <img className="red-point" src="/img/point.png" />
           <img className="line-a" src="/img/lineA.svg" />
           <img className="plaza-img" src="img/wd-build.png"/>
           <img className="line-c" src="img/lineC.svg"/>

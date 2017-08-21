@@ -6,11 +6,11 @@ export default class WDRadar extends Component {
     super(props);
   }
 
+
   assembleBrand() {
     const { opt } = this.props;
     const indicator = [];
     const value = [];
-
     !!opt.values.length &&
       opt.values.forEach((val) => {
         indicator.push({ text: val.name, max: opt.max });
@@ -40,7 +40,9 @@ export default class WDRadar extends Component {
             color: '#09CDC6'
           }
         },
-        data: [{ value }]
+        data: [{ value }],
+        animation:true,
+        animationDuration:3000
       }
     ];
 
