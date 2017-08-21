@@ -299,7 +299,7 @@ export default class Home extends Component {
             <img src="/img/star4.png" className="home-background-star star4" />
           </div>
         </div>
-        <p className="home-chart-title">万达全球版图</p>
+        <p className="home-chart-title">POWER BY 网科大数据中心</p>
       </div>
     );
   }

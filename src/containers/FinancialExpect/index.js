@@ -193,7 +193,7 @@ class Expect extends Component {
   render() {
     return (
       <div>
-        <HeaderTitle title="互联网金融行业客群投资行为分析"/>
+        <HeaderTitle title="万达财富：互联网金融客群理财行为洞察"/>
         <div className="financial-contianer-j">
           {this.state.content &&
           this.state.content.expects.map((it, index) => {
