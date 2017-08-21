@@ -13,12 +13,24 @@ const pillarData = [
     {
       name: '郑州惠济万达广场',
       value: [113.640612525, 34.8684219261, 13478],
-      percent: '90%'
+      percent: '90%',
+      label:{
+        normal:{
+          show:true,
+          offset:[0,5]
+        }
+      }
     },
     {
       name: '徐州铜山万达广场',
       value: [117.1902587966, 34.1960255201, 11544],
-      percent: '75.7%'
+      percent: '75.7%',
+      label:{
+        normal:{
+          show:true,
+          offset:[5,20]
+        }
+      }
     },
     {
       name: '北京槐房万达广场',
@@ -165,7 +177,7 @@ export default class InnerScatterFour extends Component {
               formatter: '{b}',
               textStyle: {
                 color: '#fff',
-                fontSize: 8 / 192 * getBaseFontSize()
+                fontSize: 10 / 192 * getBaseFontSize()
               }
             }
           },
