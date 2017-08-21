@@ -46,12 +46,12 @@ export default class LifeOSUV extends Component {
         in: '33% 27% 22% 20.5% 22.5% 46%', // change less anime OsuvDashToZeroInIos
         offset: '-37%',
         tags: [
-          { title: '广场', percent: 23, line: 'M130,3 L50,80 L0,80' },
-          { title: '优惠券', percent: 20, line: 'M150,130 L20,0 L0,0' },
-          { title: '电影', percent: 17, line: 'M3,75 L80,0 L145,0' },
-          { title: '闪购', percent: 14, line: 'L167,3' },
-          { title: '门店', percent: 12, line: 'L70,70 L118,70' },
-          { title: '其它', percent: 14, line: 'L120,120 L154,120' }
+          {title: '广场', percent: 23, line: 'M130,3 L50,80 L0,80'},
+          {title: '优惠券', percent: 20, line: 'M150,130 L20,0 L0,0'},
+          {title: '电影', percent: 17, line: 'M3,75 L80,0 L145,0'},
+          {title: '闪购', percent: 14, line: 'L167,3'},
+          {title: '门店', percent: 12, line: 'L70,70 L118,70'},
+          {title: '其它', percent: 14, line: 'L120,120 L154,120'}
         ]
       },
       android: {
@@ -59,19 +59,19 @@ export default class LifeOSUV extends Component {
         in: '32% 30% 17% 14.5% 22.5% 51%', // change less anime OsuvDashToZeroInAndroid
         offset: '-46%',
         tags: [
-          { title: '广场', percent: 29, line: 'L100,100 L145,100' },
-          { title: '优惠券', percent: 19, line: 'M170,3 L50,70 L0,70' },
-          { title: '电影', percent: 9, line: 'M120,3  L0,3' },
-          { title: '闪购', percent: 19, line: 'M150,100 L50,0 L0,0' },
-          { title: '门店', percent: 11, line: 'M3,110 L80,0 L127,0' },
-          { title: '其它', percent: 13, line: 'M3,110 L90,0 L134,0' }
+          {title: '广场', percent: 29, line: 'L100,100 L145,100'},
+          {title: '优惠券', percent: 19, line: 'M170,3 L50,70 L0,70'},
+          {title: '电影', percent: 9, line: 'M120,3  L0,3'},
+          {title: '闪购', percent: 19, line: 'M150,100 L50,0 L0,0'},
+          {title: '门店', percent: 11, line: 'M3,110 L80,0 L127,0'},
+          {title: '其它', percent: 13, line: 'M3,110 L90,0 L134,0'}
         ]
       }
     };
   }
 
   render() {
-    const { highlightTag } = this.state;
+    const {highlightTag} = this.state;
     return (
       <div className="life-osuv flex-row flex-center dark-bg">
         <HeaderTitle title="飞凡移动生活服务" />
@@ -80,7 +80,7 @@ export default class LifeOSUV extends Component {
             <LifeOSUVDotBg className="dot-bg" />
             <LifeOSUVRoundBoard
               className="round-board"
-              outerDashArray={{ strokeDasharray: this.list[v].out }}
+              outerDashArray={{strokeDasharray: this.list[v].out}}
               innerDashArray={{
                 strokeDasharray: this.list[v].in,
                 strokeDashoffset: this.list[v].offset
@@ -89,7 +89,7 @@ export default class LifeOSUV extends Component {
             {v === 'ios'
               ? <AppleLogo className="center-logo" />
               : <AndroidLogo className="center-logo" />}
-            <WDButtonSvg className="title-button" title={v} />
+            <WDButtonSvg className="title-button" title={v === 'ios' ? 'iOS' : 'Android'} />
             {this.list[v].tags.map((t, i) =>
               <div key={i}>
                 <LifeOSUVTagLine
