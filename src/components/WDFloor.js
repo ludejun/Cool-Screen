@@ -3,7 +3,7 @@ import {WDPolyLine} from '../components';
 import {Radio} from 'antd';
 import './WDFloor.less';
 
-const radioList = ['一层', '二层', '三层'];
+const radioList = ['B1', 'F1', 'F2'];
 const listArray = ['55,10 55,40 88,40 88,80', '55,0 55,60 100,60 100,120', '55,10 55,40 20,40 20,140'];
 export default class WDFloor extends Component {
   constructor(props) {
