@@ -20,18 +20,23 @@ export default class WDRadar extends Component {
     super(props);
     this.state = {
       nowData: unemptyData
-    }
+    };
+    this.timer = null;
   }
 
   componentDidMount() {
-    let that = this;
     const RInstance = this.RadarRef && this.RadarRef.getEchartsInstance();
+    clearInterval(this.timer);
     this.timer = setInterval(() => {
       RInstance.clear();
-      that.setState({
+      this.setState({
         nowData:Object.assign({},unemptyData)
-      })
-    }, 3000)
+      });
+    }, 3000);
+  }
+
+  componentWillUnMount(){
+    clearInterval(this.timer);
   }
 
   assembleBrand() {
