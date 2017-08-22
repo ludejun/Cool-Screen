@@ -11,14 +11,14 @@ export default class HomeInternet extends Component {
     this.banner = [
       {
         icon: 'icon-home-people',
-        title: '飞凡会员总数',
-        num: 241783164,
+        title: '2017年新增会员数',
+        num: 60593754,
         unit: '人'
       },
       {
         icon: 'icon-home-shop',
-        title: '飞凡入驻商家数',
-        num: 94157,
+        title: '签约门店总数',
+        num: 173315,
         unit: '家'
       }
     ];
@@ -93,11 +93,14 @@ export default class HomeInternet extends Component {
               {this.banner.map((v, i) =>
                 <div className="flex1" key={i}>
                   <p className="line-title">
-                    <i className={`iconfont ${v.icon} line-icon`} />{v.title}
+                    <i className={`iconfont ${v.icon} line-icon`} />
+                    {v.title}
                   </p>
                   <p className="line-num">
                     <AnimeNumber num={v.num} fromNum={v.num - 100} />
-                    <span className="line-unit">{v.unit}</span>
+                    <span className="line-unit">
+                      {v.unit}
+                    </span>
                   </p>
                 </div>
               )}
@@ -145,8 +148,12 @@ export default class HomeInternet extends Component {
                   <div className="net-content flex-col">
                     {v[0].indexOf('icon') > -1
                       ? <i className={`iconfont ${v[0]} net-icon`} />
-                      : <span>{v[0]}</span>}
-                    <span>{v[1]}</span>
+                      : <span>
+                        {v[0]}
+                      </span>}
+                    <span>
+                      {v[1]}
+                    </span>
                   </div>
                 </div>
               )}
