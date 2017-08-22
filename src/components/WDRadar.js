@@ -1,21 +1,49 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Echarts from 'echarts-for-react';
+
+const unemptyData = {
+  opt: {
+    max: 100,
+    values: [
+      {name: '客流承载力', value: 30},
+      {name: '好评度', value: 40},
+      {name: '消费潜力', value: 60},
+      {name: '层次定位', value: 30},
+      {name: '便利性', value: 50}
+    ]
+  },
+  className: "score-radar"
+};
 
 export default class WDRadar extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      nowData: unemptyData
+    }
   }
 
+  componentDidMount() {
+    let that = this;
+    const RInstance = this.RadarRef && this.RadarRef.getEchartsInstance();
+    this.timer = setInterval(() => {
+      RInstance.clear();
+      that.setState({
+        nowData:Object.assign({},unemptyData)
+      })
+    }, 3000)
+  }
 
   assembleBrand() {
-    const { opt } = this.props;
+    // const { opt } = this.props;
+    const {opt} = this.state.nowData;
     const indicator = [];
     const value = [];
     !!opt.values.length &&
-      opt.values.forEach((val) => {
-        indicator.push({ text: val.name, max: opt.max });
-        value.push(val.value);
-      });
+    opt.values.forEach((val) => {
+      indicator.push({text: val.name, max: opt.max});
+      value.push(val.value);
+    });
 
     const series = [
       {
@@ -40,9 +68,9 @@ export default class WDRadar extends Component {
             color: '#09CDC6'
           }
         },
-        data: [{ value }],
-        animation:true,
-        animationDuration:3000
+        data: [{value}],
+        animation: true,
+        animationDuration: 3000
       }
     ];
 
@@ -76,14 +104,14 @@ export default class WDRadar extends Component {
           }
         }
       },
-      textStyle: { color: '#0BBFFF', fontSize: 12, ...opt.textStyle },
-      grid: { containLabel: true, top: '2px', bottom: '-10px' }
+      textStyle: {color: '#0BBFFF', fontSize: 12, ...opt.textStyle},
+      grid: {containLabel: true, top: '2px', bottom: '-10px'}
     };
 
     return option;
   }
 
   render() {
-    return <Echarts {...this.props} option={this.assembleBrand()} />;
+    return <Echarts  ref={ref => (this.RadarRef = ref)} {...this.props} option={this.assembleBrand()}/>;
   }
 }
