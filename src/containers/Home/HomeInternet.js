@@ -11,14 +11,14 @@ export default class HomeInternet extends Component {
     this.banner = [
       {
         icon: 'icon-home-people',
-        title: '2017年新增会员数',
-        num: 60593754,
+        title: '飞凡会员总数',
+        num: 241783164,
         unit: '人'
       },
       {
         icon: 'icon-home-shop',
-        title: '签约门店总数',
-        num: 173315,
+        title: '飞凡入驻商家数',
+        num: 94157,
         unit: '家'
       }
     ];

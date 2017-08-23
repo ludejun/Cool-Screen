@@ -16,8 +16,8 @@ export default class Commerce extends Component {
       },
       {
         icon: 'icon-home-feifan',
-        title: '签约广场总数',
-        num: 3029,
+        title: '飞凡商业联盟广场',
+        num: 2764,
         unit: '个'
       }
     ];
