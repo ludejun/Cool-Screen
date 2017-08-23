@@ -133,11 +133,14 @@ export default class HomeInternet extends Component {
               {this.banner.map((v, i) =>
                 <div className="flex1" key={i}>
                   <p className="line-title">
-                    <i className={`iconfont ${v.icon} line-icon`} />{v.title}
+                    <i className={`iconfont ${v.icon} line-icon`} />
+                    {v.title}
                   </p>
                   <p className="line-num">
                     <AnimeNumber num={v.num} fromNum={v.num - 100} />
-                    <span className="line-unit">{v.unit}</span>
+                    <span className="line-unit">
+                      {v.unit}
+                    </span>
                   </p>
                 </div>
               )}
@@ -189,8 +192,12 @@ export default class HomeInternet extends Component {
                   <div className="net-content flex-col">
                     {v[0].indexOf('icon') > -1
                       ? <i className={`iconfont ${v[0]} net-icon`} />
-                      : <span>{v[0]}</span>}
-                    <span>{v[1]}</span>
+                      : <span>
+                        {v[0]}
+                      </span>}
+                    <span>
+                      {v[1]}
+                    </span>
                   </div>
                 </div>
               )}
