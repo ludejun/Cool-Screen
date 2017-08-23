@@ -13,7 +13,7 @@ export default class RecomandPersonCard extends Component {
         InfoFillColor: '#1CEEFF',
         stepPointFillColor: '#79FFF9',
         name: '客户1',
-        cardInfo: ['性别：女', '年龄：20～25', '爱好品牌：', 'ZARA', '亦谷']
+        cardInfo: ['性别：女', '年龄：20～25', '爱好品牌：', '亦谷', 'B.C.R']
       },
       red: {
         iconColorStart: '#F0506B',
@@ -24,7 +24,7 @@ export default class RecomandPersonCard extends Component {
         InfoFillColor: '#FF3F1C',
         stepPointFillColor: '#FA6767',
         name: '客户2',
-        cardInfo: ['性别：男', '年龄：20～30', '爱好品牌：', '迪士尼（童鞋）', '亦谷']
+        cardInfo: ['性别：男', '年龄：20～30', '爱好品牌：', 'JNBY', 'B.C.R']
       }
     };
   }
