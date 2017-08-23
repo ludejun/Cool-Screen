@@ -109,7 +109,7 @@ export default class DigitalFinance extends Component {
         type: 'value',
         axisLabel: {
           formatter: '{value}%',
-          margin: 12 / 192 * getBaseFontSize()
+          margin: 12
         },
         axisLine: {
           lineStyle: {
@@ -140,9 +140,9 @@ export default class DigitalFinance extends Component {
         //   ],
         //   false
         // ),
-        boxHeight: 200 / 192 * getBaseFontSize(),
-        boxWidth: 500 / 192 * getBaseFontSize(),
-        boxDepth: 20 / 192 * getBaseFontSize(),
+        boxHeight: 124,
+        boxWidth: 309,
+        boxDepth: 15,
         viewControl: {
           rotateSensitivity: 0,
           beta: 0,
