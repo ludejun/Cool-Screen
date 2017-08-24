@@ -55,9 +55,10 @@
     align-items: center;
   }
   .pillar-title {
-    margin-bottom: 89px;
+    margin-bottom: 50px;
     font-size: 25px;
     text-align: center;
+    letter-spacing: 2px;
   }
   @keyframes pillarCommerce {
     0%,
@@ -72,14 +73,20 @@
     margin: 0 35px 0 25px;
     padding: 0 70px;
     position: relative;
-    .image-bar .backImage {
-      transform: translate(0) !important;
+    .red {
+      color: #e96a69;
+    }
+    .blue {
+      color: #0bbfff;
+    }
+    .icon-shop {
+      margin: 0 2px;
     }
     &::before {
       content: "{";
       font-size: 142px;
       opacity: 0.4;
-      line-height: 1;
+      line-height: 0.8;
       position: absolute;
       left: 0;
     }
@@ -87,7 +94,7 @@
       content: "}";
       font-size: 142px;
       opacity: 0.4;
-      line-height: 1;
+      line-height: 0.8;
       position: absolute;
       right: 0;
       top: 0;
@@ -95,6 +102,7 @@
   }
   .sub-title {
     font-size: 25px;
+    letter-spacing: 2px;
   }
   .num {
     color: #108ee9;
