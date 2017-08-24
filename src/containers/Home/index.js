@@ -264,7 +264,7 @@ export default class Home extends Component {
           label: {
             show: true,
             position: 'top',
-            formatter: '大连万达集团',
+            formatter: '万达集团',
             textStyle: {
               color: '#005BAC',
               fontSize: 16,
