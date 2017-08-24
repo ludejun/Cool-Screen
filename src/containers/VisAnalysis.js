@@ -337,7 +337,7 @@ const yPer = ySpan / 1;
 export default function VisAnalysis() {
   return (
     <div>
-      <HeaderTitle title="智慧生活： 客群黏性分析" />
+      <HeaderTitle title="客群黏性分析" />
       <svg
         className="svg-container"
         viewBox="0 0 1724 771"

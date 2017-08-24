@@ -982,6 +982,7 @@ class Expect extends Component {
                               {flagX > 0
                                 ? <text
                                   className="text-appear"
+                                  fontSize="26"
                                   fill="#fff"
                                   x={x + flagX * 60 + flagX * 70 + 20}
                                   y={
@@ -1000,6 +1001,7 @@ class Expect extends Component {
                                 </text>
                                 : <text
                                   className="text-appear"
+                                  fontSize="26"
                                   fill="#fff"
                                   x={
                                     x +
@@ -1412,7 +1414,7 @@ class Expect extends Component {
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
-                style={{transform: 'scaleX(1.2) scaleY(1.1) translateX(-218px) translateY(-107px)'}}
+                style={{transform: 'scaleX(1.2) scaleY(1.1) translateX(-218) translateY(-107)'}}
               >
                 <defs>
                   <rect id="jin-path-1" x="0" y="0" width="572" height="392"/>

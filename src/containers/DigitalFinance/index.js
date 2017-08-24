@@ -140,9 +140,9 @@ export default class DigitalFinance extends Component {
         //   ],
         //   false
         // ),
-        boxHeight: 200 / 192 * getBaseFontSize(),
-        boxWidth: 500 / 192 * getBaseFontSize(),
-        boxDepth: 20 / 192 * getBaseFontSize(),
+        boxHeight: 124,
+        boxWidth: 309,
+        boxDepth: 15,
         viewControl: {
           rotateSensitivity: 0,
           beta: 0,
@@ -327,7 +327,7 @@ export default class DigitalFinance extends Component {
                   <circle className="desc-tag-circle" fill="#2593E1" cx="19.5" cy="4.5" r="2.5" />
                   <circle className="desc-tag-circle" stroke="#2593E1" cx="19.5" cy="4.5" r="4.5" />
                   <circle
-                    className="desc-tag-circle"
+                    // className="desc-tag-circle"
                     fill="#2593E1"
                     cx="132.5"
                     cy="125.5"
@@ -357,12 +357,12 @@ export default class DigitalFinance extends Component {
                     strokeDasharray="5,3"
                     points="136.898129 83.8824001 136.898129 35.9662233 142.268015 30.5963377 142.268015 10.2618689 44.9632007 10.2618689"
                   />
-                  <rect className="desc-rect" x="30" y="40" fill="#ED504E" />
-                  <text fill="#fff" x="70" y="55" className="desc-title">
+                  <rect x="30" y="32" fill="#ED504E" width="25" height="25" />
+                  <text fill="#fff" x="65" y="50" fontSize="20">
                     理财类
                   </text>
-                  <rect className="desc-rect" x="30" y="80" fill="#1D7CDE" />
-                  <text fill="#fff" x="70" y="95" className="desc-title">
+                  <rect x="30" y="70" fill="#1D7CDE" width="25" height="25" />
+                  <text fill="#fff" x="65" y="90" fontSize="20">
                     借贷类
                   </text>
                 </g>
@@ -411,6 +411,7 @@ export default class DigitalFinance extends Component {
               dominantBaseline="middle"
               fill="#fff"
               className="title"
+              fontSize="20"
             >
               {item.name}
             </text>
