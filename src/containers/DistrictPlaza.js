@@ -5,6 +5,30 @@ import './DistrictPlaza.less';
 import {Rate} from 'antd';
 
 export default class DistrictPlaza extends Component {
+
+
+  constructor(props){
+    super(props);
+    this.timer=null;
+    this.state={
+      num:this.getRandom()
+    }
+  }
+
+  getRandom=()=>{
+    return parseInt(Math.random()*10)
+  }
+  componentDidMount() {
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      let num=this.getRandom();
+      this.setState({
+        num:this.getRandom()
+      })
+
+
+    }, 2000);
+  }
   render() {
     return (
       <div className="flex-row district-plaza">
@@ -16,6 +40,31 @@ export default class DistrictPlaza extends Component {
           <img className="line-a" src="/img/lineA.svg" />
           <img className="plaza-img" src="img/wd-build.png"/>
           <img className="line-c" src="img/lineC.svg"/>
+          <div className="floor-light" style={{ left:((this.state.num%8==0?7:this.state.num%8-1)*3.5+328),top:((this.state.num%8==0?7:this.state.num%8-1)*2.2+Math.floor(this.state.num/8)*7.5+63) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+10)%8==0?7:(this.state.num+10)%8-1)*3.5+328),top:(((this.state.num+10)%8==0?7:(this.state.num+10)%8-1)*2.2+Math.floor((this.state.num+10)/8)*7.5+63) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+15)%8==0?7:(this.state.num+15)%8-1)*3.5+328),top:(((this.state.num+15)%8==0?7:(this.state.num+15)%8-1)*2.2+Math.floor((this.state.num+15)/8)*7.5+63) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+25)%8==0?7:(this.state.num+25)%8-1)*3.5+328),top:(((this.state.num+25)%8==0?7:(this.state.num+25)%8-1)*2.2+Math.floor((this.state.num+25)/8)*7.5+63) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+35)%8==0?7:(this.state.num+35)%8-1)*3.5+328),top:(((this.state.num+35)%8==0?7:(this.state.num+35)%8-1)*2.2+Math.floor((this.state.num+35)/8)*7.5+63) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+45)%8==0?7:(this.state.num+45)%8-1)*3.5+328),top:(((this.state.num+45)%8==0?7:(this.state.num+45)%8-1)*2.2+Math.floor((this.state.num+45)/8)*7.5+63) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+55)%8==0?7:(this.state.num+55)%8-1)*3.5+328),top:(((this.state.num+55)%8==0?7:(this.state.num+55)%8-1)*2.2+Math.floor((this.state.num+45)/8)*7.5+63) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+65)%8==0?7:(this.state.num+65)%8-1)*3.5+328),top:(((this.state.num+65)%8==0?7:(this.state.num+65)%8-1)*2.2+Math.floor((this.state.num+65)/8)*7.5+63) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+75)%8==0?7:(this.state.num+75)%8-1)*3.5+328),top:(((this.state.num+75)%8==0?7:(this.state.num+75)%8-1)*2.2+Math.floor((this.state.num+75)/8)*7.5+63) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+10)%8==0?7:(this.state.num+10)%8-1)*3.5+492),top:(((this.state.num+10)%8==0?7:(this.state.num+10)%8-1)*2.2+Math.floor((this.state.num+10)/8)*7.5+92) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+15)%8==0?7:(this.state.num+15)%8-1)*3.5+492),top:(((this.state.num+15)%8==0?7:(this.state.num+15)%8-1)*2.2+Math.floor((this.state.num+15)/8)*7.5+92) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+25)%8==0?7:(this.state.num+25)%8-1)*3.5+492),top:(((this.state.num+25)%8==0?7:(this.state.num+25)%8-1)*2.2+Math.floor((this.state.num+25)/8)*7.5+92) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+35)%8==0?7:(this.state.num+35)%8-1)*3.5+492),top:(((this.state.num+35)%8==0?7:(this.state.num+35)%8-1)*2.2+Math.floor((this.state.num+35)/8)*7.5+92) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+45)%8==0?7:(this.state.num+45)%8-1)*3.5+492),top:(((this.state.num+45)%8==0?7:(this.state.num+45)%8-1)*2.2+Math.floor((this.state.num+45)/8)*7.5+92) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+55)%8==0?7:(this.state.num+55)%8-1)*3.5+492),top:(((this.state.num+55)%8==0?7:(this.state.num+55)%8-1)*2.2+Math.floor((this.state.num+55)/8)*7.5+92) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+65)%8==0?7:(this.state.num+65)%8-1)*3.5+492),top:(((this.state.num+65)%8==0?7:(this.state.num+65)%8-1)*2.2+Math.floor((this.state.num+65)/8)*7.5+92) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+75)%8==0?7:(this.state.num+75)%8-1)*3.5+492),top:(((this.state.num+75)%8==0?7:(this.state.num+75)%8-1)*2.2+Math.floor((this.state.num+75)/8)*7.5+92) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+10)%8==0?7:(this.state.num+10)%8-1)*3.5+531),top:(((this.state.num+10)%8==0?7:(this.state.num+10)%8-1)*2.2+Math.floor((this.state.num+10)/8)*7.5+110) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+15)%8==0?7:(this.state.num+15)%8-1)*3.5+531),top:(((this.state.num+15)%8==0?7:(this.state.num+15)%8-1)*2.2+Math.floor((this.state.num+15)/8)*7.5+110) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+25)%8==0?7:(this.state.num+25)%8-1)*3.5+531),top:(((this.state.num+25)%8==0?7:(this.state.num+25)%8-1)*2.2+Math.floor((this.state.num+25)/8)*7.5+110) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+35)%8==0?7:(this.state.num+35)%8-1)*3.5+531),top:(((this.state.num+35)%8==0?7:(this.state.num+35)%8-1)*2.2+Math.floor((this.state.num+35)/8)*7.5+110) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+45)%8==0?7:(this.state.num+45)%8-1)*3.5+531),top:(((this.state.num+45)%8==0?7:(this.state.num+45)%8-1)*2.2+Math.floor((this.state.num+45)/8)*7.5+110) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+55)%8==0?7:(this.state.num+55)%8-1)*3.5+531),top:(((this.state.num+55)%8==0?7:(this.state.num+55)%8-1)*2.2+Math.floor((this.state.num+55)/8)*7.5+110) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+65)%8==0?7:(this.state.num+65)%8-1)*3.5+531),top:(((this.state.num+65)%8==0?7:(this.state.num+65)%8-1)*2.2+Math.floor((this.state.num+65)/8)*7.5+110) }}></div>
+          <div className="floor-light" style={{ left:(((this.state.num+75)%8==0?7:(this.state.num+75)%8-1)*3.5+531),top:(((this.state.num+75)%8==0?7:(this.state.num+75)%8-1)*2.2+Math.floor((this.state.num+75)/8)*7.5+110) }}></div>
         </div>
         <div className="plaza-info">
           <div className="plaza-title">
