@@ -5,25 +5,21 @@ import './layout.less';
 export default function (props) {
   return (
     <div className="main">
-      <div className="main-header-left">
-       <WDLayout />
-      </div>
 
       <WDLogoSvg className="main-header-logo" />
-      <div className="main-header-right">
-        <WDLayout />
-      </div>
+
+      <WDLayout className="layout-svg main-header-left" />
+      <WDLayout className="layout-svg main-header-right" />
+
       {/* 这以上 147px */}
       <div className="main-container">
         {props.children}
       </div>
       {/* 这以下 73px */}
-      <div className="main-footer-left">
-        <WDLayout />
-      </div>
-      <div className="main-footer-right">
-       <WDLayout />
-      </div>
+
+      <WDLayout className="layout-svg main-footer-left" />
+      <WDLayout className="layout-svg main-footer-right" />
+
     </div>
   );
 }
