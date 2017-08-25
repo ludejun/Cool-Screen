@@ -11,7 +11,7 @@ export default class Commerce extends Component {
       {
         icon: 'icon-home-wanda',
         title: '万达广场数',
-        num: 202,
+        num: 211,
         unit: '个'
       },
       {
@@ -95,7 +95,7 @@ export default class Commerce extends Component {
                 <p className="sub-title">签约合作独立门店数</p>
                 <p className="num">
                   <AnimeNumber num={161500} fromNum={161500 - 100} />
-                  <span className="unit">+人</span>
+                  <span className="unit">+个</span>
                 </p>
               </div>
             </div>
