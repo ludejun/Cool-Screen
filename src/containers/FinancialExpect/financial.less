@@ -306,7 +306,7 @@
           background: url("/img/expect-rotate-02.png");
           background-size: 338px 338px;
           backface-visibility: hidden;
-          animation: rotateimg1 400s linear infinite;
+          animation: rotateimg1 6.5s linear infinite;
         }
         .img2 {
           position: absolute;
@@ -316,23 +316,39 @@
           height: 338px;
           background: url("/img/expect-rotate-01.png");
           background-size: 338px 338px;
-          transform: rotateY(-180deg);
+          transform: rotateY(180deg);
           backface-visibility: hidden;
-          animation: rotateimg2 400s linear infinite;
+          animation: rotateimg2 6.5s linear infinite;
         }
 
         @keyframes rotateimg1 {
-          0% {
+          20%{
             transform: rotateY(0deg)
           }
-          100% {
-            transform: rotateY(-36000deg)
+          50% {
+            transform: rotateY(180deg)
+          }
+          70%{
+            transform: rotateY(180deg)
+          }
+          100%{
+            transform: rotateY(360deg)
           }
         }
 
         @keyframes rotateimg2 {
-          100% {
-            transform: rotateY(-36180deg)
+
+          20%{
+            transform: rotateY(180deg)
+          }
+          50% {
+            transform: rotateY(360deg)
+          }
+          70%{
+            transform: rotateY(360deg)
+          }
+          100%{
+            transform: rotateY(540deg)
           }
         }
       }
