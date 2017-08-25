@@ -11,15 +11,15 @@ export default class HomeInternet extends Component {
     this.banner = [
       {
         icon: 'icon-home-people',
-        title: '飞凡会员总数',
-        num: 241783164,
-        unit: '人'
+        title: '飞凡活跃用户',
+        num: 19100,
+        unit: '万人'
       },
       {
-        icon: 'icon-home-shop',
-        title: '飞凡入驻商家数',
-        num: 94157,
-        unit: '家'
+        icon: 'icon-home-feifan',
+        title: '飞凡通用户',
+        num: 8756,
+        unit: '万人'
       }
     ];
     resizeSquarePage();

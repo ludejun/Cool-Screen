@@ -284,9 +284,7 @@ export default class Home extends Component {
       <div className="super-home">
         <img src="/img/home-title.png" className="home-title" />
         <div className="home-slogan-container">
-          <div className="home-slogan-container-sub">
-            万 达 大 数 据 中 心 助 力 商 业 模 式 创 新
-          </div>
+          <div className="home-slogan-container-sub">万 达 大 数 据 中 心 助 力 商 业 模 式 创 新</div>
         </div>
         <div className="home-earth-container">
           <img src="/img/home-earth-oval-1.png" className="home-earth-oval-1" />

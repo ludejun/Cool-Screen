@@ -15,9 +15,9 @@ export default class Commerce extends Component {
         unit: '个'
       },
       {
-        icon: 'icon-home-feifan',
-        title: '飞凡商业联盟广场',
-        num: 2764,
+        icon: 'icon-home-shop',
+        title: '签约合作大型商业项目',
+        num: 3382,
         unit: '个'
       }
     ];
@@ -38,30 +38,8 @@ export default class Commerce extends Component {
       { name: '山东省', val: 0.114, val1: 0.885, num: 122 },
       { name: '山西省', val: 0.016, val1: 0.983, num: 120 }
     ];
-    const genderList = [
-      [
-        {
-          itemImage: '../img/icon_male.png',
-          percent: 1 * 100
-        }
-      ],
-      [
-        {
-          itemImage: '../img/icon_male.png',
-          percent: 0.4 * 100
-        },
-        {
-          itemImage: '../img/icon_female.png',
-          percent: 0.6 * 100
-        }
-      ],
-      [
-        {
-          itemImage: '../img/icon_female.png',
-          percent: 1 * 100
-        }
-      ]
-    ];
+
+    const shop = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     return (
       <div className="home-commerce dark-bg flex-col">
         <HomeCorner className="home-corner left-top" />
@@ -76,7 +54,10 @@ export default class Commerce extends Component {
                     {v.title}
                   </p>
                   <p className="line-num">
-                    <AnimeNumber num={v.num} fromNum={parseInt(v.num * 0.9, 10)} />
+                    <span>
+                      {v.num}
+                    </span>
+                    {/* <AnimeNumber num={v.num} fromNum={parseInt(v.num * 0.9, 10)} /> */}
                     <span className="line-unit">
                       {v.unit}
                     </span>
@@ -96,17 +77,24 @@ export default class Commerce extends Component {
         <div className="flex-row commerce-bottom">
           <div className="flex1">
             <WDPillar />
-            <p className="pillar-title">广场内消费等级占比</p>
-
+            <p className="pillar-title">广场客群消费潜力占比</p>
             <div className="flex-row flex-center">
               <div className="image-bar-container flex1">
-                {[0, 1, 2].map(v => <WDImageBar key={v} dataList={genderList[v]} />)}
+                {[0, 1, 2, 3].map((item, i) =>
+                  <div
+                    style={{ lineHeight: '90%' }}
+                    key={i}
+                    className={i % 2 === 0 ? 'red' : 'blue'}
+                  >
+                    {shop.map((item, j) => <i key={j} className={'iconfont icon-shop'} />)}
+                  </div>
+                )}
               </div>
 
               <div>
-                <p className="sub-title">带动就业</p>
+                <p className="sub-title">签约合作独立门店数</p>
                 <p className="num">
-                  <AnimeNumber num={1820000} fromNum={1820000 - 100} />
+                  <AnimeNumber num={161500} fromNum={161500 - 100} />
                   <span className="unit">+人</span>
                 </p>
               </div>

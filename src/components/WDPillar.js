@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { getBaseFontSize } from '../utils';
 import './WDPillar.less';
 
-const cube = { height: [130, 380, 230], color: ['#00D1C6', '#29AAFF', '#0DF29E'] };
+const cube = { height: [250, 380, 170], color: ['#00D1C6', '#29AAFF', '#0DF29E'] };
 
 export default class WDPillar extends Component {
   constructor(props) {
@@ -10,18 +10,18 @@ export default class WDPillar extends Component {
     // this.real = [{'sm':[8045,0.13787],'md':[16157,0.276889],'lg':[34150,0.585241]}];
     this.data = [
       {
-        name: '高端消费',
-        percentage: '13.79%',
+        name: '中端消费',
+        percentage: '31%',
         top: '#0DF29E'
       },
       {
-        name: '低端消费',
-        percentage: '58.52%',
+        name: '普通消费',
+        percentage: '48%',
         top: '#00D1C6'
       },
       {
-        name: '中端消费',
-        percentage: '27.69%',
+        name: '高端消费',
+        percentage: '21%',
         top: '#29AAFF'
       }
     ];
@@ -130,7 +130,7 @@ export default class WDPillar extends Component {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Wobble the cube using a sine wave
-      const wobble = Math.sin(Date.now() / 250) * canvas.height / 20;
+      const wobble = Math.sin(Date.now() / 250) * canvas.height / 80;
 
       // draw oval
       drawEllipse(ctx, 2, 430 + wobble, 320 + wobble / 4, 70);
