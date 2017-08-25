@@ -21,7 +21,11 @@ export default class operatorsComparison extends Component {
   }
   componentDidMount() {
     this.timer = setInterval(() => {
-      this.setState({ index: this.state.index++ });
+      if (this.state.index === 1000) {
+        this.setState({ index: 0 });
+      } else {
+        this.setState({ index: this.state.index++ });
+      }
       this.unique_random_numbers = [];
       let amount = 7,
         lower_bound = 0,
