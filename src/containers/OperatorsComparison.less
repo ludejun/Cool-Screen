@@ -44,6 +44,46 @@
       .province-name {
         color: #12c2ff;
         font-size: 16px;
+        letter-spacing: 2px;
+      }
+      .province-name-active {
+        animation: scaleGradual 3.6s linear forwards infinite alternate;
+        .word-0 {
+          animation: fadeInBack 2s linear forwards infinite alternate;
+        }
+        .word-1 {
+          animation: fadeInBack 2s 0.2s linear forwards infinite alternate;
+        }
+        .word-2 {
+          animation: fadeInBack 2s 0.4s linear forwards infinite alternate;
+        }
+      }
+
+      @keyframes scaleGradual {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1.15);
+        }
+      }
+
+      @keyframes fadeInBack {
+        0% {
+          opacity: 0.5;
+          filter: blur(0.5PX);
+        }
+        50% {
+          opacity: 1;
+          filter: blur(0PX);
+        }
+        100% {
+          opacity: 0.5;
+          filter: blur(0.5PX);
+        }
       }
     }
     .yys-wrap:nth-child(1) {
