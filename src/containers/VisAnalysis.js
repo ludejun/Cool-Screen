@@ -9,6 +9,14 @@ const xArray = [];
     xArray.push(i * 2);
   }
 })(xArray);
+const arrayT = [];
+for (let i = 0; i < 23; i++) {
+  arrayT.push(i);
+}
+const arrayU = [];
+for (let i = 0; i < 30; i++) {
+  arrayU.push(i);
+}
 const circle = [
   {
     x: 350,
@@ -460,77 +468,61 @@ export default function VisAnalysis() {
             strokeWidth="3"
           >
             <g transform="translate(123,218)">
-              {(() => {
-                const result = [];
+              {arrayT.map((it, i) => {
                 const xL = "0";
-                for (let i = 0; i < 23; i++) {
-                  result.push(
-                    <line
-                      key={i}
-                      x1={xL}
-                      y1={10 + i * 32}
-                      y2={xL}
-                      x2={10 + i * 32}
-                      stroke="#111732"
-                      opacity="0.7"
-                    />
-                  );
-                }
-                return result;
-              })()}
-              {(() => {
-                const result = [];
+                return (
+                  <line
+                    key={i}
+                    x1={xL}
+                    y1={10 + i * 32}
+                    y2={xL}
+                    x2={10 + i * 32}
+                    stroke="#111732"
+                    opacity="0.7"
+                  />
+                );
+              })}
+              {arrayT.map((it, i) => {
                 const xL = 1674;
-                for (let i = 0; i < 23; i++) {
-                  result.push(
-                    <line
-                      key={i}
-                      x1={xL}
-                      y1={715 - i - i * 32}
-                      y2={715}
-                      x2={1674 - 10 - i * 32}
-                      stroke="#111732"
-                      opacity="0.7"
-                    />
-                  );
-                }
-                return result;
-              })()}
-              {(() => {
-                const result = [];
-                for (let i = 0; i < 23; i++) {
-                  result.push(
-                    <line
-                      key={i}
-                      x1={0}
-                      y1={10 + i * 32}
-                      y2={10 + i * 32}
-                      x2={1674}
-                      stroke="#111732"
-                      opacity="0.7"
-                    />
-                  );
-                }
-                return result;
-              })()}
-              {(() => {
-                const result = [];
+                return (
+                  <line
+                    key={i}
+                    x1={xL}
+                    y1={715 - i - i * 32}
+                    y2={715}
+                    x2={1674 - 10 - i * 32}
+                    stroke="#111732"
+                    opacity="0.7"
+                  />
+                );
+              })}
+              {arrayT.map((it, i) => {
+                return (
+                  <line
+                    key={i}
+                    x1={0}
+                    y1={10 + i * 32}
+                    y2={10 + i * 32}
+                    x2={1674}
+                    stroke="#111732"
+                    opacity="0.7"
+                  />
+                );
+              })}
+              {arrayU.map((it, i) => {
                 const yL = 715;
-                for (let i = 1; i < 30; i++) {
-                  result.push(
-                    <line
-                      key={i}
-                      x1={i * 32}
-                      y1={yL}
-                      x2={yL + i * 32}
-                      y2={0}
-                      stroke="#111732"
-                      opacity="0.7"
-                    />
-                  );
-                }
-                return result;
-              })()}
+                return (
+                  <line
+                    key={i}
+                    x1={i * 32}
+                    y1={yL}
+                    x2={yL + i * 32}
+                    y2={0}
+                    stroke="#111732"
+                    opacity="0.7"
+                  />
+                );
+              })}
             </g>
             {circle.map((it, index) => {
               return (

@@ -2,12 +2,10 @@
   display: flex;
   flex-direction: row;
 }
-
 .flex-col {
   display: flex;
   flex-direction: column;
 }
-
 .left-wrap {
   width: 1006px;
   height: 726px;
@@ -19,17 +17,17 @@
     left: 0;
     bottom: 0;
   }
-  .red-point{
+  .red-point {
     position: absolute;
     left: 334px;
     bottom: 315px;
     animation: red-point 2s infinite;
   }
   @keyframes red-point {
-    0%{
+    0% {
       transform: rotateY(0deg);
     }
-    100%{
+    100% {
       transform: rotateY(360deg);
     }
   }
@@ -59,14 +57,14 @@
     top: 79px;
     left: 423px;
   }
-  .floor-light{
+  .floor-light {
     width: 3.8px;
     height: 10.4px;
     position: absolute;
     background-color: #80EBFD;
+    transform:skewY(25deg)
   }
 }
-
 .district-plaza {
   // padding: 0 130px;
   width: 1638px;
@@ -124,22 +122,13 @@
       height: 213px !important;
       flex: 1;
       vertical-align: middle;
-      //animation: radar-scale 2s infinite alternate-reverse;
-    }
-    @keyframes radar-scale {
-      0%{
-        transform: scale(1);
-      }
-      100%{
-        transform: scale(.67);
-      }
     }
     .score-div {
       justify-content: center;
       text-align: center;
       font-size: 12px;
-      width: 160px;
-      .radar-title{
+      width: 95px;
+      .radar-title {
         font-size: 16px;
       }
       .score-num {

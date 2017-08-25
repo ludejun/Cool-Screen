@@ -54,10 +54,7 @@ export default class Commerce extends Component {
                     {v.title}
                   </p>
                   <p className="line-num">
-                    <span>
-                      {v.num}
-                    </span>
-                    {/* <AnimeNumber num={v.num} fromNum={parseInt(v.num * 0.9, 10)} /> */}
+                    <AnimeNumber num={v.num} fromNum={v.num - 100} />
                     <span className="line-unit">
                       {v.unit}
                     </span>
@@ -79,13 +76,9 @@ export default class Commerce extends Component {
             <WDPillar />
             <p className="pillar-title">广场客群消费潜力占比</p>
             <div className="flex-row flex-center">
-              <div className="image-bar-container flex1">
+              <div className="image-bar-container">
                 {[0, 1, 2, 3].map((item, i) =>
-                  <div
-                    style={{ lineHeight: '90%' }}
-                    key={i}
-                    className={i % 2 === 0 ? 'red' : 'blue'}
-                  >
+                  <div key={i} className={i % 2 === 0 ? 'red' : 'blue'}>
                     {shop.map((item, j) => <i key={j} className={'iconfont icon-shop'} />)}
                   </div>
                 )}
@@ -95,14 +88,14 @@ export default class Commerce extends Component {
                 <p className="sub-title">签约合作独立门店数</p>
                 <p className="num">
                   <AnimeNumber num={161500} fromNum={161500 - 100} />
-                  <span className="unit">+个</span>
+                  <span className="unit">+家</span>
                 </p>
               </div>
             </div>
           </div>
 
           <div className="flex1">
-            <p className="bar-title">广场分布省市排名Top 10</p>
+            <p className="bar-title">广场总数省市分布排名Top 10</p>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <div className=" light-blue" />
               <div className="legend">内场</div>
