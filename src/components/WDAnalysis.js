@@ -61,17 +61,6 @@ export default class Analysis extends Component {
         name: '无车'
       }
     ];
-    this.genderList = [
-      {
-        itemImage: 'img/icon_male.png',
-        percent: props.customerPic.sex.male,
-        color: '#4C9DFF'
-      }, {
-        itemImage: 'img/icon_female.png',
-        percent: props.customerPic.sex.female,
-        color: '#EA6C6B'
-      }
-    ];
     this.marriage = [
       {
         itemIcon: 'icon-client-married',
@@ -314,6 +303,17 @@ export default class Analysis extends Component {
     return <Echarts className="consume-chart" option={consumeOption}/>;
   };
   render() {
+    const genderList = [
+      {
+        itemImage: 'img/icon_male.png',
+        percent: this.props.customerPic.sex.male,
+        color: '#4C9DFF'
+      }, {
+        itemImage: 'img/icon_female.png',
+        percent: this.props.customerPic.sex.female,
+        color: '#EA6C6B'
+      }
+    ];
     return (
       <div className="right-container">
         <img src="/img/analysis-border.png" className="right-container-bg"/>
@@ -373,7 +373,7 @@ export default class Analysis extends Component {
           </div>
           <div className="gender-compare flex1">
             <p className="right-sub-title">性别对比</p>
-            <WDImageBar dataList={this.genderList}/>
+            <WDImageBar dataList={genderList}/>
           </div>
           <div className="flex1">
             <p className="right-sub-title">已婚对比</p>
