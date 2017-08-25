@@ -11,17 +11,17 @@
     position: absolute;
     z-index: 100;
   }
-  .main-header-left {
-    transform: translateY(-30px) rotate(180deg) rotateX(180deg);
-  }
+  // .main-header-left {
+  // transform: rotateX(180deg); //translateY(-30px) 
+  // }
   .main-header-right {
-    transform: translateY(-30px);
+    transform: rotateY(180deg);
   }
   .main-footer-left {
-    transform: rotate(180deg);
+    transform: rotateX(180deg);
   }
   .main-footer-right {
-    transform: rotateX(180deg);
+    transform: rotate(180deg);
   }
   &-header-logo {
     top: 39px;
@@ -31,151 +31,19 @@
   }
   &-header-left {
     left: 0;
-    top: 97px;
-    .circle {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      position: absolute;
-      background-color: rgba(18, 143, 234, .5);
-    }
-    .circle1 {
-      top: 26px;
-      left: 462px;
-      animation: circle1 2s linear 0s infinite;
-    }
-    .circle2 {
-      top: 26px;
-      left: 487px;
-      animation: circle1 2s linear 0.5s infinite;
-    }
-    .circle3 {
-      top: 26px;
-      left: 509px;
-      animation: circle1 2s linear 1s infinite;
-    }
-    .circle4 {
-      top: 26px;
-      left: 533px;
-      animation: circle1 2s linear 1.5s infinite;
-    }
-    .circle5 {
-      background-color: rgba(18, 143, 234, 1);
-      top: 3px;
-      left: 498px;
-      animation: circle2 2s linear 2s infinite;
-    }
+    top: 87px;
   }
   &-header-right {
     right: 0;
-    top: 97px;
-    .circle {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      position: absolute;
-      background-color: rgba(18, 143, 234, .5);
-    }
-    .circle1 {
-      top: 26px;
-      right: 463px;
-      animation: circle1 2s linear 0s infinite;
-    }
-    .circle2 {
-      top: 26px;
-      right: 485px;
-      animation: circle1 2s linear 0.5s infinite;
-    }
-    .circle3 {
-      top: 26px;
-      right: 509px;
-      animation: circle1 2s linear 1s infinite;
-    }
-    .circle4 {
-      top: 26px;
-      right: 533px;
-      animation: circle1 2s linear 1.5s infinite;
-    }
-    .circle5 {
-      background-color: rgba(18, 143, 234, 1);
-      top: 3px;
-      right: 498px;
-      animation: circle2 2s linear 2s infinite;
-    }
+    top: 87px;
   }
   &-footer-left {
     left: 0;
-    bottom: 3px;
-    .circle {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      position: absolute;
-      background-color: rgba(18, 143, 234, .5);
-    }
-    .circle1 {
-      top: 14px;
-      left: 462px;
-      animation: circle1 2s linear 0s infinite;
-    }
-    .circle2 {
-      top: 14px;
-      left: 487px;
-      animation: circle1 2s linear 0.5s infinite;
-    }
-    .circle3 {
-      top: 14px;
-      left: 509px;
-      animation: circle1 2s linear 1s infinite;
-    }
-    .circle4 {
-      top: 14px;
-      left: 533px;
-      animation: circle1 2s linear 1.5s infinite;
-    }
-    .circle5 {
-      background-color: rgba(18, 143, 234, 1);
-      top: 35px;
-      left: 497px;
-      animation: circle2 2s linear 2s infinite;
-    }
+    bottom: 23px;
   }
   &-footer-right {
     right: 0;
-    bottom: 3px;
-    .circle {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      position: absolute;
-      background-color: rgba(18, 143, 234, .5);
-    }
-    .circle1 {
-      top: 14px;
-      right: 463px;
-      animation: circle1 2s linear 0s infinite;
-    }
-    .circle2 {
-      top: 14px;
-      right: 485px;
-      animation: circle1 2s linear 0.5s infinite;
-    }
-    .circle3 {
-      top: 14px;
-      right: 509px;
-      animation: circle1 2s linear 1s infinite;
-    }
-    .circle4 {
-      top: 14px;
-      right: 533px;
-      animation: circle1 2s linear 1.5s infinite;
-    }
-    .circle5 {
-      background-color: rgba(18, 143, 234, 1);
-      top: 35px;
-      right: 497px;
-      animation: circle2 2s linear 2s infinite;
-    }
+    bottom: 23px;
   }
   @keyframes circle1 {
     0% {
@@ -228,17 +96,17 @@
     }
   }
 }
-.test-svg {
-  width: 593px;
-  height: 50px;
-  margin: 20px auto;
+.layout-svg {
+  width: 597px;
+  height: 63px;
   &-polyline {
-    animation: polylinemove 5s ease-in-out infinite alternate;
+    animation: mainLayoutLineMove 5s ease-in-out infinite alternate;
   }
   &-circle {
-    animation: testcirclemove 1.5s ease-in-out 5s infinite alternate;
+    transform-origin: center;
+    animation: mainLayoutCircleMove 1.5s ease-in-out 5s infinite alternate;
   }
-  @keyframes polylinemove {
+  @keyframes mainLayoutLineMove {
     from {
       stroke-dasharray: 0, 200%;
     }
@@ -246,16 +114,13 @@
       stroke-dasharray: 200%, 0;
     }
   }
-  @keyframes testcirclemove {
+  @keyframes mainLayoutCircleMove {
     from {
       stroke: #108EE9;
-      //transform: scale(1);
     }
     to {
       stroke: #fff;
-      transform-origin: center;
       transform: scale(1.2);
-      //r: 11;
     }
   }
 }

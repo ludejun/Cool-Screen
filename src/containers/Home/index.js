@@ -59,6 +59,7 @@ export default class Home extends Component {
             opacity: 0.4
           },
           data: [
+            //国外
             [[116.47808, 39.914882, 1], [-3.638449, 40.444948, 1]],
             [[116.47808, 39.914882, 1], [-87.799533, 41.891813, 1]],
             [[116.47808, 39.914882, 1], [-118.253459, 34.05678, 1]],
@@ -264,7 +265,7 @@ export default class Home extends Component {
           label: {
             show: true,
             position: 'top',
-            formatter: '大连万达集团',
+            formatter: '万达集团',
             textStyle: {
               color: '#005BAC',
               fontSize: 16,
@@ -283,9 +284,7 @@ export default class Home extends Component {
       <div className="super-home">
         <img src="/img/home-title.png" className="home-title" />
         <div className="home-slogan-container">
-          <div className="home-slogan-container-sub">
-            万 达 大 数 据 中 心 助 力 商 业 模 式 创 新
-          </div>
+          <div className="home-slogan-container-sub">万 达 大 数 据 中 心 助 力 商 业 模 式 创 新</div>
         </div>
         <div className="home-earth-container">
           <img src="/img/home-earth-oval-1.png" className="home-earth-oval-1" />

@@ -19,7 +19,7 @@ export { default as WDCurve } from './WDMapCurve';
 export { default as WDLogoSvg } from './WDLogoSvg';
 export { default as WDButtonSvg } from './WDButtonSvg';
 export { default as WDPolyLine } from './PolyLine';
-export { default as WDLayout } from './layout';
+export { default as WDLayout } from './WDLayout';
 export { default as AngelAside } from './AngelAside';
 export { default as CompeteSvg } from './competeSvg';
 export { default as WDTextContainer } from './WDTextContainer';
