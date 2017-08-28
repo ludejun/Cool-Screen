@@ -11,20 +11,20 @@ export default class RecomandBuilding extends Component {
     this.typeList = {
       red: {
         tags: [
-          { text: 'B.C.R', x: '111.41', y: '26' },
+          { text: 'C&A', x: '111.41', y: '26' },
           { text: 'ochirly', x: '315.14', y: '56' },
           { text: '亦谷', x: '534', y: '63' },
-          { text: '凯迪·米拉', x: '347', y: '642' },
+          { text: '凯迪·米拉', x: '355', y: '642' },
           { text: 'TGGC', x: '498.15', y: '690' }
         ]
       },
       green: {
         tags: [
           { text: 'MIGAINO', x: '22.03', y: '541' },
-          { text: 'B.C.R', x: '43.41', y: '102' },
+          { text: 'C&A', x: '43.41', y: '102' },
           { text: 'lagogo', x: '197.04', y: '597' },
           { text: 'JOPSHOP', x: '561.44', y: '142' },
-          { text: 'JNBY', x: '740', y: '194' },
+          { text: 'CK Jeans', x: '725', y: '194' },
           { text: 'LuLualways', x: '606.28', y: '740' }
         ]
       }
