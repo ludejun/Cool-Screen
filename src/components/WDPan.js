@@ -101,7 +101,7 @@ export default function WDPie(props) {
           <g transform="translate(270,116)">
             <circle cx="0" cy="4" r="6" fill="#E96A69" />
             <text x="14" y="7" fontSize="14px" fill="#fff">
-              低端消费
+              普通消费
             </text>
             <circle cx="0" cy="23" r="6" fill="#80EBFD" />
             <text x="14" y="26" fontSize="14px" fill="#fff">

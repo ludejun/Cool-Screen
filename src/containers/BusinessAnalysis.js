@@ -18,8 +18,8 @@ export default class BusinessAnalysis extends Component {
           low: 52.5
         },
         cars: {
-          haveCar: 66,
-          noCar: 34
+          haveCar: 34,
+          noCar: 66
         },
         sex: {
           male: 45,
@@ -43,8 +43,8 @@ export default class BusinessAnalysis extends Component {
           low: 52.5
         },
         cars: {
-          haveCar: 66,
-          noCar: 34
+          haveCar: 34,
+          noCar: 66
         },
         sex: {
           male: 44,
@@ -68,8 +68,8 @@ export default class BusinessAnalysis extends Component {
           low: 52.5
         },
         cars: {
-          haveCar: 66,
-          noCar: 34
+          haveCar: 34,
+          noCar: 66
         },
         sex: {
           male: 44,

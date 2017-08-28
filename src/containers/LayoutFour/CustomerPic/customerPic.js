@@ -14,12 +14,12 @@ const age = {
 const carList = [
     {
         itemIcon: 'icon-car',
-        percent: 0.67 * 100,
+        percent: 0.34 * 100,
         color: '#7096EE',
         name: '有车'
     }, {
         itemIcon: 'icon-walk',
-        percent: 0.33 * 100,
+        percent: 0.66 * 100,
         color: '#9DD455',
         name: '无车'
     }
@@ -27,27 +27,47 @@ const carList = [
 const marriage = [
     {
         itemIcon: 'icon-client-married',
-        percent: 0.38 * 100,
+        percent: 0.40 * 100,
         color: '#EA6C6B',
         name: '已婚'
     }, {
         itemIcon: 'icon-client-hearts',
-        percent: 0.62 * 100,
+        percent: 0.60 * 100,
         color: '#4C9DFF',
         name: '未婚'
     }
 ];
-const genderList = [
+const genderList = [[
     {
         itemImage: '/img/icon_male.png',
-        percent: 0.37 * 100,
+        percent: 0.45 * 100,
         color: '#4C9DFF'
     }, {
         itemImage: '/img/icon_female.png',
-        percent: 0.63 * 100,
+        percent: 0.55 * 100,
         color: '#EA6C6B'
     }
-];
+],[
+    {
+        itemImage: '/img/icon_male.png',
+        percent: 0.44 * 100,
+        color: '#4C9DFF'
+    }, {
+        itemImage: '/img/icon_female.png',
+        percent: 0.56 * 100,
+        color: '#EA6C6B'
+    }
+],[
+    {
+        itemImage: '/img/icon_male.png',
+        percent: 0.44 * 100,
+        color: '#4C9DFF'
+    }, {
+        itemImage: '/img/icon_female.png',
+        percent: 0.56 * 100,
+        color: '#EA6C6B'
+    }
+]];
 // /////
 const dataStyle = {
     normal: {
@@ -79,19 +99,19 @@ const placeHolderStyle = {
 const rawData = [
     {
         name: '<18',
-        val: 0.8
+        val: 0.07
     }, {
         name: '18~24',
-        val: 0.3
+        val: 0.17
     }, {
         name: '25~34',
-        val: 0.9
+        val: 0.38
     }, {
         name: '35~44',
-        val: 0.3
+        val: 0.27
     }, {
         name: '>45',
-        val: 0.2
+        val: 0.01
     }
 ];
 const option = {
@@ -187,81 +207,80 @@ class Cuspic extends Component {
         ];
         this.customerPic = [
             {
-                consume: {
-                    high: 7,
-                    middle: 28,
-                    low: 65
-                },
-                cars: {
-                    itemIcon: 'icon-car',
-                    haveCar: 67,
-                    noCar: 33
-                },
-                sex: {
-                    male: 37,
-                    female: 63
-                },
-                marriage: {
-                    yes: 38,
-                    no: 62
-                },
-                age: {
-                    18: 0.04,
-                    24: 0.24,
-                    34: 0.41,
-                    44: 0.22,
-                    45: 0.09
-                }
+              consume: {
+                high: 7.5,
+                middle: 40,
+                low: 52.5
+              },
+              cars: {
+                haveCar: 34,
+                noCar: 66
+              },
+              sex: {
+                male: 45,
+                female: 55
+              },
+              marriage: {
+                yes: 40,
+                no: 60
+              },
+              age: {
+                18: 0.07,
+                24: 0.17,
+                34: 0.38,
+                44: 0.27,
+                45: 0.01
+              }
             }, {
-                consume: {
-                    high: 7,
-                    middle: 26,
-                    low: 67
-                },
-                cars: {
-                    haveCar: 67,
-                    noCar: 33
-                },
-                sex: {
-                    male: 37,
-                    female: 63
-                },
-                marriage: {
-                    yes: 38,
-                    no: 62
-                },
-                age: {
-                    18: 0.04,
-                    24: 0.24,
-                    34: 0.41,
-                    44: 0.22,
-                    45: 0.09
-                }
+              consume: {
+                high: 7.5,
+                middle: 40,
+                low: 52.5
+              },
+              cars: {
+                haveCar: 34,
+                noCar: 66
+              },
+              sex: {
+                male: 44,
+                female: 56
+              },
+              marriage: {
+                yes: 40,
+                no: 60
+              },
+              age: {
+                18: 0.07,
+                24: 0.17,
+                34: 0.38,
+                44: 0.27,
+                45: 0.01
+              }
             }, {
-                consume: {
-                    high: 7,
-                    middle: 29,
-                    low: 64
-                },
-                cars: {
-                    haveCar: 67,
-                    noCar: 33
-                },
-                sex: {
-                    male: 37,
-                    female: 63
-                },
-                marriage: {
-                    yes: 38,
-                    no: 62
-                },
-                age: {
-                    18: 0.04,
-                    24: 0.24,
-                    34: 0.41,
-                    44: 0.22,
-                    45: 0.09
-                }
+              consume: {
+                high: 7.5,
+                middle: 40,
+                low: 52.5
+              },
+              cars: {
+                haveCar: 34,
+                noCar: 66
+              },
+              sex: {
+                male: 44,
+                female: 56
+              },
+              marriage: {
+                yes: 38,
+                no: 62
+              },
+              age: {
+                18: 0.07,
+                24: 0.17,
+                34: 0.38,
+                44: 0.27,
+                45: 0.01
+              }
             }
         ];
     }
@@ -315,7 +334,7 @@ class Cuspic extends Component {
                         </div>
                         <div className="cell">
                             <p className="right-sub-title">性别对比<span/></p>
-                            <div className="sex-situation"><WDImageBar four={true} dataList={genderList}/></div>
+                            <div className="sex-situation"><WDImageBar four={true} dataList={genderList[this.state.tab]}/></div>
                         </div>
                         <div className="cell">
                             <p className="right-sub-title">已婚对比<span/></p>
