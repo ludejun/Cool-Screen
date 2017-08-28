@@ -178,6 +178,10 @@ export function getBaseFontSize() {
   return parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
 
+export function getResize(x) {
+  return x / 192 * getBaseFontSize();
+}
+
 // 正方形的时候html字体10vw->10vh
 export function resizeSquarePage() {
   if (window.outerWidth > window.outerHeight) {
