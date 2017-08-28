@@ -96,7 +96,7 @@ export default () => {
           五角场万达广场
         </div>
         <div className="info-line">
-          <i className="iconfont icon-plaza-circle line-icon" />商&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;圈：五角场
+          <i className="iconfont icon-plaza-circle line-icon" />商<span className="line-blank" />圈：五角场
         </div>
         <div className="info-line">
           <i className="iconfont icon-plaza-building line-icon" />所在城市：上海市
@@ -108,7 +108,7 @@ export default () => {
           <i className="iconfont icon-plaza-arrow line-icon" />日均客流：15万人
         </div>
         <div className="info-line">
-          <i className="iconfont icon-plaza-map line-icon" />地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：<span className="info-line-address">杨浦区邯郸路600号</span>
+          <i className="iconfont icon-plaza-map line-icon" />地<span className="line-blank" />址：<span className="info-line-address">杨浦区邯郸路600号</span>
         </div>
         <div className="hr" />
         <div className="flex-row">
