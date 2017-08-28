@@ -98,9 +98,9 @@ export default class Commerce extends Component {
             <p className="bar-title">广场总数省市分布排名Top 10</p>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <div className=" light-blue" />
-              <div className="legend">内场</div>
+              <div className="legend">万达</div>
               <div className=" deep-blue" />
-              <div className=" legend">外场</div>
+              <div className=" legend">签约合作项目</div>
             </div>
             {list.map((item, i) =>
               <div className="money-container flex-row" key={i}>
@@ -129,10 +129,10 @@ export default class Commerce extends Component {
                 </svg>
                 {/* </div> */}
                 <div className="inner-scale">
-                  内场 {Math.round(item.val * 100)}%
+                  万达 {Math.round(item.val * 100)}%
                 </div>
                 <div className="outer-scale">
-                  外场 {Math.round(item.val1 * 100)}%
+                  签约 {Math.round(item.val1 * 100)}%
                 </div>
               </div>
             )}

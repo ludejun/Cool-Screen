@@ -11,128 +11,131 @@ import './innerScatter.less';
 const pillarData = [
   [
     {
-      name: '郑州惠济万达广场',
-      value: [113.640612525, 34.8684219261, 13478],
+      name: '哈尔滨哈西万达广场',
+      value: [126.5872570975, 45.7002065432, 40931],
       percent: '100%',
-      label:{
-        normal:{
-          show:true,
-          offset:[0,2]
+      label: {
+        normal: {
+          show: true
         }
       }
     },
     {
-      name: '徐州铜山万达广场',
-      value: [117.1902587966, 34.1960255201, 11544],
-      percent: '85.7%',
-      label:{
-        normal:{
-          show:true,
-          offset:[5,25]
+      name: '石家庄裕华万达广场',
+      value: [114.544846, 38.024092, 39857],
+      percent: '97.38%',
+      label: {
+        normal: {
+          show: true,
+          offset: [5, 25]
         }
       }
     },
     {
-      name: '北京槐房万达广场',
-      value: [116.3682659401, 39.813840514, 11048],
-      percent: '82.0%'
+      name: '成都金牛万达广场',
+      value: [104.0745673958, 30.6865902394, 37520],
+      percent: '91.67%'
     },
     {
-      name: '东莞虎门万达广场',
-      value: [113.682834261, 22.8330205339, 10984],
-      percent: '81.5%'
+      name: '长春红旗街万达广场',
+      value: [125.2959435287, 43.8669228852, 35605],
+      percent: '86.99%'
     },
     {
-      name: '烟台开发区万达广场',
-      value: [121.2565552877, 37.5375066159, 10266],
-      percent: '76.2%'
+      name: '沈阳太原街万达广场',
+      value: [123.3987116505, 41.7914496655, 35393],
+      percent: '86.47%'
     }
   ],
   [
     {
-      name: '北京',
-      value: [116.395645038, 39.9299857781, 338700],
+      name: '上海',
+      value: [121.487899486, 31.24916171, 104481],
       percent: '100%'
-    },
-    {
-      name: '郑州',
-      value: [113.64964385, 34.7566100641, 234991],
-      percent: '69.4%'
     },
     {
       name: '成都',
-      value: [104.067923463, 30.6799428454, 226535],
-      percent: '66.9%'
+      value: [104.067923463, 30.6799428454, 99744],
+      percent: '95.47%'
     },
     {
-      name: '徐州',
-      value: [117.188106623, 34.2715534311, 195691],
-      percent: '57.8%',
-      label:{
-        normal:{
-          show:true,
-          offset:[20,10]
+      name: '沈阳',
+      value: [123.432790922, 41.8086447835, 88127],
+      percent: '84.35%'
+    },
+    {
+      name: '东莞',
+      value: [113.763433991, 23.0430238154, 83649],
+      percent: '80.06%',
+      label: {
+        normal: {
+          show: true,
+          offset: [20, 10]
         }
       }
     },
     {
-      name: '烟台',
-      value: [121.30955503, 37.5365615629, 157102],
-      percent: '46.4%'
+      name: '福州',
+      value: [119.330221107, 26.0471254966, 71978],
+      percent: '68.89%'
     }
   ],
   [
     {
-      name: '江苏',
-      value: 36786,
+      name: '山东',
+      value: 251779,
       percent: '100%'
     },
     {
+      name: '辽宁',
+      value: 233768,
+      percent: '92.85%'
+    },
+    {
+      name: '广东',
+      value: 211886,
+      percent: '84.16%'
+    },
+    {
+      name: '四川',
+      value: 207217,
+      percent: '82.30%'
+    },
+    {
       name: '福建',
-      value: 26579,
-      percent: '72.3%'
-    },
-    {
-      name: '北京',
-      value: 20867,
-      percent: '56.7%'
-    },
-    {
-      name: '湖北',
-      value: 18358,
-      percent: '49.9%'
-    },
-    {
-      name: '安徽',
-      value: 17239,
-      percent: '46.9%'
+      value: 205066,
+      percent: '81.45%'
     }
   ],
   [
     {
       name: '华东区',
-      value: 119331,
+      value: 1021252,
       percent: '100%'
     },
     {
       name: '中南区',
-      value: 54783,
-      percent: '45.9%'
+      value: 547361,
+      percent: '53.60%'
     },
     {
       name: '东北区',
-      value: 32421,
-      percent: '27.2%'
+      value: 448818,
+      percent: '43.95%'
     },
     {
       name: '华北区',
-      value: 31823,
-      percent: '26.7%'
+      value: 292561,
+      percent: '28.65%'
     },
     {
       name: '西南区',
-      value: 15345,
-      percent: '12.9%'
+      value: 282466,
+      percent: '27.66%'
+    },
+    {
+      name: '西北区',
+      value: 173057
     }
   ]
 ];
@@ -173,10 +176,17 @@ export default class InnerScatter extends Component {
     clearInterval(this.timer);
   }
 
+  liClick(index) {
+    clearInterval(this.timer);
+    this.setState({ index });
+    const selectTitle = document.querySelector('.bar-title');
+    selectTitle.innerHTML = showType[index];
+  }
+
   renderMap(index) {
     const topGeo = index === 0 ? pillarData[0] : pillarData[1];
     const geo = index === 0 ? plazaGeo : cityGeo;
-    const multiple = index === 0 ? 1000 : 10000;
+    const multiple = index === 0 ? 3000 : 5000;
     const color = '#108EE9';
     const scatterMap = {
       series: [
@@ -363,16 +373,16 @@ export default class InnerScatter extends Component {
                 <div className="bar-title" />
                 <img src="/img/pillar-bg.png" className="pillar-bg" />
                 <div key={this.state.index} className="pillar-container">
-                  {pillarData[this.state.index].map((item, i) =>
+                  {pillarData[this.state.index].slice(0, 5).map((item, i) =>
                     <div key={i} className="area" style={{ height: item.percent }}>
                       {pillar.map((item, i) => <div key={i} className="pillar" />)}
                     </div>
                   )}
                 </div>
                 <div className="name-container">
-                  {pillarData[this.state.index].map((item, i) =>
+                  {pillarData[this.state.index].slice(0, 5).map((item, i) =>
                     <div key={i} className={this.state.index === 0 ? 'name name-rotate' : 'name'}>
-                      {item.name.substring(0, 4)}
+                      {i === 0 || i === 1 ? item.name.substring(0, 5) : item.name.substring(0, 4)}
                     </div>
                   )}
                 </div>
@@ -384,7 +394,8 @@ export default class InnerScatter extends Component {
                   <li
                     key={i}
                     className={i === this.state.index ? 'active' : ''}
-                    onClick={this.alertMsg}
+                    style={{ cursor: 'pointer' }}
+                    onClick={this.liClick.bind(this, i)}
                   >
                     {item}
                   </li>
