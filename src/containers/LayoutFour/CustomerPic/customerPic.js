@@ -187,81 +187,80 @@ class Cuspic extends Component {
         ];
         this.customerPic = [
             {
-                consume: {
-                    high: 7,
-                    middle: 28,
-                    low: 65
-                },
-                cars: {
-                    itemIcon: 'icon-car',
-                    haveCar: 67,
-                    noCar: 33
-                },
-                sex: {
-                    male: 37,
-                    female: 63
-                },
-                marriage: {
-                    yes: 38,
-                    no: 62
-                },
-                age: {
-                    18: 0.04,
-                    24: 0.24,
-                    34: 0.41,
-                    44: 0.22,
-                    45: 0.09
-                }
+              consume: {
+                high: 7.5,
+                middle: 40,
+                low: 52.5
+              },
+              cars: {
+                haveCar: 34,
+                noCar: 66
+              },
+              sex: {
+                male: 45,
+                female: 55
+              },
+              marriage: {
+                yes: 40,
+                no: 60
+              },
+              age: {
+                18: 0.07,
+                24: 0.17,
+                34: 0.38,
+                44: 0.27,
+                45: 0.01
+              }
             }, {
-                consume: {
-                    high: 7,
-                    middle: 26,
-                    low: 67
-                },
-                cars: {
-                    haveCar: 67,
-                    noCar: 33
-                },
-                sex: {
-                    male: 37,
-                    female: 63
-                },
-                marriage: {
-                    yes: 38,
-                    no: 62
-                },
-                age: {
-                    18: 0.04,
-                    24: 0.24,
-                    34: 0.41,
-                    44: 0.22,
-                    45: 0.09
-                }
+              consume: {
+                high: 7.5,
+                middle: 40,
+                low: 52.5
+              },
+              cars: {
+                haveCar: 34,
+                noCar: 66
+              },
+              sex: {
+                male: 44,
+                female: 56
+              },
+              marriage: {
+                yes: 40,
+                no: 60
+              },
+              age: {
+                18: 0.07,
+                24: 0.17,
+                34: 0.38,
+                44: 0.27,
+                45: 0.01
+              }
             }, {
-                consume: {
-                    high: 7,
-                    middle: 29,
-                    low: 64
-                },
-                cars: {
-                    haveCar: 67,
-                    noCar: 33
-                },
-                sex: {
-                    male: 37,
-                    female: 63
-                },
-                marriage: {
-                    yes: 38,
-                    no: 62
-                },
-                age: {
-                    18: 0.04,
-                    24: 0.24,
-                    34: 0.41,
-                    44: 0.22,
-                    45: 0.09
-                }
+              consume: {
+                high: 7.5,
+                middle: 40,
+                low: 52.5
+              },
+              cars: {
+                haveCar: 34,
+                noCar: 66
+              },
+              sex: {
+                male: 44,
+                female: 56
+              },
+              marriage: {
+                yes: 38,
+                no: 62
+              },
+              age: {
+                18: 0.07,
+                24: 0.17,
+                34: 0.38,
+                44: 0.27,
+                45: 0.01
+              }
             }
         ];
     }
