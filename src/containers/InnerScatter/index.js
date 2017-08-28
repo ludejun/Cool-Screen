@@ -186,7 +186,7 @@ export default class InnerScatter extends Component {
   renderMap(index) {
     const topGeo = index === 0 ? pillarData[0] : pillarData[1];
     const geo = index === 0 ? plazaGeo : cityGeo;
-    const multiple = index === 0 ? 3000 : 5000;
+    const multiple = index === 0 ? 3000 : 8000;
     const color = '#108EE9';
     const scatterMap = {
       series: [

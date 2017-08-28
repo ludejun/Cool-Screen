@@ -17,7 +17,7 @@ const pillarData = [
       label: {
         normal: {
           show: true,
-          offset: [0, 2]
+          offset: [0, -5]
         }
       }
     },
@@ -35,17 +35,35 @@ const pillarData = [
     {
       name: '成都金牛万达广场',
       value: [104.0745673958, 30.6865902394, 37520],
-      percent: '91.67%'
+      percent: '91.67%',
+      label: {
+        normal: {
+          show: true,
+          offset: [5, 25]
+        }
+      }
     },
     {
       name: '长春红旗街万达广场',
       value: [125.2959435287, 43.8669228852, 35605],
-      percent: '86.99%'
+      percent: '86.99%',
+      label: {
+        normal: {
+          show: true,
+          offset: [-50, 5]
+        }
+      }
     },
     {
       name: '沈阳太原街万达广场',
       value: [123.3987116505, 41.7914496655, 35393],
-      percent: '86.47%'
+      percent: '86.47%',
+      label: {
+        normal: {
+          show: true,
+          offset: [20, 25]
+        }
+      }
     }
   ],
   [
@@ -179,7 +197,7 @@ export default class InnerScatterFour extends Component {
           rippleEffect: {
             brushType: 'stroke'
           },
-          symbolSize: 7 / 192 * getBaseFontSize(),
+          symbolSize: 9 / 192 * getBaseFontSize(),
           label: {
             normal: {
               show: true,
