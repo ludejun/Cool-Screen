@@ -197,7 +197,7 @@ export default class InnerScatterFour extends Component {
           rippleEffect: {
             brushType: 'stroke'
           },
-          symbolSize: 9 / 192 * getBaseFontSize(),
+          symbolSize: 11 / 192 * getBaseFontSize(),
           label: {
             normal: {
               show: true,

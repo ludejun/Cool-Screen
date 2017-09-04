@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {WDAnalysis, ThreeModel} from '../components';
+import {WDAnalysis, ThreeModel, WDLogoSvg} from '../components';
 import HeaderTitle from './Layout/HeaderTitle';
 import './customerPic.less';
 
@@ -53,6 +53,7 @@ class customerPic extends Component {
     render() {
         return <div className="container">
             <HeaderTitle title="互联网金融客群画像"/>
+            <WDLogoSvg className="header-logo" />
             <div className="customer-svg-container">
                 <svg
                     className="svg"

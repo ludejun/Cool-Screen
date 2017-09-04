@@ -133,7 +133,7 @@ export default class WDPillar extends Component {
       const wobble = Math.sin(Date.now() / 250) * canvas.height / 80;
 
       // draw oval
-      drawEllipse(ctx, 2, 430 + wobble, 320 + wobble / 4, 70);
+      drawEllipse(ctx, 2, 420 + wobble, 295 + wobble / 4, 70);
       // draw the cube
       drawCube(100, 420 + wobble + y / 2, x, x, cube.height[0], cube.color[0]);
       drawCube(180, 410 + wobble + y / 2, x, x, cube.height[1], cube.color[1]);
